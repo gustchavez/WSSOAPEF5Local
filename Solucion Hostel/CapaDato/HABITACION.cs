@@ -14,10 +14,17 @@ namespace CapaDato
     
     public partial class HABITACION
     {
+        public HABITACION()
+        {
+            this.CAMA = new HashSet<CAMA>();
+        }
+    
         public short CODIGO { get; set; }
         public string ESTADO { get; set; }
         public short CAPACIDAD { get; set; }
         public string DESCRIPCION { get; set; }
         public int PRECIO { get; set; }
+    
+        public virtual ICollection<CAMA> CAMA { get; set; }
     }
 }

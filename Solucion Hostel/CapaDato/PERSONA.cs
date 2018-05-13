@@ -29,7 +29,7 @@ namespace CapaDato
         public string APELLIDO { get; set; }
         public System.DateTime NACIMIENTO { get; set; }
         public string EMAIL { get; set; }
-        public Nullable<long> TELEFONO { get; set; }
+        public string TELEFONO { get; set; }
     
         public virtual ICollection<ALOJAMIENTO> ALOJAMIENTO { get; set; }
         public virtual ICollection<COMIDA> COMIDA { get; set; }

@@ -22,7 +22,7 @@ namespace CapaDato
         public Nullable<decimal> NUMERO_OC { get; set; }
     
         public virtual ORDEN_DE_COMPRA ORDEN_DE_COMPRA { get; set; }
-        public virtual PERSONA PERSONA { get; set; }
         public virtual PLATO PLATO { get; set; }
+        public virtual PERSONA PERSONA { get; set; }
     }
 }

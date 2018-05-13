@@ -38,7 +38,7 @@ namespace CapaWSPresentacion
             nCliente.Apellido          = txtxApellidoEmpleado.Text;
             nCliente.Nacimiento        = DateTime.Parse(txtFechaNacimiento.Text);
             nCliente.EmailPersona      = txtCorreoEmpleado.Text;
-            nCliente.TelofonoPersona   = decimal.Parse(txtTelefonoEmpleado.Text);
+            nCliente.TelofonoPersona   = txtTelefonoEmpleado.Text;
             nCliente.Clave             = txtConstrasena.Text;
 
             nCliente = x.CrearCliente(nCliente);

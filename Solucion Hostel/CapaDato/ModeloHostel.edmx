@@ -27,7 +27,7 @@
           <Property Name="CODIGO" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="DESCRIPCION" Type="varchar2" MaxLength="64" Nullable="false" />
           <Property Name="DISPONIBLE" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="CODIGO_HABITACION" Type="varchar2" MaxLength="5" Nullable="false" />
+          <Property Name="CODIGO_HABITACION" Type="number" Precision="4" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="CIUDAD">
           <Key>
@@ -151,7 +151,7 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Property Name="APELLIDO" Type="varchar2" MaxLength="64" Nullable="false" />
           <Property Name="NACIMIENTO" Type="date" Nullable="false" />
           <Property Name="EMAIL" Type="varchar2" MaxLength="230" />
-          <Property Name="TELEFONO" Type="number" Precision="16" Scale="0" />
+          <Property Name="TELEFONO" Type="varchar2" MaxLength="16" />
         </EntityType>
         <EntityType Name="PLATO">
           <Key>
@@ -257,6 +257,18 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
             </Principal>
             <Dependent Role="ALOJAMIENTO">
               <PropertyRef Name="RUT_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAMA_FK">
+          <End Role="HABITACION" Type="Self.HABITACION" Multiplicity="1" />
+          <End Role="CAMA" Type="Self.CAMA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HABITACION">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="CAMA">
+              <PropertyRef Name="CODIGO_HABITACION" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -529,7 +541,7 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_IN_APELLIDO" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_NACIMIENTO" Type="date" Mode="In" />
           <Parameter Name="P_IN_EMAIL_PER" Type="varchar2" Mode="In" />
-          <Parameter Name="P_IN_TELEFONO_PER" Type="number" Mode="In" />
+          <Parameter Name="P_IN_TELEFONO_PER" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_CLAVE" Type="varchar2" Mode="In" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
@@ -546,7 +558,7 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_IN_APELLIDO" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_NACIMIENTO" Type="date" Mode="In" />
           <Parameter Name="P_IN_EMAIL_PER" Type="varchar2" Mode="In" />
-          <Parameter Name="P_IN_TELEFONO_PER" Type="number" Mode="In" />
+          <Parameter Name="P_IN_TELEFONO_PER" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_CALLE" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
           <Parameter Name="P_IN_COMUNA" Type="varchar2" Mode="In" />
@@ -576,7 +588,7 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_IN_APELLIDO" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_NACIMIENTO" Type="date" Mode="In" />
           <Parameter Name="P_IN_EMAIL_PER" Type="varchar2" Mode="In" />
-          <Parameter Name="P_IN_TELEFONO_PER" Type="number" Mode="In" />
+          <Parameter Name="P_IN_TELEFONO_PER" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_CLAVE" Type="varchar2" Mode="In" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
@@ -599,7 +611,7 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_IN_APELLIDO" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_NACIMIENTO" Type="date" Mode="In" />
           <Parameter Name="P_IN_EMAIL_PER" Type="varchar2" Mode="In" />
-          <Parameter Name="P_IN_TELEFONO_PER" Type="number" Mode="In" />
+          <Parameter Name="P_IN_TELEFONO_PER" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_CALLE" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
           <Parameter Name="P_IN_COMUNA" Type="varchar2" Mode="In" />
@@ -663,6 +675,10 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <AssociationSet Name="ALOJAMIENTO_FK_PERSONA" Association="Self.ALOJAMIENTO_FK_PERSONA">
             <End Role="PERSONA" EntitySet="PERSONA" />
             <End Role="ALOJAMIENTO" EntitySet="ALOJAMIENTO" />
+          </AssociationSet>
+          <AssociationSet Name="CAMA_FK" Association="Self.CAMA_FK">
+            <End Role="HABITACION" EntitySet="HABITACION" />
+            <End Role="CAMA" EntitySet="CAMA" />
           </AssociationSet>
           <AssociationSet Name="CIUDAD_FK" Association="Self.CIUDAD_FK">
             <End Role="PAIS" EntitySet="PAIS" />
@@ -767,19 +783,9 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <Property Name="RUT_PERSONA" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CODIGO_CAMA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <Property Name="NUMERO_OC" Type="Decimal" Precision="38" Scale="0" />
-          <NavigationProperty Name="CAMA" Relationship="Self.ALOJAMIENTO_FK_CAMA" FromRole="ALOJAMIENTO" ToRole="CAMA" />
           <NavigationProperty Name="ORDEN_DE_COMPRA" Relationship="Self.ALOJAMIENTO_FK_OC" FromRole="ALOJAMIENTO" ToRole="ORDEN_DE_COMPRA" />
-          <NavigationProperty Name="PERSONA" Relationship="Self.ALOJAMIENTO_FK_PERSONA" FromRole="ALOJAMIENTO" ToRole="PERSONA" />
-        </EntityType>
-        <EntityType Name="CAMA">
-          <Key>
-            <PropertyRef Name="CODIGO" />
-          </Key>
-          <Property Name="CODIGO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="DESCRIPCION" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DISPONIBLE" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="CODIGO_HABITACION" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="ALOJAMIENTO" Relationship="Self.ALOJAMIENTO_FK_CAMA" FromRole="CAMA" ToRole="ALOJAMIENTO" />
+          <NavigationProperty Name="CAMA" Relationship="Model.ALOJAMIENTO_FK_CAMA" FromRole="ALOJAMIENTO" ToRole="CAMA" />
+          <NavigationProperty Name="PERSONA" Relationship="Model.ALOJAMIENTO_FK_PERSONA" FromRole="ALOJAMIENTO" ToRole="PERSONA" />
         </EntityType>
         <EntityType Name="CIUDAD">
           <Key>
@@ -813,8 +819,8 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <Property Name="RUT_PERSONA" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NUMERO_OC" Type="Decimal" Precision="38" Scale="0" />
           <NavigationProperty Name="ORDEN_DE_COMPRA" Relationship="Self.COMIDA_FK_OC" FromRole="COMIDA" ToRole="ORDEN_DE_COMPRA" />
-          <NavigationProperty Name="PERSONA" Relationship="Self.COMIDA_FK_PERSONA" FromRole="COMIDA" ToRole="PERSONA" />
           <NavigationProperty Name="PLATO" Relationship="Self.COMIDA_FK_PLATA" FromRole="COMIDA" ToRole="PLATO" />
+          <NavigationProperty Name="PERSONA" Relationship="Model.COMIDA_FK_PERSONA" FromRole="COMIDA" ToRole="PERSONA" />
         </EntityType>
         <EntityType Name="EMPRESA">
           <Key>
@@ -829,7 +835,7 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <NavigationProperty Name="CLIENTE" Relationship="Self.CLIENTE_FK" FromRole="EMPRESA" ToRole="CLIENTE" />
           <NavigationProperty Name="DIRECCION" Relationship="Self.DIRECCION_FK3" FromRole="EMPRESA" ToRole="DIRECCION" />
           <NavigationProperty Name="PROVEEDOR" Relationship="Self.PROVEEDOR_FK" FromRole="EMPRESA" ToRole="PROVEEDOR" />
-          <NavigationProperty Name="PERSONA" Relationship="Self.PXE" FromRole="EMPRESA" ToRole="PERSONA" />
+          <NavigationProperty Name="PERSONA" Relationship="Model.PXE" FromRole="EMPRESA" ToRole="PERSONA" />
         </EntityType>
         <EntityType Name="FACTURA">
           <Key>
@@ -849,16 +855,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ORDEN_DE_COMPRA" Relationship="Self.FACTURA_FK_OC" FromRole="FACTURA" ToRole="ORDEN_DE_COMPRA" />
           <NavigationProperty Name="ORDEN_DE_PEDIDO" Relationship="Self.FACTURA_FK_OP" FromRole="FACTURA" ToRole="ORDEN_DE_PEDIDO" />
-        </EntityType>
-        <EntityType Name="HABITACION">
-          <Key>
-            <PropertyRef Name="CODIGO" />
-          </Key>
-          <Property Name="CODIGO" Type="Int16" Nullable="false" />
-          <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CAPACIDAD" Type="Int16" Nullable="false" />
-          <Property Name="DESCRIPCION" Type="String" MaxLength="140" FixedLength="false" Unicode="false" />
-          <Property Name="PRECIO" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ORDEN_DE_COMPRA">
           <Key>
@@ -898,24 +894,7 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <Property Name="CODIGO" Type="Int16" Nullable="false" />
           <Property Name="NOMBRE" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="CIUDAD" Relationship="Self.CIUDAD_FK" FromRole="PAIS" ToRole="CIUDAD" />
-          <NavigationProperty Name="PERSONA" Relationship="Self.PXP" FromRole="PAIS" ToRole="PERSONA" />
-        </EntityType>
-        <EntityType Name="PERSONA">
-          <Key>
-            <PropertyRef Name="RUT" />
-          </Key>
-          <Property Name="RUT" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NOMBRE" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="APELLIDO" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NACIMIENTO" Type="DateTime" Nullable="false" />
-          <Property Name="EMAIL" Type="String" MaxLength="230" FixedLength="false" Unicode="false" />
-          <Property Name="TELEFONO" Type="Int64" />
-          <NavigationProperty Name="ALOJAMIENTO" Relationship="Self.ALOJAMIENTO_FK_PERSONA" FromRole="PERSONA" ToRole="ALOJAMIENTO" />
-          <NavigationProperty Name="COMIDA" Relationship="Self.COMIDA_FK_PERSONA" FromRole="PERSONA" ToRole="COMIDA" />
-          <NavigationProperty Name="DIRECCION" Relationship="Self.DIRECCION_FK2" FromRole="PERSONA" ToRole="DIRECCION" />
-          <NavigationProperty Name="USUARIO" Relationship="Self.USUARIO_FK" FromRole="PERSONA" ToRole="USUARIO" />
-          <NavigationProperty Name="EMPRESA" Relationship="Self.PXE" FromRole="PERSONA" ToRole="EMPRESA" />
-          <NavigationProperty Name="PAIS" Relationship="Self.PXP" FromRole="PERSONA" ToRole="PAIS" />
+          <NavigationProperty Name="PERSONA" Relationship="Model.PXP" FromRole="PAIS" ToRole="PERSONA" />
         </EntityType>
         <EntityType Name="PLATO">
           <Key>
@@ -979,7 +958,7 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <Property Name="PERFIL" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RUT_PERSONA" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="PERSONA" Relationship="Self.USUARIO_FK" FromRole="USUARIO" ToRole="PERSONA" />
+          <NavigationProperty Name="PERSONA" Relationship="Model.USUARIO_FK" FromRole="USUARIO" ToRole="PERSONA" />
         </EntityType>
         <EntityType Name="DIRECCION">
           <Key>
@@ -996,20 +975,8 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <Property Name="RUT_EMPRESA" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CIUDAD" Relationship="Self.DIRECCION_FK1" FromRole="DIRECCION" ToRole="CIUDAD" />
           <NavigationProperty Name="EMPRESA" Relationship="Self.DIRECCION_FK3" FromRole="DIRECCION" ToRole="EMPRESA" />
-          <NavigationProperty Name="PERSONA" Relationship="Self.DIRECCION_FK2" FromRole="DIRECCION" ToRole="PERSONA" />
+          <NavigationProperty Name="PERSONA" Relationship="Model.DIRECCION_FK2" FromRole="DIRECCION" ToRole="PERSONA" />
         </EntityType>
-        <Association Name="ALOJAMIENTO_FK_CAMA">
-          <End Role="CAMA" Type="Self.CAMA" Multiplicity="1" />
-          <End Role="ALOJAMIENTO" Type="Self.ALOJAMIENTO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CAMA">
-              <PropertyRef Name="CODIGO" />
-            </Principal>
-            <Dependent Role="ALOJAMIENTO">
-              <PropertyRef Name="CODIGO_CAMA" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="ALOJAMIENTO_FK_OC">
           <End Role="ORDEN_DE_COMPRA" Type="Self.ORDEN_DE_COMPRA" Multiplicity="0..1" />
           <End Role="ALOJAMIENTO" Type="Self.ALOJAMIENTO" Multiplicity="*" />
@@ -1019,18 +986,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             </Principal>
             <Dependent Role="ALOJAMIENTO">
               <PropertyRef Name="NUMERO_OC" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="ALOJAMIENTO_FK_PERSONA">
-          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="1" />
-          <End Role="ALOJAMIENTO" Type="Self.ALOJAMIENTO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PERSONA">
-              <PropertyRef Name="RUT" />
-            </Principal>
-            <Dependent Role="ALOJAMIENTO">
-              <PropertyRef Name="RUT_PERSONA" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1093,18 +1048,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             </Principal>
             <Dependent Role="COMIDA">
               <PropertyRef Name="NUMERO_OC" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="COMIDA_FK_PERSONA">
-          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="1" />
-          <End Role="COMIDA" Type="Self.COMIDA" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PERSONA">
-              <PropertyRef Name="RUT" />
-            </Principal>
-            <Dependent Role="COMIDA">
-              <PropertyRef Name="RUT_PERSONA" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1192,30 +1135,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="DIRECCION_FK2">
-          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="0..1" />
-          <End Role="DIRECCION" Type="Self.DIRECCION" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PERSONA">
-              <PropertyRef Name="RUT" />
-            </Principal>
-            <Dependent Role="DIRECCION">
-              <PropertyRef Name="RUT_PERSONA" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="USUARIO_FK">
-          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="1" />
-          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PERSONA">
-              <PropertyRef Name="RUT" />
-            </Principal>
-            <Dependent Role="USUARIO">
-              <PropertyRef Name="RUT_PERSONA" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="PLATO_FK">
           <End Role="SERVICIO_COMIDA" Type="Self.SERVICIO_COMIDA" Multiplicity="1" />
           <End Role="PLATO" Type="Self.PLATO" Multiplicity="*" />
@@ -1240,27 +1159,16 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="PXE">
-          <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="*" />
-          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="*" />
-        </Association>
-        <Association Name="PXP">
-          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="*" />
-          <End Role="PAIS" Type="Self.PAIS" Multiplicity="*" />
-        </Association>
         <EntityContainer Name="EntitiesBBDDHostel" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ALOJAMIENTO" EntityType="Self.ALOJAMIENTO" />
-          <EntitySet Name="CAMA" EntityType="Self.CAMA" />
           <EntitySet Name="CIUDAD" EntityType="Self.CIUDAD" />
           <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
           <EntitySet Name="COMIDA" EntityType="Self.COMIDA" />
           <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" />
           <EntitySet Name="FACTURA" EntityType="Self.FACTURA" />
-          <EntitySet Name="HABITACION" EntityType="Self.HABITACION" />
           <EntitySet Name="ORDEN_DE_COMPRA" EntityType="Self.ORDEN_DE_COMPRA" />
           <EntitySet Name="ORDEN_DE_PEDIDO" EntityType="Self.ORDEN_DE_PEDIDO" />
           <EntitySet Name="PAIS" EntityType="Self.PAIS" />
-          <EntitySet Name="PERSONA" EntityType="Self.PERSONA" />
           <EntitySet Name="PLATO" EntityType="Self.PLATO" />
           <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" />
           <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" />
@@ -1268,16 +1176,8 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <EntitySet Name="SERVICIO_COMIDA" EntityType="Self.SERVICIO_COMIDA" />
           <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
           <EntitySet Name="DIRECCION" EntityType="Self.DIRECCION" />
-          <AssociationSet Name="ALOJAMIENTO_FK_CAMA" Association="Self.ALOJAMIENTO_FK_CAMA">
-            <End Role="CAMA" EntitySet="CAMA" />
-            <End Role="ALOJAMIENTO" EntitySet="ALOJAMIENTO" />
-          </AssociationSet>
           <AssociationSet Name="ALOJAMIENTO_FK_OC" Association="Self.ALOJAMIENTO_FK_OC">
             <End Role="ORDEN_DE_COMPRA" EntitySet="ORDEN_DE_COMPRA" />
-            <End Role="ALOJAMIENTO" EntitySet="ALOJAMIENTO" />
-          </AssociationSet>
-          <AssociationSet Name="ALOJAMIENTO_FK_PERSONA" Association="Self.ALOJAMIENTO_FK_PERSONA">
-            <End Role="PERSONA" EntitySet="PERSONA" />
             <End Role="ALOJAMIENTO" EntitySet="ALOJAMIENTO" />
           </AssociationSet>
           <AssociationSet Name="CIUDAD_FK" Association="Self.CIUDAD_FK">
@@ -1298,10 +1198,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           </AssociationSet>
           <AssociationSet Name="COMIDA_FK_OC" Association="Self.COMIDA_FK_OC">
             <End Role="ORDEN_DE_COMPRA" EntitySet="ORDEN_DE_COMPRA" />
-            <End Role="COMIDA" EntitySet="COMIDA" />
-          </AssociationSet>
-          <AssociationSet Name="COMIDA_FK_PERSONA" Association="Self.COMIDA_FK_PERSONA">
-            <End Role="PERSONA" EntitySet="PERSONA" />
             <End Role="COMIDA" EntitySet="COMIDA" />
           </AssociationSet>
           <AssociationSet Name="COMIDA_FK_PLATA" Association="Self.COMIDA_FK_PLATA">
@@ -1332,14 +1228,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <End Role="ORDEN_DE_PEDIDO" EntitySet="ORDEN_DE_PEDIDO" />
             <End Role="RRP" EntitySet="RRP" />
           </AssociationSet>
-          <AssociationSet Name="DIRECCION_FK2" Association="Self.DIRECCION_FK2">
-            <End Role="PERSONA" EntitySet="PERSONA" />
-            <End Role="DIRECCION" EntitySet="DIRECCION" />
-          </AssociationSet>
-          <AssociationSet Name="USUARIO_FK" Association="Self.USUARIO_FK">
-            <End Role="PERSONA" EntitySet="PERSONA" />
-            <End Role="USUARIO" EntitySet="USUARIO" />
-          </AssociationSet>
           <AssociationSet Name="PLATO_FK" Association="Self.PLATO_FK">
             <End Role="SERVICIO_COMIDA" EntitySet="SERVICIO_COMIDA" />
             <End Role="PLATO" EntitySet="PLATO" />
@@ -1347,14 +1235,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <AssociationSet Name="RRP_FK1" Association="Self.RRP_FK1">
             <End Role="PRODUCTO" EntitySet="PRODUCTO" />
             <End Role="RRP" EntitySet="RRP" />
-          </AssociationSet>
-          <AssociationSet Name="PXE" Association="Self.PXE">
-            <End Role="EMPRESA" EntitySet="EMPRESA" />
-            <End Role="PERSONA" EntitySet="PERSONA" />
-          </AssociationSet>
-          <AssociationSet Name="PXP" Association="Self.PXP">
-            <End Role="PERSONA" EntitySet="PERSONA" />
-            <End Role="PAIS" EntitySet="PAIS" />
           </AssociationSet>
           <FunctionImport Name="SP_VALIDAR_LOGIN">
             <Parameter Name="P_IN_NOMBRE" Mode="In" Type="String" />
@@ -1380,7 +1260,7 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_IN_APELLIDO" Mode="In" Type="String" />
             <Parameter Name="P_IN_NACIMIENTO" Mode="In" Type="DateTime" />
             <Parameter Name="P_IN_EMAIL_PER" Mode="In" Type="String" />
-            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="String" />
             <Parameter Name="P_IN_CLAVE" Mode="In" Type="String" />
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
@@ -1397,7 +1277,7 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_IN_APELLIDO" Mode="In" Type="String" />
             <Parameter Name="P_IN_NACIMIENTO" Mode="In" Type="DateTime" />
             <Parameter Name="P_IN_EMAIL_PER" Mode="In" Type="String" />
-            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="String" />
             <Parameter Name="P_IN_CALLE" Mode="In" Type="String" />
             <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
             <Parameter Name="P_IN_COMUNA" Mode="In" Type="String" />
@@ -1427,7 +1307,7 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_IN_APELLIDO" Mode="In" Type="String" />
             <Parameter Name="P_IN_NACIMIENTO" Mode="In" Type="DateTime" />
             <Parameter Name="P_IN_EMAIL_PER" Mode="In" Type="String" />
-            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="String" />
             <Parameter Name="P_IN_CLAVE" Mode="In" Type="String" />
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
@@ -1450,7 +1330,7 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_IN_APELLIDO" Mode="In" Type="String" />
             <Parameter Name="P_IN_NACIMIENTO" Mode="In" Type="DateTime" />
             <Parameter Name="P_IN_EMAIL_PER" Mode="In" Type="String" />
-            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="String" />
             <Parameter Name="P_IN_CALLE" Mode="In" Type="String" />
             <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
             <Parameter Name="P_IN_COMUNA" Mode="In" Type="String" />
@@ -1461,7 +1341,161 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
+          <EntitySet Name="CAMA" EntityType="Model.CAMA" />
+          <AssociationSet Name="ALOJAMIENTO_FK_CAMA" Association="Model.ALOJAMIENTO_FK_CAMA">
+            <End Role="CAMA" EntitySet="CAMA" />
+            <End Role="ALOJAMIENTO" EntitySet="ALOJAMIENTO" />
+          </AssociationSet>
+          <EntitySet Name="HABITACION" EntityType="Model.HABITACION" />
+          <EntitySet Name="PERSONA" EntityType="Model.PERSONA" />
+          <AssociationSet Name="ALOJAMIENTO_FK_PERSONA" Association="Model.ALOJAMIENTO_FK_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="ALOJAMIENTO" EntitySet="ALOJAMIENTO" />
+          </AssociationSet>
+          <AssociationSet Name="CAMA_FK" Association="Model.CAMA_FK">
+            <End Role="HABITACION" EntitySet="HABITACION" />
+            <End Role="CAMA" EntitySet="CAMA" />
+          </AssociationSet>
+          <AssociationSet Name="COMIDA_FK_PERSONA" Association="Model.COMIDA_FK_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="COMIDA" EntitySet="COMIDA" />
+          </AssociationSet>
+          <AssociationSet Name="DIRECCION_FK2" Association="Model.DIRECCION_FK2">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="DIRECCION" EntitySet="DIRECCION" />
+          </AssociationSet>
+          <AssociationSet Name="USUARIO_FK" Association="Model.USUARIO_FK">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="PXE" Association="Model.PXE">
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+            <End Role="PERSONA" EntitySet="PERSONA" />
+          </AssociationSet>
+          <AssociationSet Name="PXP" Association="Model.PXP">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="PAIS" EntitySet="PAIS" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="CAMA">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Name="CODIGO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="DISPONIBLE" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="CODIGO_HABITACION" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="ALOJAMIENTO" Relationship="Model.ALOJAMIENTO_FK_CAMA" FromRole="CAMA" ToRole="ALOJAMIENTO" />
+          <NavigationProperty Name="HABITACION" Relationship="Model.CAMA_FK" FromRole="CAMA" ToRole="HABITACION" />
+        </EntityType>
+        <Association Name="ALOJAMIENTO_FK_CAMA">
+          <End Type="Model.CAMA" Role="CAMA" Multiplicity="1" />
+          <End Type="Model.ALOJAMIENTO" Role="ALOJAMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAMA">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="ALOJAMIENTO">
+              <PropertyRef Name="CODIGO_CAMA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="HABITACION">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Name="CODIGO" Type="Int16" Nullable="false" />
+          <Property Name="ESTADO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CAPACIDAD" Type="Int16" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="140" FixedLength="false" Unicode="false" />
+          <Property Name="PRECIO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CAMA" Relationship="Model.CAMA_FK" FromRole="HABITACION" ToRole="CAMA" />
+        </EntityType>
+        <EntityType Name="PERSONA">
+          <Key>
+            <PropertyRef Name="RUT" />
+          </Key>
+          <Property Name="RUT" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="APELLIDO" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="NACIMIENTO" Type="DateTime" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="230" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ALOJAMIENTO" Relationship="Model.ALOJAMIENTO_FK_PERSONA" FromRole="PERSONA" ToRole="ALOJAMIENTO" />
+          <NavigationProperty Name="COMIDA" Relationship="Model.COMIDA_FK_PERSONA" FromRole="PERSONA" ToRole="COMIDA" />
+          <NavigationProperty Name="DIRECCION" Relationship="Model.DIRECCION_FK2" FromRole="PERSONA" ToRole="DIRECCION" />
+          <NavigationProperty Name="USUARIO" Relationship="Model.USUARIO_FK" FromRole="PERSONA" ToRole="USUARIO" />
+          <NavigationProperty Name="EMPRESA" Relationship="Model.PXE" FromRole="PERSONA" ToRole="EMPRESA" />
+          <NavigationProperty Name="PAIS" Relationship="Model.PXP" FromRole="PERSONA" ToRole="PAIS" />
+        </EntityType>
+        <Association Name="ALOJAMIENTO_FK_PERSONA">
+          <End Type="Model.PERSONA" Role="PERSONA" Multiplicity="1" />
+          <End Type="Model.ALOJAMIENTO" Role="ALOJAMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="ALOJAMIENTO">
+              <PropertyRef Name="RUT_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAMA_FK">
+          <End Type="Model.HABITACION" Role="HABITACION" Multiplicity="1" />
+          <End Type="Model.CAMA" Role="CAMA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HABITACION">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="CAMA">
+              <PropertyRef Name="CODIGO_HABITACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="COMIDA_FK_PERSONA">
+          <End Type="Model.PERSONA" Role="PERSONA" Multiplicity="1" />
+          <End Type="Model.COMIDA" Role="COMIDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="COMIDA">
+              <PropertyRef Name="RUT_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DIRECCION_FK2">
+          <End Type="Model.PERSONA" Role="PERSONA" Multiplicity="0..1" />
+          <End Type="Model.DIRECCION" Role="DIRECCION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="DIRECCION">
+              <PropertyRef Name="RUT_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USUARIO_FK">
+          <End Type="Model.PERSONA" Role="PERSONA" Multiplicity="1" />
+          <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="RUT_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PXE">
+          <End Type="Model.EMPRESA" Role="EMPRESA" Multiplicity="*" />
+          <End Type="Model.PERSONA" Role="PERSONA" Multiplicity="*" />
+        </Association>
+        <Association Name="PXP">
+          <End Type="Model.PERSONA" Role="PERSONA" Multiplicity="*" />
+          <End Type="Model.PAIS" Role="PAIS" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1479,16 +1513,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
                 <ScalarProperty Name="RUT_PERSONA" ColumnName="RUT_PERSONA" />
                 <ScalarProperty Name="CODIGO_CAMA" ColumnName="CODIGO_CAMA" />
                 <ScalarProperty Name="NUMERO_OC" ColumnName="NUMERO_OC" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CAMA">
-            <EntityTypeMapping TypeName="Model.CAMA">
-              <MappingFragment StoreEntitySet="CAMA">
-                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
-                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
-                <ScalarProperty Name="DISPONIBLE" ColumnName="DISPONIBLE" />
-                <ScalarProperty Name="CODIGO_HABITACION" ColumnName="CODIGO_HABITACION" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1549,17 +1573,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="HABITACION">
-            <EntityTypeMapping TypeName="Model.HABITACION">
-              <MappingFragment StoreEntitySet="HABITACION">
-                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
-                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
-                <ScalarProperty Name="CAPACIDAD" ColumnName="CAPACIDAD" />
-                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
-                <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ORDEN_DE_COMPRA">
             <EntityTypeMapping TypeName="Model.ORDEN_DE_COMPRA">
               <MappingFragment StoreEntitySet="ORDEN_DE_COMPRA">
@@ -1591,18 +1604,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
               <MappingFragment StoreEntitySet="PAIS">
                 <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
                 <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PERSONA">
-            <EntityTypeMapping TypeName="Model.PERSONA">
-              <MappingFragment StoreEntitySet="PERSONA">
-                <ScalarProperty Name="RUT" ColumnName="RUT" />
-                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
-                <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
-                <ScalarProperty Name="NACIMIENTO" ColumnName="NACIMIENTO" />
-                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
-                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1680,22 +1681,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="PXE" TypeName="Model.PXE" StoreEntitySet="PXE">
-            <EndProperty Name="EMPRESA">
-              <ScalarProperty Name="RUT" ColumnName="RUT_EMPRESA" />
-            </EndProperty>
-            <EndProperty Name="PERSONA">
-              <ScalarProperty Name="RUT" ColumnName="RUT_PERSONA" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="PXP" TypeName="Model.PXP" StoreEntitySet="PXP">
-            <EndProperty Name="PERSONA">
-              <ScalarProperty Name="RUT" ColumnName="RUT_PERSONA" />
-            </EndProperty>
-            <EndProperty Name="PAIS">
-              <ScalarProperty Name="CODIGO" ColumnName="CODIGO_PAIS" />
-            </EndProperty>
-          </AssociationSetMapping>
           <FunctionImportMapping FunctionImportName="SP_VALIDAR_LOGIN" FunctionName="Model.Store.SP_VALIDAR_LOGIN" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_ENC_RESERVA" FunctionName="Model.Store.SP_ACTUALIZAR_ENC_RESERVA" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_ADMINISTRADOR" FunctionName="Model.Store.SP_CREAR_ADMINISTRADOR" />
@@ -1704,6 +1689,55 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_CREAR_EMPLEADO" FunctionName="Model.Store.SP_CREAR_EMPLEADO" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_ENC_RESERVA" FunctionName="Model.Store.SP_CREAR_ENC_RESERVA" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_PROVEEDOR" FunctionName="Model.Store.SP_CREAR_PROVEEDOR" />
+          <EntitySetMapping Name="CAMA">
+            <EntityTypeMapping TypeName="Model.CAMA">
+              <MappingFragment StoreEntitySet="CAMA">
+                <ScalarProperty Name="CODIGO_HABITACION" ColumnName="CODIGO_HABITACION" />
+                <ScalarProperty Name="DISPONIBLE" ColumnName="DISPONIBLE" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HABITACION">
+            <EntityTypeMapping TypeName="Model.HABITACION">
+              <MappingFragment StoreEntitySet="HABITACION">
+                <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="CAPACIDAD" ColumnName="CAPACIDAD" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSONA">
+            <EntityTypeMapping TypeName="Model.PERSONA">
+              <MappingFragment StoreEntitySet="PERSONA">
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="NACIMIENTO" ColumnName="NACIMIENTO" />
+                <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="RUT" ColumnName="RUT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="PXE" TypeName="Model.PXE" StoreEntitySet="PXE">
+            <EndProperty Name="PERSONA">
+              <ScalarProperty Name="RUT" ColumnName="RUT_PERSONA" />
+            </EndProperty>
+            <EndProperty Name="EMPRESA">
+              <ScalarProperty Name="RUT" ColumnName="RUT_EMPRESA" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="PXP" TypeName="Model.PXP" StoreEntitySet="PXP">
+            <EndProperty Name="PAIS">
+              <ScalarProperty Name="CODIGO" ColumnName="CODIGO_PAIS" />
+            </EndProperty>
+            <EndProperty Name="PERSONA">
+              <ScalarProperty Name="RUT" ColumnName="RUT_PERSONA" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

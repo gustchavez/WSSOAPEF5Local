@@ -29,17 +29,14 @@ namespace CapaDato
         }
     
         public DbSet<ALOJAMIENTO> ALOJAMIENTO { get; set; }
-        public DbSet<CAMA> CAMA { get; set; }
         public DbSet<CIUDAD> CIUDAD { get; set; }
         public DbSet<CLIENTE> CLIENTE { get; set; }
         public DbSet<COMIDA> COMIDA { get; set; }
         public DbSet<EMPRESA> EMPRESA { get; set; }
         public DbSet<FACTURA> FACTURA { get; set; }
-        public DbSet<HABITACION> HABITACION { get; set; }
         public DbSet<ORDEN_DE_COMPRA> ORDEN_DE_COMPRA { get; set; }
         public DbSet<ORDEN_DE_PEDIDO> ORDEN_DE_PEDIDO { get; set; }
         public DbSet<PAIS> PAIS { get; set; }
-        public DbSet<PERSONA> PERSONA { get; set; }
         public DbSet<PLATO> PLATO { get; set; }
         public DbSet<PRODUCTO> PRODUCTO { get; set; }
         public DbSet<PROVEEDOR> PROVEEDOR { get; set; }
@@ -47,6 +44,9 @@ namespace CapaDato
         public DbSet<SERVICIO_COMIDA> SERVICIO_COMIDA { get; set; }
         public DbSet<USUARIO> USUARIO { get; set; }
         public DbSet<DIRECCION> DIRECCION { get; set; }
+        public DbSet<CAMA> CAMA { get; set; }
+        public DbSet<HABITACION> HABITACION { get; set; }
+        public DbSet<PERSONA> PERSONA { get; set; }
     
         public virtual int SP_VALIDAR_LOGIN(string p_IN_NOMBRE, string p_IN_CLAVE, ObjectParameter p_OUT_PERFIL, ObjectParameter p_OUT_NOMBRE, ObjectParameter p_OUT_APELLIDO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
@@ -86,7 +86,7 @@ namespace CapaDato
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_ENC_RESERVA", p_IN_NUMEROParameter, p_IN_MONTOParameter, p_IN_OBSERVACIONESParameter, p_IN_UBICACIONParameter, p_IN_ESTADOParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
-        public virtual int SP_CREAR_ADMINISTRADOR(string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, Nullable<decimal> p_IN_TELEFONO_PER, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        public virtual int SP_CREAR_ADMINISTRADOR(string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
             var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
                 new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
@@ -108,9 +108,9 @@ namespace CapaDato
                 new ObjectParameter("P_IN_EMAIL_PER", p_IN_EMAIL_PER) :
                 new ObjectParameter("P_IN_EMAIL_PER", typeof(string));
     
-            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER.HasValue ?
+            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER != null ?
                 new ObjectParameter("P_IN_TELEFONO_PER", p_IN_TELEFONO_PER) :
-                new ObjectParameter("P_IN_TELEFONO_PER", typeof(decimal));
+                new ObjectParameter("P_IN_TELEFONO_PER", typeof(string));
     
             var p_IN_CLAVEParameter = p_IN_CLAVE != null ?
                 new ObjectParameter("P_IN_CLAVE", p_IN_CLAVE) :
@@ -119,7 +119,7 @@ namespace CapaDato
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_ADMINISTRADOR", p_IN_RUT_PERSONAParameter, p_IN_NOMBREParameter, p_IN_APELLIDOParameter, p_IN_NACIMIENTOParameter, p_IN_EMAIL_PERParameter, p_IN_TELEFONO_PERParameter, p_IN_CLAVEParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
-        public virtual int SP_CREAR_CLIENTE(string p_IN_RUT_EMPRESA, string p_IN_RAZON_SOCIAL, string p_IN_RUBRO, string p_IN_EMAIL_EMP, string p_IN_TELEFONO_EMP, string p_IN_LOGO, string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, Nullable<decimal> p_IN_TELEFONO_PER, string p_IN_CALLE, Nullable<decimal> p_IN_NUMERO, string p_IN_COMUNA, string p_IN_COD_POSTAL, string p_IN_NOMBRE_CIUDAD, Nullable<decimal> p_IN_COD_PAIS, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        public virtual int SP_CREAR_CLIENTE(string p_IN_RUT_EMPRESA, string p_IN_RAZON_SOCIAL, string p_IN_RUBRO, string p_IN_EMAIL_EMP, string p_IN_TELEFONO_EMP, string p_IN_LOGO, string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CALLE, Nullable<decimal> p_IN_NUMERO, string p_IN_COMUNA, string p_IN_COD_POSTAL, string p_IN_NOMBRE_CIUDAD, Nullable<decimal> p_IN_COD_PAIS, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
             var p_IN_RUT_EMPRESAParameter = p_IN_RUT_EMPRESA != null ?
                 new ObjectParameter("P_IN_RUT_EMPRESA", p_IN_RUT_EMPRESA) :
@@ -165,9 +165,9 @@ namespace CapaDato
                 new ObjectParameter("P_IN_EMAIL_PER", p_IN_EMAIL_PER) :
                 new ObjectParameter("P_IN_EMAIL_PER", typeof(string));
     
-            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER.HasValue ?
+            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER != null ?
                 new ObjectParameter("P_IN_TELEFONO_PER", p_IN_TELEFONO_PER) :
-                new ObjectParameter("P_IN_TELEFONO_PER", typeof(decimal));
+                new ObjectParameter("P_IN_TELEFONO_PER", typeof(string));
     
             var p_IN_CALLEParameter = p_IN_CALLE != null ?
                 new ObjectParameter("P_IN_CALLE", p_IN_CALLE) :
@@ -241,7 +241,7 @@ namespace CapaDato
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_DET_RESERVA", p_IN_NUMEROParameter, p_IN_INGRESOParameter, p_IN_EGRESOParameter, p_IN_OBS_ALOJAMIENTOParameter, p_IN_RUT_PERSONAParameter, p_IN_CODIGO_CAMAParameter, p_IN_RECEPCIONParameter, p_IN_OBS_COMIDAParameter, p_IN_CODIGO_PLATOParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
-        public virtual int SP_CREAR_EMPLEADO(string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, Nullable<decimal> p_IN_TELEFONO_PER, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        public virtual int SP_CREAR_EMPLEADO(string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
             var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
                 new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
@@ -263,9 +263,9 @@ namespace CapaDato
                 new ObjectParameter("P_IN_EMAIL_PER", p_IN_EMAIL_PER) :
                 new ObjectParameter("P_IN_EMAIL_PER", typeof(string));
     
-            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER.HasValue ?
+            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER != null ?
                 new ObjectParameter("P_IN_TELEFONO_PER", p_IN_TELEFONO_PER) :
-                new ObjectParameter("P_IN_TELEFONO_PER", typeof(decimal));
+                new ObjectParameter("P_IN_TELEFONO_PER", typeof(string));
     
             var p_IN_CLAVEParameter = p_IN_CLAVE != null ?
                 new ObjectParameter("P_IN_CLAVE", p_IN_CLAVE) :
@@ -283,7 +283,7 @@ namespace CapaDato
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_ENC_RESERVA", p_IN_RUT_CLIENTEParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_NUMERO);
         }
     
-        public virtual int SP_CREAR_PROVEEDOR(string p_IN_RUT_EMPRESA, string p_IN_RAZON_SOCIAL, string p_IN_RUBRO, string p_IN_EMAIL_EMP, string p_IN_TELEFONO_EMP, string p_IN_LOGO, string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, Nullable<decimal> p_IN_TELEFONO_PER, string p_IN_CALLE, Nullable<decimal> p_IN_NUMERO, string p_IN_COMUNA, string p_IN_COD_POSTAL, string p_IN_NOMBRE_CIUDAD, Nullable<decimal> p_IN_COD_PAIS, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        public virtual int SP_CREAR_PROVEEDOR(string p_IN_RUT_EMPRESA, string p_IN_RAZON_SOCIAL, string p_IN_RUBRO, string p_IN_EMAIL_EMP, string p_IN_TELEFONO_EMP, string p_IN_LOGO, string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CALLE, Nullable<decimal> p_IN_NUMERO, string p_IN_COMUNA, string p_IN_COD_POSTAL, string p_IN_NOMBRE_CIUDAD, Nullable<decimal> p_IN_COD_PAIS, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
             var p_IN_RUT_EMPRESAParameter = p_IN_RUT_EMPRESA != null ?
                 new ObjectParameter("P_IN_RUT_EMPRESA", p_IN_RUT_EMPRESA) :
@@ -329,9 +329,9 @@ namespace CapaDato
                 new ObjectParameter("P_IN_EMAIL_PER", p_IN_EMAIL_PER) :
                 new ObjectParameter("P_IN_EMAIL_PER", typeof(string));
     
-            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER.HasValue ?
+            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER != null ?
                 new ObjectParameter("P_IN_TELEFONO_PER", p_IN_TELEFONO_PER) :
-                new ObjectParameter("P_IN_TELEFONO_PER", typeof(decimal));
+                new ObjectParameter("P_IN_TELEFONO_PER", typeof(string));
     
             var p_IN_CALLEParameter = p_IN_CALLE != null ?
                 new ObjectParameter("P_IN_CALLE", p_IN_CALLE) :

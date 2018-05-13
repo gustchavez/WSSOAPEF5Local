@@ -22,8 +22,9 @@ namespace CapaDato
         public decimal CODIGO { get; set; }
         public string DESCRIPCION { get; set; }
         public string DISPONIBLE { get; set; }
-        public string CODIGO_HABITACION { get; set; }
+        public short CODIGO_HABITACION { get; set; }
     
         public virtual ICollection<ALOJAMIENTO> ALOJAMIENTO { get; set; }
+        public virtual HABITACION HABITACION { get; set; }
     }
 }

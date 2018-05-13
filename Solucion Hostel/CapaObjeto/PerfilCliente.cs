@@ -19,7 +19,7 @@ namespace CapaObjeto
         public string Apellido     { get; set; }
         public DateTime Nacimiento   { get; set; }
         public string EmailPersona    { get; set; }
-        public decimal TelofonoPersona { get; set; }
+        public string TelofonoPersona { get; set; }
         public string Calle        { get; set; }
         public decimal Numero       { get; set; }
         public string Comuna       { get; set; }
@@ -48,7 +48,7 @@ namespace CapaObjeto
             this.Apellido = string.Empty;
             this.Nacimiento = DateTime.MinValue;
             this.EmailPersona = string.Empty;
-            this.TelofonoPersona = decimal.MinValue;
+            this.TelofonoPersona = string.Empty;
             this.Calle = string.Empty;
             this.Numero = decimal.MinValue;
             this.Comuna = string.Empty;
