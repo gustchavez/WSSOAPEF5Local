@@ -93,13 +93,10 @@ namespace CapaServicio
 
         public ListaProductos ProductoRescatar()
         {
-            ListaProductos salida = new ListaProductos();
 
             ScrudProducto x = new ScrudProducto();
 
-            x.LlamarSPRescatar(salida);
-
-            return salida;
+            return x.LlamarSPRescatar();
         }
     }
 }

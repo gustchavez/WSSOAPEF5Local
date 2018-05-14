@@ -15,7 +15,7 @@ namespace CapaNegocio
 
         }
 
-        public void LlamarSPCrear(Producto nProducto)
+        public Producto LlamarSPCrear(Producto nProducto)
         {
             var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
             var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
@@ -44,61 +44,66 @@ namespace CapaNegocio
                 nProducto.Retorno.Glosa = "Err codret ORACLE";
             }
 
+            return nProducto;
+
         }
-        public void LlamarSPActualizar(Producto nProducto)
+        public Producto LlamarSPActualizar(Producto aProducto)
         {
             var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
             var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
 
             CommonBD.Conexion.SP_ACTUALIZAR_PRODUCTO
-                ( nProducto.Item.Codigo
-                , nProducto.Item.Descripcion
-                , nProducto.Item.Precio
-                , nProducto.Item.Stock
-                , nProducto.Item.StockCritico
+                ( aProducto.Item.Codigo
+                , aProducto.Item.Descripcion
+                , aProducto.Item.Precio
+                , aProducto.Item.Stock
+                , aProducto.Item.StockCritico
                 , p_OUT_CODRET
                 , p_OUT_GLSRET
                 );
 
             try
             {
-                nProducto.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
-                nProducto.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                aProducto.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
+                aProducto.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
             }
             catch (Exception)
             {
-                nProducto.Retorno.Codigo = 1011;
-                nProducto.Retorno.Glosa = "Err codret ORACLE";
+                aProducto.Retorno.Codigo = 1011;
+                aProducto.Retorno.Glosa = "Err codret ORACLE";
             }
 
+            return aProducto;
         }
 
-        public void LlamarSPEliminar(Producto nProducto)
+        public Producto LlamarSPEliminar(Producto eProducto)
         {
             var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
             var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
 
             CommonBD.Conexion.SP_ELIMINAR_PRODUCTO
-                ( nProducto.Item.Codigo
+                ( eProducto.Item.Codigo
                 , p_OUT_CODRET
                 , p_OUT_GLSRET
                 );
 
             try
             {
-                nProducto.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
-                nProducto.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                eProducto.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
+                eProducto.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
             }
             catch (Exception)
             {
-                nProducto.Retorno.Codigo = 1011;
-                nProducto.Retorno.Glosa = "Err codret ORACLE";
+                eProducto.Retorno.Codigo = 1011;
+                eProducto.Retorno.Glosa = "Err codret ORACLE";
             }
 
+            return eProducto;
         }
 
-        public void LlamarSPRescatar(ListaProductos LProductos)
+        public ListaProductos LlamarSPRescatar()
         {
+            ListaProductos LProductos = new ListaProductos();
             try
             {
                 var collection = CommonBD.Conexion.PRODUCTO.OrderBy(p => p.DESCRIPCION).ToList();
@@ -122,7 +127,7 @@ namespace CapaNegocio
                 LProductos.Retorno.Glosa = "Err codret ORACLE";
             }
 
+            return LProductos;
         }
-
     }
 }

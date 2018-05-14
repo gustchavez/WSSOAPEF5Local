@@ -43,12 +43,15 @@
             <tr>
                 <td style="width:25%;">&nbsp;</td>
                 <td style="width:75%;"><asp:Button ID="btnCrear" runat="server" Text="Crear" Width="88px" OnClick="btnAceptar_Click" />
-                    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" />
-                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
+                    <asp:Button ID="btnActualizar" runat="server" OnClick="btnActualizar_Click" Text="Actualizar" />
+                    <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" />
                 </td>
             </tr>
         </table>    
     
+        Lista de Productos
+        <asp:GridView ID="gwListaProductos" runat="server"></asp:GridView>
+        <asp:ObjectDataSource ID="dsListaProductos" runat="server"></asp:ObjectDataSource>
     </div>
     </form>
 </body>

@@ -12,7 +12,20 @@ namespace CapaWSPresentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            CargarGridView();
+        }
 
+        private void CargarGridView()
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            ListaProductos n = new ListaProductos();
+
+            n = x.ProductoRescatar();
+
+            gwListaProductos.DataSource = null;
+            gwListaProductos.DataSource = n.Productos;
+            gwListaProductos.DataBind();
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
@@ -21,16 +34,54 @@ namespace CapaWSPresentacion
 
             Producto nProducto = new Producto();
 
-            nProducto.Item.Descripcion = txtDescripcion.Text;
-            nProducto.Item.Precio = decimal.Parse(txtPrecio.Text);
-            nProducto.Item.Stock = decimal.Parse(txtStock.Text);
+            nProducto.Item.Descripcion  = txtDescripcion.Text;
+            nProducto.Item.Precio       = decimal.Parse(txtPrecio.Text);
+            nProducto.Item.Stock        = decimal.Parse(txtStock.Text);
             nProducto.Item.StockCritico = decimal.Parse(txtStockCritico.Text);
 
-            x.ProductoCrear(nProducto);
-            
-            txtCodigoRetorno.Text = nProducto.Retorno.Codigo.ToString();
-            txtGlosaRetorno.Text = nProducto.Retorno.Glosa;
+            nProducto = x.ProductoCrear(nProducto);
 
+            txtCodigo.Text = nProducto.Item.Codigo.ToString();
+            txtCodigoRetorno.Text = nProducto.Retorno.Codigo.ToString();
+            txtGlosaRetorno.Text  = nProducto.Retorno.Glosa;
+
+            CargarGridView();
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            Producto aProducto = new Producto();
+
+            aProducto.Item.Codigo       = decimal.Parse(txtCodigo.Text);
+            aProducto.Item.Descripcion  = txtDescripcion.Text;
+            aProducto.Item.Precio       = decimal.Parse(txtPrecio.Text);
+            aProducto.Item.Stock        = decimal.Parse(txtStock.Text);
+            aProducto.Item.StockCritico = decimal.Parse(txtStockCritico.Text);
+
+            aProducto = x.ProductoActualizar(aProducto);
+
+            txtCodigoRetorno.Text = aProducto.Retorno.Codigo.ToString();
+            txtGlosaRetorno.Text  = aProducto.Retorno.Glosa;
+
+            CargarGridView();
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            Producto eProducto = new Producto();
+
+            eProducto.Item.Codigo = decimal.Parse(txtCodigo.Text);
+
+            eProducto = x.ProductoEliminar(eProducto);
+
+            txtCodigoRetorno.Text = eProducto.Retorno.Codigo.ToString();
+            txtGlosaRetorno.Text = eProducto.Retorno.Glosa;
+
+            CargarGridView();
         }
     }
 }
