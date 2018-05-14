@@ -47,6 +47,7 @@
     <Compile Include="CommonBD.cs" />
     <Compile Include="CrearOrdenCompra.cs" />
     <Compile Include="CrearPerfilCliente.cs" />
+    <Compile Include="ScrudProducto.cs" />
     <Compile Include="ValidarLoginUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

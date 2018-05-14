@@ -80,7 +80,7 @@
             </tr>
             <tr>
                 <td style="width:25%;">Teléfono Empleado</td>
-                <td style="width:75%;"><asp:TextBox ID="txtTelefonoEmpleado" runat="server" TextMode="Number"></asp:TextBox></td>
+                <td style="width:75%;"><asp:TextBox ID="txtTelefonoEmpleado" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
                 <td style="width:25%;">Contraseña </td>

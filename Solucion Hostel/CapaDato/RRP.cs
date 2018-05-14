@@ -17,6 +17,7 @@ namespace CapaDato
         public long CODIGO { get; set; }
         public short INDICE { get; set; }
         public System.DateTime RECEPCION { get; set; }
+        public string CONFIRMADO { get; set; }
         public short CODIGO_PRODUCTO { get; set; }
         public decimal NUMERO_OP { get; set; }
     
