@@ -99,25 +99,22 @@ namespace CapaNegocio
 
         public void LlamarSPRescatar(ListaProductos LProductos)
         {
-            var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
-            var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
-            var p_OUT_PRODUCTOS = new ObjectParameter("P_OUT_PRODUCTOS", typeof(ListaProductos));
-
-            //CommonBD.Conexion.SP_RESCATAR_PRODUCTOS
-            //    (p_OUT_CODRET
-            //    , p_OUT_GLSRET
-            //    , p_OUT_PRODUCTOS
-            //    );
-
             try
             {
-                //ListaProductos x = p_OUT_PRODUCTOS.Value..ToList();
-                //foreach (var item in p_OUT_PRODUCTOS.Value.ToString().ToList())
-                //{
-                    
-                //} 
-                LProductos.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
-                LProductos.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                var collection = CommonBD.Conexion.PRODUCTO.OrderBy(p => p.DESCRIPCION).ToList();
+
+                foreach (var item in collection)
+                {
+                    ItemProducto n = new ItemProducto();
+                    n.Codigo = item.CODIGO;
+                    n.Descripcion = item.DESCRIPCION;
+                    n.Precio = item.PRECIO;
+                    n.Stock = item.STOCK;
+                    n.StockCritico = item.STOCK_CRITICO;
+                    LProductos.Productos.Add(n);
+                }
+                LProductos.Retorno.Codigo = 0;
+                LProductos.Retorno.Glosa = "OK";
             }
             catch (Exception)
             {

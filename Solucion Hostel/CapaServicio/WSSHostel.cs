@@ -64,5 +64,42 @@ namespace CapaServicio
             return composite;
         }
 
+        public Producto ProductoCrear(Producto entrada)
+        {
+            ScrudProducto x = new ScrudProducto();
+
+            x.LlamarSPCrear(entrada);
+
+            return entrada;
+        }
+
+        public Producto ProductoActualizar(Producto entrada)
+        {
+            ScrudProducto x = new ScrudProducto();
+
+            x.LlamarSPActualizar(entrada);
+
+            return entrada;
+        }
+
+        public Producto ProductoEliminar(Producto entrada)
+        {
+            ScrudProducto x = new ScrudProducto();
+
+            x.LlamarSPEliminar(entrada);
+
+            return entrada;
+        }
+
+        public ListaProductos ProductoRescatar()
+        {
+            ListaProductos salida = new ListaProductos();
+
+            ScrudProducto x = new ScrudProducto();
+
+            x.LlamarSPRescatar(salida);
+
+            return salida;
+        }
     }
 }

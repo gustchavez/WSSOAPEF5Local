@@ -90,6 +90,30 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CrearCliente", ReplyAction="http://tempuri.org/IWSSHostel/CrearClienteResponse")]
         System.Threading.Tasks.Task<CapaObjeto.PerfilCliente> CrearClienteAsync(CapaObjeto.PerfilCliente entrada);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProductoCrear", ReplyAction="http://tempuri.org/IWSSHostel/ProductoCrearResponse")]
+        CapaObjeto.Producto ProductoCrear(CapaObjeto.Producto entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProductoCrear", ReplyAction="http://tempuri.org/IWSSHostel/ProductoCrearResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.Producto> ProductoCrearAsync(CapaObjeto.Producto entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProductoActualizar", ReplyAction="http://tempuri.org/IWSSHostel/ProductoActualizarResponse")]
+        CapaObjeto.Producto ProductoActualizar(CapaObjeto.Producto entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProductoActualizar", ReplyAction="http://tempuri.org/IWSSHostel/ProductoActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.Producto> ProductoActualizarAsync(CapaObjeto.Producto entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProductoEliminar", ReplyAction="http://tempuri.org/IWSSHostel/ProductoEliminarResponse")]
+        CapaObjeto.Producto ProductoEliminar(CapaObjeto.Producto entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProductoEliminar", ReplyAction="http://tempuri.org/IWSSHostel/ProductoEliminarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.Producto> ProductoEliminarAsync(CapaObjeto.Producto entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProductoRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ProductoRescatarResponse")]
+        CapaObjeto.ListaProductos ProductoRescatar();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProductoRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ProductoRescatarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ListaProductos> ProductoRescatarAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IWSSHostel/GetDataUsingDataContractResponse")]
         CapaWSPresentacion.WSSoap.CompositeType GetDataUsingDataContract(CapaWSPresentacion.WSSoap.CompositeType composite);
         
@@ -138,6 +162,38 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.PerfilCliente> CrearClienteAsync(CapaObjeto.PerfilCliente entrada) {
             return base.Channel.CrearClienteAsync(entrada);
+        }
+        
+        public CapaObjeto.Producto ProductoCrear(CapaObjeto.Producto entrada) {
+            return base.Channel.ProductoCrear(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.Producto> ProductoCrearAsync(CapaObjeto.Producto entrada) {
+            return base.Channel.ProductoCrearAsync(entrada);
+        }
+        
+        public CapaObjeto.Producto ProductoActualizar(CapaObjeto.Producto entrada) {
+            return base.Channel.ProductoActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.Producto> ProductoActualizarAsync(CapaObjeto.Producto entrada) {
+            return base.Channel.ProductoActualizarAsync(entrada);
+        }
+        
+        public CapaObjeto.Producto ProductoEliminar(CapaObjeto.Producto entrada) {
+            return base.Channel.ProductoEliminar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.Producto> ProductoEliminarAsync(CapaObjeto.Producto entrada) {
+            return base.Channel.ProductoEliminarAsync(entrada);
+        }
+        
+        public CapaObjeto.ListaProductos ProductoRescatar() {
+            return base.Channel.ProductoRescatar();
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ListaProductos> ProductoRescatarAsync() {
+            return base.Channel.ProductoRescatarAsync();
         }
         
         public CapaWSPresentacion.WSSoap.CompositeType GetDataUsingDataContract(CapaWSPresentacion.WSSoap.CompositeType composite) {

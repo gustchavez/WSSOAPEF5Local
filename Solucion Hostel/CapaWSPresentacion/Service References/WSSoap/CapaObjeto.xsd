@@ -39,8 +39,38 @@
       <xs:element minOccurs="0" name="RutEmpresa" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RutPersona" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TelefonoEmpresa" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TelofonoPersona" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TelofonoPersona" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PerfilCliente" nillable="true" type="tns:PerfilCliente" />
+  <xs:complexType name="Producto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:ItemProducto" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Respuesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Producto" nillable="true" type="tns:Producto" />
+  <xs:complexType name="ItemProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Precio" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Stock" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StockCritico" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItemProducto" nillable="true" type="tns:ItemProducto" />
+  <xs:complexType name="ListaProductos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Productos" nillable="true" type="tns:ArrayOfItemProducto" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Respuesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaProductos" nillable="true" type="tns:ListaProductos" />
+  <xs:complexType name="ArrayOfItemProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemProducto" nillable="true" type="tns:ItemProducto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItemProducto" nillable="true" type="tns:ArrayOfItemProducto" />
 </xs:schema>

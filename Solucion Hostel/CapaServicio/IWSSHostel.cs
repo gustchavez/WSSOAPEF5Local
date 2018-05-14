@@ -19,6 +19,18 @@ namespace CapaServicio
         PerfilCliente CrearCliente(PerfilCliente entrada);
 
         [OperationContract]
+        Producto ProductoCrear(Producto entrada);
+
+        [OperationContract]
+        Producto ProductoActualizar(Producto entrada);
+
+        [OperationContract]
+        Producto ProductoEliminar(Producto entrada);
+
+        [OperationContract]
+        ListaProductos ProductoRescatar();
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: agregue aquí sus operaciones de servicio
