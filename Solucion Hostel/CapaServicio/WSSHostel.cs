@@ -98,5 +98,49 @@ namespace CapaServicio
 
             return x.LlamarSPRescatar();
         }
+
+        public ListaServicioComida ServicioComidaRescatar()
+        {
+
+            ScrudServicioComida x = new ScrudServicioComida();
+
+            return x.LlamarSPRescatar();
+        }
+
+        public Plato PlatoCrear(Plato entrada)
+        {
+            ScrudPlato x = new ScrudPlato();
+
+            x.LlamarSPCrear(entrada);
+
+            return entrada;
+        }
+
+        public Plato PlatoActualizar(Plato entrada)
+        {
+            ScrudPlato x = new ScrudPlato();
+
+            x.LlamarSPActualizar(entrada);
+
+            return entrada;
+        }
+
+        public Plato PlatoEliminar(Plato entrada)
+        {
+            ScrudPlato x = new ScrudPlato();
+
+            x.LlamarSPEliminar(entrada);
+
+            return entrada;
+        }
+
+        public ListaPlatos PlatoRescatar()
+        {
+
+            ScrudPlato x = new ScrudPlato();
+
+            return x.LlamarSPRescatar();
+        }
+
     }
 }

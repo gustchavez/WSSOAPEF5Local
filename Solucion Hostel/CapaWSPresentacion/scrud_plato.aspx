@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="scrud_producto.aspx.cs" Inherits="CapaWSPresentacion.scrud_producto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="scrud_plato.aspx.cs" Inherits="CapaWSPresentacion.scrud_plato" %>
 
 <!DOCTYPE html>
 
@@ -17,20 +17,28 @@
                 <td style="width:75%;"><asp:TextBox ID="txtCodigo" runat="server" TextMode="Number"></asp:TextBox></td>
             </tr>
             <tr>
-                <td style="width:25%;">Descripción</td>
+                <td style="width:25%;">Nombre</td>
+                <td style="width:75%;"><asp:TextBox ID="txtNombre" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td style="width:25%;">Descripcion</td>
                 <td style="width:75%;"><asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td style="width:25%;">Precio</td>
-                <td style="width:75%;"><asp:TextBox ID="txtPrecio" runat="server" TextMode="Number"></asp:TextBox></td>
+                <td style="width:25%;">Disponible</td>
+                <td style="width:75%;">
+                    <asp:DropDownList ID="ddlDisponible" runat="server">
+                        <asp:ListItem Selected="True">Si</asp:ListItem>
+                        <asp:ListItem>No</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
             </tr>
             <tr>
-                <td style="width:25%;">Stock</td>
-                <td style="width:75%;"><asp:TextBox ID="txtStock" runat="server" TextMode="Number"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td style="width:25%;">Stock Critico</td>
-                <td style="width:75%;"><asp:TextBox ID="txtStockCritico" runat="server" TextMode="Number"></asp:TextBox></td>
+                <td style="width:25%;">Tipo Servicio</td>
+                <td style="width:75%;">
+                    <asp:DropDownList ID="ddlServicioTipo" runat="server">
+                    </asp:DropDownList>
+                </td>
             </tr>
             <tr>
                 <td style="width:25%;">Codigo Retorno</td>
@@ -50,8 +58,8 @@
         </table>    
     
         Lista de Productos
-        <asp:GridView ID="gwListaProductos" runat="server"></asp:GridView>
-        <br />
+        <asp:GridView ID="gwListaPlatos" runat="server"></asp:GridView>
+    
     </div>
     </form>
 </body>

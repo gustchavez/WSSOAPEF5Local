@@ -85,17 +85,83 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ServicioComidaRescatar">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServicioComidaRescatarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ServicioComidaRescatarResult" nillable="true" type="q11:ListaServicioComida" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlatoCrear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q12:Plato" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlatoCrearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PlatoCrearResult" nillable="true" type="q13:Plato" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlatoActualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q14:Plato" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlatoActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PlatoActualizarResult" nillable="true" type="q15:Plato" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlatoEliminar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q16:Plato" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlatoEliminarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PlatoEliminarResult" nillable="true" type="q17:Plato" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlatoRescatar">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlatoRescatarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PlatoRescatarResult" nillable="true" type="q18:ListaPlatos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CapaServicio" minOccurs="0" name="composite" nillable="true" type="q11:CompositeType" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/CapaServicio" minOccurs="0" name="composite" nillable="true" type="q19:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContractResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CapaServicio" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q12:CompositeType" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/CapaServicio" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q20:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

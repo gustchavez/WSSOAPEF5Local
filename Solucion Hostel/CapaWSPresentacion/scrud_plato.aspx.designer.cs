@@ -10,7 +10,7 @@
 namespace CapaWSPresentacion {
     
     
-    public partial class scrud_producto {
+    public partial class scrud_plato {
         
         /// <summary>
         /// Control form1.
@@ -31,6 +31,15 @@ namespace CapaWSPresentacion {
         protected global::System.Web.UI.WebControls.TextBox txtCodigo;
         
         /// <summary>
+        /// Control txtNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        
+        /// <summary>
         /// Control txtDescripcion.
         /// </summary>
         /// <remarks>
@@ -40,31 +49,22 @@ namespace CapaWSPresentacion {
         protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
         
         /// <summary>
-        /// Control txtPrecio.
+        /// Control ddlDisponible.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrecio;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDisponible;
         
         /// <summary>
-        /// Control txtStock.
+        /// Control ddlServicioTipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStock;
-        
-        /// <summary>
-        /// Control txtStockCritico.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStockCritico;
+        protected global::System.Web.UI.WebControls.DropDownList ddlServicioTipo;
         
         /// <summary>
         /// Control txtCodigoRetorno.
@@ -112,12 +112,12 @@ namespace CapaWSPresentacion {
         protected global::System.Web.UI.WebControls.Button btnEliminar;
         
         /// <summary>
-        /// Control gwListaProductos.
+        /// Control gwListaPlatos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gwListaProductos;
+        protected global::System.Web.UI.WebControls.GridView gwListaPlatos;
     }
 }

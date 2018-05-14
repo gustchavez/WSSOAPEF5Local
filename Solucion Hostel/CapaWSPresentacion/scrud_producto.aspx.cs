@@ -12,7 +12,10 @@ namespace CapaWSPresentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarGridView();
+            if (!IsPostBack)
+            {
+                CargarGridView();
+            }
         }
 
         private void CargarGridView()
@@ -28,7 +31,7 @@ namespace CapaWSPresentacion
             gwListaProductos.DataBind();
         }
 
-        protected void btnAceptar_Click(object sender, EventArgs e)
+        protected void btnCrear_Click(object sender, EventArgs e)
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
@@ -83,5 +86,6 @@ namespace CapaWSPresentacion
 
             CargarGridView();
         }
+
     }
 }

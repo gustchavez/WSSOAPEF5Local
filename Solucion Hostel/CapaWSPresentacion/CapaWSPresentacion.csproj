@@ -103,6 +103,9 @@
     </Content>
     <Content Include="Properties\DataSources\CapaObjeto.ListaProductos.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.Producto.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ListaPlatos.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ListaServicioComida.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.Plato.datasource" />
     <None Include="Service References\WSSoap\CapaServicio.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -127,6 +130,7 @@
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="scripts\funciones.js" />
     <Content Include="scripts\jquery-3.3.1.min.js" />
+    <Content Include="scrud_plato.aspx" />
     <Content Include="scrud_producto.aspx" />
     <Content Include="Service References\WSSoap\CapaWSPresentacion.WSSoap.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -169,6 +173,13 @@
       <DependentUpon>ingreso_cliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="scrud_plato.aspx.cs">
+      <DependentUpon>scrud_plato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="scrud_plato.aspx.designer.cs">
+      <DependentUpon>scrud_plato.aspx</DependentUpon>
+    </Compile>
     <Compile Include="scrud_producto.aspx.cs">
       <DependentUpon>scrud_producto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

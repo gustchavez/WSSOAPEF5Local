@@ -44,6 +44,36 @@
   <wsdl:message name="IWSSHostel_ProductoRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ProductoRescatarResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_ServicioComidaRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServicioComidaRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ServicioComidaRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServicioComidaRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoEliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoEliminar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoEliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoRescatarResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -74,6 +104,26 @@
     <wsdl:operation name="ProductoRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProductoRescatar" message="tns:IWSSHostel_ProductoRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ProductoRescatarResponse" message="tns:IWSSHostel_ProductoRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComidaRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ServicioComidaRescatar" message="tns:IWSSHostel_ServicioComidaRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ServicioComidaRescatarResponse" message="tns:IWSSHostel_ServicioComidaRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlatoCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PlatoCrear" message="tns:IWSSHostel_PlatoCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PlatoCrearResponse" message="tns:IWSSHostel_PlatoCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlatoActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PlatoActualizar" message="tns:IWSSHostel_PlatoActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PlatoActualizarResponse" message="tns:IWSSHostel_PlatoActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlatoEliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PlatoEliminar" message="tns:IWSSHostel_PlatoEliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PlatoEliminarResponse" message="tns:IWSSHostel_PlatoEliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlatoRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PlatoRescatar" message="tns:IWSSHostel_PlatoRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PlatoRescatarResponse" message="tns:IWSSHostel_PlatoRescatar_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/GetDataUsingDataContract" message="tns:IWSSHostel_GetDataUsingDataContract_InputMessage" />
@@ -129,6 +179,51 @@
     </wsdl:operation>
     <wsdl:operation name="ProductoRescatar">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/ProductoRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComidaRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ServicioComidaRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlatoCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PlatoCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlatoActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PlatoActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlatoEliminar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PlatoEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlatoRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PlatoRescatar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

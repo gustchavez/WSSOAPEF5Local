@@ -114,6 +114,36 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProductoRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ProductoRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ListaProductos> ProductoRescatarAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ServicioComidaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ServicioComidaRescatarResponse")]
+        CapaObjeto.ListaServicioComida ServicioComidaRescatar();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ServicioComidaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ServicioComidaRescatarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ListaServicioComida> ServicioComidaRescatarAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PlatoCrear", ReplyAction="http://tempuri.org/IWSSHostel/PlatoCrearResponse")]
+        CapaObjeto.Plato PlatoCrear(CapaObjeto.Plato entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PlatoCrear", ReplyAction="http://tempuri.org/IWSSHostel/PlatoCrearResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.Plato> PlatoCrearAsync(CapaObjeto.Plato entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PlatoActualizar", ReplyAction="http://tempuri.org/IWSSHostel/PlatoActualizarResponse")]
+        CapaObjeto.Plato PlatoActualizar(CapaObjeto.Plato entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PlatoActualizar", ReplyAction="http://tempuri.org/IWSSHostel/PlatoActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.Plato> PlatoActualizarAsync(CapaObjeto.Plato entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PlatoEliminar", ReplyAction="http://tempuri.org/IWSSHostel/PlatoEliminarResponse")]
+        CapaObjeto.Plato PlatoEliminar(CapaObjeto.Plato entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PlatoEliminar", ReplyAction="http://tempuri.org/IWSSHostel/PlatoEliminarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.Plato> PlatoEliminarAsync(CapaObjeto.Plato entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PlatoRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PlatoRescatarResponse")]
+        CapaObjeto.ListaPlatos PlatoRescatar();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PlatoRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PlatoRescatarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ListaPlatos> PlatoRescatarAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IWSSHostel/GetDataUsingDataContractResponse")]
         CapaWSPresentacion.WSSoap.CompositeType GetDataUsingDataContract(CapaWSPresentacion.WSSoap.CompositeType composite);
         
@@ -194,6 +224,46 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.ListaProductos> ProductoRescatarAsync() {
             return base.Channel.ProductoRescatarAsync();
+        }
+        
+        public CapaObjeto.ListaServicioComida ServicioComidaRescatar() {
+            return base.Channel.ServicioComidaRescatar();
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ListaServicioComida> ServicioComidaRescatarAsync() {
+            return base.Channel.ServicioComidaRescatarAsync();
+        }
+        
+        public CapaObjeto.Plato PlatoCrear(CapaObjeto.Plato entrada) {
+            return base.Channel.PlatoCrear(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.Plato> PlatoCrearAsync(CapaObjeto.Plato entrada) {
+            return base.Channel.PlatoCrearAsync(entrada);
+        }
+        
+        public CapaObjeto.Plato PlatoActualizar(CapaObjeto.Plato entrada) {
+            return base.Channel.PlatoActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.Plato> PlatoActualizarAsync(CapaObjeto.Plato entrada) {
+            return base.Channel.PlatoActualizarAsync(entrada);
+        }
+        
+        public CapaObjeto.Plato PlatoEliminar(CapaObjeto.Plato entrada) {
+            return base.Channel.PlatoEliminar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.Plato> PlatoEliminarAsync(CapaObjeto.Plato entrada) {
+            return base.Channel.PlatoEliminarAsync(entrada);
+        }
+        
+        public CapaObjeto.ListaPlatos PlatoRescatar() {
+            return base.Channel.PlatoRescatar();
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ListaPlatos> PlatoRescatarAsync() {
+            return base.Channel.PlatoRescatarAsync();
         }
         
         public CapaWSPresentacion.WSSoap.CompositeType GetDataUsingDataContract(CapaWSPresentacion.WSSoap.CompositeType composite) {

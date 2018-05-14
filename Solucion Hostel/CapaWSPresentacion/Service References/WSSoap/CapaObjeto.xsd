@@ -73,4 +73,54 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfItemProducto" nillable="true" type="tns:ArrayOfItemProducto" />
+  <xs:complexType name="ListaServicioComida">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Respuesta" />
+      <xs:element minOccurs="0" name="ServiciosComida" nillable="true" type="tns:ArrayOfItemServicioComida" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaServicioComida" nillable="true" type="tns:ListaServicioComida" />
+  <xs:complexType name="ArrayOfItemServicioComida">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemServicioComida" nillable="true" type="tns:ItemServicioComida" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItemServicioComida" nillable="true" type="tns:ArrayOfItemServicioComida" />
+  <xs:complexType name="ItemServicioComida">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Precio" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItemServicioComida" nillable="true" type="tns:ItemServicioComida" />
+  <xs:complexType name="Plato">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:ItemPlato" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Respuesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Plato" nillable="true" type="tns:Plato" />
+  <xs:complexType name="ItemPlato">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Disponible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoServicio" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItemPlato" nillable="true" type="tns:ItemPlato" />
+  <xs:complexType name="ListaPlatos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Platos" nillable="true" type="tns:ArrayOfItemPlato" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Respuesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaPlatos" nillable="true" type="tns:ListaPlatos" />
+  <xs:complexType name="ArrayOfItemPlato">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemPlato" nillable="true" type="tns:ItemPlato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItemPlato" nillable="true" type="tns:ArrayOfItemPlato" />
 </xs:schema>

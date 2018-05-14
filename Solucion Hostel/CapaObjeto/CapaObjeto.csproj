@@ -42,9 +42,14 @@
   <ItemGroup>
     <Compile Include="DetailOrdenCompra.cs" />
     <Compile Include="HeadOrdenCompra.cs" />
+    <Compile Include="ItemPlato.cs" />
     <Compile Include="ItemProducto.cs" />
+    <Compile Include="ItemServicioComida.cs" />
+    <Compile Include="ListaPlatos.cs" />
     <Compile Include="ListaProductos.cs" />
+    <Compile Include="ListaServicioComida.cs" />
     <Compile Include="PerfilCliente.cs" />
+    <Compile Include="Plato.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Sesion.cs" />
     <Compile Include="Respuesta.cs" />

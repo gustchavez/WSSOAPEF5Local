@@ -31,6 +31,21 @@ namespace CapaServicio
         ListaProductos ProductoRescatar();
 
         [OperationContract]
+        ListaServicioComida ServicioComidaRescatar();
+
+        [OperationContract]
+        Plato PlatoCrear(Plato entrada);
+
+        [OperationContract]
+        Plato PlatoActualizar(Plato entrada);
+
+        [OperationContract]
+        Plato PlatoEliminar(Plato entrada);
+
+        [OperationContract]
+        ListaPlatos PlatoRescatar();
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: agregue aquí sus operaciones de servicio
