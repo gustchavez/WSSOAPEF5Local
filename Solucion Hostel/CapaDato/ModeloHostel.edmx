@@ -1433,6 +1433,33 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="SP_ACTUALIZAR_PLATO1">
+            <Parameter Name="P_IN_CODIGO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="P_IN_DESCRIPCION" Mode="In" Type="String" />
+            <Parameter Name="P_IN_DISPONIBLE" Mode="In" Type="String" />
+            <Parameter Name="P_IN_SERVICIO_TIPO" Mode="In" Type="String" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREAR_PLATO1">
+            <Parameter Name="P_IN_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="P_IN_DESCRIPCION" Mode="In" Type="String" />
+            <Parameter Name="P_IN_DISPONIBLE" Mode="In" Type="String" />
+            <Parameter Name="P_IN_SERVICIO_TIPO" Mode="In" Type="String" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+            <Parameter Name="P_OUT_CODIGO" Mode="Out" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_ELIMINAR_PLATO1">
+            <Parameter Name="P_IN_CODIGO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_RESCATAR_PLATOS1">
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="CAMA">
           <Key>
@@ -1946,11 +1973,11 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_CREAR_PRODUCTO" FunctionName="Model.Store.SP_CREAR_PRODUCTO" />
           <FunctionImportMapping FunctionImportName="SP_ELIMINAR_PRODUCTO" FunctionName="Model.Store.SP_ELIMINAR_PRODUCTO" />
           <FunctionImportMapping FunctionImportName="SP_RESCATAR_PRODUCTOS" FunctionName="Model.Store.SP_RESCATAR_PRODUCTOS" />
-          <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_PLATO" FunctionName="Model.Store.SP_ACTUALIZAR_PLATO" />
-          <FunctionImportMapping FunctionImportName="SP_CREAR_PLATO" FunctionName="Model.Store.SP_CREAR_PLATO" />
-          <FunctionImportMapping FunctionImportName="SP_ELIMINAR_PLATO" FunctionName="Model.Store.SP_ELIMINAR_PLATO" />
-          <FunctionImportMapping FunctionImportName="SP_RESCATAR_PLATOS" FunctionName="Model.Store.SP_RESCATAR_PLATOS" />
-        </EntityContainerMapping>
+          <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_PLATO1" FunctionName="Model.Store.SP_ACTUALIZAR_PLATO" />
+          <FunctionImportMapping FunctionImportName="SP_CREAR_PLATO1" FunctionName="Model.Store.SP_CREAR_PLATO" />
+          <FunctionImportMapping FunctionImportName="SP_ELIMINAR_PLATO1" FunctionName="Model.Store.SP_ELIMINAR_PLATO" />
+          <FunctionImportMapping FunctionImportName="SP_RESCATAR_PLATOS1" FunctionName="Model.Store.SP_RESCATAR_PLATOS" />
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

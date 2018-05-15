@@ -6,39 +6,46 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link rel="stylesheet" type="text/css" href="scripts/productosEmpleado.css"/>
+	<script src="scripts/efectos.js"></script>
+	<script src="scripts/jquery.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
     
-        <table style="width:75%;">
+        <table class="auto-style1">
             <tr>
-                <td style="width:25%;">Codigo</td>
-                <td style="width:75%;"><asp:TextBox ID="txtCodigo" runat="server" TextMode="Number"></asp:TextBox></td>
+                <div class="Casilla2-1">
+                    <td><h4>Codigo</h4></td>
+                    <td><asp:TextBox ID="txtCodigo" runat="server" TextMode="Number" CssClass="CasillaPersona"></asp:TextBox></td>
+                </div>
             </tr>
             <tr>
-                <td style="width:25%;">Descripción</td>
-                <td style="width:75%;"><asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox></td>
+                <div class="Casilla2-1">
+                    <td>Descripción</td>
+                    <td><asp:TextBox ID="txtDescripcion" runat="server" CssClass="CasillaPersona"></asp:TextBox></td>
+                </div>
             </tr>
             <tr>
                 <td style="width:25%;">Precio</td>
-                <td style="width:75%;"><asp:TextBox ID="txtPrecio" runat="server" TextMode="Number"></asp:TextBox></td>
+                <td style="width:75%;"><asp:TextBox ID="txtPrecio" runat="server" TextMode="Number" CssClass="CasillaPersona"></asp:TextBox></td>
             </tr>
             <tr>
                 <td style="width:25%;">Stock</td>
-                <td style="width:75%;"><asp:TextBox ID="txtStock" runat="server" TextMode="Number"></asp:TextBox></td>
+                <td style="width:75%;"><asp:TextBox ID="txtStock" runat="server" TextMode="Number" CssClass="CasillaPersona"></asp:TextBox></td>
             </tr>
             <tr>
                 <td style="width:25%;">Stock Critico</td>
-                <td style="width:75%;"><asp:TextBox ID="txtStockCritico" runat="server" TextMode="Number"></asp:TextBox></td>
+                <td style="width:75%;"><asp:TextBox ID="txtStockCritico" runat="server" TextMode="Number" CssClass="CasillaPersona"></asp:TextBox></td>
             </tr>
             <tr>
                 <td style="width:25%;">Codigo Retorno</td>
-                <td style="width:75%;"><asp:TextBox ID="txtCodigoRetorno" runat="server" Enabled="False"></asp:TextBox></td>
+                <td style="width:75%;"><asp:TextBox ID="txtCodigoRetorno" runat="server" Enabled="False" CssClass="CasillaPersona"></asp:TextBox></td>
             </tr>
             <tr>
                 <td style="width:25%;">Glosa Retorno</td>
-                <td style="width:75%;"><asp:TextBox ID="txtGlosaRetorno" runat="server" Enabled="False" Width="387px"></asp:TextBox></td>
+                <td style="width:75%;"><asp:TextBox ID="txtGlosaRetorno" runat="server" Enabled="False" Width="387px" CssClass="CasillaPersona"></asp:TextBox></td>
             </tr>
             <tr>
                 <td style="width:25%;">&nbsp;</td>
@@ -48,6 +55,8 @@
                 </td>
             </tr>
         </table>    
+    
+        <br />
     
         Lista de Productos
         <asp:GridView ID="gwListaProductos" runat="server"></asp:GridView>

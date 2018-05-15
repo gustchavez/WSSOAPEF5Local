@@ -592,5 +592,65 @@ namespace CapaDato
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_RESCATAR_PLATOS", p_OUT_CODRET, p_OUT_GLSRET);
         }
+    
+        public virtual int SP_ACTUALIZAR_PLATO1(Nullable<decimal> p_IN_CODIGO, string p_IN_NOMBRE, string p_IN_DESCRIPCION, string p_IN_DISPONIBLE, string p_IN_SERVICIO_TIPO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
+                new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
+                new ObjectParameter("P_IN_CODIGO", typeof(decimal));
+    
+            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
+                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
+                new ObjectParameter("P_IN_NOMBRE", typeof(string));
+    
+            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
+                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
+                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
+    
+            var p_IN_DISPONIBLEParameter = p_IN_DISPONIBLE != null ?
+                new ObjectParameter("P_IN_DISPONIBLE", p_IN_DISPONIBLE) :
+                new ObjectParameter("P_IN_DISPONIBLE", typeof(string));
+    
+            var p_IN_SERVICIO_TIPOParameter = p_IN_SERVICIO_TIPO != null ?
+                new ObjectParameter("P_IN_SERVICIO_TIPO", p_IN_SERVICIO_TIPO) :
+                new ObjectParameter("P_IN_SERVICIO_TIPO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_PLATO1", p_IN_CODIGOParameter, p_IN_NOMBREParameter, p_IN_DESCRIPCIONParameter, p_IN_DISPONIBLEParameter, p_IN_SERVICIO_TIPOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_CREAR_PLATO1(string p_IN_NOMBRE, string p_IN_DESCRIPCION, string p_IN_DISPONIBLE, string p_IN_SERVICIO_TIPO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_CODIGO)
+        {
+            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
+                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
+                new ObjectParameter("P_IN_NOMBRE", typeof(string));
+    
+            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
+                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
+                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
+    
+            var p_IN_DISPONIBLEParameter = p_IN_DISPONIBLE != null ?
+                new ObjectParameter("P_IN_DISPONIBLE", p_IN_DISPONIBLE) :
+                new ObjectParameter("P_IN_DISPONIBLE", typeof(string));
+    
+            var p_IN_SERVICIO_TIPOParameter = p_IN_SERVICIO_TIPO != null ?
+                new ObjectParameter("P_IN_SERVICIO_TIPO", p_IN_SERVICIO_TIPO) :
+                new ObjectParameter("P_IN_SERVICIO_TIPO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_PLATO1", p_IN_NOMBREParameter, p_IN_DESCRIPCIONParameter, p_IN_DISPONIBLEParameter, p_IN_SERVICIO_TIPOParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_CODIGO);
+        }
+    
+        public virtual int SP_ELIMINAR_PLATO1(Nullable<decimal> p_IN_CODIGO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
+                new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
+                new ObjectParameter("P_IN_CODIGO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_PLATO1", p_IN_CODIGOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_RESCATAR_PLATOS1(ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_RESCATAR_PLATOS1", p_OUT_CODRET, p_OUT_GLSRET);
+        }
     }
 }

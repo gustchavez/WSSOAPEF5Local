@@ -128,8 +128,10 @@
     <Content Include="ingreso_cliente.aspx" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="scripts\efectos.js" />
     <Content Include="scripts\funciones.js" />
     <Content Include="scripts\jquery-3.3.1.min.js" />
+    <Content Include="scripts\productosEmpleado.css" />
     <Content Include="scrud_plato.aspx" />
     <Content Include="scrud_producto.aspx" />
     <Content Include="Service References\WSSoap\CapaWSPresentacion.WSSoap.CompositeType.datasource">
