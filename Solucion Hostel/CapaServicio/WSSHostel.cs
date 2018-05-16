@@ -133,8 +133,7 @@ namespace CapaServicio
 
             return x.LlamarSPRescatar();
         }
-
-
+        
         //Inicio Cama
         public ContenedorCama CamaCrear(ContenedorCama entrada)
         {
@@ -163,5 +162,12 @@ namespace CapaServicio
             return x.LlamarSPRescatar();
         }
         //Fin Cama
+
+        public ContenedorOrdenCompraCompleta OrdenCompraCompletaCrear(ContenedorOrdenCompraCompleta entrada)
+        {
+            CRUDOrdenCompraCompleta x = new CRUDOrdenCompraCompleta();
+            x.LlamarSPCrear(entrada);
+            return entrada;
+        }
     }
 }

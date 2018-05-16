@@ -140,6 +140,12 @@ namespace CapaWSPresentacion.WSSoap {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CamaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/CamaRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorCamas> CamaRescatarAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrearResponse")]
+        CapaObjeto.ContenedorOrdenCompraCompleta OrdenCompraCompletaCrear(CapaObjeto.ContenedorOrdenCompraCompleta entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrearResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenCompraCompleta> OrdenCompraCompletaCrearAsync(CapaObjeto.ContenedorOrdenCompraCompleta entrada);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -335,6 +341,14 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.ContenedorCamas> CamaRescatarAsync() {
             return base.Channel.CamaRescatarAsync();
+        }
+        
+        public CapaObjeto.ContenedorOrdenCompraCompleta OrdenCompraCompletaCrear(CapaObjeto.ContenedorOrdenCompraCompleta entrada) {
+            return base.Channel.OrdenCompraCompletaCrear(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenCompraCompleta> OrdenCompraCompletaCrearAsync(CapaObjeto.ContenedorOrdenCompraCompleta entrada) {
+            return base.Channel.OrdenCompraCompletaCrearAsync(entrada);
         }
     }
 }

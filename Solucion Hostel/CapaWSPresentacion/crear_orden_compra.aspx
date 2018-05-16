@@ -7,6 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <script type="text/javascript" src="scripts/jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        .auto-style1 {
+            width: 188px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -14,29 +19,29 @@
         <table id="tablaEncabezado" style="width: 75%;">
             <tr>
                 <th>Numero Orden</th>
-                <th>Fecha Recepción</th>
+                <th>Monto</th>
                 <th>Rut Cliente</th>
             </tr>
             <tr>
                 <td><asp:TextBox ID="txtNumeroOrden" runat="server"></asp:TextBox></td>
-                <td><asp:TextBox ID="txtFechaRecepcion" runat="server"></asp:TextBox></td>
+                <td class="auto-style1"><asp:TextBox ID="txtMonto" runat="server" TextMode="Number"></asp:TextBox></td>
                 <td><asp:TextBox ID="txtRutCliente" runat="server"></asp:TextBox></td>
             </tr>
         </table>
-        <input id="htmlbtnAgregar" type="button" value="Agregar Detalle" />
-        <table id="tablaDetalle" style="width: 75%;">
+        <table >
             <tr>
-                <th>Fecha Ingreso</th>
-                <th>Fecha Egreso</th>
-                <th>Observsación Cama</th>
+                <td style="width:25%;">Codigo Retorno</td>
+                <td style="width:75%;"><asp:TextBox ID="txtCodigoRetorno" runat="server" Enabled="False"></asp:TextBox></td>
             </tr>
             <tr>
-                <td><asp:TextBox ID="txtFechaIngreso" runat="server"></asp:TextBox></td>
-                <td><asp:TextBox ID="txtFechaEgreso" runat="server"></asp:TextBox></td>
-                <td><asp:TextBox ID="txtObservacionCama" runat="server"></asp:TextBox></td>
+                <td style="width:25%;">Glosa Retorno</td>
+                <td style="width:75%;"><asp:TextBox ID="txtGlosaRetorno" runat="server" Enabled="False" Width="387px"></asp:TextBox></td>
             </tr>
         </table>
         <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" Width="88px" style="height: 26px" OnClick="btnIngresar_Click" />
+        <br />
+        <br />
+        <br />
     </div>
     </form>
     <script src="scripts/funciones.js"></script>

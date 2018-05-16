@@ -31,13 +31,13 @@ namespace CapaWSPresentacion {
         protected global::System.Web.UI.WebControls.TextBox txtNumeroOrden;
         
         /// <summary>
-        /// Control txtFechaRecepcion.
+        /// Control txtMonto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFechaRecepcion;
+        protected global::System.Web.UI.WebControls.TextBox txtMonto;
         
         /// <summary>
         /// Control txtRutCliente.
@@ -49,31 +49,22 @@ namespace CapaWSPresentacion {
         protected global::System.Web.UI.WebControls.TextBox txtRutCliente;
         
         /// <summary>
-        /// Control txtFechaIngreso.
+        /// Control txtCodigoRetorno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFechaIngreso;
+        protected global::System.Web.UI.WebControls.TextBox txtCodigoRetorno;
         
         /// <summary>
-        /// Control txtFechaEgreso.
+        /// Control txtGlosaRetorno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFechaEgreso;
-        
-        /// <summary>
-        /// Control txtObservacionCama.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtObservacionCama;
+        protected global::System.Web.UI.WebControls.TextBox txtGlosaRetorno;
         
         /// <summary>
         /// Control btnIngresar.

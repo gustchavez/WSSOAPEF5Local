@@ -49,6 +49,7 @@
     <Compile Include="CRUDCiudad.cs" />
     <Compile Include="CRUDHabitacion.cs" />
     <Compile Include="CRUDOrdenCompraCompleta.cs" />
+    <Compile Include="CRUDOrdenPedidoCompleta.cs" />
     <Compile Include="CRUDPerfilUsuarioCliente.cs" />
     <Compile Include="CRUDPerfilUsuarioProveedor.cs" />
     <Compile Include="CRUDPlato.cs" />

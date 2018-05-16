@@ -20,7 +20,8 @@ namespace CapaServicio
 
         [OperationContract]
         ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorCrear(ContenedorPerfilUsuarioProveedor entrada);
-
+        
+        //Inicio Producto
         [OperationContract]
         ContenedorProducto ProductoCrear(ContenedorProducto entrada);
 
@@ -32,10 +33,12 @@ namespace CapaServicio
 
         [OperationContract]
         ContenedorProductos ProductoRescatar();
+        //Fin Producto
 
         [OperationContract]
         ContenedorServiciosComida ServicioComidaRescatar();
-
+        
+        //Inicio Plato
         [OperationContract]
         ContenedorPlato PlatoCrear(ContenedorPlato entrada);
 
@@ -47,6 +50,7 @@ namespace CapaServicio
 
         [OperationContract]
         ContenedorPlatos PlatoRescatar();
+        //Fin Plato
 
         //Inicio Habitacion
         [OperationContract]
@@ -78,5 +82,8 @@ namespace CapaServicio
         [OperationContract]
         ContenedorCamas CamaRescatar();
         //Fin Cama
+
+        [OperationContract]
+        ContenedorOrdenCompraCompleta OrdenCompraCompletaCrear(ContenedorOrdenCompraCompleta entrada);
     }
 }
