@@ -6,20 +6,18 @@ using System.Threading.Tasks;
 
 namespace CapaObjeto
 {
-    public class ItemServicioComida
+    public class Cliente
     {
-        public string Tipo { get; set; }
-        public decimal Precio { get; set; }
+        public string Rut { get; set; }
 
-        public ItemServicioComida()
+        public Cliente()
         {
             Init();
         }
 
         private void Init()
         {
-            this.Tipo = string.Empty;
-            this.Precio = decimal.MinValue;
+            this.Rut = string.Empty;
         }
     }
 }

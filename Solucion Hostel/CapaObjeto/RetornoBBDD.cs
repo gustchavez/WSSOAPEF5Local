@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CapaObjeto
 {
-    public class Respuesta
+    public class RetornoBBDD
     {
         public decimal Codigo { get; set; }
         public string Glosa { get; set; }
 
-        public Respuesta()
+        public RetornoBBDD()
         {
             Init();
         }

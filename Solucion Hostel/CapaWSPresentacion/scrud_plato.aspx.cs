@@ -16,11 +16,11 @@ namespace CapaWSPresentacion
             {
                 WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
                 //
-                ListaServicioComida m = new ListaServicioComida();
+                ContenedorServiciosComida m = new ContenedorServiciosComida();
 
                 m = x.ServicioComidaRescatar();
 
-                ddlServicioTipo.DataSource = m.ServiciosComida;
+                ddlServicioTipo.DataSource = m.Lista;
                 ddlServicioTipo.DataValueField = "Tipo";
                 ddlServicioTipo.DataTextField = "Tipo";
                 ddlServicioTipo.DataBind();
@@ -32,12 +32,12 @@ namespace CapaWSPresentacion
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
             //
-            ListaPlatos n = new ListaPlatos();
+            ContenedorPlatos n = new ContenedorPlatos();
 
             n = x.PlatoRescatar();
 
             gwListaPlatos.DataSource = null;
-            gwListaPlatos.DataSource = n.Platos;
+            gwListaPlatos.DataSource = n.Lista;
             gwListaPlatos.DataBind();
             
         }
@@ -46,7 +46,7 @@ namespace CapaWSPresentacion
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            Plato nPlato = new Plato();
+            ContenedorPlato nPlato = new ContenedorPlato();
 
             nPlato.Item.Nombre       = txtNombre.Text;
             nPlato.Item.Descripcion  = txtDescripcion.Text;
@@ -66,7 +66,7 @@ namespace CapaWSPresentacion
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            Plato aPlato = new Plato();
+            ContenedorPlato aPlato = new ContenedorPlato();
 
             aPlato.Item.Codigo       = decimal.Parse(txtCodigo.Text);
             aPlato.Item.Nombre       = txtNombre.Text;
@@ -87,7 +87,7 @@ namespace CapaWSPresentacion
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            Plato ePlato = new Plato();
+            ContenedorPlato ePlato = new ContenedorPlato();
 
             ePlato.Item.Codigo = decimal.Parse(txtCodigo.Text);
 

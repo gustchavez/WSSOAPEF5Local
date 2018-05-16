@@ -23,124 +23,141 @@ namespace CapaServicio
 
             return x.DatosLogin;
         }
-        public PerfilCliente CrearCliente(PerfilCliente value)
+
+        public ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(ContenedorPerfilUsuarioCliente entrada)
         {
-            CrearPerfilCliente x = new CrearPerfilCliente();
-            x.DatoCliente.RutEmpresa = value.RutEmpresa;
-            x.DatoCliente.RazonSocial = value.RazonSocial;
-            x.DatoCliente.Giro = value.Giro;
-            x.DatoCliente.EmailEmpresa = value.EmailEmpresa;
-            x.DatoCliente.TelefonoEmpresa = value.TelefonoEmpresa;
-            x.DatoCliente.Logo = value.Logo;
-            x.DatoCliente.RutPersona = value.RutPersona;
-            x.DatoCliente.Nombre = value.Nombre;
-            x.DatoCliente.Apellido = value.Apellido;
-            x.DatoCliente.Nacimiento = value.Nacimiento;
-            x.DatoCliente.EmailPersona = value.EmailPersona;
-            x.DatoCliente.TelofonoPersona = value.TelofonoPersona;
-            x.DatoCliente.Calle = value.Calle;
-            x.DatoCliente.Numero = value.Numero;
-            x.DatoCliente.Comuna = value.Comuna;
-            x.DatoCliente.CodPostal = value.CodPostal;
-            x.DatoCliente.NombreCiudad = value.NombreCiudad;
-            x.DatoCliente.CodPais = value.CodPais;
-            x.DatoCliente.Clave = value.Clave;
-
-            x.LlamarSP();
-
-            return x.DatoCliente;
-        }
-
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
-        }
-
-        public Producto ProductoCrear(Producto entrada)
-        {
-            ScrudProducto x = new ScrudProducto();
+            CRUDPerfilUsuarioCliente x = new CRUDPerfilUsuarioCliente();
 
             x.LlamarSPCrear(entrada);
 
             return entrada;
         }
 
-        public Producto ProductoActualizar(Producto entrada)
+        public ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorCrear(ContenedorPerfilUsuarioProveedor entrada)
         {
-            ScrudProducto x = new ScrudProducto();
+            CRUDPerfilUsuarioProveedor x = new CRUDPerfilUsuarioProveedor();
 
-            x.LlamarSPActualizar(entrada);
+            x.LlamarSPCrear(entrada);
 
             return entrada;
         }
-
-        public Producto ProductoEliminar(Producto entrada)
+        public ContenedorProducto ProductoCrear(ContenedorProducto entrada)
         {
-            ScrudProducto x = new ScrudProducto();
-
-            x.LlamarSPEliminar(entrada);
-
-            return entrada;
-        }
-
-        public ListaProductos ProductoRescatar()
-        {
-
-            ScrudProducto x = new ScrudProducto();
-
-            return x.LlamarSPRescatar();
-        }
-
-        public ListaServicioComida ServicioComidaRescatar()
-        {
-
-            ScrudServicioComida x = new ScrudServicioComida();
-
-            return x.LlamarSPRescatar();
-        }
-
-        public Plato PlatoCrear(Plato entrada)
-        {
-            ScrudPlato x = new ScrudPlato();
+            CRUDProducto x = new CRUDProducto();
 
             x.LlamarSPCrear(entrada);
 
             return entrada;
         }
 
-        public Plato PlatoActualizar(Plato entrada)
+        public ContenedorProducto ProductoActualizar(ContenedorProducto entrada)
         {
-            ScrudPlato x = new ScrudPlato();
+            CRUDProducto x = new CRUDProducto();
 
             x.LlamarSPActualizar(entrada);
 
             return entrada;
         }
 
-        public Plato PlatoEliminar(Plato entrada)
+        public ContenedorProducto ProductoEliminar(ContenedorProducto entrada)
         {
-            ScrudPlato x = new ScrudPlato();
+            CRUDProducto x = new CRUDProducto();
 
             x.LlamarSPEliminar(entrada);
 
             return entrada;
         }
 
-        public ListaPlatos PlatoRescatar()
+        public ContenedorProductos ProductoRescatar()
         {
 
-            ScrudPlato x = new ScrudPlato();
+            CRUDProducto x = new CRUDProducto();
 
             return x.LlamarSPRescatar();
         }
 
+        public ContenedorServiciosComida ServicioComidaRescatar()
+        {
+
+            CRUDServicioComida x = new CRUDServicioComida();
+
+            return x.LlamarSPRescatar();
+        }
+
+        public ContenedorPlato PlatoCrear(ContenedorPlato entrada)
+        {
+            CRUDPlato x = new CRUDPlato();
+
+            x.LlamarSPCrear(entrada);
+
+            return entrada;
+        }
+
+        public ContenedorPlato PlatoActualizar(ContenedorPlato entrada)
+        {
+            CRUDPlato x = new CRUDPlato();
+
+            x.LlamarSPActualizar(entrada);
+
+            return entrada;
+        }
+
+        public ContenedorPlato PlatoEliminar(ContenedorPlato entrada)
+        {
+            CRUDPlato x = new CRUDPlato();
+
+            x.LlamarSPEliminar(entrada);
+
+            return entrada;
+        }
+
+        public ContenedorPlatos PlatoRescatar()
+        {
+
+            CRUDPlato x = new CRUDPlato();
+
+            return x.LlamarSPRescatar();
+        }
+
+        public ContenedorHabitacion HabitacionCrear(ContenedorHabitacion entrada)
+        {
+            CRUDHabitacion x = new CRUDHabitacion();
+
+            x.LlamarSPCrear(entrada);
+
+            return entrada;
+        }
+
+        public ContenedorHabitacion HabitacionActualizar(ContenedorHabitacion entrada)
+        {
+            CRUDHabitacion x = new CRUDHabitacion();
+
+            x.LlamarSPActualizar(entrada);
+
+            return entrada;
+        }
+
+        public ContenedorHabitacion HabitacionEliminar(ContenedorHabitacion entrada)
+        {
+            CRUDHabitacion x = new CRUDHabitacion();
+
+            x.LlamarSPEliminar(entrada);
+
+            return entrada;
+        }
+
+        public ContenedorHabitaciones HabitacionRescatar()
+        {
+            CRUDHabitacion x = new CRUDHabitacion();
+            return x.LlamarSPRescatar();
+        }
+
+        public ContenedorCiudades CiudadRescatar()
+        {
+
+            CRUDCiudad x = new CRUDCiudad();
+
+            return x.LlamarSPRescatar();
+        }
     }
 }

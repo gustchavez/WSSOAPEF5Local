@@ -7,28 +7,28 @@ using CapaObjeto;
 
 namespace CapaNegocio
 {
-    public class ScrudServicioComida
+    public class CRUDServicioComida
     {
 
-        public ScrudServicioComida()
+        public CRUDServicioComida()
         {
 
         }
 
 
-        public ListaServicioComida LlamarSPRescatar()
+        public ContenedorServiciosComida LlamarSPRescatar()
         {
-            ListaServicioComida LServiciosComida = new ListaServicioComida();
+            ContenedorServiciosComida LServiciosComida = new ContenedorServiciosComida();
             try
             {
                 var collection = CommonBD.Conexion.SERVICIO_COMIDA.OrderBy(p => p.TIPO).ToList();
 
                 foreach (var item in collection)
                 {
-                    ItemServicioComida n = new ItemServicioComida();
+                    ServicioComida n = new ServicioComida();
                     n.Tipo = item.TIPO;
                     n.Precio = (decimal)item.PRECIO;
-                    LServiciosComida.ServiciosComida.Add(n);
+                    LServiciosComida.Lista.Add(n);
                 }
                 LServiciosComida.Retorno.Codigo = 0;
                 LServiciosComida.Retorno.Glosa = "OK";

@@ -19,32 +19,32 @@ namespace CapaWSPresentacion
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            PerfilCliente nCliente = new PerfilCliente();
+            ContenedorPerfilUsuarioCliente n = new ContenedorPerfilUsuarioCliente();
 
-            nCliente.RutEmpresa        = txtRutEmpresa.Text;
-            nCliente.RazonSocial       = txtRazonSocial.Text;
-            nCliente.Giro              = txtGiro.Text;
-            nCliente.EmailEmpresa      = txtCorreoElectronico.Text;
-            nCliente.TelefonoEmpresa   = txtTelefonoEmpresa.Text;
-            nCliente.CodPais           = 56;
-            nCliente.CodPostal         = txtCodigoPostal.Text;
-            nCliente.NombreCiudad      = txtNombreCiudad.Text;
-            nCliente.Comuna            = txtComuna.Text;
-            nCliente.Calle             = txtCalle.Text;
-            nCliente.Numero            = decimal.Parse(txtNumero.Text);
-            nCliente.Logo              = txtLogo.Text;
-            nCliente.RutPersona        = txtRutEmpleado.Text;
-            nCliente.Nombre            = txtNombreEmpleado.Text;
-            nCliente.Apellido          = txtxApellidoEmpleado.Text;
-            nCliente.Nacimiento        = DateTime.Parse(txtFechaNacimiento.Text);
-            nCliente.EmailPersona      = txtCorreoEmpleado.Text;
-            nCliente.TelofonoPersona   = txtTelefonoEmpleado.Text;
-            nCliente.Clave             = txtConstrasena.Text;
+            n.Item.Cliente.Rut                             = txtRutEmpresa.Text;
+            n.Item.PerfilUsuario.Empresa.RazonSocial       = txtRazonSocial.Text;
+            n.Item.PerfilUsuario.Empresa.Rubro             = txtGiro.Text;
+            n.Item.PerfilUsuario.Empresa.Email             = txtCorreoElectronico.Text;
+            n.Item.PerfilUsuario.Empresa.Telefono          = txtTelefonoEmpresa.Text;
+            n.Item.PerfilUsuario.Direccion.CodPais         = 56;
+            n.Item.PerfilUsuario.Direccion.CodPostal       = txtCodigoPostal.Text;
+            n.Item.PerfilUsuario.Direccion.NombreCiudad    = txtNombreCiudad.Text;
+            n.Item.PerfilUsuario.Direccion.Comuna          = txtComuna.Text;
+            n.Item.PerfilUsuario.Direccion.Calle           = txtCalle.Text;
+            n.Item.PerfilUsuario.Direccion.Numero          = int.Parse(txtNumero.Text);
+            n.Item.PerfilUsuario.Empresa.Logo              = txtLogo.Text;
+            n.Item.PerfilUsuario.Persona.Rut               = txtRutEmpleado.Text;
+            n.Item.PerfilUsuario.Persona.Nombre            = txtNombreEmpleado.Text;
+            n.Item.PerfilUsuario.Persona.Apellido          = txtxApellidoEmpleado.Text;
+            n.Item.PerfilUsuario.Persona.FechaNacimiento   = DateTime.Parse(txtFechaNacimiento.Text);
+            n.Item.PerfilUsuario.Persona.Email             = txtCorreoEmpleado.Text;
+            n.Item.PerfilUsuario.Persona.Telefono          = txtTelefonoEmpleado.Text;
+            n.Item.PerfilUsuario.Usuario.Clave             = txtConstrasena.Text;
 
-            nCliente = x.CrearCliente(nCliente);
+            n = x.PerfilUsuarioClienteCrear(n);
             
-            txtCodigoRetorno.Text = nCliente.Retorno.Codigo.ToString();
-            txtGlosaRetorno.Text = nCliente.Retorno.Glosa;
+            txtCodigoRetorno.Text = n.Retorno.Codigo.ToString();
+            txtGlosaRetorno.Text  = n.Retorno.Glosa;
         }
     }
 }

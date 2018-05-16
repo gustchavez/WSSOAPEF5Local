@@ -16,61 +16,53 @@ namespace CapaServicio
         Sesion ValidarLogin(string usuario, string clave); //NegLogin entrada);
 
         [OperationContract]
-        PerfilCliente CrearCliente(PerfilCliente entrada);
+        ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(ContenedorPerfilUsuarioCliente entrada);
 
         [OperationContract]
-        Producto ProductoCrear(Producto entrada);
+        ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorCrear(ContenedorPerfilUsuarioProveedor entrada);
 
         [OperationContract]
-        Producto ProductoActualizar(Producto entrada);
+        ContenedorProducto ProductoCrear(ContenedorProducto entrada);
 
         [OperationContract]
-        Producto ProductoEliminar(Producto entrada);
+        ContenedorProducto ProductoActualizar(ContenedorProducto entrada);
 
         [OperationContract]
-        ListaProductos ProductoRescatar();
+        ContenedorProducto ProductoEliminar(ContenedorProducto entrada);
 
         [OperationContract]
-        ListaServicioComida ServicioComidaRescatar();
+        ContenedorProductos ProductoRescatar();
 
         [OperationContract]
-        Plato PlatoCrear(Plato entrada);
+        ContenedorServiciosComida ServicioComidaRescatar();
 
         [OperationContract]
-        Plato PlatoActualizar(Plato entrada);
+        ContenedorPlato PlatoCrear(ContenedorPlato entrada);
 
         [OperationContract]
-        Plato PlatoEliminar(Plato entrada);
+        ContenedorPlato PlatoActualizar(ContenedorPlato entrada);
 
         [OperationContract]
-        ListaPlatos PlatoRescatar();
+        ContenedorPlato PlatoEliminar(ContenedorPlato entrada);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        ContenedorPlatos PlatoRescatar();
 
-        // TODO: agregue aquí sus operaciones de servicio
-    }
+        [OperationContract]
+        ContenedorHabitacion HabitacionCrear(ContenedorHabitacion entrada);
 
-    // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
-    // Puede agregar archivos XSD al proyecto. Después de compilar el proyecto, puede usar directamente los tipos de datos definidos aquí, con el espacio de nombres "CapaServicio.ContractType".
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
+        [OperationContract]
+        ContenedorHabitacion HabitacionActualizar(ContenedorHabitacion entrada);
 
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
+        [OperationContract]
+        ContenedorHabitacion HabitacionEliminar(ContenedorHabitacion entrada);
 
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+        [OperationContract]
+        ContenedorHabitaciones HabitacionRescatar();
+
+        [OperationContract]
+        ContenedorCiudades CiudadRescatar();
+
+
     }
 }

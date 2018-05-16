@@ -8,20 +8,22 @@ using System.Data.Objects;
 
 namespace CapaNegocio
 {
-    public class ScrudProducto
+    public class CRUDProducto
     {
-        public ScrudProducto()
+        public CRUDProducto()
         {
 
         }
 
-        public Producto LlamarSPCrear(Producto nProducto)
+        public ContenedorProducto LlamarSPCrear(ContenedorProducto nProducto)
         {
             var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
             var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
             var p_OUT_CODIGO = new ObjectParameter("P_OUT_CODIGO", typeof(decimal));
 
-            CommonBD.Conexion.SP_CREAR_PRODUCTO
+            CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+            conex.SP_CREAR_PRODUCTO
                 (nProducto.Item.Descripcion
                 , nProducto.Item.Precio
                 , nProducto.Item.Stock
@@ -47,12 +49,14 @@ namespace CapaNegocio
             return nProducto;
 
         }
-        public Producto LlamarSPActualizar(Producto aProducto)
+        public ContenedorProducto LlamarSPActualizar(ContenedorProducto aProducto)
         {
             var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
             var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
 
-            CommonBD.Conexion.SP_ACTUALIZAR_PRODUCTO
+            CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+            conex.SP_ACTUALIZAR_PRODUCTO
                 ( aProducto.Item.Codigo
                 , aProducto.Item.Descripcion
                 , aProducto.Item.Precio
@@ -76,12 +80,14 @@ namespace CapaNegocio
             return aProducto;
         }
 
-        public Producto LlamarSPEliminar(Producto eProducto)
+        public ContenedorProducto LlamarSPEliminar(ContenedorProducto eProducto)
         {
             var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
             var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
 
-            CommonBD.Conexion.SP_ELIMINAR_PRODUCTO
+            CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+            conex.SP_ELIMINAR_PRODUCTO
                 ( eProducto.Item.Codigo
                 , p_OUT_CODRET
                 , p_OUT_GLSRET
@@ -101,22 +107,24 @@ namespace CapaNegocio
             return eProducto;
         }
 
-        public ListaProductos LlamarSPRescatar()
+        public ContenedorProductos LlamarSPRescatar()
         {
-            ListaProductos LProductos = new ListaProductos();
+            ContenedorProductos LProductos = new ContenedorProductos();
             try
             {
-                var collection = CommonBD.Conexion.PRODUCTO.OrderBy(p => p.DESCRIPCION).ToList();
+                CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                var collection = conex.PRODUCTO.OrderBy(p => p.DESCRIPCION).ToList();
 
                 foreach (var item in collection)
                 {
-                    ItemProducto n = new ItemProducto();
+                    Producto n = new Producto();
                     n.Codigo = item.CODIGO;
                     n.Descripcion = item.DESCRIPCION;
                     n.Precio = item.PRECIO;
                     n.Stock = item.STOCK;
                     n.StockCritico = item.STOCK_CRITICO;
-                    LProductos.Productos.Add(n);
+                    LProductos.Lista.Add(n);
                 }
                 LProductos.Retorno.Codigo = 0;
                 LProductos.Retorno.Glosa = "OK";

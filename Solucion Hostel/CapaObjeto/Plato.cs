@@ -8,9 +8,11 @@ namespace CapaObjeto
 {
     public class Plato
     {
-        public ItemPlato Item { get; set; }
-
-        public Respuesta Retorno { get; set; }
+        public decimal Codigo { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public string Disponible { get; set; }
+        public string TipoServicio { get; set; }
 
         public Plato()
         {
@@ -19,9 +21,13 @@ namespace CapaObjeto
 
         private void Init()
         {
-            this.Item = new ItemPlato();
-            this.Retorno = new Respuesta();
+            this.Codigo       = decimal.MinValue;
+            this.Nombre       = string.Empty;
+            this.Descripcion  = string.Empty;
+            this.Disponible   = string.Empty;
+            this.TipoServicio = string.Empty;
         }
+
 
     }
 }

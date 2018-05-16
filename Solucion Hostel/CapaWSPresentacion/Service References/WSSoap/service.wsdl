@@ -5,7 +5,6 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/CapaObjeto" />
-      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CapaServicio" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IWSSHostel_ValidarLogin_InputMessage">
@@ -14,11 +13,17 @@
   <wsdl:message name="IWSSHostel_ValidarLogin_OutputMessage">
     <wsdl:part name="parameters" element="tns:ValidarLoginResponse" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_CrearCliente_InputMessage">
-    <wsdl:part name="parameters" element="tns:CrearCliente" />
+  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteCrear" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_CrearCliente_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CrearClienteResponse" />
+  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorCrearResponse" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_ProductoCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:ProductoCrear" />
@@ -74,20 +79,48 @@
   <wsdl:message name="IWSSHostel_PlatoRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:PlatoRescatarResponse" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_GetDataUsingDataContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  <wsdl:message name="IWSSHostel_HabitacionCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionCrear" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_GetDataUsingDataContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  <wsdl:message name="IWSSHostel_HabitacionCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionEliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionEliminar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionEliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CiudadRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CiudadRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CiudadRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CiudadRescatarResponse" />
   </wsdl:message>
   <wsdl:portType name="IWSSHostel">
     <wsdl:operation name="ValidarLogin">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ValidarLogin" message="tns:IWSSHostel_ValidarLogin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ValidarLoginResponse" message="tns:IWSSHostel_ValidarLogin_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CrearCliente">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CrearCliente" message="tns:IWSSHostel_CrearCliente_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/CrearClienteResponse" message="tns:IWSSHostel_CrearCliente_OutputMessage" />
+    <wsdl:operation name="PerfilUsuarioClienteCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear" message="tns:IWSSHostel_PerfilUsuarioClienteCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrearResponse" message="tns:IWSSHostel_PerfilUsuarioClienteCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioProveedorCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrear" message="tns:IWSSHostel_PerfilUsuarioProveedorCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrearResponse" message="tns:IWSSHostel_PerfilUsuarioProveedorCrear_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ProductoCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProductoCrear" message="tns:IWSSHostel_ProductoCrear_InputMessage" />
@@ -125,9 +158,25 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PlatoRescatar" message="tns:IWSSHostel_PlatoRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PlatoRescatarResponse" message="tns:IWSSHostel_PlatoRescatar_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/GetDataUsingDataContract" message="tns:IWSSHostel_GetDataUsingDataContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/GetDataUsingDataContractResponse" message="tns:IWSSHostel_GetDataUsingDataContract_OutputMessage" />
+    <wsdl:operation name="HabitacionCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionCrear" message="tns:IWSSHostel_HabitacionCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionCrearResponse" message="tns:IWSSHostel_HabitacionCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionActualizar" message="tns:IWSSHostel_HabitacionActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionActualizarResponse" message="tns:IWSSHostel_HabitacionActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionEliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionEliminar" message="tns:IWSSHostel_HabitacionEliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionEliminarResponse" message="tns:IWSSHostel_HabitacionEliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionRescatar" message="tns:IWSSHostel_HabitacionRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionRescatarResponse" message="tns:IWSSHostel_HabitacionRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CiudadRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CiudadRescatar" message="tns:IWSSHostel_CiudadRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/CiudadRescatarResponse" message="tns:IWSSHostel_CiudadRescatar_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWSSHostel" type="tns:IWSSHostel">
@@ -141,8 +190,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CrearCliente">
-      <soap:operation soapAction="http://tempuri.org/IWSSHostel/CrearCliente" style="document" />
+    <wsdl:operation name="PerfilUsuarioClienteCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioProveedorCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrear" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -231,8 +289,44 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <soap:operation soapAction="http://tempuri.org/IWSSHostel/GetDataUsingDataContract" style="document" />
+    <wsdl:operation name="HabitacionCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/HabitacionCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/HabitacionActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionEliminar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/HabitacionEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/HabitacionRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CiudadRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/CiudadRescatar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -8,20 +8,22 @@ using System.Data.Objects;
 
 namespace CapaNegocio
 {
-    public class ScrudPlato
+    public class CRUDPlato
     {
-        public ScrudPlato()
+        public CRUDPlato()
         {
 
         }
 
-        public Plato LlamarSPCrear(Plato nPlato)
+        public ContenedorPlato LlamarSPCrear(ContenedorPlato nPlato)
         {
             var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
             var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
             var p_OUT_CODIGO = new ObjectParameter("P_OUT_CODIGO", typeof(decimal));
 
-            CommonBD.Conexion.SP_CREAR_PLATO
+            CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+            conex.SP_CREAR_PLATO
                 ( nPlato.Item.Nombre
                 , nPlato.Item.Descripcion
                 , nPlato.Item.Disponible
@@ -47,12 +49,14 @@ namespace CapaNegocio
             return nPlato;
 
         }
-        public Plato LlamarSPActualizar(Plato aPlato)
+        public ContenedorPlato LlamarSPActualizar(ContenedorPlato aPlato)
         {
             var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
             var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
 
-            CommonBD.Conexion.SP_ACTUALIZAR_PLATO
+            CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+            conex.SP_ACTUALIZAR_PLATO
                 ( aPlato.Item.Codigo
                 , aPlato.Item.Nombre
                 , aPlato.Item.Descripcion
@@ -76,12 +80,14 @@ namespace CapaNegocio
             return aPlato;
         }
 
-        public Plato LlamarSPEliminar(Plato ePlato)
+        public ContenedorPlato LlamarSPEliminar(ContenedorPlato ePlato)
         {
             var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
             var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
 
-            CommonBD.Conexion.SP_ELIMINAR_PLATO
+            CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+            conex.SP_ELIMINAR_PLATO
                 (ePlato.Item.Codigo
                 , p_OUT_CODRET
                 , p_OUT_GLSRET
@@ -101,22 +107,24 @@ namespace CapaNegocio
             return ePlato;
         }
 
-        public ListaPlatos LlamarSPRescatar()
+        public ContenedorPlatos LlamarSPRescatar()
         {
-            ListaPlatos LPlatos = new ListaPlatos();
+            ContenedorPlatos LPlatos = new ContenedorPlatos();
             try
             {
-                var collection = CommonBD.Conexion.PLATO.OrderBy(p => p.NOMBRE).ToList();
+                CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                var collection = conex.PLATO.OrderBy(p => p.NOMBRE).ToList();
 
                 foreach (var item in collection)
                 {
-                    ItemPlato n = new ItemPlato();
+                    Plato n = new Plato();
                     n.Codigo = item.CODIGO;
                     n.Nombre = item.NOMBRE;
                     n.Descripcion = item.DESCRIPCION;
                     n.Disponible = item.DISPONIBLE;
                     n.TipoServicio = item.SERVICIO_TIPO;
-                    LPlatos.Platos.Add(n);
+                    LPlatos.Lista.Add(n);
                 }
                 LPlatos.Retorno.Codigo = 0;
                 LPlatos.Retorno.Glosa = "OK";

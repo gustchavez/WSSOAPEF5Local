@@ -40,20 +40,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DetailOrdenCompra.cs" />
-    <Compile Include="HeadOrdenCompra.cs" />
-    <Compile Include="ItemPlato.cs" />
-    <Compile Include="ItemProducto.cs" />
-    <Compile Include="ItemServicioComida.cs" />
-    <Compile Include="ListaPlatos.cs" />
-    <Compile Include="ListaProductos.cs" />
-    <Compile Include="ListaServicioComida.cs" />
-    <Compile Include="PerfilCliente.cs" />
+    <Compile Include="Alojamiento.cs" />
+    <Compile Include="Ciudad.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Comida.cs" />
+    <Compile Include="ContenedorCiudades.cs" />
+    <Compile Include="ContenedorHabitacion.cs" />
+    <Compile Include="ContenedorHabitaciones.cs" />
+    <Compile Include="ContenedorOrdenCompraCompleta.cs" />
+    <Compile Include="ContenedorOrdenCompraDetalle.cs" />
+    <Compile Include="ContenedorOrdenCompra.cs" />
+    <Compile Include="ContenedorPerfilUsuarioCliente.cs" />
+    <Compile Include="ContenedorPerfilUsuarioProveedor.cs" />
+    <Compile Include="Direccion.cs" />
+    <Compile Include="Empresa.cs" />
+    <Compile Include="Habitacion.cs" />
+    <Compile Include="OrdenCompra.cs" />
+    <Compile Include="OrdenCompraCompleta.cs" />
+    <Compile Include="OrdenCompraDetalle.cs" />
+    <Compile Include="PerfilUsuario.cs" />
+    <Compile Include="PerfilUsuarioCliente.cs" />
+    <Compile Include="PerfilUsuarioProveedor.cs" />
+    <Compile Include="Persona.cs" />
     <Compile Include="Plato.cs" />
     <Compile Include="Producto.cs" />
+    <Compile Include="Proveedor.cs" />
+    <Compile Include="ServicioComida.cs" />
+    <Compile Include="ContenedorPlatos.cs" />
+    <Compile Include="ContenedorProductos.cs" />
+    <Compile Include="ContenedorServiciosComida.cs" />
+    <Compile Include="ContenedorPlato.cs" />
+    <Compile Include="ContenedorProducto.cs" />
     <Compile Include="Sesion.cs" />
-    <Compile Include="Respuesta.cs" />
+    <Compile Include="RetornoBBDD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

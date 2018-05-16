@@ -45,11 +45,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonBD.cs" />
-    <Compile Include="CrearOrdenCompra.cs" />
-    <Compile Include="CrearPerfilCliente.cs" />
-    <Compile Include="ScrudPlato.cs" />
-    <Compile Include="ScrudProducto.cs" />
-    <Compile Include="ScrudServicioComida.cs" />
+    <Compile Include="CRUDCiudad.cs" />
+    <Compile Include="CRUDHabitacion.cs" />
+    <Compile Include="CRUDOrdenCompraCompleta.cs" />
+    <Compile Include="CRUDPerfilUsuarioCliente.cs" />
+    <Compile Include="CRUDPerfilUsuarioProveedor.cs" />
+    <Compile Include="CRUDPlato.cs" />
+    <Compile Include="CRUDProducto.cs" />
+    <Compile Include="CRUDServicioComida.cs" />
     <Compile Include="ValidarLoginUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

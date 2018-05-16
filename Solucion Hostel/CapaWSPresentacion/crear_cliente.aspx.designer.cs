@@ -85,6 +85,15 @@ namespace CapaWSPresentacion {
         protected global::System.Web.UI.WebControls.TextBox txtNombreCiudad;
         
         /// <summary>
+        /// Control ddlServicioTipo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlServicioTipo;
+        
+        /// <summary>
         /// Control txtComuna.
         /// </summary>
         /// <remarks>

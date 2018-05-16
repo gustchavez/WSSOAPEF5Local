@@ -8,9 +8,11 @@ namespace CapaObjeto
 {
     public class Producto
     {
-        public ItemProducto Item { get; set; }
-
-        public Respuesta Retorno { get; set; }
+        public decimal Codigo { get; set; }
+        public string Descripcion { get; set; }
+        public decimal Precio { get; set; }
+        public decimal Stock { get; set; }
+        public decimal StockCritico { get; set; }
 
         public Producto()
         {
@@ -19,8 +21,11 @@ namespace CapaObjeto
 
         private void Init()
         {
-            this.Item = new ItemProducto();
-            this.Retorno = new Respuesta();
+            this.Codigo = decimal.MinValue;
+            this.Descripcion = string.Empty;
+            this.Precio = decimal.MinValue;
+            this.Stock = decimal.MinValue;
+            this.StockCritico = decimal.MinValue;
         }
     }
 }

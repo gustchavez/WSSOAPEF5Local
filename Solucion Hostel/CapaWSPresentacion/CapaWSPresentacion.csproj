@@ -106,9 +106,16 @@
     <Content Include="Properties\DataSources\CapaObjeto.ListaPlatos.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ListaServicioComida.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.Plato.datasource" />
-    <None Include="Service References\WSSoap\CapaServicio.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioCliente.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorPlato.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorPlatos.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorProducto.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorProductos.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorServiciosComida.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorHabitacion.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorHabitaciones.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioProveedor.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorCiudades.datasource" />
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>
@@ -134,9 +141,6 @@
     <Content Include="scripts\productosEmpleado.css" />
     <Content Include="scrud_plato.aspx" />
     <Content Include="scrud_producto.aspx" />
-    <Content Include="Service References\WSSoap\CapaWSPresentacion.WSSoap.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Properties\DataSources\CapaObjeto.NegCliente.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.NegLogin.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.PerfilCliente.datasource" />
