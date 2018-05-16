@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonBD.cs" />
+    <Compile Include="CRUDCama.cs" />
     <Compile Include="CRUDCiudad.cs" />
     <Compile Include="CRUDHabitacion.cs" />
     <Compile Include="CRUDOrdenCompraCompleta.cs" />

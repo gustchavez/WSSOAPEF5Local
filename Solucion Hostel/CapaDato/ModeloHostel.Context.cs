@@ -652,5 +652,57 @@ namespace CapaDato
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_RESCATAR_HABITACIONES", p_OUT_CODRET, p_OUT_GLSRET);
         }
+    
+        public virtual int SP_ACTUALIZAR_CAMA(Nullable<decimal> p_IN_CODIGO, string p_IN_DESCRIPCION, string p_IN_DISPONIBLE, Nullable<decimal> p_IN_CODIGO_HABITACION, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
+                new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
+                new ObjectParameter("P_IN_CODIGO", typeof(decimal));
+    
+            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
+                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
+                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
+    
+            var p_IN_DISPONIBLEParameter = p_IN_DISPONIBLE != null ?
+                new ObjectParameter("P_IN_DISPONIBLE", p_IN_DISPONIBLE) :
+                new ObjectParameter("P_IN_DISPONIBLE", typeof(string));
+    
+            var p_IN_CODIGO_HABITACIONParameter = p_IN_CODIGO_HABITACION.HasValue ?
+                new ObjectParameter("P_IN_CODIGO_HABITACION", p_IN_CODIGO_HABITACION) :
+                new ObjectParameter("P_IN_CODIGO_HABITACION", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_CAMA", p_IN_CODIGOParameter, p_IN_DESCRIPCIONParameter, p_IN_DISPONIBLEParameter, p_IN_CODIGO_HABITACIONParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_CREAR_CAMA(string p_IN_DESCRIPCION, string p_IN_DISPONIBLE, Nullable<decimal> p_IN_CODIGO_HABITACION, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_CODIGO)
+        {
+            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
+                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
+                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
+    
+            var p_IN_DISPONIBLEParameter = p_IN_DISPONIBLE != null ?
+                new ObjectParameter("P_IN_DISPONIBLE", p_IN_DISPONIBLE) :
+                new ObjectParameter("P_IN_DISPONIBLE", typeof(string));
+    
+            var p_IN_CODIGO_HABITACIONParameter = p_IN_CODIGO_HABITACION.HasValue ?
+                new ObjectParameter("P_IN_CODIGO_HABITACION", p_IN_CODIGO_HABITACION) :
+                new ObjectParameter("P_IN_CODIGO_HABITACION", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_CAMA", p_IN_DESCRIPCIONParameter, p_IN_DISPONIBLEParameter, p_IN_CODIGO_HABITACIONParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_CODIGO);
+        }
+    
+        public virtual int SP_ELIMINAR_CAMA(Nullable<decimal> p_IN_CODIGO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
+                new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
+                new ObjectParameter("P_IN_CODIGO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_CAMA", p_IN_CODIGOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_RESCATAR_CAMAS(ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_RESCATAR_CAMAS", p_OUT_CODRET, p_OUT_GLSRET);
+        }
     }
 }

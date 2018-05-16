@@ -527,6 +527,14 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="SP_ACTUALIZAR_CAMA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+          <Parameter Name="P_IN_CODIGO" Type="number" Mode="In" />
+          <Parameter Name="P_IN_DESCRIPCION" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_DISPONIBLE" Type="char" Mode="In" />
+          <Parameter Name="P_IN_CODIGO_HABITACION" Type="number" Mode="In" />
+          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
+          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+        </Function>
         <Function Name="SP_ACTUALIZAR_ENC_PEDIDO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
           <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
           <Parameter Name="P_IN_MONTO" Type="number" Mode="In" />
@@ -582,6 +590,14 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_IN_CLAVE" Type="varchar2" Mode="In" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="SP_CREAR_CAMA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+          <Parameter Name="P_IN_DESCRIPCION" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_DISPONIBLE" Type="char" Mode="In" />
+          <Parameter Name="P_IN_CODIGO_HABITACION" Type="number" Mode="In" />
+          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
+          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+          <Parameter Name="P_OUT_CODIGO" Type="number" Mode="Out" />
         </Function>
         <Function Name="SP_CREAR_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
           <Parameter Name="P_IN_RUT_EMPRESA" Type="varchar2" Mode="In" />
@@ -721,6 +737,11 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
         </Function>
+        <Function Name="SP_ELIMINAR_CAMA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+          <Parameter Name="P_IN_CODIGO" Type="number" Mode="In" />
+          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
+          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+        </Function>
         <Function Name="SP_ELIMINAR_HABITACION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
           <Parameter Name="P_IN_CODIGO" Type="number" Mode="In" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
@@ -733,6 +754,10 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
         </Function>
         <Function Name="SP_ELIMINAR_PRODUCTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
           <Parameter Name="P_IN_CODIGO" Type="number" Mode="In" />
+          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
+          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="SP_RESCATAR_CAMAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
         </Function>
@@ -1487,6 +1512,31 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="SP_ACTUALIZAR_CAMA">
+            <Parameter Name="P_IN_CODIGO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_DESCRIPCION" Mode="In" Type="String" />
+            <Parameter Name="P_IN_DISPONIBLE" Mode="In" Type="String" />
+            <Parameter Name="P_IN_CODIGO_HABITACION" Mode="In" Type="Decimal" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREAR_CAMA">
+            <Parameter Name="P_IN_DESCRIPCION" Mode="In" Type="String" />
+            <Parameter Name="P_IN_DISPONIBLE" Mode="In" Type="String" />
+            <Parameter Name="P_IN_CODIGO_HABITACION" Mode="In" Type="Decimal" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+            <Parameter Name="P_OUT_CODIGO" Mode="Out" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_ELIMINAR_CAMA">
+            <Parameter Name="P_IN_CODIGO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_RESCATAR_CAMAS">
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="CAMA">
           <Key>
@@ -2008,6 +2058,10 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_CREAR_HABITACION" FunctionName="Model.Store.SP_CREAR_HABITACION" />
           <FunctionImportMapping FunctionImportName="SP_ELIMINAR_HABITACION" FunctionName="Model.Store.SP_ELIMINAR_HABITACION" />
           <FunctionImportMapping FunctionImportName="SP_RESCATAR_HABITACIONES" FunctionName="Model.Store.SP_RESCATAR_HABITACIONES" />
+          <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_CAMA" FunctionName="Model.Store.SP_ACTUALIZAR_CAMA" />
+          <FunctionImportMapping FunctionImportName="SP_CREAR_CAMA" FunctionName="Model.Store.SP_CREAR_CAMA" />
+          <FunctionImportMapping FunctionImportName="SP_ELIMINAR_CAMA" FunctionName="Model.Store.SP_ELIMINAR_CAMA" />
+          <FunctionImportMapping FunctionImportName="SP_RESCATAR_CAMAS" FunctionName="Model.Store.SP_RESCATAR_CAMAS" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

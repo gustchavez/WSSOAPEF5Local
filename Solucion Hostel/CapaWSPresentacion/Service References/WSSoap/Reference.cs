@@ -116,6 +116,30 @@ namespace CapaWSPresentacion.WSSoap {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CiudadRescatar", ReplyAction="http://tempuri.org/IWSSHostel/CiudadRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorCiudades> CiudadRescatarAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CamaCrear", ReplyAction="http://tempuri.org/IWSSHostel/CamaCrearResponse")]
+        CapaObjeto.ContenedorCama CamaCrear(CapaObjeto.ContenedorCama entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CamaCrear", ReplyAction="http://tempuri.org/IWSSHostel/CamaCrearResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorCama> CamaCrearAsync(CapaObjeto.ContenedorCama entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CamaActualizar", ReplyAction="http://tempuri.org/IWSSHostel/CamaActualizarResponse")]
+        CapaObjeto.ContenedorCama CamaActualizar(CapaObjeto.ContenedorCama entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CamaActualizar", ReplyAction="http://tempuri.org/IWSSHostel/CamaActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorCama> CamaActualizarAsync(CapaObjeto.ContenedorCama entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CamaEliminar", ReplyAction="http://tempuri.org/IWSSHostel/CamaEliminarResponse")]
+        CapaObjeto.ContenedorCama CamaEliminar(CapaObjeto.ContenedorCama entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CamaEliminar", ReplyAction="http://tempuri.org/IWSSHostel/CamaEliminarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorCama> CamaEliminarAsync(CapaObjeto.ContenedorCama entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CamaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/CamaRescatarResponse")]
+        CapaObjeto.ContenedorCamas CamaRescatar();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CamaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/CamaRescatarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorCamas> CamaRescatarAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -279,6 +303,38 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.ContenedorCiudades> CiudadRescatarAsync() {
             return base.Channel.CiudadRescatarAsync();
+        }
+        
+        public CapaObjeto.ContenedorCama CamaCrear(CapaObjeto.ContenedorCama entrada) {
+            return base.Channel.CamaCrear(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorCama> CamaCrearAsync(CapaObjeto.ContenedorCama entrada) {
+            return base.Channel.CamaCrearAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorCama CamaActualizar(CapaObjeto.ContenedorCama entrada) {
+            return base.Channel.CamaActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorCama> CamaActualizarAsync(CapaObjeto.ContenedorCama entrada) {
+            return base.Channel.CamaActualizarAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorCama CamaEliminar(CapaObjeto.ContenedorCama entrada) {
+            return base.Channel.CamaEliminar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorCama> CamaEliminarAsync(CapaObjeto.ContenedorCama entrada) {
+            return base.Channel.CamaEliminarAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorCamas CamaRescatar() {
+            return base.Channel.CamaRescatar();
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorCamas> CamaRescatarAsync() {
+            return base.Channel.CamaRescatarAsync();
         }
     }
 }

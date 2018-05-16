@@ -109,6 +109,30 @@
   <wsdl:message name="IWSSHostel_CiudadRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:CiudadRescatarResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:CamaCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CamaCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CamaActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CamaActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaEliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CamaEliminar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaEliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CamaEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CamaRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CamaRescatarResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWSSHostel">
     <wsdl:operation name="ValidarLogin">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ValidarLogin" message="tns:IWSSHostel_ValidarLogin_InputMessage" />
@@ -177,6 +201,22 @@
     <wsdl:operation name="CiudadRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CiudadRescatar" message="tns:IWSSHostel_CiudadRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/CiudadRescatarResponse" message="tns:IWSSHostel_CiudadRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CamaCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CamaCrear" message="tns:IWSSHostel_CamaCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/CamaCrearResponse" message="tns:IWSSHostel_CamaCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CamaActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CamaActualizar" message="tns:IWSSHostel_CamaActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/CamaActualizarResponse" message="tns:IWSSHostel_CamaActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CamaEliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CamaEliminar" message="tns:IWSSHostel_CamaEliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/CamaEliminarResponse" message="tns:IWSSHostel_CamaEliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CamaRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CamaRescatar" message="tns:IWSSHostel_CamaRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/CamaRescatarResponse" message="tns:IWSSHostel_CamaRescatar_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWSSHostel" type="tns:IWSSHostel">
@@ -327,6 +367,42 @@
     </wsdl:operation>
     <wsdl:operation name="CiudadRescatar">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/CiudadRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CamaCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/CamaCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CamaActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/CamaActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CamaEliminar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/CamaEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CamaRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/CamaRescatar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

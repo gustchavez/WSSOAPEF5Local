@@ -230,4 +230,58 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CamaCrear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q29:ContenedorCama" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CamaCrearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="CamaCrearResult" nillable="true" type="q30:ContenedorCama" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CamaActualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q31:ContenedorCama" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CamaActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="CamaActualizarResult" nillable="true" type="q32:ContenedorCama" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CamaEliminar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q33:ContenedorCama" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CamaEliminarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="CamaEliminarResult" nillable="true" type="q34:ContenedorCama" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CamaRescatar">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CamaRescatarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="CamaRescatarResult" nillable="true" type="q35:ContenedorCamas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -244,4 +244,33 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Ciudad" nillable="true" type="tns:Ciudad" />
+  <xs:complexType name="ContenedorCama">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:Cama" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorCama" nillable="true" type="tns:ContenedorCama" />
+  <xs:complexType name="Cama">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodHabitacion" type="xs:int" />
+      <xs:element minOccurs="0" name="Codigo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Disponible" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cama" nillable="true" type="tns:Cama" />
+  <xs:complexType name="ContenedorCamas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfCama" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorCamas" nillable="true" type="tns:ContenedorCamas" />
+  <xs:complexType name="ArrayOfCama">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cama" nillable="true" type="tns:Cama" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCama" nillable="true" type="tns:ArrayOfCama" />
 </xs:schema>

@@ -48,6 +48,7 @@ namespace CapaServicio
         [OperationContract]
         ContenedorPlatos PlatoRescatar();
 
+        //Inicio Habitacion
         [OperationContract]
         ContenedorHabitacion HabitacionCrear(ContenedorHabitacion entrada);
 
@@ -59,10 +60,23 @@ namespace CapaServicio
 
         [OperationContract]
         ContenedorHabitaciones HabitacionRescatar();
+        //Fin Habitacion
 
         [OperationContract]
         ContenedorCiudades CiudadRescatar();
 
+        //Inicio Cama
+        [OperationContract]
+        ContenedorCama CamaCrear(ContenedorCama entrada);
 
+        [OperationContract]
+        ContenedorCama CamaActualizar(ContenedorCama entrada);
+
+        [OperationContract]
+        ContenedorCama CamaEliminar(ContenedorCama entrada);
+
+        [OperationContract]
+        ContenedorCamas CamaRescatar();
+        //Fin Cama
     }
 }

@@ -116,6 +116,8 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorHabitaciones.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioProveedor.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorCiudades.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorCama.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorCamas.datasource" />
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>
