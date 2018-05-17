@@ -622,13 +622,6 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
         </Function>
-        <Function Name="SP_CREAR_DET_PEDIDO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
-          <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
-          <Parameter Name="P_IN_RECEPCION" Type="date" Mode="In" />
-          <Parameter Name="P_IN_CODIGO_PRODUCTO" Type="number" Mode="In" />
-          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
-          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
-        </Function>
         <Function Name="SP_CREAR_DET_RESERVA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
           <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
           <Parameter Name="P_IN_INGRESO" Type="date" Mode="In" />
@@ -2059,7 +2052,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_CREAR_CAMA" FunctionName="Model.Store.SP_CREAR_CAMA" />
           <FunctionImportMapping FunctionImportName="SP_ELIMINAR_CAMA" FunctionName="Model.Store.SP_ELIMINAR_CAMA" />
           <FunctionImportMapping FunctionImportName="SP_RESCATAR_CAMAS" FunctionName="Model.Store.SP_RESCATAR_CAMAS" />
-          <FunctionImportMapping FunctionImportName="SP_CREAR_DET_PEDIDO" FunctionName="Model.Store.SP_CREAR_DET_PEDIDO" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_FACTURA_COMPRA" FunctionName="Model.Store.SP_CREAR_FACTURA_COMPRA" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_FACTURA_VENTA" FunctionName="Model.Store.SP_CREAR_FACTURA_VENTA" />
           </EntityContainerMapping>
