@@ -10,7 +10,7 @@
 namespace CapaWSPresentacion {
     
     
-    public partial class scrud_plato {
+    public partial class crud_plato {
         
         /// <summary>
         /// Control form1.

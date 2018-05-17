@@ -10,7 +10,7 @@
 namespace CapaWSPresentacion {
     
     
-    public partial class scrud_producto {
+    public partial class crud_producto {
         
         /// <summary>
         /// Control form1.

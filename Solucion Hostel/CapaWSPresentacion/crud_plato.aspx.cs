@@ -8,7 +8,7 @@ using CapaObjeto;
 
 namespace CapaWSPresentacion
 {
-    public partial class scrud_plato : System.Web.UI.Page
+    public partial class crud_plato : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

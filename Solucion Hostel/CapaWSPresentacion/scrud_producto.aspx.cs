@@ -22,12 +22,12 @@ namespace CapaWSPresentacion
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            ListaProductos n = new ListaProductos();
+            ContenedorProductos n = new ContenedorProductos();
 
             n = x.ProductoRescatar();
 
             gwListaProductos.DataSource = null;
-            gwListaProductos.DataSource = n.Productos;
+            gwListaProductos.DataSource = n.Lista;
             gwListaProductos.DataBind();
         }
 
@@ -35,7 +35,7 @@ namespace CapaWSPresentacion
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            Producto nProducto = new Producto();
+            ContenedorProducto nProducto = new ContenedorProducto();
 
             nProducto.Item.Descripcion  = txtDescripcion.Text;
             nProducto.Item.Precio       = decimal.Parse(txtPrecio.Text);
@@ -55,7 +55,7 @@ namespace CapaWSPresentacion
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            Producto aProducto = new Producto();
+            ContenedorProducto aProducto = new ContenedorProducto();
 
             aProducto.Item.Codigo       = decimal.Parse(txtCodigo.Text);
             aProducto.Item.Descripcion  = txtDescripcion.Text;
@@ -75,7 +75,7 @@ namespace CapaWSPresentacion
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            Producto eProducto = new Producto();
+            ContenedorProducto eProducto = new ContenedorProducto();
 
             eProducto.Item.Codigo = decimal.Parse(txtCodigo.Text);
 
