@@ -157,6 +157,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="scrud_producto.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -195,6 +196,13 @@
     </Compile>
     <Compile Include="crud_producto.aspx.designer.cs">
       <DependentUpon>crud_producto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="scrud_producto.aspx.cs">
+      <DependentUpon>scrud_producto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="scrud_producto.aspx.designer.cs">
+      <DependentUpon>scrud_producto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Service References\WSSoap\Reference.cs">
       <AutoGen>True</AutoGen>
