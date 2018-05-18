@@ -50,9 +50,9 @@
     <Compile Include="ContenedorCiudades.cs" />
     <Compile Include="ContenedorHabitacion.cs" />
     <Compile Include="ContenedorHabitaciones.cs" />
-    <Compile Include="ContenedorOrdenCompraCompleta.cs" />
-    <Compile Include="ContenedorOrdenCompraDetalle.cs" />
-    <Compile Include="ContenedorOrdenCompra.cs" />
+    <Compile Include="ContenedorOrdenReservaCompleta.cs" />
+    <Compile Include="ContenedorOrdenReservaDetalle.cs" />
+    <Compile Include="ContenedorOrdenReserva.cs" />
     <Compile Include="ContenedorOrdenPedidoCompleta.cs" />
     <Compile Include="ContenedorPerfilUsuarioCliente.cs" />
     <Compile Include="ContenedorPerfilUsuarioProveedor.cs" />
@@ -60,9 +60,9 @@
     <Compile Include="Empresa.cs" />
     <Compile Include="Factura.cs" />
     <Compile Include="Habitacion.cs" />
-    <Compile Include="OrdenCompra.cs" />
-    <Compile Include="OrdenCompraCompleta.cs" />
-    <Compile Include="OrdenCompraDetalle.cs" />
+    <Compile Include="OrdenReserva.cs" />
+    <Compile Include="OrdenReservaCompleta.cs" />
+    <Compile Include="OrdenReservaDetalle.cs" />
     <Compile Include="OrdenPedido.cs" />
     <Compile Include="OrdenPedidoCompleta.cs" />
     <Compile Include="OrdenPedidoDetalle.cs" />

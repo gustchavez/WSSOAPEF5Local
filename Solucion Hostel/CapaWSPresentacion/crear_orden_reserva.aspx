@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="crear_orden_compra.aspx.cs" Inherits="CapaWSPresentacion.crear_orden_compra" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="crear_orden_reserva.aspx.cs" Inherits="CapaWSPresentacion.crear_orden_compra" %>
 
 <!DOCTYPE html>
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaObjeto
 {
-    public class OrdenCompra
+    public class OrdenReserva
     {
         public decimal Numero { get; set; }
         public DateTime FechaRecepcion { get; set; }
@@ -16,7 +16,7 @@ namespace CapaObjeto
         public string Estado { get; set; }
         public string RutCliente { get; set; }
 
-        public OrdenCompra()
+        public OrdenReserva()
         {
             Init();
         }
