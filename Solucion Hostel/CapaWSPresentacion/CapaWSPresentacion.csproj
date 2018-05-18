@@ -101,6 +101,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="perfilEmpleado\perfilEmpleado.aspx" />
     <Content Include="Properties\DataSources\CapaObjeto.ListaProductos.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.Producto.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ListaPlatos.datasource" />
@@ -141,6 +142,7 @@
     <Content Include="scripts\efectos.js" />
     <Content Include="scripts\funciones.js" />
     <Content Include="scripts\jquery-3.3.1.min.js" />
+    <Content Include="scripts\perfilEmpleado.css" />
     <Content Include="scripts\productosEmpleado.css" />
     <Content Include="crud_plato.aspx" />
     <Content Include="crud_producto.aspx" />
@@ -157,7 +159,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="scripts\stockEmpleado.css" />
     <Content Include="scrud_producto.aspx" />
+    <Content Include="perfilEmpleado\stockEmpleado.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +185,13 @@
     </Compile>
     <Compile Include="ingreso_cliente.aspx.designer.cs">
       <DependentUpon>ingreso_cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilEmpleado\perfilEmpleado.aspx.cs">
+      <DependentUpon>perfilEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilEmpleado\perfilEmpleado.aspx.designer.cs">
+      <DependentUpon>perfilEmpleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="crud_plato.aspx.cs">
@@ -209,6 +220,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="perfilEmpleado\stockEmpleado.aspx.cs">
+      <DependentUpon>stockEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilEmpleado\stockEmpleado.aspx.designer.cs">
+      <DependentUpon>stockEmpleado.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -225,7 +243,6 @@
   <ItemGroup>
     <Folder Include="perfilAdministrador\" />
     <Folder Include="perfilCliente\" />
-    <Folder Include="perfilEmpleado\" />
     <Folder Include="perfilProveedor\" />
   </ItemGroup>
   <PropertyGroup>
