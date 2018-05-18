@@ -12,6 +12,8 @@
 </head>
 <body>
 
+<div class="padre">
+
 <!-- Inicio Columna 1 --> 
   	<div class="columna1">
 		<div class="perfilCliente">		
@@ -52,8 +54,7 @@
             <div class="Casilla2-1">
                 <h4>Stock Critico</h4>
                 <asp:TextBox ID="txtStockCritico" runat="server" TextMode="Number" CssClass="CasillaPersona"></asp:TextBox>
-            </div>
-            
+            </div>     
             <div class="Casilla2-1">
                 <h4>Codigo Retorno</h4>
                 <asp:TextBox ID="txtCodigoRetorno" runat="server" Enabled="False" CssClass="CasillaPersona"></asp:TextBox>
@@ -86,6 +87,6 @@
 
 <!-- Fin Columna 2 --> 
 
-
+</div>
 </body>
 </html>
