@@ -38,6 +38,7 @@ namespace CapaWSPresentacion
         {
             //Lista para escribir Head de detall
             List<string> lHeadDetalle = new List<string>();
+            lHeadDetalle.Add("Rut Persona");
             lHeadDetalle.Add("Fecha Ingreso");
             lHeadDetalle.Add("Fecha Egreso");
             lHeadDetalle.Add("Codigo Cama");
@@ -80,8 +81,7 @@ namespace CapaWSPresentacion
                 form1.Controls.Add(item0Antes);
 
                 TextBox item0 = new TextBox();
-                item0.ID = "txtAlojaIngreso" + i;
-                item0.TextMode = TextBoxMode.Date;
+                item0.ID = "txtRutPersona" + i;
                 form1.Controls.Add(item0);
                 //
                 Literal item1Antes = new Literal();
@@ -89,7 +89,7 @@ namespace CapaWSPresentacion
                 form1.Controls.Add(item1Antes);
 
                 TextBox item1 = new TextBox();
-                item1.ID = "txtAlojaEgreso" + i;
+                item1.ID = "txtAlojaIngreso" + i;
                 item1.TextMode = TextBoxMode.Date;
                 form1.Controls.Add(item1);
                 //
@@ -97,45 +97,54 @@ namespace CapaWSPresentacion
                 item2Antes.Text = "</td><td>";
                 form1.Controls.Add(item2Antes);
 
-                DropDownList item2 = new DropDownList();
-                item2.ID = "ddlAlojaCodCama" + i;
-                item2.DataSource = Camas.Lista;
-                item2.DataValueField = "Codigo";
-                item2.DataTextField = "Descripcion";
-                item2.DataBind();
+                TextBox item2 = new TextBox();
+                item2.ID = "txtAlojaEgreso" + i;
+                item2.TextMode = TextBoxMode.Date;
                 form1.Controls.Add(item2);
                 //
                 Literal item3Antes = new Literal();
                 item3Antes.Text = "</td><td>";
                 form1.Controls.Add(item3Antes);
 
-                TextBox item3 = new TextBox();
-                item3.ID = "txtAlojaObservaciones" + i;
+                DropDownList item3 = new DropDownList();
+                item3.ID = "ddlAlojaCodCama" + i;
+                item3.DataSource = Camas.Lista;
+                item3.DataValueField = "Codigo";
+                item3.DataTextField = "Descripcion";
+                item3.DataBind();
                 form1.Controls.Add(item3);
                 //
                 Literal item4Antes = new Literal();
                 item4Antes.Text = "</td><td>";
                 form1.Controls.Add(item4Antes);
 
-                DropDownList item4 = new DropDownList();
-                item4.ID = "ddlComidaCodPlato" + i;
-                item4.DataSource = Platos.Lista;
-                item4.DataValueField = "Codigo";
-                item4.DataTextField = "Descripcion";
-                item4.DataBind();
+                TextBox item4 = new TextBox();
+                item4.ID = "txtAlojaObservaciones" + i;
                 form1.Controls.Add(item4);
                 //
                 Literal item5Antes = new Literal();
                 item5Antes.Text = "</td><td>";
                 form1.Controls.Add(item5Antes);
 
-                TextBox item5 = new TextBox();
-                item5.ID = "txtComidaObservaciones" + i;
+                DropDownList item5 = new DropDownList();
+                item5.ID = "ddlComidaCodPlato" + i;
+                item5.DataSource = Platos.Lista;
+                item5.DataValueField = "Codigo";
+                item5.DataTextField = "Descripcion";
+                item5.DataBind();
                 form1.Controls.Add(item5);
                 //
-                Literal item5Despues = new Literal();
-                item5Despues.Text = "</td></tr>";
-                form1.Controls.Add(item5Despues);
+                Literal item6Antes = new Literal();
+                item6Antes.Text = "</td><td>";
+                form1.Controls.Add(item6Antes);
+
+                TextBox item6 = new TextBox();
+                item6.ID = "txtComidaObservaciones" + i;
+                form1.Controls.Add(item6);
+                //
+                Literal item6Despues = new Literal();
+                item6Despues.Text = "</td></tr>";
+                form1.Controls.Add(item6Despues);
             }
 
             Literal BodyDespues = new Literal();
@@ -159,23 +168,27 @@ namespace CapaWSPresentacion
             for (int i = 0; i < CantidadHuespedes; i++)
             {
                 OrdenCompraDetalle nOCD = new OrdenCompraDetalle();
-                TextBox item0 = (TextBox)form1.FindControl("txtAlojaIngreso" + i);
-                nOCD.Alojamiento.FechaIngreso = DateTime.Parse(item0.Text);
 
-                TextBox item1 = (TextBox)form1.FindControl("txtAlojaEgreso" + i);
-                nOCD.Alojamiento.FechaEgreso = DateTime.Parse(item1.Text);
+                TextBox item0 = (TextBox)form1.FindControl("txtRutPersona" + i);
+                nOCD.Alojamiento.RutPersona = item0.Text;
 
-                DropDownList item2 = (DropDownList)form1.FindControl("ddlAlojaCodCama" + i);
-                nOCD.Alojamiento.CodigoCama = decimal.Parse(item2.SelectedValue);
+                TextBox item1 = (TextBox)form1.FindControl("txtAlojaIngreso" + i);
+                nOCD.Alojamiento.FechaIngreso = DateTime.Parse(item1.Text);
 
-                TextBox item3 = (TextBox)form1.FindControl("txtAlojaObservaciones" + i);
-                nOCD.Alojamiento.Observaciones = item3.Text;
+                TextBox item2 = (TextBox)form1.FindControl("txtAlojaEgreso" + i);
+                nOCD.Alojamiento.FechaEgreso = DateTime.Parse(item2.Text);
 
-                DropDownList item4 = (DropDownList)form1.FindControl("ddlComidaCodPlato" + i);
-                nOCD.Comida.CodigoPlato = decimal.Parse(item4.SelectedValue);
+                DropDownList item3 = (DropDownList)form1.FindControl("ddlAlojaCodCama" + i);
+                nOCD.Alojamiento.CodigoCama = decimal.Parse(item3.SelectedValue);
 
-                TextBox item5 = (TextBox)form1.FindControl("txtComidaObservaciones" + i);
-                nOCD.Comida.Observaciones = item5.Text;
+                TextBox item4 = (TextBox)form1.FindControl("txtAlojaObservaciones" + i);
+                nOCD.Alojamiento.Observaciones = item4.Text;
+
+                DropDownList item5 = (DropDownList)form1.FindControl("ddlComidaCodPlato" + i);
+                nOCD.Comida.CodigoPlato = decimal.Parse(item5.SelectedValue);
+
+                TextBox item6 = (TextBox)form1.FindControl("txtComidaObservaciones" + i);
+                nOCD.Comida.Observaciones = item6.Text;
 
                 nOCD.Comida.FechaRecepcion = DateTime.Now;
 
