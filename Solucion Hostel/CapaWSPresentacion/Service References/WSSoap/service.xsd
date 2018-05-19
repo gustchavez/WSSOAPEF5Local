@@ -16,6 +16,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ValidarToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="perfil" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidarTokenResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="PerfilUsuarioClienteCrear">
     <xs:complexType>
       <xs:sequence>
@@ -295,6 +310,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="OrdenCompraCompletaCrearResult" nillable="true" type="q37:ContenedorOrdenCompraCompleta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrdenPedidoCompletaCrear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q38:ContenedorOrdenPedidoCompleta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrdenPedidoCompletaCrearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="OrdenPedidoCompletaCrearResult" nillable="true" type="q39:ContenedorOrdenPedidoCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

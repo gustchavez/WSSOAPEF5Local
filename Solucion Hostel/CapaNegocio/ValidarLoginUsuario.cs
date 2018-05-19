@@ -31,7 +31,7 @@ namespace CapaNegocio
             var p_OUT_GLSRET   = new ObjectParameter("P_OUT_GLSRET", typeof(string));
 
             CommonBD.Conexion.SP_VALIDAR_LOGIN
-                (DatosLogin.Usuario
+                ( DatosLogin.Usuario
                 , DatosLogin.Clave
                 , p_OUT_PERFIL
                 , p_OUT_NOMBRE
@@ -46,6 +46,9 @@ namespace CapaNegocio
 
             try
             {
+                TokenUsuario x = new TokenUsuario();
+                DatosLogin.Retorno.Token = x.Codificar(DatosLogin.Nombre, DatosLogin.Usuario, DatosLogin.Perfil);
+                DatosLogin.Clave = string.Empty;
                 DatosLogin.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
                 DatosLogin.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
             }

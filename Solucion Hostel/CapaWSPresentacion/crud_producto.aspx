@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="crud_producto.aspx.cs" Inherits="CapaWSPresentacion.scrud_producto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="crud_producto.aspx.cs" Inherits="CapaWSPresentacion.crud_producto" %>
 
 <!DOCTYPE html>
 

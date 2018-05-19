@@ -9,7 +9,7 @@ namespace CapaObjeto
     public class ContenedorPerfilUsuarioProveedor
     {
         public PerfilUsuarioProveedor Item { get; set; }
-        public RetornoBBDD Retorno { get; set; }
+        public Comunicacion Retorno { get; set; }
 
         public ContenedorPerfilUsuarioProveedor()
         {
@@ -19,7 +19,7 @@ namespace CapaObjeto
         private void Init()
         {
             this.Item = new PerfilUsuarioProveedor();
-            this.Retorno = new RetornoBBDD();
+            this.Retorno = new Comunicacion();
         }
 
 

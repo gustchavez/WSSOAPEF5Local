@@ -12,38 +12,45 @@ namespace CapaWSPresentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CrearFormularioDetalle();
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            if (Session["TokenUsuario"] != null &&
+                (x.ValidarToken(Session["TokenUsuario"].ToString(), "Empleado") ||
+                x.ValidarToken(Session["TokenUsuario"].ToString(), "Administrador")))
+            {
+                CrearFormularioDetalle();
+
+            }
+            else
+            {
+                Session["TokenUsuario"] = null;
+                Response.Redirect("ingreso_cliente.aspx");
+            }
         }
 
         private void CrearFormularioDetalle()
         {
-            int CantidadHuespedes = 3;
-            Session["CantidadHuespedes"] = CantidadHuespedes;
+            int CantidadProductos = 3;
+            Session["CantidadProductos"] = CantidadProductos;
 
             EscribirHeadDetalle();
 
-            //Se instacion el WS para recuperar los datos de Camas y Platos
+            //Se instacion el WS para recuperar los datos de Productos y Platos
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-            //Se vuelca en una lista las camas
-            ContenedorCamas Camas = new ContenedorCamas();
-            Camas = x.CamaRescatar();
-            //Se vuelca en una lista las Plato
-            ContenedorPlatos Platos = new ContenedorPlatos();
-            Platos = x.PlatoRescatar();
+            //Se vuelca en una lista las Productos
+            ContenedorProductos Productos = new ContenedorProductos();
+            Productos = x.ProductoRescatar();
 
-            EscribirBodyDetalle(CantidadHuespedes, Camas, Platos);
+            EscribirBodyDetalle(CantidadProductos, Productos);
         }
 
         private void EscribirHeadDetalle()
         {
             //Lista para escribir Head de detall
             List<string> lHeadDetalle = new List<string>();
-            lHeadDetalle.Add("Fecha Ingreso");
-            lHeadDetalle.Add("Fecha Egreso");
-            lHeadDetalle.Add("Codigo Cama");
-            lHeadDetalle.Add("Observaciones Cama");
-            lHeadDetalle.Add("Codigo Plato");
-            lHeadDetalle.Add("Observaciones Plato");
+            lHeadDetalle.Add("Rut Persona");
+            lHeadDetalle.Add("Fecha Recepcion");
+            lHeadDetalle.Add("Codigo Producto");
 
             Literal HeadAntes = new Literal();
             HeadAntes.Text = "<table id = 'tablaDetalle' style = 'width: 75%;'><tr>";
@@ -70,7 +77,7 @@ namespace CapaWSPresentacion
             form1.Controls.Add(HeadDespues);
         }
 
-        private void EscribirBodyDetalle(int CantidadHuespedes, ContenedorCamas Camas, ContenedorPlatos Platos)
+        private void EscribirBodyDetalle(int CantidadHuespedes, ContenedorProductos Productos)
         {
             //Escribir Registro de la parte Detalle
             for (int i = 0; i < CantidadHuespedes; i++)
@@ -79,63 +86,26 @@ namespace CapaWSPresentacion
                 item0Antes.Text = "<tr><td>";
                 form1.Controls.Add(item0Antes);
 
-                TextBox item0 = new TextBox();
-                item0.ID = "txtAlojaIngreso" + i;
-                item0.TextMode = TextBoxMode.Date;
-                form1.Controls.Add(item0);
-                //
-                Literal item1Antes = new Literal();
-                item1Antes.Text = "</td><td>";
-                form1.Controls.Add(item1Antes);
-
                 TextBox item1 = new TextBox();
-                item1.ID = "txtAlojaEgreso" + i;
+                item1.ID = "txtProductoFecRecepcion" + i;
                 item1.TextMode = TextBoxMode.Date;
                 form1.Controls.Add(item1);
-                //
-                Literal item2Antes = new Literal();
-                item2Antes.Text = "</td><td>";
-                form1.Controls.Add(item2Antes);
-
-                DropDownList item2 = new DropDownList();
-                item2.ID = "ddlAlojaCodCama" + i;
-                item2.DataSource = Camas.Lista;
-                item2.DataValueField = "Codigo";
-                item2.DataTextField = "Descripcion";
-                item2.DataBind();
-                form1.Controls.Add(item2);
                 //
                 Literal item3Antes = new Literal();
                 item3Antes.Text = "</td><td>";
                 form1.Controls.Add(item3Antes);
 
-                TextBox item3 = new TextBox();
-                item3.ID = "txtAlojaObservaciones" + i;
+                DropDownList item3 = new DropDownList();
+                item3.ID = "ddlProductoCodProd" + i;
+                item3.DataSource = Productos.Lista;
+                item3.DataValueField = "Codigo";
+                item3.DataTextField = "Descripcion";
+                item3.DataBind();
                 form1.Controls.Add(item3);
                 //
-                Literal item4Antes = new Literal();
-                item4Antes.Text = "</td><td>";
-                form1.Controls.Add(item4Antes);
-
-                DropDownList item4 = new DropDownList();
-                item4.ID = "ddlComidaCodPlato" + i;
-                item4.DataSource = Platos.Lista;
-                item4.DataValueField = "Codigo";
-                item4.DataTextField = "Descripcion";
-                item4.DataBind();
-                form1.Controls.Add(item4);
-                //
-                Literal item5Antes = new Literal();
-                item5Antes.Text = "</td><td>";
-                form1.Controls.Add(item5Antes);
-
-                TextBox item5 = new TextBox();
-                item5.ID = "txtComidaObservaciones" + i;
-                form1.Controls.Add(item5);
-                //
-                Literal item5Despues = new Literal();
-                item5Despues.Text = "</td></tr>";
-                form1.Controls.Add(item5Despues);
+                Literal item6Despues = new Literal();
+                item6Despues.Text = "</td></tr>";
+                form1.Controls.Add(item6Despues);
             }
 
             Literal BodyDespues = new Literal();
@@ -145,53 +115,40 @@ namespace CapaWSPresentacion
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
+            OrdenPedidoCompleta nOPC = new OrdenPedidoCompleta();
             //Armar Encabezado de Orden de Reserva
-            nOCC.Cabecera.RutCliente = txtRutCliente.Text;
-            nOCC.Cabecera.Monto = 1000;//realizar calculo de las habitaciones seleccionadas.
-            nOCC.Cabecera.Observaciones = "Reserva habitación";
-            nOCC.Cabecera.Ubicacion = "Nose";
-            nOCC.Cabecera.Estado = "activa";
+            nOPC.Cabecera.RutProveedor = txtRutProveedor.Text;
+            nOPC.Cabecera.Monto = 1000;//realizar calculo de las habitaciones seleccionadas.
+            nOPC.Cabecera.Observaciones = "Reserva producto";
+            nOPC.Cabecera.Ubicacion = "Nose";
+            nOPC.Cabecera.Estado = "activa";
 
             //
-            int CantidadHuespedes = int.Parse(Session["CantidadHuespedes"].ToString());
+            int CantidadProductos = int.Parse(Session["CantidadProductos"].ToString());
 
-            for (int i = 0; i < CantidadHuespedes; i++)
+            for (int i = 0; i < CantidadProductos; i++)
             {
-                OrdenCompraDetalle nOCD = new OrdenCompraDetalle();
-                TextBox item0 = (TextBox)form1.FindControl("txtAlojaIngreso" + i);
-                nOCD.Alojamiento.FechaIngreso = DateTime.Parse(item0.Text);
+                OrdenPedidoDetalle nOPD = new OrdenPedidoDetalle();
+                
+                TextBox item1 = (TextBox)form1.FindControl("txtProductoFecRecepcion" + i);
+                nOPD.RegistroRecepcionPedido.Recepcion = DateTime.Parse(item1.Text);
+                
+                DropDownList item3 = (DropDownList)form1.FindControl("ddlProductoCodProd" + i);
+                nOPD.RegistroRecepcionPedido.CodigoProducto = decimal.Parse(item3.SelectedValue);
 
-                TextBox item1 = (TextBox)form1.FindControl("txtAlojaEgreso" + i);
-                nOCD.Alojamiento.FechaEgreso = DateTime.Parse(item1.Text);
-
-                DropDownList item2 = (DropDownList)form1.FindControl("ddlAlojaCodCama" + i);
-                nOCD.Alojamiento.CodigoCama = decimal.Parse(item2.SelectedValue);
-
-                TextBox item3 = (TextBox)form1.FindControl("txtAlojaObservaciones" + i);
-                nOCD.Alojamiento.Observaciones = item3.Text;
-
-                DropDownList item4 = (DropDownList)form1.FindControl("ddlComidaCodPlato" + i);
-                nOCD.Comida.CodigoPlato = decimal.Parse(item4.SelectedValue);
-
-                TextBox item5 = (TextBox)form1.FindControl("txtComidaObservaciones" + i);
-                nOCD.Comida.Observaciones = item5.Text;
-
-                nOCD.Comida.FechaRecepcion = DateTime.Now;
-
-                nOCC.ListaDetalle.Add(nOCD);
+                nOPC.ListaDetalle.Add(nOPD);
             }
 
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            ContenedorOrdenCompraCompleta xOCC = new ContenedorOrdenCompraCompleta();
-            xOCC.Item.Cabecera = nOCC.Cabecera;
-            xOCC.Item.ListaDetalle = nOCC.ListaDetalle;
+            ContenedorOrdenPedidoCompleta xOPC = new ContenedorOrdenPedidoCompleta();
+            xOPC.Item.Cabecera = nOPC.Cabecera;
+            xOPC.Item.ListaDetalle = nOPC.ListaDetalle;
 
-            xOCC = x.OrdenCompraCompletaCrear(xOCC);
+            xOPC = x.OrdenPedidoCompletaCrear(xOPC);
             
-            txtCodigoRetorno.Text = xOCC.Retorno.Codigo.ToString();
-            txtGlosaRetorno.Text = xOCC.Retorno.Glosa;
+            txtCodigoRetorno.Text = xOPC.Retorno.Codigo.ToString();
+            txtGlosaRetorno.Text = xOPC.Retorno.Glosa;
 
         }
     }

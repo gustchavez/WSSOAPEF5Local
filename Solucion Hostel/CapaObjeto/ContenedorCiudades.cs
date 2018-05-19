@@ -10,7 +10,7 @@ namespace CapaObjeto
     {
         public List<Ciudad> Lista { get; set; }
 
-        public RetornoBBDD Retorno { get; set; }
+        public Comunicacion Retorno { get; set; }
 
         public ContenedorCiudades()
         {
@@ -20,7 +20,7 @@ namespace CapaObjeto
         private void Init()
         {
             this.Lista = new List<Ciudad>();
-            this.Retorno = new RetornoBBDD();
+            this.Retorno = new Comunicacion();
         }
     }
 }

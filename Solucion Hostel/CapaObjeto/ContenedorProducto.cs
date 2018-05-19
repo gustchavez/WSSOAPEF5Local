@@ -10,7 +10,7 @@ namespace CapaObjeto
     {
         public Producto Item { get; set; }
 
-        public RetornoBBDD Retorno { get; set; }
+        public Comunicacion Retorno { get; set; }
 
         public ContenedorProducto()
         {
@@ -20,7 +20,7 @@ namespace CapaObjeto
         private void Init()
         {
             this.Item = new Producto();
-            this.Retorno = new RetornoBBDD();
+            this.Retorno = new Comunicacion();
         }
     }
 }

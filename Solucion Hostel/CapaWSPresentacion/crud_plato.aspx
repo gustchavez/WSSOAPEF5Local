@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="crud_plato.aspx.cs" Inherits="CapaWSPresentacion.scrud_plato" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="crud_plato.aspx.cs" Inherits="CapaWSPresentacion.crud_plato" %>
 
 <!DOCTYPE html>
 

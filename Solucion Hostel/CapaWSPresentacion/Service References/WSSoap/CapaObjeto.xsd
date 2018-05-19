@@ -6,22 +6,23 @@
       <xs:element minOccurs="0" name="Clave" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Perfil" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
       <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Sesion" nillable="true" type="tns:Sesion" />
-  <xs:complexType name="RetornoBBDD">
+  <xs:complexType name="Comunicacion">
     <xs:sequence>
       <xs:element minOccurs="0" name="Codigo" type="xs:decimal" />
       <xs:element minOccurs="0" name="Glosa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="RetornoBBDD" nillable="true" type="tns:RetornoBBDD" />
+  <xs:element name="Comunicacion" nillable="true" type="tns:Comunicacion" />
   <xs:complexType name="ContenedorPerfilUsuarioCliente">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:PerfilUsuarioCliente" />
-      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ContenedorPerfilUsuarioCliente" nillable="true" type="tns:ContenedorPerfilUsuarioCliente" />
@@ -96,7 +97,7 @@
   <xs:complexType name="ContenedorPerfilUsuarioProveedor">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:PerfilUsuarioProveedor" />
-      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ContenedorPerfilUsuarioProveedor" nillable="true" type="tns:ContenedorPerfilUsuarioProveedor" />
@@ -116,7 +117,7 @@
   <xs:complexType name="ContenedorProducto">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:Producto" />
-      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ContenedorProducto" nillable="true" type="tns:ContenedorProducto" />
@@ -133,7 +134,7 @@
   <xs:complexType name="ContenedorProductos">
     <xs:sequence>
       <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfProducto" />
-      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ContenedorProductos" nillable="true" type="tns:ContenedorProductos" />
@@ -146,7 +147,7 @@
   <xs:complexType name="ContenedorServiciosComida">
     <xs:sequence>
       <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfServicioComida" />
-      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ContenedorServiciosComida" nillable="true" type="tns:ContenedorServiciosComida" />
@@ -166,7 +167,7 @@
   <xs:complexType name="ContenedorPlato">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:Plato" />
-      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ContenedorPlato" nillable="true" type="tns:ContenedorPlato" />
@@ -183,7 +184,7 @@
   <xs:complexType name="ContenedorPlatos">
     <xs:sequence>
       <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfPlato" />
-      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ContenedorPlatos" nillable="true" type="tns:ContenedorPlatos" />
@@ -196,7 +197,7 @@
   <xs:complexType name="ContenedorHabitacion">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:Habitacion" />
-      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ContenedorHabitacion" nillable="true" type="tns:ContenedorHabitacion" />
@@ -213,7 +214,7 @@
   <xs:complexType name="ContenedorHabitaciones">
     <xs:sequence>
       <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfHabitacion" />
-      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ContenedorHabitaciones" nillable="true" type="tns:ContenedorHabitaciones" />
@@ -226,7 +227,7 @@
   <xs:complexType name="ContenedorCiudades">
     <xs:sequence>
       <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfCiudad" />
-      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ContenedorCiudades" nillable="true" type="tns:ContenedorCiudades" />
@@ -247,7 +248,7 @@
   <xs:complexType name="ContenedorCama">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:Cama" />
-      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ContenedorCama" nillable="true" type="tns:ContenedorCama" />
@@ -263,7 +264,7 @@
   <xs:complexType name="ContenedorCamas">
     <xs:sequence>
       <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfCama" />
-      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ContenedorCamas" nillable="true" type="tns:ContenedorCamas" />
@@ -276,7 +277,7 @@
   <xs:complexType name="ContenedorOrdenCompraCompleta">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:OrdenCompraCompleta" />
-      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:RetornoBBDD" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ContenedorOrdenCompraCompleta" nillable="true" type="tns:ContenedorOrdenCompraCompleta" />
@@ -336,4 +337,53 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Comida" nillable="true" type="tns:Comida" />
+  <xs:complexType name="ContenedorOrdenPedidoCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:OrdenPedidoCompleta" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorOrdenPedidoCompleta" nillable="true" type="tns:ContenedorOrdenPedidoCompleta" />
+  <xs:complexType name="OrdenPedidoCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cabecera" nillable="true" type="tns:OrdenPedido" />
+      <xs:element minOccurs="0" name="ListaDetalle" nillable="true" type="tns:ArrayOfOrdenPedidoDetalle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrdenPedidoCompleta" nillable="true" type="tns:OrdenPedidoCompleta" />
+  <xs:complexType name="OrdenPedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaEmision" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Monto" type="xs:int" />
+      <xs:element minOccurs="0" name="Numero" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RutProveedor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ubicacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrdenPedido" nillable="true" type="tns:OrdenPedido" />
+  <xs:complexType name="ArrayOfOrdenPedidoDetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrdenPedidoDetalle" nillable="true" type="tns:OrdenPedidoDetalle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrdenPedidoDetalle" nillable="true" type="tns:ArrayOfOrdenPedidoDetalle" />
+  <xs:complexType name="OrdenPedidoDetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RegistroRecepcionPedido" nillable="true" type="tns:RegistroRecepcionPedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrdenPedidoDetalle" nillable="true" type="tns:OrdenPedidoDetalle" />
+  <xs:complexType name="RegistroRecepcionPedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CodigoProducto" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Confirmado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Indice" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroOrdenPedido" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Recepcion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegistroRecepcionPedido" nillable="true" type="tns:RegistroRecepcionPedido" />
 </xs:schema>

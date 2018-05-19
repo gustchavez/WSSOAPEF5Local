@@ -10,7 +10,7 @@ namespace CapaObjeto
     {
         public Plato Item { get; set; }
 
-        public RetornoBBDD Retorno { get; set; }
+        public Comunicacion Retorno { get; set; }
 
         public ContenedorPlato()
         {
@@ -20,7 +20,7 @@ namespace CapaObjeto
         private void Init()
         {
             this.Item = new Plato();
-            this.Retorno = new RetornoBBDD();
+            this.Retorno = new Comunicacion();
         }
 
     }

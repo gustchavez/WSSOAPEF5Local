@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace CapaObjeto
 {
-    public class RetornoBBDD
+    public class Comunicacion
     {
         public decimal Codigo { get; set; }
         public string Glosa { get; set; }
+        public string Token { get; set; }
 
-        public RetornoBBDD()
+        public Comunicacion()
         {
             Init();
         }
@@ -19,7 +20,8 @@ namespace CapaObjeto
         private void Init()
         {
             this.Codigo = decimal.MinValue;
-            this.Glosa = string.Empty;
+            this.Glosa  = string.Empty;
+            this.Token  = string.Empty;
         }
     }
 }

@@ -32,6 +32,17 @@ namespace CapaWSPresentacion
             txtCodigoRetorno.Text = nLogin.Retorno.Codigo.ToString();
             txtGlosaRetorno.Text = nLogin.Retorno.Glosa;
 
+            if(nLogin.Retorno.Codigo == 0)
+            {
+                Session["TokenUsuario"] = nLogin.Retorno.Token;
+                Session["Nombre"] = nLogin.Nombre;
+                Response.Redirect("Index.html");
+            }
+            else
+            {
+                Session["TokenUsuario"] = null;
+                Session["Nombre"] = null;
+            }
         }
     }
 }

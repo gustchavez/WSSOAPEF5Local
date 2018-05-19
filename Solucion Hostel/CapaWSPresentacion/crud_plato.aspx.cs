@@ -12,21 +12,33 @@ namespace CapaWSPresentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+                        
+            if (Session["TokenUsuario"] != null &&
+                x.ValidarToken(Session["TokenUsuario"].ToString(), "Administrador"))
             {
-                WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-                //
-                ContenedorServiciosComida m = new ContenedorServiciosComida();
+                if (!IsPostBack)
+                {
+                    
+                    //
+                    ContenedorServiciosComida m = new ContenedorServiciosComida();
 
-                m = x.ServicioComidaRescatar();
+                    m = x.ServicioComidaRescatar();
 
-                ddlServicioTipo.DataSource = m.Lista;
-                ddlServicioTipo.DataValueField = "Tipo";
-                ddlServicioTipo.DataTextField = "Tipo";
-                ddlServicioTipo.DataBind();
+                    ddlServicioTipo.DataSource = m.Lista;
+                    ddlServicioTipo.DataValueField = "Tipo";
+                    ddlServicioTipo.DataTextField = "Tipo";
+                    ddlServicioTipo.DataBind();
 
-                CargarGridView();
-            }            
+                    CargarGridView();
+                }
+
+            }
+            else
+            {
+                Session["TokenUsuario"] = null;
+                Response.Redirect("ingreso_cliente.aspx");
+            }        
         }
         private void CargarGridView()
         {
