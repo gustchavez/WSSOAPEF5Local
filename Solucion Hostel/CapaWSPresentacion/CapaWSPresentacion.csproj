@@ -125,6 +125,11 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenCompraCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenPedidoCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenReservaCompleta.datasource" />
+    <Content Include="MapaCliente.sitemap" />
+    <Content Include="MapaEmpleado.sitemap" />
+    <Content Include="MapaProveedor.sitemap" />
+    <Content Include="MapaAdministrador.sitemap" />
+    <Content Include="MapaNoLogin.sitemap" />
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>
@@ -132,6 +137,7 @@
     <None Include="Service References\WSSoap\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="SitioPrincipal.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -245,6 +251,13 @@
     </Compile>
     <Compile Include="perfilEmpleado\stockEmpleado.aspx.designer.cs">
       <DependentUpon>stockEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SitioPrincipal.Master.cs">
+      <DependentUpon>SitioPrincipal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SitioPrincipal.Master.designer.cs">
+      <DependentUpon>SitioPrincipal.Master</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
