@@ -96,6 +96,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="crear_proveedor.aspx" />
     <Content Include="crear_orden_compra.aspx" />
     <Content Include="crear_orden_reserva.aspx" />
     <Content Include="index.html" />
@@ -126,6 +127,11 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenPedidoCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenReservaCompleta.datasource" />
     <Content Include="WebService_Java.asmx" />
+    <Content Include="PefilCliente.sitemap" />
+    <Content Include="PerfilEmpleado.sitemap" />
+    <Content Include="PerfilAdministrador.sitemap" />
+    <Content Include="PerfilProveedor.sitemap" />
+    <Content Include="PerfilDefault.sitemap" />
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>
@@ -171,6 +177,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="crear_proveedor.aspx.cs">
+      <DependentUpon>crear_proveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="crear_proveedor.aspx.designer.cs">
+      <DependentUpon>crear_proveedor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="crear_cliente.aspx.cs">
       <DependentUpon>crear_cliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
