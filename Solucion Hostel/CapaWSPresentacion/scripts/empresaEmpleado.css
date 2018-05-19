@@ -197,11 +197,12 @@ position: absolute;
 
 .SubmitTotal{
 
-	margin: auto;
 	position: relative;
 	width: 235px;
 	height: 40px;
-
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
 }
 
 .SubmitTotal:Hover{

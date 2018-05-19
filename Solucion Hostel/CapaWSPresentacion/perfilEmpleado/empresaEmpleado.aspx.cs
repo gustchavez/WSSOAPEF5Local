@@ -13,5 +13,37 @@ namespace CapaWSPresentacion.perfilEmpleado
         {
 
         }
+
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            ContenedorPerfilUsuarioProveedor n = new ContenedorPerfilUsuarioProveedor();
+
+            n.Item.Proveedor.Rut = txtRutEmpresa.Text;
+            n.Item.PerfilUsuario.Empresa.RazonSocial = txtRazonSocial.Text;
+            n.Item.PerfilUsuario.Empresa.Rubro = txtGiro.Text;
+            n.Item.PerfilUsuario.Empresa.Email = txtCorreoElectronico.Text;
+            n.Item.PerfilUsuario.Empresa.Telefono = txtTelefonoEmpresa.Text;
+            n.Item.PerfilUsuario.Direccion.CodPais = 56;
+            n.Item.PerfilUsuario.Direccion.CodPostal = txtCodigoPostal.Text;
+            n.Item.PerfilUsuario.Direccion.NombreCiudad = txtNombreCiudad.Text;
+            n.Item.PerfilUsuario.Direccion.Comuna = txtComuna.Text;
+            n.Item.PerfilUsuario.Direccion.Calle = txtCalle.Text;
+            n.Item.PerfilUsuario.Direccion.Numero = int.Parse(txtNumero.Text);
+            n.Item.PerfilUsuario.Empresa.Logo = txtLogo.Text;
+            n.Item.PerfilUsuario.Persona.Rut = txtRutEmpleado.Text;
+            n.Item.PerfilUsuario.Persona.Nombre = txtNombreEmpleado.Text;
+            n.Item.PerfilUsuario.Persona.Apellido = txtxApellidoEmpleado.Text;
+            n.Item.PerfilUsuario.Persona.FechaNacimiento = DateTime.Parse(txtFechaNacimiento.Text);
+            n.Item.PerfilUsuario.Persona.Email = txtCorreoEmpleado.Text;
+            n.Item.PerfilUsuario.Persona.Telefono = txtTelefonoEmpleado.Text;
+            n.Item.PerfilUsuario.Usuario.Clave = txtConstrasena.Text;
+
+            n = x.PerfilUsuarioProveedorCrear(n);
+
+            txtCodigoRetorno.Text = n.Retorno.Codigo.ToString();
+            txtGlosaRetorno.Text = n.Retorno.Glosa;
+        }
     }
 }
