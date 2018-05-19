@@ -96,6 +96,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\CapaObjeto.dll" />
+    <Content Include="bin\Microsoft.AI.Agent.Intercept.dll" />
+    <Content Include="bin\Microsoft.AI.DependencyCollector.dll" />
+    <Content Include="bin\Microsoft.AI.PerfCounterCollector.dll" />
+    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.dll" />
+    <Content Include="bin\Microsoft.AI.Web.dll" />
+    <Content Include="bin\Microsoft.AI.WindowsServer.dll" />
+    <Content Include="bin\Microsoft.ApplicationInsights.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="crear_orden_compra.aspx" />
     <Content Include="crear_orden_reserva.aspx" />
     <Content Include="index.html" />
@@ -103,7 +112,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="perfilEmpleado\empresaEmpleado.aspx" />
+    <Content Include="perfilEmpleado\facturaEmpleado.aspx" />
     <Content Include="perfilEmpleado\perfilEmpleado.aspx" />
+    <Content Include="perfilEmpleado\productosEmpleado.aspx" />
+    <Content Include="perfilEmpleado\solicitarEmpleado.aspx" />
     <Content Include="ProbarToken.aspx" />
     <Content Include="Properties\DataSources\CapaObjeto.ListaProductos.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.Producto.datasource" />
@@ -199,12 +212,43 @@
     <Compile Include="ingreso_cliente.aspx.designer.cs">
       <DependentUpon>ingreso_cliente.aspx</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="perfilEmpleado\empresaEmpleado.aspx.cs">
+      <DependentUpon>empresaEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilEmpleado\empresaEmpleado.aspx.designer.cs">
+      <DependentUpon>empresaEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilEmpleado\facturaEmpleado.aspx.cs">
+      <DependentUpon>facturaEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilEmpleado\facturaEmpleado.aspx.designer.cs">
+      <DependentUpon>facturaEmpleado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="perfilEmpleado\perfilEmpleado.aspx.cs">
       <DependentUpon>perfilEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="perfilEmpleado\perfilEmpleado.aspx.designer.cs">
       <DependentUpon>perfilEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilEmpleado\productosEmpleado.aspx.cs">
+      <DependentUpon>productosEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilEmpleado\productosEmpleado.aspx.designer.cs">
+      <DependentUpon>productosEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilEmpleado\solicitarEmpleado.aspx.cs">
+      <DependentUpon>solicitarEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilEmpleado\solicitarEmpleado.aspx.designer.cs">
+      <DependentUpon>solicitarEmpleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProbarToken.aspx.cs">
       <DependentUpon>ProbarToken.aspx</DependentUpon>
@@ -265,6 +309,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\roslyn\" />
     <Folder Include="perfilAdministrador\" />
     <Folder Include="perfilCliente\" />
     <Folder Include="perfilProveedor\" />
