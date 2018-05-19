@@ -1462,6 +1462,13 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
             <Parameter Name="P_OUT_NUMERO" Mode="Out" Type="Decimal" />
           </FunctionImport>
+          <FunctionImport Name="SP_CREAR_DET_PEDIDO">
+            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_RECEPCION" Mode="In" Type="DateTime" />
+            <Parameter Name="P_IN_CODIGO_PRODUCTO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="SP_CREAR_ADMINISTRADOR">
             <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
             <Parameter Name="P_IN_NOMBRE" Mode="In" Type="String" />
@@ -1493,13 +1500,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_IN_NOMBRE_CIUDAD" Mode="In" Type="String" />
             <Parameter Name="P_IN_COD_PAIS" Mode="In" Type="Decimal" />
             <Parameter Name="P_IN_CLAVE" Mode="In" Type="String" />
-            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
-            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SP_CREAR_DET_PEDIDO">
-            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_RECEPCION" Mode="In" Type="DateTime" />
-            <Parameter Name="P_IN_CODIGO_PRODUCTO" Mode="In" Type="Decimal" />
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
@@ -2057,9 +2057,9 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_RESCATAR_CAMAS" FunctionName="Model.Store.SP_RESCATAR_CAMAS" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_FACTURA_COMPRA" FunctionName="Model.Store.SP_CREAR_FACTURA_COMPRA" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_FACTURA_VENTA" FunctionName="Model.Store.SP_CREAR_FACTURA_VENTA" />
+          <FunctionImportMapping FunctionImportName="SP_CREAR_DET_PEDIDO" FunctionName="Model.Store.SP_CREAR_DET_PEDIDO" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_ADMINISTRADOR" FunctionName="Model.Store.SP_CREAR_ADMINISTRADOR" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_CLIENTE" FunctionName="Model.Store.SP_CREAR_CLIENTE" />
-          <FunctionImportMapping FunctionImportName="SP_CREAR_DET_PEDIDO" FunctionName="Model.Store.SP_CREAR_DET_PEDIDO" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_EMPLEADO" FunctionName="Model.Store.SP_CREAR_EMPLEADO" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_PROVEEDOR" FunctionName="Model.Store.SP_CREAR_PROVEEDOR" />
           </EntityContainerMapping>

@@ -460,6 +460,23 @@ namespace CapaDato
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_FACTURA_VENTA", p_IN_NUMERO_OPParameter, p_IN_VALOR_BRUTOParameter, p_IN_VALOR_IVAParameter, p_IN_VALOR_NETOParameter, p_IN_OBSERVACIONESParameter, p_IN_UBICACIONParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_NUMERO);
         }
     
+        public virtual int SP_CREAR_DET_PEDIDO(Nullable<decimal> p_IN_NUMERO, Nullable<System.DateTime> p_IN_RECEPCION, Nullable<decimal> p_IN_CODIGO_PRODUCTO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
+                new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
+                new ObjectParameter("P_IN_NUMERO", typeof(decimal));
+    
+            var p_IN_RECEPCIONParameter = p_IN_RECEPCION.HasValue ?
+                new ObjectParameter("P_IN_RECEPCION", p_IN_RECEPCION) :
+                new ObjectParameter("P_IN_RECEPCION", typeof(System.DateTime));
+    
+            var p_IN_CODIGO_PRODUCTOParameter = p_IN_CODIGO_PRODUCTO.HasValue ?
+                new ObjectParameter("P_IN_CODIGO_PRODUCTO", p_IN_CODIGO_PRODUCTO) :
+                new ObjectParameter("P_IN_CODIGO_PRODUCTO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_DET_PEDIDO", p_IN_NUMEROParameter, p_IN_RECEPCIONParameter, p_IN_CODIGO_PRODUCTOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
         public virtual int SP_CREAR_ADMINISTRADOR(string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
             var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
@@ -572,23 +589,6 @@ namespace CapaDato
                 new ObjectParameter("P_IN_CLAVE", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_CLIENTE", p_IN_RUT_EMPRESAParameter, p_IN_RAZON_SOCIALParameter, p_IN_RUBROParameter, p_IN_EMAIL_EMPParameter, p_IN_TELEFONO_EMPParameter, p_IN_LOGOParameter, p_IN_RUT_PERSONAParameter, p_IN_NOMBREParameter, p_IN_APELLIDOParameter, p_IN_NACIMIENTOParameter, p_IN_EMAIL_PERParameter, p_IN_TELEFONO_PERParameter, p_IN_CALLEParameter, p_IN_NUMEROParameter, p_IN_COMUNAParameter, p_IN_COD_POSTALParameter, p_IN_NOMBRE_CIUDADParameter, p_IN_COD_PAISParameter, p_IN_CLAVEParameter, p_OUT_CODRET, p_OUT_GLSRET);
-        }
-    
-        public virtual int SP_CREAR_DET_PEDIDO(Nullable<decimal> p_IN_NUMERO, Nullable<System.DateTime> p_IN_RECEPCION, Nullable<decimal> p_IN_CODIGO_PRODUCTO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
-                new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
-                new ObjectParameter("P_IN_NUMERO", typeof(decimal));
-    
-            var p_IN_RECEPCIONParameter = p_IN_RECEPCION.HasValue ?
-                new ObjectParameter("P_IN_RECEPCION", p_IN_RECEPCION) :
-                new ObjectParameter("P_IN_RECEPCION", typeof(System.DateTime));
-    
-            var p_IN_CODIGO_PRODUCTOParameter = p_IN_CODIGO_PRODUCTO.HasValue ?
-                new ObjectParameter("P_IN_CODIGO_PRODUCTO", p_IN_CODIGO_PRODUCTO) :
-                new ObjectParameter("P_IN_CODIGO_PRODUCTO", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_DET_PEDIDO", p_IN_NUMEROParameter, p_IN_RECEPCIONParameter, p_IN_CODIGO_PRODUCTOParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
         public virtual int SP_CREAR_EMPLEADO(string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
