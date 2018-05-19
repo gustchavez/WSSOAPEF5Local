@@ -107,34 +107,53 @@ namespace CapaNegocio
             return eProducto;
         }
 
-        public ContenedorProductos LlamarSPRescatar()
+        private bool ValidarToken(string token)
+        {
+            bool retorno = false;
+            TokenUsuario x = new TokenUsuario();
+            if (x.ValidarToken(token, "Admistrador") ||
+                x.ValidarToken(token, "Empleado"))
+            {
+                retorno = true;
+            }
+                return retorno;
+        }
+        public ContenedorProductos LlamarSPRescatar(string token)
         {
             ContenedorProductos LProductos = new ContenedorProductos();
-            try
-            {
-                CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+            if (ValidarToken(token))
+            {                
+                try
+                {                
+                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
 
-                var collection = conex.PRODUCTO.OrderBy(p => p.DESCRIPCION).ToList();
+                    var collection = conex.PRODUCTO.OrderBy(p => p.DESCRIPCION).ToList();
 
-                foreach (var item in collection)
-                {
-                    Producto n = new Producto();
-                    n.Codigo = item.CODIGO;
-                    n.Descripcion = item.DESCRIPCION;
-                    n.Precio = item.PRECIO;
-                    n.Stock = item.STOCK;
-                    n.StockCritico = item.STOCK_CRITICO;
-                    LProductos.Lista.Add(n);
+                    foreach (var item in collection)
+                    {
+                        Producto n = new Producto();
+                        n.Codigo = item.CODIGO;
+                        n.Descripcion = item.DESCRIPCION;
+                        n.Precio = item.PRECIO;
+                        n.Stock = item.STOCK;
+                        n.StockCritico = item.STOCK_CRITICO;
+                        LProductos.Lista.Add(n);
+                    }
+                    LProductos.Retorno.Codigo = 0;
+                    LProductos.Retorno.Glosa = "OK";
+                
                 }
-                LProductos.Retorno.Codigo = 0;
-                LProductos.Retorno.Glosa = "OK";
+                catch (Exception)
+                {
+                    LProductos.Retorno.Codigo = 1011;
+                    LProductos.Retorno.Glosa = "Err codret ORACLE";
+                }
             }
-            catch (Exception)
+            else
             {
-                LProductos.Retorno.Codigo = 1011;
-                LProductos.Retorno.Glosa = "Err codret ORACLE";
+                LProductos.Retorno.Codigo = 100;
+                LProductos.Retorno.Glosa = "Err expiro sesion o perfil invalido";
             }
-
             return LProductos;
         }
     }

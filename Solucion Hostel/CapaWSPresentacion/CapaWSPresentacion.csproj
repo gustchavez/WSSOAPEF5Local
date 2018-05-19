@@ -99,6 +99,7 @@
     <Content Include="crear_proveedor.aspx" />
     <Content Include="crear_orden_compra.aspx" />
     <Content Include="crear_orden_reserva.aspx" />
+    <Content Include="Index.aspx" />
     <Content Include="index.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -139,6 +140,7 @@
     <None Include="Service References\WSSoap\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="SitioPrincipal.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -205,6 +207,13 @@
     <Compile Include="crear_orden_reserva.aspx.designer.cs">
       <DependentUpon>crear_orden_reserva.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ingreso_cliente.aspx.cs">
       <DependentUpon>ingreso_cliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -259,6 +268,13 @@
     </Compile>
     <Compile Include="perfilEmpleado\stockEmpleado.aspx.designer.cs">
       <DependentUpon>stockEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SitioPrincipal.Master.cs">
+      <DependentUpon>SitioPrincipal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SitioPrincipal.Master.designer.cs">
+      <DependentUpon>SitioPrincipal.Master</DependentUpon>
     </Compile>
     <Compile Include="WebService_Java.asmx.cs">
       <DependentUpon>WebService_Java.asmx</DependentUpon>

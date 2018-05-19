@@ -9,6 +9,22 @@
     <link rel="stylesheet" type="text/css" href="scripts/productosEmpleado.css"/>
 	<script src="scripts/efectos.js"></script>
 	<script src="scripts/jquery.min.js"></script>
+    <style type="text/css">
+        .auto-style1 {
+            float: left;
+            margin: 20px;
+            width: 230px;
+        }
+        .auto-style2 {
+            top: 15px;
+            position: relative;
+            width: 235px;
+            height: 35px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body>
 
@@ -68,8 +84,8 @@
             <div class="Casilla2-1">
                 <asp:Button ID="btnActualizar" runat="server" CssClass="SubmitTotal" OnClick="btnActualizar_Click" Text="Actualizar" />
             </div>
-            <div class="Casilla2-1">
-                <asp:Button ID="btnEliminar" runat="server" CssClass="SubmitTotal" OnClick="btnEliminar_Click" Text="Eliminar" />
+            <div class="auto-style1">
+                <asp:Button ID="btnEliminar" runat="server" CssClass="auto-style2" OnClick="btnEliminar_Click" Text="Eliminar" />
             </div>
           
             <br />
