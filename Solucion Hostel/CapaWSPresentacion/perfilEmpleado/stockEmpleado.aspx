@@ -1,4 +1,4 @@
-﻿`´<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="stockEmpleado.aspx.cs" Inherits="CapaWSPresentacion.stockEmpleado" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="stockEmpleado.aspx.cs" Inherits="CapaWSPresentacion.perfilEmpleado.stockEmpleado" %>
 
 <!DOCTYPE html>
 
@@ -8,7 +8,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="scripts/stockEmpleado.css"/>
+    <link rel="stylesheet" type="text/css" href="/scripts/stockEmpleado.css"/>
 	<script src="scripts/efectos.js"></script>
 	<script src="scripts/jquery.min.js"></script>
 </head>

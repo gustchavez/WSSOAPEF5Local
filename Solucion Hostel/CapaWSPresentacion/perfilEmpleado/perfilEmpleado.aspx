@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="perfilEmpleado.aspx.cs" Inherits="CapaWSPresentacion.perfilEmpleado" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="perfilEmpleado.aspx.cs" Inherits="CapaWSPresentacion.perfilEmpleado.perfilEmpleado" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="scripts/perfilEmpleado.css"/>
+    <link rel="stylesheet" type="text/css" href="/scripts/perfilEmpleado.css"/>
 	<script src="scripts/efectos.js"></script>
 	<script src="scripts/jquery.min.js"></script>
 </head>
@@ -88,3 +88,4 @@
    </div>
 </body>
 </html>
+
