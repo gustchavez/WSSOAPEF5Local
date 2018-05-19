@@ -125,6 +125,7 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenCompraCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenPedidoCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenReservaCompleta.datasource" />
+    <Content Include="WebService_Java.asmx" />
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>
@@ -245,6 +246,9 @@
     </Compile>
     <Compile Include="perfilEmpleado\stockEmpleado.aspx.designer.cs">
       <DependentUpon>stockEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService_Java.asmx.cs">
+      <DependentUpon>WebService_Java.asmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
