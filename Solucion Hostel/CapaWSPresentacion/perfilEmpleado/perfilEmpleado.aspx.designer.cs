@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CapaWSPresentacion {
+namespace CapaWSPresentacion.perfilEmpleado {
     
     
     public partial class perfilEmpleado {
