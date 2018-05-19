@@ -1,18 +1,7 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SitioPrincipal.master.cs" Inherits="CapaWSPresentacion.SitioPrincipal" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SitioPrincipal.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="CapaWSPresentacion.Index" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
         
             <asp:SiteMapDataSource ID="smdcMenu" runat="server" />
             <br />
@@ -29,11 +18,8 @@
             <asp:SiteMapPath ID="smpMenu" runat="server">
             </asp:SiteMapPath>
             <br />
-            <br />
-            <br />
+    <br />
+    Pagina Principal<br />
         
-        </asp:ContentPlaceHolder>
-    </div>
-    </form>
-</body>
-</html>
+        </asp:Content>
+

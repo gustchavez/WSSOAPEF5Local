@@ -35,7 +35,7 @@ namespace CapaWSPresentacion
 
             ContenedorProductos n = new ContenedorProductos();
 
-            n = x.ProductoRescatar();
+            n = x.ProductoRescatar(Session["TokenUsuario"].ToString());
 
             gwListaProductos.DataSource = null;
             gwListaProductos.DataSource = n.Lista;

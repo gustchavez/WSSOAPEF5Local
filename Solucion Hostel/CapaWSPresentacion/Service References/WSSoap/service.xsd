@@ -31,6 +31,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="TokenRecuperarPerfil">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TokenRecuperarPerfilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TokenRecuperarPerfilResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="PerfilUsuarioClienteCrear">
     <xs:complexType>
       <xs:sequence>
@@ -103,7 +117,9 @@
   </xs:element>
   <xs:element name="ProductoRescatar">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProductoRescatarResponse">

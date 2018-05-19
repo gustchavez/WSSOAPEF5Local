@@ -27,6 +27,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ValidarToken", ReplyAction="http://tempuri.org/IWSSHostel/ValidarTokenResponse")]
         System.Threading.Tasks.Task<bool> ValidarTokenAsync(string token, string perfil);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/TokenRecuperarPerfil", ReplyAction="http://tempuri.org/IWSSHostel/TokenRecuperarPerfilResponse")]
+        string TokenRecuperarPerfil(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/TokenRecuperarPerfil", ReplyAction="http://tempuri.org/IWSSHostel/TokenRecuperarPerfilResponse")]
+        System.Threading.Tasks.Task<string> TokenRecuperarPerfilAsync(string token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrearResponse")]
         CapaObjeto.ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(CapaObjeto.ContenedorPerfilUsuarioCliente entrada);
         
@@ -58,10 +64,10 @@ namespace CapaWSPresentacion.WSSoap {
         System.Threading.Tasks.Task<CapaObjeto.ContenedorProducto> ProductoEliminarAsync(CapaObjeto.ContenedorProducto entrada);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProductoRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ProductoRescatarResponse")]
-        CapaObjeto.ContenedorProductos ProductoRescatar();
+        CapaObjeto.ContenedorProductos ProductoRescatar(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProductoRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ProductoRescatarResponse")]
-        System.Threading.Tasks.Task<CapaObjeto.ContenedorProductos> ProductoRescatarAsync();
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorProductos> ProductoRescatarAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ServicioComidaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ServicioComidaRescatarResponse")]
         CapaObjeto.ContenedorServiciosComida ServicioComidaRescatar();
@@ -203,6 +209,14 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.ValidarTokenAsync(token, perfil);
         }
         
+        public string TokenRecuperarPerfil(string token) {
+            return base.Channel.TokenRecuperarPerfil(token);
+        }
+        
+        public System.Threading.Tasks.Task<string> TokenRecuperarPerfilAsync(string token) {
+            return base.Channel.TokenRecuperarPerfilAsync(token);
+        }
+        
         public CapaObjeto.ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(CapaObjeto.ContenedorPerfilUsuarioCliente entrada) {
             return base.Channel.PerfilUsuarioClienteCrear(entrada);
         }
@@ -243,12 +257,12 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.ProductoEliminarAsync(entrada);
         }
         
-        public CapaObjeto.ContenedorProductos ProductoRescatar() {
-            return base.Channel.ProductoRescatar();
+        public CapaObjeto.ContenedorProductos ProductoRescatar(string token) {
+            return base.Channel.ProductoRescatar(token);
         }
         
-        public System.Threading.Tasks.Task<CapaObjeto.ContenedorProductos> ProductoRescatarAsync() {
-            return base.Channel.ProductoRescatarAsync();
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorProductos> ProductoRescatarAsync(string token) {
+            return base.Channel.ProductoRescatarAsync(token);
         }
         
         public CapaObjeto.ContenedorServiciosComida ServicioComidaRescatar() {

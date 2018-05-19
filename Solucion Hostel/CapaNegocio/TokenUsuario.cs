@@ -126,5 +126,48 @@ namespace CapaNegocio
                 return false;
             }
         }
+        public string RecuperarPefil(string token)
+        {
+            string result = string.Empty;
+            try
+            {
+                byte[] inputBytes = Convert.FromBase64String(token);
+                byte[] resultBytes = new byte[inputBytes.Length];
+                string textoLimpio = String.Empty;
+                RijndaelManaged cripto = new RijndaelManaged();
+                using (MemoryStream ms = new MemoryStream(inputBytes))
+                {
+                    using (CryptoStream objCryptoStream = new CryptoStream(ms, cripto.CreateDecryptor(Clave, IV), CryptoStreamMode.Read))
+                    {
+                        using (StreamReader sr = new StreamReader(objCryptoStream, true))
+                        {
+                            textoLimpio = sr.ReadToEnd();
+                        }
+                    }
+                }
+                string[] values = textoLimpio.Split('-');
+
+                if (values != null && values.Length == 4)
+                {
+                    string Tnombre = values[0];
+                    string Tusuario = values[1];
+                    string Tperfil = values[2];
+                    long Tticks;
+                    if (long.TryParse(values[3], out Tticks))
+                    {
+                        if (Math.Abs((new DateTime(Tticks) - DateTime.Now).Hours) < 1)
+                        {
+                            result = Tperfil;
+                        }
+                    }
+                }
+
+                return result;
+            }
+            catch (Exception)
+            {
+                return result;
+            }
+        }
     }
 }

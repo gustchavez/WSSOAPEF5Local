@@ -22,6 +22,9 @@ namespace CapaServicio
         bool ValidarToken(string token, string perfil);
 
         [OperationContract]
+        string TokenRecuperarPerfil(string token);
+
+        [OperationContract]
         ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(ContenedorPerfilUsuarioCliente entrada);
 
         [OperationContract]
@@ -38,7 +41,7 @@ namespace CapaServicio
         ContenedorProducto ProductoEliminar(ContenedorProducto entrada);
 
         [OperationContract]
-        ContenedorProductos ProductoRescatar();
+        ContenedorProductos ProductoRescatar(string token);
         //Fin Producto
 
         [OperationContract]

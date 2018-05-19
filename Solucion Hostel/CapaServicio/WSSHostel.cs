@@ -26,6 +26,7 @@ namespace CapaServicio
             return x.DatosLogin;
         }
 
+
         //public string GenerarToken(string usuario, string clave)
         //{
         //    TokenUsuario x = new TokenUsuario();
@@ -94,7 +95,11 @@ namespace CapaServicio
 
             //return result;
         }
-
+        public string TokenRecuperarPerfil(string token)
+        {
+            TokenUsuario x = new TokenUsuario();
+            return x.RecuperarPefil(token);
+        }
         public ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(ContenedorPerfilUsuarioCliente entrada)
         {
             CRUDPerfilUsuarioCliente x = new CRUDPerfilUsuarioCliente();
@@ -129,10 +134,10 @@ namespace CapaServicio
             return entrada;
         }
 
-        public ContenedorProductos ProductoRescatar()
+        public ContenedorProductos ProductoRescatar(string token)
         {
             CRUDProducto x = new CRUDProducto();
-            return x.LlamarSPRescatar();
+            return x.LlamarSPRescatar(token);
         }
 
         public ContenedorServiciosComida ServicioComidaRescatar()

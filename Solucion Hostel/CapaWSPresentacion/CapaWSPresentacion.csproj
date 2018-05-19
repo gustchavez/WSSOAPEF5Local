@@ -120,6 +120,7 @@
     <Content Include="crear_proveedor.aspx" />
     <Content Include="crear_orden_compra.aspx" />
     <Content Include="crear_orden_reserva.aspx" />
+    <Content Include="Index.aspx" />
     <Content Include="index.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -243,6 +244,13 @@
     </Compile>
     <Compile Include="crear_orden_reserva.aspx.designer.cs">
       <DependentUpon>crear_orden_reserva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="ingreso_cliente.aspx.cs">
       <DependentUpon>ingreso_cliente.aspx</DependentUpon>
