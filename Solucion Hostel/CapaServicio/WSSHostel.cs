@@ -234,9 +234,9 @@ namespace CapaServicio
         }
         //Fin Cama
 
-        public ContenedorOrdenReservaCompleta OrdenReservaCompletaCrear(ContenedorOrdenReservaCompleta entrada)
+        public ContenedorOrdenCompraCompleta OrdenCompraCompletaCrear(ContenedorOrdenCompraCompleta entrada)
         {
-            CRUDOrdenReservaCompleta x = new CRUDOrdenReservaCompleta();
+            CRUDOrdenCompraCompleta x = new CRUDOrdenCompraCompleta();
             x.LlamarSPCrear(entrada);
             return entrada;
         }

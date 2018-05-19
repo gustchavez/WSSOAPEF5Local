@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CapaObjeto
 {
-    public class OrdenReservaDetalle
+    public class OrdenCompraDetalle
     {
         public Alojamiento Alojamiento { get; set; }
         public Comida Comida { get; set; }
 
-        public OrdenReservaDetalle()
+        public OrdenCompraDetalle()
         {
             Init();
         }

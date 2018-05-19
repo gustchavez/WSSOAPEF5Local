@@ -8,7 +8,7 @@ using CapaObjeto;
 
 namespace CapaWSPresentacion
 {
-    public partial class crear_orden_pedido : System.Web.UI.Page
+    public partial class crear_orden_compra : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

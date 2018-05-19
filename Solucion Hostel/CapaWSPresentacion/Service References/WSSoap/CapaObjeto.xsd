@@ -274,21 +274,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfCama" nillable="true" type="tns:ArrayOfCama" />
-  <xs:complexType name="ContenedorOrdenReservaCompleta">
+  <xs:complexType name="ContenedorOrdenCompraCompleta">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:OrdenReservaCompleta" />
+      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:OrdenCompraCompleta" />
       <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ContenedorOrdenReservaCompleta" nillable="true" type="tns:ContenedorOrdenReservaCompleta" />
-  <xs:complexType name="OrdenReservaCompleta">
+  <xs:element name="ContenedorOrdenCompraCompleta" nillable="true" type="tns:ContenedorOrdenCompraCompleta" />
+  <xs:complexType name="OrdenCompraCompleta">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Cabecera" nillable="true" type="tns:OrdenReserva" />
-      <xs:element minOccurs="0" name="ListaDetalle" nillable="true" type="tns:ArrayOfOrdenReservaDetalle" />
+      <xs:element minOccurs="0" name="Cabecera" nillable="true" type="tns:OrdenCompra" />
+      <xs:element minOccurs="0" name="ListaDetalle" nillable="true" type="tns:ArrayOfOrdenCompraDetalle" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="OrdenReservaCompleta" nillable="true" type="tns:OrdenReservaCompleta" />
-  <xs:complexType name="OrdenReserva">
+  <xs:element name="OrdenCompraCompleta" nillable="true" type="tns:OrdenCompraCompleta" />
+  <xs:complexType name="OrdenCompra">
     <xs:sequence>
       <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaRecepcion" type="xs:dateTime" />
@@ -299,20 +299,20 @@
       <xs:element minOccurs="0" name="Ubicacion" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="OrdenReserva" nillable="true" type="tns:OrdenReserva" />
-  <xs:complexType name="ArrayOfOrdenReservaDetalle">
+  <xs:element name="OrdenCompra" nillable="true" type="tns:OrdenCompra" />
+  <xs:complexType name="ArrayOfOrdenCompraDetalle">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrdenReservaDetalle" nillable="true" type="tns:OrdenReservaDetalle" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrdenCompraDetalle" nillable="true" type="tns:OrdenCompraDetalle" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfOrdenReservaDetalle" nillable="true" type="tns:ArrayOfOrdenReservaDetalle" />
-  <xs:complexType name="OrdenReservaDetalle">
+  <xs:element name="ArrayOfOrdenCompraDetalle" nillable="true" type="tns:ArrayOfOrdenCompraDetalle" />
+  <xs:complexType name="OrdenCompraDetalle">
     <xs:sequence>
       <xs:element minOccurs="0" name="Alojamiento" nillable="true" type="tns:Alojamiento" />
       <xs:element minOccurs="0" name="Comida" nillable="true" type="tns:Comida" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="OrdenReservaDetalle" nillable="true" type="tns:OrdenReservaDetalle" />
+  <xs:element name="OrdenCompraDetalle" nillable="true" type="tns:OrdenCompraDetalle" />
   <xs:complexType name="Alojamiento">
     <xs:sequence>
       <xs:element minOccurs="0" name="CodigoCama" type="xs:decimal" />

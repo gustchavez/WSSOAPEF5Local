@@ -299,17 +299,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="OrdenReservaCompletaCrear">
+  <xs:element name="OrdenCompraCompletaCrear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q36:ContenedorOrdenReservaCompleta" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q36:ContenedorOrdenCompraCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="OrdenReservaCompletaCrearResponse">
+  <xs:element name="OrdenCompraCompletaCrearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="OrdenReservaCompletaCrearResult" nillable="true" type="q37:ContenedorOrdenReservaCompleta" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="OrdenCompraCompletaCrearResult" nillable="true" type="q37:ContenedorOrdenCompraCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

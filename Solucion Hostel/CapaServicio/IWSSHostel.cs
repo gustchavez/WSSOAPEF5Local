@@ -90,7 +90,7 @@ namespace CapaServicio
         //Fin Cama
 
         [OperationContract]
-        ContenedorOrdenReservaCompleta OrdenReservaCompletaCrear(ContenedorOrdenReservaCompleta entrada);
+        ContenedorOrdenCompraCompleta OrdenCompraCompletaCrear(ContenedorOrdenCompraCompleta entrada);
 
         [OperationContract]
         ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(ContenedorOrdenPedidoCompleta entrada);

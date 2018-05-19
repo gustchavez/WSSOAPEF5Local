@@ -96,7 +96,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="crear_orden_pedido.aspx" />
+    <Content Include="crear_orden_compra.aspx" />
     <Content Include="crear_orden_reserva.aspx" />
     <Content Include="index.html" />
     <Content Include="packages.config" />
@@ -177,12 +177,12 @@
     <Compile Include="crear_cliente.aspx.designer.cs">
       <DependentUpon>crear_cliente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="crear_orden_pedido.aspx.cs">
-      <DependentUpon>crear_orden_pedido.aspx</DependentUpon>
+    <Compile Include="crear_orden_compra.aspx.cs">
+      <DependentUpon>crear_orden_compra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="crear_orden_pedido.aspx.designer.cs">
-      <DependentUpon>crear_orden_pedido.aspx</DependentUpon>
+    <Compile Include="crear_orden_compra.aspx.designer.cs">
+      <DependentUpon>crear_orden_compra.aspx</DependentUpon>
     </Compile>
     <Compile Include="crear_orden_reserva.aspx.cs">
       <DependentUpon>crear_orden_reserva.aspx</DependentUpon>

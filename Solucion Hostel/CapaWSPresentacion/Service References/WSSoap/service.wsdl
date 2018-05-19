@@ -139,11 +139,11 @@
   <wsdl:message name="IWSSHostel_CamaRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:CamaRescatarResponse" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_OrdenReservaCompletaCrear_InputMessage">
-    <wsdl:part name="parameters" element="tns:OrdenReservaCompletaCrear" />
+  <wsdl:message name="IWSSHostel_OrdenCompraCompletaCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenCompraCompletaCrear" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_OrdenReservaCompletaCrear_OutputMessage">
-    <wsdl:part name="parameters" element="tns:OrdenReservaCompletaCrearResponse" />
+  <wsdl:message name="IWSSHostel_OrdenCompraCompletaCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenCompraCompletaCrearResponse" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_OrdenPedidoCompletaCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaCrear" />
@@ -240,9 +240,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CamaRescatar" message="tns:IWSSHostel_CamaRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/CamaRescatarResponse" message="tns:IWSSHostel_CamaRescatar_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="OrdenReservaCompletaCrear">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenReservaCompletaCrear" message="tns:IWSSHostel_OrdenReservaCompletaCrear_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenReservaCompletaCrearResponse" message="tns:IWSSHostel_OrdenReservaCompletaCrear_OutputMessage" />
+    <wsdl:operation name="OrdenCompraCompletaCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear" message="tns:IWSSHostel_OrdenCompraCompletaCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrearResponse" message="tns:IWSSHostel_OrdenCompraCompletaCrear_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="OrdenPedidoCompletaCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear" message="tns:IWSSHostel_OrdenPedidoCompletaCrear_InputMessage" />
@@ -449,8 +449,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="OrdenReservaCompletaCrear">
-      <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenReservaCompletaCrear" style="document" />
+    <wsdl:operation name="OrdenCompraCompletaCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

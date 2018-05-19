@@ -8,15 +8,15 @@ using System.Data.Objects;
 
 namespace CapaNegocio
 {
-    public class CRUDOrdenReservaCompleta
+    public class CRUDOrdenCompraCompleta
     {
 
-        public CRUDOrdenReservaCompleta()
+        public CRUDOrdenCompraCompleta()
         {
             
         }
 
-        public ContenedorOrdenReservaCompleta LlamarSPCrear(ContenedorOrdenReservaCompleta nOCC)
+        public ContenedorOrdenCompraCompleta LlamarSPCrear(ContenedorOrdenCompraCompleta nOCC)
         {
             var p_OUT_NUMERO = new ObjectParameter("P_OUT_NUMERO", typeof(decimal));
             var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));

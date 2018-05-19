@@ -168,7 +168,7 @@ namespace CapaWSPresentacion
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            OrdenReservaCompleta nOCC = new OrdenReservaCompleta();
+            OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
             //Armar Encabezado de Orden de Reserva
             nOCC.Cabecera.RutCliente = txtRutCliente.Text;
             nOCC.Cabecera.Monto = 1000;//realizar calculo de las habitaciones seleccionadas.
@@ -181,7 +181,7 @@ namespace CapaWSPresentacion
 
             for (int i = 0; i < CantidadHuespedes; i++)
             {
-                OrdenReservaDetalle nOCD = new OrdenReservaDetalle();
+                OrdenCompraDetalle nOCD = new OrdenCompraDetalle();
 
                 TextBox item0 = (TextBox)form1.FindControl("txtRutPersona" + i);
                 nOCD.Alojamiento.RutPersona = item0.Text;
@@ -211,11 +211,11 @@ namespace CapaWSPresentacion
 
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            ContenedorOrdenReservaCompleta xOCC = new ContenedorOrdenReservaCompleta();
+            ContenedorOrdenCompraCompleta xOCC = new ContenedorOrdenCompraCompleta();
             xOCC.Item.Cabecera = nOCC.Cabecera;
             xOCC.Item.ListaDetalle = nOCC.ListaDetalle;
 
-            xOCC = x.OrdenReservaCompletaCrear(xOCC);
+            xOCC = x.OrdenCompraCompletaCrear(xOCC);
             
             txtCodigoRetorno.Text = xOCC.Retorno.Codigo.ToString();
             txtGlosaRetorno.Text = xOCC.Retorno.Glosa;

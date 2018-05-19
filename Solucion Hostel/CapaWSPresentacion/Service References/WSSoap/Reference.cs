@@ -147,11 +147,11 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CamaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/CamaRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorCamas> CamaRescatarAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenReservaCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenReservaCompletaCrearResponse")]
-        CapaObjeto.ContenedorOrdenReservaCompleta OrdenReservaCompletaCrear(CapaObjeto.ContenedorOrdenReservaCompleta entrada);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrearResponse")]
+        CapaObjeto.ContenedorOrdenCompraCompleta OrdenCompraCompletaCrear(CapaObjeto.ContenedorOrdenCompraCompleta entrada);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenReservaCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenReservaCompletaCrearResponse")]
-        System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenReservaCompleta> OrdenReservaCompletaCrearAsync(CapaObjeto.ContenedorOrdenReservaCompleta entrada);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrearResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenCompraCompleta> OrdenCompraCompletaCrearAsync(CapaObjeto.ContenedorOrdenCompraCompleta entrada);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrearResponse")]
         CapaObjeto.ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(CapaObjeto.ContenedorOrdenPedidoCompleta entrada);
@@ -363,12 +363,12 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.CamaRescatarAsync();
         }
         
-        public CapaObjeto.ContenedorOrdenReservaCompleta OrdenReservaCompletaCrear(CapaObjeto.ContenedorOrdenReservaCompleta entrada) {
-            return base.Channel.OrdenReservaCompletaCrear(entrada);
+        public CapaObjeto.ContenedorOrdenCompraCompleta OrdenCompraCompletaCrear(CapaObjeto.ContenedorOrdenCompraCompleta entrada) {
+            return base.Channel.OrdenCompraCompletaCrear(entrada);
         }
         
-        public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenReservaCompleta> OrdenReservaCompletaCrearAsync(CapaObjeto.ContenedorOrdenReservaCompleta entrada) {
-            return base.Channel.OrdenReservaCompletaCrearAsync(entrada);
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenCompraCompleta> OrdenCompraCompletaCrearAsync(CapaObjeto.ContenedorOrdenCompraCompleta entrada) {
+            return base.Channel.OrdenCompraCompletaCrearAsync(entrada);
         }
         
         public CapaObjeto.ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(CapaObjeto.ContenedorOrdenPedidoCompleta entrada) {

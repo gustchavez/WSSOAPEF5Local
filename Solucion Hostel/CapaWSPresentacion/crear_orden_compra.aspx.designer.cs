@@ -10,7 +10,7 @@
 namespace CapaWSPresentacion {
     
     
-    public partial class crear_orden_pedido {
+    public partial class crear_orden_compra {
         
         /// <summary>
         /// Control form1.
