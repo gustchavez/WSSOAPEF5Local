@@ -10,7 +10,7 @@
 namespace CapaWSPresentacion {
     
     
-    public partial class crear_orden_reserva {
+    public partial class crear_orden_pedido {
         
         /// <summary>
         /// Control form1.
@@ -40,13 +40,13 @@ namespace CapaWSPresentacion {
         protected global::System.Web.UI.WebControls.TextBox txtMonto;
         
         /// <summary>
-        /// Control txtRutCliente.
+        /// Control txtRutProveedor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCliente;
+        protected global::System.Web.UI.WebControls.TextBox txtRutProveedor;
         
         /// <summary>
         /// Control txtCodigoRetorno.

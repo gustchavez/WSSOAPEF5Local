@@ -81,7 +81,7 @@
     <Compile Include="ContenedorPlato.cs" />
     <Compile Include="ContenedorProducto.cs" />
     <Compile Include="Sesion.cs" />
-    <Compile Include="RetornoBBDD.cs" />
+    <Compile Include="Comunicacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>

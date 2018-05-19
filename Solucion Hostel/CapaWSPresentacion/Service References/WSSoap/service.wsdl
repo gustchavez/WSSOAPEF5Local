@@ -13,6 +13,12 @@
   <wsdl:message name="IWSSHostel_ValidarLogin_OutputMessage">
     <wsdl:part name="parameters" element="tns:ValidarLoginResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_ValidarToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarToken" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ValidarToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarTokenResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_PerfilUsuarioClienteCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteCrear" />
   </wsdl:message>
@@ -133,16 +139,26 @@
   <wsdl:message name="IWSSHostel_CamaRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:CamaRescatarResponse" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_OrdenCompraCompletaCrear_InputMessage">
-    <wsdl:part name="parameters" element="tns:OrdenCompraCompletaCrear" />
+  <wsdl:message name="IWSSHostel_OrdenReservaCompletaCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenReservaCompletaCrear" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_OrdenCompraCompletaCrear_OutputMessage">
-    <wsdl:part name="parameters" element="tns:OrdenCompraCompletaCrearResponse" />
+  <wsdl:message name="IWSSHostel_OrdenReservaCompletaCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenReservaCompletaCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenPedidoCompletaCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenPedidoCompletaCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaCrearResponse" />
   </wsdl:message>
   <wsdl:portType name="IWSSHostel">
     <wsdl:operation name="ValidarLogin">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ValidarLogin" message="tns:IWSSHostel_ValidarLogin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ValidarLoginResponse" message="tns:IWSSHostel_ValidarLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ValidarToken" message="tns:IWSSHostel_ValidarToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ValidarTokenResponse" message="tns:IWSSHostel_ValidarToken_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="PerfilUsuarioClienteCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear" message="tns:IWSSHostel_PerfilUsuarioClienteCrear_InputMessage" />
@@ -224,15 +240,28 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CamaRescatar" message="tns:IWSSHostel_CamaRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/CamaRescatarResponse" message="tns:IWSSHostel_CamaRescatar_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="OrdenCompraCompletaCrear">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear" message="tns:IWSSHostel_OrdenCompraCompletaCrear_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrearResponse" message="tns:IWSSHostel_OrdenCompraCompletaCrear_OutputMessage" />
+    <wsdl:operation name="OrdenReservaCompletaCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenReservaCompletaCrear" message="tns:IWSSHostel_OrdenReservaCompletaCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenReservaCompletaCrearResponse" message="tns:IWSSHostel_OrdenReservaCompletaCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrdenPedidoCompletaCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear" message="tns:IWSSHostel_OrdenPedidoCompletaCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrearResponse" message="tns:IWSSHostel_OrdenPedidoCompletaCrear_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWSSHostel" type="tns:IWSSHostel">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ValidarLogin">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/ValidarLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarToken">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ValidarToken" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -420,8 +449,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="OrdenCompraCompletaCrear">
-      <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear" style="document" />
+    <wsdl:operation name="OrdenReservaCompletaCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenReservaCompletaCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrdenPedidoCompletaCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

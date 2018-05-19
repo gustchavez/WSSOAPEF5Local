@@ -21,6 +21,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ValidarLogin", ReplyAction="http://tempuri.org/IWSSHostel/ValidarLoginResponse")]
         System.Threading.Tasks.Task<CapaObjeto.Sesion> ValidarLoginAsync(string usuario, string clave);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ValidarToken", ReplyAction="http://tempuri.org/IWSSHostel/ValidarTokenResponse")]
+        bool ValidarToken(string token, string perfil);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ValidarToken", ReplyAction="http://tempuri.org/IWSSHostel/ValidarTokenResponse")]
+        System.Threading.Tasks.Task<bool> ValidarTokenAsync(string token, string perfil);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrearResponse")]
         CapaObjeto.ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(CapaObjeto.ContenedorPerfilUsuarioCliente entrada);
         
@@ -141,11 +147,17 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CamaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/CamaRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorCamas> CamaRescatarAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrearResponse")]
-        CapaObjeto.ContenedorOrdenReservaCompleta OrdenCompraCompletaCrear(CapaObjeto.ContenedorOrdenReservaCompleta entrada);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenReservaCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenReservaCompletaCrearResponse")]
+        CapaObjeto.ContenedorOrdenReservaCompleta OrdenReservaCompletaCrear(CapaObjeto.ContenedorOrdenReservaCompleta entrada);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrearResponse")]
-        System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenReservaCompleta> OrdenCompraCompletaCrearAsync(CapaObjeto.ContenedorOrdenReservaCompleta entrada);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenReservaCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenReservaCompletaCrearResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenReservaCompleta> OrdenReservaCompletaCrearAsync(CapaObjeto.ContenedorOrdenReservaCompleta entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrearResponse")]
+        CapaObjeto.ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(CapaObjeto.ContenedorOrdenPedidoCompleta entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrearResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenPedidoCompleta> OrdenPedidoCompletaCrearAsync(CapaObjeto.ContenedorOrdenPedidoCompleta entrada);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -181,6 +193,14 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.Sesion> ValidarLoginAsync(string usuario, string clave) {
             return base.Channel.ValidarLoginAsync(usuario, clave);
+        }
+        
+        public bool ValidarToken(string token, string perfil) {
+            return base.Channel.ValidarToken(token, perfil);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarTokenAsync(string token, string perfil) {
+            return base.Channel.ValidarTokenAsync(token, perfil);
         }
         
         public CapaObjeto.ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(CapaObjeto.ContenedorPerfilUsuarioCliente entrada) {
@@ -343,12 +363,20 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.CamaRescatarAsync();
         }
         
-        public CapaObjeto.ContenedorOrdenReservaCompleta OrdenCompraCompletaCrear(CapaObjeto.ContenedorOrdenReservaCompleta entrada) {
-            return base.Channel.OrdenCompraCompletaCrear(entrada);
+        public CapaObjeto.ContenedorOrdenReservaCompleta OrdenReservaCompletaCrear(CapaObjeto.ContenedorOrdenReservaCompleta entrada) {
+            return base.Channel.OrdenReservaCompletaCrear(entrada);
         }
         
-        public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenReservaCompleta> OrdenCompraCompletaCrearAsync(CapaObjeto.ContenedorOrdenReservaCompleta entrada) {
-            return base.Channel.OrdenCompraCompletaCrearAsync(entrada);
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenReservaCompleta> OrdenReservaCompletaCrearAsync(CapaObjeto.ContenedorOrdenReservaCompleta entrada) {
+            return base.Channel.OrdenReservaCompletaCrearAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(CapaObjeto.ContenedorOrdenPedidoCompleta entrada) {
+            return base.Channel.OrdenPedidoCompletaCrear(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenPedidoCompleta> OrdenPedidoCompletaCrearAsync(CapaObjeto.ContenedorOrdenPedidoCompleta entrada) {
+            return base.Channel.OrdenPedidoCompletaCrearAsync(entrada);
         }
     }
 }

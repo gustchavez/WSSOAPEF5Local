@@ -14,7 +14,7 @@ namespace CapaObjeto
         public string Nombre   { get; set; }
         public string Apellido { get; set; }
 
-        public RetornoBBDD Retorno { get; set; }
+        public Comunicacion Retorno { get; set; }
 
         public Sesion()
         {
@@ -28,7 +28,7 @@ namespace CapaObjeto
             this.Perfil = string.Empty;
             this.Nombre = string.Empty;
             this.Apellido = string.Empty;
-            this.Retorno = new RetornoBBDD();
+            this.Retorno = new Comunicacion();
         }
     }
 }

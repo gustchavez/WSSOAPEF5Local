@@ -10,7 +10,7 @@
 namespace CapaWSPresentacion {
     
     
-    public partial class crear_orden_reserva {
+    public partial class ProbarToken {
         
         /// <summary>
         /// Control form1.
@@ -22,57 +22,57 @@ namespace CapaWSPresentacion {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control txtNumeroOrden.
+        /// Control txtUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumeroOrden;
+        protected global::System.Web.UI.WebControls.TextBox txtUsuario;
         
         /// <summary>
-        /// Control txtMonto.
+        /// Control txtClave.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMonto;
+        protected global::System.Web.UI.WebControls.TextBox txtClave;
         
         /// <summary>
-        /// Control txtRutCliente.
+        /// Control txtToken.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCliente;
+        protected global::System.Web.UI.WebControls.TextBox txtToken;
         
         /// <summary>
-        /// Control txtCodigoRetorno.
+        /// Control chkValido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigoRetorno;
+        protected global::System.Web.UI.WebControls.CheckBox chkValido;
         
         /// <summary>
-        /// Control txtGlosaRetorno.
+        /// Control txtArmarToken.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGlosaRetorno;
+        protected global::System.Web.UI.WebControls.Button txtArmarToken;
         
         /// <summary>
-        /// Control btnIngresar.
+        /// Control txtValidarToken.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnIngresar;
+        protected global::System.Web.UI.WebControls.Button txtValidarToken;
     }
 }

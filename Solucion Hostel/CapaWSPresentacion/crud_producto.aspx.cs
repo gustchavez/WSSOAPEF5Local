@@ -12,9 +12,20 @@ namespace CapaWSPresentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            if (Session["TokenUsuario"] != null &&
+                (x.ValidarToken(Session["TokenUsuario"].ToString(), "Empleado") ||
+                x.ValidarToken(Session["TokenUsuario"].ToString(), "Administrador")))
             {
-                CargarGridView();
+                if (!IsPostBack)
+                {
+                    CargarGridView();
+                }
+            }
+            else
+            {
+                Session["TokenUsuario"] = null;
+                Response.Redirect("ingreso_cliente.aspx");
             }
         }
 

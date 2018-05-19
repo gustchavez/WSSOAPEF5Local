@@ -96,12 +96,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="crear_orden_pedido.aspx" />
     <Content Include="crear_orden_reserva.aspx" />
+    <Content Include="index.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="perfilEmpleado\perfilEmpleado.aspx" />
+    <Content Include="ProbarToken.aspx" />
     <Content Include="Properties\DataSources\CapaObjeto.ListaProductos.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.Producto.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ListaPlatos.datasource" />
@@ -120,6 +123,8 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorCama.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorCamas.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenCompraCompleta.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenPedidoCompleta.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenReservaCompleta.datasource" />
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>
@@ -172,6 +177,13 @@
     <Compile Include="crear_cliente.aspx.designer.cs">
       <DependentUpon>crear_cliente.aspx</DependentUpon>
     </Compile>
+    <Compile Include="crear_orden_pedido.aspx.cs">
+      <DependentUpon>crear_orden_pedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="crear_orden_pedido.aspx.designer.cs">
+      <DependentUpon>crear_orden_pedido.aspx</DependentUpon>
+    </Compile>
     <Compile Include="crear_orden_reserva.aspx.cs">
       <DependentUpon>crear_orden_reserva.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -192,6 +204,13 @@
     </Compile>
     <Compile Include="perfilEmpleado\perfilEmpleado.aspx.designer.cs">
       <DependentUpon>perfilEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProbarToken.aspx.cs">
+      <DependentUpon>ProbarToken.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProbarToken.aspx.designer.cs">
+      <DependentUpon>ProbarToken.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="crud_plato.aspx.cs">

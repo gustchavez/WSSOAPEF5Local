@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="crear_orden_reserva.aspx.cs" Inherits="CapaWSPresentacion.crear_orden_reserva" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="crear_orden_pedido.aspx.cs" Inherits="CapaWSPresentacion.crear_orden_pedido" %>
 
 <!DOCTYPE html>
 
@@ -20,12 +20,12 @@
             <tr>
                 <th>Numero Orden</th>
                 <th>Monto</th>
-                <th>Rut Cliente</th>
+                <th>Rut Proveedor</th>
             </tr>
             <tr>
                 <td><asp:TextBox ID="txtNumeroOrden" runat="server"></asp:TextBox></td>
                 <td class="auto-style1"><asp:TextBox ID="txtMonto" runat="server" TextMode="Number"></asp:TextBox></td>
-                <td><asp:TextBox ID="txtRutCliente" runat="server"></asp:TextBox></td>
+                <td><asp:TextBox ID="txtRutProveedor" runat="server"></asp:TextBox></td>
             </tr>
         </table>
         <table >

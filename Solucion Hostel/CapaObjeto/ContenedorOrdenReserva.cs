@@ -9,7 +9,7 @@ namespace CapaObjeto
     public class ContenedorOrdenReserva
     {
         public OrdenReserva Item { get; set; }
-        public RetornoBBDD Retorno { get; set; }
+        public Comunicacion Retorno { get; set; }
 
         public ContenedorOrdenReserva()
         {
@@ -19,7 +19,7 @@ namespace CapaObjeto
         private void Init()
         {
             this.Item = new OrdenReserva();
-            this.Retorno = new RetornoBBDD();
+            this.Retorno = new Comunicacion();
         }
     }
 }

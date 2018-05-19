@@ -8,11 +8,25 @@ using CapaObjeto;
 
 namespace CapaWSPresentacion
 {
-    public partial class crear_orden_compra : System.Web.UI.Page
+    public partial class crear_orden_reserva : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CrearFormularioDetalle();
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            if (Session["TokenUsuario"] != null &&
+                (x.ValidarToken(Session["TokenUsuario"].ToString(), "Empleado") ||
+                 x.ValidarToken(Session["TokenUsuario"].ToString(), "Cliente")  ||
+                 x.ValidarToken(Session["TokenUsuario"].ToString(), "Administrador")
+                 ))
+            {
+                CrearFormularioDetalle();
+            }
+            else
+            {
+                Session["TokenUsuario"] = null;
+                Response.Redirect("ingreso_cliente.aspx");
+            }
         }
 
         private void CrearFormularioDetalle()
@@ -201,7 +215,7 @@ namespace CapaWSPresentacion
             xOCC.Item.Cabecera = nOCC.Cabecera;
             xOCC.Item.ListaDetalle = nOCC.ListaDetalle;
 
-            xOCC = x.OrdenCompraCompletaCrear(xOCC);
+            xOCC = x.OrdenReservaCompletaCrear(xOCC);
             
             txtCodigoRetorno.Text = xOCC.Retorno.Codigo.ToString();
             txtGlosaRetorno.Text = xOCC.Retorno.Glosa;

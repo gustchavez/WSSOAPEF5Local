@@ -15,6 +15,12 @@ namespace CapaServicio
         [OperationContract]
         Sesion ValidarLogin(string usuario, string clave); //NegLogin entrada);
 
+        //[OperationContract]
+        //string GenerarToken(string usuario, string clave);
+
+        [OperationContract]
+        bool ValidarToken(string token, string perfil);
+
         [OperationContract]
         ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(ContenedorPerfilUsuarioCliente entrada);
 
@@ -87,6 +93,6 @@ namespace CapaServicio
         ContenedorOrdenReservaCompleta OrdenReservaCompletaCrear(ContenedorOrdenReservaCompleta entrada);
 
         [OperationContract]
-        ContenedorOrdenPedidoCompleta OrdenCompraCompletaCrear(ContenedorOrdenReservaCompleta entrada);
+        ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(ContenedorOrdenPedidoCompleta entrada);
     }
 }
