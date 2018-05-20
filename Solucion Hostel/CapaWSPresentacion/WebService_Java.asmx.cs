@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaObjeto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -26,10 +27,36 @@ namespace CapaWSPresentacion
         //**********------> Login
 
         [WebMethod]
-        public string ValidarLogin(String nombre, String clave)
+        public List<String> ValidarLogin(String nombre, String clave)
         {
-            String text = "selec * from usuaio where clave = and nombre =";
-            return text;
+
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            Sesion nLogin = new Sesion();
+
+            nLogin.Usuario = nombre;
+            nLogin.Clave = clave;
+
+            nLogin = x.ValidarLogin(nombre, clave);
+
+            List<String> obje=new List<string>();
+
+            if (nLogin.Retorno.Codigo == 0)
+            {
+                Session["TokenUsuario"] = nLogin.Retorno.Token;
+                Session["Nombre"] = nLogin.Nombre;
+                obje.Add( nLogin.Nombre);
+                obje.Add(nLogin.Apellido);
+                obje.Add(nLogin.Perfil);
+                obje.Add(nLogin.Retorno.Token);
+                obje.Add(nLogin.Retorno.Codigo.ToString());              
+            }
+            else
+            {
+                Session["TokenUsuario"] = null;
+                Session["Nombre"] = null;
+            }            
+            return obje;
         }
 
         //**********----> Panel Productos
