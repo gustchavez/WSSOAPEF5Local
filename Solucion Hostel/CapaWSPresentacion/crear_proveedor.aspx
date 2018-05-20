@@ -13,7 +13,7 @@
     
         <table style="width:75%;">
             <tr>
-                <td style="width:25%;">Rut Empresa </td>
+                <td style="width:25%;">Rut Empresa P</td>
                 <td style="width:75%;"><asp:TextBox ID="txtRutEmpresa" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
