@@ -282,15 +282,19 @@
 		<h4 style="color: red;">Nueva Contraseña</h4>	
 		<asp:TextBox ID="txtConstrasena" runat="server"  CssClass="CasillaPersona" ></asp:TextBox>
         </div>
-		<div class="Casilla2-2">
-		<h4 style="color: red;">Confirmar Contraseña</h4>	
-		<asp:TextBox ID="txtConstrasena2" runat="server"  CssClass="CasillaPersona"  ></asp:TextBox>
-		</div>
 		<div class="Casilla2-2">	
         <asp:Button ID="btnIngresar" runat="server" Text="Ingresar Proveedor"  OnClick="btnAceptar_Click" CssClass="SubmitTotal" />
         </div>
-	  </div>	
-      </form>
+	    </div>	
+        <div class="Casilla2-1">
+        <h4>Codigo Retorno</h4>
+        <asp:TextBox ID="txtCodigoRetorno" runat="server" Enabled="False" CssClass="CasillaPersona"></asp:TextBox>
+        </div>
+        <div class="Casilla2-1">
+        <h4> Glosa</h4>
+        <asp:TextBox ID="txtGlosaRetorno" runat="server" Enabled="False" CssClass="CasillaPersona"></asp:TextBox>
+        </div>
+        </form>
 
     </div>
                <!--Fin COLUMNA 2-->
