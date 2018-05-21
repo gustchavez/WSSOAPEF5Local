@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <siteMapNode url="" title="Empleado"  description="">
-        <siteMapNode url="" title=""  description="" />
-        <siteMapNode url="" title=""  description="" />
+        <siteMapNode url="np_proveedor_crear.aspx" title="Crear Proveedor"  description="" />
+        <siteMapNode url="np_orden_compra_crear.aspx" title="Crear Orden Compra"  description="" />
     </siteMapNode>
 </siteMap>

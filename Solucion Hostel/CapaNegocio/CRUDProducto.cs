@@ -111,8 +111,12 @@ namespace CapaNegocio
         {
             bool retorno = false;
             TokenUsuario x = new TokenUsuario();
-            if (x.ValidarToken(token, "Admistrador") ||
-                x.ValidarToken(token, "Empleado"))
+
+            List<string> Perfiles = new List<string>();
+
+            Perfiles.Add("Admistrador");
+            Perfiles.Add("Empleado");
+            if (x.ValidarToken(token, Perfiles))
             {
                 retorno = true;
             }

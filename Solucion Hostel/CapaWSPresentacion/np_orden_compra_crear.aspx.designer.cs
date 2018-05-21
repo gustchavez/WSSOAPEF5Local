@@ -10,16 +10,16 @@
 namespace CapaWSPresentacion {
     
     
-    public partial class crear_orden_compra {
+    public partial class np_orden_compra_crear {
         
         /// <summary>
-        /// Control form1.
+        /// Control PlaceHolder1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
         
         /// <summary>
         /// Control txtNumeroOrden.

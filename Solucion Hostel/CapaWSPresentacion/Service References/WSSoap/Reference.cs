@@ -22,10 +22,10 @@ namespace CapaWSPresentacion.WSSoap {
         System.Threading.Tasks.Task<CapaObjeto.Sesion> ValidarLoginAsync(string usuario, string clave);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ValidarToken", ReplyAction="http://tempuri.org/IWSSHostel/ValidarTokenResponse")]
-        bool ValidarToken(string token, string perfil);
+        bool ValidarToken(string token, string[] perfiles);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ValidarToken", ReplyAction="http://tempuri.org/IWSSHostel/ValidarTokenResponse")]
-        System.Threading.Tasks.Task<bool> ValidarTokenAsync(string token, string perfil);
+        System.Threading.Tasks.Task<bool> ValidarTokenAsync(string token, string[] perfiles);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/TokenRecuperarPerfil", ReplyAction="http://tempuri.org/IWSSHostel/TokenRecuperarPerfilResponse")]
         string TokenRecuperarPerfil(string token);
@@ -201,12 +201,12 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.ValidarLoginAsync(usuario, clave);
         }
         
-        public bool ValidarToken(string token, string perfil) {
-            return base.Channel.ValidarToken(token, perfil);
+        public bool ValidarToken(string token, string[] perfiles) {
+            return base.Channel.ValidarToken(token, perfiles);
         }
         
-        public System.Threading.Tasks.Task<bool> ValidarTokenAsync(string token, string perfil) {
-            return base.Channel.ValidarTokenAsync(token, perfil);
+        public System.Threading.Tasks.Task<bool> ValidarTokenAsync(string token, string[] perfiles) {
+            return base.Channel.ValidarTokenAsync(token, perfiles);
         }
         
         public string TokenRecuperarPerfil(string token) {

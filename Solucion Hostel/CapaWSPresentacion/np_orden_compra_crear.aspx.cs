@@ -1,35 +1,43 @@
-﻿using System;
+﻿using CapaObjeto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CapaObjeto;
 
 namespace CapaWSPresentacion
 {
-    public partial class crear_orden_compra : System.Web.UI.Page
+    public partial class np_orden_compra_crear : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-
-            if (Session["TokenUsuario"] != null &&
-                (x.ValidarToken(Session["TokenUsuario"].ToString(), "Empleado") ||
-                x.ValidarToken(Session["TokenUsuario"].ToString(), "Administrador")))
+            try
             {
-                CrearFormularioDetalle();
-
+                string Perfil = Session["PerfilUsuario"].ToString();
+                if (Perfil.Equals("Empleado") || Perfil.Equals("Administrador"))
+                {
+                    CrearFormularioDetalle();
+                }
+                else
+                {
+                    Session["TokenUsuario"] = null;
+                    Response.Redirect("np_ingreso.aspx");
+                }
             }
-            else
+            catch (Exception)
             {
                 Session["TokenUsuario"] = null;
-                Response.Redirect("ingreso_cliente.aspx");
+                Response.Redirect("np_ingreso.aspx");
             }
         }
 
         private void CrearFormularioDetalle()
         {
+            foreach (var item in Master.Controls)
+            {
+                item.ToString();
+            }
             int CantidadProductos = 3;
             Session["CantidadProductos"] = CantidadProductos;
 
@@ -38,7 +46,7 @@ namespace CapaWSPresentacion
             //Se instacion el WS para recuperar los datos de Productos y Platos
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
             //Se vuelca en una lista las Productos
-            
+
             ContenedorProductos Productos = new ContenedorProductos();
             Productos = x.ProductoRescatar(Session["TokenUsuario"].ToString());
 
@@ -55,27 +63,27 @@ namespace CapaWSPresentacion
 
             Literal HeadAntes = new Literal();
             HeadAntes.Text = "<table id = 'tablaDetalle' style = 'width: 75%;'><tr>";
-            form1.Controls.Add(HeadAntes);
+            PlaceHolder1.Controls.Add(HeadAntes);
 
             //Escribir Head de la parte Detalle
             foreach (var item in lHeadDetalle)
             {
                 Literal HeadDuranteA = new Literal();
                 HeadDuranteA.Text = "<th>";
-                form1.Controls.Add(HeadDuranteA);
+                PlaceHolder1.Controls.Add(HeadDuranteA);
 
                 Literal HeadDetalle = new Literal();
                 HeadDetalle.Text = item;
-                form1.Controls.Add(HeadDetalle);
+                PlaceHolder1.Controls.Add(HeadDetalle);
 
                 Literal HeadDuranteD = new Literal();
                 HeadDuranteD.Text = "</th>";
-                form1.Controls.Add(HeadDuranteD);
+                PlaceHolder1.Controls.Add(HeadDuranteD);
             }
 
             Literal HeadDespues = new Literal();
             HeadDespues.Text = "</tr>";
-            form1.Controls.Add(HeadDespues);
+            PlaceHolder1.Controls.Add(HeadDespues);
         }
 
         private void EscribirBodyDetalle(int CantidadHuespedes, ContenedorProductos Productos)
@@ -85,16 +93,16 @@ namespace CapaWSPresentacion
             {
                 Literal item0Antes = new Literal();
                 item0Antes.Text = "<tr><td>";
-                form1.Controls.Add(item0Antes);
+                PlaceHolder1.Controls.Add(item0Antes);
 
                 TextBox item1 = new TextBox();
                 item1.ID = "txtProductoFecRecepcion" + i;
                 item1.TextMode = TextBoxMode.Date;
-                form1.Controls.Add(item1);
+                PlaceHolder1.Controls.Add(item1);
                 //
                 Literal item3Antes = new Literal();
                 item3Antes.Text = "</td><td>";
-                form1.Controls.Add(item3Antes);
+                PlaceHolder1.Controls.Add(item3Antes);
 
                 DropDownList item3 = new DropDownList();
                 item3.ID = "ddlProductoCodProd" + i;
@@ -102,16 +110,16 @@ namespace CapaWSPresentacion
                 item3.DataValueField = "Codigo";
                 item3.DataTextField = "Descripcion";
                 item3.DataBind();
-                form1.Controls.Add(item3);
+                PlaceHolder1.Controls.Add(item3);
                 //
                 Literal item6Despues = new Literal();
                 item6Despues.Text = "</td></tr>";
-                form1.Controls.Add(item6Despues);
+                PlaceHolder1.Controls.Add(item6Despues);
             }
 
             Literal BodyDespues = new Literal();
             BodyDespues.Text = "</table>";
-            form1.Controls.Add(BodyDespues);
+            PlaceHolder1.Controls.Add(BodyDespues);
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
@@ -130,11 +138,11 @@ namespace CapaWSPresentacion
             for (int i = 0; i < CantidadProductos; i++)
             {
                 OrdenPedidoDetalle nOPD = new OrdenPedidoDetalle();
-                
-                TextBox item1 = (TextBox)form1.FindControl("txtProductoFecRecepcion" + i);
+
+                TextBox item1 = (TextBox)PlaceHolder1.FindControl("txtProductoFecRecepcion" + i);
                 nOPD.RegistroRecepcionPedido.Recepcion = DateTime.Parse(item1.Text);
-                
-                DropDownList item3 = (DropDownList)form1.FindControl("ddlProductoCodProd" + i);
+
+                DropDownList item3 = (DropDownList)PlaceHolder1.FindControl("ddlProductoCodProd" + i);
                 nOPD.RegistroRecepcionPedido.CodigoProducto = decimal.Parse(item3.SelectedValue);
 
                 nOPC.ListaDetalle.Add(nOPD);
@@ -147,7 +155,7 @@ namespace CapaWSPresentacion
             xOPC.Item.ListaDetalle = nOPC.ListaDetalle;
 
             xOPC = x.OrdenPedidoCompletaCrear(xOPC);
-            
+
             txtCodigoRetorno.Text = xOPC.Retorno.Codigo.ToString();
             txtGlosaRetorno.Text = xOPC.Retorno.Glosa;
 

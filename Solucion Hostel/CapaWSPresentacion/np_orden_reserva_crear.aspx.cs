@@ -1,31 +1,34 @@
-﻿using System;
+﻿using CapaObjeto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CapaObjeto;
 
 namespace CapaWSPresentacion
 {
-    public partial class crear_orden_reserva : System.Web.UI.Page
+    public partial class np_orden_reserva_crear : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-
-            if (Session["TokenUsuario"] != null &&
-                (x.ValidarToken(Session["TokenUsuario"].ToString(), "Empleado") ||
-                 x.ValidarToken(Session["TokenUsuario"].ToString(), "Cliente")  ||
-                 x.ValidarToken(Session["TokenUsuario"].ToString(), "Administrador")
-                 ))
+            try
             {
-                CrearFormularioDetalle();
+                string Perfil = Session["PerfilUsuario"].ToString();
+                if (Perfil.Equals("Cliente") || Perfil.Equals("Administrador"))
+                {
+                    CrearFormularioDetalle();
+                }
+                else
+                {
+                    Session["TokenUsuario"] = null;
+                    Response.Redirect("np_ingreso.aspx");
+                }
             }
-            else
+            catch (Exception)
             {
                 Session["TokenUsuario"] = null;
-                Response.Redirect("ingreso_cliente.aspx");
+                Response.Redirect("np_ingreso.aspx");
             }
         }
 
@@ -62,27 +65,27 @@ namespace CapaWSPresentacion
 
             Literal HeadAntes = new Literal();
             HeadAntes.Text = "<table id = 'tablaDetalle' style = 'width: 75%;'><tr>";
-            form1.Controls.Add(HeadAntes);
+            PlaceHolder1.Controls.Add(HeadAntes);
 
             //Escribir Head de la parte Detalle
             foreach (var item in lHeadDetalle)
             {
                 Literal HeadDuranteA = new Literal();
                 HeadDuranteA.Text = "<th>";
-                form1.Controls.Add(HeadDuranteA);
+                PlaceHolder1.Controls.Add(HeadDuranteA);
 
                 Literal HeadDetalle = new Literal();
                 HeadDetalle.Text = item;
-                form1.Controls.Add(HeadDetalle);
+                PlaceHolder1.Controls.Add(HeadDetalle);
 
                 Literal HeadDuranteD = new Literal();
                 HeadDuranteD.Text = "</th>";
-                form1.Controls.Add(HeadDuranteD);
+                PlaceHolder1.Controls.Add(HeadDuranteD);
             }
 
             Literal HeadDespues = new Literal();
             HeadDespues.Text = "</tr>";
-            form1.Controls.Add(HeadDespues);
+            PlaceHolder1.Controls.Add(HeadDespues);
         }
 
         private void EscribirBodyDetalle(int CantidadHuespedes, ContenedorCamas Camas, ContenedorPlatos Platos)
@@ -92,33 +95,33 @@ namespace CapaWSPresentacion
             {
                 Literal item0Antes = new Literal();
                 item0Antes.Text = "<tr><td>";
-                form1.Controls.Add(item0Antes);
+                PlaceHolder1.Controls.Add(item0Antes);
 
                 TextBox item0 = new TextBox();
                 item0.ID = "txtRutPersona" + i;
-                form1.Controls.Add(item0);
+                PlaceHolder1.Controls.Add(item0);
                 //
                 Literal item1Antes = new Literal();
                 item1Antes.Text = "</td><td>";
-                form1.Controls.Add(item1Antes);
+                PlaceHolder1.Controls.Add(item1Antes);
 
                 TextBox item1 = new TextBox();
                 item1.ID = "txtAlojaIngreso" + i;
                 item1.TextMode = TextBoxMode.Date;
-                form1.Controls.Add(item1);
+                PlaceHolder1.Controls.Add(item1);
                 //
                 Literal item2Antes = new Literal();
                 item2Antes.Text = "</td><td>";
-                form1.Controls.Add(item2Antes);
+                PlaceHolder1.Controls.Add(item2Antes);
 
                 TextBox item2 = new TextBox();
                 item2.ID = "txtAlojaEgreso" + i;
                 item2.TextMode = TextBoxMode.Date;
-                form1.Controls.Add(item2);
+                PlaceHolder1.Controls.Add(item2);
                 //
                 Literal item3Antes = new Literal();
                 item3Antes.Text = "</td><td>";
-                form1.Controls.Add(item3Antes);
+                PlaceHolder1.Controls.Add(item3Antes);
 
                 DropDownList item3 = new DropDownList();
                 item3.ID = "ddlAlojaCodCama" + i;
@@ -126,19 +129,19 @@ namespace CapaWSPresentacion
                 item3.DataValueField = "Codigo";
                 item3.DataTextField = "Descripcion";
                 item3.DataBind();
-                form1.Controls.Add(item3);
+                PlaceHolder1.Controls.Add(item3);
                 //
                 Literal item4Antes = new Literal();
                 item4Antes.Text = "</td><td>";
-                form1.Controls.Add(item4Antes);
+                PlaceHolder1.Controls.Add(item4Antes);
 
                 TextBox item4 = new TextBox();
                 item4.ID = "txtAlojaObservaciones" + i;
-                form1.Controls.Add(item4);
+                PlaceHolder1.Controls.Add(item4);
                 //
                 Literal item5Antes = new Literal();
                 item5Antes.Text = "</td><td>";
-                form1.Controls.Add(item5Antes);
+                PlaceHolder1.Controls.Add(item5Antes);
 
                 DropDownList item5 = new DropDownList();
                 item5.ID = "ddlComidaCodPlato" + i;
@@ -146,24 +149,24 @@ namespace CapaWSPresentacion
                 item5.DataValueField = "Codigo";
                 item5.DataTextField = "Descripcion";
                 item5.DataBind();
-                form1.Controls.Add(item5);
+                PlaceHolder1.Controls.Add(item5);
                 //
                 Literal item6Antes = new Literal();
                 item6Antes.Text = "</td><td>";
-                form1.Controls.Add(item6Antes);
+                PlaceHolder1.Controls.Add(item6Antes);
 
                 TextBox item6 = new TextBox();
                 item6.ID = "txtComidaObservaciones" + i;
-                form1.Controls.Add(item6);
+                PlaceHolder1.Controls.Add(item6);
                 //
                 Literal item6Despues = new Literal();
                 item6Despues.Text = "</td></tr>";
-                form1.Controls.Add(item6Despues);
+                PlaceHolder1.Controls.Add(item6Despues);
             }
 
             Literal BodyDespues = new Literal();
             BodyDespues.Text = "</table>";
-            form1.Controls.Add(BodyDespues);
+            PlaceHolder1.Controls.Add(BodyDespues);
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
@@ -183,25 +186,25 @@ namespace CapaWSPresentacion
             {
                 OrdenCompraDetalle nOCD = new OrdenCompraDetalle();
 
-                TextBox item0 = (TextBox)form1.FindControl("txtRutPersona" + i);
+                TextBox item0 = (TextBox)PlaceHolder1.FindControl("txtRutPersona" + i);
                 nOCD.Alojamiento.RutPersona = item0.Text;
 
-                TextBox item1 = (TextBox)form1.FindControl("txtAlojaIngreso" + i);
+                TextBox item1 = (TextBox)PlaceHolder1.FindControl("txtAlojaIngreso" + i);
                 nOCD.Alojamiento.FechaIngreso = DateTime.Parse(item1.Text);
 
-                TextBox item2 = (TextBox)form1.FindControl("txtAlojaEgreso" + i);
+                TextBox item2 = (TextBox)PlaceHolder1.FindControl("txtAlojaEgreso" + i);
                 nOCD.Alojamiento.FechaEgreso = DateTime.Parse(item2.Text);
 
-                DropDownList item3 = (DropDownList)form1.FindControl("ddlAlojaCodCama" + i);
+                DropDownList item3 = (DropDownList)PlaceHolder1.FindControl("ddlAlojaCodCama" + i);
                 nOCD.Alojamiento.CodigoCama = decimal.Parse(item3.SelectedValue);
 
-                TextBox item4 = (TextBox)form1.FindControl("txtAlojaObservaciones" + i);
+                TextBox item4 = (TextBox)PlaceHolder1.FindControl("txtAlojaObservaciones" + i);
                 nOCD.Alojamiento.Observaciones = item4.Text;
 
-                DropDownList item5 = (DropDownList)form1.FindControl("ddlComidaCodPlato" + i);
+                DropDownList item5 = (DropDownList)PlaceHolder1.FindControl("ddlComidaCodPlato" + i);
                 nOCD.Comida.CodigoPlato = decimal.Parse(item5.SelectedValue);
 
-                TextBox item6 = (TextBox)form1.FindControl("txtComidaObservaciones" + i);
+                TextBox item6 = (TextBox)PlaceHolder1.FindControl("txtComidaObservaciones" + i);
                 nOCD.Comida.Observaciones = item6.Text;
 
                 nOCD.Comida.FechaRecepcion = DateTime.Now;
@@ -216,7 +219,7 @@ namespace CapaWSPresentacion
             xOCC.Item.ListaDetalle = nOCC.ListaDetalle;
 
             xOCC = x.OrdenCompraCompletaCrear(xOCC);
-            
+
             txtCodigoRetorno.Text = xOCC.Retorno.Codigo.ToString();
             txtGlosaRetorno.Text = xOCC.Retorno.Glosa;
 

@@ -1,14 +1,14 @@
-﻿using System;
+﻿using CapaObjeto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CapaObjeto;
 
 namespace CapaWSPresentacion
 {
-    public partial class ingreso_cliente : System.Web.UI.Page
+    public partial class np_ingreso : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,16 +32,18 @@ namespace CapaWSPresentacion
             txtCodigoRetorno.Text = nLogin.Retorno.Codigo.ToString();
             txtGlosaRetorno.Text = nLogin.Retorno.Glosa;
 
-            if(nLogin.Retorno.Codigo == 0)
+            if (nLogin.Retorno.Codigo == 0)
             {
                 Session["TokenUsuario"] = nLogin.Retorno.Token;
-                Session["Nombre"] = nLogin.Nombre;
-                Response.Redirect("Index.html");
+                Session["NombreUsuario"] = nLogin.Usuario;
+                Session["PerfilUsuario"] = nLogin.Perfil;
+                Response.Redirect("Index.aspx");
             }
             else
             {
                 Session["TokenUsuario"] = null;
-                Session["Nombre"] = null;
+                Session["NombreUsuario"] = null;
+                Session["PerfilUsuario"] = null;
             }
         }
     }

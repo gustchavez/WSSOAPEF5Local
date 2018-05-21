@@ -1,16 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ingreso_cliente.aspx.cs" Inherits="CapaWSPresentacion.ingreso_cliente" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <table style="width:75%;">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SitioPrincipal.Master" AutoEventWireup="true" CodeBehind="np_ingreso.aspx.cs" Inherits="CapaWSPresentacion.np_ingreso" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder2">
+    <table style="width:75%;">
             <tr>
                 <td style="width:25%;">Nombre Usuario</td>
                 <td style="width:75%;"><asp:TextBox ID="txtNombreUsuario" runat="server"></asp:TextBox></td>
@@ -44,7 +36,5 @@
                 <td style="width:75%;"><asp:Button ID="btnAceptar" runat="server" Text="Aceptar" Width="88px" OnClick="btnAceptar_Click" /></td>
             </tr>
         </table>    
-    </div>
-    </form>
-</body>
-</html>
+    </asp:Content>
+

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <siteMapNode url="" title="Defecto"  description="">
-        <siteMapNode url="" title=""  description="" />
-        <siteMapNode url="" title=""  description="" />
+        <siteMapNode url="np_ingreso.aspx" title="Ingreso"  description="" />
+        <siteMapNode url="np_cliente_crear.aspx" title="Registrarse Cliente"  description="" />
     </siteMapNode>
 </siteMap>

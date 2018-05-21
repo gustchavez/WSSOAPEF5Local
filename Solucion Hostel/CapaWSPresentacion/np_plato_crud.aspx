@@ -1,16 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="crud_plato.aspx.cs" Inherits="CapaWSPresentacion.crud_plato" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SitioPrincipal.Master" AutoEventWireup="true" CodeBehind="np_plato_crud.aspx.cs" Inherits="CapaWSPresentacion.np_plato_crud" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"></asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder2">
+    <div>    
         <table style="width:75%;">
             <tr>
                 <td style="width:25%;">Codigo</td>
@@ -58,9 +49,8 @@
         </table>    
     
         Lista de Productos
-        <asp:GridView ID="gwListaPlatos" runat="server"></asp:GridView>
-    
+        <asp:GridView ID="gwListaPlatos" runat="server"></asp:GridView>    
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+
+

@@ -82,7 +82,7 @@ namespace CapaNegocio
             }
         }
 
-        public bool ValidarToken(string token, string perfil)
+        public bool ValidarToken(string token, List<string> perfiles)
         {
             try
             {
@@ -106,15 +106,22 @@ namespace CapaNegocio
 
                 if (values != null && values.Length == 4)
                 {
-                    string Tnombre = values[0];
+                    string Tnombre  = values[0];
                     string Tusuario = values[1];
-                    string Tperfil = values[2];
+                    string Tperfil  = values[2];
                     long Tticks;
                     if (long.TryParse(values[3], out Tticks))
                     {
-                        if (Tperfil == perfil && Math.Abs((new DateTime(Tticks) - DateTime.Now).Hours) < 1)
+                        if (Math.Abs((new DateTime(Tticks) - DateTime.Now).Hours) < 1)
                         {
-                            result = true;
+                            foreach (var item in perfiles)
+                            {
+                                if(item == Tperfil) {
+                                    result = true;
+                                    break;
+                                }
+                            }
+                            
                         }
                     }
                 }

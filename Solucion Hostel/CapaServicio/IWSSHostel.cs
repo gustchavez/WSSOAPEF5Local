@@ -19,7 +19,7 @@ namespace CapaServicio
         //string GenerarToken(string usuario, string clave);
 
         [OperationContract]
-        bool ValidarToken(string token, string perfil);
+        bool ValidarToken(string token, List<string> perfiles);
 
         [OperationContract]
         string TokenRecuperarPerfil(string token);

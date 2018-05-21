@@ -54,10 +54,10 @@ namespace CapaServicio
         //    //return Convert.ToBase64String(encripted);
         //}
 
-        public bool ValidarToken(string token, string perfil)
+        public bool ValidarToken(string token, List<string> perfiles)
         {
             TokenUsuario x = new TokenUsuario();
-            return x.ValidarToken(token, perfil);
+            return x.ValidarToken(token, perfiles);
             //bool result = false;
 
             //byte[] Clave = Encoding.ASCII.GetBytes("12ClaveNoFacil!!");
