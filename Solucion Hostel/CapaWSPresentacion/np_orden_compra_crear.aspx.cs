@@ -153,6 +153,7 @@ namespace CapaWSPresentacion
             ContenedorOrdenPedidoCompleta xOPC = new ContenedorOrdenPedidoCompleta();
             xOPC.Item.Cabecera = nOPC.Cabecera;
             xOPC.Item.ListaDetalle = nOPC.ListaDetalle;
+            xOPC.Retorno.Token = Session["TokenUsuario"].ToString();
 
             xOPC = x.OrdenPedidoCompletaCrear(xOPC);
 

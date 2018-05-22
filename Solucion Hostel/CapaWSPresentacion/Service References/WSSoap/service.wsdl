@@ -5,7 +5,6 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/CapaObjeto" />
-      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IWSSHostel_ValidarLogin_InputMessage">
@@ -13,18 +12,6 @@
   </wsdl:message>
   <wsdl:message name="IWSSHostel_ValidarLogin_OutputMessage">
     <wsdl:part name="parameters" element="tns:ValidarLoginResponse" />
-  </wsdl:message>
-  <wsdl:message name="IWSSHostel_ValidarToken_InputMessage">
-    <wsdl:part name="parameters" element="tns:ValidarToken" />
-  </wsdl:message>
-  <wsdl:message name="IWSSHostel_ValidarToken_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ValidarTokenResponse" />
-  </wsdl:message>
-  <wsdl:message name="IWSSHostel_TokenRecuperarPerfil_InputMessage">
-    <wsdl:part name="parameters" element="tns:TokenRecuperarPerfil" />
-  </wsdl:message>
-  <wsdl:message name="IWSSHostel_TokenRecuperarPerfil_OutputMessage">
-    <wsdl:part name="parameters" element="tns:TokenRecuperarPerfilResponse" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_PerfilUsuarioClienteCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteCrear" />
@@ -163,14 +150,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ValidarLogin" message="tns:IWSSHostel_ValidarLogin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ValidarLoginResponse" message="tns:IWSSHostel_ValidarLogin_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ValidarToken">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ValidarToken" message="tns:IWSSHostel_ValidarToken_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ValidarTokenResponse" message="tns:IWSSHostel_ValidarToken_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="TokenRecuperarPerfil">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/TokenRecuperarPerfil" message="tns:IWSSHostel_TokenRecuperarPerfil_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/TokenRecuperarPerfilResponse" message="tns:IWSSHostel_TokenRecuperarPerfil_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="PerfilUsuarioClienteCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear" message="tns:IWSSHostel_PerfilUsuarioClienteCrear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrearResponse" message="tns:IWSSHostel_PerfilUsuarioClienteCrear_OutputMessage" />
@@ -264,24 +243,6 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ValidarLogin">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/ValidarLogin" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ValidarToken">
-      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ValidarToken" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TokenRecuperarPerfil">
-      <soap:operation soapAction="http://tempuri.org/IWSSHostel/TokenRecuperarPerfil" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

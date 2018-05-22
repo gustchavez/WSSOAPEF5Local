@@ -24,7 +24,7 @@ namespace CapaWSPresentacion
 
                         ContenedorServiciosComida m = new ContenedorServiciosComida();
 
-                        m = x.ServicioComidaRescatar();
+                        m = x.ServicioComidaRescatar(Session["TokenUsuario"].ToString());
 
                         ddlServicioTipo.DataSource = m.Lista;
                         ddlServicioTipo.DataValueField = "Tipo";
@@ -33,9 +33,7 @@ namespace CapaWSPresentacion
 
                         CargarGridView();
                     }
-                }
-                else
-                {
+                } else {
                     Session["TokenUsuario"] = null;
                     Response.Redirect("np_ingreso.aspx");
                 }
@@ -52,7 +50,7 @@ namespace CapaWSPresentacion
             //
             ContenedorPlatos n = new ContenedorPlatos();
 
-            n = x.PlatoRescatar();
+            n = x.PlatoRescatar(Session["TokenUsuario"].ToString());
 
             gwListaPlatos.DataSource = null;
             gwListaPlatos.DataSource = n.Lista;
@@ -70,6 +68,7 @@ namespace CapaWSPresentacion
             nPlato.Item.Descripcion = txtDescripcion.Text;
             nPlato.Item.Disponible = ddlDisponible.SelectedValue;
             nPlato.Item.TipoServicio = ddlServicioTipo.SelectedValue;
+            nPlato.Retorno.Token = Session["TokenUsuario"].ToString();
 
             nPlato = x.PlatoCrear(nPlato);
 
@@ -91,6 +90,7 @@ namespace CapaWSPresentacion
             aPlato.Item.Descripcion = txtDescripcion.Text;
             aPlato.Item.Disponible = ddlDisponible.SelectedValue;
             aPlato.Item.TipoServicio = ddlServicioTipo.SelectedValue;
+            aPlato.Retorno.Token = Session["TokenUsuario"].ToString();
 
             aPlato = x.PlatoActualizar(aPlato);
 
@@ -108,6 +108,7 @@ namespace CapaWSPresentacion
             ContenedorPlato ePlato = new ContenedorPlato();
 
             ePlato.Item.Codigo = decimal.Parse(txtCodigo.Text);
+            ePlato.Retorno.Token = Session["TokenUsuario"].ToString();
 
             ePlato = x.PlatoEliminar(ePlato);
 

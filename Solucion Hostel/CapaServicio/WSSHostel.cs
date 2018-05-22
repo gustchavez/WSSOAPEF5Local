@@ -26,80 +26,18 @@ namespace CapaServicio
             return x.DatosLogin;
         }
 
-
-        //public string GenerarToken(string usuario, string clave)
+        //public bool ValidarToken(string token, List<string> perfiles)
         //{
         //    TokenUsuario x = new TokenUsuario();
-        //    return x.Codificar(usuario, clave);
-        //    //string key = "{0}-{1}-{2}";
-        //    //key = string.Format(key, usuario, clave, DateTime.Now.Ticks);
-
-        //    //byte[] Clave = Encoding.ASCII.GetBytes("12ClaveNoFacil!!");
-        //    //byte[] IV = Encoding.ASCII.GetBytes("Devjoker7.37hAES");
-
-        //    //byte[] inputBytes = Encoding.ASCII.GetBytes(key);
-        //    //byte[] encripted;
-
-        //    //RijndaelManaged cripto = new RijndaelManaged();
-        //    //using (MemoryStream ms = new MemoryStream(inputBytes.Length))
-        //    //{
-        //    //    using (CryptoStream objCryptoStream = new CryptoStream(ms, cripto.CreateEncryptor(Clave, IV), CryptoStreamMode.Write))
-        //    //    {
-        //    //        objCryptoStream.Write(inputBytes, 0, inputBytes.Length);
-        //    //        objCryptoStream.FlushFinalBlock();
-        //    //        objCryptoStream.Close();
-        //    //    }
-        //    //    encripted = ms.ToArray();
-        //    //}
-        //    //return Convert.ToBase64String(encripted);
+        //    return x.ValidarPerfil(token, perfiles);
         //}
 
-        public bool ValidarToken(string token, List<string> perfiles)
-        {
-            TokenUsuario x = new TokenUsuario();
-            return x.ValidarToken(token, perfiles);
-            //bool result = false;
+        //public string TokenRecuperarPerfil(string token)
+        //{
+        //    TokenUsuario x = new TokenUsuario();
+        //    return x.LeerPerfil(token);
+        //}
 
-            //byte[] Clave = Encoding.ASCII.GetBytes("12ClaveNoFacil!!");
-            //byte[] IV = Encoding.ASCII.GetBytes("Devjoker7.37hAES");
-
-            //byte[] inputBytes = Convert.FromBase64String(token);
-            //byte[] resultBytes = new byte[inputBytes.Length];
-            //string textoLimpio = String.Empty;
-            //RijndaelManaged cripto = new RijndaelManaged();
-            //using (MemoryStream ms = new MemoryStream(inputBytes))
-            //{
-            //    using (CryptoStream objCryptoStream = new CryptoStream(ms, cripto.CreateDecryptor(Clave, IV), CryptoStreamMode.Read))
-            //    {
-            //        using (StreamReader sr = new StreamReader(objCryptoStream, true))
-            //        {
-            //            textoLimpio = sr.ReadToEnd();
-            //        }
-            //    }
-            //}
-            //string[] values = textoLimpio.Split('-');
-
-            //if (values != null && values.Length == 3)
-            //{
-            //    string user = values[0];
-            //    string pass = values[1];
-            //    long ticks;
-            //    if (long.TryParse(values[2], out ticks))
-            //    {
-            //        if ( Math.Abs((new DateTime(ticks) - DateTime.Now).Hours) < 1)
-            //        {
-            //            result = true;
-            //        }
-            //    }
-            //}
-
-            //return result;
-        }
-        public string TokenRecuperarPerfil(string token)
-        {
-            TokenUsuario x = new TokenUsuario();
-            return x.RecuperarPefil(token);
-        }
         public ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(ContenedorPerfilUsuarioCliente entrada)
         {
             CRUDPerfilUsuarioCliente x = new CRUDPerfilUsuarioCliente();
@@ -140,10 +78,10 @@ namespace CapaServicio
             return x.LlamarSPRescatar(token);
         }
 
-        public ContenedorServiciosComida ServicioComidaRescatar()
+        public ContenedorServiciosComida ServicioComidaRescatar(string token)
         {
             CRUDServicioComida x = new CRUDServicioComida();
-            return x.LlamarSPRescatar();
+            return x.LlamarSPRescatar(token);
         }
 
         public ContenedorPlato PlatoCrear(ContenedorPlato entrada)
@@ -167,10 +105,10 @@ namespace CapaServicio
             return entrada;
         }
 
-        public ContenedorPlatos PlatoRescatar()
+        public ContenedorPlatos PlatoRescatar(string token)
         {
             CRUDPlato x = new CRUDPlato();
-            return x.LlamarSPRescatar();
+            return x.LlamarSPRescatar(token);
         }
 
         //Inicio Habitacion
@@ -195,19 +133,19 @@ namespace CapaServicio
             return entrada;
         }
 
-        public ContenedorHabitaciones HabitacionRescatar()
+        public ContenedorHabitaciones HabitacionRescatar(string token)
         {
             CRUDHabitacion x = new CRUDHabitacion();
-            return x.LlamarSPRescatar();
+            return x.LlamarSPRescatar(token);
         }
         //Fin Habitacion
 
-        public ContenedorCiudades CiudadRescatar()
+        public ContenedorCiudades CiudadRescatar(string token)
         {
 
             CRUDCiudad x = new CRUDCiudad();
 
-            return x.LlamarSPRescatar();
+            return x.LlamarSPRescatar(token);
         }
         
         //Inicio Cama
@@ -232,10 +170,10 @@ namespace CapaServicio
             return entrada;
         }
 
-        public ContenedorCamas CamaRescatar()
+        public ContenedorCamas CamaRescatar(string token)
         {
             CRUDCama x = new CRUDCama();
-            return x.LlamarSPRescatar();
+            return x.LlamarSPRescatar(token);
         }
         //Fin Cama
 

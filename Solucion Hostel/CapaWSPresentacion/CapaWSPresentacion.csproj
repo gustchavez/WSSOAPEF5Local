@@ -133,7 +133,6 @@
     <Content Include="perfilEmpleado\perfilEmpleado.aspx" />
     <Content Include="perfilEmpleado\productosEmpleado.aspx" />
     <Content Include="perfilEmpleado\solicitarEmpleado.aspx" />
-    <Content Include="ProbarToken.aspx" />
     <Content Include="Properties\DataSources\CapaObjeto.ListaProductos.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.Producto.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ListaPlatos.datasource" />
@@ -170,9 +169,6 @@
     <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
     <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
-    <None Include="Service References\WSSoap\Arrays.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>
@@ -196,7 +192,7 @@
     <Content Include="scripts\jquery-3.3.1.min.js" />
     <Content Include="scripts\perfilEmpleado.css" />
     <Content Include="scripts\productosEmpleado.css" />
-    <Content Include="crud_producto.aspx" />
+    <Content Include="np_producto_crud.aspx" />
     <Content Include="Properties\DataSources\CapaObjeto.NegCliente.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.NegLogin.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.PerfilCliente.datasource" />
@@ -211,7 +207,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="scripts\stockEmpleado.css" />
-    <Content Include="scrud_producto.aspx" />
     <Content Include="perfilEmpleado\stockEmpleado.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -305,27 +300,13 @@
     <Compile Include="perfilEmpleado\solicitarEmpleado.aspx.designer.cs">
       <DependentUpon>solicitarEmpleado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProbarToken.aspx.cs">
-      <DependentUpon>ProbarToken.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProbarToken.aspx.designer.cs">
-      <DependentUpon>ProbarToken.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="crud_producto.aspx.cs">
-      <DependentUpon>crud_producto.aspx</DependentUpon>
+    <Compile Include="np_producto_crud.aspx.cs">
+      <DependentUpon>np_producto_crud.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="crud_producto.aspx.designer.cs">
-      <DependentUpon>crud_producto.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="scrud_producto.aspx.cs">
-      <DependentUpon>scrud_producto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="scrud_producto.aspx.designer.cs">
-      <DependentUpon>scrud_producto.aspx</DependentUpon>
+    <Compile Include="np_producto_crud.aspx.designer.cs">
+      <DependentUpon>np_producto_crud.aspx</DependentUpon>
     </Compile>
     <Compile Include="Service References\WSSoap\Reference.cs">
       <AutoGen>True</AutoGen>

@@ -21,18 +21,6 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ValidarLogin", ReplyAction="http://tempuri.org/IWSSHostel/ValidarLoginResponse")]
         System.Threading.Tasks.Task<CapaObjeto.Sesion> ValidarLoginAsync(string usuario, string clave);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ValidarToken", ReplyAction="http://tempuri.org/IWSSHostel/ValidarTokenResponse")]
-        bool ValidarToken(string token, string[] perfiles);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ValidarToken", ReplyAction="http://tempuri.org/IWSSHostel/ValidarTokenResponse")]
-        System.Threading.Tasks.Task<bool> ValidarTokenAsync(string token, string[] perfiles);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/TokenRecuperarPerfil", ReplyAction="http://tempuri.org/IWSSHostel/TokenRecuperarPerfilResponse")]
-        string TokenRecuperarPerfil(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/TokenRecuperarPerfil", ReplyAction="http://tempuri.org/IWSSHostel/TokenRecuperarPerfilResponse")]
-        System.Threading.Tasks.Task<string> TokenRecuperarPerfilAsync(string token);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrearResponse")]
         CapaObjeto.ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(CapaObjeto.ContenedorPerfilUsuarioCliente entrada);
         
@@ -70,10 +58,10 @@ namespace CapaWSPresentacion.WSSoap {
         System.Threading.Tasks.Task<CapaObjeto.ContenedorProductos> ProductoRescatarAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ServicioComidaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ServicioComidaRescatarResponse")]
-        CapaObjeto.ContenedorServiciosComida ServicioComidaRescatar();
+        CapaObjeto.ContenedorServiciosComida ServicioComidaRescatar(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ServicioComidaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ServicioComidaRescatarResponse")]
-        System.Threading.Tasks.Task<CapaObjeto.ContenedorServiciosComida> ServicioComidaRescatarAsync();
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorServiciosComida> ServicioComidaRescatarAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PlatoCrear", ReplyAction="http://tempuri.org/IWSSHostel/PlatoCrearResponse")]
         CapaObjeto.ContenedorPlato PlatoCrear(CapaObjeto.ContenedorPlato entrada);
@@ -94,10 +82,10 @@ namespace CapaWSPresentacion.WSSoap {
         System.Threading.Tasks.Task<CapaObjeto.ContenedorPlato> PlatoEliminarAsync(CapaObjeto.ContenedorPlato entrada);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PlatoRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PlatoRescatarResponse")]
-        CapaObjeto.ContenedorPlatos PlatoRescatar();
+        CapaObjeto.ContenedorPlatos PlatoRescatar(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PlatoRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PlatoRescatarResponse")]
-        System.Threading.Tasks.Task<CapaObjeto.ContenedorPlatos> PlatoRescatarAsync();
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorPlatos> PlatoRescatarAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/HabitacionCrear", ReplyAction="http://tempuri.org/IWSSHostel/HabitacionCrearResponse")]
         CapaObjeto.ContenedorHabitacion HabitacionCrear(CapaObjeto.ContenedorHabitacion entrada);
@@ -118,16 +106,16 @@ namespace CapaWSPresentacion.WSSoap {
         System.Threading.Tasks.Task<CapaObjeto.ContenedorHabitacion> HabitacionEliminarAsync(CapaObjeto.ContenedorHabitacion entrada);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/HabitacionRescatar", ReplyAction="http://tempuri.org/IWSSHostel/HabitacionRescatarResponse")]
-        CapaObjeto.ContenedorHabitaciones HabitacionRescatar();
+        CapaObjeto.ContenedorHabitaciones HabitacionRescatar(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/HabitacionRescatar", ReplyAction="http://tempuri.org/IWSSHostel/HabitacionRescatarResponse")]
-        System.Threading.Tasks.Task<CapaObjeto.ContenedorHabitaciones> HabitacionRescatarAsync();
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorHabitaciones> HabitacionRescatarAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CiudadRescatar", ReplyAction="http://tempuri.org/IWSSHostel/CiudadRescatarResponse")]
-        CapaObjeto.ContenedorCiudades CiudadRescatar();
+        CapaObjeto.ContenedorCiudades CiudadRescatar(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CiudadRescatar", ReplyAction="http://tempuri.org/IWSSHostel/CiudadRescatarResponse")]
-        System.Threading.Tasks.Task<CapaObjeto.ContenedorCiudades> CiudadRescatarAsync();
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorCiudades> CiudadRescatarAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CamaCrear", ReplyAction="http://tempuri.org/IWSSHostel/CamaCrearResponse")]
         CapaObjeto.ContenedorCama CamaCrear(CapaObjeto.ContenedorCama entrada);
@@ -148,10 +136,10 @@ namespace CapaWSPresentacion.WSSoap {
         System.Threading.Tasks.Task<CapaObjeto.ContenedorCama> CamaEliminarAsync(CapaObjeto.ContenedorCama entrada);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CamaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/CamaRescatarResponse")]
-        CapaObjeto.ContenedorCamas CamaRescatar();
+        CapaObjeto.ContenedorCamas CamaRescatar(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CamaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/CamaRescatarResponse")]
-        System.Threading.Tasks.Task<CapaObjeto.ContenedorCamas> CamaRescatarAsync();
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorCamas> CamaRescatarAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrearResponse")]
         CapaObjeto.ContenedorOrdenCompraCompleta OrdenCompraCompletaCrear(CapaObjeto.ContenedorOrdenCompraCompleta entrada);
@@ -199,22 +187,6 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.Sesion> ValidarLoginAsync(string usuario, string clave) {
             return base.Channel.ValidarLoginAsync(usuario, clave);
-        }
-        
-        public bool ValidarToken(string token, string[] perfiles) {
-            return base.Channel.ValidarToken(token, perfiles);
-        }
-        
-        public System.Threading.Tasks.Task<bool> ValidarTokenAsync(string token, string[] perfiles) {
-            return base.Channel.ValidarTokenAsync(token, perfiles);
-        }
-        
-        public string TokenRecuperarPerfil(string token) {
-            return base.Channel.TokenRecuperarPerfil(token);
-        }
-        
-        public System.Threading.Tasks.Task<string> TokenRecuperarPerfilAsync(string token) {
-            return base.Channel.TokenRecuperarPerfilAsync(token);
         }
         
         public CapaObjeto.ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(CapaObjeto.ContenedorPerfilUsuarioCliente entrada) {
@@ -265,12 +237,12 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.ProductoRescatarAsync(token);
         }
         
-        public CapaObjeto.ContenedorServiciosComida ServicioComidaRescatar() {
-            return base.Channel.ServicioComidaRescatar();
+        public CapaObjeto.ContenedorServiciosComida ServicioComidaRescatar(string token) {
+            return base.Channel.ServicioComidaRescatar(token);
         }
         
-        public System.Threading.Tasks.Task<CapaObjeto.ContenedorServiciosComida> ServicioComidaRescatarAsync() {
-            return base.Channel.ServicioComidaRescatarAsync();
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorServiciosComida> ServicioComidaRescatarAsync(string token) {
+            return base.Channel.ServicioComidaRescatarAsync(token);
         }
         
         public CapaObjeto.ContenedorPlato PlatoCrear(CapaObjeto.ContenedorPlato entrada) {
@@ -297,12 +269,12 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.PlatoEliminarAsync(entrada);
         }
         
-        public CapaObjeto.ContenedorPlatos PlatoRescatar() {
-            return base.Channel.PlatoRescatar();
+        public CapaObjeto.ContenedorPlatos PlatoRescatar(string token) {
+            return base.Channel.PlatoRescatar(token);
         }
         
-        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPlatos> PlatoRescatarAsync() {
-            return base.Channel.PlatoRescatarAsync();
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPlatos> PlatoRescatarAsync(string token) {
+            return base.Channel.PlatoRescatarAsync(token);
         }
         
         public CapaObjeto.ContenedorHabitacion HabitacionCrear(CapaObjeto.ContenedorHabitacion entrada) {
@@ -329,20 +301,20 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.HabitacionEliminarAsync(entrada);
         }
         
-        public CapaObjeto.ContenedorHabitaciones HabitacionRescatar() {
-            return base.Channel.HabitacionRescatar();
+        public CapaObjeto.ContenedorHabitaciones HabitacionRescatar(string token) {
+            return base.Channel.HabitacionRescatar(token);
         }
         
-        public System.Threading.Tasks.Task<CapaObjeto.ContenedorHabitaciones> HabitacionRescatarAsync() {
-            return base.Channel.HabitacionRescatarAsync();
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorHabitaciones> HabitacionRescatarAsync(string token) {
+            return base.Channel.HabitacionRescatarAsync(token);
         }
         
-        public CapaObjeto.ContenedorCiudades CiudadRescatar() {
-            return base.Channel.CiudadRescatar();
+        public CapaObjeto.ContenedorCiudades CiudadRescatar(string token) {
+            return base.Channel.CiudadRescatar(token);
         }
         
-        public System.Threading.Tasks.Task<CapaObjeto.ContenedorCiudades> CiudadRescatarAsync() {
-            return base.Channel.CiudadRescatarAsync();
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorCiudades> CiudadRescatarAsync(string token) {
+            return base.Channel.CiudadRescatarAsync(token);
         }
         
         public CapaObjeto.ContenedorCama CamaCrear(CapaObjeto.ContenedorCama entrada) {
@@ -369,12 +341,12 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.CamaEliminarAsync(entrada);
         }
         
-        public CapaObjeto.ContenedorCamas CamaRescatar() {
-            return base.Channel.CamaRescatar();
+        public CapaObjeto.ContenedorCamas CamaRescatar(string token) {
+            return base.Channel.CamaRescatar(token);
         }
         
-        public System.Threading.Tasks.Task<CapaObjeto.ContenedorCamas> CamaRescatarAsync() {
-            return base.Channel.CamaRescatarAsync();
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorCamas> CamaRescatarAsync(string token) {
+            return base.Channel.CamaRescatarAsync(token);
         }
         
         public CapaObjeto.ContenedorOrdenCompraCompleta OrdenCompraCompletaCrear(CapaObjeto.ContenedorOrdenCompraCompleta entrada) {

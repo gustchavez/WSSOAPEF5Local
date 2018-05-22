@@ -8,13 +8,29 @@ using CapaObjeto;
 
 namespace CapaWSPresentacion
 {
-    public partial class scrud_producto : System.Web.UI.Page
+    public partial class np_producto_crud : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            try
             {
-                CargarGridView();
+                string Perfil = Session["PerfilUsuario"].ToString();
+
+                if (Perfil.Equals("Empleado"))
+                {
+                    if (!IsPostBack)
+                    {
+                        CargarGridView();
+                    }
+                } else {
+                    Session["TokenUsuario"] = null;
+                    Response.Redirect("np_ingreso.aspx");
+                    }
+                }
+            catch (Exception)
+            {
+                Session["TokenUsuario"] = null;
+                Response.Redirect("np_ingreso.aspx");
             }
         }
 
@@ -41,6 +57,7 @@ namespace CapaWSPresentacion
             nProducto.Item.Precio       = decimal.Parse(txtPrecio.Text);
             nProducto.Item.Stock        = decimal.Parse(txtStock.Text);
             nProducto.Item.StockCritico = decimal.Parse(txtStockCritico.Text);
+            nProducto.Retorno.Token = Session["TokenUsuario"].ToString();
 
             nProducto = x.ProductoCrear(nProducto);
 
@@ -62,6 +79,7 @@ namespace CapaWSPresentacion
             aProducto.Item.Precio       = decimal.Parse(txtPrecio.Text);
             aProducto.Item.Stock        = decimal.Parse(txtStock.Text);
             aProducto.Item.StockCritico = decimal.Parse(txtStockCritico.Text);
+            aProducto.Retorno.Token = Session["TokenUsuario"].ToString();
 
             aProducto = x.ProductoActualizar(aProducto);
 
@@ -78,6 +96,7 @@ namespace CapaWSPresentacion
             ContenedorProducto eProducto = new ContenedorProducto();
 
             eProducto.Item.Codigo = decimal.Parse(txtCodigo.Text);
+            eProducto.Retorno.Token = Session["TokenUsuario"].ToString();
 
             eProducto = x.ProductoEliminar(eProducto);
 

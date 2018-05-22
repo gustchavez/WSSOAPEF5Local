@@ -18,11 +18,11 @@ namespace CapaServicio
         //[OperationContract]
         //string GenerarToken(string usuario, string clave);
 
-        [OperationContract]
-        bool ValidarToken(string token, List<string> perfiles);
+        //[OperationContract]
+        //bool ValidarToken(string token, List<string> perfiles);
 
-        [OperationContract]
-        string TokenRecuperarPerfil(string token);
+        //[OperationContract]
+        //string TokenRecuperarPerfil(string token);
 
         [OperationContract]
         ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(ContenedorPerfilUsuarioCliente entrada);
@@ -45,7 +45,7 @@ namespace CapaServicio
         //Fin Producto
 
         [OperationContract]
-        ContenedorServiciosComida ServicioComidaRescatar();
+        ContenedorServiciosComida ServicioComidaRescatar(string token);
         
         //Inicio Plato
         [OperationContract]
@@ -58,7 +58,7 @@ namespace CapaServicio
         ContenedorPlato PlatoEliminar(ContenedorPlato entrada);
 
         [OperationContract]
-        ContenedorPlatos PlatoRescatar();
+        ContenedorPlatos PlatoRescatar(string token);
         //Fin Plato
 
         //Inicio Habitacion
@@ -72,11 +72,11 @@ namespace CapaServicio
         ContenedorHabitacion HabitacionEliminar(ContenedorHabitacion entrada);
 
         [OperationContract]
-        ContenedorHabitaciones HabitacionRescatar();
+        ContenedorHabitaciones HabitacionRescatar(string token);
         //Fin Habitacion
 
         [OperationContract]
-        ContenedorCiudades CiudadRescatar();
+        ContenedorCiudades CiudadRescatar(string token);
 
         //Inicio Cama
         [OperationContract]
@@ -89,7 +89,7 @@ namespace CapaServicio
         ContenedorCama CamaEliminar(ContenedorCama entrada);
 
         [OperationContract]
-        ContenedorCamas CamaRescatar();
+        ContenedorCamas CamaRescatar(string token);
         //Fin Cama
 
         [OperationContract]

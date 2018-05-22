@@ -43,10 +43,10 @@ namespace CapaWSPresentacion
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
             //Se vuelca en una lista las camas
             ContenedorCamas Camas = new ContenedorCamas();
-            Camas = x.CamaRescatar();
+            Camas = x.CamaRescatar(Session["TokenUsuario"].ToString());
             //Se vuelca en una lista las Plato
             ContenedorPlatos Platos = new ContenedorPlatos();
-            Platos = x.PlatoRescatar();
+            Platos = x.PlatoRescatar(Session["TokenUsuario"].ToString());
 
             EscribirBodyDetalle(CantidadHuespedes, Camas, Platos);
         }
@@ -217,6 +217,7 @@ namespace CapaWSPresentacion
             ContenedorOrdenCompraCompleta xOCC = new ContenedorOrdenCompraCompleta();
             xOCC.Item.Cabecera = nOCC.Cabecera;
             xOCC.Item.ListaDetalle = nOCC.ListaDetalle;
+            xOCC.Retorno.Token = Session["TokenUsuario"].ToString();
 
             xOCC = x.OrdenCompraCompletaCrear(xOCC);
 

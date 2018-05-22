@@ -58,6 +58,7 @@ namespace CapaWSPresentacion
             n.Item.PerfilUsuario.Persona.Email = txtCorreoEmpleado.Text;
             n.Item.PerfilUsuario.Persona.Telefono = txtTelefonoEmpleado.Text;
             n.Item.PerfilUsuario.Usuario.Clave = txtConstrasena.Text;
+            n.Retorno.Token = Session["TokenUsuario"].ToString();
 
             n = x.PerfilUsuarioProveedorCrear(n);
 
