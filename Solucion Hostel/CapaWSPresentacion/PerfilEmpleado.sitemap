@@ -4,5 +4,6 @@
         <siteMapNode url="np_producto_crud.aspx" title="CRUD Producto"  description="" />
         <siteMapNode url="np_proveedor_crear.aspx" title="Crear Proveedor"  description="" />
         <siteMapNode url="np_orden_compra_crear.aspx" title="Crear Orden Compra"  description="" />
+      <siteMapNode url="/perfilEmpleado/IngresoProducto.aspx" title="IngresoProducto"  description="" />
     </siteMapNode>
 </siteMap>

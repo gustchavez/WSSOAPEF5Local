@@ -10,6 +10,6 @@
 namespace CapaWSPresentacion.perfilEmpleado {
     
     
-    public partial class solicitarEmpleado {
+    public partial class stockProductos {
     }
 }

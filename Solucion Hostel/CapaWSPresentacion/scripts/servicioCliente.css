@@ -1,0 +1,341 @@
+/* Bases pagina */
+*{
+padding: 0px;
+margin: 0px;
+}
+
+body{
+	font-family: arial;
+	font-size: 13px;
+}
+
+.padre {
+	width: 1250px;
+	height: 700px;
+	margin: auto;
+	position: relative;
+}
+
+.totalmenu {
+	width: 100%;
+	height: 30px;
+	background: #035E7B;
+	position: absolute;
+	z-index: 11;
+}
+
+.menu {
+	width: 1250px;
+	height: 30px;
+	background: #035E7B;
+	position: absolute;
+	z-index: 11;
+}
+
+.columna1{
+	position: absolute;
+	width: 250px;
+	height: 670px;
+	margin-top: 30px;
+	padding-left: 10px;	
+}
+
+.columna2{
+	position: absolute;
+	background: #E9ECF5;
+	margin-left: 280px;
+	margin-top: 30px;
+	width: 670px;
+	height: 670px;
+}
+
+.columna3{
+	position: absolute;
+	margin-left: 950px;
+	margin-top: 30px;
+	width: 300px;
+	height: 670px;
+}
+
+/* Menu */
+
+.BotonMenu {
+width: 280px;
+height: 30px;
+text-align: center;
+color: white;
+position: relative;
+float: left;
+z-index: 11;
+padding-top: 7px;
+}
+
+.BotonMenu:HOVER{
+width: 280px;
+height: 23px;
+text-align: center;
+color: white;
+position: relative;
+background: #55828b;
+z-index: 11;
+padding-top: 7px;
+}
+
+
+/* Contenido Desplegable */
+.desplegable{	
+background: #1C3144;
+width: 280px;
+z-index: 10;
+height: 770px;
+position: absolute;
+margin-top: 30px;
+display: none;
+}
+
+.imagen-logo {
+	background: white;
+	height: 150px;
+	width: 150px;
+	margin: auto;
+	border-radius: 50%;
+	position: relative;
+	bottom: 10px;
+}
+
+.subMenu {
+	position: relative;
+	top: 50px;
+	margin: 10px;
+	color: white;
+	text-align: center;
+}
+
+
+/* -------------------------- */
+/* Inicio Contenido columna 1 */
+/* -------------------------- */
+
+
+h2{
+margin-left: 10px;	
+color: #1C3144;
+font-size: 16px;
+margin-top: 15px;
+margin-bottom: 15px;
+}
+
+.contenido th {
+
+	font-size: 12px;
+}
+
+.contenido td {
+	padding-top:  15px;
+
+}
+
+.contenido{
+	width: 250px;
+	padding: 10px;
+}
+
+.CasillaFecha {
+	width: 210px;
+}
+
+.Casilladias{
+	width: 30px;
+	position: relative;
+	left: 100px;
+}
+
+.CasillaEnvio {
+	position: relative;
+	left: 10px;
+	width: 30px;
+}
+
+/*-------Botones Habitacion ---------*/
+
+.Boton2personas {
+	text-align: center;
+	color: white;
+	position: relative;
+	left: 20px;
+	width: 40px;
+	background:  #55828b;
+}
+
+.Boton3personas {
+	text-align: center;
+	color: white;
+	position: relative;
+	left: 20px;
+	width: 40px;
+	background:  #e94f37;
+}
+
+.Boton6personas {
+	text-align: center;
+	color: white;
+	position: relative;
+	left: 20px;
+	width: 40px;
+	background:  #3f88c5;
+}
+
+.BotonIndividual {
+	text-align: center;
+	color: white;
+	position: relative;
+	left: 20px;
+	width: 40px;
+	background:  #AB4E68;
+}
+
+.CasillaPersonas{
+	position: relative;
+	left: 15px;
+	width: 30px;
+}
+
+/* ------------- */
+/* Fin Columna 1 */
+/* ------------- */
+
+/* -------------------------- */
+/* Inicio Contenido columna 2 */
+/* -------------------------- */
+.columna2 h2{
+margin-left: 10px;	
+text-align: center;
+color: #1C3144;
+font-size: 16px;
+margin-top: 15px;
+margin-bottom: 15px;
+}
+
+.IngresoPersonas1{
+	margin: auto;
+	background: white;
+	border-color: #AB4E68;
+	border-style: solid;
+	height: 60px;
+	width: 600px;
+	padding: 10px;
+}
+
+.Casilla2-1 {
+float: left;
+margin-right: 10px;
+margin-left: 10px;
+}
+
+.CasillaPersona{
+width: 120px;
+}
+
+
+.OpcionComida {
+	position: relative;
+	top: 15px;
+	left: 335px;
+}
+
+.comidas {
+
+	width: 240px;
+}
+
+/* ------------- */
+/* Fin Columna 2 */
+/* ------------- */
+
+/* -------------------------- */
+/* Inicio Contenido columna 3 */
+/* -------------------------- */
+
+.linea2{
+
+	position: relative;
+	color: black;
+	margin-right: 20px;
+	margin-left: 20px;
+
+}
+
+
+.CasillaPrecio{
+
+	width: 50px;
+	float: right;
+
+}
+
+.SubmitTotal{
+
+	position: relative;
+	top: 30px;
+	left: 20px;
+	width: 200px;
+	height: 30px;
+
+}
+
+.SubmitTotal:Hover{
+	position: relative;
+	top: 30px;
+	left: 20px;
+	width: 200px;
+	height: 30px;
+	background: #035E7B;
+	color: white;
+
+}
+
+.casillaTotal {
+
+padding: 10px;
+
+}
+
+.Forma3 h2 {
+
+text-align: center;
+margin-top:  10px;
+
+}
+
+
+
+/* ------------- */
+/* Fin Columna 3 */
+/* ------------- */
+
+
+
+
+
+
+
+/* Diseño Botones */
+
+.SubmitEnviar {
+	width: 200px;
+	height: 30px;
+	position: relative;
+	top: 20px;
+	left: 20px;
+}
+
+.SubmitEnviar:Hover{
+	width: 200px;
+	height: 30px;
+	position: relative;
+	top: 20px;
+	left: 20px;
+	background: #035E7B;
+	color: white;
+}
+

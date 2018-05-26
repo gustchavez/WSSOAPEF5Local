@@ -1,18 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="np_producto_crud.aspx.cs" Inherits="CapaWSPresentacion.np_producto_crud" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="/perfilEmpleado/MasterEmpleado.Master" AutoEventWireup="true" CodeBehind="ingresoProducto.aspx.cs" Inherits="CapaWSPresentacion.IngresoProducto" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder13" runat="server">
 
-<!DOCTYPE html>
+   
+    <link rel="stylesheet" type="text/css" href="/scripts/productosEmpleado.css"/>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="scripts/productosEmpleado.css"/>
-	<script src="scripts/efectos.js"></script>
-	<script src="scripts/jquery.min.js"></script>
-
-</head>
-<body>
-
+    <div class="padre">
 <!-- Inicio Columna 1 --> 
   	<div class="columna1">
 		<div class="perfilCliente">		
@@ -69,8 +63,8 @@
             <div class="Casilla2-1">
                 <asp:Button ID="btnActualizar" runat="server" CssClass="SubmitTotal" OnClick="btnActualizar_Click" Text="Actualizar" />
             </div>
-            <div class="auto-style1">
-                <asp:Button ID="btnEliminar" runat="server" CssClass="auto-style2" OnClick="btnEliminar_Click" Text="Eliminar" />
+            <div class="Casilla2-1">
+                <asp:Button ID="btnEliminar" runat="server" CssClass="SubmitTotal" OnClick="btnEliminar_Click" Text="Eliminar" />
             </div>
           
             <br />
@@ -82,7 +76,7 @@
 
 
 <!-- Fin Columna 2 --> 
+    </div>
 
 
-</body>
-</html>
+</asp:Content>

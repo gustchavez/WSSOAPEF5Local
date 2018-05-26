@@ -1,3 +1,4 @@
+
 /* Bases pagina */
 *{
 padding: 0px;
@@ -143,80 +144,40 @@ position: absolute;
 /* Inicio Contenido columna 2 */
 /* -------------------------- */
 
-.ModificarDatos{
-	margin: auto;
-	height: 300px;
-	width: 900px;
-	position: relative;
-	top: 30px;
-}
+.listaFactura {
 
-.ModificarDatos h2{
+	width: 800px;
+	margin: auto;
 	text-align: center;
 }
 
-.Casilla2-1 {
-	float: left;
-	margin: 20px;
-	width: 230px;
-	height: 25px;
+.columna2 h2{
+
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 10px;
 }
 
-.ModificarDatos2{
-	margin: auto;
-	width: 900px;
-	position: relative;
-	
-}
-
-.Casilla2-2 {
-	float: left;
-	margin: 20px;
-	width: 230px;
-	height: 25px;
-	position: relative;
-	top: 20px;
-}
-
-
-
-
-.CasillaPersona{
-	position: relative;
-	width: 230px;
-	height: 25px;
-
-}
-
-.droplist {
-	position: relative;
-	width: 230px;
+.columna2 img{
 	height: 30px;
-	float: left;
 }
 
-.SubmitTotal{
-
-	margin: auto;
-	position: relative;
-	width: 235px;
-	height: 40px;
-
-}
-
-.SubmitTotal:Hover{
-	position: relative;
-	width: 235px;
-	height: 40px;
+.listaFactura th{
 	background: #035E7B;
 	color: white;
+	height: 30px;
+
+}
+
+.listaFactura td{
+	background: white;
+
+	color: #035E7B;
+	height: 30px;
+
 }
 
 
 /* ----------------------- */
 /* Fin Contenido columna 2 */
 /* ----------------------- */
-
-
-
-

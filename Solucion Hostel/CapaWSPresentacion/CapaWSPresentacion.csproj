@@ -118,6 +118,8 @@
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="Index.aspx" />
+    <Content Include="perfilEmpleado\facturasRecibidas.aspx" />
+    <Content Include="perfilEmpleado\ingresoProducto.aspx" />
     <Content Include="np_cliente_crear.aspx" />
     <Content Include="np_ingreso.aspx" />
     <Content Include="np_orden_compra_crear.aspx" />
@@ -128,11 +130,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="perfilEmpleado\empresaEmpleado.aspx" />
-    <Content Include="perfilEmpleado\facturaEmpleado.aspx" />
-    <Content Include="perfilEmpleado\perfilEmpleado.aspx" />
-    <Content Include="perfilEmpleado\productosEmpleado.aspx" />
-    <Content Include="perfilEmpleado\solicitarEmpleado.aspx" />
+    <Content Include="perfilEmpleado\ingresoProveedor.aspx" />
+    <Content Include="perfilEmpleado\modificarPerfil.aspx" />
+    <Content Include="perfilEmpleado\solicitarProducto.aspx" />
+    <Content Include="perfilEmpleado\stockProductos.aspx" />
     <Content Include="Properties\DataSources\CapaObjeto.ListaProductos.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.Producto.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ListaPlatos.datasource" />
@@ -153,9 +154,22 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenCompraCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenPedidoCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenReservaCompleta.datasource" />
+    <Content Include="scripts\detalleCliente.css" />
     <Content Include="scripts\empresaEmpleado.css" />
+    <Content Include="scripts\facturaCliente.css" />
     <Content Include="scripts\facturaEmpleado.css" />
+    <Content Include="scripts\facturaProveedor.css" />
+    <Content Include="scripts\index.css" />
+    <Content Include="scripts\ingreso.css" />
+    <Content Include="scripts\ingresoFacturaProveedor.css" />
+    <Content Include="scripts\jquery.min.js" />
+    <Content Include="scripts\ordenCliente.css" />
+    <Content Include="scripts\pedidosProveedor.css" />
+    <Content Include="scripts\perfilCliente.css" />
+    <Content Include="scripts\servicioCliente.css" />
+    <Content Include="scripts\site_global.css" />
     <Content Include="scripts\solicitarEmpleado.css" />
+    <Content Include="scripts\solicitudesCliente.css" />
     <Content Include="WebService_Java.asmx" />
     <Content Include="PerfilCliente.sitemap">
       <SubType>Designer</SubType>
@@ -169,6 +183,7 @@
     <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
     <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="perfilEmpleado\MasterEmpleado.Master" />
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>
@@ -207,12 +222,39 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="scripts\stockEmpleado.css" />
-    <Content Include="perfilEmpleado\stockEmpleado.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="perfilEmpleado\facturasRecibidas.aspx.cs">
+      <DependentUpon>facturasRecibidas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilEmpleado\facturasRecibidas.aspx.designer.cs">
+      <DependentUpon>facturasRecibidas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilEmpleado\ingresoProducto.aspx.cs">
+      <DependentUpon>ingresoProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilEmpleado\ingresoProducto.aspx.designer.cs">
+      <DependentUpon>ingresoProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilEmpleado\ingresoProveedor.aspx.cs">
+      <DependentUpon>ingresoProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilEmpleado\ingresoProveedor.aspx.designer.cs">
+      <DependentUpon>ingresoProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilEmpleado\MasterEmpleado.Master.cs">
+      <DependentUpon>MasterEmpleado.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilEmpleado\MasterEmpleado.Master.designer.cs">
+      <DependentUpon>MasterEmpleado.Master</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -265,40 +307,26 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
-    <Compile Include="perfilEmpleado\empresaEmpleado.aspx.cs">
-      <DependentUpon>empresaEmpleado.aspx</DependentUpon>
+    <Compile Include="perfilEmpleado\modificarPerfil.aspx.cs">
+      <DependentUpon>modificarPerfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="perfilEmpleado\empresaEmpleado.aspx.designer.cs">
-      <DependentUpon>empresaEmpleado.aspx</DependentUpon>
+    <Compile Include="perfilEmpleado\modificarPerfil.aspx.designer.cs">
+      <DependentUpon>modificarPerfil.aspx</DependentUpon>
     </Compile>
-    <Compile Include="perfilEmpleado\facturaEmpleado.aspx.cs">
-      <DependentUpon>facturaEmpleado.aspx</DependentUpon>
+    <Compile Include="perfilEmpleado\solicitarProducto.aspx.cs">
+      <DependentUpon>solicitarProducto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="perfilEmpleado\facturaEmpleado.aspx.designer.cs">
-      <DependentUpon>facturaEmpleado.aspx</DependentUpon>
+    <Compile Include="perfilEmpleado\solicitarProducto.aspx.designer.cs">
+      <DependentUpon>solicitarProducto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="perfilEmpleado\perfilEmpleado.aspx.cs">
-      <DependentUpon>perfilEmpleado.aspx</DependentUpon>
+    <Compile Include="perfilEmpleado\stockProductos.aspx.cs">
+      <DependentUpon>stockProductos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="perfilEmpleado\perfilEmpleado.aspx.designer.cs">
-      <DependentUpon>perfilEmpleado.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="perfilEmpleado\productosEmpleado.aspx.cs">
-      <DependentUpon>productosEmpleado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="perfilEmpleado\productosEmpleado.aspx.designer.cs">
-      <DependentUpon>productosEmpleado.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="perfilEmpleado\solicitarEmpleado.aspx.cs">
-      <DependentUpon>solicitarEmpleado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="perfilEmpleado\solicitarEmpleado.aspx.designer.cs">
-      <DependentUpon>solicitarEmpleado.aspx</DependentUpon>
+    <Compile Include="perfilEmpleado\stockProductos.aspx.designer.cs">
+      <DependentUpon>stockProductos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="np_producto_crud.aspx.cs">
@@ -312,13 +340,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="perfilEmpleado\stockEmpleado.aspx.cs">
-      <DependentUpon>stockEmpleado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="perfilEmpleado\stockEmpleado.aspx.designer.cs">
-      <DependentUpon>stockEmpleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="SitioPrincipal.Master.cs">
       <DependentUpon>SitioPrincipal.Master</DependentUpon>
@@ -345,6 +366,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="images\" />
     <Folder Include="perfilAdministrador\" />
     <Folder Include="perfilCliente\" />
     <Folder Include="perfilProveedor\" />

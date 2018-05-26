@@ -37,6 +37,7 @@ namespace CapaWSPresentacion
                 Session["TokenUsuario"] = nLogin.Retorno.Token;
                 Session["NombreUsuario"] = nLogin.Usuario;
                 Session["PerfilUsuario"] = nLogin.Perfil;
+
                 Response.Redirect("Index.aspx");
             }
             else

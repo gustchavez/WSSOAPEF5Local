@@ -7,6 +7,7 @@
 
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder2">
     <p>Bienvenido a Pagina Principal</p>
+    
 </asp:Content>
 
 

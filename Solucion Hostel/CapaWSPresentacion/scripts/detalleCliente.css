@@ -1,3 +1,4 @@
+
 /* Bases pagina */
 *{
 padding: 0px;
@@ -143,73 +144,60 @@ position: absolute;
 /* Inicio Contenido columna 2 */
 /* -------------------------- */
 
-.ModificarDatos{
-	margin: auto;
-	height: 300px;
-	width: 900px;
-	position: relative;
-	top: 30px;
+.listaFactura {
+	width: 300px;
+	text-align: left;
 }
 
-.ModificarDatos h2{
+th{
+	height: 20px;
+}
+
+td{
+	height: 20px;
+}
+
+.contenedor{
+	width: 800px;
+	height: 480px;
+	position: relative;
+	margin: auto;
+}
+
+.listadoPersona {
+	width: 800px;
 	text-align: center;
 }
 
-.Casilla2-1 {
-	float: left;
-	margin: 20px;
-	width: 230px;
-	height: 25px;
+.listadoPersona th{
+	height: 20px;
+	background: white;
+	color: black;
+	text-align: center;
 }
 
-.ModificarDatos2{
-	margin: auto;
-	width: 900px;
-	position: relative;
-	
+.columna2 h3{
+	margin-top: 30px;
 }
 
-.Casilla2-2 {
-	float: left;
-	margin: 20px;
-	width: 230px;
-	height: 25px;
-	position: relative;
-	top: 20px;
-}
-
-
-
-
-.CasillaPersona{
-	position: relative;
-	width: 230px;
-	height: 25px;
-
-}
-
-.droplist {
-	position: relative;
-	width: 230px;
+.columna2 img{
 	height: 30px;
-	float: left;
 }
 
-.SubmitTotal{
-
-	margin: auto;
-	position: relative;
-	width: 235px;
-	height: 40px;
-
+.totales{
+position: relative;
+top: 30px;
+background: #388697;
+width: 800px;
+text-align: left;
+margin: auto;
 }
 
-.SubmitTotal:Hover{
-	position: relative;
-	width: 235px;
-	height: 40px;
-	background: #035E7B;
-	color: white;
+.totales th{
+	height: 20px;
+	background: white;
+	color: black;
+	text-align: center;
 }
 
 
@@ -220,3 +208,23 @@ position: absolute;
 
 
 
+.SubmitEnviar {
+	width: 200px;
+	height: 30px;
+	position: relative;
+	top: 40px;
+	left: 480px;
+	background: #035E7B;
+	color: white;
+	border-color: white;
+}
+
+.SubmitEnviar:Hover{
+	width: 200px;
+	height: 30px;
+	position: relative;
+	top: 40px;
+	left: 480px;
+	background: #5c9ead;
+	color: white;
+}

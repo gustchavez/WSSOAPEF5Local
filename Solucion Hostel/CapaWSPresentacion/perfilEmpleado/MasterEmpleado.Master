@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterEmpleado.Master.cs" Inherits="CapaWSPresentacion.DiegoPrueba" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <link rel="stylesheet" type="text/css" href="/scripts/perfilCliente.css">
+	<script src="/scripts/efectos.js"></script>
+	<script src="/scripts/jquery.min.js"></script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    
+    <div class="menu">
+
+		<div class="BotonMenu" onclick="efecto()">MENU</div>		
+		<div class="desplegable">		
+			<div class="subMenu"> <div class="imagen-logo"></div> </div>
+			<div class="subMenu"> <a href="stockEmpleado.html" style="color: #e2e2e2;"> Stock Productos </a></div>
+			<div class="subMenu"> <a href="perfilEmpleado.html" style="color: #e2e2e2;"> Modificar Perfil </a></div>
+			<div class="subMenu"> <a href="facturaEmpleado.html" style="color: #e2e2e2;"> Ver Facturas Proveedores </a></div> 
+			<div class="subMenu"> <a href="empresaEmpleado.html" style="color: #e2e2e2;"> Ingresar Empresa </a></div>
+			<div class="subMenu"> <a href="productosEmpleado.html" style="color: #e2e2e2;"> Ingresar Productos </a></div>
+			<div class="subMenu"> <a href="solicitarEmpleado.html" style="color: #e2e2e2;"> Solicitar Productos </a></div><br>
+			<div class="subMenu"> <a href="ingreso.html" style="color: #e2e2e2;"> Cerrar Sesión</a></div>
+		</div>
+     </div>
+    
+  <asp:ContentPlaceHolder ID="ContentPlaceHolder13" runat="server"></asp:ContentPlaceHolder>
+
+
+</body>
+</html>

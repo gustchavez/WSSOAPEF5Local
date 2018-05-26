@@ -143,49 +143,54 @@ position: absolute;
 /* Inicio Contenido columna 2 */
 /* -------------------------- */
 
-.ModificarDatos{
+.tabla{
 	margin: auto;
-	height: 300px;
-	width: 900px;
+	height: 70px;
+	width: 800px;
 	position: relative;
-	top: 30px;
-}
-
-.ModificarDatos h2{
+	top: 50px;
 	text-align: center;
 }
 
-.Casilla2-1 {
-	float: left;
-	margin: 20px;
-	width: 230px;
-	height: 25px;
+.tabla th{
+	background: white;
+	color :black;
+	height: 30px;
 }
 
 .ModificarDatos2{
 	margin: auto;
-	width: 900px;
+	top: 30px;
+	width: 800px;
 	position: relative;
 	
 }
 
 .Casilla2-2 {
 	float: left;
-	margin: 20px;
-	width: 230px;
-	height: 25px;
+	margin: 5px;
 	position: relative;
-	top: 20px;
+	top: 10px;	
 }
 
-
-
+.Casilla2-1 {
+	float: right;
+	margin: 5px;
+	position: relative;
+	right: 80px;
+	top: 100px;	
+}
 
 .CasillaPersona{
 	position: relative;
-	width: 230px;
+	width: 250px;
 	height: 25px;
+}
 
+.CasillaPersona2{
+	position: relative;
+	width: 80px;
+	height: 25px;
 }
 
 .droplist {
@@ -199,15 +204,28 @@ position: absolute;
 
 	margin: auto;
 	position: relative;
+	top: 15px;
 	width: 235px;
-	height: 40px;
+	height: 30px;
+	background: #a5668b;
+	color: white;
 
 }
 
-.SubmitTotal:Hover{
+.SubmitTotal2{
+
+    background: #861657;
+    color: white;
 	position: relative;
 	width: 235px;
-	height: 40px;
+	height: 30px;
+
+}
+.SubmitTotal:Hover{
+	position: relative;
+	top: 15px;
+	width: 235px;
+	height: 30px;
 	background: #035E7B;
 	color: white;
 }

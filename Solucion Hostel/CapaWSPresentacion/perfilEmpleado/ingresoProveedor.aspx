@@ -1,34 +1,42 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SitioPrincipal.Master" AutoEventWireup="true" CodeBehind="np_ingreso.aspx.cs" Inherits="CapaWSPresentacion.np_ingreso" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilEmpleado/MasterEmpleado.Master" AutoEventWireup="true" CodeBehind="ingresoProveedor.aspx.cs" Inherits="CapaWSPresentacion.perfilEmpleado.ingresoProveedor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder2">
-
-    <link rel="stylesheet" type="text/css" href="/scripts/ingreso.css"/>
-	<script src="js/jquery.min.js"></script>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder13" runat="server">
 
 
 
-        <!-- Crear Usuario -->
-
-
-    <div class="ContenedorPaginaIngreso">
+ <div class="padre">
 	
-
-	<div class="Contenedor-Registro">
-		
-			<h3 class="Contenido">REGISTRO</h3>
-
-			<div class="Contenido">
-				Rut Empresa <br/>
-				 <asp:TextBox ID="TextBox1" runat="server"  CssClass="casilla" ></asp:TextBox><br/>	
+	<div class="columna1">
+		<div class="perfilCliente">		
+			<div class="datosEmpresa" > <div class="imagen-logo-empresa"></div> </div>
+			<div class="datosEmpresa">  <h3> Datos Usuario </h3> </div>
+			<div class="datosEmpresa">  <b>Nombre</b>  <br/> <asp:Label ID="Label1" runat="server" Text="Nombre Persona"></asp:Label> </div>
+			<div class="datosEmpresa">  <b>Rut</b>  <br/> <asp:Label ID="Label2" runat="server" Text="11111111"></asp:Label>  </div>
+			<div class="datosEmpresa">  <b>Cargo</b>  <br/> <asp:Label ID="Label3" runat="server" Text="Empleado"></asp:Label> </div>
+			<div class="datosEmpresa">  <b>Correo Electrónico </b> <br/> <asp:Label ID="Label4" runat="server" Text="correo@correo.cl"></asp:Label>  </div>
+			<div class="datosEmpresa">  <b>Teléfono</b>  <br/> <asp:Label ID="Label5" runat="server" Text="555555555"></asp:Label>  </div>
+		</div>
+	</div>
+	<!--Fin COLUMNA1-->
+     
+    <form action="/" method="post" runat="server">
+	<div class="columna2">
+		<div class="ModificarDatos">
+				
+			<h2>Agregar Proveedor</h2><br>	
+	
+			<div class="Casilla2-1">
+			<h4>Rut Empresa</h4>	
+			<asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
-			<div class="Contenido">
-				Razón Social <br/>
-				 <asp:TextBox ID="TextBox2" runat="server"  CssClass="casilla" ></asp:TextBox><br/>	
+			<div class="Casilla2-1">
+			<h4>Razón Social</h4>	
+			<asp:TextBox ID="TextBox2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
-			<div class="Contenido" >
-				Giro <br/>
-                <asp:DropDownList ID="DropDownList1" runat="server" CssClass="casilla">
+			<div class="Casilla2-1">
+			<h4>Giro</h4>	
+			 <asp:DropDownList ID="DropDownList2" runat="server" CssClass="droplist">
                     <asp:ListItem Value="1">Selecciona un Giro</asp:ListItem>
                     <asp:ListItem Value="2">CULTIVOS EN GENERAL; CULTIVO DE PRODUCTOS DE MERCADO; HORTICULTURA</asp:ListItem>
                     <asp:ListItem Value="3">CRÍA DE ANIMALES</asp:ListItem>
@@ -163,134 +171,121 @@
                     <asp:ListItem Value="132">OTRAS ACTIVIDADES DE SERVICIOS </asp:ListItem>
                     <asp:ListItem Value="133">CONSEJO DE ADMINISTRACIÓN DE EDIFICIOS Y CONDOMINIOS </asp:ListItem>
                     <asp:ListItem Value="134">ORGANIZACIONES Y ÓRGANOS EXTRATERRITORIALES </asp:ListItem>
-
                 </asp:DropDownList>
-
-				
 			</div>
-
-			<div class="Contenido">
-				Nombre Usuario<br/>
-				 <asp:TextBox ID="TextBox3" runat="server"  CssClass="casilla" ></asp:TextBox><br/>		
+			<div class="Casilla2-1">
+			<h4>Dirección</h4>
+			<asp:TextBox ID="TextBox3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
-
-			<div class="Contenido">
-				Correo Electrónico <br/>
-				 <asp:TextBox ID="TextBox4" runat="server"  CssClass="casilla" ></asp:TextBox><br/>			
+			<div class="Casilla2-1">
+				<h4>Ciudad</h4>					
+				 <asp:DropDownList ID="DropDownList3" runat="server" CssClass="droplist">
+                    <asp:ListItem Value="1">Seleccione una ciudad</asp:ListItem>
+                    <asp:ListItem Value="2">Metropolitana de Santiago</asp:ListItem>
+                    <asp:ListItem Value="3">Biobío</asp:ListItem>
+                    <asp:ListItem Value="4">Valparaíso</asp:ListItem>
+                    <asp:ListItem Value="5">Coquimbo</asp:ListItem>
+                    <asp:ListItem Value="6">Antofagasta</asp:ListItem>
+                    <asp:ListItem Value="7">Araucanía</asp:ListItem>
+                    <asp:ListItem Value="8">O'Higgins</asp:ListItem>
+                    <asp:ListItem Value="9">Tarapacá</asp:ListItem>
+                    <asp:ListItem Value="10">Maule</asp:ListItem>
+                    <asp:ListItem Value="11">Arica y Parinacota</asp:ListItem>
+                    <asp:ListItem Value="12">Los Lagos</asp:ListItem>
+                    <asp:ListItem Value="13">Biobío</asp:ListItem>
+                    <asp:ListItem Value="14">Biobío</asp:ListItem>
+                    <asp:ListItem Value="15">Antofagasta</asp:ListItem>
+                    <asp:ListItem Value="16">Atacama</asp:ListItem>
+                    <asp:ListItem Value="17">Los Lagos</asp:ListItem>
+                    <asp:ListItem Value="18">Valparaíso</asp:ListItem>
+                    <asp:ListItem Value="19">Los Ríos</asp:ListItem>
+                    <asp:ListItem Value="20">Magallanes</asp:ListItem>
+                    <asp:ListItem Value="21">Valparaíso</asp:ListItem>
+                    <asp:ListItem Value="22">Maule</asp:ListItem>
+                    <asp:ListItem Value="23">Coquimbo</asp:ListItem>
+                    <asp:ListItem Value="24">Maule</asp:ListItem>
+                    <asp:ListItem Value="25">Valparaíso</asp:ListItem>
+                    <asp:ListItem Value="26">Metropolitana de Santiago</asp:ListItem>
+                    <asp:ListItem Value="27">Valparaíso</asp:ListItem>
+                 </asp:DropDownList>
 			</div>
-				
-			<div class="Contenido">
-				Contraseña <br/>
-				<asp:TextBox ID="TextBox5" runat="server"  CssClass="casilla" ></asp:TextBox><br/>		
+			<div class="Casilla2-1">
+				<h4>Comuna</h4>					
+				 <asp:DropDownList ID="DropDownList4" runat="server" CssClass="droplist">
+					<asp:ListItem Value="1">Seleccione una comuna</asp:ListItem>
+                    <asp:ListItem Value="2">Cerrillos</asp:ListItem>
+                    <asp:ListItem Value="3">Cerro Navia</asp:ListItem>
+                    <asp:ListItem Value="4">Conchalí</asp:ListItem>
+                    <asp:ListItem Value="5">El Bosque</asp:ListItem>
+                    <asp:ListItem Value="6">Estación Central</asp:ListItem>
+                    <asp:ListItem Value="7">Huechuraba</asp:ListItem>
+                    <asp:ListItem Value="8">Independencia</asp:ListItem>
+                    <asp:ListItem Value="9">La Cisterna</asp:ListItem>
+                    <asp:ListItem Value="10">La Florida</asp:ListItem>
+                    <asp:ListItem Value="11">La Granja</asp:ListItem>
+                    <asp:ListItem Value="12">La Pintana</asp:ListItem>
+                    <asp:ListItem Value="13">La Reina</asp:ListItem>
+                    <asp:ListItem Value="14">Las Condes</asp:ListItem>
+                    <asp:ListItem Value="15">Lo Barnechea</asp:ListItem>
+                    <asp:ListItem Value="16">Lo Espejo</asp:ListItem>
+                    <asp:ListItem Value="17">Lo Prado</asp:ListItem>
+                    <asp:ListItem Value="18">Macul</asp:ListItem>
+                    <asp:ListItem Value="19">Maipú</asp:ListItem>
+                    <asp:ListItem Value="20">Ñuñoa</asp:ListItem>
+                    <asp:ListItem Value="21">Padre Hurtado</asp:ListItem>
+                    <asp:ListItem Value="22">Pedro Aguirre Cerda</asp:ListItem>
+                    <asp:ListItem Value="23">Peñalolén</asp:ListItem>
+                    <asp:ListItem Value="24">Providencia</asp:ListItem>
+                    <asp:ListItem Value="25">Pudahuel</asp:ListItem>
+                    <asp:ListItem Value="26">Puente Alto</asp:ListItem>
+                    <asp:ListItem Value="27">Quilicura</asp:ListItem>
+                    <asp:ListItem Value="28">Quinta Normal</asp:ListItem>
+                    <asp:ListItem Value="29">Recoleta</asp:ListItem>
+                    <asp:ListItem Value="30">Renca</asp:ListItem>
+                    <asp:ListItem Value="31">San Bernardo</asp:ListItem>
+                    <asp:ListItem Value="32">San Joaquín</asp:ListItem>
+                    <asp:ListItem Value="33">San Miguel</asp:ListItem>
+                    <asp:ListItem Value="34">San Ramón</asp:ListItem>
+                    <asp:ListItem Value="35">Santiago</asp:ListItem>
+                    <asp:ListItem Value="36">Vitacura</asp:ListItem>
+                    <asp:ListItem Value="37">--Otra--</asp:ListItem>
+			</asp:DropDownList>	
 			</div>
-
-			<div class="Contenido">
-                <asp:Button ID="Button1" runat="server" Text="Button" CssClass="casillaEnvio"/>	
+			<div class="Casilla2-1">
+			<h4>Correo Electrónico</h4>	
+			<asp:TextBox ID="TextBox4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
-
-			<div class="Contenido">
-				<ul class="error" id="error"></ul>	
+			<div class="Casilla2-1">
+			<h4>Teléfono</h4>	
+			<asp:TextBox ID="TextBox5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 	</div>
 
 
-	<div class="Contenedor-Registro">
-		<div class="linea"></div>
+	<div class="ModificarDatos2">
+		<div class="Casilla2-2">
+		<h4 style="color: red;">Nombre Usuario</h4>	
+		<asp:TextBox ID="TextBox6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+		</div>
+		<div class="Casilla2-2">
+		<h4 style="color: red;">Nueva Contraseña</h4>	
+		<asp:TextBox ID="TextBox7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+		</div>
+		<div class="Casilla2-2">
+		<h4 style="color: red;">Confirmar Contraseña</h4>	
+		<asp:TextBox ID="TextBox8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+		</div>
+		<div class="Casilla2-2">	
+		<asp:TextBox ID="TextBox9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+		</div>
 	</div>
+		
+</div>
+     </form>
+	<!--Fin COLUMNA2-->
 
-        <!-- Ingreso usuario contraseña -->
-
-	<div class="Contenedor-Ingreso">	
-			<h3 class="Contenido">INGRESO</h3>
-			<div class="Contenido">
-				Correo Electrónico <br/>
-			    <asp:TextBox ID="txtNombreUsuario" runat="server" CssClass="casilla"></asp:TextBox> <br/>		
-			</div>
-			<div class="Contenido">
-				Contraseña <br/>
-			    <asp:TextBox ID="txtClaveUsuario" runat="server"  TextMode="Password" CssClass="casilla"></asp:TextBox><br/>
-			</div>
-			<div class="Contenido">
-				Borrar <br/>
-			    <asp:TextBox ID="txtPerfilUsuario" runat="server"  CssClass="casilla" Enabled="False"></asp:TextBox><br/>
-			</div>
-            
-			<div class="Contenido">
-				Borrar <br/>
-			    <asp:TextBox ID="txtNombrePersona" runat="server"  CssClass="casilla" Enabled="False"></asp:TextBox><br/>
-			</div>
-        
-			<div class="Contenido">
-				Borrar <br/>
-			    <asp:TextBox ID="txtApellidoPersona" runat="server"  CssClass="casilla" Enabled="False"></asp:TextBox><br/>
-			</div>
-        
-			<div class="Contenido">
-				Borrar <br/>
-			    <asp:TextBox ID="txtCodigoRetorno" runat="server"  CssClass="casilla" Enabled="False"></asp:TextBox><br/>
-			</div>
-        
-			<div class="Contenido">
-				Borrar <br/>
-			    <asp:TextBox ID="txtGlosaRetorno" runat="server"  CssClass="casilla" Enabled="False"></asp:TextBox><br/>
-			</div>    
-
-
-
-			<div class="Contenido">
-				<asp:Button ID="btnAceptar" runat="server" Text="Ingresar"  OnClick="btnAceptar_Click" CssClass="casillaEnvio" /><br/>		
-			</div>
-			<div class="Contenido">
-				<ul class="error2" id="error2">Hio</ul>	
-			</div>
-	</div>
 
 </div>
-	
-
-<script src="/scripts/condiciones.js"></script>	
 
 
-    <%-- 
-        
-         <table style="width:75%;">
-            <tr>
-                <td style="width:25%;">Nombre Usuario</td>
-                <td style="width:75%;"><asp:TextBox ID="txtNombreUsuario" runat="server"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td style="width:25%;">Clave Usuario</td>
-                <td style="width:75%;"><asp:TextBox ID="txtClaveUsuario" runat="server"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td style="width:25%;">Perfil Usuario</td>
-                <td style="width:75%;"><asp:TextBox ID="txtPerfilUsuario" runat="server" Enabled="False"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td style="width:25%;">Nombre Persona</td>
-                <td style="width:75%;"><asp:TextBox ID="txtNombrePersona" runat="server" Enabled="False"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td style="width:25%;">Apellido Persona</td>
-                <td style="width:75%;"><asp:TextBox ID="txtApellidoPersona" runat="server" Enabled="False"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td style="width:25%;">Codigo Retorno</td>
-                <td style="width:75%;"><asp:TextBox ID="txtCodigoRetorno" runat="server" Enabled="False"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td style="width:25%;">Glosa Retorno</td>
-                <td style="width:75%;"><asp:TextBox ID="txtGlosaRetorno" runat="server" Enabled="False" Width="387px"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td style="width:25%;">&nbsp;</td>
-                <td style="width:75%;"></td>
-            </tr>
-        </table>  
-        
-        --%>
-
-
-
-    </asp:Content>
-
+</asp:Content>

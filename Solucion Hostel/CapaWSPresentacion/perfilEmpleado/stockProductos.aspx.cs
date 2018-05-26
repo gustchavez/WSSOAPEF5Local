@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CapaWSPresentacion.perfilEmpleado
 {
-    public partial class stockEmpleado : System.Web.UI.Page
+    public partial class stockProductos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

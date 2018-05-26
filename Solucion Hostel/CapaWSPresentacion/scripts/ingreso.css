@@ -1,0 +1,100 @@
+
+
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+
+
+body{
+
+	font-family: arial;
+	font-size: 13px;
+
+}
+
+
+.ContenedorPaginaIngreso{
+	display: block;
+	margin: auto;
+	background: white;
+	width: 800px;
+	height: 500px;
+	margin-top: 100px;
+
+}
+
+.Contenido{
+	margin: 15px;
+}
+
+.casilla{
+
+	width: 300px;
+
+}
+
+.casillaEnvio{
+	margin-left: 50px;
+	margin-top: 10px;
+	width: 200px;
+	height: 30px;
+
+}
+
+
+.casillaEnvio:Hover{
+	margin-left: 50px;
+	margin-top: 10px;
+	width: 200px;
+	height: 30px;
+	background: #6c464e;
+	color: white;
+}
+
+.linea{
+
+	height: 400px;
+	width: 1px;
+	background: #6c464e;
+	margin-left: 65px;
+	opacity: 0.5;
+
+}
+
+.Contenedor-Registro{
+
+	float: left;
+}
+
+.Contenedor-Ingreso{
+
+	float: right;
+}
+
+.error{
+
+display: none;
+border-radius: 3px;
+margin-top: 10px;
+background: #ce1818;
+color: #fff;
+padding-left: 30px;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+
+.error2{
+
+display: none;
+border-radius: 3px;
+margin-top: 10px;
+background: #ce1818;
+color: #fff;
+padding-left: 30px;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
