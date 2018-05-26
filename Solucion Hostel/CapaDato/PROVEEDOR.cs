@@ -17,11 +17,13 @@ namespace CapaDato
         public PROVEEDOR()
         {
             this.ORDEN_DE_PEDIDO = new HashSet<ORDEN_DE_PEDIDO>();
+            this.PRODUCTO = new HashSet<PRODUCTO>();
         }
     
         public string RUT { get; set; }
     
         public virtual EMPRESA EMPRESA { get; set; }
         public virtual ICollection<ORDEN_DE_PEDIDO> ORDEN_DE_PEDIDO { get; set; }
+        public virtual ICollection<PRODUCTO> PRODUCTO { get; set; }
     }
 }

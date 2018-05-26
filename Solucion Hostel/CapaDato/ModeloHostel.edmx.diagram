@@ -47,6 +47,9 @@
         <AssociationConnector Association="Model.ORDEN_DE_PEDIDO_FK" />
         <AssociationConnector Association="Model.RRP_FK2" />
         <AssociationConnector Association="Model.RRP_FK1" />
+        <EntityTypeShape EntityType="Model.PAGO" Width="1.5" PointX="9.75" PointY="19.125" />
+        <AssociationConnector Association="Model.PAGO_FK1" />
+        <AssociationConnector Association="Model.PROVISION" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

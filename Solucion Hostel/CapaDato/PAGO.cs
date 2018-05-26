@@ -12,21 +12,16 @@ namespace CapaDato
     using System;
     using System.Collections.Generic;
     
-    public partial class PRODUCTO
+    public partial class PAGO
     {
-        public PRODUCTO()
-        {
-            this.RRP = new HashSet<RRP>();
-            this.PROVEEDOR = new HashSet<PROVEEDOR>();
-        }
+        public string TIPO_FACTURA { get; set; }
+        public decimal NUMERO_FACTURA { get; set; }
+        public string MEDIO_PAGO { get; set; }
+        public string DIVISA { get; set; }
+        public string CODIGO_ISO { get; set; }
+        public string MONTO { get; set; }
+        public Nullable<decimal> TASA_CAMBIO_CLP { get; set; }
     
-        public short CODIGO { get; set; }
-        public string DESCRIPCION { get; set; }
-        public int PRECIO { get; set; }
-        public short STOCK { get; set; }
-        public short STOCK_CRITICO { get; set; }
-    
-        public virtual ICollection<RRP> RRP { get; set; }
-        public virtual ICollection<PROVEEDOR> PROVEEDOR { get; set; }
+        public virtual FACTURA FACTURA { get; set; }
     }
 }
