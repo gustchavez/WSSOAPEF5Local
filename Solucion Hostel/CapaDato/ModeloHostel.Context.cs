@@ -47,6 +47,7 @@ namespace CapaDato
         public DbSet<ORDEN_DE_COMPRA> ORDEN_DE_COMPRA { get; set; }
         public DbSet<ORDEN_DE_PEDIDO> ORDEN_DE_PEDIDO { get; set; }
         public DbSet<RRP> RRP { get; set; }
+        public DbSet<PAGO> PAGO { get; set; }
     
         public virtual int SP_VALIDAR_LOGIN(string p_IN_NOMBRE, string p_IN_CLAVE, ObjectParameter p_OUT_PERFIL, ObjectParameter p_OUT_NOMBRE, ObjectParameter p_OUT_APELLIDO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {

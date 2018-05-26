@@ -28,5 +28,6 @@ namespace CapaDato
     
         public virtual ORDEN_DE_COMPRA ORDEN_DE_COMPRA { get; set; }
         public virtual ORDEN_DE_PEDIDO ORDEN_DE_PEDIDO { get; set; }
+        public virtual PAGO PAGO { get; set; }
     }
 }

@@ -96,6 +96,9 @@
     <Compile Include="ORDEN_DE_PEDIDO.cs">
       <DependentUpon>ModeloHostel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PAGO.cs">
+      <DependentUpon>ModeloHostel.tt</DependentUpon>
+    </Compile>
     <Compile Include="PAIS.cs">
       <DependentUpon>ModeloHostel.tt</DependentUpon>
     </Compile>
