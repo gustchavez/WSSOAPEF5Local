@@ -210,30 +210,6 @@
 				Contraseña <br/>
 			    <asp:TextBox ID="txtClaveUsuario" runat="server"  TextMode="Password" CssClass="casilla"></asp:TextBox><br/>
 			</div>
-			<div class="Contenido">
-				Borrar <br/>
-			    <asp:TextBox ID="txtPerfilUsuario" runat="server"  CssClass="casilla" Enabled="False"></asp:TextBox><br/>
-			</div>
-            
-			<div class="Contenido">
-				Borrar <br/>
-			    <asp:TextBox ID="txtNombrePersona" runat="server"  CssClass="casilla" Enabled="False"></asp:TextBox><br/>
-			</div>
-        
-			<div class="Contenido">
-				Borrar <br/>
-			    <asp:TextBox ID="txtApellidoPersona" runat="server"  CssClass="casilla" Enabled="False"></asp:TextBox><br/>
-			</div>
-        
-			<div class="Contenido">
-				Borrar <br/>
-			    <asp:TextBox ID="txtCodigoRetorno" runat="server"  CssClass="casilla" Enabled="False"></asp:TextBox><br/>
-			</div>
-        
-			<div class="Contenido">
-				Borrar <br/>
-			    <asp:TextBox ID="txtGlosaRetorno" runat="server"  CssClass="casilla" Enabled="False"></asp:TextBox><br/>
-			</div>    
 
 
 

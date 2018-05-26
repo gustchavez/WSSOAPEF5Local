@@ -53,6 +53,7 @@
     <Compile Include="ContenedorOrdenCompraCompleta.cs" />
     <Compile Include="ContenedorOrdenCompraDetalle.cs" />
     <Compile Include="ContenedorOrdenCompra.cs" />
+    <Compile Include="ContenedorOrdenesCompraCompleta.cs" />
     <Compile Include="ContenedorOrdenPedidoCompleta.cs" />
     <Compile Include="ContenedorPerfilUsuarioCliente.cs" />
     <Compile Include="ContenedorPerfilUsuarioProveedor.cs" />

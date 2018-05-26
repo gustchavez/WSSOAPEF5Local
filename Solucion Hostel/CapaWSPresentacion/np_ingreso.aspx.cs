@@ -26,11 +26,11 @@ namespace CapaWSPresentacion
 
             nLogin = x.ValidarLogin(txtNombreUsuario.Text, txtClaveUsuario.Text);
 
-            txtPerfilUsuario.Text = nLogin.Perfil;
-            txtNombrePersona.Text = nLogin.Nombre;
-            txtApellidoPersona.Text = nLogin.Apellido;
-            txtCodigoRetorno.Text = nLogin.Retorno.Codigo.ToString();
-            txtGlosaRetorno.Text = nLogin.Retorno.Glosa;
+            //txtPerfilUsuario.Text = nLogin.Perfil;
+            //txtNombrePersona.Text = nLogin.Nombre;
+            //txtApellidoPersona.Text = nLogin.Apellido;
+            //txtCodigoRetorno.Text = nLogin.Retorno.Codigo.ToString();
+            //txtGlosaRetorno.Text = nLogin.Retorno.Glosa;
 
             if (nLogin.Retorno.Codigo == 0)
             {
