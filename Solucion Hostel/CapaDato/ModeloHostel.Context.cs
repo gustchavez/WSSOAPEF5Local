@@ -29,112 +29,46 @@ namespace CapaDato
         }
     
         public DbSet<ALOJAMIENTO> ALOJAMIENTO { get; set; }
+        public DbSet<CAMA> CAMA { get; set; }
         public DbSet<CIUDAD> CIUDAD { get; set; }
         public DbSet<CLIENTE> CLIENTE { get; set; }
         public DbSet<COMIDA> COMIDA { get; set; }
         public DbSet<EMPRESA> EMPRESA { get; set; }
         public DbSet<FACTURA> FACTURA { get; set; }
+        public DbSet<HABITACION> HABITACION { get; set; }
+        public DbSet<ORDEN_DE_COMPRA> ORDEN_DE_COMPRA { get; set; }
+        public DbSet<ORDEN_DE_PEDIDO> ORDEN_DE_PEDIDO { get; set; }
+        public DbSet<PAGO> PAGO { get; set; }
         public DbSet<PAIS> PAIS { get; set; }
+        public DbSet<PERSONA> PERSONA { get; set; }
         public DbSet<PLATO> PLATO { get; set; }
         public DbSet<PRODUCTO> PRODUCTO { get; set; }
         public DbSet<PROVEEDOR> PROVEEDOR { get; set; }
+        public DbSet<PROVISION> PROVISION { get; set; }
+        public DbSet<RRP> RRP { get; set; }
         public DbSet<SERVICIO_COMIDA> SERVICIO_COMIDA { get; set; }
         public DbSet<USUARIO> USUARIO { get; set; }
         public DbSet<DIRECCION> DIRECCION { get; set; }
-        public DbSet<CAMA> CAMA { get; set; }
-        public DbSet<HABITACION> HABITACION { get; set; }
-        public DbSet<PERSONA> PERSONA { get; set; }
-        public DbSet<ORDEN_DE_COMPRA> ORDEN_DE_COMPRA { get; set; }
-        public DbSet<ORDEN_DE_PEDIDO> ORDEN_DE_PEDIDO { get; set; }
-        public DbSet<RRP> RRP { get; set; }
-        public DbSet<PAGO> PAGO { get; set; }
     
-        public virtual int SP_VALIDAR_LOGIN(string p_IN_NOMBRE, string p_IN_CLAVE, ObjectParameter p_OUT_PERFIL, ObjectParameter p_OUT_NOMBRE, ObjectParameter p_OUT_APELLIDO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        public virtual int SP_ACTUALIZAR_CAMA(Nullable<decimal> p_IN_CODIGO, string p_IN_DESCRIPCION, string p_IN_DISPONIBLE, Nullable<decimal> p_IN_CODIGO_HABITACION, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
-            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
-                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
-                new ObjectParameter("P_IN_NOMBRE", typeof(string));
+            var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
+                new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
+                new ObjectParameter("P_IN_CODIGO", typeof(decimal));
     
-            var p_IN_CLAVEParameter = p_IN_CLAVE != null ?
-                new ObjectParameter("P_IN_CLAVE", p_IN_CLAVE) :
-                new ObjectParameter("P_IN_CLAVE", typeof(string));
+            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
+                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
+                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_VALIDAR_LOGIN", p_IN_NOMBREParameter, p_IN_CLAVEParameter, p_OUT_PERFIL, p_OUT_NOMBRE, p_OUT_APELLIDO, p_OUT_CODRET, p_OUT_GLSRET);
-        }
+            var p_IN_DISPONIBLEParameter = p_IN_DISPONIBLE != null ?
+                new ObjectParameter("P_IN_DISPONIBLE", p_IN_DISPONIBLE) :
+                new ObjectParameter("P_IN_DISPONIBLE", typeof(string));
     
-        public virtual int SP_ACTUALIZAR_ENC_RESERVA(Nullable<decimal> p_IN_NUMERO, Nullable<decimal> p_IN_MONTO, string p_IN_OBSERVACIONES, string p_IN_UBICACION, string p_IN_ESTADO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
-                new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
-                new ObjectParameter("P_IN_NUMERO", typeof(decimal));
+            var p_IN_CODIGO_HABITACIONParameter = p_IN_CODIGO_HABITACION.HasValue ?
+                new ObjectParameter("P_IN_CODIGO_HABITACION", p_IN_CODIGO_HABITACION) :
+                new ObjectParameter("P_IN_CODIGO_HABITACION", typeof(decimal));
     
-            var p_IN_MONTOParameter = p_IN_MONTO.HasValue ?
-                new ObjectParameter("P_IN_MONTO", p_IN_MONTO) :
-                new ObjectParameter("P_IN_MONTO", typeof(decimal));
-    
-            var p_IN_OBSERVACIONESParameter = p_IN_OBSERVACIONES != null ?
-                new ObjectParameter("P_IN_OBSERVACIONES", p_IN_OBSERVACIONES) :
-                new ObjectParameter("P_IN_OBSERVACIONES", typeof(string));
-    
-            var p_IN_UBICACIONParameter = p_IN_UBICACION != null ?
-                new ObjectParameter("P_IN_UBICACION", p_IN_UBICACION) :
-                new ObjectParameter("P_IN_UBICACION", typeof(string));
-    
-            var p_IN_ESTADOParameter = p_IN_ESTADO != null ?
-                new ObjectParameter("P_IN_ESTADO", p_IN_ESTADO) :
-                new ObjectParameter("P_IN_ESTADO", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_ENC_RESERVA", p_IN_NUMEROParameter, p_IN_MONTOParameter, p_IN_OBSERVACIONESParameter, p_IN_UBICACIONParameter, p_IN_ESTADOParameter, p_OUT_CODRET, p_OUT_GLSRET);
-        }
-    
-        public virtual int SP_CREAR_DET_RESERVA(Nullable<decimal> p_IN_NUMERO, Nullable<System.DateTime> p_IN_INGRESO, Nullable<System.DateTime> p_IN_EGRESO, string p_IN_OBS_ALOJAMIENTO, string p_IN_RUT_PERSONA, Nullable<decimal> p_IN_CODIGO_CAMA, Nullable<System.DateTime> p_IN_RECEPCION, string p_IN_OBS_COMIDA, Nullable<decimal> p_IN_CODIGO_PLATO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
-                new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
-                new ObjectParameter("P_IN_NUMERO", typeof(decimal));
-    
-            var p_IN_INGRESOParameter = p_IN_INGRESO.HasValue ?
-                new ObjectParameter("P_IN_INGRESO", p_IN_INGRESO) :
-                new ObjectParameter("P_IN_INGRESO", typeof(System.DateTime));
-    
-            var p_IN_EGRESOParameter = p_IN_EGRESO.HasValue ?
-                new ObjectParameter("P_IN_EGRESO", p_IN_EGRESO) :
-                new ObjectParameter("P_IN_EGRESO", typeof(System.DateTime));
-    
-            var p_IN_OBS_ALOJAMIENTOParameter = p_IN_OBS_ALOJAMIENTO != null ?
-                new ObjectParameter("P_IN_OBS_ALOJAMIENTO", p_IN_OBS_ALOJAMIENTO) :
-                new ObjectParameter("P_IN_OBS_ALOJAMIENTO", typeof(string));
-    
-            var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
-                new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
-                new ObjectParameter("P_IN_RUT_PERSONA", typeof(string));
-    
-            var p_IN_CODIGO_CAMAParameter = p_IN_CODIGO_CAMA.HasValue ?
-                new ObjectParameter("P_IN_CODIGO_CAMA", p_IN_CODIGO_CAMA) :
-                new ObjectParameter("P_IN_CODIGO_CAMA", typeof(decimal));
-    
-            var p_IN_RECEPCIONParameter = p_IN_RECEPCION.HasValue ?
-                new ObjectParameter("P_IN_RECEPCION", p_IN_RECEPCION) :
-                new ObjectParameter("P_IN_RECEPCION", typeof(System.DateTime));
-    
-            var p_IN_OBS_COMIDAParameter = p_IN_OBS_COMIDA != null ?
-                new ObjectParameter("P_IN_OBS_COMIDA", p_IN_OBS_COMIDA) :
-                new ObjectParameter("P_IN_OBS_COMIDA", typeof(string));
-    
-            var p_IN_CODIGO_PLATOParameter = p_IN_CODIGO_PLATO.HasValue ?
-                new ObjectParameter("P_IN_CODIGO_PLATO", p_IN_CODIGO_PLATO) :
-                new ObjectParameter("P_IN_CODIGO_PLATO", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_DET_RESERVA", p_IN_NUMEROParameter, p_IN_INGRESOParameter, p_IN_EGRESOParameter, p_IN_OBS_ALOJAMIENTOParameter, p_IN_RUT_PERSONAParameter, p_IN_CODIGO_CAMAParameter, p_IN_RECEPCIONParameter, p_IN_OBS_COMIDAParameter, p_IN_CODIGO_PLATOParameter, p_OUT_CODRET, p_OUT_GLSRET);
-        }
-    
-        public virtual int SP_CREAR_ENC_RESERVA(string p_IN_RUT_CLIENTE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_NUMERO)
-        {
-            var p_IN_RUT_CLIENTEParameter = p_IN_RUT_CLIENTE != null ?
-                new ObjectParameter("P_IN_RUT_CLIENTE", p_IN_RUT_CLIENTE) :
-                new ObjectParameter("P_IN_RUT_CLIENTE", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_ENC_RESERVA", p_IN_RUT_CLIENTEParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_NUMERO);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_CAMA", p_IN_CODIGOParameter, p_IN_DESCRIPCIONParameter, p_IN_DISPONIBLEParameter, p_IN_CODIGO_HABITACIONParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
         public virtual int SP_ACTUALIZAR_ENC_PEDIDO(Nullable<decimal> p_IN_NUMERO, Nullable<decimal> p_IN_MONTO, string p_IN_OBSERVACIONES, string p_IN_UBICACION, string p_IN_ESTADO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
@@ -162,133 +96,29 @@ namespace CapaDato
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_ENC_PEDIDO", p_IN_NUMEROParameter, p_IN_MONTOParameter, p_IN_OBSERVACIONESParameter, p_IN_UBICACIONParameter, p_IN_ESTADOParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
-        public virtual int SP_CREAR_ENC_PEDIDO(string p_IN_RUT_PROVEEDOR, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_NUMERO)
+        public virtual int SP_ACTUALIZAR_ENC_RESERVA(Nullable<decimal> p_IN_NUMERO, Nullable<decimal> p_IN_MONTO, string p_IN_OBSERVACIONES, string p_IN_UBICACION, string p_IN_ESTADO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
-            var p_IN_RUT_PROVEEDORParameter = p_IN_RUT_PROVEEDOR != null ?
-                new ObjectParameter("P_IN_RUT_PROVEEDOR", p_IN_RUT_PROVEEDOR) :
-                new ObjectParameter("P_IN_RUT_PROVEEDOR", typeof(string));
+            var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
+                new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
+                new ObjectParameter("P_IN_NUMERO", typeof(decimal));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_ENC_PEDIDO", p_IN_RUT_PROVEEDORParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_NUMERO);
-        }
+            var p_IN_MONTOParameter = p_IN_MONTO.HasValue ?
+                new ObjectParameter("P_IN_MONTO", p_IN_MONTO) :
+                new ObjectParameter("P_IN_MONTO", typeof(decimal));
     
-        public virtual int SP_ACTUALIZAR_PRODUCTO(Nullable<decimal> p_IN_CODIGO, string p_IN_DESCRIPCION, Nullable<decimal> p_IN_PRECIO, Nullable<decimal> p_IN_STOCK, Nullable<decimal> p_IN_STOCK_CRITICO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
-                new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
-                new ObjectParameter("P_IN_CODIGO", typeof(decimal));
+            var p_IN_OBSERVACIONESParameter = p_IN_OBSERVACIONES != null ?
+                new ObjectParameter("P_IN_OBSERVACIONES", p_IN_OBSERVACIONES) :
+                new ObjectParameter("P_IN_OBSERVACIONES", typeof(string));
     
-            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
-                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
-                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
+            var p_IN_UBICACIONParameter = p_IN_UBICACION != null ?
+                new ObjectParameter("P_IN_UBICACION", p_IN_UBICACION) :
+                new ObjectParameter("P_IN_UBICACION", typeof(string));
     
-            var p_IN_PRECIOParameter = p_IN_PRECIO.HasValue ?
-                new ObjectParameter("P_IN_PRECIO", p_IN_PRECIO) :
-                new ObjectParameter("P_IN_PRECIO", typeof(decimal));
+            var p_IN_ESTADOParameter = p_IN_ESTADO != null ?
+                new ObjectParameter("P_IN_ESTADO", p_IN_ESTADO) :
+                new ObjectParameter("P_IN_ESTADO", typeof(string));
     
-            var p_IN_STOCKParameter = p_IN_STOCK.HasValue ?
-                new ObjectParameter("P_IN_STOCK", p_IN_STOCK) :
-                new ObjectParameter("P_IN_STOCK", typeof(decimal));
-    
-            var p_IN_STOCK_CRITICOParameter = p_IN_STOCK_CRITICO.HasValue ?
-                new ObjectParameter("P_IN_STOCK_CRITICO", p_IN_STOCK_CRITICO) :
-                new ObjectParameter("P_IN_STOCK_CRITICO", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_PRODUCTO", p_IN_CODIGOParameter, p_IN_DESCRIPCIONParameter, p_IN_PRECIOParameter, p_IN_STOCKParameter, p_IN_STOCK_CRITICOParameter, p_OUT_CODRET, p_OUT_GLSRET);
-        }
-    
-        public virtual int SP_CREAR_PRODUCTO(string p_IN_DESCRIPCION, Nullable<decimal> p_IN_PRECIO, Nullable<decimal> p_IN_STOCK, Nullable<decimal> p_IN_STOCK_CRITICO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_CODIGO)
-        {
-            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
-                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
-                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
-    
-            var p_IN_PRECIOParameter = p_IN_PRECIO.HasValue ?
-                new ObjectParameter("P_IN_PRECIO", p_IN_PRECIO) :
-                new ObjectParameter("P_IN_PRECIO", typeof(decimal));
-    
-            var p_IN_STOCKParameter = p_IN_STOCK.HasValue ?
-                new ObjectParameter("P_IN_STOCK", p_IN_STOCK) :
-                new ObjectParameter("P_IN_STOCK", typeof(decimal));
-    
-            var p_IN_STOCK_CRITICOParameter = p_IN_STOCK_CRITICO.HasValue ?
-                new ObjectParameter("P_IN_STOCK_CRITICO", p_IN_STOCK_CRITICO) :
-                new ObjectParameter("P_IN_STOCK_CRITICO", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_PRODUCTO", p_IN_DESCRIPCIONParameter, p_IN_PRECIOParameter, p_IN_STOCKParameter, p_IN_STOCK_CRITICOParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_CODIGO);
-        }
-    
-        public virtual int SP_ELIMINAR_PRODUCTO(Nullable<decimal> p_IN_CODIGO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
-                new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
-                new ObjectParameter("P_IN_CODIGO", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_PRODUCTO", p_IN_CODIGOParameter, p_OUT_CODRET, p_OUT_GLSRET);
-        }
-    
-        public virtual int SP_RESCATAR_PRODUCTOS(ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_RESCATAR_PRODUCTOS", p_OUT_CODRET, p_OUT_GLSRET);
-        }
-    
-        public virtual int SP_ACTUALIZAR_PLATO(Nullable<decimal> p_IN_CODIGO, string p_IN_NOMBRE, string p_IN_DESCRIPCION, string p_IN_DISPONIBLE, string p_IN_SERVICIO_TIPO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
-                new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
-                new ObjectParameter("P_IN_CODIGO", typeof(decimal));
-    
-            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
-                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
-                new ObjectParameter("P_IN_NOMBRE", typeof(string));
-    
-            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
-                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
-                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
-    
-            var p_IN_DISPONIBLEParameter = p_IN_DISPONIBLE != null ?
-                new ObjectParameter("P_IN_DISPONIBLE", p_IN_DISPONIBLE) :
-                new ObjectParameter("P_IN_DISPONIBLE", typeof(string));
-    
-            var p_IN_SERVICIO_TIPOParameter = p_IN_SERVICIO_TIPO != null ?
-                new ObjectParameter("P_IN_SERVICIO_TIPO", p_IN_SERVICIO_TIPO) :
-                new ObjectParameter("P_IN_SERVICIO_TIPO", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_PLATO", p_IN_CODIGOParameter, p_IN_NOMBREParameter, p_IN_DESCRIPCIONParameter, p_IN_DISPONIBLEParameter, p_IN_SERVICIO_TIPOParameter, p_OUT_CODRET, p_OUT_GLSRET);
-        }
-    
-        public virtual int SP_CREAR_PLATO(string p_IN_NOMBRE, string p_IN_DESCRIPCION, string p_IN_DISPONIBLE, string p_IN_SERVICIO_TIPO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_CODIGO)
-        {
-            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
-                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
-                new ObjectParameter("P_IN_NOMBRE", typeof(string));
-    
-            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
-                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
-                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
-    
-            var p_IN_DISPONIBLEParameter = p_IN_DISPONIBLE != null ?
-                new ObjectParameter("P_IN_DISPONIBLE", p_IN_DISPONIBLE) :
-                new ObjectParameter("P_IN_DISPONIBLE", typeof(string));
-    
-            var p_IN_SERVICIO_TIPOParameter = p_IN_SERVICIO_TIPO != null ?
-                new ObjectParameter("P_IN_SERVICIO_TIPO", p_IN_SERVICIO_TIPO) :
-                new ObjectParameter("P_IN_SERVICIO_TIPO", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_PLATO", p_IN_NOMBREParameter, p_IN_DESCRIPCIONParameter, p_IN_DISPONIBLEParameter, p_IN_SERVICIO_TIPOParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_CODIGO);
-        }
-    
-        public virtual int SP_ELIMINAR_PLATO(Nullable<decimal> p_IN_CODIGO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
-                new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
-                new ObjectParameter("P_IN_CODIGO", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_PLATO", p_IN_CODIGOParameter, p_OUT_CODRET, p_OUT_GLSRET);
-        }
-    
-        public virtual int SP_RESCATAR_PLATOS(ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_RESCATAR_PLATOS", p_OUT_CODRET, p_OUT_GLSRET);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_ENC_RESERVA", p_IN_NUMEROParameter, p_IN_MONTOParameter, p_IN_OBSERVACIONESParameter, p_IN_UBICACIONParameter, p_IN_ESTADOParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
         public virtual int SP_ACTUALIZAR_HABITACION(Nullable<decimal> p_IN_CODIGO, string p_IN_ESTADO, Nullable<decimal> p_IN_CAPACIDAD, string p_IN_DESCRIPCION, Nullable<decimal> p_IN_PRECIO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
@@ -316,46 +146,15 @@ namespace CapaDato
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_HABITACION", p_IN_CODIGOParameter, p_IN_ESTADOParameter, p_IN_CAPACIDADParameter, p_IN_DESCRIPCIONParameter, p_IN_PRECIOParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
-        public virtual int SP_CREAR_HABITACION(string p_IN_ESTADO, Nullable<decimal> p_IN_CAPACIDAD, string p_IN_DESCRIPCION, Nullable<decimal> p_IN_PRECIO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_CODIGO)
-        {
-            var p_IN_ESTADOParameter = p_IN_ESTADO != null ?
-                new ObjectParameter("P_IN_ESTADO", p_IN_ESTADO) :
-                new ObjectParameter("P_IN_ESTADO", typeof(string));
-    
-            var p_IN_CAPACIDADParameter = p_IN_CAPACIDAD.HasValue ?
-                new ObjectParameter("P_IN_CAPACIDAD", p_IN_CAPACIDAD) :
-                new ObjectParameter("P_IN_CAPACIDAD", typeof(decimal));
-    
-            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
-                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
-                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
-    
-            var p_IN_PRECIOParameter = p_IN_PRECIO.HasValue ?
-                new ObjectParameter("P_IN_PRECIO", p_IN_PRECIO) :
-                new ObjectParameter("P_IN_PRECIO", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_HABITACION", p_IN_ESTADOParameter, p_IN_CAPACIDADParameter, p_IN_DESCRIPCIONParameter, p_IN_PRECIOParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_CODIGO);
-        }
-    
-        public virtual int SP_ELIMINAR_HABITACION(Nullable<decimal> p_IN_CODIGO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        public virtual int SP_ACTUALIZAR_PLATO(Nullable<decimal> p_IN_CODIGO, string p_IN_NOMBRE, string p_IN_DESCRIPCION, string p_IN_DISPONIBLE, string p_IN_SERVICIO_TIPO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
             var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
                 new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
                 new ObjectParameter("P_IN_CODIGO", typeof(decimal));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_HABITACION", p_IN_CODIGOParameter, p_OUT_CODRET, p_OUT_GLSRET);
-        }
-    
-        public virtual int SP_RESCATAR_HABITACIONES(ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_RESCATAR_HABITACIONES", p_OUT_CODRET, p_OUT_GLSRET);
-        }
-    
-        public virtual int SP_ACTUALIZAR_CAMA(Nullable<decimal> p_IN_CODIGO, string p_IN_DESCRIPCION, string p_IN_DISPONIBLE, Nullable<decimal> p_IN_CODIGO_HABITACION, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
-                new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
-                new ObjectParameter("P_IN_CODIGO", typeof(decimal));
+            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
+                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
+                new ObjectParameter("P_IN_NOMBRE", typeof(string));
     
             var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
                 new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
@@ -365,117 +164,49 @@ namespace CapaDato
                 new ObjectParameter("P_IN_DISPONIBLE", p_IN_DISPONIBLE) :
                 new ObjectParameter("P_IN_DISPONIBLE", typeof(string));
     
-            var p_IN_CODIGO_HABITACIONParameter = p_IN_CODIGO_HABITACION.HasValue ?
-                new ObjectParameter("P_IN_CODIGO_HABITACION", p_IN_CODIGO_HABITACION) :
-                new ObjectParameter("P_IN_CODIGO_HABITACION", typeof(decimal));
+            var p_IN_SERVICIO_TIPOParameter = p_IN_SERVICIO_TIPO != null ?
+                new ObjectParameter("P_IN_SERVICIO_TIPO", p_IN_SERVICIO_TIPO) :
+                new ObjectParameter("P_IN_SERVICIO_TIPO", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_CAMA", p_IN_CODIGOParameter, p_IN_DESCRIPCIONParameter, p_IN_DISPONIBLEParameter, p_IN_CODIGO_HABITACIONParameter, p_OUT_CODRET, p_OUT_GLSRET);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_PLATO", p_IN_CODIGOParameter, p_IN_NOMBREParameter, p_IN_DESCRIPCIONParameter, p_IN_DISPONIBLEParameter, p_IN_SERVICIO_TIPOParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
-        public virtual int SP_CREAR_CAMA(string p_IN_DESCRIPCION, string p_IN_DISPONIBLE, Nullable<decimal> p_IN_CODIGO_HABITACION, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_CODIGO)
-        {
-            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
-                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
-                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
-    
-            var p_IN_DISPONIBLEParameter = p_IN_DISPONIBLE != null ?
-                new ObjectParameter("P_IN_DISPONIBLE", p_IN_DISPONIBLE) :
-                new ObjectParameter("P_IN_DISPONIBLE", typeof(string));
-    
-            var p_IN_CODIGO_HABITACIONParameter = p_IN_CODIGO_HABITACION.HasValue ?
-                new ObjectParameter("P_IN_CODIGO_HABITACION", p_IN_CODIGO_HABITACION) :
-                new ObjectParameter("P_IN_CODIGO_HABITACION", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_CAMA", p_IN_DESCRIPCIONParameter, p_IN_DISPONIBLEParameter, p_IN_CODIGO_HABITACIONParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_CODIGO);
-        }
-    
-        public virtual int SP_ELIMINAR_CAMA(Nullable<decimal> p_IN_CODIGO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        public virtual int SP_ACTUALIZAR_PRODUCTO(Nullable<decimal> p_IN_CODIGO, string p_IN_DESCRIPCION, Nullable<decimal> p_IN_STOCK, Nullable<decimal> p_IN_STOCK_CRITICO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
             var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
                 new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
                 new ObjectParameter("P_IN_CODIGO", typeof(decimal));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_CAMA", p_IN_CODIGOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
+                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
+                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
+    
+            var p_IN_STOCKParameter = p_IN_STOCK.HasValue ?
+                new ObjectParameter("P_IN_STOCK", p_IN_STOCK) :
+                new ObjectParameter("P_IN_STOCK", typeof(decimal));
+    
+            var p_IN_STOCK_CRITICOParameter = p_IN_STOCK_CRITICO.HasValue ?
+                new ObjectParameter("P_IN_STOCK_CRITICO", p_IN_STOCK_CRITICO) :
+                new ObjectParameter("P_IN_STOCK_CRITICO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_PRODUCTO", p_IN_CODIGOParameter, p_IN_DESCRIPCIONParameter, p_IN_STOCKParameter, p_IN_STOCK_CRITICOParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
-        public virtual int SP_RESCATAR_CAMAS(ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        public virtual int SP_ACTUALIZAR_PROVISION(string p_IN_RUT_PROVEEDOR, Nullable<decimal> p_IN_CODIGO_PRODUCTO, Nullable<decimal> p_IN_PRECIO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_RESCATAR_CAMAS", p_OUT_CODRET, p_OUT_GLSRET);
-        }
-    
-        public virtual int SP_CREAR_FACTURA_COMPRA(Nullable<decimal> p_IN_NUMERO_OC, Nullable<decimal> p_IN_VALOR_BRUTO, Nullable<decimal> p_IN_VALOR_IVA, Nullable<decimal> p_IN_VALOR_NETO, string p_IN_OBSERVACIONES, string p_IN_UBICACION, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_NUMERO)
-        {
-            var p_IN_NUMERO_OCParameter = p_IN_NUMERO_OC.HasValue ?
-                new ObjectParameter("P_IN_NUMERO_OC", p_IN_NUMERO_OC) :
-                new ObjectParameter("P_IN_NUMERO_OC", typeof(decimal));
-    
-            var p_IN_VALOR_BRUTOParameter = p_IN_VALOR_BRUTO.HasValue ?
-                new ObjectParameter("P_IN_VALOR_BRUTO", p_IN_VALOR_BRUTO) :
-                new ObjectParameter("P_IN_VALOR_BRUTO", typeof(decimal));
-    
-            var p_IN_VALOR_IVAParameter = p_IN_VALOR_IVA.HasValue ?
-                new ObjectParameter("P_IN_VALOR_IVA", p_IN_VALOR_IVA) :
-                new ObjectParameter("P_IN_VALOR_IVA", typeof(decimal));
-    
-            var p_IN_VALOR_NETOParameter = p_IN_VALOR_NETO.HasValue ?
-                new ObjectParameter("P_IN_VALOR_NETO", p_IN_VALOR_NETO) :
-                new ObjectParameter("P_IN_VALOR_NETO", typeof(decimal));
-    
-            var p_IN_OBSERVACIONESParameter = p_IN_OBSERVACIONES != null ?
-                new ObjectParameter("P_IN_OBSERVACIONES", p_IN_OBSERVACIONES) :
-                new ObjectParameter("P_IN_OBSERVACIONES", typeof(string));
-    
-            var p_IN_UBICACIONParameter = p_IN_UBICACION != null ?
-                new ObjectParameter("P_IN_UBICACION", p_IN_UBICACION) :
-                new ObjectParameter("P_IN_UBICACION", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_FACTURA_COMPRA", p_IN_NUMERO_OCParameter, p_IN_VALOR_BRUTOParameter, p_IN_VALOR_IVAParameter, p_IN_VALOR_NETOParameter, p_IN_OBSERVACIONESParameter, p_IN_UBICACIONParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_NUMERO);
-        }
-    
-        public virtual int SP_CREAR_FACTURA_VENTA(Nullable<decimal> p_IN_NUMERO_OP, Nullable<decimal> p_IN_VALOR_BRUTO, Nullable<decimal> p_IN_VALOR_IVA, Nullable<decimal> p_IN_VALOR_NETO, string p_IN_OBSERVACIONES, string p_IN_UBICACION, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_NUMERO)
-        {
-            var p_IN_NUMERO_OPParameter = p_IN_NUMERO_OP.HasValue ?
-                new ObjectParameter("P_IN_NUMERO_OP", p_IN_NUMERO_OP) :
-                new ObjectParameter("P_IN_NUMERO_OP", typeof(decimal));
-    
-            var p_IN_VALOR_BRUTOParameter = p_IN_VALOR_BRUTO.HasValue ?
-                new ObjectParameter("P_IN_VALOR_BRUTO", p_IN_VALOR_BRUTO) :
-                new ObjectParameter("P_IN_VALOR_BRUTO", typeof(decimal));
-    
-            var p_IN_VALOR_IVAParameter = p_IN_VALOR_IVA.HasValue ?
-                new ObjectParameter("P_IN_VALOR_IVA", p_IN_VALOR_IVA) :
-                new ObjectParameter("P_IN_VALOR_IVA", typeof(decimal));
-    
-            var p_IN_VALOR_NETOParameter = p_IN_VALOR_NETO.HasValue ?
-                new ObjectParameter("P_IN_VALOR_NETO", p_IN_VALOR_NETO) :
-                new ObjectParameter("P_IN_VALOR_NETO", typeof(decimal));
-    
-            var p_IN_OBSERVACIONESParameter = p_IN_OBSERVACIONES != null ?
-                new ObjectParameter("P_IN_OBSERVACIONES", p_IN_OBSERVACIONES) :
-                new ObjectParameter("P_IN_OBSERVACIONES", typeof(string));
-    
-            var p_IN_UBICACIONParameter = p_IN_UBICACION != null ?
-                new ObjectParameter("P_IN_UBICACION", p_IN_UBICACION) :
-                new ObjectParameter("P_IN_UBICACION", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_FACTURA_VENTA", p_IN_NUMERO_OPParameter, p_IN_VALOR_BRUTOParameter, p_IN_VALOR_IVAParameter, p_IN_VALOR_NETOParameter, p_IN_OBSERVACIONESParameter, p_IN_UBICACIONParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_NUMERO);
-        }
-    
-        public virtual int SP_CREAR_DET_PEDIDO(Nullable<decimal> p_IN_NUMERO, Nullable<System.DateTime> p_IN_RECEPCION, Nullable<decimal> p_IN_CODIGO_PRODUCTO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
-                new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
-                new ObjectParameter("P_IN_NUMERO", typeof(decimal));
-    
-            var p_IN_RECEPCIONParameter = p_IN_RECEPCION.HasValue ?
-                new ObjectParameter("P_IN_RECEPCION", p_IN_RECEPCION) :
-                new ObjectParameter("P_IN_RECEPCION", typeof(System.DateTime));
+            var p_IN_RUT_PROVEEDORParameter = p_IN_RUT_PROVEEDOR != null ?
+                new ObjectParameter("P_IN_RUT_PROVEEDOR", p_IN_RUT_PROVEEDOR) :
+                new ObjectParameter("P_IN_RUT_PROVEEDOR", typeof(string));
     
             var p_IN_CODIGO_PRODUCTOParameter = p_IN_CODIGO_PRODUCTO.HasValue ?
                 new ObjectParameter("P_IN_CODIGO_PRODUCTO", p_IN_CODIGO_PRODUCTO) :
                 new ObjectParameter("P_IN_CODIGO_PRODUCTO", typeof(decimal));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_DET_PEDIDO", p_IN_NUMEROParameter, p_IN_RECEPCIONParameter, p_IN_CODIGO_PRODUCTOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+            var p_IN_PRECIOParameter = p_IN_PRECIO.HasValue ?
+                new ObjectParameter("P_IN_PRECIO", p_IN_PRECIO) :
+                new ObjectParameter("P_IN_PRECIO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_PROVISION", p_IN_RUT_PROVEEDORParameter, p_IN_CODIGO_PRODUCTOParameter, p_IN_PRECIOParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
         public virtual int SP_CREAR_ADMINISTRADOR(string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
@@ -509,6 +240,23 @@ namespace CapaDato
                 new ObjectParameter("P_IN_CLAVE", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_ADMINISTRADOR", p_IN_RUT_PERSONAParameter, p_IN_NOMBREParameter, p_IN_APELLIDOParameter, p_IN_NACIMIENTOParameter, p_IN_EMAIL_PERParameter, p_IN_TELEFONO_PERParameter, p_IN_CLAVEParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_CREAR_CAMA(string p_IN_DESCRIPCION, string p_IN_DISPONIBLE, Nullable<decimal> p_IN_CODIGO_HABITACION, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_CODIGO)
+        {
+            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
+                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
+                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
+    
+            var p_IN_DISPONIBLEParameter = p_IN_DISPONIBLE != null ?
+                new ObjectParameter("P_IN_DISPONIBLE", p_IN_DISPONIBLE) :
+                new ObjectParameter("P_IN_DISPONIBLE", typeof(string));
+    
+            var p_IN_CODIGO_HABITACIONParameter = p_IN_CODIGO_HABITACION.HasValue ?
+                new ObjectParameter("P_IN_CODIGO_HABITACION", p_IN_CODIGO_HABITACION) :
+                new ObjectParameter("P_IN_CODIGO_HABITACION", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_CAMA", p_IN_DESCRIPCIONParameter, p_IN_DISPONIBLEParameter, p_IN_CODIGO_HABITACIONParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_CODIGO);
         }
     
         public virtual int SP_CREAR_CLIENTE(string p_IN_RUT_EMPRESA, string p_IN_RAZON_SOCIAL, string p_IN_RUBRO, string p_IN_EMAIL_EMP, string p_IN_TELEFONO_EMP, string p_IN_LOGO, string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CALLE, Nullable<decimal> p_IN_NUMERO, string p_IN_COMUNA, string p_IN_COD_POSTAL, string p_IN_NOMBRE_CIUDAD, Nullable<decimal> p_IN_COD_PAIS, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
@@ -592,6 +340,23 @@ namespace CapaDato
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_CLIENTE", p_IN_RUT_EMPRESAParameter, p_IN_RAZON_SOCIALParameter, p_IN_RUBROParameter, p_IN_EMAIL_EMPParameter, p_IN_TELEFONO_EMPParameter, p_IN_LOGOParameter, p_IN_RUT_PERSONAParameter, p_IN_NOMBREParameter, p_IN_APELLIDOParameter, p_IN_NACIMIENTOParameter, p_IN_EMAIL_PERParameter, p_IN_TELEFONO_PERParameter, p_IN_CALLEParameter, p_IN_NUMEROParameter, p_IN_COMUNAParameter, p_IN_COD_POSTALParameter, p_IN_NOMBRE_CIUDADParameter, p_IN_COD_PAISParameter, p_IN_CLAVEParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
+        public virtual int SP_CREAR_DET_PEDIDO(Nullable<decimal> p_IN_NUMERO, Nullable<System.DateTime> p_IN_RECEPCION, Nullable<decimal> p_IN_CODIGO_PRODUCTO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
+                new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
+                new ObjectParameter("P_IN_NUMERO", typeof(decimal));
+    
+            var p_IN_RECEPCIONParameter = p_IN_RECEPCION.HasValue ?
+                new ObjectParameter("P_IN_RECEPCION", p_IN_RECEPCION) :
+                new ObjectParameter("P_IN_RECEPCION", typeof(System.DateTime));
+    
+            var p_IN_CODIGO_PRODUCTOParameter = p_IN_CODIGO_PRODUCTO.HasValue ?
+                new ObjectParameter("P_IN_CODIGO_PRODUCTO", p_IN_CODIGO_PRODUCTO) :
+                new ObjectParameter("P_IN_CODIGO_PRODUCTO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_DET_PEDIDO", p_IN_NUMEROParameter, p_IN_RECEPCIONParameter, p_IN_CODIGO_PRODUCTOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
         public virtual int SP_CREAR_EMPLEADO(string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
             var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
@@ -623,6 +388,141 @@ namespace CapaDato
                 new ObjectParameter("P_IN_CLAVE", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_EMPLEADO", p_IN_RUT_PERSONAParameter, p_IN_NOMBREParameter, p_IN_APELLIDOParameter, p_IN_NACIMIENTOParameter, p_IN_EMAIL_PERParameter, p_IN_TELEFONO_PERParameter, p_IN_CLAVEParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_CREAR_ENC_PEDIDO(string p_IN_RUT_PROVEEDOR, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_NUMERO)
+        {
+            var p_IN_RUT_PROVEEDORParameter = p_IN_RUT_PROVEEDOR != null ?
+                new ObjectParameter("P_IN_RUT_PROVEEDOR", p_IN_RUT_PROVEEDOR) :
+                new ObjectParameter("P_IN_RUT_PROVEEDOR", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_ENC_PEDIDO", p_IN_RUT_PROVEEDORParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_NUMERO);
+        }
+    
+        public virtual int SP_CREAR_ENC_RESERVA(string p_IN_RUT_CLIENTE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_NUMERO)
+        {
+            var p_IN_RUT_CLIENTEParameter = p_IN_RUT_CLIENTE != null ?
+                new ObjectParameter("P_IN_RUT_CLIENTE", p_IN_RUT_CLIENTE) :
+                new ObjectParameter("P_IN_RUT_CLIENTE", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_ENC_RESERVA", p_IN_RUT_CLIENTEParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_NUMERO);
+        }
+    
+        public virtual int SP_CREAR_FACTURA_COMPRA(Nullable<decimal> p_IN_NUMERO_OC, Nullable<decimal> p_IN_VALOR_BRUTO, Nullable<decimal> p_IN_VALOR_IVA, Nullable<decimal> p_IN_VALOR_NETO, string p_IN_OBSERVACIONES, string p_IN_UBICACION, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_NUMERO)
+        {
+            var p_IN_NUMERO_OCParameter = p_IN_NUMERO_OC.HasValue ?
+                new ObjectParameter("P_IN_NUMERO_OC", p_IN_NUMERO_OC) :
+                new ObjectParameter("P_IN_NUMERO_OC", typeof(decimal));
+    
+            var p_IN_VALOR_BRUTOParameter = p_IN_VALOR_BRUTO.HasValue ?
+                new ObjectParameter("P_IN_VALOR_BRUTO", p_IN_VALOR_BRUTO) :
+                new ObjectParameter("P_IN_VALOR_BRUTO", typeof(decimal));
+    
+            var p_IN_VALOR_IVAParameter = p_IN_VALOR_IVA.HasValue ?
+                new ObjectParameter("P_IN_VALOR_IVA", p_IN_VALOR_IVA) :
+                new ObjectParameter("P_IN_VALOR_IVA", typeof(decimal));
+    
+            var p_IN_VALOR_NETOParameter = p_IN_VALOR_NETO.HasValue ?
+                new ObjectParameter("P_IN_VALOR_NETO", p_IN_VALOR_NETO) :
+                new ObjectParameter("P_IN_VALOR_NETO", typeof(decimal));
+    
+            var p_IN_OBSERVACIONESParameter = p_IN_OBSERVACIONES != null ?
+                new ObjectParameter("P_IN_OBSERVACIONES", p_IN_OBSERVACIONES) :
+                new ObjectParameter("P_IN_OBSERVACIONES", typeof(string));
+    
+            var p_IN_UBICACIONParameter = p_IN_UBICACION != null ?
+                new ObjectParameter("P_IN_UBICACION", p_IN_UBICACION) :
+                new ObjectParameter("P_IN_UBICACION", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_FACTURA_COMPRA", p_IN_NUMERO_OCParameter, p_IN_VALOR_BRUTOParameter, p_IN_VALOR_IVAParameter, p_IN_VALOR_NETOParameter, p_IN_OBSERVACIONESParameter, p_IN_UBICACIONParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_NUMERO);
+        }
+    
+        public virtual int SP_CREAR_FACTURA_VENTA(Nullable<decimal> p_IN_NUMERO_OP, Nullable<decimal> p_IN_VALOR_BRUTO, Nullable<decimal> p_IN_VALOR_IVA, Nullable<decimal> p_IN_VALOR_NETO, string p_IN_OBSERVACIONES, string p_IN_UBICACION, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_NUMERO)
+        {
+            var p_IN_NUMERO_OPParameter = p_IN_NUMERO_OP.HasValue ?
+                new ObjectParameter("P_IN_NUMERO_OP", p_IN_NUMERO_OP) :
+                new ObjectParameter("P_IN_NUMERO_OP", typeof(decimal));
+    
+            var p_IN_VALOR_BRUTOParameter = p_IN_VALOR_BRUTO.HasValue ?
+                new ObjectParameter("P_IN_VALOR_BRUTO", p_IN_VALOR_BRUTO) :
+                new ObjectParameter("P_IN_VALOR_BRUTO", typeof(decimal));
+    
+            var p_IN_VALOR_IVAParameter = p_IN_VALOR_IVA.HasValue ?
+                new ObjectParameter("P_IN_VALOR_IVA", p_IN_VALOR_IVA) :
+                new ObjectParameter("P_IN_VALOR_IVA", typeof(decimal));
+    
+            var p_IN_VALOR_NETOParameter = p_IN_VALOR_NETO.HasValue ?
+                new ObjectParameter("P_IN_VALOR_NETO", p_IN_VALOR_NETO) :
+                new ObjectParameter("P_IN_VALOR_NETO", typeof(decimal));
+    
+            var p_IN_OBSERVACIONESParameter = p_IN_OBSERVACIONES != null ?
+                new ObjectParameter("P_IN_OBSERVACIONES", p_IN_OBSERVACIONES) :
+                new ObjectParameter("P_IN_OBSERVACIONES", typeof(string));
+    
+            var p_IN_UBICACIONParameter = p_IN_UBICACION != null ?
+                new ObjectParameter("P_IN_UBICACION", p_IN_UBICACION) :
+                new ObjectParameter("P_IN_UBICACION", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_FACTURA_VENTA", p_IN_NUMERO_OPParameter, p_IN_VALOR_BRUTOParameter, p_IN_VALOR_IVAParameter, p_IN_VALOR_NETOParameter, p_IN_OBSERVACIONESParameter, p_IN_UBICACIONParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_NUMERO);
+        }
+    
+        public virtual int SP_CREAR_HABITACION(string p_IN_ESTADO, Nullable<decimal> p_IN_CAPACIDAD, string p_IN_DESCRIPCION, Nullable<decimal> p_IN_PRECIO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_CODIGO)
+        {
+            var p_IN_ESTADOParameter = p_IN_ESTADO != null ?
+                new ObjectParameter("P_IN_ESTADO", p_IN_ESTADO) :
+                new ObjectParameter("P_IN_ESTADO", typeof(string));
+    
+            var p_IN_CAPACIDADParameter = p_IN_CAPACIDAD.HasValue ?
+                new ObjectParameter("P_IN_CAPACIDAD", p_IN_CAPACIDAD) :
+                new ObjectParameter("P_IN_CAPACIDAD", typeof(decimal));
+    
+            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
+                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
+                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
+    
+            var p_IN_PRECIOParameter = p_IN_PRECIO.HasValue ?
+                new ObjectParameter("P_IN_PRECIO", p_IN_PRECIO) :
+                new ObjectParameter("P_IN_PRECIO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_HABITACION", p_IN_ESTADOParameter, p_IN_CAPACIDADParameter, p_IN_DESCRIPCIONParameter, p_IN_PRECIOParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_CODIGO);
+        }
+    
+        public virtual int SP_CREAR_PLATO(string p_IN_NOMBRE, string p_IN_DESCRIPCION, string p_IN_DISPONIBLE, string p_IN_SERVICIO_TIPO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_CODIGO)
+        {
+            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
+                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
+                new ObjectParameter("P_IN_NOMBRE", typeof(string));
+    
+            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
+                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
+                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
+    
+            var p_IN_DISPONIBLEParameter = p_IN_DISPONIBLE != null ?
+                new ObjectParameter("P_IN_DISPONIBLE", p_IN_DISPONIBLE) :
+                new ObjectParameter("P_IN_DISPONIBLE", typeof(string));
+    
+            var p_IN_SERVICIO_TIPOParameter = p_IN_SERVICIO_TIPO != null ?
+                new ObjectParameter("P_IN_SERVICIO_TIPO", p_IN_SERVICIO_TIPO) :
+                new ObjectParameter("P_IN_SERVICIO_TIPO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_PLATO", p_IN_NOMBREParameter, p_IN_DESCRIPCIONParameter, p_IN_DISPONIBLEParameter, p_IN_SERVICIO_TIPOParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_CODIGO);
+        }
+    
+        public virtual int SP_CREAR_PRODUCTO(string p_IN_DESCRIPCION, Nullable<decimal> p_IN_STOCK, Nullable<decimal> p_IN_STOCK_CRITICO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_CODIGO)
+        {
+            var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
+                new ObjectParameter("P_IN_DESCRIPCION", p_IN_DESCRIPCION) :
+                new ObjectParameter("P_IN_DESCRIPCION", typeof(string));
+    
+            var p_IN_STOCKParameter = p_IN_STOCK.HasValue ?
+                new ObjectParameter("P_IN_STOCK", p_IN_STOCK) :
+                new ObjectParameter("P_IN_STOCK", typeof(decimal));
+    
+            var p_IN_STOCK_CRITICOParameter = p_IN_STOCK_CRITICO.HasValue ?
+                new ObjectParameter("P_IN_STOCK_CRITICO", p_IN_STOCK_CRITICO) :
+                new ObjectParameter("P_IN_STOCK_CRITICO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_PRODUCTO", p_IN_DESCRIPCIONParameter, p_IN_STOCKParameter, p_IN_STOCK_CRITICOParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_CODIGO);
         }
     
         public virtual int SP_CREAR_PROVEEDOR(string p_IN_RUT_EMPRESA, string p_IN_RAZON_SOCIAL, string p_IN_RUBRO, string p_IN_EMAIL_EMP, string p_IN_TELEFONO_EMP, string p_IN_LOGO, string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CALLE, Nullable<decimal> p_IN_NUMERO, string p_IN_COMUNA, string p_IN_COD_POSTAL, string p_IN_NOMBRE_CIUDAD, Nullable<decimal> p_IN_COD_PAIS, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
@@ -704,6 +604,155 @@ namespace CapaDato
                 new ObjectParameter("P_IN_CLAVE", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_PROVEEDOR", p_IN_RUT_EMPRESAParameter, p_IN_RAZON_SOCIALParameter, p_IN_RUBROParameter, p_IN_EMAIL_EMPParameter, p_IN_TELEFONO_EMPParameter, p_IN_LOGOParameter, p_IN_RUT_PERSONAParameter, p_IN_NOMBREParameter, p_IN_APELLIDOParameter, p_IN_NACIMIENTOParameter, p_IN_EMAIL_PERParameter, p_IN_TELEFONO_PERParameter, p_IN_CALLEParameter, p_IN_NUMEROParameter, p_IN_COMUNAParameter, p_IN_COD_POSTALParameter, p_IN_NOMBRE_CIUDADParameter, p_IN_COD_PAISParameter, p_IN_CLAVEParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_CREAR_PROVISION(string p_IN_RUT_PROVEEDOR, Nullable<decimal> p_IN_CODIGO_PRODUCTO, Nullable<decimal> p_IN_PRECIO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_RUT_PROVEEDORParameter = p_IN_RUT_PROVEEDOR != null ?
+                new ObjectParameter("P_IN_RUT_PROVEEDOR", p_IN_RUT_PROVEEDOR) :
+                new ObjectParameter("P_IN_RUT_PROVEEDOR", typeof(string));
+    
+            var p_IN_CODIGO_PRODUCTOParameter = p_IN_CODIGO_PRODUCTO.HasValue ?
+                new ObjectParameter("P_IN_CODIGO_PRODUCTO", p_IN_CODIGO_PRODUCTO) :
+                new ObjectParameter("P_IN_CODIGO_PRODUCTO", typeof(decimal));
+    
+            var p_IN_PRECIOParameter = p_IN_PRECIO.HasValue ?
+                new ObjectParameter("P_IN_PRECIO", p_IN_PRECIO) :
+                new ObjectParameter("P_IN_PRECIO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_PROVISION", p_IN_RUT_PROVEEDORParameter, p_IN_CODIGO_PRODUCTOParameter, p_IN_PRECIOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_ELIMINAR_CAMA(Nullable<decimal> p_IN_CODIGO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
+                new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
+                new ObjectParameter("P_IN_CODIGO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_CAMA", p_IN_CODIGOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_ELIMINAR_HABITACION(Nullable<decimal> p_IN_CODIGO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
+                new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
+                new ObjectParameter("P_IN_CODIGO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_HABITACION", p_IN_CODIGOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_ELIMINAR_PLATO(Nullable<decimal> p_IN_CODIGO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
+                new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
+                new ObjectParameter("P_IN_CODIGO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_PLATO", p_IN_CODIGOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_ELIMINAR_PRODUCTO(Nullable<decimal> p_IN_CODIGO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_CODIGOParameter = p_IN_CODIGO.HasValue ?
+                new ObjectParameter("P_IN_CODIGO", p_IN_CODIGO) :
+                new ObjectParameter("P_IN_CODIGO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_PRODUCTO", p_IN_CODIGOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_ELIMINAR_PROVISION(string p_IN_RUT_PROVEEDOR, Nullable<decimal> p_IN_CODIGO_PRODUCTO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_RUT_PROVEEDORParameter = p_IN_RUT_PROVEEDOR != null ?
+                new ObjectParameter("P_IN_RUT_PROVEEDOR", p_IN_RUT_PROVEEDOR) :
+                new ObjectParameter("P_IN_RUT_PROVEEDOR", typeof(string));
+    
+            var p_IN_CODIGO_PRODUCTOParameter = p_IN_CODIGO_PRODUCTO.HasValue ?
+                new ObjectParameter("P_IN_CODIGO_PRODUCTO", p_IN_CODIGO_PRODUCTO) :
+                new ObjectParameter("P_IN_CODIGO_PRODUCTO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_PROVISION", p_IN_RUT_PROVEEDORParameter, p_IN_CODIGO_PRODUCTOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_RESCATAR_CAMAS(ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_RESCATAR_CAMAS", p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_RESCATAR_HABITACIONES(ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_RESCATAR_HABITACIONES", p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_RESCATAR_PLATOS(ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_RESCATAR_PLATOS", p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_RESCATAR_PRODUCTOS(ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_RESCATAR_PRODUCTOS", p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_RESCATAR_PROVISIONES(ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_RESCATAR_PROVISIONES", p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_VALIDAR_LOGIN(string p_IN_NOMBRE, string p_IN_CLAVE, ObjectParameter p_OUT_PERFIL, ObjectParameter p_OUT_NOMBRE, ObjectParameter p_OUT_APELLIDO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
+                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
+                new ObjectParameter("P_IN_NOMBRE", typeof(string));
+    
+            var p_IN_CLAVEParameter = p_IN_CLAVE != null ?
+                new ObjectParameter("P_IN_CLAVE", p_IN_CLAVE) :
+                new ObjectParameter("P_IN_CLAVE", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_VALIDAR_LOGIN", p_IN_NOMBREParameter, p_IN_CLAVEParameter, p_OUT_PERFIL, p_OUT_NOMBRE, p_OUT_APELLIDO, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_CREAR_DET_RESERVA(Nullable<decimal> p_IN_NUMERO, Nullable<System.DateTime> p_IN_INGRESO, Nullable<System.DateTime> p_IN_EGRESO, string p_IN_OBS_ALOJAMIENTO, string p_IN_RUT_PERSONA, Nullable<decimal> p_IN_CODIGO_CAMA, Nullable<System.DateTime> p_IN_RECEPCION, string p_IN_OBS_COMIDA, string p_IN_TIPO_SERVICIO, Nullable<decimal> p_IN_CODIGO_PLATO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
+                new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
+                new ObjectParameter("P_IN_NUMERO", typeof(decimal));
+    
+            var p_IN_INGRESOParameter = p_IN_INGRESO.HasValue ?
+                new ObjectParameter("P_IN_INGRESO", p_IN_INGRESO) :
+                new ObjectParameter("P_IN_INGRESO", typeof(System.DateTime));
+    
+            var p_IN_EGRESOParameter = p_IN_EGRESO.HasValue ?
+                new ObjectParameter("P_IN_EGRESO", p_IN_EGRESO) :
+                new ObjectParameter("P_IN_EGRESO", typeof(System.DateTime));
+    
+            var p_IN_OBS_ALOJAMIENTOParameter = p_IN_OBS_ALOJAMIENTO != null ?
+                new ObjectParameter("P_IN_OBS_ALOJAMIENTO", p_IN_OBS_ALOJAMIENTO) :
+                new ObjectParameter("P_IN_OBS_ALOJAMIENTO", typeof(string));
+    
+            var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
+                new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
+                new ObjectParameter("P_IN_RUT_PERSONA", typeof(string));
+    
+            var p_IN_CODIGO_CAMAParameter = p_IN_CODIGO_CAMA.HasValue ?
+                new ObjectParameter("P_IN_CODIGO_CAMA", p_IN_CODIGO_CAMA) :
+                new ObjectParameter("P_IN_CODIGO_CAMA", typeof(decimal));
+    
+            var p_IN_RECEPCIONParameter = p_IN_RECEPCION.HasValue ?
+                new ObjectParameter("P_IN_RECEPCION", p_IN_RECEPCION) :
+                new ObjectParameter("P_IN_RECEPCION", typeof(System.DateTime));
+    
+            var p_IN_OBS_COMIDAParameter = p_IN_OBS_COMIDA != null ?
+                new ObjectParameter("P_IN_OBS_COMIDA", p_IN_OBS_COMIDA) :
+                new ObjectParameter("P_IN_OBS_COMIDA", typeof(string));
+    
+            var p_IN_TIPO_SERVICIOParameter = p_IN_TIPO_SERVICIO != null ?
+                new ObjectParameter("P_IN_TIPO_SERVICIO", p_IN_TIPO_SERVICIO) :
+                new ObjectParameter("P_IN_TIPO_SERVICIO", typeof(string));
+    
+            var p_IN_CODIGO_PLATOParameter = p_IN_CODIGO_PLATO.HasValue ?
+                new ObjectParameter("P_IN_CODIGO_PLATO", p_IN_CODIGO_PLATO) :
+                new ObjectParameter("P_IN_CODIGO_PLATO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_DET_RESERVA", p_IN_NUMEROParameter, p_IN_INGRESOParameter, p_IN_EGRESOParameter, p_IN_OBS_ALOJAMIENTOParameter, p_IN_RUT_PERSONAParameter, p_IN_CODIGO_CAMAParameter, p_IN_RECEPCIONParameter, p_IN_OBS_COMIDAParameter, p_IN_TIPO_SERVICIOParameter, p_IN_CODIGO_PLATOParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     }
 }

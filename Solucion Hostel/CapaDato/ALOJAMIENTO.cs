@@ -21,10 +21,10 @@ namespace CapaDato
         public string CONFIRMADO { get; set; }
         public string RUT_PERSONA { get; set; }
         public decimal CODIGO_CAMA { get; set; }
-        public Nullable<decimal> NUMERO_OC { get; set; }
+        public decimal NUMERO_OC { get; set; }
     
         public virtual CAMA CAMA { get; set; }
-        public virtual PERSONA PERSONA { get; set; }
         public virtual ORDEN_DE_COMPRA ORDEN_DE_COMPRA { get; set; }
+        public virtual PERSONA PERSONA { get; set; }
     }
 }

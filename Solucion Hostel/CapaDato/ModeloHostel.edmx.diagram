@@ -4,52 +4,54 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="88ec9f49b059417a9dbd87e9ce388b4d" Name="Diagram1" ZoomLevel="77">
-        <EntityTypeShape EntityType="Model.ALOJAMIENTO" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.CIUDAD" Width="1.5" PointX="7.5" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.CLIENTE" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.COMIDA" Width="1.5" PointX="10.5" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.EMPRESA" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.FACTURA" Width="1.5" PointX="7.5" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.PAIS" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.PLATO" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.PRODUCTO" Width="1.5" PointX="5.25" PointY="22" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.PROVEEDOR" Width="1.5" PointX="3" PointY="18.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.SERVICIO_COMIDA" Width="1.5" PointX="6" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.USUARIO" Width="1.5" PointX="5.25" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.DIRECCION" Width="1.5" PointX="9.75" PointY="14.25" IsExpanded="true" />
-        <AssociationConnector Association="Model.CIUDAD_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.DIRECCION_FK1" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.CLIENTE_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.COMIDA_FK_PLATA" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.DIRECCION_FK3" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.PROVEEDOR_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.PLATO_FK" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="Model.CAMA" Width="1.5" PointX="3" PointY="0.75" />
+      <Diagram DiagramId="88ec9f49b059417a9dbd87e9ce388b4d" Name="Diagram1" ZoomLevel="11">
+        <EntityTypeShape EntityType="Model.ALOJAMIENTO" Width="1.5" PointX="10.5" PointY="19.75" />
+        <EntityTypeShape EntityType="Model.CAMA" Width="1.5" PointX="8.25" PointY="31.25" />
+        <EntityTypeShape EntityType="Model.CIUDAD" Width="1.5" PointX="3" PointY="10" />
+        <EntityTypeShape EntityType="Model.CLIENTE" Width="1.5" PointX="3" PointY="27" />
+        <EntityTypeShape EntityType="Model.COMIDA" Width="1.5" PointX="7.5" PointY="17.875" />
+        <EntityTypeShape EntityType="Model.EMPRESA" Width="1.5" PointX="0.75" PointY="13.5" />
+        <EntityTypeShape EntityType="Model.FACTURA" Width="1.5" PointX="7.5" PointY="25.875" />
+        <EntityTypeShape EntityType="Model.HABITACION" Width="1.5" PointX="6" PointY="31.25" />
+        <EntityTypeShape EntityType="Model.ORDEN_DE_COMPRA" Width="1.5" PointX="5.25" PointY="26.125" />
+        <EntityTypeShape EntityType="Model.ORDEN_DE_PEDIDO" Width="1.5" PointX="5.25" PointY="22.25" />
+        <EntityTypeShape EntityType="Model.PAGO" Width="1.5" PointX="9.75" PointY="26.5" />
+        <EntityTypeShape EntityType="Model.PAIS" Width="1.5" PointX="0.75" PointY="10" />
+        <EntityTypeShape EntityType="Model.PERSONA" Width="1.5" PointX="3" PointY="13.25" />
+        <EntityTypeShape EntityType="Model.PLATO" Width="1.5" PointX="5.25" PointY="6.125" />
+        <EntityTypeShape EntityType="Model.PRODUCTO" Width="1.5" PointX="3" PointY="22.875" />
+        <EntityTypeShape EntityType="Model.PROVEEDOR" Width="1.5" PointX="3" PointY="20.125" />
+        <EntityTypeShape EntityType="Model.PROVISION" Width="1.5" PointX="5.25" PointY="19" />
+        <EntityTypeShape EntityType="Model.RRP" Width="1.5" PointX="7.5" PointY="22.375" />
+        <EntityTypeShape EntityType="Model.SERVICIO_COMIDA" Width="1.5" PointX="3" PointY="6.5" />
+        <EntityTypeShape EntityType="Model.USUARIO" Width="1.5" PointX="5.25" PointY="9.75" />
+        <EntityTypeShape EntityType="Model.DIRECCION" Width="1.5" PointX="5.25" PointY="13.375" />
         <AssociationConnector Association="Model.ALOJAMIENTO_FK_CAMA" />
-        <EntityTypeShape EntityType="Model.HABITACION" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Model.PERSONA" Width="1.5" PointX="3" PointY="12.5" />
-        <AssociationConnector Association="Model.ALOJAMIENTO_FK_PERSONA" />
-        <AssociationConnector Association="Model.CAMA_FK" />
-        <AssociationConnector Association="Model.COMIDA_FK_PERSONA" />
-        <AssociationConnector Association="Model.DIRECCION_FK2" />
-        <AssociationConnector Association="Model.USUARIO_FK" />
-        <AssociationConnector Association="Model.PXE" />
-        <AssociationConnector Association="Model.PXP" />
-        <EntityTypeShape EntityType="Model.ORDEN_DE_COMPRA" Width="1.5" PointX="5.25" PointY="7.875" />
-        <EntityTypeShape EntityType="Model.ORDEN_DE_PEDIDO" Width="1.5" PointX="5.25" PointY="25.625" />
-        <EntityTypeShape EntityType="Model.RRP" Width="1.5" PointX="7.5" PointY="24" />
         <AssociationConnector Association="Model.ALOJAMIENTO_FK_OC" />
-        <AssociationConnector Association="Model.ORDEN_DE_COMPRA_FK" />
+        <AssociationConnector Association="Model.ALOJAMIENTO_FK_PERSONA" />
+        <AssociationConnector Association="Model.CAMA_FK_HABITACION" />
+        <AssociationConnector Association="Model.CIUDAD_FK_PAIS" />
+        <AssociationConnector Association="Model.DIRECCION_FK_CIUDAD" />
+        <AssociationConnector Association="Model.CLIENTE_FK_EMPRESA" />
+        <AssociationConnector Association="Model.ORDEN_DE_COMPRA_FK_CLIENTE" />
         <AssociationConnector Association="Model.COMIDA_FK_OC" />
+        <AssociationConnector Association="Model.COMIDA_FK_PERSONA" />
+        <AssociationConnector Association="Model.COMIDA_FK_PLATO" />
+        <AssociationConnector Association="Model.DIRECCION_FK_EMPRESA" />
+        <AssociationConnector Association="Model.PROVEEDOR_FK_EMPRESA" />
         <AssociationConnector Association="Model.FACTURA_FK_OC" />
         <AssociationConnector Association="Model.FACTURA_FK_OP" />
-        <AssociationConnector Association="Model.ORDEN_DE_PEDIDO_FK" />
-        <AssociationConnector Association="Model.RRP_FK2" />
-        <AssociationConnector Association="Model.RRP_FK1" />
-        <EntityTypeShape EntityType="Model.PAGO" Width="1.5" PointX="9.75" PointY="19.125" />
-        <AssociationConnector Association="Model.PAGO_FK1" />
-        <AssociationConnector Association="Model.PROVISION" />
+        <AssociationConnector Association="Model.PAGO_FK_FACTURA" />
+        <AssociationConnector Association="Model.ORDEN_DE_PEDIDO_FK_PROVEEDOR" />
+        <AssociationConnector Association="Model.RRP_FK_OP" />
+        <AssociationConnector Association="Model.DIRECCION_FK_PERSONA" />
+        <AssociationConnector Association="Model.USUARIO_FK_PERSONA" />
+        <AssociationConnector Association="Model.PLATO_FK_SERVICIO_COMIDA" />
+        <AssociationConnector Association="Model.PROVISION_FK_PRODUCTO" />
+        <AssociationConnector Association="Model.RRP_FK_PRODUCTO" />
+        <AssociationConnector Association="Model.PROVISION_FK_PROVEEDOR" />
+        <AssociationConnector Association="Model.PXE" />
+        <AssociationConnector Association="Model.PXP" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

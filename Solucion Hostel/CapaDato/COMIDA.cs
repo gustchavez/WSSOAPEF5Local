@@ -17,12 +17,13 @@ namespace CapaDato
         public System.DateTime RECEPCION { get; set; }
         public string OBSERVACIONES { get; set; }
         public string CONFIRMADA { get; set; }
-        public decimal CODIGO_PLATO { get; set; }
         public string RUT_PERSONA { get; set; }
-        public Nullable<decimal> NUMERO_OC { get; set; }
+        public decimal NUMERO_OC { get; set; }
+        public Nullable<decimal> CODIGO_PLATO { get; set; }
+        public string TIPO_SERVICIO { get; set; }
     
-        public virtual PLATO PLATO { get; set; }
-        public virtual PERSONA PERSONA { get; set; }
         public virtual ORDEN_DE_COMPRA ORDEN_DE_COMPRA { get; set; }
+        public virtual PERSONA PERSONA { get; set; }
+        public virtual PLATO PLATO { get; set; }
     }
 }

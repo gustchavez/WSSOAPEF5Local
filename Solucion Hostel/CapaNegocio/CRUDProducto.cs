@@ -26,7 +26,6 @@ namespace CapaNegocio
 
                 conex.SP_CREAR_PRODUCTO
                     (nProducto.Item.Descripcion
-                    , nProducto.Item.Precio
                     , nProducto.Item.Stock
                     , nProducto.Item.StockCritico
                     , p_OUT_CODRET
@@ -65,7 +64,6 @@ namespace CapaNegocio
                 conex.SP_ACTUALIZAR_PRODUCTO
                     ( aProducto.Item.Codigo
                     , aProducto.Item.Descripcion
-                    , aProducto.Item.Precio
                     , aProducto.Item.Stock
                     , aProducto.Item.StockCritico
                     , p_OUT_CODRET
@@ -139,7 +137,6 @@ namespace CapaNegocio
                         Producto n = new Producto();
                         n.Codigo = item.CODIGO;
                         n.Descripcion = item.DESCRIPCION;
-                        n.Precio = item.PRECIO;
                         n.Stock = item.STOCK;
                         n.StockCritico = item.STOCK_CRITICO;
                         LProductos.Lista.Add(n);

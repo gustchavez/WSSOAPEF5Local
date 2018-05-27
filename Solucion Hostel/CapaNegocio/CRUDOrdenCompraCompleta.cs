@@ -45,7 +45,7 @@ namespace CapaNegocio
                         foreach (var item in nOCC.Item.ListaDetalle)
                         {
                             conex.SP_CREAR_DET_RESERVA
-                            ( nOCC.Item.Cabecera.Numero
+                            (nOCC.Item.Cabecera.Numero
                             , item.Alojamiento.FechaIngreso
                             , item.Alojamiento.FechaEgreso
                             , item.Alojamiento.Observaciones
@@ -53,6 +53,7 @@ namespace CapaNegocio
                             , item.Alojamiento.CodigoCama
                             , item.Comida.FechaRecepcion
                             , item.Comida.Observaciones
+                            , item.Comida.TipoServicio
                             , item.Comida.CodigoPlato
                             , p_OUT_CODRET
                             , p_OUT_GLSRET
@@ -166,7 +167,7 @@ namespace CapaNegocio
                             m.Comida.NumerOrdenCompra = item.NumeroOC;
                             m.Comida.FechaRecepcion = item.FecRecepCom;
                             m.Comida.Confirmada = item.EstadoCom;
-                            m.Comida.CodigoPlato = item.CodPlatoCom;
+                            //m.Comida.CodigoPlato = item.CodPlatoCom;
                             //Se agrega el detalle a la cabecera
 
                             n.ListaDetalle.Add(m);
@@ -186,7 +187,7 @@ namespace CapaNegocio
                             m.Comida.NumerOrdenCompra = item.NumeroOC;
                             m.Comida.FechaRecepcion = item.FecRecepCom;
                             m.Comida.Confirmada = item.EstadoCom;
-                            m.Comida.CodigoPlato = item.CodPlatoCom;
+                            //m.Comida.CodigoPlato = item.CodPlatoCom;
                             //Se agrega el detalle a la ultima orden de compra
                             LOrdenesCompra.Lista.Last().ListaDetalle.Add(m);
                         }

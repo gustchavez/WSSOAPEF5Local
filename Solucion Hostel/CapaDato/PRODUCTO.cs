@@ -16,17 +16,16 @@ namespace CapaDato
     {
         public PRODUCTO()
         {
+            this.PROVISION = new HashSet<PROVISION>();
             this.RRP = new HashSet<RRP>();
-            this.PROVEEDOR = new HashSet<PROVEEDOR>();
         }
     
         public short CODIGO { get; set; }
         public string DESCRIPCION { get; set; }
-        public int PRECIO { get; set; }
         public short STOCK { get; set; }
         public short STOCK_CRITICO { get; set; }
     
+        public virtual ICollection<PROVISION> PROVISION { get; set; }
         public virtual ICollection<RRP> RRP { get; set; }
-        public virtual ICollection<PROVEEDOR> PROVEEDOR { get; set; }
     }
 }

@@ -54,7 +54,6 @@ namespace CapaWSPresentacion
             ContenedorProducto nProducto = new ContenedorProducto();
 
             nProducto.Item.Descripcion  = txtDescripcion.Text;
-            nProducto.Item.Precio       = decimal.Parse(txtPrecio.Text);
             nProducto.Item.Stock        = decimal.Parse(txtStock.Text);
             nProducto.Item.StockCritico = decimal.Parse(txtStockCritico.Text);
             nProducto.Retorno.Token = Session["TokenUsuario"].ToString();
@@ -76,7 +75,6 @@ namespace CapaWSPresentacion
 
             aProducto.Item.Codigo       = decimal.Parse(txtCodigo.Text);
             aProducto.Item.Descripcion  = txtDescripcion.Text;
-            aProducto.Item.Precio       = decimal.Parse(txtPrecio.Text);
             aProducto.Item.Stock        = decimal.Parse(txtStock.Text);
             aProducto.Item.StockCritico = decimal.Parse(txtStockCritico.Text);
             aProducto.Retorno.Token = Session["TokenUsuario"].ToString();

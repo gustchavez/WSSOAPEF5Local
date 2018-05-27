@@ -12,16 +12,13 @@ namespace CapaDato
     using System;
     using System.Collections.Generic;
     
-    public partial class RRP
+    public partial class PROVISION
     {
-        public long CODIGO { get; set; }
-        public short CANTIDAD { get; set; }
-        public System.DateTime RECEPCION { get; set; }
-        public string CONFIRMADO { get; set; }
+        public string RUT_PROVEEDOR { get; set; }
         public short CODIGO_PRODUCTO { get; set; }
-        public decimal NUMERO_OP { get; set; }
+        public int PRECIO { get; set; }
     
-        public virtual ORDEN_DE_PEDIDO ORDEN_DE_PEDIDO { get; set; }
         public virtual PRODUCTO PRODUCTO { get; set; }
+        public virtual PROVEEDOR PROVEEDOR { get; set; }
     }
 }

@@ -11,6 +11,7 @@ namespace CapaObjeto
         public DateTime FechaRecepcion { get; set; }
         public string Observaciones { get; set; }
         public string Confirmada { get; set; }
+        public string TipoServicio { get; set; }
         public decimal CodigoPlato { get; set; }
         public string RutPersona { get; set; }
         public decimal NumerOrdenCompra { get; set; }
@@ -25,6 +26,7 @@ namespace CapaObjeto
             this.FechaRecepcion = DateTime.MinValue;
             this.Observaciones = string.Empty;
             this.Confirmada = string.Empty;
+            this.TipoServicio = string.Empty;
             this.CodigoPlato = decimal.MinValue;
             this.RutPersona = string.Empty;
             this.NumerOrdenCompra = decimal.MinValue;

@@ -115,6 +115,9 @@
     <Compile Include="PROVEEDOR.cs">
       <DependentUpon>ModeloHostel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PROVISION.cs">
+      <DependentUpon>ModeloHostel.tt</DependentUpon>
+    </Compile>
     <Compile Include="RRP.cs">
       <DependentUpon>ModeloHostel.tt</DependentUpon>
     </Compile>
