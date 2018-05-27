@@ -5,6 +5,7 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/CapaObjeto" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IWSSHostel_ValidarLogin_InputMessage">
@@ -145,6 +146,78 @@
   <wsdl:message name="IWSSHostel_OrdenPedidoCompletaCrear_OutputMessage">
     <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaCrearResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_StockProductos_InputMessage">
+    <wsdl:part name="parameters" element="tns:StockProductos" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_StockProductos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StockProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Productos_mas_solicitados_InputMessage">
+    <wsdl:part name="parameters" element="tns:Productos_mas_solicitados" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Productos_mas_solicitados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Productos_mas_solicitadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Segun_rubro_empresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:Segun_rubro_empresa" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Segun_rubro_empresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Segun_rubro_empresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Metodo_pago_mas_usado_InputMessage">
+    <wsdl:part name="parameters" element="tns:Metodo_pago_mas_usado" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Metodo_pago_mas_usado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Metodo_pago_mas_usadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Ciudad_mas_solicita_servicios_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ciudad_mas_solicita_servicios" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Ciudad_mas_solicita_servicios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Ciudad_mas_solicita_serviciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Estado_habitaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:Estado_habitaciones" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Estado_habitaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Estado_habitacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Habitaciones_mas_solicitadas_InputMessage">
+    <wsdl:part name="parameters" element="tns:Habitaciones_mas_solicitadas" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Habitaciones_mas_solicitadas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Habitaciones_mas_solicitadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Fecha_mayor_auge_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fecha_mayor_auge" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Fecha_mayor_auge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fecha_mayor_augeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Solicitudes_NO_terminadas_InputMessage">
+    <wsdl:part name="parameters" element="tns:Solicitudes_NO_terminadas" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Solicitudes_NO_terminadas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Solicitudes_NO_terminadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Promedio_venta_mensual_InputMessage">
+    <wsdl:part name="parameters" element="tns:Promedio_venta_mensual" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Promedio_venta_mensual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Promedio_venta_mensualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Promedio_perdida_mensual_InputMessage">
+    <wsdl:part name="parameters" element="tns:Promedio_perdida_mensual" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Promedio_perdida_mensual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Promedio_perdida_mensualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Porcentage_cierre_efectivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Porcentage_cierre_efectivo" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Porcentage_cierre_efectivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Porcentage_cierre_efectivoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWSSHostel">
     <wsdl:operation name="ValidarLogin">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ValidarLogin" message="tns:IWSSHostel_ValidarLogin_InputMessage" />
@@ -237,6 +310,54 @@
     <wsdl:operation name="OrdenPedidoCompletaCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear" message="tns:IWSSHostel_OrdenPedidoCompletaCrear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrearResponse" message="tns:IWSSHostel_OrdenPedidoCompletaCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StockProductos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/StockProductos" message="tns:IWSSHostel_StockProductos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/StockProductosResponse" message="tns:IWSSHostel_StockProductos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Productos_mas_solicitados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Productos_mas_solicitados" message="tns:IWSSHostel_Productos_mas_solicitados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Productos_mas_solicitadosResponse" message="tns:IWSSHostel_Productos_mas_solicitados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Segun_rubro_empresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Segun_rubro_empresa" message="tns:IWSSHostel_Segun_rubro_empresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Segun_rubro_empresaResponse" message="tns:IWSSHostel_Segun_rubro_empresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Metodo_pago_mas_usado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Metodo_pago_mas_usado" message="tns:IWSSHostel_Metodo_pago_mas_usado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Metodo_pago_mas_usadoResponse" message="tns:IWSSHostel_Metodo_pago_mas_usado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ciudad_mas_solicita_servicios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Ciudad_mas_solicita_servicios" message="tns:IWSSHostel_Ciudad_mas_solicita_servicios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Ciudad_mas_solicita_serviciosResponse" message="tns:IWSSHostel_Ciudad_mas_solicita_servicios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Estado_habitaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Estado_habitaciones" message="tns:IWSSHostel_Estado_habitaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Estado_habitacionesResponse" message="tns:IWSSHostel_Estado_habitaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Habitaciones_mas_solicitadas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Habitaciones_mas_solicitadas" message="tns:IWSSHostel_Habitaciones_mas_solicitadas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Habitaciones_mas_solicitadasResponse" message="tns:IWSSHostel_Habitaciones_mas_solicitadas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fecha_mayor_auge">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Fecha_mayor_auge" message="tns:IWSSHostel_Fecha_mayor_auge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Fecha_mayor_augeResponse" message="tns:IWSSHostel_Fecha_mayor_auge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Solicitudes_NO_terminadas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Solicitudes_NO_terminadas" message="tns:IWSSHostel_Solicitudes_NO_terminadas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Solicitudes_NO_terminadasResponse" message="tns:IWSSHostel_Solicitudes_NO_terminadas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Promedio_venta_mensual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Promedio_venta_mensual" message="tns:IWSSHostel_Promedio_venta_mensual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Promedio_venta_mensualResponse" message="tns:IWSSHostel_Promedio_venta_mensual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Promedio_perdida_mensual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Promedio_perdida_mensual" message="tns:IWSSHostel_Promedio_perdida_mensual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Promedio_perdida_mensualResponse" message="tns:IWSSHostel_Promedio_perdida_mensual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Porcentage_cierre_efectivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivo" message="tns:IWSSHostel_Porcentage_cierre_efectivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivoResponse" message="tns:IWSSHostel_Porcentage_cierre_efectivo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWSSHostel" type="tns:IWSSHostel">
@@ -441,6 +562,114 @@
     </wsdl:operation>
     <wsdl:operation name="OrdenPedidoCompletaCrear">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StockProductos">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/StockProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Productos_mas_solicitados">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Productos_mas_solicitados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Segun_rubro_empresa">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Segun_rubro_empresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Metodo_pago_mas_usado">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Metodo_pago_mas_usado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ciudad_mas_solicita_servicios">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Ciudad_mas_solicita_servicios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estado_habitaciones">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Estado_habitaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Habitaciones_mas_solicitadas">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Habitaciones_mas_solicitadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fecha_mayor_auge">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Fecha_mayor_auge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Solicitudes_NO_terminadas">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Solicitudes_NO_terminadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Promedio_venta_mensual">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Promedio_venta_mensual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Promedio_perdida_mensual">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Promedio_perdida_mensual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Porcentage_cierre_efectivo">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -152,6 +152,470 @@ namespace CapaWSPresentacion.WSSoap {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrearResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenPedidoCompleta> OrdenPedidoCompletaCrearAsync(CapaObjeto.ContenedorOrdenPedidoCompleta entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/StockProductos", ReplyAction="http://tempuri.org/IWSSHostel/StockProductosResponse")]
+        CapaObjeto.ContenedorProductos StockProductos(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/StockProductos", ReplyAction="http://tempuri.org/IWSSHostel/StockProductosResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorProductos> StockProductosAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Productos_mas_solicitados", ReplyAction="http://tempuri.org/IWSSHostel/Productos_mas_solicitadosResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Sesion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comunicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Direccion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Empresa))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Persona))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Usuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorServiciosComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlatos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitaciones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCiudades))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCamas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompra))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] Productos_mas_solicitados();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Productos_mas_solicitados", ReplyAction="http://tempuri.org/IWSSHostel/Productos_mas_solicitadosResponse")]
+        System.Threading.Tasks.Task<object[]> Productos_mas_solicitadosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Segun_rubro_empresa", ReplyAction="http://tempuri.org/IWSSHostel/Segun_rubro_empresaResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Sesion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comunicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Direccion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Empresa))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Persona))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Usuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorServiciosComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlatos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitaciones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCiudades))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCamas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompra))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] Segun_rubro_empresa(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Segun_rubro_empresa", ReplyAction="http://tempuri.org/IWSSHostel/Segun_rubro_empresaResponse")]
+        System.Threading.Tasks.Task<object[]> Segun_rubro_empresaAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Metodo_pago_mas_usado", ReplyAction="http://tempuri.org/IWSSHostel/Metodo_pago_mas_usadoResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Sesion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comunicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Direccion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Empresa))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Persona))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Usuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorServiciosComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlatos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitaciones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCiudades))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCamas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompra))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] Metodo_pago_mas_usado(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Metodo_pago_mas_usado", ReplyAction="http://tempuri.org/IWSSHostel/Metodo_pago_mas_usadoResponse")]
+        System.Threading.Tasks.Task<object[]> Metodo_pago_mas_usadoAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Ciudad_mas_solicita_servicios", ReplyAction="http://tempuri.org/IWSSHostel/Ciudad_mas_solicita_serviciosResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Sesion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comunicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Direccion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Empresa))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Persona))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Usuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorServiciosComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlatos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitaciones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCiudades))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCamas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompra))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] Ciudad_mas_solicita_servicios(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Ciudad_mas_solicita_servicios", ReplyAction="http://tempuri.org/IWSSHostel/Ciudad_mas_solicita_serviciosResponse")]
+        System.Threading.Tasks.Task<object[]> Ciudad_mas_solicita_serviciosAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Estado_habitaciones", ReplyAction="http://tempuri.org/IWSSHostel/Estado_habitacionesResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Sesion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comunicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Direccion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Empresa))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Persona))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Usuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorServiciosComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlatos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitaciones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCiudades))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCamas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompra))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] Estado_habitaciones(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Estado_habitaciones", ReplyAction="http://tempuri.org/IWSSHostel/Estado_habitacionesResponse")]
+        System.Threading.Tasks.Task<object[]> Estado_habitacionesAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Habitaciones_mas_solicitadas", ReplyAction="http://tempuri.org/IWSSHostel/Habitaciones_mas_solicitadasResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Sesion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comunicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Direccion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Empresa))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Persona))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Usuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorServiciosComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlatos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitaciones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCiudades))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCamas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompra))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] Habitaciones_mas_solicitadas(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Habitaciones_mas_solicitadas", ReplyAction="http://tempuri.org/IWSSHostel/Habitaciones_mas_solicitadasResponse")]
+        System.Threading.Tasks.Task<object[]> Habitaciones_mas_solicitadasAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Fecha_mayor_auge", ReplyAction="http://tempuri.org/IWSSHostel/Fecha_mayor_augeResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Sesion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comunicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Direccion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Empresa))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Persona))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Usuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorServiciosComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlatos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitaciones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCiudades))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCamas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompra))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] Fecha_mayor_auge(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Fecha_mayor_auge", ReplyAction="http://tempuri.org/IWSSHostel/Fecha_mayor_augeResponse")]
+        System.Threading.Tasks.Task<object[]> Fecha_mayor_augeAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Solicitudes_NO_terminadas", ReplyAction="http://tempuri.org/IWSSHostel/Solicitudes_NO_terminadasResponse")]
+        string Solicitudes_NO_terminadas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Solicitudes_NO_terminadas", ReplyAction="http://tempuri.org/IWSSHostel/Solicitudes_NO_terminadasResponse")]
+        System.Threading.Tasks.Task<string> Solicitudes_NO_terminadasAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Promedio_venta_mensual", ReplyAction="http://tempuri.org/IWSSHostel/Promedio_venta_mensualResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Sesion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comunicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioCliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cliente))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Direccion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Empresa))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Persona))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Usuario))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorServiciosComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ServicioComida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPlatos))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Plato[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorHabitaciones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Habitacion[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCiudades))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Ciudad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorCamas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Cama[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompra))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] Promedio_venta_mensual(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Promedio_venta_mensual", ReplyAction="http://tempuri.org/IWSSHostel/Promedio_venta_mensualResponse")]
+        System.Threading.Tasks.Task<object[]> Promedio_venta_mensualAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Promedio_perdida_mensual", ReplyAction="http://tempuri.org/IWSSHostel/Promedio_perdida_mensualResponse")]
+        string Promedio_perdida_mensual();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Promedio_perdida_mensual", ReplyAction="http://tempuri.org/IWSSHostel/Promedio_perdida_mensualResponse")]
+        System.Threading.Tasks.Task<string> Promedio_perdida_mensualAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivo", ReplyAction="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivoResponse")]
+        string Porcentage_cierre_efectivo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivo", ReplyAction="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivoResponse")]
+        System.Threading.Tasks.Task<string> Porcentage_cierre_efectivoAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -363,6 +827,102 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenPedidoCompleta> OrdenPedidoCompletaCrearAsync(CapaObjeto.ContenedorOrdenPedidoCompleta entrada) {
             return base.Channel.OrdenPedidoCompletaCrearAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorProductos StockProductos(string token) {
+            return base.Channel.StockProductos(token);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorProductos> StockProductosAsync(string token) {
+            return base.Channel.StockProductosAsync(token);
+        }
+        
+        public object[] Productos_mas_solicitados() {
+            return base.Channel.Productos_mas_solicitados();
+        }
+        
+        public System.Threading.Tasks.Task<object[]> Productos_mas_solicitadosAsync() {
+            return base.Channel.Productos_mas_solicitadosAsync();
+        }
+        
+        public object[] Segun_rubro_empresa(string token) {
+            return base.Channel.Segun_rubro_empresa(token);
+        }
+        
+        public System.Threading.Tasks.Task<object[]> Segun_rubro_empresaAsync(string token) {
+            return base.Channel.Segun_rubro_empresaAsync(token);
+        }
+        
+        public object[] Metodo_pago_mas_usado(string token) {
+            return base.Channel.Metodo_pago_mas_usado(token);
+        }
+        
+        public System.Threading.Tasks.Task<object[]> Metodo_pago_mas_usadoAsync(string token) {
+            return base.Channel.Metodo_pago_mas_usadoAsync(token);
+        }
+        
+        public object[] Ciudad_mas_solicita_servicios(string token) {
+            return base.Channel.Ciudad_mas_solicita_servicios(token);
+        }
+        
+        public System.Threading.Tasks.Task<object[]> Ciudad_mas_solicita_serviciosAsync(string token) {
+            return base.Channel.Ciudad_mas_solicita_serviciosAsync(token);
+        }
+        
+        public object[] Estado_habitaciones(string token) {
+            return base.Channel.Estado_habitaciones(token);
+        }
+        
+        public System.Threading.Tasks.Task<object[]> Estado_habitacionesAsync(string token) {
+            return base.Channel.Estado_habitacionesAsync(token);
+        }
+        
+        public object[] Habitaciones_mas_solicitadas(string token) {
+            return base.Channel.Habitaciones_mas_solicitadas(token);
+        }
+        
+        public System.Threading.Tasks.Task<object[]> Habitaciones_mas_solicitadasAsync(string token) {
+            return base.Channel.Habitaciones_mas_solicitadasAsync(token);
+        }
+        
+        public object[] Fecha_mayor_auge(string token) {
+            return base.Channel.Fecha_mayor_auge(token);
+        }
+        
+        public System.Threading.Tasks.Task<object[]> Fecha_mayor_augeAsync(string token) {
+            return base.Channel.Fecha_mayor_augeAsync(token);
+        }
+        
+        public string Solicitudes_NO_terminadas() {
+            return base.Channel.Solicitudes_NO_terminadas();
+        }
+        
+        public System.Threading.Tasks.Task<string> Solicitudes_NO_terminadasAsync() {
+            return base.Channel.Solicitudes_NO_terminadasAsync();
+        }
+        
+        public object[] Promedio_venta_mensual(string token) {
+            return base.Channel.Promedio_venta_mensual(token);
+        }
+        
+        public System.Threading.Tasks.Task<object[]> Promedio_venta_mensualAsync(string token) {
+            return base.Channel.Promedio_venta_mensualAsync(token);
+        }
+        
+        public string Promedio_perdida_mensual() {
+            return base.Channel.Promedio_perdida_mensual();
+        }
+        
+        public System.Threading.Tasks.Task<string> Promedio_perdida_mensualAsync() {
+            return base.Channel.Promedio_perdida_mensualAsync();
+        }
+        
+        public string Porcentage_cierre_efectivo() {
+            return base.Channel.Porcentage_cierre_efectivo();
+        }
+        
+        public System.Threading.Tasks.Task<string> Porcentage_cierre_efectivoAsync() {
+            return base.Channel.Porcentage_cierre_efectivoAsync();
         }
     }
 }

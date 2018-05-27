@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonBD.cs" />
+    <Compile Include="ConsultasJava.cs" />
     <Compile Include="CRUDCama.cs" />
     <Compile Include="CRUDCiudad.cs" />
     <Compile Include="CRUDHabitacion.cs" />
@@ -68,6 +69,9 @@
       <Project>{c4df87b7-504b-489c-9a49-e753d00d9a43}</Project>
       <Name>CapaObjeto</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
