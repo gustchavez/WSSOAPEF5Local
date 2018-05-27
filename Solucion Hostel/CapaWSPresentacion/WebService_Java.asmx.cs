@@ -62,21 +62,25 @@ namespace CapaWSPresentacion
         //**********----> Panel Productos
 
         [WebMethod]
-        public string StockProductos()
+        public ContenedorProductos StockProductos(String token)
         {
-            String text = "select DESCRIPCION, STOCK, STOCK_CRITICO from producto";
-            return text;
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            ContenedorProductos contenProduc = new ContenedorProductos();
+            contenProduc = x.StockProductos(token);
+            return contenProduc;
         }
 
         [WebMethod]
-        public string Productos_mas_solicitados()
+        public List<Object> Productos_mas_solicitados()
         {
-            String text = "select SERVICIO_COMIDA.TIPO, count(SERVICIO_COMIDA.TIPO)  FROM COMIDA" +
-                " inner join PLATO on COMIDA.CODIGO_PLATO = PLATO.CODIGO" +
-                " inner join SERVICIO_COMIDA on PLATO.SERVICIO_TIPO = SERVICIO_COMIDA.TIPO" +
-                " GROUP by SERVICIO_COMIDA.TIPO" +
-                " order by count(SERVICIO_COMIDA.TIPO)desc";
-            return text;
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            var objetos = x.Productos_mas_solicitados();
+            List<Object> lista = new List<object>();
+            foreach (var item in objetos)
+            {
+                lista.Add(item);
+            }
+            return lista;
         }
 
         //**********---->Panel Clientes

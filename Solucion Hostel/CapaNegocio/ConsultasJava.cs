@@ -47,35 +47,36 @@ namespace CapaNegocio
         //    " GROUP by SERVICIO_COMIDA.TIPO" +
         //    " order by count(SERVICIO_COMIDA.TIPO)desc";
 
-        public List<Object> Productos_mas_solicitados(string token)
+        public List<Object> Productos_mas_solicitados()
         {
             CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
             List<Object> lista = new List<Object>();
-            if (ValidarPerfil(token))
+            //if (ValidarPerfil(token))
+            //{
+
+            //}
+            //else
+            //{
+            //    return null;
+            //}
+            try
             {
-                try
+                var query = (from c in conex.COMIDA
+                             join p in conex.PLATO on c.CODIGO_PLATO equals p.CODIGO
+                             join s in conex.SERVICIO_COMIDA on p.SERVICIO_TIPO equals s.TIPO
+                             group s by s.TIPO into g
+                             orderby g.Select(x => x.TIPO).Count()
+                             select new { tipo = g.Select(x => x.TIPO), cantidad = g.Select(x => x.TIPO).Count() }).ToList();
+                foreach (var item in query)
                 {
-                    var query = (from c in conex.COMIDA
-                                 join p in conex.PLATO on c.CODIGO_PLATO equals p.CODIGO
-                                 join s in conex.SERVICIO_COMIDA on p.SERVICIO_TIPO equals s.TIPO
-                                 group s by s.TIPO into g
-                                 orderby g.Select(x => x.TIPO).Count()
-                                 select new { tipo = g.Select(x => x.TIPO), cantidad = g.Select(x => x.TIPO).Count() }).ToList();
-                    foreach (var item in query)
-                    {
-                        Object[] obj = new Object[2];
-                        obj[0] = item.tipo;
-                        obj[1] = item.cantidad;
-                        lista.Add(obj);
-                    }
-                    return lista;
+                    Object[] obj = new Object[2];
+                    obj[0] = item.tipo;
+                    obj[1] = item.cantidad;
+                    lista.Add(obj);
                 }
-                catch (Exception)
-                {
-                    return null;
-                }
+                return lista;
             }
-            else
+            catch (Exception)
             {
                 return null;
             }

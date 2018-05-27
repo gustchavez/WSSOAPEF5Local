@@ -190,5 +190,76 @@ namespace CapaServicio
             x.LlamarSPCrear(entrada);
             return entrada;
         }
+
+        //Consultas para Apicacion Java
+
+        public ContenedorProductos StockProductos(string token)
+        {
+            ConsultasJava cj = new ConsultasJava();
+            return cj.StockProductos(token);
+        }
+
+        public List<object> Productos_mas_solicitados()
+        {
+            ConsultasJava cj = new ConsultasJava();
+            return cj.Productos_mas_solicitados();
+        }
+
+        public List<object> Segun_rubro_empresa(string token)
+        {
+            ConsultasJava cj = new ConsultasJava();
+            return cj.Segun_rubro_empresa(token);
+        }
+
+        public List<object> Metodo_pago_mas_usado(string token)
+        {
+            ConsultasJava cj = new ConsultasJava();
+            return cj.Metodo_pago_mas_usado(token);
+        }
+
+        public List<object> Ciudad_mas_solicita_servicios(string token)
+        {
+            ConsultasJava cj = new ConsultasJava();
+            return cj.Ciudad_mas_solicita_servicios(token);
+        }
+
+        public List<object> Estado_habitaciones(string token)
+        {
+            ConsultasJava cj = new ConsultasJava();
+            return cj.Estado_habitaciones(token);
+        }
+
+        public List<object> Habitaciones_mas_solicitadas(string token)
+        {
+            ConsultasJava cj = new ConsultasJava();
+            return cj.Habitaciones_mas_solicitadas(token);
+        }
+
+        public List<object> Fecha_mayor_auge(string token)
+        {
+            ConsultasJava cj = new ConsultasJava();
+            return cj.Fecha_mayor_auge(token);
+        }
+
+        public string Solicitudes_NO_terminadas()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<object> Promedio_venta_mensual(string token)
+        {
+            ConsultasJava cj = new ConsultasJava();
+            return cj.Promedio_venta_mensual(token);
+        }
+
+        public string Promedio_perdida_mensual()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string Porcentage_cierre_efectivo()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

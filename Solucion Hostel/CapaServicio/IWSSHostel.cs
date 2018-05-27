@@ -97,5 +97,43 @@ namespace CapaServicio
 
         [OperationContract]
         ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(ContenedorOrdenPedidoCompleta entrada);
+        
+        //Consultas para Apicacion Java
+
+        [OperationContract]
+        ContenedorProductos StockProductos(string token);
+
+        [OperationContract]
+        List<Object> Productos_mas_solicitados();
+
+        [OperationContract]
+        List<Object> Segun_rubro_empresa(string token);
+
+        [OperationContract]
+        List<Object> Metodo_pago_mas_usado(string token);
+
+        [OperationContract]
+        List<Object> Ciudad_mas_solicita_servicios(string token);
+
+        [OperationContract]
+        List<Object> Estado_habitaciones(string token);
+
+        [OperationContract]
+        List<Object> Habitaciones_mas_solicitadas(string token);
+
+        [OperationContract]
+        List<Object> Fecha_mayor_auge(string token);
+
+        [OperationContract]
+        string Solicitudes_NO_terminadas();
+
+        [OperationContract]
+        List<Object> Promedio_venta_mensual(string token);
+
+        [OperationContract]
+        string Promedio_perdida_mensual();
+
+        [OperationContract]
+        string Porcentage_cierre_efectivo();
     }
 }
