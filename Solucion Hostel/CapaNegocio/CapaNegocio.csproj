@@ -55,6 +55,8 @@
     <Compile Include="CRUDPerfilUsuarioProveedor.cs" />
     <Compile Include="CRUDPlato.cs" />
     <Compile Include="CRUDProducto.cs" />
+    <Compile Include="CRUDProveedor.cs" />
+    <Compile Include="CRUDProvision.cs" />
     <Compile Include="CRUDServicioComida.cs" />
     <Compile Include="TokenUsuario.cs" />
     <Compile Include="ValidarLoginUsuario.cs" />

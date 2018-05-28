@@ -208,6 +208,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvisiones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         object[] Productos_mas_solicitados();
         
@@ -263,6 +269,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvisiones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         object[] Segun_rubro_empresa(string token);
         
@@ -318,6 +330,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvisiones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         object[] Metodo_pago_mas_usado(string token);
         
@@ -373,6 +391,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvisiones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         object[] Ciudad_mas_solicita_servicios(string token);
         
@@ -428,6 +452,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvisiones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         object[] Estado_habitaciones(string token);
         
@@ -483,6 +513,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvisiones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         object[] Habitaciones_mas_solicitadas(string token);
         
@@ -538,6 +574,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvisiones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         object[] Fecha_mayor_auge(string token);
         
@@ -599,6 +641,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvisiones))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         object[] Promedio_venta_mensual(string token);
         
@@ -616,6 +664,36 @@ namespace CapaWSPresentacion.WSSoap {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivo", ReplyAction="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivoResponse")]
         System.Threading.Tasks.Task<string> Porcentage_cierre_efectivoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProveedorRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ProveedorRescatarResponse")]
+        CapaObjeto.ContenedorProveedores ProveedorRescatar(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProveedorRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ProveedorRescatarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorProveedores> ProveedorRescatarAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProvisionCrear", ReplyAction="http://tempuri.org/IWSSHostel/ProvisionCrearResponse")]
+        CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProvisionCrear", ReplyAction="http://tempuri.org/IWSSHostel/ProvisionCrearResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorProvision> ProvisionCrearAsync(CapaObjeto.ContenedorProvision entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProvisionActualizar", ReplyAction="http://tempuri.org/IWSSHostel/ProvisionActualizarResponse")]
+        CapaObjeto.ContenedorProvision ProvisionActualizar(CapaObjeto.ContenedorProvision entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProvisionActualizar", ReplyAction="http://tempuri.org/IWSSHostel/ProvisionActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorProvision> ProvisionActualizarAsync(CapaObjeto.ContenedorProvision entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProvisionEliminar", ReplyAction="http://tempuri.org/IWSSHostel/ProvisionEliminarResponse")]
+        CapaObjeto.ContenedorProvision ProvisionEliminar(CapaObjeto.ContenedorProvision entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProvisionEliminar", ReplyAction="http://tempuri.org/IWSSHostel/ProvisionEliminarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorProvision> ProvisionEliminarAsync(CapaObjeto.ContenedorProvision entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProvisionRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ProvisionRescatarResponse")]
+        CapaObjeto.ContenedorProvisiones ProvisionRescatar(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProvisionRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ProvisionRescatarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorProvisiones> ProvisionRescatarAsync(string token);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -923,6 +1001,46 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<string> Porcentage_cierre_efectivoAsync() {
             return base.Channel.Porcentage_cierre_efectivoAsync();
+        }
+        
+        public CapaObjeto.ContenedorProveedores ProveedorRescatar(string token) {
+            return base.Channel.ProveedorRescatar(token);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorProveedores> ProveedorRescatarAsync(string token) {
+            return base.Channel.ProveedorRescatarAsync(token);
+        }
+        
+        public CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada) {
+            return base.Channel.ProvisionCrear(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorProvision> ProvisionCrearAsync(CapaObjeto.ContenedorProvision entrada) {
+            return base.Channel.ProvisionCrearAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorProvision ProvisionActualizar(CapaObjeto.ContenedorProvision entrada) {
+            return base.Channel.ProvisionActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorProvision> ProvisionActualizarAsync(CapaObjeto.ContenedorProvision entrada) {
+            return base.Channel.ProvisionActualizarAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorProvision ProvisionEliminar(CapaObjeto.ContenedorProvision entrada) {
+            return base.Channel.ProvisionEliminar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorProvision> ProvisionEliminarAsync(CapaObjeto.ContenedorProvision entrada) {
+            return base.Channel.ProvisionEliminarAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorProvisiones ProvisionRescatar(string token) {
+            return base.Channel.ProvisionRescatar(token);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorProvisiones> ProvisionRescatarAsync(string token) {
+            return base.Channel.ProvisionRescatarAsync(token);
         }
     }
 }

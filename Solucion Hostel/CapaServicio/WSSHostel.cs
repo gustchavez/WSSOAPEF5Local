@@ -51,6 +51,8 @@ namespace CapaServicio
             x.LlamarSPCrear(entrada);
             return entrada;
         }
+
+        //CRUD Producto - INI
         public ContenedorProducto ProductoCrear(ContenedorProducto entrada)
         {
             CRUDProducto x = new CRUDProducto();
@@ -77,13 +79,14 @@ namespace CapaServicio
             CRUDProducto x = new CRUDProducto();
             return x.LlamarSPRescatar(token);
         }
+        //CRUD Producto - FIN
 
         public ContenedorServiciosComida ServicioComidaRescatar(string token)
         {
             CRUDServicioComida x = new CRUDServicioComida();
             return x.LlamarSPRescatar(token);
         }
-
+        
         public ContenedorPlato PlatoCrear(ContenedorPlato entrada)
         {
             CRUDPlato x = new CRUDPlato();
@@ -261,5 +264,40 @@ namespace CapaServicio
         {
             throw new NotImplementedException();
         }
+
+        public ContenedorProveedores ProveedorRescatar(string token)
+        {
+            CRUDProveedor x = new CRUDProveedor();
+            return x.LlamarSPRescatar(token);
+        }
+
+        //CRUD Provision - INI
+        public ContenedorProvision ProvisionCrear(ContenedorProvision entrada)
+        {
+            CRUDProvision x = new CRUDProvision();
+            x.LlamarSPCrear(entrada);
+            return entrada;
+        }
+
+        public ContenedorProvision ProvisionActualizar(ContenedorProvision entrada)
+        {
+            CRUDProvision x = new CRUDProvision();
+            x.LlamarSPActualizar(entrada);
+            return entrada;
+        }
+
+        public ContenedorProvision ProvisionEliminar(ContenedorProvision entrada)
+        {
+            CRUDProvision x = new CRUDProvision();
+            x.LlamarSPEliminar(entrada);
+            return entrada;
+        }
+
+        public ContenedorProvisiones ProvisionRescatar(string token)
+        {
+            CRUDProvision x = new CRUDProvision();
+            return x.LlamarSPRescatar(token);
+        }
+        //CRUD Provision - FIN
     }
 }

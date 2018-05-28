@@ -57,6 +57,9 @@
     <Compile Include="ContenedorOrdenPedidoCompleta.cs" />
     <Compile Include="ContenedorPerfilUsuarioCliente.cs" />
     <Compile Include="ContenedorPerfilUsuarioProveedor.cs" />
+    <Compile Include="ContenedorProveedores.cs" />
+    <Compile Include="ContenedorProvision.cs" />
+    <Compile Include="ContenedorProvisiones.cs" />
     <Compile Include="Direccion.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="Factura.cs" />
@@ -74,6 +77,7 @@
     <Compile Include="Plato.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Proveedor.cs" />
+    <Compile Include="Provision.cs" />
     <Compile Include="RegistroRecepcionPedido.cs" />
     <Compile Include="ServicioComida.cs" />
     <Compile Include="ContenedorPlatos.cs" />

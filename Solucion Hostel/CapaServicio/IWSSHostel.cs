@@ -135,5 +135,22 @@ namespace CapaServicio
 
         [OperationContract]
         string Porcentage_cierre_efectivo();
+
+        [OperationContract]
+        ContenedorProveedores ProveedorRescatar(string token);
+
+        //Inicio Provision
+        [OperationContract]
+        ContenedorProvision ProvisionCrear(ContenedorProvision entrada);
+
+        [OperationContract]
+        ContenedorProvision ProvisionActualizar(ContenedorProvision entrada);
+
+        [OperationContract]
+        ContenedorProvision ProvisionEliminar(ContenedorProvision entrada);
+
+        [OperationContract]
+        ContenedorProvisiones ProvisionRescatar(string token);
+        //Fin Provision
     }
 }

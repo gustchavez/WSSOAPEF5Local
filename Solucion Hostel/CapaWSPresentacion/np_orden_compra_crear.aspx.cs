@@ -45,8 +45,8 @@ namespace CapaWSPresentacion
 
             //Se instacion el WS para recuperar los datos de Productos y Platos
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-            //Se vuelca en una lista las Productos
 
+            //Se vuelca en una lista las Productos
             ContenedorProductos Productos = new ContenedorProductos();
             Productos = x.ProductoRescatar(Session["TokenUsuario"].ToString());
 

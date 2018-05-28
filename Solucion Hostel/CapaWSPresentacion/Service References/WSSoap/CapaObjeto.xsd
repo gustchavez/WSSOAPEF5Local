@@ -386,4 +386,45 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RegistroRecepcionPedido" nillable="true" type="tns:RegistroRecepcionPedido" />
+  <xs:complexType name="ContenedorProveedores">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfProveedor" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorProveedores" nillable="true" type="tns:ContenedorProveedores" />
+  <xs:complexType name="ArrayOfProveedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Proveedor" nillable="true" type="tns:Proveedor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProveedor" nillable="true" type="tns:ArrayOfProveedor" />
+  <xs:complexType name="ContenedorProvision">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:Provision" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorProvision" nillable="true" type="tns:ContenedorProvision" />
+  <xs:complexType name="Provision">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="Precio" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RutProveedor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Provision" nillable="true" type="tns:Provision" />
+  <xs:complexType name="ContenedorProvisiones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfProvision" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorProvisiones" nillable="true" type="tns:ContenedorProvisiones" />
+  <xs:complexType name="ArrayOfProvision">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Provision" nillable="true" type="tns:Provision" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProvision" nillable="true" type="tns:ArrayOfProvision" />
 </xs:schema>
