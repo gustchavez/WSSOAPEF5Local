@@ -118,6 +118,7 @@
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="Index.aspx" />
+    <Content Include="np_proveedor_crear.aspx" />
     <Content Include="np_proveedor_producto_crud.aspx" />
     <Content Include="perfilEmpleado\facturasRecibidas.aspx" />
     <Content Include="perfilEmpleado\ingresoProducto.aspx" />
@@ -126,7 +127,6 @@
     <Content Include="np_orden_compra_crear.aspx" />
     <Content Include="np_orden_reserva_crear.aspx" />
     <Content Include="np_plato_crud.aspx" />
-    <Content Include="np_proveedor_crear.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -234,6 +234,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="np_proveedor_crear.aspx.cs">
+      <DependentUpon>np_proveedor_crear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="np_proveedor_crear.aspx.designer.cs">
+      <DependentUpon>np_proveedor_crear.aspx</DependentUpon>
+    </Compile>
     <Compile Include="np_proveedor_producto_crud.aspx.cs">
       <DependentUpon>np_proveedor_producto_crud.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -310,13 +317,6 @@
     </Compile>
     <Compile Include="np_plato_crud.aspx.designer.cs">
       <DependentUpon>np_plato_crud.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="np_proveedor_crear.aspx.cs">
-      <DependentUpon>np_proveedor_crear.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="np_proveedor_crear.aspx.designer.cs">
-      <DependentUpon>np_proveedor_crear.aspx</DependentUpon>
     </Compile>
     <Compile Include="perfilEmpleado\modificarPerfil.aspx.cs">
       <DependentUpon>modificarPerfil.aspx</DependentUpon>
