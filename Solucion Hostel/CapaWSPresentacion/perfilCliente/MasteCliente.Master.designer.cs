@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CapaWSPresentacion.perfilEmpleado {
+namespace CapaWSPresentacion.perfilCliente {
     
     
-    public partial class MasterEmpleado {
+    public partial class MasteCliente {
         
         /// <summary>
         /// Control ContentPlaceHolder1.

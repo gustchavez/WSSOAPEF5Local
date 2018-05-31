@@ -1,0 +1,69 @@
+<manifest alg="2" build="2018.1.0.386" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="donaclarita.cl" resolutions="1x" timestamp="1527798710972">
+  <folder name="css">
+    <file name="site_global.css" crc="276577501"/>
+    <file name="index.css" crc="4030078904" ref="index"/>
+  </folder>
+  <folder name="assets">
+    <file name="top-banner-background-1.jpg" crc="3789237552" seo="true" mt="1520954393000"/>
+    <file name="top-banner-background-2.jpg" crc="41962765" seo="true" mt="1520954391000"/>
+    <file name="top-banner-background-3.jpg" crc="4050451697" seo="true" mt="1520954389000"/>
+    <file name="top-banner-background-4.jpg" crc="395667365" seo="true" mt="1520954384000"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index"/>
+    <file name="museutils.js" crc="340535759" ref="index"/>
+    <file name="whatinput.js" crc="86476730" ref="index"/>
+    <file name="museconfig.js" crc="310584261" ref="index"/>
+    <file name="jquery.watch.js" crc="51536988" ref="index"/>
+    <file name="webpro.js" crc="4059564322" ref="index"/>
+    <file name="musewpslideshow.js" crc="3862962738" ref="index"/>
+    <file name="jquery.museoverlay.js" crc="4147669564" ref="index"/>
+    <file name="touchswipe.js" crc="4075097462" ref="index"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="4260645839" ref="index"/>
+    <file name="form_check.php" crc="4020933626" ref="index"/>
+    <file name="form_throttle.php" crc="4259590256" ref="index"/>
+    <file name="form_process.php" crc="37464564" ref="index"/>
+    <file name="form-u1358.php" crc="66058041" ref="index"/>
+    <file name="require.js" crc="7928878" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="top-banner-background-1.jpg" crc="4121673273" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="blank.gif" crc="4208392903" ref="index"/>
+    <file name="top-banner-background-2.jpg" crc="4158279340" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="top-banner-background-3.jpg" crc="171662276" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="top-banner-background-4.jpg" crc="4240973819" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="loading.gif" crc="3815509949" ref="index"/>
+    <file name="svg-pegado-191.svg" crc="507970516" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="svg pegado 191_poster_.png" crc="498655452" ref="index"/>
+    <file name="linker-pc-3.jpg" crc="94774940" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="linker-pc-1-crop-u617.jpg" crc="341784743" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="svg-pegado-297x526.svg" crc="222392168" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="svg pegado 297x526_poster_.png" crc="224318827" ref="index"/>
+    <file name="svg-pegado-297x422.svg" crc="137248660" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="svg pegado 297x422_poster_.png" crc="3778881365" ref="index"/>
+    <file name="svg-pegado-297x4222.svg" crc="479816120" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="svg pegado 297x422_poster_2.png" crc="4194522415" ref="index"/>
+    <file name="top-banner-background-3-u1049-fr.jpg" crc="3986454200" ref="index"/>
+  </folder>
+  <file name="index.html" crc="3967647619" seo="true" mt="1527798667993" redirect="true"/>
+</manifest>

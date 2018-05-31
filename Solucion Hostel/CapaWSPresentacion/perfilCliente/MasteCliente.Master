@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasteCliente.master.cs" Inherits="CapaWSPresentacion.perfilCliente.MasteCliente" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="/scripts/detalleCliente.css">
+	<script src="/scripts/efectos.js"></script>
+	<script src="/scripts/jquery.min.js"></script>
+	<title></title>
+</head>
+<body>
+
+
+<div class="padre">
+	
+	<div class="menu">
+
+		<div class="BotonMenu" onclick="efecto()">MENU</div>		
+		<div class="desplegable">		
+			<div class="subMenu"> <div class="imagen-logo"></div> </div>
+			<div class="subMenu"> <a href="solicitarServicio.aspx" style="color: #e2e2e2;"> Solicitar Servicio </a></div>
+			<div class="subMenu"> <a href="perfil.aspx" style="color: #e2e2e2;"> Modificar Perfil </a></div>
+			<div class="subMenu"> <a href="solicitudesCliente.aspx" style="color: #e2e2e2;"> Solicitudes </a></div>
+			<div class="subMenu"> <a href="facturaCLiente.aspx" style="color: #e2e2e2;"> Factura </a></div> <br>
+			<div class="subMenu"> <a href="/np_ingreso.aspx" style="color: #e2e2e2;"> Cerrar Sesión</a></div>
+		</div>
+
+	</div>
+	<!--Fin Menu-->
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+
+
+    </asp:ContentPlaceHolder>
+
+</div>
+
+
+
+</body>
+</html>

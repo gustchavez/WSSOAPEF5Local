@@ -10,15 +10,15 @@
 namespace CapaWSPresentacion.perfilEmpleado {
     
     
-    public partial class MasterEmpleado {
+    public partial class stock {
         
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// Control form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
     }
 }
