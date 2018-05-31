@@ -47,39 +47,39 @@ namespace CapaNegocio
         //    " GROUP by SERVICIO_COMIDA.TIPO" +
         //    " order by count(SERVICIO_COMIDA.TIPO)desc";
 
-        public List<Object> Productos_mas_solicitados()
+        public List<Object> Productos_mas_solicitados(String token)
         {
             CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
             List<Object> lista = new List<Object>();
-            //if (ValidarPerfil(token))
-            //{
-
-            //}
-            //else
-            //{
-            //    return null;
-            //}
-            try
+            if (ValidarPerfil(token))
             {
-                var query = (from c in conex.COMIDA
-                             join p in conex.PLATO on c.CODIGO_PLATO equals p.CODIGO
-                             join s in conex.SERVICIO_COMIDA on p.SERVICIO_TIPO equals s.TIPO
-                             group s by s.TIPO into g
-                             orderby g.Select(x => x.TIPO).Count()
-                             select new { tipo = g.Select(x => x.TIPO), cantidad = g.Select(x => x.TIPO).Count() }).ToList();
-                foreach (var item in query)
+                try
                 {
-                    Object[] obj = new Object[2];
-                    obj[0] = item.tipo;
-                    obj[1] = item.cantidad;
-                    lista.Add(obj);
+                    var query = (from c in conex.COMIDA
+                                 join p in conex.PLATO on c.CODIGO_PLATO equals p.CODIGO
+                                 join s in conex.SERVICIO_COMIDA on p.SERVICIO_TIPO equals s.TIPO
+                                 group s by s.TIPO into g
+                                 orderby g.Select(x => x.TIPO).Count()
+                                 select new { tipo = g.Select(x => x.TIPO), cantidad = g.Select(x => x.TIPO).Count() }).ToList();
+                    foreach (var item in query)
+                    {
+                        Object[] obj = new Object[2];
+                        obj[0] = item.tipo;
+                        obj[1] = item.cantidad;
+                        lista.Add(obj);
+                    }
+                    return lista;
                 }
-                return lista;
+                catch (Exception)
+                {
+                    return null;
+                }
             }
-            catch (Exception)
+            else
             {
                 return null;
             }
+
         }
 
         //String text = "select EMPRESA.RUBRO,EMPRESA.RUT from empresa " +
@@ -114,7 +114,8 @@ namespace CapaNegocio
             else
             {
                 return null;
-            }      
+            }
+
         }
        
         public List<Object> Metodo_pago_mas_usado(string token)
@@ -222,6 +223,7 @@ namespace CapaNegocio
             {
                 return null;
             }
+
         }
 
 

@@ -10,7 +10,7 @@
 namespace CapaWSPresentacion.perfilEmpleado {
     
     
-    public partial class facturasRecibidas {
+    public partial class FacturasRecibidas {
         
         /// <summary>
         /// Control Label1.

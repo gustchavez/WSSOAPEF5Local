@@ -11,10 +11,18 @@ body{
 
 .padre {
 	width: 1250px;
-	height: 700px;
+	height:  auto;
+	position: relative;
+}
+
+.padre1 {
+	width: 1250px;
+	height: 30px;
 	margin: auto;
 	position: relative;
 }
+
+
 
 .totalmenu {
 	width: 100%;
@@ -61,6 +69,8 @@ position: relative;
 float: left;
 z-index: 11;
 padding-top: 7px;
+    top: 0px;
+    left: 0px;
 }
 
 .BotonMenu:HOVER{

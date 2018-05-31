@@ -215,10 +215,10 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvisiones))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Provision[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] Productos_mas_solicitados();
+        object[] Productos_mas_solicitados(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Productos_mas_solicitados", ReplyAction="http://tempuri.org/IWSSHostel/Productos_mas_solicitadosResponse")]
-        System.Threading.Tasks.Task<object[]> Productos_mas_solicitadosAsync();
+        System.Threading.Tasks.Task<object[]> Productos_mas_solicitadosAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Segun_rubro_empresa", ReplyAction="http://tempuri.org/IWSSHostel/Segun_rubro_empresaResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Sesion))]
@@ -915,12 +915,12 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.StockProductosAsync(token);
         }
         
-        public object[] Productos_mas_solicitados() {
-            return base.Channel.Productos_mas_solicitados();
+        public object[] Productos_mas_solicitados(string token) {
+            return base.Channel.Productos_mas_solicitados(token);
         }
         
-        public System.Threading.Tasks.Task<object[]> Productos_mas_solicitadosAsync() {
-            return base.Channel.Productos_mas_solicitadosAsync();
+        public System.Threading.Tasks.Task<object[]> Productos_mas_solicitadosAsync(string token) {
+            return base.Channel.Productos_mas_solicitadosAsync(token);
         }
         
         public object[] Segun_rubro_empresa(string token) {

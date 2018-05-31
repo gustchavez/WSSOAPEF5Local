@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CapaWSPresentacion
+namespace CapaWSPresentacion.perfilEmpleado
 {
     public partial class IngresoProducto : System.Web.UI.Page
     {

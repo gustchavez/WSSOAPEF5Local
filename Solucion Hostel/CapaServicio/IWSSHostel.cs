@@ -104,7 +104,7 @@ namespace CapaServicio
         ContenedorProductos StockProductos(string token);
 
         [OperationContract]
-        List<Object> Productos_mas_solicitados();
+        List<Object> Productos_mas_solicitados(string token);
 
         [OperationContract]
         List<Object> Segun_rubro_empresa(string token);

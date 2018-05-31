@@ -7,9 +7,9 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CapaWSPresentacion.perfilEmpleado {
+namespace CapaWSPresentacion.perfilProveedor {
     
     
-    public partial class solicitarProducto {
+    public partial class perfil {
     }
 }
