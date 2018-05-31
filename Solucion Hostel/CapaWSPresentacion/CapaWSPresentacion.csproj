@@ -131,7 +131,7 @@
     </Content>
     <Content Include="PaginaComercial\index.html" />
     <Content Include="PaginaComercial\muse_manifest.xml" />
-    <Content Include="PaginaComercial\sitemap.xml" />
+    <Content Include="PaginaComercial\perfilIngreso.aspx" />
     <Content Include="perfilCliente\detalleSolicitud.aspx" />
     <Content Include="perfilCliente\facturaCliente.aspx" />
     <Content Include="perfilCliente\finSolicitud.aspx" />
@@ -304,6 +304,13 @@
     </Compile>
     <Compile Include="np_proveedor_crear.aspx.designer.cs">
       <DependentUpon>np_proveedor_crear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaComercial\perfilIngreso.aspx.cs">
+      <DependentUpon>perfilIngreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaComercial\perfilIngreso.aspx.designer.cs">
+      <DependentUpon>perfilIngreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="perfilCliente\detalleSolicitud.aspx.cs">
       <DependentUpon>detalleSolicitud.aspx</DependentUpon>
