@@ -1,23 +1,25 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterEmpleado.Master.cs" Inherits="CapaWSPresentacion.DiegoPrueba" %>
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterEmpleado.master.cs" Inherits="CapaWSPresentacion.perfilEmpleado.MasterEmpleado" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-
-    <link rel="stylesheet" type="text/css" href="/scripts/perfilCliente.css">
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="/scripts/facturaEmpleado.css">
 	<script src="/scripts/efectos.js"></script>
 	<script src="/scripts/jquery.min.js"></script>
+	<title></title>
 
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+  
 </head>
 <body>
-    
-    <div class="menu">
+
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    <div class="padre">
+
+	<div class="menu">
 
 		<div class="BotonMenu" onclick="efecto()">MENU</div>		
 		<div class="desplegable">		
@@ -30,9 +32,23 @@
 			<div class="subMenu"> <a href="solicitarEmpleado.html" style="color: #e2e2e2;"> Solicitar Productos </a></div><br>
 			<div class="subMenu"> <a href="ingreso.html" style="color: #e2e2e2;"> Cerrar Sesión</a></div>
 		</div>
-     </div>
-    
-  <asp:ContentPlaceHolder ID="ContentPlaceHolder13" runat="server"></asp:ContentPlaceHolder>
+
+	</div>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+
+            
+        </asp:ContentPlaceHolder>
+
+    </div>
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+  
+
+
+
 
 
 </body>
