@@ -27,7 +27,7 @@ namespace CapaWSPresentacion
         //**********------> Login
 
         [WebMethod]
-        public List<String> ValidarLogin(String nombre, String clave)
+        public List<Object> ValidarLogin(String nombre, String clave)
         {
 
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
@@ -39,12 +39,10 @@ namespace CapaWSPresentacion
 
             nLogin = x.ValidarLogin(nombre, clave);
 
-            List<String> obje=new List<string>();
+            List<Object> obje=new List<Object>();
 
             if (nLogin.Retorno.Codigo == 0)
             {
-                Session["TokenUsuario"] = nLogin.Retorno.Token;
-                Session["Nombre"] = nLogin.Nombre;
                 obje.Add( nLogin.Nombre);
                 obje.Add(nLogin.Apellido);
                 obje.Add(nLogin.Perfil);
@@ -53,8 +51,7 @@ namespace CapaWSPresentacion
             }
             else
             {
-                Session["TokenUsuario"] = null;
-                Session["Nombre"] = null;
+                obje = null;
             }            
             return obje;
         }
@@ -71,26 +68,49 @@ namespace CapaWSPresentacion
         }
 
         [WebMethod]
-        public List<Object> Productos_mas_solicitados()
+        public List<Object> Productos_mas_solicitados(String token)
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-            var objetos = x.Productos_mas_solicitados();
             List<Object> lista = new List<object>();
-            foreach (var item in objetos)
+            try
             {
-                lista.Add(item);
+                var objetos = x.Productos_mas_solicitados(token);
+                foreach (var item in objetos)
+                {
+                    lista.Add(item);
+                }
             }
+            catch (Exception)
+            {
+                lista = null;
+            }
+            
+            
             return lista;
         }
 
         //**********---->Panel Clientes
 
         [WebMethod]
-        public string Segun_rubro_empresa()
+        public List<Object> Segun_rubro_empresa(String token)
         {
-            String text = "select EMPRESA.RUBRO,EMPRESA.RUT from empresa " +
-                "inner join cliente on EMPRESA.RUT=CLIENTE.RUT";
-            return text;
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            List<Object> lista = new List<object>();
+            try
+            {
+                var objetos = x.Segun_rubro_empresa(token);
+                foreach (var item in objetos)
+                {
+                    lista.Add(item);
+                }
+            }
+            catch (Exception)
+            {
+                lista = null;
+            }
+
+
+            return lista;
         }
         [WebMethod]
         public string Metodo_pago_mas_usado()

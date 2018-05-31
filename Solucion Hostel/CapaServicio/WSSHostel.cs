@@ -202,10 +202,10 @@ namespace CapaServicio
             return cj.StockProductos(token);
         }
 
-        public List<object> Productos_mas_solicitados()
+        public List<object> Productos_mas_solicitados(string token)
         {
             ConsultasJava cj = new ConsultasJava();
-            return cj.Productos_mas_solicitados();
+            return cj.Productos_mas_solicitados(token);
         }
 
         public List<object> Segun_rubro_empresa(string token)
