@@ -28,13 +28,8 @@
 		
 			<div class="Casilla2-1">
 			<h4>Nombre Empresa</h4>				
-			<select class="droplist" required>
-				<option value="" >Selecciona una Empresa</option>
-				<option>Empresa 1</option>
-				<option>Empresa 2</option>
-				<option>Empresa 3</option>
-				<option>Empresa 4</optio>
-			</select>			
+			<asp:DropDownList ID="txtProveedorAgregar" runat="server" CssClass="droplist">
+            </asp:DropDownList>		
 			</div>
 			<div class="Casilla2-1">
 			<h4>Cod. Producto</h4>	

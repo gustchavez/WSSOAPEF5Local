@@ -18,22 +18,40 @@ namespace CapaWSPresentacion.perfilEmpleado
 
                 if (Perfil.Equals("Empleado") || Perfil.Equals("Administrador"))
                 {
-                    //
+                    if (!IsPostBack)
+                    {
+                        RescatarDatos();
+                    }
                 }
                 else
                 {
                     Session["TokenUsuario"] = null;
-                    Response.Redirect("np_ingreso.aspx");
+                    Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
                 }
             }
             catch (Exception)
             {
                 Session["TokenUsuario"] = null;
-                Response.Redirect("np_ingreso.aspx");
+                Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        private void RescatarDatos()
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            ContenedorCiudades n = new ContenedorCiudades();
+
+            n = x.CiudadRescatar(Session["TokenUsuario"].ToString());
+
+            txtNombreCiudad.DataSource = null;
+            txtNombreCiudad.DataSource = n.Lista.Where(p => p.CodPais == 56);
+            txtNombreCiudad.DataValueField = "Nombre";
+            txtNombreCiudad.DataTextField  = "Nombre";
+            txtNombreCiudad.DataBind();
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
@@ -65,6 +83,7 @@ namespace CapaWSPresentacion.perfilEmpleado
 
             txtCodigoRetorno.Text = n.Retorno.Codigo.ToString();
             txtGlosaRetorno.Text = n.Retorno.Glosa;
+
         }
     }
 }

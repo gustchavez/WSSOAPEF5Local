@@ -284,7 +284,7 @@
 		<asp:TextBox ID="txtGlosaRetorno" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">	
-		 <asp:Button ID="Button1" runat="server" Text="Agregar"  CssClass="SubmitTotal" OnClick="Button1_Click"/> 
+		 <asp:Button ID="btnAgregar" runat="server" Text="Agregar"  CssClass="SubmitTotal" OnClick="btnAgregar_Click"/> 
 		</div>
         
 	</div>
