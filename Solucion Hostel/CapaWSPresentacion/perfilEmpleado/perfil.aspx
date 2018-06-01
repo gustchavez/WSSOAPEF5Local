@@ -25,31 +25,31 @@
 			<h2>Modificar datos de empleado</h2><br>	
 			<div class="Casilla2-1">
 			<h4>Rut </h4>	
-			<input type="text" name="" class="CasillaPersona" placeholder="111111111-1" disabled>
+			<asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaPersona"></asp:TextBox>  
 			</div>
 			<div class="Casilla2-1">
 			<h4>Nombre</h4>	
-			<input type="text" name="" class="CasillaPersona" placeholder="Francisca Jímenez" disabled>
+			<asp:TextBox ID="TextBox2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Cargo</h4>	
-			<input type="text" name="" class="CasillaPersona" placeholder="Empleado" disabled>
+			<asp:TextBox ID="TextBox3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Correo Electrónico</h4>
-			<input type="text" name="" class="CasillaPersona" placeholder="fran.jimenez@donaclarita.cl" disabled>
+			<asp:TextBox ID="TextBox4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Fecha Nacimiento</h4>					
-			<input type="text" name="" class="CasillaPersona" placeholder="13/03/1990" disabled>
+			<asp:TextBox ID="TextBox5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4 style="color: red;">Dirección (modificable)</h4>					
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Dirección">
+			<asp:TextBox ID="TextBox6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>			
 			<div class="Casilla2-1">
 			<h4 style="color: red;">Teléfono (modificable)</h4>					
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Teléfono">
+			<asp:TextBox ID="TextBox7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 	</div>
 
@@ -57,18 +57,18 @@
 	<div class="ModificarDatos2">
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nombre Usuario</h4>	
-		<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Nombre" >
+		<asp:TextBox ID="TextBox8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nueva Contraseña</h4>	
-		<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Contraseña">
+		<asp:TextBox ID="TextBox9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Confirmar Contraseña</h4>	
-		<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Contraseña">
+		<asp:TextBox ID="TextBox10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">	
-		<input type="submit" name="" class="SubmitTotal" placeholder="Ingrese Teléfono" value="Modificar">
+		<asp:Button ID="Button1" runat="server" Text="Button" CssClass="SubmitTotal" />
 		</div>
 	</div>
 		

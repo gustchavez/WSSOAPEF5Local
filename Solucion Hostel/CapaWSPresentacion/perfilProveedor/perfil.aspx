@@ -26,236 +26,237 @@
 		
 			<div class="Casilla2-1">
 			<h4>Rut Empresa</h4>	
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Rut" disabled>
+		    <asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Razón Social</h4>	
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Nombre">
+			<asp:TextBox ID="TextBox2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
-			<h4>Giro</h4>	
-			<select class="droplist" required>
-				<option value="" >Selecciona un Giro</option>
-				<option>CULTIVOS EN GENERAL; CULTIVO DE PRODUCTOS DE MERCADO; HORTICULTURA</option>
-				<option>CRÍA DE ANIMALES</option>
-				<option>CULTIVO PROD. AGRÍCOLAS EN COMBINACIÓN CON CRÍA DE ANIMALES</option>
-				<option>ACTIVIDADES DE SERVICIOS AGRÍCOLAS Y GANADEROS</option>
-				<option>CAZA ORDINARIA Y MEDIANTE TRAMPAS, REPOBLACIÓN, ACT. SERVICIO CONEXAS</option>
-				<option>SILVICULTURA, EXTRACCIÓN DE MADERA Y ACTIVIDADES DE SERVICIOS CONEXAS</option>
-				<option>EXPLT. DE CRIADEROS DE PECES Y PROD. DEL MAR; SERVICIOS RELACIONADOS</option>
-				<option>PESCA EXTRACTIVA: Y SERVICIOS RELACIONADOS</option>
-				<option>EXTRACCIÓN, AGLOMERACIÓN DE CARBÓN DE PIEDRA, LIGNITO Y TURBA</option>
-				<option>EXTRACCIÓN DE PETRÓLEO CRUDO Y GAS NATURAL; ACTIVIDADES RELACIONADAS</option>
-				<option>EXTRACCIÓN DE MINERALES METALÍFEROS</option>
-				<option>EXPLOTACIÓN DE MINAS Y CANTERAS</option>
-				<option>PRODUCCIÓN, PROCESAMIENTO Y CONSERVACIÓN DE ALIMENTOS</option>
-				<option>ELABORACIÓN DE PRODUCTOS LÁCTEOS</option>
-				<option>ELAB. DE PROD. DE MOLINERÍA, ALMIDONES Y PROD. DERIVADOS DEL ALMIDÓN</option>
-				<option>ELABORACIÓN DE OTROS PRODUCTOS ALIMENTICIOS</option>
-				<option>ELABORACIÓN DE BEBIDAS</option>
-				<option>ELABORACIÓN DE PRODUCTOS DEL TABACO</option>
-				<option>HILANDERÍA, TEJEDURA Y ACABADO DE PRODUCTOS TEXTILES</option>
-				<option>FABRICACIÓN DE OTROS PRODUCTOS TEXTILES</option>
-				<option>FABRICACIÓN DE TEJIDOS Y ARTÍCULOS DE PUNTO Y GANCHILLO</option>
-				<option>FABRICACIÓN DE PRENDAS DE VESTIR; EXCEPTO PRENDAS DE PIEL</option>
-				<option>PROCESAMIENTO Y FABRICACIÓN DE ARTÍCULOS DE PIEL Y CUERO</option>
-				<option>FABRICACIÓN DE CALZADO</option>
-				<option>ASERRADO Y ACEPILLADURA DE MADERAS</option>
-				<option>FAB. DE PRODUCTOS DE MADERA Y CORCHO,  PAJA Y DE MATERIALES TRENZABLES</option>
-				<option>FABRICACIÓN DE PAPEL Y PRODUCTOS DEL PAPEL</option>
-				<option>ACTIVIDADES DE EDICIÓN</option>
-				<option>ACTIVIDADES DE IMPRESIÓN Y DE SERVICIOS CONEXOS</option>
-				<option>FABRICACIÓN DE PRODUCTOS DE HORNOS COQUE Y DE REFINACIÓN DE PETRÓLEO</option>
-				<option>ELABORACIÓN DE COMBUSTIBLE NUCLEAR</option>
-				<option>FABRICACIÓN DE SUSTANCIAS QUÍMICAS BÁSICAS</option>
-				<option>FABRICACIÓN DE OTROS PRODUCTOS QUÍMICOS</option>
-				<option>FABRICACIÓN DE FIBRAS MANUFACTURADAS</option>
-				<option>FABRICACIÓN DE PRODUCTOS DE CAUCHO</option>
-				<option>FABRICACIÓN DE PRODUCTOS DE PLÁSTICO</option>
-				<option>FABRICACIÓN DE VIDRIOS Y PRODUCTOS DE VIDRIO</option>
-				<option>FABRICACIÓN DE PRODUCTOS MINERALES NO METÁLICOS N.C.P.</option>
-				<option>INDUSTRIAS BÁSICAS DE HIERRO Y ACERO</option>
-				<option>FAB. DE PRODUCTOS PRIMARIOS DE METALES PRECIOSOS Y METALES NO FERROSOS </option>
-				<option>FUNDICIÓN DE METALES </option>
-				<option>FAB. DE PROD. METÁLICOS PARA USO ESTRUCTURAL </option>
-				<option>FAB. DE OTROS PROD. ELABORADOS DE METAL; ACT. DE TRABAJO DE METALES </option>
-				<option>FABRICACIÓN DE MAQUINARIA DE USO GENERAL </option>
-				<option>FABRICACIÓN DE MAQUINARIA DE USO ESPECIAL </option>
-				<option>FABRICACIÓN DE APARATOS DE USO DOMÉSTICO N.C.P. </option>
-				<option>FABRICACIÓN DE MAQUINARIA DE OFICINA, CONTABILIDAD E INFORMÁTICA </option>
-				<option>FAB. Y REPARACIÓN DE MOTORES, GENERADORES Y TRANSFORMADORES ELÉCTRICOS </option>
-				<option>FABRICACIÓN DE APARATOS DE DISTRIBUCIÓN Y CONTROL; SUS REPARACIONES </option>
-				<option>FABRICACIÓN DE HILOS Y CABLES AISLADOS </option>
-				<option>FABRICACIÓN DE ACUMULADORES DE PILAS Y BATERÍAS PRIMARIAS </option>
-				<option>FABRICACIÓN Y REPARACIÓN DE LÁMPARAS Y EQUIPO DE ILUMINACIÓN </option>
-				<option>FABRICACIÓN Y REPARACIÓN DE OTROS TIPOS DE EQUIPO ELÉCTRICO N.C.P. </option>
-				<option>FABRICACIÓN DE COMPONENTES ELECTRÓNICOS; SUS REPARACIONES </option>
-				<option>FAB. Y REPARACIÓN DE TRANSMISORES DE RADIO, TELEVISIÓN, TELEFONÍA </option>
-				<option>FAB. DE RECEPTORES DE RADIO, TELEVISIÓN, APARATOS DE AUDIO/VÍDEO </option>
-				<option>FAB. DE APARATOS E INSTRUMENTOS MÉDICOS Y PARA REALIZAR MEDICIONES </option>
-				<option>FAB. Y REPARACIÓN DE INSTRUMENTOS DE ÓPTICA Y EQUIPO FOTOGRÁFICO </option>
-				<option>FABRICACIÓN DE RELOJES </option>
-				<option>FABRICACIÓN DE VEHÍCULOS AUTOMOTORES </option>
-				<option>CONSTRUCCIÓN Y REPARACIÓN DE BUQUES Y OTRAS EMBARCACIONES </option>
-				<option>FAB. DE LOCOMOTORAS Y MATERIAL RODANTE PARA FERROCARRILES Y TRANVÍAS </option>
-				<option>FABRICACIÓN DE AERONAVES Y NAVES ESPACIALES; SUS REPARACIONES </option>
-				<option>FABRICACIÓN DE OTROS TIPOS DE EQUIPO DE TRANSPORTE N.C.P. </option>
-				<option>FABRICACIÓN DE MUEBLES </option>
-				<option>INDUSTRIAS MANUFACTURERAS N.C.P. </option>
-				<option>RECICLAMIENTO DE DESPERDICIOS Y DESECHOS </option>
-				<option>GENERACIÓN, CAPTACIÓN Y DISTRIBUCIÓN DE ENERGÍA ELÉCTRICA </option>
-				<option>FABRICACIÓN DE GAS; DISTRIBUCIÓN DE COMBUSTIBLES GASEOSOS POR TUBERÍAS </option>
-				<option>SUMINISTRO DE VAPOR Y AGUA CALIENTE </option>
-				<option>CAPTACIÓN, DEPURACIÓN Y DISTRIBUCIÓN DE AGUA </option>
-				<option>CONSTRUCCIÓN </option>
-				<option>VENTA DE VEHÍCULOS AUTOMOTORES </option>
-				<option>MANTENIMIENTO Y REPARACIÓN DE VEHÍCULOS AUTOMOTORES </option>
-				<option>VENTA DE PARTES, PIEZAS Y ACCESORIOS DE VEHÍCULOS AUTOMOTORES </option>
-				<option>VENTA, MANTENIMIENTO Y REPARACIÓN DE MOTOCICLETAS Y SUS PARTES </option>
-				<option>VENTA AL POR MENOR DE COMBUSTIBLE PARA AUTOMOTORES </option>
-				<option>VENTA AL POR MAYOR A CAMBIO DE UNA RETRIBUCIÓN O POR CONTRATA </option>
-				<option>VENTA AL POR MAYOR DE MATERIAS PRIMAS AGROPECUARIAS </option>
-				<option>VENTA AL POR MAYOR DE ENSERES DOMÉSTICOS </option>
-				<option>VENTA AL POR MAYOR DE PRODUCTOS INTERMEDIOS, DESECHOS NO AGROPECUARIOS </option>
-				<option>VENTA AL POR MAYOR DE MAQUINARIA, EQUIPO Y MATERIALES CONEXOS </option>
-				<option>VENTA AL POR MAYOR DE OTROS PRODUCTOS </option>
-				<option>COMERCIO AL POR MENOR NO ESPECIALIZADO EN ALMACENES </option>
-				<option>VENTA POR MENOR DE ALIMENTOS, BEBIDAS, TABACOS EN ALMC. ESPECIALIZADOS </option>
-				<option>COMERCIO AL POR MENOR DE OTROS PROD. NUEVOS EN ALMC. ESPECIALIZADOS </option>
-				<option>VENTA AL POR MENOR EN ALMACENES DE ARTÍCULOS USADOS </option>
-				<option>COMERCIO AL POR MENOR NO REALIZADO EN ALMACENES </option>
-				<option>REPARACIÓN DE EFECTOS PERSONALES Y ENSERES DOMÉSTICOS </option>
-				<option>HOTELES; CAMPAMENTOS Y OTROS TIPOS DE HOSPEDAJE TEMPORAL </option>
-				<option>RESTAURANTES, BARES Y CANTINAS </option>
-				<option>TRANSPORTE POR FERROCARRILES </option>
-				<option>OTROS TIPOS DE TRANSPORTE POR VÍA TERRESTRE </option>
-				<option>TRANSPORTE POR TUBERÍAS </option>
-				<option>TRANSPORTE MARÍTIMO Y DE CABOTAJE </option>
-				<option>TRANSPORTE POR VÍAS DE NAVEGACIÓN INTERIORES </option>
-				<option>TRANSPORTE POR VÍA AÉREA </option>
-				<option>ACT. DE TRANSPORTE COMPLEMENTARIAS Y AUXILIARES; AGENCIAS DE VIAJE </option>
-				<option>ACTIVIDADES POSTALES Y DE CORREO </option>
-				<option>TELECOMUNICACIONES </option>
-				<option>INTERMEDIACIÓN MONETARIA </option>
-				<option>OTROS TIPOS DE INTERMEDIACIÓN FINANCIERA </option>
-				<option>FINANCIACIÓN PLANES DE SEG. Y DE PENSIONES, EXCEPTO AFILIACIÓN OBLIG. </option>
-				<option>ACT. AUX. DE LA INTERMEDIACIÓN FINANCIERA, EXCEPTO PLANES DE SEGUROS </option>
-				<option>ACT. AUXILIARES DE FINANCIACIÓN DE PLANES DE SEGUROS Y DE PENSIONES </option>
-				<option>ACTIVIDADES INMOBILIARIAS REALIZADAS CON BIENES PROPIOS O ARRENDADOS </option>
-				<option>ACT. INMOBILIARIAS REALIZADAS A CAMBIO DE RETRIBUCIÓN O POR CONTRATA </option>
-				<option>ALQUILER EQUIPO DE TRANSPORTE </option>
-				<option>ALQUILER DE OTROS TIPOS DE MAQUINARIA Y EQUIPO </option>
-				<option>ALQUILER DE EFECTOS PERSONALES Y ENSERES DOMÉSTICOS N.C.P. </option>
-				<option>SERVICIOS INFORMÁTICOS </option>
-				<option>MANTENIMIENTO Y REPARACIÓN DE MAQUINARIA DE OFICINA </option>
-				<option>ACTIVIDADES DE INVESTIGACIONES Y DESARROLLO EXPERIMENTAL </option>
-				<option>ACTIVIDADES JURÍDICAS Y DE ASESORAMIENTO EMPRESARIAL EN GENERAL </option>
-				<option>ACTIVIDADES DE ARQUITECTURA E INGENIERÍA Y OTRAS ACTIVIDADES TÉCNICAS </option>
-				<option>PUBLICIDAD </option>
-				<option>ACT. EMPRESARIALES Y DE PROFESIONALES PRESTADAS A EMPRESAS N.C.P. </option>
-				<option>GOBIERNO CENTRAL Y ADMINISTRACIÓN PÚBLICA </option>
-				<option>ACTIVIDADES DE PLANES DE SEGURIDAD SOCIAL DE AFILIACIÓN OBLIGATORIA </option>
-				<option>ENSEÑANZA PREESCOLAR, PRIMARIA, SECUNDARIA Y SUPERIOR ; PROFESORES </option>
-				<option>ACTIVIDADES RELACIONADAS CON LA SALUD HUMANA </option>
-				<option>ACTIVIDADES VETERINARIAS </option>
-				<option>ACTIVIDADES DE SERVICIOS SOCIALES </option>
-				<option>ELIMINACIÓN DE DESPERDICIOS Y AGUAS RESIDUALES, SANEAMIENTO </option>
-				<option>ACT. DE ORGANIZACIONES EMPRESARIALES, PROFESIONALES Y DE EMPLEADORES </option>
-				<option>ACTIVIDADES DE SINDICATOS Y DE OTRAS ORGANIZACIONES </option>
-				<option>ACT. DE CINEMATOGRAFÍA, RADIO Y TV Y OTRAS ACT. DE ENTRETENIMIENTO </option>
-				<option>ACTIVIDADES DE AGENCIAS DE NOTICIAS Y SERVICIOS PERIODÍSTICOS </option>
-				<option>ACTIVIDADES DE BIBLIOTECAS, ARCHIVOS Y MUSEOS Y OTRAS ACT. CULTURALES </option>
-				<option>ACTIVIDADES DEPORTIVAS Y OTRAS ACTIVIDADES DE ESPARCIMIENTO </option>
-				<option>OTRAS ACTIVIDADES DE SERVICIOS </option>
-				<option>CONSEJO DE ADMINISTRACIÓN DE EDIFICIOS Y CONDOMINIOS </option>
-				<option>ORGANIZACIONES Y ÓRGANOS EXTRATERRITORIALES </option>
-			</select>				
+			<h4>Giro</h4>	    
+		    <asp:DropDownList ID="txtGiro" runat="server" CssClass="droplist">
+                    <asp:ListItem Value="1">Selecciona un Giro</asp:ListItem>
+                    <asp:ListItem Value="2">CULTIVOS EN GENERAL; CULTIVO DE PRODUCTOS DE MERCADO; HORTICULTURA</asp:ListItem>
+                    <asp:ListItem Value="3">CRÍA DE ANIMALES</asp:ListItem>
+                    <asp:ListItem Value="4">CULTIVO PROD. AGRÍCOLAS EN COMBINACIÓN CON CRÍA DE ANIMALES</asp:ListItem>
+                    <asp:ListItem Value="5">ACTIVIDADES DE SERVICIOS AGRÍCOLAS Y GANADEROS</asp:ListItem>
+                    <asp:ListItem Value="6">CAZA ORDINARIA Y MEDIANTE TRAMPAS, REPOBLACIÓN, ACT. SERVICIO CONEXAS</asp:ListItem>
+                    <asp:ListItem Value="7">SILVICULTURA, EXTRACCIÓN DE MADERA Y ACTIVIDADES DE SERVICIOS CONEXAS</asp:ListItem>
+                    <asp:ListItem Value="8">EXPLT. DE CRIADEROS DE PECES Y PROD. DEL MAR; SERVICIOS RELACIONADOS</asp:ListItem>
+                    <asp:ListItem Value="9">PESCA EXTRACTIVA: Y SERVICIOS RELACIONADOS</asp:ListItem>
+                    <asp:ListItem Value="10">EXTRACCIÓN, AGLOMERACIÓN DE CARBÓN DE PIEDRA, LIGNITO Y TURBA</asp:ListItem>
+                    <asp:ListItem Value="11">EXTRACCIÓN DE PETRÓLEO CRUDO Y GAS NATURAL; ACTIVIDADES RELACIONADAS</asp:ListItem>
+                    <asp:ListItem Value="12">EXTRACCIÓN DE MINERALES METALÍFEROS</asp:ListItem>
+                    <asp:ListItem Value="13">EXPLOTACIÓN DE MINAS Y CANTERAS</asp:ListItem>
+                    <asp:ListItem Value="14">PRODUCCIÓN, PROCESAMIENTO Y CONSERVACIÓN DE ALIMENTOS</asp:ListItem>
+                    <asp:ListItem Value="15">ELABORACIÓN DE PRODUCTOS LÁCTEOS</asp:ListItem>
+                    <asp:ListItem Value="16">ELAB. DE PROD. DE MOLINERÍA, ALMIDONES Y PROD. DERIVADOS DEL ALMIDÓN</asp:ListItem>
+                    <asp:ListItem Value="17">ELABORACIÓN DE OTROS PRODUCTOS ALIMENTICIOS</asp:ListItem>
+                    <asp:ListItem Value="18">ELABORACIÓN DE BEBIDAS</asp:ListItem>
+                    <asp:ListItem Value="19">ELABORACIÓN DE PRODUCTOS DEL TABACO</asp:ListItem>
+                    <asp:ListItem Value="20">HILANDERÍA, TEJEDURA Y ACABADO DE PRODUCTOS TEXTILES</asp:ListItem>
+                    <asp:ListItem Value="21">FABRICACIÓN DE OTROS PRODUCTOS TEXTILES</asp:ListItem>
+                    <asp:ListItem Value="22">FABRICACIÓN DE TEJIDOS Y ARTÍCULOS DE PUNTO Y GANCHILLO</asp:ListItem>
+                    <asp:ListItem Value="23">FABRICACIÓN DE PRENDAS DE VESTIR; EXCEPTO PRENDAS DE PIEL</asp:ListItem>
+                    <asp:ListItem Value="24">PROCESAMIENTO Y FABRICACIÓN DE ARTÍCULOS DE PIEL Y CUERO</asp:ListItem>
+                    <asp:ListItem Value="25">FABRICACIÓN DE CALZADO</asp:ListItem>
+                    <asp:ListItem Value="26">ASERRADO Y ACEPILLADURA DE MADERAS</asp:ListItem>
+                    <asp:ListItem Value="27">FAB. DE PRODUCTOS DE MADERA Y CORCHO,  PAJA Y DE MATERIALES TRENZABLES</asp:ListItem>
+                    <asp:ListItem Value="28">FABRICACIÓN DE PAPEL Y PRODUCTOS DEL PAPEL</asp:ListItem>
+                    <asp:ListItem Value="29">ACTIVIDADES DE EDICIÓN</asp:ListItem>
+                    <asp:ListItem Value="30">ACTIVIDADES DE IMPRESIÓN Y DE SERVICIOS CONEXOS</asp:ListItem>
+                    <asp:ListItem Value="31">FABRICACIÓN DE PRODUCTOS DE HORNOS COQUE Y DE REFINACIÓN DE PETRÓLEO</asp:ListItem>
+                    <asp:ListItem Value="32">ELABORACIÓN DE COMBUSTIBLE NUCLEAR</asp:ListItem>
+                    <asp:ListItem Value="33">FABRICACIÓN DE SUSTANCIAS QUÍMICAS BÁSICAS</asp:ListItem>
+                    <asp:ListItem Value="34">FABRICACIÓN DE OTROS PRODUCTOS QUÍMICOS</asp:ListItem>
+                    <asp:ListItem Value="35">FABRICACIÓN DE FIBRAS MANUFACTURADAS</asp:ListItem>
+                    <asp:ListItem Value="36">FABRICACIÓN DE PRODUCTOS DE CAUCHO</asp:ListItem>
+                    <asp:ListItem Value="37">FABRICACIÓN DE PRODUCTOS DE PLÁSTICO</asp:ListItem>
+                    <asp:ListItem Value="38">FABRICACIÓN DE VIDRIOS Y PRODUCTOS DE VIDRIO</asp:ListItem>
+                    <asp:ListItem Value="39">FABRICACIÓN DE PRODUCTOS MINERALES NO METÁLICOS N.C.P.</asp:ListItem>
+                    <asp:ListItem Value="40">INDUSTRIAS BÁSICAS DE HIERRO Y ACERO</asp:ListItem>
+                    <asp:ListItem Value="41">FAB. DE PRODUCTOS PRIMARIOS DE METALES PRECIOSOS Y METALES NO FERROSOS </asp:ListItem>
+                    <asp:ListItem Value="42">FUNDICIÓN DE METALES </asp:ListItem>
+                    <asp:ListItem Value="43">FAB. DE PROD. METÁLICOS PARA USO ESTRUCTURAL </asp:ListItem>
+                    <asp:ListItem Value="44">FAB. DE OTROS PROD. ELABORADOS DE METAL; ACT. DE TRABAJO DE METALES </asp:ListItem>
+                    <asp:ListItem Value="45">FABRICACIÓN DE MAQUINARIA DE USO GENERAL </asp:ListItem>
+                    <asp:ListItem Value="46">FABRICACIÓN DE MAQUINARIA DE USO ESPECIAL </asp:ListItem>
+                    <asp:ListItem Value="47">FABRICACIÓN DE APARATOS DE USO DOMÉSTICO N.C.P. </asp:ListItem>
+                    <asp:ListItem Value="48">FABRICACIÓN DE MAQUINARIA DE OFICINA, CONTABILIDAD E INFORMÁTICA </asp:ListItem>
+                    <asp:ListItem Value="49">FAB. Y REPARACIÓN DE MOTORES, GENERADORES Y TRANSFORMADORES ELÉCTRICOS </asp:ListItem>
+                    <asp:ListItem Value="50">FABRICACIÓN DE APARATOS DE DISTRIBUCIÓN Y CONTROL; SUS REPARACIONES </asp:ListItem>
+                    <asp:ListItem Value="51">FABRICACIÓN DE HILOS Y CABLES AISLADOS </asp:ListItem>
+                    <asp:ListItem Value="52">FABRICACIÓN DE ACUMULADORES DE PILAS Y BATERÍAS PRIMARIAS </asp:ListItem>
+                    <asp:ListItem Value="53">FABRICACIÓN Y REPARACIÓN DE LÁMPARAS Y EQUIPO DE ILUMINACIÓN </asp:ListItem>
+                    <asp:ListItem Value="54">FABRICACIÓN Y REPARACIÓN DE OTROS TIPOS DE EQUIPO ELÉCTRICO N.C.P. </asp:ListItem>
+                    <asp:ListItem Value="55">FABRICACIÓN DE COMPONENTES ELECTRÓNICOS; SUS REPARACIONES </asp:ListItem>
+                    <asp:ListItem Value="56">FAB. Y REPARACIÓN DE TRANSMISORES DE RADIO, TELEVISIÓN, TELEFONÍA </asp:ListItem>
+                    <asp:ListItem Value="57">FAB. DE RECEPTORES DE RADIO, TELEVISIÓN, APARATOS DE AUDIO/VÍDEO </asp:ListItem>
+                    <asp:ListItem Value="58">FAB. DE APARATOS E INSTRUMENTOS MÉDICOS Y PARA REALIZAR MEDICIONES </asp:ListItem>
+                    <asp:ListItem Value="59">FAB. Y REPARACIÓN DE INSTRUMENTOS DE ÓPTICA Y EQUIPO FOTOGRÁFICO </asp:ListItem>
+                    <asp:ListItem Value="60">FABRICACIÓN DE RELOJES </asp:ListItem>
+                    <asp:ListItem Value="61">FABRICACIÓN DE VEHÍCULOS AUTOMOTORES </asp:ListItem>
+                    <asp:ListItem Value="62">CONSTRUCCIÓN Y REPARACIÓN DE BUQUES Y OTRAS EMBARCACIONES </asp:ListItem>
+                    <asp:ListItem Value="63">FAB. DE LOCOMOTORAS Y MATERIAL RODANTE PARA FERROCARRILES Y TRANVÍAS </asp:ListItem>
+                    <asp:ListItem Value="64">FABRICACIÓN DE AERONAVES Y NAVES ESPACIALES; SUS REPARACIONES </asp:ListItem>
+                    <asp:ListItem Value="65">FABRICACIÓN DE OTROS TIPOS DE EQUIPO DE TRANSPORTE N.C.P. </asp:ListItem>
+                    <asp:ListItem Value="66">FABRICACIÓN DE MUEBLES </asp:ListItem>
+                    <asp:ListItem Value="67">INDUSTRIAS MANUFACTURERAS N.C.P. </asp:ListItem>
+                    <asp:ListItem Value="68">RECICLAMIENTO DE DESPERDICIOS Y DESECHOS </asp:ListItem>
+                    <asp:ListItem Value="69">GENERACIÓN, CAPTACIÓN Y DISTRIBUCIÓN DE ENERGÍA ELÉCTRICA </asp:ListItem>
+                    <asp:ListItem Value="70">FABRICACIÓN DE GAS; DISTRIBUCIÓN DE COMBUSTIBLES GASEOSOS POR TUBERÍAS </asp:ListItem>
+                    <asp:ListItem Value="71">SUMINISTRO DE VAPOR Y AGUA CALIENTE </asp:ListItem>
+                    <asp:ListItem Value="72">CAPTACIÓN, DEPURACIÓN Y DISTRIBUCIÓN DE AGUA </asp:ListItem>
+                    <asp:ListItem Value="73">CONSTRUCCIÓN </asp:ListItem>
+                    <asp:ListItem Value="74">VENTA DE VEHÍCULOS AUTOMOTORES </asp:ListItem>
+                    <asp:ListItem Value="75">MANTENIMIENTO Y REPARACIÓN DE VEHÍCULOS AUTOMOTORES </asp:ListItem>
+                    <asp:ListItem Value="76">VENTA DE PARTES, PIEZAS Y ACCESORIOS DE VEHÍCULOS AUTOMOTORES </asp:ListItem>
+                    <asp:ListItem Value="77">VENTA, MANTENIMIENTO Y REPARACIÓN DE MOTOCICLETAS Y SUS PARTES </asp:ListItem>
+                    <asp:ListItem Value="78">VENTA AL POR MENOR DE COMBUSTIBLE PARA AUTOMOTORES </asp:ListItem>
+                    <asp:ListItem Value="79">VENTA AL POR MAYOR A CAMBIO DE UNA RETRIBUCIÓN O POR CONTRATA </asp:ListItem>
+                    <asp:ListItem Value="80">VENTA AL POR MAYOR DE MATERIAS PRIMAS AGROPECUARIAS </asp:ListItem>
+                    <asp:ListItem Value="81">VENTA AL POR MAYOR DE ENSERES DOMÉSTICOS </asp:ListItem>
+                    <asp:ListItem Value="82">VENTA AL POR MAYOR DE PRODUCTOS INTERMEDIOS, DESECHOS NO AGROPECUARIOS </asp:ListItem>
+                    <asp:ListItem Value="83">VENTA AL POR MAYOR DE MAQUINARIA, EQUIPO Y MATERIALES CONEXOS </asp:ListItem>
+                    <asp:ListItem Value="84">VENTA AL POR MAYOR DE OTROS PRODUCTOS </asp:ListItem>
+                    <asp:ListItem Value="85">COMERCIO AL POR MENOR NO ESPECIALIZADO EN ALMACENES </asp:ListItem>
+                    <asp:ListItem Value="86">VENTA POR MENOR DE ALIMENTOS, BEBIDAS, TABACOS EN ALMC. ESPECIALIZADOS </asp:ListItem>
+                    <asp:ListItem Value="87">COMERCIO AL POR MENOR DE OTROS PROD. NUEVOS EN ALMC. ESPECIALIZADOS </asp:ListItem>
+                    <asp:ListItem Value="88">VENTA AL POR MENOR EN ALMACENES DE ARTÍCULOS USADOS </asp:ListItem>
+                    <asp:ListItem Value="89">COMERCIO AL POR MENOR NO REALIZADO EN ALMACENES </asp:ListItem>
+                    <asp:ListItem Value="90">REPARACIÓN DE EFECTOS PERSONALES Y ENSERES DOMÉSTICOS </asp:ListItem>
+                    <asp:ListItem Value="91">HOTELES; CAMPAMENTOS Y OTROS TIPOS DE HOSPEDAJE TEMPORAL </asp:ListItem>
+                    <asp:ListItem Value="92">RESTAURANTES, BARES Y CANTINAS </asp:ListItem>
+                    <asp:ListItem Value="93">TRANSPORTE POR FERROCARRILES </asp:ListItem>
+                    <asp:ListItem Value="94">OTROS TIPOS DE TRANSPORTE POR VÍA TERRESTRE </asp:ListItem>
+                    <asp:ListItem Value="95">TRANSPORTE POR TUBERÍAS </asp:ListItem>
+                    <asp:ListItem Value="96">TRANSPORTE MARÍTIMO Y DE CABOTAJE </asp:ListItem>
+                    <asp:ListItem Value="97">TRANSPORTE POR VÍAS DE NAVEGACIÓN INTERIORES </asp:ListItem>
+                    <asp:ListItem Value="98">TRANSPORTE POR VÍA AÉREA </asp:ListItem>
+                    <asp:ListItem Value="99">ACT. DE TRANSPORTE COMPLEMENTARIAS Y AUXILIARES; AGENCIAS DE VIAJE </asp:ListItem>
+                    <asp:ListItem Value="100">ACTIVIDADES POSTALES Y DE CORREO </asp:ListItem>
+                    <asp:ListItem Value="101">TELECOMUNICACIONES </asp:ListItem>
+                    <asp:ListItem Value="102">INTERMEDIACIÓN MONETARIA </asp:ListItem>
+                    <asp:ListItem Value="103">OTROS TIPOS DE INTERMEDIACIÓN FINANCIERA </asp:ListItem>
+                    <asp:ListItem Value="104">FINANCIACIÓN PLANES DE SEG. Y DE PENSIONES, EXCEPTO AFILIACIÓN OBLIG. </asp:ListItem>
+                    <asp:ListItem Value="105">ACT. AUX. DE LA INTERMEDIACIÓN FINANCIERA, EXCEPTO PLANES DE SEGUROS </asp:ListItem>
+                    <asp:ListItem Value="106">ACT. AUXILIARES DE FINANCIACIÓN DE PLANES DE SEGUROS Y DE PENSIONES </asp:ListItem>
+                    <asp:ListItem Value="107">ACTIVIDADES INMOBILIARIAS REALIZADAS CON BIENES PROPIOS O ARRENDADOS </asp:ListItem>
+                    <asp:ListItem Value="108">ACT. INMOBILIARIAS REALIZADAS A CAMBIO DE RETRIBUCIÓN O POR CONTRATA </asp:ListItem>
+                    <asp:ListItem Value="109">ALQUILER EQUIPO DE TRANSPORTE </asp:ListItem>
+                    <asp:ListItem Value="110">ALQUILER DE OTROS TIPOS DE MAQUINARIA Y EQUIPO </asp:ListItem>
+                    <asp:ListItem Value="111">ALQUILER DE EFECTOS PERSONALES Y ENSERES DOMÉSTICOS N.C.P. </asp:ListItem>
+                    <asp:ListItem Value="112">SERVICIOS INFORMÁTICOS </asp:ListItem>
+                    <asp:ListItem Value="113">MANTENIMIENTO Y REPARACIÓN DE MAQUINARIA DE OFICINA </asp:ListItem>
+                    <asp:ListItem Value="114">ACTIVIDADES DE INVESTIGACIONES Y DESARROLLO EXPERIMENTAL </asp:ListItem>
+                    <asp:ListItem Value="115">ACTIVIDADES JURÍDICAS Y DE ASESORAMIENTO EMPRESARIAL EN GENERAL </asp:ListItem>
+                    <asp:ListItem Value="116">ACTIVIDADES DE ARQUITECTURA E INGENIERÍA Y OTRAS ACTIVIDADES TÉCNICAS </asp:ListItem>
+                    <asp:ListItem Value="117">PUBLICIDAD </asp:ListItem>
+                    <asp:ListItem Value="118">ACT. EMPRESARIALES Y DE PROFESIONALES PRESTADAS A EMPRESAS N.C.P. </asp:ListItem>
+                    <asp:ListItem Value="119">GOBIERNO CENTRAL Y ADMINISTRACIÓN PÚBLICA </asp:ListItem>
+                    <asp:ListItem Value="120">ACTIVIDADES DE PLANES DE SEGURIDAD SOCIAL DE AFILIACIÓN OBLIGATORIA </asp:ListItem>
+                    <asp:ListItem Value="121">ENSEÑANZA PREESCOLAR, PRIMARIA, SECUNDARIA Y SUPERIOR ; PROFESORES </asp:ListItem>
+                    <asp:ListItem Value="122">ACTIVIDADES RELACIONADAS CON LA SALUD HUMANA </asp:ListItem>
+                    <asp:ListItem Value="123">ACTIVIDADES VETERINARIAS </asp:ListItem>
+                    <asp:ListItem Value="124">ACTIVIDADES DE SERVICIOS SOCIALES </asp:ListItem>
+                    <asp:ListItem Value="125">ELIMINACIÓN DE DESPERDICIOS Y AGUAS RESIDUALES, SANEAMIENTO </asp:ListItem>
+                    <asp:ListItem Value="126">ACT. DE ORGANIZACIONES EMPRESARIALES, PROFESIONALES Y DE EMPLEADORES </asp:ListItem>
+                    <asp:ListItem Value="127">ACTIVIDADES DE SINDICATOS Y DE OTRAS ORGANIZACIONES </asp:ListItem>
+                    <asp:ListItem Value="128">ACT. DE CINEMATOGRAFÍA, RADIO Y TV Y OTRAS ACT. DE ENTRETENIMIENTO </asp:ListItem>
+                    <asp:ListItem Value="129">ACTIVIDADES DE AGENCIAS DE NOTICIAS Y SERVICIOS PERIODÍSTICOS </asp:ListItem>
+                    <asp:ListItem Value="130">ACTIVIDADES DE BIBLIOTECAS, ARCHIVOS Y MUSEOS Y OTRAS ACT. CULTURALES </asp:ListItem>
+                    <asp:ListItem Value="131">ACTIVIDADES DEPORTIVAS Y OTRAS ACTIVIDADES DE ESPARCIMIENTO </asp:ListItem>
+                    <asp:ListItem Value="132">OTRAS ACTIVIDADES DE SERVICIOS </asp:ListItem>
+                    <asp:ListItem Value="133">CONSEJO DE ADMINISTRACIÓN DE EDIFICIOS Y CONDOMINIOS </asp:ListItem>
+                    <asp:ListItem Value="134">ORGANIZACIONES Y ÓRGANOS EXTRATERRITORIALES </asp:ListItem>
+            </asp:DropDownList>			
 			</div>
 			<div class="Casilla2-1">
 			<h4>Dirección</h4>
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Dirección">
+			<asp:TextBox ID="TextBox3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 				<h4>Ciudad</h4>					
-				<select class="droplist">
-					<option value="">Seleccione una ciudad</option>
-					<option>Metropolitana de Santiago</option>
-					<option>Biobío</option>
-					<option>Valparaíso</option>
-					<option>Coquimbo</option>
-					<option>Antofagasta</option>
-					<option>Araucanía</option>
-					<option>O'Higgins</option>
-					<option>Tarapacá</option>
-					<option>Maule</option>
-					<option>Arica y Parinacota</option>
-					<option>Los Lagos</option>
-					<option>Biobío</option>
-					<option>Biobío</option>
-					<option>Antofagasta</option>
-					<option>Atacama</option>
-					<option>Los Lagos</option>
-					<option>Valparaíso</option>
-					<option>Los Ríos</option>
-					<option>Magallanes</option>
-					<option>Valparaíso</option>
-					<option>Maule</option>
-					<option>Coquimbo</option>
-					<option>Maule</option>
-					<option>Valparaíso</option>
-					<option>Metropolitana de Santiago</option>
-					<option>Valparaíso</option>
-				</select>
+				<asp:DropDownList ID="txtNombreCiudad" runat="server" CssClass="droplist">
+                    <asp:ListItem Value="1">Seleccione una ciudad</asp:ListItem>
+                    <asp:ListItem Value="2">Metropolitana de Santiago</asp:ListItem>
+                    <asp:ListItem Value="3">Biobío</asp:ListItem>
+                    <asp:ListItem Value="4">Valparaíso</asp:ListItem>
+                    <asp:ListItem Value="5">Coquimbo</asp:ListItem>
+                    <asp:ListItem Value="6">Antofagasta</asp:ListItem>
+                    <asp:ListItem Value="7">Araucanía</asp:ListItem>
+                    <asp:ListItem Value="8">O'Higgins</asp:ListItem>
+                    <asp:ListItem Value="9">Tarapacá</asp:ListItem>
+                    <asp:ListItem Value="10">Maule</asp:ListItem>
+                    <asp:ListItem Value="11">Arica y Parinacota</asp:ListItem>
+                    <asp:ListItem Value="12">Los Lagos</asp:ListItem>
+                    <asp:ListItem Value="13">Biobío</asp:ListItem>
+                    <asp:ListItem Value="14">Biobío</asp:ListItem>
+                    <asp:ListItem Value="15">Antofagasta</asp:ListItem>
+                    <asp:ListItem Value="16">Atacama</asp:ListItem>
+                    <asp:ListItem Value="17">Los Lagos</asp:ListItem>
+                    <asp:ListItem Value="18">Valparaíso</asp:ListItem>
+                    <asp:ListItem Value="19">Los Ríos</asp:ListItem>
+                    <asp:ListItem Value="20">Magallanes</asp:ListItem>
+                    <asp:ListItem Value="21">Valparaíso</asp:ListItem>
+                    <asp:ListItem Value="22">Maule</asp:ListItem>
+                    <asp:ListItem Value="23">Coquimbo</asp:ListItem>
+                    <asp:ListItem Value="24">Maule</asp:ListItem>
+                    <asp:ListItem Value="25">Valparaíso</asp:ListItem>
+                    <asp:ListItem Value="26">Metropolitana de Santiago</asp:ListItem>
+                    <asp:ListItem Value="27">Valparaíso</asp:ListItem>
+                    <asp:ListItem Value="Santiago">Santiago</asp:ListItem>
+                 </asp:DropDownList>
 			</div>
 			<div class="Casilla2-1">
 				<h4>Comuna</h4>					
-				<select class="droplist">
-					<option value="">Seleccione una comuna</option>
-					<option>Cerrillos</option>
-					<option>Cerro Navia</option>
-					<option>Conchalí</option>
-					<option>El Bosque</option>
-					<option>Estación Central</option>
-					<option>Huechuraba</option>
-					<option>Independencia</option>
-					<option>La Cisterna</option>
-					<option>La Florida</option>
-					<option>La Granja</option>
-					<option>La Pintana</option>
-					<option>La Reina</option>
-					<option>Las Condes</option>
-					<option>Lo Barnechea</option>
-					<option>Lo Espejo</option>
-					<option>Lo Prado</option>
-					<option>Macul</option>
-					<option>Maipú</option>
-					<option>Ñuñoa</option>
-					<option>Padre Hurtado</option>
-					<option>Pedro Aguirre Cerda</option>
-					<option>Peñalolén</option>
-					<option>Providencia</option>
-					<option>Pudahuel</option>
-					<option>Puente Alto</option>
-					<option>Quilicura</option>
-					<option>Quinta Normal</option>
-					<option>Recoleta</option>
-					<option>Renca</option>
-					<option>San Bernardo</option>
-					<option>San Joaquín</option>
-					<option>San Miguel</option>
-					<option>San Ramón</option>
-					<option>Santiago</option>
-					<option>Vitacura</option>
-					<option>--Otra--</option>
-				</select>
+				<asp:DropDownList ID="txtComuna" runat="server" CssClass="droplist">
+				    <asp:ListItem Value="1">Seleccione una comuna</asp:ListItem>
+                    <asp:ListItem Value="2">Cerrillos</asp:ListItem>
+                    <asp:ListItem Value="3">Cerro Navia</asp:ListItem>
+                    <asp:ListItem Value="4">Conchalí</asp:ListItem>
+                    <asp:ListItem Value="5">El Bosque</asp:ListItem>
+                    <asp:ListItem Value="6">Estación Central</asp:ListItem>
+                    <asp:ListItem Value="7">Huechuraba</asp:ListItem>
+                    <asp:ListItem Value="8">Independencia</asp:ListItem>
+                    <asp:ListItem Value="9">La Cisterna</asp:ListItem>
+                    <asp:ListItem Value="10">La Florida</asp:ListItem>
+                    <asp:ListItem Value="11">La Granja</asp:ListItem>
+                    <asp:ListItem Value="12">La Pintana</asp:ListItem>
+                    <asp:ListItem Value="13">La Reina</asp:ListItem>
+                    <asp:ListItem Value="14">Las Condes</asp:ListItem>
+                    <asp:ListItem Value="15">Lo Barnechea</asp:ListItem>
+                    <asp:ListItem Value="16">Lo Espejo</asp:ListItem>
+                    <asp:ListItem Value="17">Lo Prado</asp:ListItem>
+                    <asp:ListItem Value="18">Macul</asp:ListItem>
+                    <asp:ListItem Value="19">Maipú</asp:ListItem>
+                    <asp:ListItem Value="20">Ñuñoa</asp:ListItem>
+                    <asp:ListItem Value="21">Padre Hurtado</asp:ListItem>
+                    <asp:ListItem Value="22">Pedro Aguirre Cerda</asp:ListItem>
+                    <asp:ListItem Value="23">Peñalolén</asp:ListItem>
+                    <asp:ListItem Value="24">Providencia</asp:ListItem>
+                    <asp:ListItem Value="25">Pudahuel</asp:ListItem>
+                    <asp:ListItem Value="26">Puente Alto</asp:ListItem>
+                    <asp:ListItem Value="27">Quilicura</asp:ListItem>
+                    <asp:ListItem Value="28">Quinta Normal</asp:ListItem>
+                    <asp:ListItem Value="29">Recoleta</asp:ListItem>
+                    <asp:ListItem Value="30">Renca</asp:ListItem>
+                    <asp:ListItem Value="31">San Bernardo</asp:ListItem>
+                    <asp:ListItem Value="32">San Joaquín</asp:ListItem>
+                    <asp:ListItem Value="33">San Miguel</asp:ListItem>
+                    <asp:ListItem Value="34">San Ramón</asp:ListItem>
+                    <asp:ListItem Value="35">Santiago</asp:ListItem>
+                    <asp:ListItem Value="36">Vitacura</asp:ListItem>
+                    <asp:ListItem Value="37">--Otra--</asp:ListItem>
+			</asp:DropDownList>	
 			</div>
 			<div class="Casilla2-1">
 			<h4>Correo Electrónico</h4>	
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Correo Electrónico">
+			<asp:TextBox ID="TextBox4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Teléfono</h4>	
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Teléfono">
+			<asp:TextBox ID="TextBox5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 	</div>
 
@@ -263,18 +264,18 @@
 	<div class="ModificarDatos2">
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nombre Usuario</h4>	
-		<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Correo Electrónico" >
+		<asp:TextBox ID="TextBox6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nueva Contraseña</h4>	
-		<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Teléfono">
+		<asp:TextBox ID="TextBox7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Confirmar Contraseña</h4>	
-		<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Teléfono">
+		<asp:TextBox ID="TextBox8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">	
-		<input type="submit" name="" class="SubmitTotal" placeholder="Ingrese Teléfono" value="Modificar">
+	    <asp:Button ID="Button1" runat="server" Text="Button" CssClass="SubmitTotal" OnClick="Button1_Click" />
 		</div>
 	</div>
 		

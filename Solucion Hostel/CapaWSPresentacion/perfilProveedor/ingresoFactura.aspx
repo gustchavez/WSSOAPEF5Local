@@ -26,22 +26,22 @@
 		<h2>Ingreso de productos</h2>
 		<div class="Casilla2-2" >
 		<h4 style="color: red;">Cod.Producto</h4>	
-		<input type="text" name="" class="CasillaPersona2"  >
+		 <asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaPersona2"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Detalle</h4>	
-		<input type="text" name="" class="CasillaPersona" placeholder=" " width="40">
+		 <asp:TextBox ID="TextBox2" runat="server" CssClass="CasillaPersona2"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Precio</h4>	
-		<input type="number" name="" class="CasillaPersona2" placeholder=" ">
+		 <asp:TextBox ID="TextBox3" runat="server" CssClass="CasillaPersona2"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Cantidad</h4>	
-		<input type="number" name="" class="CasillaPersona2" placeholder=" ">
+		 <asp:TextBox ID="TextBox4" runat="server" CssClass="CasillaPersona2"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">	
-		<input type="submit" name="" class="SubmitTotal" placeholder="Ingrese Teléfono" value="Agregar Produto">
+	 <asp:Button ID="Button1" runat="server" Text="Agregar Producto" CssClass="SubmitTotal" OnClick="Button1_Click" /> 
 		</div>
 	</div>
 	
@@ -90,14 +90,9 @@
 
 		</table>
 		<div class="Casilla2-1">	
-		<input type="submit" name="" class="SubmitTotal2" placeholder="Ingrese Teléfono" value="Generar Factura">
+		<asp:Button ID="Button2" runat="server" Text="Enviar Factura" CssClass="SubmitTotal" OnClick="Button2_Click" />
 		</div>
 	</div>	
-
-	
-
-	
-		
 </div>
 
 </asp:Content>

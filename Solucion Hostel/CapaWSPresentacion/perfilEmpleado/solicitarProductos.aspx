@@ -44,10 +44,10 @@
 		</select></div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Cantidad</h4>	
-		<input type="number" name="" class="CasillaPersona2" placeholder=" ">
+	    <asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaPersona2"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">	
-		<input type="submit" name="" class="SubmitTotal" placeholder="Ingrese Teléfono" value="Agregar Produto">
+	    <asp:Button ID="Button1" runat="server" Text="Button" CssClass="SubmitTotal" OnClick="Button1_Click" />
 		</div>
 	</div>
 	
@@ -72,7 +72,7 @@
 
 		</table>
 		<div class="Casilla2-1">	
-		<input type="submit" name="" class="SubmitTotal2" placeholder="Ingrese Teléfono" value="Hacer solicitud a proveedores">
+		 <asp:Button ID="Button2" runat="server" Text="Button" CssClass="SubmitTotal" OnClick="Button2_Click" />
 		</div>
 	</div>		
 </div>

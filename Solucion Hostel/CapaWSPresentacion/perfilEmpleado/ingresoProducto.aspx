@@ -33,18 +33,18 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Cod. Producto</h4>	
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Nombre">
+			<asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Detalle Producto</h4>	
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Nombre">
+			<asp:TextBox ID="TextBox2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Precio Producto</h4>
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Dirección">
+			<asp:TextBox ID="TextBox3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">	
-			<input type="submit" name="" class="SubmitTotal" placeholder=" " value="Agregar Producto">
+		    <asp:Button ID="Button1" runat="server" Text="Agregar Producto" CssClass="SubmitTotal" OnClick="Button1_Click" />
 			</div>
 			
 	</div>
@@ -52,35 +52,35 @@
 	<div class="ModificarDatos">
 			<h2>Modificar producto de proveedor</h2><br>	
 			<div class="Casilla2-1">
-			<h4>Nombre Empresa</h4>				
-			<select class="droplist" required>
-				<option value="" >Selecciona una Empresa</option>
-				<option>Empresa 1</option>
-				<option>Empresa 2</option>
-				<option>Empresa 3</option>
-				<option>Empresa 4</optio>
-			</select>			
+			<h4>Nombre Empresa</h4>		
+                <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:ListItem Value="1">Seleccione una comuna</asp:ListItem>
+                    <asp:ListItem Value="2">Empresa 1</asp:ListItem>
+                    <asp:ListItem Value="3">Empresa 2</asp:ListItem>
+                    <asp:ListItem Value="4">Empresa 3</asp:ListItem>
+                    <asp:ListItem Value="5">Empresa 4</asp:ListItem>
+                </asp:DropDownList>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Cod. Producto</h4>	
-			<select class="droplist" required>
-				<option value="" >Selecciona un codigo</option>
-				<option>Cod 1</option>
-				<option>Cod 2</option>
-				<option>Cod 3</option>
-				<option>Cod 4</optio>
-			</select>	
+                <asp:DropDownList ID="DropDownList2" runat="server">
+                    <asp:ListItem Value="1">Seleccione una comuna</asp:ListItem>
+                    <asp:ListItem Value="2">Cod 1</asp:ListItem>
+                    <asp:ListItem Value="3">Cod 2</asp:ListItem>
+                    <asp:ListItem Value="4">Cod 3</asp:ListItem>
+                    <asp:ListItem Value="5">Cod 4</asp:ListItem>
+                </asp:DropDownList>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Detalle Producto</h4>	
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Nombre">
+			<asp:TextBox ID="TextBox4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Precio Producto</h4>
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Dirección">
+			<asp:TextBox ID="TextBox5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">	
-			<input type="submit" name="" class="SubmitTotal" placeholder=" " value="Modificar Producto">
+			<asp:Button ID="Button2" runat="server" Text="Modificar Producto" CssClass="SubmitTotal" OnClick="Button2_Click" />
 			</div>
 			
 	</div>

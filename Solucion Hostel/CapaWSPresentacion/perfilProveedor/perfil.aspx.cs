@@ -13,5 +13,10 @@ namespace CapaWSPresentacion.perfilProveedor
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
