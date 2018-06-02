@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilProveedor/MasterProveedor.Master" AutoEventWireup="true" CodeBehind="Pedidos.aspx.cs" Inherits="CapaWSPresentacion.perfilProveedor.Pedidos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    	<form id="form1" runat="server">
+
     	<div class="columna1">
 		<div class="perfilCliente">		
 			<div class="datosEmpresa" > <div class="imagen-logo-empresa"></div> </div>
@@ -47,8 +49,16 @@
 
 		</table>
 		
+	            <br />
+                <asp:GridView ID="gwSolicitudes" runat="server">
+                </asp:GridView>
+		
 	</div>
 	<!--Fin COLUMNA2-->
+
+
+
+        </form>
 
 
 

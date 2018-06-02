@@ -132,17 +132,6 @@
     <Content Include="PaginaComercial\index.html" />
     <Content Include="PaginaComercial\muse_manifest.xml" />
     <Content Include="PaginaComercial\perfilIngreso.aspx" />
-    <Content Include="PaginaComercial\scripts\jquery-1.8.3.min.js" />
-    <Content Include="PaginaComercial\scripts\jquery.museoverlay.js" />
-    <Content Include="PaginaComercial\scripts\jquery.musepolyfill.bgsize.js" />
-    <Content Include="PaginaComercial\scripts\jquery.watch.js" />
-    <Content Include="PaginaComercial\scripts\museconfig.js" />
-    <Content Include="PaginaComercial\scripts\museutils.js" />
-    <Content Include="PaginaComercial\scripts\musewpslideshow.js" />
-    <Content Include="PaginaComercial\scripts\require.js" />
-    <Content Include="PaginaComercial\scripts\touchswipe.js" />
-    <Content Include="PaginaComercial\scripts\webpro.js" />
-    <Content Include="PaginaComercial\scripts\whatinput.js" />
     <Content Include="perfilCliente\detalleSolicitud.aspx" />
     <Content Include="perfilCliente\facturaCliente.aspx" />
     <Content Include="perfilCliente\finSolicitud.aspx" />
@@ -179,7 +168,6 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenCompraCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenPedidoCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenReservaCompleta.datasource" />
-    <Content Include="scripts\condiciones.js" />
     <Content Include="scripts\detalleCliente.css" />
     <Content Include="scripts\empresaEmpleado.css" />
     <Content Include="scripts\facturaCliente.css" />
@@ -216,10 +204,8 @@
     <Content Include="perfilEmpleado\MasterEmpleado.Master" />
     <Content Include="perfilCliente\MasteCliente.Master" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioProveedores.datasource" />
-    <Content Include="PaginaComercial\scripts\form-u1358.php" />
-    <Content Include="PaginaComercial\scripts\form_check.php" />
-    <Content Include="PaginaComercial\scripts\form_process.php" />
-    <Content Include="PaginaComercial\scripts\form_throttle.php" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenesCompraCompleta.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenesPedidoCompleta.datasource" />
     <None Include="Service References\WSSoap\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -511,6 +497,7 @@
     <Folder Include="PaginaComercial\assets\" />
     <Folder Include="PaginaComercial\css\" />
     <Folder Include="PaginaComercial\images\" />
+    <Folder Include="PaginaComercial\scripts\" />
     <Folder Include="perfilAdministrador\" />
   </ItemGroup>
   <PropertyGroup>

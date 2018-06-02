@@ -231,8 +231,7 @@
 
 
 
-</div>
-  
+</div>  
 
 <script src="/scripts/condiciones.js"></script>	
    

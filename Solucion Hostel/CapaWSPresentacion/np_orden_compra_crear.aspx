@@ -12,7 +12,7 @@
                 </tr>
                 <tr>
                     <td><asp:TextBox ID="txtNumeroOrden" runat="server"></asp:TextBox></td>
-                    <td class="auto-style1"><asp:TextBox ID="txtMonto" runat="server" TextMode="Number"></asp:TextBox></td>
+                    <td><asp:TextBox ID="txtMonto" runat="server" TextMode="Number"></asp:TextBox></td>
                     <td><asp:TextBox ID="txtRutProveedor" runat="server"></asp:TextBox></td>
                 </tr>
             </table>
