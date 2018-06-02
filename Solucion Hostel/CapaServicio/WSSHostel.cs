@@ -45,12 +45,20 @@ namespace CapaServicio
             return entrada;
         }
 
+        //CRUD PerfilUsuarioProveedor - INI
         public ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorCrear(ContenedorPerfilUsuarioProveedor entrada)
         {
             CRUDPerfilUsuarioProveedor x = new CRUDPerfilUsuarioProveedor();
             x.LlamarSPCrear(entrada);
             return entrada;
         }
+
+        public ContenedorPerfilUsuarioProveedores PerfilUsuarioProveedorRescatar(string token)
+        {
+            CRUDPerfilUsuarioProveedor x = new CRUDPerfilUsuarioProveedor();
+            return x.LlamarSPRescatar(token);
+        }
+        //CRUD PerfilUsuarioProveedor - FIN
 
         //CRUD Producto - INI
         public ContenedorProducto ProductoCrear(ContenedorProducto entrada)

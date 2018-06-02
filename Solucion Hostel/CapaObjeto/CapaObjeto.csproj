@@ -57,6 +57,7 @@
     <Compile Include="ContenedorOrdenPedidoCompleta.cs" />
     <Compile Include="ContenedorPerfilUsuarioCliente.cs" />
     <Compile Include="ContenedorPerfilUsuarioProveedor.cs" />
+    <Compile Include="ContenedorPerfilUsuarioProveedores.cs" />
     <Compile Include="ContenedorProveedores.cs" />
     <Compile Include="ContenedorProvision.cs" />
     <Compile Include="ContenedorProvisiones.cs" />

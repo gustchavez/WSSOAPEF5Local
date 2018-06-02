@@ -44,7 +44,7 @@
 			<asp:TextBox ID="TextBox3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">	
-		    <asp:Button ID="Button1" runat="server" Text="Agregar Producto" CssClass="SubmitTotal" OnClick="Button1_Click" />
+		    <asp:Button ID="btnAgregar" runat="server" Text="Agregar Producto" CssClass="SubmitTotal" />
 			</div>
 			
 	</div>
@@ -53,7 +53,7 @@
 			<h2>Modificar producto de proveedor</h2><br>	
 			<div class="Casilla2-1">
 			<h4>Nombre Empresa</h4>		
-                <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:DropDownList ID="txtProveedorModificar" runat="server" CssClass="droplist">
                     <asp:ListItem Value="1">Seleccione una comuna</asp:ListItem>
                     <asp:ListItem Value="2">Empresa 1</asp:ListItem>
                     <asp:ListItem Value="3">Empresa 2</asp:ListItem>
@@ -63,7 +63,7 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Cod. Producto</h4>	
-                <asp:DropDownList ID="DropDownList2" runat="server">
+                <asp:DropDownList ID="txtProductoModificar" runat="server" CssClass="droplist">
                     <asp:ListItem Value="1">Seleccione una comuna</asp:ListItem>
                     <asp:ListItem Value="2">Cod 1</asp:ListItem>
                     <asp:ListItem Value="3">Cod 2</asp:ListItem>
@@ -80,7 +80,7 @@
 			<asp:TextBox ID="TextBox5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">	
-			<asp:Button ID="Button2" runat="server" Text="Modificar Producto" CssClass="SubmitTotal" OnClick="Button2_Click" />
+			<asp:Button ID="btnModificar" runat="server" Text="Modificar Producto" CssClass="SubmitTotal" />
 			</div>
 			
 	</div>

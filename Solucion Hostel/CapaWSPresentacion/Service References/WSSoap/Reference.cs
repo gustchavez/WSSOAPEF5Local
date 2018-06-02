@@ -33,6 +33,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrearResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioProveedor> PerfilUsuarioProveedorCrearAsync(CapaObjeto.ContenedorPerfilUsuarioProveedor entrada);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatarResponse")]
+        CapaObjeto.ContenedorPerfilUsuarioProveedores PerfilUsuarioProveedorRescatar(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioProveedores> PerfilUsuarioProveedorRescatarAsync(string token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProductoCrear", ReplyAction="http://tempuri.org/IWSSHostel/ProductoCrearResponse")]
         CapaObjeto.ContenedorProducto ProductoCrear(CapaObjeto.ContenedorProducto entrada);
         
@@ -173,6 +179,8 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
@@ -234,6 +242,8 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
@@ -295,6 +305,8 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
@@ -356,6 +368,8 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
@@ -417,6 +431,8 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
@@ -478,6 +494,8 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
@@ -539,6 +557,8 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
@@ -606,6 +626,8 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorPerfilUsuarioProveedores))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.PerfilUsuarioProveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProducto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Producto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProductos))]
@@ -745,6 +767,14 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioProveedor> PerfilUsuarioProveedorCrearAsync(CapaObjeto.ContenedorPerfilUsuarioProveedor entrada) {
             return base.Channel.PerfilUsuarioProveedorCrearAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorPerfilUsuarioProveedores PerfilUsuarioProveedorRescatar(string token) {
+            return base.Channel.PerfilUsuarioProveedorRescatar(token);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioProveedores> PerfilUsuarioProveedorRescatarAsync(string token) {
+            return base.Channel.PerfilUsuarioProveedorRescatarAsync(token);
         }
         
         public CapaObjeto.ContenedorProducto ProductoCrear(CapaObjeto.ContenedorProducto entrada) {

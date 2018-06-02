@@ -27,9 +27,14 @@ namespace CapaServicio
         [OperationContract]
         ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(ContenedorPerfilUsuarioCliente entrada);
 
+        //Inicio PerfilUsuarioProveedor
         [OperationContract]
         ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorCrear(ContenedorPerfilUsuarioProveedor entrada);
-        
+
+        [OperationContract]
+        ContenedorPerfilUsuarioProveedores PerfilUsuarioProveedorRescatar(string token);
+        //Fin PerfilUsuarioProveedor
+
         //Inicio Producto
         [OperationContract]
         ContenedorProducto ProductoCrear(ContenedorProducto entrada);

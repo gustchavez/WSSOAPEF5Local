@@ -58,31 +58,31 @@ namespace CapaWSPresentacion.perfilEmpleado {
         protected global::System.Web.UI.WebControls.TextBox TextBox3;
         
         /// <summary>
-        /// Control Button1.
+        /// Control btnAgregar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnAgregar;
         
         /// <summary>
-        /// Control DropDownList1.
+        /// Control txtProveedorModificar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList txtProveedorModificar;
         
         /// <summary>
-        /// Control DropDownList2.
+        /// Control txtProductoModificar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList txtProductoModificar;
         
         /// <summary>
         /// Control TextBox4.
@@ -103,12 +103,12 @@ namespace CapaWSPresentacion.perfilEmpleado {
         protected global::System.Web.UI.WebControls.TextBox TextBox5;
         
         /// <summary>
-        /// Control Button2.
+        /// Control btnModificar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button btnModificar;
     }
 }

@@ -203,6 +203,7 @@
     <Content Include="perfilProveedor\MasterProveedor.Master" />
     <Content Include="perfilEmpleado\MasterEmpleado.Master" />
     <Content Include="perfilCliente\MasteCliente.Master" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioProveedores.datasource" />
     <None Include="Service References\WSSoap\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>

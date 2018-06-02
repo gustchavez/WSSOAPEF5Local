@@ -67,6 +67,52 @@ namespace CapaNegocio
             return nPUP;
         }
 
+        public ContenedorPerfilUsuarioProveedores LlamarSPRescatar(string token)
+        {
+            ContenedorPerfilUsuarioProveedores LPerfilUsuarioProveedores = new ContenedorPerfilUsuarioProveedores();
+
+            if (ValidarPerfilCUD(token))
+            {
+                try
+                {
+                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                    var collection = (from prov in conex.PROVEEDOR
+                                      join emp  in conex.EMPRESA on prov.RUT equals emp.RUT
+                                      orderby emp.RAZON_SOCIAL
+                                      select new
+                                      {
+                                          RutProveedor = prov.RUT,
+                                          RazonSocial = emp.RAZON_SOCIAL
+                                      }
+                            ).ToList();
+
+                    foreach (var item in collection)
+                    {
+                        PerfilUsuarioProveedor m = new PerfilUsuarioProveedor();
+                        //
+                        m.Proveedor.Rut = item.RutProveedor;
+                        m.PerfilUsuario.Empresa.RazonSocial = item.RazonSocial;
+                        //
+                        LPerfilUsuarioProveedores.Lista.Add(m);
+                        
+                    }
+                    LPerfilUsuarioProveedores.Retorno.Codigo = 0;
+                    LPerfilUsuarioProveedores.Retorno.Glosa = "OK";
+
+                }
+                catch (Exception)
+                {
+                    LPerfilUsuarioProveedores.Retorno.Codigo = 1011;
+                    LPerfilUsuarioProveedores.Retorno.Glosa = "Err codret ORACLE";
+                }
+            } else {
+                LPerfilUsuarioProveedores.Retorno.Codigo = 100;
+                LPerfilUsuarioProveedores.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+
+            return LPerfilUsuarioProveedores;
+        }
 
         private bool ValidarPerfilCUD(string token)
         {

@@ -114,6 +114,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Proveedor" nillable="true" type="tns:Proveedor" />
+  <xs:complexType name="ContenedorPerfilUsuarioProveedores">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfPerfilUsuarioProveedor" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorPerfilUsuarioProveedores" nillable="true" type="tns:ContenedorPerfilUsuarioProveedores" />
+  <xs:complexType name="ArrayOfPerfilUsuarioProveedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PerfilUsuarioProveedor" nillable="true" type="tns:PerfilUsuarioProveedor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerfilUsuarioProveedor" nillable="true" type="tns:ArrayOfPerfilUsuarioProveedor" />
   <xs:complexType name="ContenedorProducto">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:Producto" />

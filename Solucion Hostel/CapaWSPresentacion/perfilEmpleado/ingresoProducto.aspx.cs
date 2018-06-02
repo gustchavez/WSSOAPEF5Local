@@ -29,7 +29,7 @@ namespace CapaWSPresentacion.perfilEmpleado
                     Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 Session["TokenUsuario"] = null;
                 Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
@@ -40,26 +40,37 @@ namespace CapaWSPresentacion.perfilEmpleado
         private void RescatarDatos()
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-
-            ContenedorCiudades n = new ContenedorCiudades();
-
-            n = x.CiudadRescatar(Session["TokenUsuario"].ToString());
+            //Recuperar datos de proveedores
+            ContenedorPerfilUsuarioProveedores n = new ContenedorPerfilUsuarioProveedores();
+            n = x.PerfilUsuarioProveedorRescatar(Session["TokenUsuario"].ToString());
+            var proveedores = (from prov in n.Lista
+                              select new
+                              {
+                                  Rut = prov.Proveedor.Rut,
+                                  RazonSocial = prov.PerfilUsuario.Empresa.RazonSocial
+                              }
+                            ).ToList();
 
             txtProveedorAgregar.DataSource = null;
-            txtProveedorAgregar.DataSource = n.Lista.Where(p => p.CodPais == 56);
-            txtProveedorAgregar.DataValueField = "Nombre";
-            txtProveedorAgregar.DataTextField = "Nombre";
+            txtProveedorAgregar.DataSource = proveedores;
+            txtProveedorAgregar.DataValueField = "Rut";
+            txtProveedorAgregar.DataTextField = "RazonSocial";
             txtProveedorAgregar.DataBind();
+
+            txtProveedorModificar.DataSource = null;
+            txtProveedorModificar.DataSource = proveedores;
+            txtProveedorModificar.DataValueField = "Rut";
+            txtProveedorModificar.DataTextField = "RazonSocial";
+            txtProveedorModificar.DataBind();
+
+            //Recuperar datos de productos
+            ContenedorProductos m = new ContenedorProductos();
+            m = x.ProductoRescatar(Session["TokenUsuario"].ToString());
+            txtProductoModificar.DataSource = m.Lista;
+            txtProductoModificar.DataValueField = "Codigo";
+            txtProductoModificar.DataTextField = "Descripcion";
+            txtProductoModificar.DataBind();
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
