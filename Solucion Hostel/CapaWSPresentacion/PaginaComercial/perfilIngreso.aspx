@@ -10,18 +10,13 @@
 
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
+    <form id="formularioRegistro" runat="server" name="formularioRegistro">
+  
     
-    <link rel="stylesheet" type="text/css" href="/scripts/ingreso.css"/>
-	<script src="../js/jquery.min.js"></script>
-
-
-
         <!-- Crear Usuario -->
 
 
-    <div class="ContenedorPaginaIngreso">
+<div class="ContenedorPaginaIngreso">
 	
 
 	<div class="Contenedor-Registro">
@@ -30,15 +25,15 @@
 
 			<div class="Contenido">
 				Rut Empresa <br/>
-				 <asp:TextBox ID="TextBox1" runat="server"  CssClass="casilla" ></asp:TextBox><br/>	
+				 <asp:TextBox ID="rutEmpresa" runat="server"  CssClass="casilla"   ></asp:TextBox><br/>	
 			</div>
 			<div class="Contenido">
 				Razón Social <br/>
-				 <asp:TextBox ID="TextBox2" runat="server"  CssClass="casilla" ></asp:TextBox><br/>	
+				 <asp:TextBox ID="razonSocial" runat="server"  CssClass="casilla" ></asp:TextBox><br/>	
 			</div>
 			<div class="Contenido" >
 				Giro <br/>
-                <asp:DropDownList ID="DropDownList1" runat="server" CssClass="casilla">
+                <asp:DropDownList ID="giro" runat="server" CssClass="casilla">
                     <asp:ListItem Value="1">Selecciona un Giro</asp:ListItem>
                     <asp:ListItem Value="2">CULTIVOS EN GENERAL; CULTIVO DE PRODUCTOS DE MERCADO; HORTICULTURA</asp:ListItem>
                     <asp:ListItem Value="3">CRÍA DE ANIMALES</asp:ListItem>
@@ -181,28 +176,29 @@
 
 			<div class="Contenido">
 				Nombre Usuario<br/>
-				 <asp:TextBox ID="TextBox3" runat="server"  CssClass="casilla" ></asp:TextBox><br/>		
+				 <asp:TextBox ID="nombreUsuario" runat="server"  CssClass="casilla" ></asp:TextBox><br/>		
 			</div>
 
 			<div class="Contenido">
 				Correo Electrónico <br/>
-				 <asp:TextBox ID="TextBox4" runat="server"  CssClass="casilla" ></asp:TextBox><br/>			
+				 <asp:TextBox ID="correoElectronico" runat="server"  CssClass="casilla" ></asp:TextBox><br/>			
 			</div>
 				
 			<div class="Contenido">
 				Contraseña <br/>
-				<asp:TextBox ID="TextBox5" runat="server"  CssClass="casilla" ></asp:TextBox><br/>		
+				<asp:TextBox ID="contrasena" runat="server" TextMode="Password" CssClass="casilla" ></asp:TextBox><br/>		
 			</div>
 
 			<div class="Contenido">
-                <asp:Button ID="Button1" runat="server" Text="Button" CssClass="casillaEnvio"/>	
+                <asp:Button ID="submit" runat="server" Text="Registrar" CssClass="casillaEnvio" OnClick="submit_Click"/>	
 			</div>
 
 			<div class="Contenido">
 				<ul class="error" id="error"></ul>	
 			</div>
 	</div>
-
+    
+   
 
 	<div class="Contenedor-Registro">
 		<div class="linea"></div>
@@ -227,58 +223,18 @@
 				<asp:Button ID="btnAceptar" runat="server" Text="Ingresar"  OnClick="btnAceptar_Click" CssClass="casillaEnvio" /><br/>		
 			</div>
 			<div class="Contenido">
-				<ul class="error2" id="error2">Hio</ul>	
+				<ul class="error2" id="error2"></ul>	
 			</div>
 	</div>
 
+     </form>
+
+
+
 </div>
-	
+  
 
 <script src="/scripts/condiciones.js"></script>	
-
-
-    <%-- 
-        
-         <table style="width:75%;">
-            <tr>
-                <td style="width:25%;">Nombre Usuario</td>
-                <td style="width:75%;"><asp:TextBox ID="txtNombreUsuario" runat="server"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td style="width:25%;">Clave Usuario</td>
-                <td style="width:75%;"><asp:TextBox ID="txtClaveUsuario" runat="server"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td style="width:25%;">Perfil Usuario</td>
-                <td style="width:75%;"><asp:TextBox ID="txtPerfilUsuario" runat="server" Enabled="False"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td style="width:25%;">Nombre Persona</td>
-                <td style="width:75%;"><asp:TextBox ID="txtNombrePersona" runat="server" Enabled="False"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td style="width:25%;">Apellido Persona</td>
-                <td style="width:75%;"><asp:TextBox ID="txtApellidoPersona" runat="server" Enabled="False"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td style="width:25%;">Codigo Retorno</td>
-                <td style="width:75%;"><asp:TextBox ID="txtCodigoRetorno" runat="server" Enabled="False"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td style="width:25%;">Glosa Retorno</td>
-                <td style="width:75%;"><asp:TextBox ID="txtGlosaRetorno" runat="server" Enabled="False" Width="387px"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td style="width:25%;">&nbsp;</td>
-                <td style="width:75%;"></td>
-            </tr>
-        </table>  
-        
-        --%>
-
-
-
-    </div>
-    </form>
+   
 </body>
 </html>

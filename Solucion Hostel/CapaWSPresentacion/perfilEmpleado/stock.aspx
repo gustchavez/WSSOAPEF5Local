@@ -34,6 +34,7 @@
 						
 						
 					</tr>
+                    
 					<tr>
 						<td>A0127</td>
 						<td>Limpia Vidrios</td>
@@ -48,7 +49,7 @@
 						<td>720</td>
 						<td style="background: #b24c63; color:white;">10</td>			
 					</tr>
-
+                  
 		</table>
 		
 	</div>

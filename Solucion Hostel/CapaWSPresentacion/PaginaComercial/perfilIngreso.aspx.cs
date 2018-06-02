@@ -61,5 +61,36 @@ namespace CapaWSPresentacion.PaginaComercial
             }
 
         }
+
+        protected void submit_Click(object sender, EventArgs e)
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            ContenedorPerfilUsuarioCliente n = new ContenedorPerfilUsuarioCliente();
+
+            n.Item.Cliente.Rut = rutEmpresa.Text;
+            n.Item.PerfilUsuario.Empresa.RazonSocial = razonSocial.Text;
+            n.Item.PerfilUsuario.Empresa.Rubro = giro.Text;
+            n.Item.PerfilUsuario.Empresa.Email = nombreUsuario.Text;
+            n.Item.PerfilUsuario.Empresa.Telefono = "Ingrese telefono";
+            n.Item.PerfilUsuario.Direccion.CodPais = 56;
+            n.Item.PerfilUsuario.Direccion.CodPostal = "Ingrese codigo postal";
+            n.Item.PerfilUsuario.Direccion.NombreCiudad = "Ingrese ciudad";
+            n.Item.PerfilUsuario.Direccion.Comuna = "Ingrese comuna";
+            n.Item.PerfilUsuario.Direccion.Calle = "Ingrese Calle";
+            n.Item.PerfilUsuario.Direccion.Numero = int.Parse("123");
+            n.Item.PerfilUsuario.Empresa.Logo = "Logo";
+            n.Item.PerfilUsuario.Persona.Rut = "Rut empleado";
+            n.Item.PerfilUsuario.Persona.Nombre = "Nombre empleado";
+            n.Item.PerfilUsuario.Persona.Apellido = "Apellido empleado";
+            n.Item.PerfilUsuario.Persona.FechaNacimiento = DateTime.Now;
+            n.Item.PerfilUsuario.Persona.Email = correoElectronico.Text;
+            n.Item.PerfilUsuario.Persona.Telefono = "Telefono empleado";
+            n.Item.PerfilUsuario.Usuario.Clave = contrasena.Text;
+            n.Retorno.Token = Session["TokenUsuario"].ToString();
+
+            n = x.PerfilUsuarioClienteCrear(n);
+
+        }
     }
 }
