@@ -97,12 +97,22 @@ namespace CapaServicio
         ContenedorCamas CamaRescatar(string token);
         //Fin Cama
 
+        //Ini OrdenCompraCompleta
         [OperationContract]
         ContenedorOrdenCompraCompleta OrdenCompraCompletaCrear(ContenedorOrdenCompraCompleta entrada);
 
         [OperationContract]
+        ContenedorOrdenesCompraCompleta OrdenCompraCompletaRescatar(string token);
+        //Fin OrdenCompraCompleta
+
+        //Ini OrdenPedidoCompleta
+        [OperationContract]
         ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(ContenedorOrdenPedidoCompleta entrada);
-        
+
+        [OperationContract]
+        ContenedorOrdenesPedidoCompleta OrdenPedidoCompletaRescatar(string token);
+        //Fin OrdenPedidoCompleta
+
         //Consultas para Apicacion Java
 
         [OperationContract]

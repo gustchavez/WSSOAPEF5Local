@@ -61,6 +61,7 @@
     <Compile Include="ContenedorProveedores.cs" />
     <Compile Include="ContenedorProvision.cs" />
     <Compile Include="ContenedorProvisiones.cs" />
+    <Compile Include="ContenedorOrdenesPedidoCompleta.cs" />
     <Compile Include="Direccion.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="Factura.cs" />

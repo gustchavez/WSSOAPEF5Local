@@ -153,11 +153,23 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrearResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenCompraCompleta> OrdenCompraCompletaCrearAsync(CapaObjeto.ContenedorOrdenCompraCompleta entrada);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatarResponse")]
+        CapaObjeto.ContenedorOrdenesCompraCompleta OrdenCompraCompletaRescatar(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenesCompraCompleta> OrdenCompraCompletaRescatarAsync(string token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrearResponse")]
         CapaObjeto.ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(CapaObjeto.ContenedorOrdenPedidoCompleta entrada);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrearResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenPedidoCompleta> OrdenPedidoCompletaCrearAsync(CapaObjeto.ContenedorOrdenPedidoCompleta entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatarResponse")]
+        CapaObjeto.ContenedorOrdenesPedidoCompleta OrdenPedidoCompletaRescatar(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenesPedidoCompleta> OrdenPedidoCompletaRescatarAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/StockProductos", ReplyAction="http://tempuri.org/IWSSHostel/StockProductosResponse")]
         CapaObjeto.ContenedorProductos StockProductos(string token);
@@ -210,12 +222,16 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
@@ -273,12 +289,16 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
@@ -336,12 +356,16 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
@@ -399,12 +423,16 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
@@ -462,12 +490,16 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
@@ -525,12 +557,16 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
@@ -588,12 +624,16 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
@@ -657,12 +697,16 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Alojamiento))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Comida))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesCompraCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenCompraCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedido))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoDetalle))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.RegistroRecepcionPedido))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorOrdenesPedidoCompleta))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.OrdenPedidoCompleta[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProveedores))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.Proveedor[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CapaObjeto.ContenedorProvision))]
@@ -929,12 +973,28 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.OrdenCompraCompletaCrearAsync(entrada);
         }
         
+        public CapaObjeto.ContenedorOrdenesCompraCompleta OrdenCompraCompletaRescatar(string token) {
+            return base.Channel.OrdenCompraCompletaRescatar(token);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenesCompraCompleta> OrdenCompraCompletaRescatarAsync(string token) {
+            return base.Channel.OrdenCompraCompletaRescatarAsync(token);
+        }
+        
         public CapaObjeto.ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(CapaObjeto.ContenedorOrdenPedidoCompleta entrada) {
             return base.Channel.OrdenPedidoCompletaCrear(entrada);
         }
         
         public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenPedidoCompleta> OrdenPedidoCompletaCrearAsync(CapaObjeto.ContenedorOrdenPedidoCompleta entrada) {
             return base.Channel.OrdenPedidoCompletaCrearAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorOrdenesPedidoCompleta OrdenPedidoCompletaRescatar(string token) {
+            return base.Channel.OrdenPedidoCompletaRescatar(token);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenesPedidoCompleta> OrdenPedidoCompletaRescatarAsync(string token) {
+            return base.Channel.OrdenPedidoCompletaRescatarAsync(token);
         }
         
         public CapaObjeto.ContenedorProductos StockProductos(string token) {

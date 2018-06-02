@@ -103,6 +103,95 @@ namespace CapaNegocio
             return nOPC;
         }
 
+        public ContenedorOrdenesPedidoCompleta LlamarSPRescatar(string token)
+        {
+            ContenedorOrdenesPedidoCompleta LOrdenesPedido = new ContenedorOrdenesPedidoCompleta();
+
+            if (ValidarPerfilCUD(token))
+            {
+                try
+                {
+                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                    var collection = (from cab in conex.ORDEN_DE_PEDIDO
+                                      join det_prod in conex.RRP on cab.NUMERO equals det_prod.NUMERO_OP
+                                      orderby cab.RUT_PROVEEDOR, cab.NUMERO
+                                      select new
+                                      {
+                                          RutProveedor = cab.RUT_PROVEEDOR,
+                                          NumeroOP     = cab.NUMERO,
+                                          FecRecepOP   = cab.EMISION,
+                                          MontoOP      = cab.MONTO,
+                                          EstadoOP     = cab.ESTADO,
+                                          CodProd      = det_prod.CODIGO_PRODUCTO,
+                                          CantProd     = det_prod.CANTIDAD,
+                                          FecRecProd   = det_prod.RECEPCION,
+                                          EstadoProd   = det_prod.CONFIRMADO
+                                      }
+                            ).ToList();
+
+                    decimal NumeroOrdenAnterior = decimal.MinValue;
+                    foreach (var item in collection)
+                    {
+                        //Verificar Corte de control por Numero de Orden
+                        if (NumeroOrdenAnterior != item.NumeroOP)
+                        {
+                            //Se crea la OrdenCompleta
+                            OrdenPedidoCompleta n = new OrdenPedidoCompleta();
+                            //Se carga valores de la cabecera
+                            n.Cabecera.RutProveedor = item.RutProveedor;
+                            n.Cabecera.Numero = item.NumeroOP;
+                            n.Cabecera.FechaEmision = item.FecRecepOP;
+                            n.Cabecera.Monto = item.MontoOP;
+                            n.Cabecera.Estado = item.EstadoOP;
+
+                            //Se crea el detalle Orden
+                            OrdenPedidoDetalle m = new OrdenPedidoDetalle();
+                            m.RegistroRecepcionPedido.NumeroOrdenPedido = item.NumeroOP;
+                            m.RegistroRecepcionPedido.CodigoProducto = item.CodProd;
+                            m.RegistroRecepcionPedido.Indice = item.CantProd;
+                            m.RegistroRecepcionPedido.Recepcion = item.FecRecProd;
+                            m.RegistroRecepcionPedido.Confirmado = item.EstadoProd;
+                            
+                            //Se agrega el detalle a la cabecera
+                            n.ListaDetalle.Add(m);
+
+                            //Se agrega la orden completa a la orden
+                            LOrdenesPedido.Lista.Add(n);
+
+                            //Se realiza logica para armar corte de control
+                            NumeroOrdenAnterior = item.NumeroOP;
+                        }
+                        else {
+                            //Se crea el detalle Orden
+                            OrdenPedidoDetalle m = new OrdenPedidoDetalle();
+                            m.RegistroRecepcionPedido.NumeroOrdenPedido = item.NumeroOP;
+                            m.RegistroRecepcionPedido.CodigoProducto = item.CodProd;
+                            m.RegistroRecepcionPedido.Indice = item.CantProd;
+                            m.RegistroRecepcionPedido.Recepcion = item.FecRecProd;
+                            m.RegistroRecepcionPedido.Confirmado = item.EstadoProd;
+
+                            //Se agrega el detalle a la ultima orden de compra
+                            LOrdenesPedido.Lista.Last().ListaDetalle.Add(m);
+                        }
+                    }
+                    LOrdenesPedido.Retorno.Codigo = 0;
+                    LOrdenesPedido.Retorno.Glosa = "OK";
+                }
+                catch (Exception)
+                {
+                    LOrdenesPedido.Retorno.Codigo = 1011;
+                    LOrdenesPedido.Retorno.Glosa = "Err codret ORACLE";
+                }
+            }
+            else {
+                LOrdenesPedido.Retorno.Codigo = 100;
+                LOrdenesPedido.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+
+            return LOrdenesPedido;
+        }
+
         private bool ValidarPerfilCUD(string token)
         {
             bool retorno = false;

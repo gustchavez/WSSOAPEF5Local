@@ -188,19 +188,34 @@ namespace CapaServicio
         }
         //Fin Cama
 
+        //Ini OrdenCompraCompleta
         public ContenedorOrdenCompraCompleta OrdenCompraCompletaCrear(ContenedorOrdenCompraCompleta entrada)
         {
             CRUDOrdenCompraCompleta x = new CRUDOrdenCompraCompleta();
             x.LlamarSPCrear(entrada);
             return entrada;
         }
+        public ContenedorOrdenesCompraCompleta OrdenCompraCompletaRescatar(string token)
+        {
+            CRUDOrdenCompraCompleta x = new CRUDOrdenCompraCompleta();
+            return x.LlamarSPRescatar(token);
+        }
+        //Fin OrdenCompraCompleta
 
+        //Ini OrdenPedidoCompleta
         public ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(ContenedorOrdenPedidoCompleta entrada)
         {
             CRUDOrdenPedidoCompleta x = new CRUDOrdenPedidoCompleta();
             x.LlamarSPCrear(entrada);
             return entrada;
         }
+
+        public ContenedorOrdenesPedidoCompleta OrdenPedidoCompletaRescatar(string token)
+        {
+            CRUDOrdenPedidoCompleta x = new CRUDOrdenPedidoCompleta();
+            return x.LlamarSPRescatar(token);
+        }
+        //Fin OrdenPedidoCompleta
 
         //Consultas para Apicacion Java
 

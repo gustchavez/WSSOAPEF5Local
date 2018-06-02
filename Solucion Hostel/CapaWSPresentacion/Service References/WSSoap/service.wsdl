@@ -146,11 +146,23 @@
   <wsdl:message name="IWSSHostel_OrdenCompraCompletaCrear_OutputMessage">
     <wsdl:part name="parameters" element="tns:OrdenCompraCompletaCrearResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenCompraCompletaRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenCompraCompletaRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenCompraCompletaRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenCompraCompletaRescatarResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_OrdenPedidoCompletaCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaCrear" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_OrdenPedidoCompletaCrear_OutputMessage">
     <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenPedidoCompletaRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenPedidoCompletaRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaRescatarResponse" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_StockProductos_InputMessage">
     <wsdl:part name="parameters" element="tns:StockProductos" />
@@ -347,9 +359,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear" message="tns:IWSSHostel_OrdenCompraCompletaCrear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrearResponse" message="tns:IWSSHostel_OrdenCompraCompletaCrear_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="OrdenCompraCompletaRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatar" message="tns:IWSSHostel_OrdenCompraCompletaRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatarResponse" message="tns:IWSSHostel_OrdenCompraCompletaRescatar_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="OrdenPedidoCompletaCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear" message="tns:IWSSHostel_OrdenPedidoCompletaCrear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrearResponse" message="tns:IWSSHostel_OrdenPedidoCompletaCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrdenPedidoCompletaRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatar" message="tns:IWSSHostel_OrdenPedidoCompletaRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatarResponse" message="tns:IWSSHostel_OrdenPedidoCompletaRescatar_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="StockProductos">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/StockProductos" message="tns:IWSSHostel_StockProductos_InputMessage" />
@@ -629,8 +649,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="OrdenCompraCompletaRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="OrdenPedidoCompletaCrear">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrdenPedidoCompletaRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

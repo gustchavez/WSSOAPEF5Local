@@ -350,6 +350,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Comida" nillable="true" type="tns:Comida" />
+  <xs:complexType name="ContenedorOrdenesCompraCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfOrdenCompraCompleta" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorOrdenesCompraCompleta" nillable="true" type="tns:ContenedorOrdenesCompraCompleta" />
+  <xs:complexType name="ArrayOfOrdenCompraCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrdenCompraCompleta" nillable="true" type="tns:OrdenCompraCompleta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrdenCompraCompleta" nillable="true" type="tns:ArrayOfOrdenCompraCompleta" />
   <xs:complexType name="ContenedorOrdenPedidoCompleta">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:OrdenPedidoCompleta" />
@@ -399,6 +412,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RegistroRecepcionPedido" nillable="true" type="tns:RegistroRecepcionPedido" />
+  <xs:complexType name="ContenedorOrdenesPedidoCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfOrdenPedidoCompleta" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorOrdenesPedidoCompleta" nillable="true" type="tns:ContenedorOrdenesPedidoCompleta" />
+  <xs:complexType name="ArrayOfOrdenPedidoCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrdenPedidoCompleta" nillable="true" type="tns:OrdenPedidoCompleta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrdenPedidoCompleta" nillable="true" type="tns:ArrayOfOrdenPedidoCompleta" />
   <xs:complexType name="ContenedorProveedores">
     <xs:sequence>
       <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfProveedor" />

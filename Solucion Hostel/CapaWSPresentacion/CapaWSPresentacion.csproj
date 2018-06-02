@@ -204,6 +204,8 @@
     <Content Include="perfilEmpleado\MasterEmpleado.Master" />
     <Content Include="perfilCliente\MasteCliente.Master" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioProveedores.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenesCompraCompleta.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenesPedidoCompleta.datasource" />
     <None Include="Service References\WSSoap\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
