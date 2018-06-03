@@ -52,6 +52,9 @@
                   
 		</table>
 		
+	            <asp:GridView ID="gwListaProductos" runat="server" CssClass="listaFactura">
+                </asp:GridView>
+		
 	</div>
 
     </form>
