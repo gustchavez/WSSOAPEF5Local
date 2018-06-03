@@ -116,34 +116,34 @@ namespace CapaServicio
         //Consultas para Apicacion Java
 
         [OperationContract]
-        ContenedorProductos StockProductos(string token);
+        List<Producto> StockProductos(string token);
 
         [OperationContract]
-        List<Object> Productos_mas_solicitados(string token);
+        List<ComodinJava> Productos_mas_solicitados(string token);
 
         [OperationContract]
-        List<Object> Segun_rubro_empresa(string token);
+        List<ComodinJava> Segun_rubro_empresa(string token);
 
         [OperationContract]
-        List<Object> Metodo_pago_mas_usado(string token);
+        List<ComodinJava> Metodo_pago_mas_usado(string token);
 
         [OperationContract]
-        List<Object> Ciudad_mas_solicita_servicios(string token);
+        List<ComodinJava> Ciudad_mas_solicita_servicios(string token);
 
         [OperationContract]
-        List<Object> Estado_habitaciones(string token);
+        List<ComodinJava> Estado_habitaciones(string token);
 
         [OperationContract]
-        List<Object> Habitaciones_mas_solicitadas(string token);
+        List<ComodinJava> Habitaciones_mas_solicitadas(string token);
 
         [OperationContract]
-        List<Object> Fecha_mayor_auge(string token);
+        List<ComodinJava> Fecha_mayor_auge(string token);
 
         [OperationContract]
         string Solicitudes_NO_terminadas();
 
         [OperationContract]
-        List<Object> Promedio_venta_mensual(string token);
+        List<ComodinJava> Promedio_venta_mensual(string token);
 
         [OperationContract]
         string Promedio_perdida_mensual();

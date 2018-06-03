@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.datacontract.org/2004/07/CapaObjeto" />
-  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="ValidarLogin">
     <xs:complexType>
       <xs:sequence>
@@ -377,7 +376,7 @@
   <xs:element name="StockProductosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="StockProductosResult" nillable="true" type="q43:ContenedorProductos" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="StockProductosResult" nillable="true" type="q43:ArrayOfProducto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -391,7 +390,7 @@
   <xs:element name="Productos_mas_solicitadosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Productos_mas_solicitadosResult" nillable="true" type="q44:ArrayOfanyType" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Productos_mas_solicitadosResult" nillable="true" type="q44:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -405,7 +404,7 @@
   <xs:element name="Segun_rubro_empresaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Segun_rubro_empresaResult" nillable="true" type="q45:ArrayOfanyType" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Segun_rubro_empresaResult" nillable="true" type="q45:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -419,7 +418,7 @@
   <xs:element name="Metodo_pago_mas_usadoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Metodo_pago_mas_usadoResult" nillable="true" type="q46:ArrayOfanyType" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Metodo_pago_mas_usadoResult" nillable="true" type="q46:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -433,7 +432,7 @@
   <xs:element name="Ciudad_mas_solicita_serviciosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Ciudad_mas_solicita_serviciosResult" nillable="true" type="q47:ArrayOfanyType" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Ciudad_mas_solicita_serviciosResult" nillable="true" type="q47:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -447,7 +446,7 @@
   <xs:element name="Estado_habitacionesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q48="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Estado_habitacionesResult" nillable="true" type="q48:ArrayOfanyType" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Estado_habitacionesResult" nillable="true" type="q48:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -461,7 +460,7 @@
   <xs:element name="Habitaciones_mas_solicitadasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Habitaciones_mas_solicitadasResult" nillable="true" type="q49:ArrayOfanyType" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Habitaciones_mas_solicitadasResult" nillable="true" type="q49:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -475,7 +474,7 @@
   <xs:element name="Fecha_mayor_augeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q50="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Fecha_mayor_augeResult" nillable="true" type="q50:ArrayOfanyType" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Fecha_mayor_augeResult" nillable="true" type="q50:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -501,7 +500,7 @@
   <xs:element name="Promedio_venta_mensualResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Promedio_venta_mensualResult" nillable="true" type="q51:ArrayOfanyType" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Promedio_venta_mensualResult" nillable="true" type="q51:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
