@@ -206,9 +206,7 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioProveedores.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenesCompraCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenesPedidoCompleta.datasource" />
-    <None Include="Service References\WSSoap\Arrays.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <Content Include="Properties\DataSources\CapaObjeto.ComodinJava.datasource" />
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>

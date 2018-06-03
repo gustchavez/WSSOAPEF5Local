@@ -425,6 +425,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfOrdenPedidoCompleta" nillable="true" type="tns:ArrayOfOrdenPedidoCompleta" />
+  <xs:complexType name="ArrayOfComodinJava">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComodinJava" nillable="true" type="tns:ComodinJava" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComodinJava" nillable="true" type="tns:ArrayOfComodinJava" />
+  <xs:complexType name="ComodinJava">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="numero1" type="xs:int" />
+      <xs:element minOccurs="0" name="numero2" type="xs:int" />
+      <xs:element minOccurs="0" name="numero3" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComodinJava" nillable="true" type="tns:ComodinJava" />
   <xs:complexType name="ContenedorProveedores">
     <xs:sequence>
       <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfProveedor" />

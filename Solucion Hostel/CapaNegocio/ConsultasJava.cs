@@ -16,29 +16,41 @@ namespace CapaNegocio
            
         }
 
-        public ContenedorProductos StockProductos(string token)
+        public List<Producto> StockProductos(string token)
         {
-            ContenedorProductos LProductos = new ContenedorProductos();
+
             CRUDProducto crudProd = new CRUDProducto();
+            List<Producto> lista = new List<Producto>();
             if (ValidarPerfil(token))
             {
                 try
                 {
-                    LProductos = crudProd.LlamarSPRescatar(token);
+                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                    var collection = conex.PRODUCTO.OrderBy(p => p.DESCRIPCION).ToList();
+
+                    foreach (var item in collection)
+                    {
+                        Producto n = new Producto();
+                        n.Codigo = item.CODIGO;
+                        n.Descripcion = item.DESCRIPCION;
+                        n.Stock = item.STOCK;
+                        n.StockCritico = item.STOCK_CRITICO;
+                        lista.Add(n);
+                    }
+                    return lista;
                 }
                 catch (Exception)
                 {
-                    LProductos.Retorno.Codigo = 1011;
-                    LProductos.Retorno.Glosa = "Err codret ORACLE";
+                    return null;
                 }
             }
             else
             {
-                LProductos.Retorno.Codigo = 100;
-                LProductos.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+                lista = null;
             }
 
-            return LProductos;
+            return lista;
         }
 
         //String text = "select SERVICIO_COMIDA.TIPO, count(SERVICIO_COMIDA.TIPO)  FROM COMIDA" +
@@ -47,10 +59,10 @@ namespace CapaNegocio
         //    " GROUP by SERVICIO_COMIDA.TIPO" +
         //    " order by count(SERVICIO_COMIDA.TIPO)desc";
 
-        public List<Object> Productos_mas_solicitados(String token)
+        public List<ComodinJava> Productos_mas_solicitados(String token)
         {
             CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
-            List<Object> lista = new List<Object>();
+            List<ComodinJava> lista = new List<ComodinJava>();
             if (ValidarPerfil(token))
             {
                 try
@@ -60,12 +72,15 @@ namespace CapaNegocio
                                  join s in conex.SERVICIO_COMIDA on p.SERVICIO_TIPO equals s.TIPO
                                  group s by s.TIPO into g
                                  orderby g.Select(x => x.TIPO).Count()
-                                 select new { tipo = g.Select(x => x.TIPO), cantidad = g.Select(x => x.TIPO).Count() }).ToList();
+                                 select new { tipox = g.Select(x => x.TIPO), cantidad = g.Select(x => x.TIPO).Count() }).ToList();
+
                     foreach (var item in query)
                     {
-                        Object[] obj = new Object[2];
-                        obj[0] = item.tipo;
-                        obj[1] = item.cantidad;
+                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
+                        ComodinJava obj = new ComodinJava();
+                        obj.Nombre = item.tipox.FirstOrDefault();
+                        obj.numero1 = item.cantidad;
                         lista.Add(obj);
                     }
                     return lista;
@@ -84,10 +99,10 @@ namespace CapaNegocio
 
         //String text = "select EMPRESA.RUBRO,EMPRESA.RUT from empresa " +
         //    "inner join cliente on EMPRESA.RUT=CLIENTE.RUT";
-        public List<Object> Segun_rubro_empresa(string token)
+        public List<ComodinJava> Segun_rubro_empresa(string token)
         {
             CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
-            List<Object> lista = new List<Object>();
+            List<ComodinJava> lista = new List<ComodinJava>();
             if (ValidarPerfil(token))
             {
                 try
@@ -99,9 +114,11 @@ namespace CapaNegocio
                                  ).ToList();
                     foreach (var item in query)
                     {
-                        Object[] obj = new Object[2];
-                        obj[0] = item.rubro;
-                        obj[1] = item.cantidad;
+                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
+                        ComodinJava obj = new ComodinJava();
+                        obj.Nombre = item.rubro.FirstOrDefault();
+                        obj.numero1 = item.cantidad;
                         lista.Add(obj);
                     }
                     return lista;
@@ -117,11 +134,11 @@ namespace CapaNegocio
             }
 
         }
-       
-        public List<Object> Metodo_pago_mas_usado(string token)
+
+        public List<ComodinJava> Metodo_pago_mas_usado(string token)
         {
             CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
-            List<Object> lista = new List<Object>();
+            List<ComodinJava> lista = new List<ComodinJava>();
             if (ValidarPerfil(token))
             {
                 try
@@ -132,9 +149,11 @@ namespace CapaNegocio
                                  ).ToList();
                     foreach (var item in query)
                     {
-                        Object[] obj = new Object[2];
-                        obj[0] = item.medio;
-                        obj[1] = item.cantidad;
+                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
+                        ComodinJava obj = new ComodinJava();
+                        obj.Nombre = item.medio.FirstOrDefault();
+                        obj.numero1 = item.cantidad;
                         lista.Add(obj);
                     }
                     return lista;
@@ -155,10 +174,10 @@ namespace CapaNegocio
         //    "inner join Empresa on EMPRESA.RUT = direccion.RUT_EMPRESA " +
         //    "inner join   cliente on EMPRESA.RUT = CLIENTE.RUT " +
         //    "group by NOMBRE_CIUDAD order by count(NOMBRE_CIUDAD)desc";
-        public List<Object> Ciudad_mas_solicita_servicios(string token)
+        public List<ComodinJava> Ciudad_mas_solicita_servicios(string token)
         {
             CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
-            List<Object> lista = new List<Object>();
+            List<ComodinJava> lista = new List<ComodinJava>();
             if (ValidarPerfil(token))
             {
                 try
@@ -170,9 +189,11 @@ namespace CapaNegocio
                                  ).ToList();
                     foreach (var item in query)
                     {
-                        Object[] obj = new Object[2];
-                        obj[0] = item.nombre;
-                        obj[1] = item.cantidad;
+                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
+                        ComodinJava obj = new ComodinJava();
+                        obj.Nombre = item.nombre.FirstOrDefault();
+                        obj.numero1 = item.cantidad;
                         lista.Add(obj);
                     }
                     return lista;
@@ -193,23 +214,26 @@ namespace CapaNegocio
         //    "from HABITACION " +
         //    "group by CAPACIDAD, ESTADO order by ESTADO";
 
-        public List<Object> Estado_habitaciones(string token)
+        public List<ComodinJava> Estado_habitaciones(string token)
         {
             CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
-            List<Object> lista = new List<Object>();
+            List<ComodinJava> lista = new List<ComodinJava>();
             if (ValidarPerfil(token))
             {
                 try
                 {
                     var query = (from h in conex.HABITACION
                                  group h by h.ESTADO into g
-                                 select new { estado = g.Select(q => q.ESTADO), cantidad = g.Select(q => q.ESTADO).Count() }
+                                 select new { estado = g.Select(q => q.ESTADO), capacidad = g.Select(q => q.CAPACIDAD), cantidad = g.Select(q => q.ESTADO).Count() }
                                  ).ToList();
                     foreach (var item in query)
                     {
-                        Object[] obj = new Object[2];
-                        obj[0] = item.estado;
-                        obj[1] = item.cantidad;
+                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
+                        ComodinJava obj = new ComodinJava();
+                        obj.Nombre = item.estado.FirstOrDefault();
+                        obj.numero1 = item.capacidad.FirstOrDefault();
+                        obj.numero2 = item.cantidad;
                         lista.Add(obj);
                     }
                     return lista;
@@ -232,10 +256,10 @@ namespace CapaNegocio
         //    "inner join HABITACION on habitacion.codigo = cama.CODIGO_HABITACION " +
         //    "group by HABITACION.CAPACIDAD order by count(HABITACION.CAPACIDAD)desc";
 
-        public List<Object> Habitaciones_mas_solicitadas(string token)
+        public List<ComodinJava> Habitaciones_mas_solicitadas(string token)
         {
             CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
-            List<Object> lista = new List<Object>();
+            List<ComodinJava> lista = new List<ComodinJava>();
             if (ValidarPerfil(token))
             {
                 try
@@ -246,9 +270,11 @@ namespace CapaNegocio
                                  ).ToList();
                     foreach (var item in query)
                     {
-                        Object[] obj = new Object[2];
-                        obj[0] = item.estado;
-                        obj[1] = item.cantidad;
+                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
+                        ComodinJava obj = new ComodinJava();
+                        obj.Nombre = item.estado.FirstOrDefault();
+                        obj.numero1 = item.cantidad;
                         lista.Add(obj);
                     }
                     return lista;
@@ -268,10 +294,10 @@ namespace CapaNegocio
         //        " from Factura where ordenDeCompra is not null \n" +
         //        " group by fecha order by count(fecha) desc";
 
-        public List<Object> Fecha_mayor_auge(string token)
+        public List<ComodinJava> Fecha_mayor_auge(string token)
         {
             CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
-            List<Object> lista = new List<Object>();
+            List<ComodinJava> lista = new List<ComodinJava>();
             if (ValidarPerfil(token))
             {
                 try
@@ -279,14 +305,16 @@ namespace CapaNegocio
                     var query = (from f in conex.FACTURA
                                  where f.NUMERO_OC != null
                                  group f by f.FECHA into g
-                                 select new { fecha = g.Select(q => q.FECHA), cantidad = g.Select(q => q.FECHA).Count(), total = g.Select(q => q.FECHA) }
+                                 select new { fecha = g.Select(q => q.FECHA), cantidad = g.Select(q => q.FECHA).Count(), total = g.Select(q => q.VALOR_BRUTO).Sum() }
                                  ).ToList();
                     foreach (var item in query)
                     {
-                        Object[] obj = new Object[3];
-                        obj[0] = item.fecha;
-                        obj[1] = item.cantidad;
-                        obj[2] = item.total;
+                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
+                        ComodinJava obj = new ComodinJava();
+                        obj.Nombre = item.fecha.FirstOrDefault().ToString();
+                        obj.numero1 = item.cantidad;
+                        obj.numero2 = item.total;
                         lista.Add(obj);
                     }
                     return lista;
@@ -301,7 +329,7 @@ namespace CapaNegocio
                 return null;
             }
         }
-       
+
         public string Solicitudes_NO_terminadas()
         {
             String text = "create or replace procedure solic_noTerminadas(cantidad out INTEGER) " +
@@ -330,10 +358,10 @@ namespace CapaNegocio
         // + " from Factura where ordenDeCompra is not null "
         // + " group by extract(year from fecha), extract(month from fecha) "
         // + " order by extract(year from fecha), extract(month from fecha) desc";
-        public List<Object> Promedio_venta_mensual(string token)
+        public List<ComodinJava> Promedio_venta_mensual(string token)
         {
             CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
-            List<Object> lista = new List<Object>();
+            List<ComodinJava> lista = new List<ComodinJava>();
             if (ValidarPerfil(token))
             {
                 try
@@ -344,18 +372,19 @@ namespace CapaNegocio
                                  orderby g.Select(q => q.FECHA.Year) descending, g.Select(q => q.FECHA.Month) descending
                                  select new
                                  {
-                                     fecha = g.Select(q => q.VALOR_BRUTO).Sum() / g.Select(q => q.VALOR_BRUTO).Count()
-                                                ,
+                                     promedio = (g.Select(q => q.VALOR_BRUTO).Sum() / g.Select(q => q.VALOR_BRUTO).Count()),
                                      mes = g.Select(q => q.FECHA.Month),
                                      anno = g.Select(q => q.FECHA.Year)
                                  }
                                  ).ToList();
+                    // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                    // Estas se usan solamente como contenedores de la data proveniente de la "query"
                     foreach (var item in query)
                     {
-                        Object[] obj = new Object[3];
-                        obj[0] = item.fecha;
-                        obj[1] = item.mes;
-                        obj[2] = item.anno;
+                        ComodinJava obj = new ComodinJava();
+                        obj.numero1 = item.promedio;
+                        obj.numero2 = item.mes.FirstOrDefault();
+                        obj.numero3 = item.anno.FirstOrDefault();
                         lista.Add(obj);
                     }
                     return lista;
@@ -370,7 +399,7 @@ namespace CapaNegocio
                 return null;
             }
         }
-       
+
         public string Promedio_perdida_mensual()
         {
             String text = "create or replace procedure promedio_perdida(total out INTEGER) " +
@@ -395,7 +424,7 @@ namespace CapaNegocio
                 "end;";
             return text;
         }
-       
+
         public string Porcentage_cierre_efectivo()
         {
             String text = "create or replace procedure porcentage_cierre(total out INTEGER) " +

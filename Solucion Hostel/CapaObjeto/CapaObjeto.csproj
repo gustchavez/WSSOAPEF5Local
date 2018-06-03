@@ -45,6 +45,7 @@
     <Compile Include="Ciudad.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Comida.cs" />
+    <Compile Include="ComodinJava.cs" />
     <Compile Include="ContenedorCama.cs" />
     <Compile Include="ContenedorCamas.cs" />
     <Compile Include="ContenedorCiudades.cs" />
