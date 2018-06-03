@@ -413,12 +413,6 @@
     <Compile Include="perfilEmpleado\stock.aspx.designer.cs">
       <DependentUpon>stock.aspx</DependentUpon>
     </Compile>
-    <Compile Include="perfilProveedor\AgregarProveedor.aspx.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="perfilProveedor\AgregarProveedor.aspx.designer.cs">
-      <DependentUpon>AgregarProveedor.aspx.cs</DependentUpon>
-    </Compile>
     <Compile Include="perfilProveedor\facturas.aspx.cs">
       <DependentUpon>facturas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

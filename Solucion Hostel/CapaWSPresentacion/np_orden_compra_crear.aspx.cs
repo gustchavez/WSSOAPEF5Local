@@ -22,13 +22,13 @@ namespace CapaWSPresentacion
                 else
                 {
                     Session["TokenUsuario"] = null;
-                    Response.Redirect("np_ingreso.aspx");
+                    Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
                 }
             }
             catch (Exception)
             {
                 Session["TokenUsuario"] = null;
-                Response.Redirect("np_ingreso.aspx");
+                Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
             }
         }
 

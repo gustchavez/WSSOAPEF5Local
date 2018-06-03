@@ -33,18 +33,18 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Cod. Producto</h4>	
-			<asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtCodProdAgregar" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Detalle Producto</h4>	
-			<asp:TextBox ID="TextBox2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtDetProdAgregar" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Precio Producto</h4>
-			<asp:TextBox ID="TextBox3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtPrecioProdAgregar" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">	
-		    <asp:Button ID="btnAgregar" runat="server" Text="Agregar Producto" CssClass="SubmitTotal" />
+		    <asp:Button ID="btnAgregar" runat="server" Text="Agregar Producto" CssClass="SubmitTotal" OnClick="btnAgregar_click" />
 			</div>
 			
 	</div>
@@ -72,15 +72,11 @@
                 </asp:DropDownList>
 			</div>
 			<div class="Casilla2-1">
-			<h4>Detalle Producto</h4>	
-			<asp:TextBox ID="TextBox4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
-			</div>
-			<div class="Casilla2-1">
 			<h4>Precio Producto</h4>
-			<asp:TextBox ID="TextBox5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtPrecioModificar" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">	
-			<asp:Button ID="btnModificar" runat="server" Text="Modificar Producto" CssClass="SubmitTotal" />
+			<asp:Button ID="btnModificar" runat="server" Text="Modificar Producto" CssClass="SubmitTotal" OnClick="btnModificar_click" />
 			</div>
 			
 	</div>

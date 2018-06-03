@@ -64,6 +64,11 @@ namespace CapaWSPresentacion.PaginaComercial
 
         protected void submit_Click(object sender, EventArgs e)
         {
+
+        }
+
+        protected void btnRegistrar_Click(object sender, EventArgs e)
+        {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
             ContenedorPerfilUsuarioCliente n = new ContenedorPerfilUsuarioCliente();
