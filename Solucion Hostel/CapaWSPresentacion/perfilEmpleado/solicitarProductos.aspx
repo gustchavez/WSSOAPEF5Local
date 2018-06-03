@@ -21,33 +21,26 @@
 <div class="columna2">
 	
 	
-	<div class="ModificarDatos2">
+	<div class="ModificarDatos2" style="left: 0px; top: 30px">
 		
 		<h2>Solicitar productos</h2>
 		<h4>Seleccione cod. producto y cantidad o nombre de producto y cantidad </h4>
 		<div class="Casilla2-2" >
-		<h4 style="color: red;">Cod.Producto</h4>	
-		<select class="selectO">
-			<option>H4040</option>
-			<option>A2740</option>
-			<option>A2740</option>
-			<option>A2740</option>
-		</select>
+		<h4 style="color: red;">Proveedor</h4>
+        <asp:DropDownList ID="txtProveedor" runat="server" CssClass="selectO" AutoPostBack="True" OnSelectedIndexChanged="txtProveedor_SelectedIndexChanged">
+            </asp:DropDownList>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nombre producto</h4>	
-		<select class="selectO">
-			<option>Lavaloza</option>
-			<option>Limpia Vidrio</option>
-			<option>Arroz</option>
-			<option>Azucar</option>
-		</select></div>
+		<asp:DropDownList ID="txtProducto" runat="server" CssClass="selectO" OnSelectedIndexChanged="txtProveedor_SelectedIndexChanged">
+            </asp:DropDownList>
+		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Cantidad</h4>	
-	    <asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaPersona2"></asp:TextBox>
+	    <asp:TextBox ID="txtCantidad" runat="server" CssClass="CasillaPersona2"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">	
-	    <asp:Button ID="Button1" runat="server" Text="Button" CssClass="SubmitTotal" OnClick="Button1_Click" />
+	    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="SubmitTotal" OnClick="btnAgregar_Click" />
 		</div>
 	</div>
 	
@@ -72,7 +65,7 @@
 
 		</table>
 		<div class="Casilla2-1">	
-		 <asp:Button ID="Button2" runat="server" Text="Button" CssClass="SubmitTotal" OnClick="Button2_Click" />
+		 <asp:Button ID="btnRealizar" runat="server" Text="Realizar" CssClass="SubmitTotal" OnClick="btnRealizar_Click" />
 		</div>
 	</div>		
 </div>

@@ -34,7 +34,6 @@ namespace CapaWSPresentacion.perfilEmpleado
                 Session["TokenUsuario"] = null;
                 Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
             }
-
         }
 
         private void RescatarDatos()

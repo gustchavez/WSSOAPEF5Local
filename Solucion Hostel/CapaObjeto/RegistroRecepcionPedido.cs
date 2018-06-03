@@ -9,7 +9,7 @@ namespace CapaObjeto
     public class RegistroRecepcionPedido
     {
         public decimal Codigo { get; set; }
-        public int Indice { get; set; }
+        public int Cantidad { get; set; }
         public DateTime Recepcion { get; set; }
         public string Confirmado { get; set; }
         public decimal CodigoProducto { get; set; }
@@ -23,7 +23,7 @@ namespace CapaObjeto
         private void Init()
         {
             this.Codigo = decimal.MinValue;
-            this.Indice = int.MinValue;
+            this.Cantidad = int.MinValue;
             this.Recepcion = DateTime.MinValue;
             this.Confirmado = string.Empty;
             this.CodigoProducto = decimal.MinValue;

@@ -149,7 +149,7 @@ namespace CapaNegocio
                             OrdenPedidoDetalle m = new OrdenPedidoDetalle();
                             m.RegistroRecepcionPedido.NumeroOrdenPedido = item.NumeroOP;
                             m.RegistroRecepcionPedido.CodigoProducto = item.CodProd;
-                            m.RegistroRecepcionPedido.Indice = item.CantProd;
+                            m.RegistroRecepcionPedido.Cantidad = item.CantProd;
                             m.RegistroRecepcionPedido.Recepcion = item.FecRecProd;
                             m.RegistroRecepcionPedido.Confirmado = item.EstadoProd;
                             
@@ -167,7 +167,7 @@ namespace CapaNegocio
                             OrdenPedidoDetalle m = new OrdenPedidoDetalle();
                             m.RegistroRecepcionPedido.NumeroOrdenPedido = item.NumeroOP;
                             m.RegistroRecepcionPedido.CodigoProducto = item.CodProd;
-                            m.RegistroRecepcionPedido.Indice = item.CantProd;
+                            m.RegistroRecepcionPedido.Cantidad = item.CantProd;
                             m.RegistroRecepcionPedido.Recepcion = item.FecRecProd;
                             m.RegistroRecepcionPedido.Confirmado = item.EstadoProd;
 
