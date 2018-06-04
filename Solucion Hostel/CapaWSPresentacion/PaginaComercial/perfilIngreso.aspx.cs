@@ -33,6 +33,7 @@ namespace CapaWSPresentacion.PaginaComercial
                 Session["TokenUsuario"] = nLogin.Retorno.Token;
                 Session["NombreUsuario"] = nLogin.Usuario;
                 Session["PerfilUsuario"] = nLogin.Perfil;
+                Session["SesionUsuario"] = nLogin;
 
                 switch (nLogin.Perfil)
                 {
@@ -52,21 +53,18 @@ namespace CapaWSPresentacion.PaginaComercial
                         Session["TokenUsuario"] = null;
                         Session["NombreUsuario"] = null;
                         Session["PerfilUsuario"] = null;
+                        Session["SesionUsuario"] = null;
                         break;
                 }
             } else {
                 Session["TokenUsuario"] = null;
                 Session["NombreUsuario"] = null;
                 Session["PerfilUsuario"] = null;
+                Session["SesionUsuario"] = null;
             }
 
         }
-
-        protected void submit_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
