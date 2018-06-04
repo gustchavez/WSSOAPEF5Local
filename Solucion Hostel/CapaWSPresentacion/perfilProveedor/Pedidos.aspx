@@ -50,7 +50,7 @@
 		</table>
 		
 	            <br />
-                <asp:GridView ID="gwSolicitudes" runat="server">
+                <asp:GridView ID="gwSolicitudes" runat="server" CssClass="listaFactura">
                 </asp:GridView>
 		
 	</div>

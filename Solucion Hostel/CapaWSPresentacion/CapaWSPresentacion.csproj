@@ -132,6 +132,12 @@
     <Content Include="PaginaComercial\index.html" />
     <Content Include="PaginaComercial\muse_manifest.xml" />
     <Content Include="PaginaComercial\perfilIngreso.aspx" />
+    <Content Include="perfilAdministrador\AdminCrearAdmin.aspx" />
+    <Content Include="perfilAdministrador\AdminFacturaProveedorP.aspx" />
+    <Content Include="perfilAdministrador\AdminGestionAdmin.aspx" />
+    <Content Include="perfilAdministrador\AdminIngresoFacturaP.aspx" />
+    <Content Include="perfilAdministrador\AdminMostrarFacturas.aspx" />
+    <Content Include="perfilAdministrador\AdminSolicitarPP.aspx" />
     <Content Include="perfilCliente\detalleSolicitud.aspx" />
     <Content Include="perfilCliente\facturaCliente.aspx" />
     <Content Include="perfilCliente\finSolicitud.aspx" />
@@ -168,16 +174,22 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenCompraCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenPedidoCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenReservaCompleta.datasource" />
-    <Content Include="scripts\condiciones.js" />
+    <Content Include="scripts\admin.css" />
+    <Content Include="scripts\AdminFacturaProveedorP.css" />
+    <Content Include="scripts\AdminIngresoFacturaP.css" />
+    <Content Include="scripts\AdminMostrarFacturas.css" />
+    <Content Include="scripts\AdminSolicitarPP.css" />
     <Content Include="scripts\detalleCliente.css" />
     <Content Include="scripts\empresaEmpleado.css" />
     <Content Include="scripts\facturaCliente.css" />
     <Content Include="scripts\facturaEmpleado.css" />
     <Content Include="scripts\facturaProveedor.css" />
+    <Content Include="scripts\gestionAdmin.css" />
     <Content Include="scripts\index.css" />
     <Content Include="scripts\ingreso.css" />
     <Content Include="scripts\ingresoFacturaProveedor.css" />
     <Content Include="scripts\jquery.min.js" />
+    <Content Include="scripts\logPdf.png" />
     <Content Include="scripts\ordenCliente.css" />
     <Content Include="scripts\pedidosProveedor.css" />
     <Content Include="scripts\perfilCliente.css" />
@@ -207,9 +219,8 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioProveedores.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenesCompraCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenesPedidoCompleta.datasource" />
-    <None Include="Service References\WSSoap\Arrays.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <Content Include="Properties\DataSources\CapaObjeto.ComodinJava.datasource" />
+    <Content Include="perfilAdministrador\MasterAdministrador.Master" />
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>
@@ -316,6 +327,55 @@
     <Compile Include="PaginaComercial\perfilIngreso.aspx.designer.cs">
       <DependentUpon>perfilIngreso.aspx</DependentUpon>
     </Compile>
+    <Compile Include="perfilAdministrador\AdminCrearAdmin.aspx.cs">
+      <DependentUpon>AdminCrearAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminCrearAdmin.aspx.designer.cs">
+      <DependentUpon>AdminCrearAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminFacturaProveedorP.aspx.cs">
+      <DependentUpon>AdminFacturaProveedorP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminFacturaProveedorP.aspx.designer.cs">
+      <DependentUpon>AdminFacturaProveedorP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminGestionAdmin.aspx.cs">
+      <DependentUpon>AdminGestionAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminGestionAdmin.aspx.designer.cs">
+      <DependentUpon>AdminGestionAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminIngresoFacturaP.aspx.cs">
+      <DependentUpon>AdminIngresoFacturaP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminIngresoFacturaP.aspx.designer.cs">
+      <DependentUpon>AdminIngresoFacturaP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminMostrarFacturas.aspx.cs">
+      <DependentUpon>AdminMostrarFacturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminMostrarFacturas.aspx.designer.cs">
+      <DependentUpon>AdminMostrarFacturas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminSolicitarPP.aspx.cs">
+      <DependentUpon>AdminSolicitarPP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminSolicitarPP.aspx.designer.cs">
+      <DependentUpon>AdminSolicitarPP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\MasterAdministrador.Master.cs">
+      <DependentUpon>MasterAdministrador.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\MasterAdministrador.Master.designer.cs">
+      <DependentUpon>MasterAdministrador.Master</DependentUpon>
+    </Compile>
     <Compile Include="perfilCliente\detalleSolicitud.aspx.cs">
       <DependentUpon>detalleSolicitud.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -414,12 +474,6 @@
     <Compile Include="perfilEmpleado\stock.aspx.designer.cs">
       <DependentUpon>stock.aspx</DependentUpon>
     </Compile>
-    <Compile Include="perfilProveedor\AgregarProveedor.aspx.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="perfilProveedor\AgregarProveedor.aspx.designer.cs">
-      <DependentUpon>AgregarProveedor.aspx.cs</DependentUpon>
-    </Compile>
     <Compile Include="perfilProveedor\facturas.aspx.cs">
       <DependentUpon>facturas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -499,7 +553,6 @@
     <Folder Include="PaginaComercial\css\" />
     <Folder Include="PaginaComercial\images\" />
     <Folder Include="PaginaComercial\scripts\" />
-    <Folder Include="perfilAdministrador\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

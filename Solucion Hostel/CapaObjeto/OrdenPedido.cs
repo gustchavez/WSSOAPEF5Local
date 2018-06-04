@@ -10,7 +10,7 @@ namespace CapaObjeto
     {
         public decimal Numero { get; set; }
         public DateTime FechaEmision { get; set; }
-        public int Monto { get; set; }
+        public decimal Monto { get; set; }
         public string Observaciones { get; set; }
         public string Ubicacion { get; set; }
         public string Estado { get; set; }

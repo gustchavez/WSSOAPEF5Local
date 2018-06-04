@@ -22,13 +22,13 @@ namespace CapaWSPresentacion
                 else
                 {
                     Session["TokenUsuario"] = null;
-                    Response.Redirect("np_ingreso.aspx");
+                    Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
                 }
             }
             catch (Exception)
             {
                 Session["TokenUsuario"] = null;
-                Response.Redirect("np_ingreso.aspx");
+                Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
             }
         }
 
@@ -143,7 +143,7 @@ namespace CapaWSPresentacion
                 nOPD.RegistroRecepcionPedido.Recepcion = DateTime.Parse(item1.Text);
 
                 DropDownList item3 = (DropDownList)PlaceHolder1.FindControl("ddlProductoCodProd" + i);
-                nOPD.RegistroRecepcionPedido.CodigoProducto = decimal.Parse(item3.SelectedValue);
+                nOPD.RegistroRecepcionPedido.Producto.Codigo = decimal.Parse(item3.SelectedValue);
 
                 nOPC.ListaDetalle.Add(nOPD);
             }

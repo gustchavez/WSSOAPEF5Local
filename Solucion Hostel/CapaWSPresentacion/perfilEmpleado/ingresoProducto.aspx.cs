@@ -34,7 +34,6 @@ namespace CapaWSPresentacion.perfilEmpleado
                 Session["TokenUsuario"] = null;
                 Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
             }
-
         }
 
         private void RescatarDatos()
@@ -79,5 +78,68 @@ namespace CapaWSPresentacion.perfilEmpleado
 
         }
 
+        protected void btnAgregar_click(object sender, EventArgs e)
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            ContenedorProducto nProducto = new ContenedorProducto();
+
+            nProducto.Item.Descripcion = txtDetProdAgregar.Text;
+            nProducto.Item.Stock = 0;
+            nProducto.Item.StockCritico = 0;
+            nProducto.Retorno.Token = Session["TokenUsuario"].ToString();
+
+            nProducto = x.ProductoCrear(nProducto);
+
+            if (nProducto.Retorno.Codigo.ToString() == "0")
+            {
+                ContenedorProvision nProvision = new ContenedorProvision();
+
+                nProvision.Item.RutProveedor = txtProveedorAgregar.SelectedValue;
+                nProvision.Item.CodigoProducto = (int)nProducto.Item.Codigo;
+                nProvision.Item.Precio = decimal.Parse(txtPrecioProdAgregar.Text);
+                nProvision.Retorno.Token = Session["TokenUsuario"].ToString();
+
+                nProvision = x.ProvisionCrear(nProvision);
+                if (nProvision.Retorno.Codigo.ToString() == "0")
+                {
+                    txtCodProdAgregar.Text = nProducto.Item.Codigo.ToString();
+                }
+                else
+                {
+                    txtCodProdAgregar.Text = "-2";
+                    //nProvision.Retorno.Codigo.ToString();
+                    //nProvision.Retorno.Glosa;
+                }
+            } else  {
+                txtCodProdAgregar.Text = "-1";
+                //nProducto.Retorno.Codigo.ToString();
+                //nProducto.Retorno.Glosa;
+            }
+        }
+
+        protected void btnModificar_click(object sender, EventArgs e)
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            
+            ContenedorProvision nProvision = new ContenedorProvision();
+
+            nProvision.Item.RutProveedor = txtProveedorModificar.SelectedValue;
+            nProvision.Item.CodigoProducto = int.Parse(txtProductoModificar.SelectedValue.ToString());
+            nProvision.Item.Precio = decimal.Parse(txtPrecioModificar.Text);
+            nProvision.Retorno.Token = Session["TokenUsuario"].ToString();
+
+            nProvision = x.ProvisionActualizar(nProvision);
+            if (nProvision.Retorno.Codigo.ToString() == "0")
+            {
+                txtPrecioModificar.Text = "0";
+            }
+            else
+            {
+                txtPrecioModificar.Text = "-1";
+                //nProvision.Retorno.Codigo.ToString();
+                //nProvision.Retorno.Glosa;
+            }
+        }
     }
 }
