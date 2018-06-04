@@ -70,6 +70,13 @@ namespace CapaWSPresentacion.perfilEmpleado
             txtProductoModificar.DataValueField = "Codigo";
             txtProductoModificar.DataTextField = "Descripcion";
             txtProductoModificar.DataBind();
+
+            txtProductoModificar2.DataSource = m.Lista;
+            txtProductoModificar2.DataValueField = "Codigo";
+            txtProductoModificar2.DataTextField = "Descripcion";
+            txtProductoModificar2.DataBind();
+
+
         }
 
     }

@@ -17,12 +17,10 @@
 
 
 <div class="ContenedorPaginaIngreso">
-	
 
 	<div class="Contenedor-Registro">
 		
 			<h3 class="Contenido">REGISTRO</h3>
-
 			<div class="Contenido">
 				Rut Empresa <br/>
 				 <asp:TextBox ID="rutEmpresa" runat="server"  CssClass="casilla"   ></asp:TextBox><br/>	
@@ -169,9 +167,7 @@
                     <asp:ListItem Value="133">CONSEJO DE ADMINISTRACIÓN DE EDIFICIOS Y CONDOMINIOS </asp:ListItem>
                     <asp:ListItem Value="134">ORGANIZACIONES Y ÓRGANOS EXTRATERRITORIALES </asp:ListItem>
 
-                </asp:DropDownList>
-
-				
+                </asp:DropDownList>			
 			</div>
 
 			<div class="Contenido">
@@ -197,9 +193,6 @@
 				<ul class="error" id="error"></ul>	
 			</div>
 	</div>
-    
-   
-
 	<div class="Contenedor-Registro">
 		<div class="linea"></div>
 	</div>
@@ -216,9 +209,6 @@
 				Contraseña <br/>
 			    <asp:TextBox ID="txtClaveUsuario" runat="server"  TextMode="Password" CssClass="casilla"></asp:TextBox><br/>
 			</div>
-
-
-
 			<div class="Contenido">
 				<asp:Button ID="btnAceptar" runat="server" Text="Ingresar"  OnClick="btnAceptar_Click" CssClass="casillaEnvio" /><br/>		
 			</div>
@@ -226,14 +216,10 @@
 				<ul class="error2" id="error2"></ul>	
 			</div>
 	</div>
-
      </form>
-
-
-
 </div>  
 
-<script src="/scripts/condiciones.js"></script>	
+
    
 </body>
 </html>

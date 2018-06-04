@@ -25,7 +25,7 @@
 				
 			<h2>Agregar productos a proveedor</h2><br>	
 	
-		
+	
 			<div class="Casilla2-1">
 			<h4>Nombre Empresa</h4>				
 			<asp:DropDownList ID="txtProveedorAgregar" runat="server" CssClass="droplist">
@@ -33,7 +33,8 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Cod. Producto</h4>	
-			<asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:DropDownList ID="txtProductoModificar2" runat="server" CssClass="droplist">
+            </asp:DropDownList>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Detalle Producto</h4>	
