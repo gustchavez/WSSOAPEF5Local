@@ -304,7 +304,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaRecepcion" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Monto" type="xs:int" />
+      <xs:element minOccurs="0" name="Monto" type="xs:decimal" />
       <xs:element minOccurs="0" name="Numero" type="xs:decimal" />
       <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RutCliente" nillable="true" type="xs:string" />
@@ -381,7 +381,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaEmision" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Monto" type="xs:int" />
+      <xs:element minOccurs="0" name="Monto" type="xs:decimal" />
       <xs:element minOccurs="0" name="Numero" type="xs:decimal" />
       <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RutProveedor" nillable="true" type="xs:string" />
@@ -403,11 +403,13 @@
   <xs:element name="OrdenPedidoDetalle" nillable="true" type="tns:OrdenPedidoDetalle" />
   <xs:complexType name="RegistroRecepcionPedido">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
       <xs:element minOccurs="0" name="Codigo" type="xs:decimal" />
-      <xs:element minOccurs="0" name="CodigoProducto" type="xs:decimal" />
       <xs:element minOccurs="0" name="Confirmado" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Indice" type="xs:int" />
       <xs:element minOccurs="0" name="NumeroOrdenPedido" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PrecioCantidad" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PrecioUnitario" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Producto" nillable="true" type="tns:Producto" />
       <xs:element minOccurs="0" name="Recepcion" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>

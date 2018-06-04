@@ -46,8 +46,9 @@ namespace CapaNegocio
                         {
                             conex.SP_CREAR_DET_PEDIDO
                             ( nOPC.Item.Cabecera.Numero
+                            , item.RegistroRecepcionPedido.Cantidad
                             , item.RegistroRecepcionPedido.Recepcion
-                            , item.RegistroRecepcionPedido.CodigoProducto
+                            , item.RegistroRecepcionPedido.Producto.Codigo
                             , p_OUT_CODRET
                             , p_OUT_GLSRET
                             );
@@ -148,7 +149,7 @@ namespace CapaNegocio
                             //Se crea el detalle Orden
                             OrdenPedidoDetalle m = new OrdenPedidoDetalle();
                             m.RegistroRecepcionPedido.NumeroOrdenPedido = item.NumeroOP;
-                            m.RegistroRecepcionPedido.CodigoProducto = item.CodProd;
+                            m.RegistroRecepcionPedido.Producto.Codigo = item.CodProd;
                             m.RegistroRecepcionPedido.Cantidad = item.CantProd;
                             m.RegistroRecepcionPedido.Recepcion = item.FecRecProd;
                             m.RegistroRecepcionPedido.Confirmado = item.EstadoProd;
@@ -166,7 +167,7 @@ namespace CapaNegocio
                             //Se crea el detalle Orden
                             OrdenPedidoDetalle m = new OrdenPedidoDetalle();
                             m.RegistroRecepcionPedido.NumeroOrdenPedido = item.NumeroOP;
-                            m.RegistroRecepcionPedido.CodigoProducto = item.CodProd;
+                            m.RegistroRecepcionPedido.Producto.Codigo = item.CodProd;
                             m.RegistroRecepcionPedido.Cantidad = item.CantProd;
                             m.RegistroRecepcionPedido.Recepcion = item.FecRecProd;
                             m.RegistroRecepcionPedido.Confirmado = item.EstadoProd;

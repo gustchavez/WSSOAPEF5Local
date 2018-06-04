@@ -27,46 +27,37 @@
 		<h4>Seleccione cod. producto y cantidad o nombre de producto y cantidad </h4>
 		<div class="Casilla2-2" >
 		<h4 style="color: red;">Proveedor</h4>
-        <asp:DropDownList ID="txtProveedor" runat="server" CssClass="selectO" AutoPostBack="True" OnSelectedIndexChanged="txtProveedor_SelectedIndexChanged">
+        <asp:DropDownList ID="txtProveedor" runat="server" CssClass="selectO">
             </asp:DropDownList>
+		</div>        
+		<div class="Casilla2-2">	
+	    <asp:Button ID="btnSelectProveedor" runat="server" Text="Elegir Proveedor" CssClass="SubmitTotal" OnClick="btnSelectProveedor_Click"/>
 		</div>
+
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nombre producto</h4>	
-		<asp:DropDownList ID="txtProducto" runat="server" CssClass="selectO" OnSelectedIndexChanged="txtProveedor_SelectedIndexChanged">
+		<asp:DropDownList ID="txtProducto" runat="server" CssClass="selectO" Enabled="False">
             </asp:DropDownList>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Cantidad</h4>	
-	    <asp:TextBox ID="txtCantidad" runat="server" CssClass="CasillaPersona2"></asp:TextBox>
+	    <asp:TextBox ID="txtCantidad" runat="server" CssClass="CasillaPersona2" Enabled="False"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">	
-	    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="SubmitTotal" OnClick="btnAgregar_Click" />
+	    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="SubmitTotal" OnClick="btnAgregar_Click" Enabled="False" />
 		</div>
 	</div>
 	
 	<div class="contenedorTabla">
-		<table class="tabla">
-			<tr>
-				<th>Cod. Producto</th>
-				<th>Detalle</th>
-				<th>Precio</th>
-				<th>Cantidad</th>
-				<th>empresa</th>
-				<th>Eliminar</th>
-			</tr>
-			<tr>
-				<td>A2740</td>
-				<td>Limpia vidrios 1lt</td>
-				<td>1000</td>
-				<td>10</td>
-				<td>Limpieza ltda</td>
-				<td> <a href="#">Eliminar</a></td>
-			</tr>
+		
 
-		</table>
+        <asp:GridView ID="gwListaCompra" runat="server" CssClass="tabla" style="left: 0px; top: 50px">
+        </asp:GridView>
+
 		<div class="Casilla2-1">	
 		 <asp:Button ID="btnRealizar" runat="server" Text="Realizar" CssClass="SubmitTotal" OnClick="btnRealizar_Click" />
 		</div>
+	    
 	</div>		
 </div>
 
