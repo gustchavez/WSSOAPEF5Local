@@ -36,7 +36,7 @@
 			<div class="subMenu"> <a href="AdminCrearSolicitud.aspx" style="color: #26362A; font-weight: bold;"> Solicitar Servicio </a></div>
 			<div class="subMenu"> <a href="AdminVerFacturaCLiente.aspx" style="color: #26362A; font-weight: bold;"> Ver Facturas </a></div>
 			<br>
-			<div class="subMenu"> <a href="ingreso.html" style="color: #26362A; font-weight: bold;" > Cerrar Sesión</a></div>
+			<div class="subMenu"> <a href="/np_ingreso.aspx" style="color: #26362A; font-weight: bold;" > Cerrar Sesión</a></div>
 		</div>
 
 	</div>
