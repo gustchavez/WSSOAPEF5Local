@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterAdministrador.master.cs" Inherits="CapaWSPresentacion.perfilAdministrador.MasterAdministrador" %>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="/scripts/admin.css">
+	<script src="/scripts/efectos.js"></script>
+	<script src="/scripts/jquery.min.js"></script>
+	<title></title>
+</head>
+<body>
+
+
+<div class="padre">
+	
+	<div class="menu">
+
+	<div class="BotonMenu" onclick="efecto()">MENU</div>		
+		<div class="desplegable">		
+			<div class="subMenu"> <div class="imagen-logo"></div> </div>
+			<div class="subMenu" style="font-weight: bold; "> ADMINISTRADOR </div>
+			<div class="subMenu"> <a href="AdminCrearAdmin.aspx" style="color: #26362A; font-weight: bold;"> Crear Perfiles </a></div>
+			<div class="subMenu"> <a href="AdminGestionAdmin.aspx" style="color: #26362A; font-weight: bold;"> Modificar o Elimiar Perfil </a></div>
+			<br>
+			<div class="subMenu" style="font-weight: bold;" > EMPLEADO </div>
+			<div class="subMenu"> <a href="AdminSolicitarPP.aspx" style="color: #26362A; font-weight: bold;"> Solicitar Producto Proveedor </a></div>
+			<div class="subMenu"> <a href="AdminMostrarFacturas.aspx" style="color: #26362A; font-weight: bold;"> Ver Solicitudes </a></div>
+			<br>
+			<div class="subMenu" style="font-weight: bold;"> PROVEEDOR </div>
+			<div class="subMenu"> <a href="AdminIngresoFacturaP.aspx" style="color: #26362A; font-weight: bold;"> Generar Factura </a></div>
+			<div class="subMenu"> <a href="AdminFacturaProveedorP.aspx" style="color: #26362A; font-weight: bold;"> Ver Facturas </a></div>
+			<br>
+			<div class="subMenu" style="font-weight: bold;"> CLIENTE </div>
+			<div class="subMenu"> <a href="AdminCrearSolicitud.aspx" style="color: #26362A; font-weight: bold;"> Solicitar Servicio </a></div>
+			<div class="subMenu"> <a href="AdminVerFacturaCLiente.aspx" style="color: #26362A; font-weight: bold;"> Ver Facturas </a></div>
+			<br>
+			<div class="subMenu"> <a href="ingreso.html" style="color: #26362A; font-weight: bold;" > Cerrar Sesión</a></div>
+		</div>
+
+	</div>
+	<!--Fin Menu-->
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+
+</div>
+
+
+
+</body>
+</html>

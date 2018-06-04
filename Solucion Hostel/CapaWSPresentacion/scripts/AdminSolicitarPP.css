@@ -1,0 +1,379 @@
+/* Bases pagina */
+*{
+padding: 0px;
+margin: 0px;
+}
+
+body{
+	font-family: arial;
+	font-size: 13px;
+	color: #68AA83;
+	background: #095256;
+}
+
+.padre {
+	width: 1250px;
+	height: 700px;
+	margin: auto;
+	position: relative;
+}
+
+.totalmenu {
+	width: 100%;
+	height: 30px;
+	background: #26362A;
+	position: absolute;
+	z-index: 11;
+}
+
+.menu {
+	width: 800px;
+	height: 30px;
+	background: #26362A;
+	position: absolute;
+	z-index: 11;
+}
+
+.columna1{
+	position: absolute;
+	width: 250px;
+	height: 670px;
+	margin-top: 30px;
+	padding-left: 10px;	
+}
+
+.columna2{
+	position: absolute;
+	background: #274046;
+	margin-left: 280px;
+	margin-top: 30px;
+	width: 970px;
+	height: 670px;
+}
+
+
+/* Menu */
+
+.BotonMenu {
+width: 280px;
+height: 30px;
+text-align: center;
+color: white;
+position: relative;
+float: left;
+z-index: 11;
+padding-top: 7px;
+}
+
+.BotonMenu:HOVER{
+width: 280px;
+height: 23px;
+text-align: center;
+color: white;
+position: relative;
+background: #26362A;
+z-index: 11;
+padding-top: 7px;
+}
+
+
+/* Contenido Desplegable */
+.desplegable{	
+background: #087F8C;
+width: 280px;
+z-index: 10;
+height: 670px;
+position: absolute;
+margin-top: 30px;
+display: none;
+}
+
+.imagen-logo {
+	background: white;
+	height: 150px;
+	width: 150px;
+	margin: auto;
+	border-radius: 50%;
+	position: relative;
+	bottom: 10px;
+}
+
+.subMenu {
+	position: relative;
+	top: 50px;
+	margin: 10px;
+	color: white;
+	text-align: center;
+}
+
+
+/* -------------------------- */
+/* Inicio Contenido columna 1 */
+/* -------------------------- */
+.perfilCliente{	
+width: 250px;
+margin: auto;
+height: 100%;
+position: absolute;
+}
+
+.datosEmpresa {
+	position: relative;
+	top: 50px;
+	margin-top: 15px;
+	color: black;
+	text-align: center;
+}
+
+.imagen-logo-empresa {
+	background: white;
+	height: 150px;
+	width: 150px;
+	margin: auto;
+	border-radius: 50%;
+	position: relative;
+	bottom: 30px;
+
+}
+
+
+/* ----------------------- */
+/* Fin Contenido columna 1 */
+/* ----------------------- */
+
+/* -------------------------- */
+/* Inicio Contenido columna 2 */
+/* -------------------------- */
+
+.ModificarDatos{
+	margin: auto;
+	height: 300px;
+	width: 900px;
+	position: relative;
+	top: 20px;
+
+}
+
+.columna2 h3{
+	text-align: left;
+	color: orange;
+}
+
+.Casilla2-1 {
+	
+	float: right;
+	margin: 5px;
+	position: relative;
+	right: 80px;
+	top: 100px;	
+
+}
+
+.ModificarDatos2{
+	margin: auto;
+	top: 30px;
+	width: 800px;
+	position: relative;
+	
+}
+
+
+.ModificarDatos3{
+	
+	top: 10px;
+	height:150px;
+	width: 900px;
+	position: relative;
+	float: left;
+	left: 30px;
+
+	
+}
+
+.Casilla2-1Button{
+
+	float: left;
+	margin: 20px;
+	width: 100px;
+	height: 20px;
+	
+}
+
+.Casilla2-2 {
+	float: left;
+	margin: 5px;
+	position: relative;
+	top: 10px;
+}
+
+.ModificarDatos2 h3{
+
+color: orange;
+
+}
+
+.CasillaPersona{
+	position: relative;
+	width: 200px;
+	height: 25px;
+	background: #274046;
+	color: white;
+ 	border: none;
+    border-bottom: 2px solid white;
+
+}
+
+.CasillaPersona2{
+	position: relative;
+	width: 80px;
+	height: 35px;
+	background-color: #087F8C;
+	font-size: 14px;
+    color: white;
+	border: none;
+	text-align: center;
+
+}
+
+
+
+
+
+
+.droplist {
+	position: relative;
+	width: 200px;
+	height: 30px;
+	float: left;
+	background: #274046;
+	color: white;
+	border: none;
+	 border-bottom: 2px solid white;
+}
+
+.droplistPrincipal {
+	position: relative;
+	width: 420px;
+	height: 40px;
+	background-color: white;
+	font-size: 14px;
+    color: #095256;
+	border: none;
+	
+}
+
+.Casilla2-1Principal {
+	float: left;
+	margin: 20px;
+	width: 400px;
+	height: 20px;
+	padding-bottom: 20px;
+
+}
+
+
+.SubmitTotal{
+
+	margin: auto;
+	position: relative;
+	top: 15px;
+	width: 235px;
+	height: 35px;
+	left: 35px;
+
+
+	background: #087F8C;
+    color: white;
+    border: 2px solid orange;
+    transition-duration: 0.4s;
+    border-radius: 8px;
+    font-size: 12px;
+
+}
+
+
+.SubmitTotal2{
+
+
+	position: relative;
+	width: 235px;
+	height: 30px;
+
+	background: none;
+    color: white;
+    border: 2px solid orange;
+    transition-duration: 0.4s;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+h2{
+	color:orange;
+}
+
+.tabla{
+	margin: auto;
+	height: 70px;
+	width: 800px;
+	position: relative;
+	top: 50px;
+	text-align: center;
+}
+
+.tabla th{
+	background: white;
+	color :black;
+	height: 30px;
+}
+
+.selectO {
+	width: 200px;
+	height: 35px;
+	background-color: #087F8C;
+	font-size: 14px;
+    color: white;
+	border: none;
+
+}
+
+
+.SubmitTotal2:Hover{
+
+	position: relative;
+	width: 235px;
+	height: 30px;
+
+	background: orange;
+    color: white;
+    border: 2px solid orange;
+    transition-duration: 0.4s;
+    border-radius: 8px;
+    font-size: 12px;
+
+}
+
+.SubmitTotal:Hover{
+	margin: auto;
+	position: relative;
+	top: 15px;
+	width: 235px;
+	height: 35px;
+	left: 35px;
+
+
+	background: orange;
+    color: white;
+    border: 2px solid orange;
+    transition-duration: 0.4s;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+
+/* ----------------------- */
+/* Fin Contenido columna 2 */
+/* ----------------------- */
+
+
+
+
