@@ -62,14 +62,13 @@ namespace CapaWSPresentacion.perfilEmpleado
             n.Item.PerfilUsuario.Empresa.Rubro = txtNombreCiudad.Text;
             n.Item.PerfilUsuario.Empresa.Email = txtCorreoElectronico.Text;
             n.Item.PerfilUsuario.Empresa.Telefono = txtTelefonoEmpresa.Text;
-            n.Item.PerfilUsuario.Empresa.Rut = txtRutEmpresa.Text;
             n.Item.PerfilUsuario.Direccion.CodPais = 56;
             n.Item.PerfilUsuario.Direccion.CodPostal = "1234";
             n.Item.PerfilUsuario.Direccion.NombreCiudad = txtNombreCiudad.Text;
             n.Item.PerfilUsuario.Direccion.Comuna = txtComuna.Text;
             n.Item.PerfilUsuario.Direccion.Calle = txtCalle.Text;
-            n.Item.PerfilUsuario.Direccion.Numero = int.Parse("123");
-            n.Item.PerfilUsuario.Empresa.Logo = "logo";
+            n.Item.PerfilUsuario.Direccion.Numero = 123;
+            n.Item.PerfilUsuario.Empresa.Logo = "Logo";
             n.Item.PerfilUsuario.Persona.Rut = txtRutEmpresa.Text + "Z";
             n.Item.PerfilUsuario.Persona.Nombre = "Perfil";
             n.Item.PerfilUsuario.Persona.Apellido = "Proveedor";
@@ -78,6 +77,7 @@ namespace CapaWSPresentacion.perfilEmpleado
             n.Item.PerfilUsuario.Persona.Telefono = "123";
             n.Item.PerfilUsuario.Usuario.Clave = txtConstrasena.Text;
             n.Retorno.Token = Session["TokenUsuario"].ToString();
+            //n.Item.PerfilUsuario.Empresa.Rut = txtRutEmpresa.Text;
 
             n = x.PerfilUsuarioProveedorCrear(n);
 

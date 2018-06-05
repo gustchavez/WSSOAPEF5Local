@@ -18,8 +18,8 @@ namespace CapaNegocio
         
         public ContenedorPerfilUsuarioCliente LlamarSPCrear(ContenedorPerfilUsuarioCliente nPUC)
         {
-            if (ValidarPerfilCUD(nPUC.Retorno.Token))
-            {
+            //if (ValidarPerfilCUD(nPUC.Retorno.Token))
+            //{
                 var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
                 var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
 
@@ -59,10 +59,10 @@ namespace CapaNegocio
                     nPUC.Retorno.Codigo = 1011;
                     nPUC.Retorno.Glosa = "Err codret ORACLE";
                 }
-            } else {
-                nPUC.Retorno.Codigo = 100;
-                nPUC.Retorno.Glosa = "Err expiro sesion o perfil invalido";
-            }
+            //} else {
+            //    nPUC.Retorno.Codigo = 100;
+            //    nPUC.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            //}
 
             return nPUC;
         }
