@@ -22,7 +22,7 @@
 			<div class="subMenu"> <a href="perfil.aspx" style="color: #e2e2e2;"> Modificar Perfil </a></div>
 			<div class="subMenu"> <a href="facturas.aspx" style="color: #e2e2e2;"> Ver Facturas </a></div> 
 			<div class="subMenu"> <a href="ingresoFactura.aspx" style="color: #e2e2e2;"> Ingreso Factura </a></div><br>
-			<div class="subMenu"> <a href="/np_ingreso.aspx" style="color: #e2e2e2;"> Cerrar Sesión</a></div>
+			<div class="subMenu"> <a href="/PaginaComercial/perfilIngreso.aspx" style="color: #e2e2e2;"> Cerrar Sesión</a></div>
 		</div>
 
 	</div>
