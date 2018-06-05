@@ -27,11 +27,12 @@
 
 			<div class="Casilla2-1">
 			<h4>Rut Empresa</h4>	
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Rut" disabled>
-			</div>
+                <asp:TextBox ID="txtRutEmpresa" runat="server" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>
+            </div>
+
 			<div class="Casilla2-1">
 			<h4>Razón Social</h4>	
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Nombre">
+                <asp:TextBox ID="txtRazonSocial" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Giro</h4>	
@@ -174,7 +175,7 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Dirección</h4>
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Dirección">
+                <asp:TextBox ID="txtDireccion" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 				<h4>Ciudad</h4>					
@@ -251,12 +252,12 @@
 				</select>
 			</div>
 			<div class="Casilla2-1">
-			<h4>Correo Electrónico</h4>	
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Correo Electrónico">
+			<h4>Correo Electrónico</h4>
+                <asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Teléfono</h4>	
-			<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Teléfono">
+                <asp:TextBox ID="txtTelefono" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 	</div>
 

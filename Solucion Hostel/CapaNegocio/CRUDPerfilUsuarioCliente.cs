@@ -67,6 +67,54 @@ namespace CapaNegocio
             return nPUC;
         }
 
+        public ContenedorPerfilUsuarioClientes LlamarSPRescatar(string token)
+        {
+            ContenedorPerfilUsuarioClientes LPerfilUsuarioClientees = new ContenedorPerfilUsuarioClientes();
+
+            if (ValidarPerfilCUD(token))
+            {
+                try
+                {
+                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                    var collection = (from prov in conex.CLIENTE
+                                      join emp in conex.EMPRESA on prov.RUT equals emp.RUT
+                                      orderby emp.RAZON_SOCIAL
+                                      select new
+                                      {
+                                          RutCliente = prov.RUT,
+                                          RazonSocial = emp.RAZON_SOCIAL
+                                      }
+                            ).ToList();
+
+                    foreach (var item in collection)
+                    {
+                        PerfilUsuarioCliente m = new PerfilUsuarioCliente();
+                        //
+                        m.Cliente.Rut = item.RutCliente;
+                        m.PerfilUsuario.Empresa.RazonSocial = item.RazonSocial;
+                        //
+                        LPerfilUsuarioClientees.Lista.Add(m);
+
+                    }
+                    LPerfilUsuarioClientees.Retorno.Codigo = 0;
+                    LPerfilUsuarioClientees.Retorno.Glosa = "OK";
+
+                }
+                catch (Exception)
+                {
+                    LPerfilUsuarioClientees.Retorno.Codigo = 1011;
+                    LPerfilUsuarioClientees.Retorno.Glosa = "Err codret ORACLE";
+                }
+            }
+            else {
+                LPerfilUsuarioClientees.Retorno.Codigo = 100;
+                LPerfilUsuarioClientees.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+
+            return LPerfilUsuarioClientees;
+        }
+
         private bool ValidarPerfilCUD(string token)
         {
             bool retorno = false;
