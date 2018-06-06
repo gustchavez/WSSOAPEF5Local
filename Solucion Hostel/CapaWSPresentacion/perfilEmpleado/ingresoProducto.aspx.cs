@@ -73,8 +73,8 @@ namespace CapaWSPresentacion.perfilEmpleado
             ContenedorProducto nProducto = new ContenedorProducto();
 
             nProducto.Item.Descripcion = txtDetProdAgregar.Text;
-            nProducto.Item.Stock = int.Parse(txtStock.Text);
-            nProducto.Item.StockCritico = int.Parse(txtStockCritico.Text);
+            nProducto.Item.Stock = decimal.Parse(txtStock.Text);
+            nProducto.Item.StockCritico = decimal.Parse(txtStockCritico.Text);
             nProducto.Retorno.Token = Session["TokenUsuario"].ToString();
 
             nProducto = x.ProductoCrear(nProducto);
@@ -156,9 +156,10 @@ namespace CapaWSPresentacion.perfilEmpleado
 
             ContenedorProducto nProducto = new ContenedorProducto();
 
-            nProducto.Item.Descripcion = txtDetProdAgregar.Text;
-            nProducto.Item.Stock = int.Parse(txtStock.Text);
-            nProducto.Item.StockCritico = int.Parse(txtStockCritico.Text);
+            nProducto.Item.Codigo = decimal.Parse(txtProductoModificar.SelectedValue);
+            nProducto.Item.Descripcion = txtProductoModificar.SelectedItem.Text;
+            nProducto.Item.Stock = decimal.Parse(txtStockModificar.Text.Trim());
+            nProducto.Item.StockCritico = decimal.Parse(txtStockCriticoModificar.Text.Trim());
             nProducto.Retorno.Token = Session["TokenUsuario"].ToString();
 
             nProducto = x.ProductoActualizar(nProducto);
@@ -177,6 +178,8 @@ namespace CapaWSPresentacion.perfilEmpleado
                 if (nProvision.Retorno.Codigo.ToString() == "0")
                 {
                     txtPrecioModificar.Text = "0";
+                    txtStockModificar.Text = "0";
+                    txtStockCriticoModificar.Text = "0";
                 }
                 else
                 {
