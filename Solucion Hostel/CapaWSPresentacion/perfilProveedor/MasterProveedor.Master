@@ -28,6 +28,16 @@
 	</div>
 	<!--Fin Menu-->
 
+    <div class="columna1">
+		<div class="perfilCliente">		
+			<div class="datosEmpresa" > <div class="imagen-logo-empresa"></div> </div>
+			<div class="datosEmpresa">  <h3> DATOS ACTUALES </h3> </div>
+			<div class="datosEmpresa" style=""> <b>Nombre</b>  <br> <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label> </div>
+			<div class="datosEmpresa">  <b>Cargo</b>  <br>  <asp:Label ID="lblPerfilUsuario" runat="server"></asp:Label> </div>
+			<div class="datosEmpresa">  <b>Usuario</b>  <br> <asp:Label ID="lblUsuario" runat="server"></asp:Label> </div>
+		</div>
+	</div>
+	<!--Fin COLUMNA1-->
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
 </div>
 
