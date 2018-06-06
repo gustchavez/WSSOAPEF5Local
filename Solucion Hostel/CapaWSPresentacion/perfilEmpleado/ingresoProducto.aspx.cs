@@ -63,16 +63,7 @@ namespace CapaWSPresentacion.perfilEmpleado
             txtProveedorModificar.DataBind();
 
             //Recuperar datos de productos
-            ContenedorProductos m = new ContenedorProductos();
-            m = x.ProductoRescatar(Session["TokenUsuario"].ToString());
-            txtProductoModificar.DataSource = m.Lista;
-            txtProductoModificar.DataValueField = "Codigo";
-            txtProductoModificar.DataTextField = "Descripcion";
-            txtProductoModificar.DataBind();
-
-        
-
-
+            RescatarRelacionProvProd();
         }
 
         protected void btnAgregar_click(object sender, EventArgs e)
@@ -101,6 +92,7 @@ namespace CapaWSPresentacion.perfilEmpleado
                 if (nProvision.Retorno.Codigo.ToString() == "0")
                 {
                     txtCodProdAgregar.Text = nProducto.Item.Codigo.ToString();
+                    RescatarRelacionProvProd();
                 }
                 else
                 {
@@ -115,28 +107,89 @@ namespace CapaWSPresentacion.perfilEmpleado
             }
         }
 
+        protected void txtProveedorModificar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RescatarRelacionProvProd();
+        }
+
+        private void RescatarRelacionProvProd()
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            //Recuperar datos de provisiones
+            ContenedorProvisiones m = new ContenedorProvisiones();
+            m = x.ProvisionRescatar(Session["TokenUsuario"].ToString());
+
+            //Recuperar datos de productos
+            ContenedorProductos o = new ContenedorProductos();
+            o = x.ProductoRescatar(Session["TokenUsuario"].ToString());
+
+            var productos = (from prvi in m.Lista
+                             join prod in o.Lista on prvi.CodigoProducto equals prod.Codigo
+                             where prvi.RutProveedor == txtProveedorModificar.SelectedValue
+                             orderby prod.Descripcion
+                             select new
+                             {
+                                 Codigo = prod.Codigo,
+                                 Descripcion = prod.Descripcion
+                             }
+                            ).ToList();
+
+            if (productos != null)
+            {
+                txtProductoModificar.DataSource = null;
+                txtProductoModificar.DataSource = productos;
+                txtProductoModificar.DataValueField = "Codigo";
+                txtProductoModificar.DataTextField = "Descripcion";
+                txtProductoModificar.DataBind();
+
+                btnModificar.Enabled = true;
+            }
+            else {
+                btnModificar.Enabled = false;
+            }
+        }
+
         protected void btnModificar_click(object sender, EventArgs e)
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-            
-            ContenedorProvision nProvision = new ContenedorProvision();
 
-            nProvision.Item.RutProveedor = txtProveedorModificar.SelectedValue;
-            nProvision.Item.CodigoProducto = int.Parse(txtProductoModificar.SelectedValue.ToString());
-            nProvision.Item.Precio = decimal.Parse(txtPrecioModificar.Text);
-            
-            nProvision.Retorno.Token = Session["TokenUsuario"].ToString();
+            ContenedorProducto nProducto = new ContenedorProducto();
 
-            nProvision = x.ProvisionActualizar(nProvision);
-            if (nProvision.Retorno.Codigo.ToString() == "0")
+            nProducto.Item.Descripcion = txtDetProdAgregar.Text;
+            nProducto.Item.Stock = int.Parse(txtStock.Text);
+            nProducto.Item.StockCritico = int.Parse(txtStockCritico.Text);
+            nProducto.Retorno.Token = Session["TokenUsuario"].ToString();
+
+            nProducto = x.ProductoActualizar(nProducto);
+
+            if (nProducto.Retorno.Codigo.ToString() == "0")
             {
-                txtPrecioModificar.Text = "0";
+                ContenedorProvision nProvision = new ContenedorProvision();
+
+                nProvision.Item.RutProveedor = txtProveedorModificar.SelectedValue;
+                nProvision.Item.CodigoProducto = int.Parse(txtProductoModificar.SelectedValue.ToString());
+                nProvision.Item.Precio = decimal.Parse(txtPrecioModificar.Text);
+
+                nProvision.Retorno.Token = Session["TokenUsuario"].ToString();
+
+                nProvision = x.ProvisionActualizar(nProvision);
+                if (nProvision.Retorno.Codigo.ToString() == "0")
+                {
+                    txtPrecioModificar.Text = "0";
+                }
+                else
+                {
+                    txtPrecioModificar.Text = "-1";
+                    //nProvision.Retorno.Codigo.ToString();
+                    //nProvision.Retorno.Glosa;
+                }
             }
             else
             {
                 txtPrecioModificar.Text = "-1";
-                //nProvision.Retorno.Codigo.ToString();
-                //nProvision.Retorno.Glosa;
+                //nProducto.Retorno.Codigo.ToString();
+                //nProducto.Retorno.Glosa;
             }
         }
     }

@@ -72,11 +72,11 @@
 			<asp:TextBox ID="txtStockModificar" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
             <div class="Casilla2-1">
-			<h4>Stock Critoco</h4>
+			<h4>Stock Critico</h4>
 			<asp:TextBox ID="txtStockCriticoModificar" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">	
-			<asp:Button ID="btnModificar" runat="server" Text="Modificar Producto" CssClass="SubmitTotal" OnClick="btnModificar_click" />
+			<asp:Button ID="btnModificar" runat="server" Text="Modificar Producto" CssClass="SubmitTotal" OnClick="btnModificar_click" Enabled="False" />
 			</div>
 			
 	</div>
