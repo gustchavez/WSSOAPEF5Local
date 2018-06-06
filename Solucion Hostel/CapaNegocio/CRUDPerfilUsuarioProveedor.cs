@@ -71,19 +71,28 @@ namespace CapaNegocio
         {
             ContenedorPerfilUsuarioProveedores LPerfilUsuarioProveedores = new ContenedorPerfilUsuarioProveedores();
 
-            if (ValidarPerfilCUD(token))
+            if (ValidarFecExp(token))
             {
                 try
                 {
                     CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
 
                     var collection = (from prov in conex.PROVEEDOR
-                                      join emp  in conex.EMPRESA on prov.RUT equals emp.RUT
+                                      join emp in conex.EMPRESA on prov.RUT equals emp.RUT
+                                      join dir in conex.DIRECCION on prov.RUT equals dir.RUT_EMPRESA
+                                      join per in conex.PERSONA on dir.RUT_PERSONA equals per.RUT
+                                      join usu in conex.USUARIO on per.RUT equals usu.RUT_PERSONA
                                       orderby emp.RAZON_SOCIAL
                                       select new
                                       {
                                           RutProveedor = prov.RUT,
-                                          RazonSocial = emp.RAZON_SOCIAL
+                                          RazonSocial  = emp.RAZON_SOCIAL,
+                                          MailEmpresa  = emp.EMAIL,
+                                          TelefonoEmp  = emp.TELEFONO,
+                                          NomCiudadDir = dir.NOMBRE_CIUDAD,
+                                          CalleDirecc  = dir.CALLE,
+                                          NomUsuario   = usu.NOMBRE,
+                                          PassUsiario  = usu.CLAVE
                                       }
                             ).ToList();
 
@@ -91,8 +100,14 @@ namespace CapaNegocio
                     {
                         PerfilUsuarioProveedor m = new PerfilUsuarioProveedor();
                         //
-                        m.Proveedor.Rut = item.RutProveedor;
-                        m.PerfilUsuario.Empresa.RazonSocial = item.RazonSocial;
+                        m.Proveedor.Rut                        = item.RutProveedor;
+                        m.PerfilUsuario.Empresa.RazonSocial    = item.RazonSocial;
+                        m.PerfilUsuario.Empresa.Email          = item.MailEmpresa;
+                        m.PerfilUsuario.Empresa.Telefono       = item.MailEmpresa;
+                        m.PerfilUsuario.Direccion.NombreCiudad = item.CalleDirecc;
+                        m.PerfilUsuario.Direccion.Calle        = item.CalleDirecc;
+                        m.PerfilUsuario.Usuario.Nombre         = item.NomUsuario;
+                        m.PerfilUsuario.Usuario.Clave          = item.PassUsiario;
                         //
                         LPerfilUsuarioProveedores.Lista.Add(m);
                         
