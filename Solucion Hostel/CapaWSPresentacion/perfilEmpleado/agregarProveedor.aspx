@@ -231,15 +231,7 @@
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nueva Contraseña</h4>	
 		<asp:TextBox ID="txtConstrasena" runat="server" CssClass="CasillaPersona"></asp:TextBox>
-		</div>
-        	<div class="Casilla2-2">
-		<h4 style="color: red;">Nueva Contraseña</h4>	
-		<asp:TextBox ID="txtCodigoRetorno" runat="server" CssClass="CasillaPersona"></asp:TextBox>
-		</div>
-        	<div class="Casilla2-2">
-		<h4 style="color: red;">Nueva Contraseña</h4>	
-		<asp:TextBox ID="txtGlosaRetorno" runat="server" CssClass="CasillaPersona"></asp:TextBox>
-		</div>
+		</div>  
 		<div class="Casilla2-2">	
 		    <asp:Button ID="btnAgregar" runat="server" Text="Agregar"  CssClass="SubmitTotal" OnClick="btnAgregar_Click"/> 
 		</div>

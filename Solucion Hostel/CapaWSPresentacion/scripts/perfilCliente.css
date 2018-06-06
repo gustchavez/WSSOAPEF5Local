@@ -166,6 +166,7 @@ position: absolute;
 	margin: auto;
 	width: 900px;
 	position: relative;
+    top:40px;
 	
 }
 
@@ -200,16 +201,19 @@ position: absolute;
 	margin: auto;
 	position: relative;
 	width: 235px;
-	height: 40px;
+	height: 30px;
+    top:18px;
+
 
 }
 
 .SubmitTotal:Hover{
 	position: relative;
 	width: 235px;
-	height: 40px;
+	height: 30px;
 	background: #035E7B;
 	color: white;
+     top:18px;
 }
 
 

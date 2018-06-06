@@ -22,6 +22,7 @@ namespace CapaObjeto
             this.RutProveedor = string.Empty;
             this.CodigoProducto = int.MinValue;
             this.Precio = decimal.MinValue;
+
         }
     }
 }

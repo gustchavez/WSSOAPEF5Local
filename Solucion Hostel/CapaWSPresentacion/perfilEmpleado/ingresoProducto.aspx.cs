@@ -82,8 +82,8 @@ namespace CapaWSPresentacion.perfilEmpleado
             ContenedorProducto nProducto = new ContenedorProducto();
 
             nProducto.Item.Descripcion = txtDetProdAgregar.Text;
-            nProducto.Item.Stock = 0;
-            nProducto.Item.StockCritico = 0;
+            nProducto.Item.Stock = int.Parse(txtStock.Text);
+            nProducto.Item.StockCritico = int.Parse(txtStockCritico.Text);
             nProducto.Retorno.Token = Session["TokenUsuario"].ToString();
 
             nProducto = x.ProductoCrear(nProducto);
@@ -124,6 +124,7 @@ namespace CapaWSPresentacion.perfilEmpleado
             nProvision.Item.RutProveedor = txtProveedorModificar.SelectedValue;
             nProvision.Item.CodigoProducto = int.Parse(txtProductoModificar.SelectedValue.ToString());
             nProvision.Item.Precio = decimal.Parse(txtPrecioModificar.Text);
+            
             nProvision.Retorno.Token = Session["TokenUsuario"].ToString();
 
             nProvision = x.ProvisionActualizar(nProvision);

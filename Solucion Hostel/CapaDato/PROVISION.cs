@@ -17,7 +17,9 @@ namespace CapaDato
         public string RUT_PROVEEDOR { get; set; }
         public short CODIGO_PRODUCTO { get; set; }
         public int PRECIO { get; set; }
-    
+
+
+
         public virtual PRODUCTO PRODUCTO { get; set; }
         public virtual PROVEEDOR PROVEEDOR { get; set; }
     }

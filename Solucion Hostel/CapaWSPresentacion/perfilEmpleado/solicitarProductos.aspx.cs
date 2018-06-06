@@ -138,9 +138,9 @@ namespace CapaWSPresentacion.perfilEmpleado
             }                      
         }
 
-        protected void btnSelectProveedor_Click(object sender, EventArgs e)
+     /*  protected void btnSelectProveedor_Click(object sender, EventArgs e)
         {
-            if (txtProveedor.Enabled == true)
+            if (txtProveedor.Enabled == true) 
             {
                 WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
@@ -192,7 +192,7 @@ namespace CapaWSPresentacion.perfilEmpleado
             } else {
                 InicializarProveedor();
             }            
-        }
+        } */
         protected void btnRealizar_Click(object sender, EventArgs e)
         {
             OrdenPedidoCompleta ListaTemporal;
@@ -233,11 +233,82 @@ namespace CapaWSPresentacion.perfilEmpleado
             gwListaCompra.DataBind();
 
             txtProveedor.Enabled = true;
-            btnSelectProveedor.Text = "Elegir Proveedor";
+            /*btnSelectProveedor.Text = "Elegir Proveedor";*/
             txtProducto.Enabled = false;
             txtCantidad.Enabled = false;
             btnAgregar.Enabled = false;
             btnRealizar.Enabled = false;
+        }
+
+        private void InicializarProveedor2()
+        {
+            Session["ListaTemporal"] = null;
+            gwListaCompra.DataSource = null;
+            gwListaCompra.DataBind();
+
+            /*btnSelectProveedor.Text = "Elegir Proveedor";*/
+            txtProducto.Enabled = false;
+            txtCantidad.Enabled = false;
+            btnAgregar.Enabled = false;
+            btnRealizar.Enabled = false;
+        }
+
+        protected void txtProveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            InicializarProveedor2();
+
+            if (txtProveedor.Enabled == true)
+            {
+                WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+                //Recuperar datos de provisiones
+                ContenedorProvisiones m = new ContenedorProvisiones();
+                m = x.ProvisionRescatar(Session["TokenUsuario"].ToString());
+
+                //Recuperar datos de productos
+                ContenedorProductos o = new ContenedorProductos();
+                o = x.ProductoRescatar(Session["TokenUsuario"].ToString());
+
+                var productos = (from prvi in m.Lista
+                                 join prod in o.Lista on prvi.CodigoProducto equals prod.Codigo
+                                 where prvi.RutProveedor == txtProveedor.SelectedValue
+                                 orderby prod.Descripcion
+                                 select new
+                                 {
+                                     Codigo = prod.Codigo,
+                                     Descripcion = prod.Descripcion
+                                 }
+                                ).ToList();
+
+                txtProducto.DataSource = null;
+                txtProducto.DataSource = productos;
+                txtProducto.DataValueField = "Codigo";
+                txtProducto.DataTextField = "Descripcion";
+                txtProducto.DataBind();
+
+                Session["TemporalProducto"] = o.Lista;
+
+                OrdenPedidoCompleta ListaTemporal = new OrdenPedidoCompleta();
+
+                ListaTemporal.Cabecera.Estado = "activo";
+                ListaTemporal.Cabecera.FechaEmision = DateTime.Now;
+                ListaTemporal.Cabecera.Monto = 0;
+                ListaTemporal.Cabecera.Numero = 0;
+                ListaTemporal.Cabecera.RutProveedor = txtProveedor.SelectedValue;
+                ListaTemporal.Cabecera.Ubicacion = "Logo";
+
+                Session["ListaTemporal"] = ListaTemporal;
+
+
+                /*btnSelectProveedor.Text = "Modificar Proveedor";*/
+                txtProducto.Enabled = true;
+                txtCantidad.Enabled = true;
+                btnAgregar.Enabled = true;
+                btnRealizar.Enabled = true;
+
+            }
+           
+        
         }
     }
 }

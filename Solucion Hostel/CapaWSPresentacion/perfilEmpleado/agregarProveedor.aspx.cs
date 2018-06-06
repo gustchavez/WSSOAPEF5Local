@@ -81,8 +81,7 @@ namespace CapaWSPresentacion.perfilEmpleado
 
             n = x.PerfilUsuarioProveedorCrear(n);
 
-            txtCodigoRetorno.Text = n.Retorno.Codigo.ToString();
-            txtGlosaRetorno.Text = n.Retorno.Glosa;
+         
 
         }
     }

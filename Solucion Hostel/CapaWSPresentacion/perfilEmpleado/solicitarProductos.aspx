@@ -16,12 +16,10 @@
 		<h4>Seleccione cod. producto y cantidad o nombre de producto y cantidad </h4>
 		<div class="Casilla2-2" >
 		<h4 style="color: red;">Proveedor</h4>
-        <asp:DropDownList ID="txtProveedor" runat="server" CssClass="selectO">
+        <asp:DropDownList ID="txtProveedor" runat="server" CssClass="selectO" AutoPostBack="True" OnSelectedIndexChanged="txtProveedor_SelectedIndexChanged">
             </asp:DropDownList>
 		</div>        
-		<div class="Casilla2-2">	
-	    <asp:Button ID="btnSelectProveedor" runat="server" Text="Elegir Proveedor" CssClass="SubmitTotal" OnClick="btnSelectProveedor_Click"/>
-		</div>
+		
 
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nombre producto</h4>	

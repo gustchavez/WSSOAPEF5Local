@@ -149,11 +149,25 @@ position: absolute;
 	width: 900px;
 	position: relative;
 	top: 30px;
+    bottom: 30px;
+}
+
+.ModificarDatos2{
+	margin: auto;
+	height: 206px;
+	width: 900px;
+	position: relative;
+    bottom:-103px;
+	top: 104px;
 }
 
 .ModificarDatos h2{
 	text-align: left;
 }
+.ModificarDatos2 h2{
+	text-align: left;
+}
+
 
 .Casilla2-1 {
 	float: left;
@@ -166,7 +180,7 @@ position: absolute;
 	margin: auto;
 	width: 900px;
 	position: relative;
-	
+    left: 0px;
 }
 
 .Casilla2-2 {
