@@ -221,6 +221,7 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorOrdenesPedidoCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ComodinJava.datasource" />
     <Content Include="perfilAdministrador\MasterAdministrador.Master" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioClientes.datasource" />
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>

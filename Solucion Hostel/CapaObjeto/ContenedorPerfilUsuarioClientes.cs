@@ -22,8 +22,5 @@ namespace CapaObjeto
             this.Lista = new List<PerfilUsuarioCliente>();
             this.Retorno = new Comunicacion();
         }
-
     }
-
-}
 }

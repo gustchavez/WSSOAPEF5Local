@@ -29,7 +29,7 @@ namespace CapaWSPresentacion.perfilCliente
                     Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 Session["TokenUsuario"] = null;
                 Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
@@ -40,15 +40,37 @@ namespace CapaWSPresentacion.perfilCliente
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            ContenedorCiudades n = new ContenedorCiudades();
+            ContenedorCiudades m = new ContenedorCiudades();
 
-            n = x.CiudadRescatar(Session["TokenUsuario"].ToString());
+            m = x.CiudadRescatar(Session["TokenUsuario"].ToString());
 
             txtNombreCiudad.DataSource = null;
-            txtNombreCiudad.DataSource = n.Lista.Where(p => p.CodPais == 56);
+            txtNombreCiudad.DataSource = m.Lista.Where(p => p.CodPais == 56);
             txtNombreCiudad.DataValueField = "Nombre";
             txtNombreCiudad.DataTextField = "Nombre";
             txtNombreCiudad.DataBind();
+
+            ContenedorPerfilUsuarioClientes n = new ContenedorPerfilUsuarioClientes();
+
+            n = x.PerfilUsuarioClienteRescatar(Session["TokenUsuario"].ToString());
+
+            Sesion SesionUsuario = (Sesion)Session["SesionUsuario"];
+
+            var proveedor = n.Lista.Where(p => p.PerfilUsuario.Usuario.Nombre == SesionUsuario.Usuario).SingleOrDefault();
+
+            txtRutEmpresa.Text = proveedor.Cliente.Rut;
+            txtRazonSocial.Text = proveedor.PerfilUsuario.Empresa.RazonSocial;
+            txtCorreoElectronico.Text = proveedor.PerfilUsuario.Empresa.Email;
+            txtTelefono.Text = proveedor.PerfilUsuario.Empresa.Telefono;
+            txtNombreCiudad.SelectedValue = proveedor.PerfilUsuario.Direccion.NombreCiudad;
+            txtDireccion.Text = proveedor.PerfilUsuario.Direccion.Calle;
+            txtNombreUsuario.Text = proveedor.PerfilUsuario.Usuario.Nombre;
+            txtContraseña.Text = proveedor.PerfilUsuario.Usuario.Clave;
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

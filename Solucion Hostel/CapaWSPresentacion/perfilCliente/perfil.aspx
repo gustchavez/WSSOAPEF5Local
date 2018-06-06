@@ -178,36 +178,9 @@
                 <asp:TextBox ID="txtDireccion" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
-				<h4>Ciudad</h4>					
-				<select class="droplist">
-					<option value="">Seleccione una ciudad</option>
-					<option>Metropolitana de Santiago</option>
-					<option>Biobío</option>
-					<option>Valparaíso</option>
-					<option>Coquimbo</option>
-					<option>Antofagasta</option>
-					<option>Araucanía</option>
-					<option>O'Higgins</option>
-					<option>Tarapacá</option>
-					<option>Maule</option>
-					<option>Arica y Parinacota</option>
-					<option>Los Lagos</option>
-					<option>Biobío</option>
-					<option>Biobío</option>
-					<option>Antofagasta</option>
-					<option>Atacama</option>
-					<option>Los Lagos</option>
-					<option>Valparaíso</option>
-					<option>Los Ríos</option>
-					<option>Magallanes</option>
-					<option>Valparaíso</option>
-					<option>Maule</option>
-					<option>Coquimbo</option>
-					<option>Maule</option>
-					<option>Valparaíso</option>
-					<option>Metropolitana de Santiago</option>
-					<option>Valparaíso</option>
-				</select>
+				<h4>Ciudad</h4>	
+                <asp:DropDownList ID="txtNombreCiudad" runat="server" CssClass="droplist">
+                 </asp:DropDownList>
 			</div>
 			<div class="Casilla2-1">
 				<h4>Comuna</h4>					
@@ -265,18 +238,18 @@
 	<div class="ModificarDatos2">
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nombre Usuario</h4>	
-		<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Correo Electrónico" >
+            <asp:TextBox ID="txtNombreUsuario" runat="server" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nueva Contraseña</h4>	
-		<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Teléfono">
+            <asp:TextBox ID="txtContraseña" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Confirmar Contraseña</h4>	
-		<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Teléfono">
+		    <asp:TextBox ID="txtConstraseñaConfirmar" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		</div>
-		<div class="Casilla2-2">	
-		<input type="submit" name="" class="SubmitTotal" value="Modificar">
+		<div class="Casilla2-2">
+            <asp:Button ID="btnModificar" runat="server" Text="Modificar"  CssClass="SubmitTotal" OnClick="btnModificar_Click"/> 	
 		</div>
 	</div>
 		

@@ -69,21 +69,30 @@ namespace CapaNegocio
 
         public ContenedorPerfilUsuarioClientes LlamarSPRescatar(string token)
         {
-            ContenedorPerfilUsuarioClientes LPerfilUsuarioClientees = new ContenedorPerfilUsuarioClientes();
+            ContenedorPerfilUsuarioClientes LPerfilUsuarioClientes = new ContenedorPerfilUsuarioClientes();
 
-            if (ValidarPerfilCUD(token))
+            if (ValidarFecExp(token))
             {
                 try
                 {
                     CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
 
-                    var collection = (from prov in conex.CLIENTE
-                                      join emp in conex.EMPRESA on prov.RUT equals emp.RUT
+                    var collection = (from cli in conex.CLIENTE
+                                      join emp in conex.EMPRESA   on cli.RUT equals emp.RUT
+                                      join dir in conex.DIRECCION on cli.RUT equals dir.RUT_EMPRESA
+                                      join per in conex.PERSONA   on dir.RUT_PERSONA equals per.RUT
+                                      join usu in conex.USUARIO   on per.RUT equals usu.RUT_PERSONA
                                       orderby emp.RAZON_SOCIAL
                                       select new
                                       {
-                                          RutCliente = prov.RUT,
-                                          RazonSocial = emp.RAZON_SOCIAL
+                                          RutCliente  = cli.RUT,
+                                          RazonSocial = emp.RAZON_SOCIAL,
+                                          MailEmpresa = emp.EMAIL,
+                                          TelefonoEmp = emp.TELEFONO,
+                                          NomCiudadDir = dir.NOMBRE_CIUDAD,
+                                          CalleDirecc = dir.CALLE,
+                                          NomUsuario  = usu.NOMBRE,
+                                          PassUsiario = usu.CLAVE
                                       }
                             ).ToList();
 
@@ -92,27 +101,33 @@ namespace CapaNegocio
                         PerfilUsuarioCliente m = new PerfilUsuarioCliente();
                         //
                         m.Cliente.Rut = item.RutCliente;
-                        m.PerfilUsuario.Empresa.RazonSocial = item.RazonSocial;
+                        m.PerfilUsuario.Empresa.RazonSocial    = item.RazonSocial;
+                        m.PerfilUsuario.Empresa.Email          = item.MailEmpresa;
+                        m.PerfilUsuario.Empresa.Telefono       = item.MailEmpresa;
+                        m.PerfilUsuario.Direccion.NombreCiudad = item.CalleDirecc;
+                        m.PerfilUsuario.Direccion.Calle        = item.CalleDirecc;
+                        m.PerfilUsuario.Usuario.Nombre         = item.NomUsuario;
+                        m.PerfilUsuario.Usuario.Clave          = item.PassUsiario;
                         //
-                        LPerfilUsuarioClientees.Lista.Add(m);
+                        LPerfilUsuarioClientes.Lista.Add(m);
 
                     }
-                    LPerfilUsuarioClientees.Retorno.Codigo = 0;
-                    LPerfilUsuarioClientees.Retorno.Glosa = "OK";
+                    LPerfilUsuarioClientes.Retorno.Codigo = 0;
+                    LPerfilUsuarioClientes.Retorno.Glosa = "OK";
 
                 }
                 catch (Exception)
                 {
-                    LPerfilUsuarioClientees.Retorno.Codigo = 1011;
-                    LPerfilUsuarioClientees.Retorno.Glosa = "Err codret ORACLE";
+                    LPerfilUsuarioClientes.Retorno.Codigo = 1011;
+                    LPerfilUsuarioClientes.Retorno.Glosa = "Err codret ORACLE";
                 }
             }
             else {
-                LPerfilUsuarioClientees.Retorno.Codigo = 100;
-                LPerfilUsuarioClientees.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+                LPerfilUsuarioClientes.Retorno.Codigo = 100;
+                LPerfilUsuarioClientes.Retorno.Glosa = "Err expiro sesion o perfil invalido";
             }
 
-            return LPerfilUsuarioClientees;
+            return LPerfilUsuarioClientes;
         }
 
         private bool ValidarPerfilCUD(string token)

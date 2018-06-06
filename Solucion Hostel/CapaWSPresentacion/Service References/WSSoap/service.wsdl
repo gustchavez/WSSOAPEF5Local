@@ -19,6 +19,12 @@
   <wsdl:message name="IWSSHostel_PerfilUsuarioClienteCrear_OutputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteCrearResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteRescatarResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorCrear" />
   </wsdl:message>
@@ -274,6 +280,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear" message="tns:IWSSHostel_PerfilUsuarioClienteCrear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrearResponse" message="tns:IWSSHostel_PerfilUsuarioClienteCrear_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioClienteRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatar" message="tns:IWSSHostel_PerfilUsuarioClienteRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatarResponse" message="tns:IWSSHostel_PerfilUsuarioClienteRescatar_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="PerfilUsuarioProveedorCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrear" message="tns:IWSSHostel_PerfilUsuarioProveedorCrear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrearResponse" message="tns:IWSSHostel_PerfilUsuarioProveedorCrear_OutputMessage" />
@@ -452,6 +462,15 @@
     </wsdl:operation>
     <wsdl:operation name="PerfilUsuarioClienteCrear">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioClienteRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

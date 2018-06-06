@@ -27,6 +27,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrearResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioCliente> PerfilUsuarioClienteCrearAsync(CapaObjeto.ContenedorPerfilUsuarioCliente entrada);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatarResponse")]
+        CapaObjeto.ContenedorPerfilUsuarioClientes PerfilUsuarioClienteRescatar(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioClientes> PerfilUsuarioClienteRescatarAsync(string token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrearResponse")]
         CapaObjeto.ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorCrear(CapaObjeto.ContenedorPerfilUsuarioProveedor entrada);
         
@@ -315,6 +321,14 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioCliente> PerfilUsuarioClienteCrearAsync(CapaObjeto.ContenedorPerfilUsuarioCliente entrada) {
             return base.Channel.PerfilUsuarioClienteCrearAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorPerfilUsuarioClientes PerfilUsuarioClienteRescatar(string token) {
+            return base.Channel.PerfilUsuarioClienteRescatar(token);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioClientes> PerfilUsuarioClienteRescatarAsync(string token) {
+            return base.Channel.PerfilUsuarioClienteRescatarAsync(token);
         }
         
         public CapaObjeto.ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorCrear(CapaObjeto.ContenedorPerfilUsuarioProveedor entrada) {

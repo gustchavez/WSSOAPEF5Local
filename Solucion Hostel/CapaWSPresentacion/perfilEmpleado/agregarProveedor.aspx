@@ -168,34 +168,6 @@
 			<div class="Casilla2-1">
 				<h4>Ciudad</h4>					
 				<asp:DropDownList ID="txtNombreCiudad" runat="server" CssClass="droplist">
-                    <asp:ListItem Value="1">Seleccione una ciudad</asp:ListItem>
-                    <asp:ListItem Value="2">Metropolitana de Santiago</asp:ListItem>
-                    <asp:ListItem Value="3">Biobío</asp:ListItem>
-                    <asp:ListItem Value="4">Valparaíso</asp:ListItem>
-                    <asp:ListItem Value="5">Coquimbo</asp:ListItem>
-                    <asp:ListItem Value="6">Antofagasta</asp:ListItem>
-                    <asp:ListItem Value="7">Araucanía</asp:ListItem>
-                    <asp:ListItem Value="8">O'Higgins</asp:ListItem>
-                    <asp:ListItem Value="9">Tarapacá</asp:ListItem>
-                    <asp:ListItem Value="10">Maule</asp:ListItem>
-                    <asp:ListItem Value="11">Arica y Parinacota</asp:ListItem>
-                    <asp:ListItem Value="12">Los Lagos</asp:ListItem>
-                    <asp:ListItem Value="13">Biobío</asp:ListItem>
-                    <asp:ListItem Value="14">Biobío</asp:ListItem>
-                    <asp:ListItem Value="15">Antofagasta</asp:ListItem>
-                    <asp:ListItem Value="16">Atacama</asp:ListItem>
-                    <asp:ListItem Value="17">Los Lagos</asp:ListItem>
-                    <asp:ListItem Value="18">Valparaíso</asp:ListItem>
-                    <asp:ListItem Value="19">Los Ríos</asp:ListItem>
-                    <asp:ListItem Value="20">Magallanes</asp:ListItem>
-                    <asp:ListItem Value="21">Valparaíso</asp:ListItem>
-                    <asp:ListItem Value="22">Maule</asp:ListItem>
-                    <asp:ListItem Value="23">Coquimbo</asp:ListItem>
-                    <asp:ListItem Value="24">Maule</asp:ListItem>
-                    <asp:ListItem Value="25">Valparaíso</asp:ListItem>
-                    <asp:ListItem Value="26">Metropolitana de Santiago</asp:ListItem>
-                    <asp:ListItem Value="27">Valparaíso</asp:ListItem>
-                    <asp:ListItem Value="Santiago">Santiago</asp:ListItem>
                  </asp:DropDownList>
 			</div>
 			<div class="Casilla2-1">
@@ -269,7 +241,7 @@
 		<asp:TextBox ID="txtGlosaRetorno" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">	
-		 <asp:Button ID="btnAgregar" runat="server" Text="Agregar"  CssClass="SubmitTotal" OnClick="btnAgregar_Click"/> 
+		    <asp:Button ID="btnAgregar" runat="server" Text="Agregar"  CssClass="SubmitTotal" OnClick="btnAgregar_Click"/> 
 		</div>
         
 	</div>
