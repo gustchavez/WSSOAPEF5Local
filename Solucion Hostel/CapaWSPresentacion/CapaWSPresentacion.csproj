@@ -179,6 +179,7 @@
     <Content Include="scripts\AdminIngresoFacturaP.css" />
     <Content Include="scripts\AdminMostrarFacturas.css" />
     <Content Include="scripts\AdminSolicitarPP.css" />
+    <Content Include="scripts\condiciones.js" />
     <Content Include="scripts\detalleCliente.css" />
     <Content Include="scripts\empresaEmpleado.css" />
     <Content Include="scripts\facturaCliente.css" />

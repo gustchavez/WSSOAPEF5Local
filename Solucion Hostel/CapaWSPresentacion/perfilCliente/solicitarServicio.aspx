@@ -13,18 +13,18 @@
 
 			<div class="contenido">				
 				Fecha Ingreso <br>
-				<input type="date" name="" class="CasillaFecha" > </div>
+				<asp:TextBox ID="TextBox1" TextMode="Date" runat="server" CssClass="CasillaFecha"></asp:TextBox>
 			<div class="contenido">				
 				Fecha Salida <br>
-				<input type="date" name="" class="CasillaFecha">
+				<asp:TextBox ID="TextBox2" TextMode="Date" runat="server" CssClass="CasillaFecha"></asp:TextBox>
 			</div>
 
 			<div class="contenido">				
-				Total de días <input type="text" name="" class="Casilladias" disabled>
+				Total de días <asp:TextBox ID="TextBox3" CssClass="Casilladias" runat="server"></asp:TextBox>
 			</div>
 
 			<div class="contenido">				
-				Nº Personas <input type="number" name="" class="Casilladias">
+				Nº Personas <asp:TextBox ID="TextBox4" CssClass="Casilladias" runat="server"></asp:TextBox>
 			</div>
 
 			<div class="contenido">
@@ -37,24 +37,24 @@
 					</tr>
 					<tr>
 						<td>Habitación 2 personas</td>
-						<td><input type="text" name="" class="CasillaEnvio" style="border-color: #55828b; border-style: solid;"  disabled></td>
-						<td><input type="number" class="Boton2personas" name="" value=""></td>
+						<td><asp:TextBox ID="TextBox5" runat="server" CssClass="CasillaEnvio" BorderColor="#55828b" BorderStyle="solid"></asp:TextBox></td>
+						<td><asp:TextBox ID="TextBox6" runat="server" CssClass="Boton2personas" TextMode="Number"></asp:TextBox></td>
 
 					</tr>
 					<tr>
 						<td>Habitación 3 personas</td>
-						<td><input type="text" name="" class="CasillaEnvio" style="border-color: #e94f37; border-style: solid;" disabled></td>
-						<td><input type="number" class="Boton3personas" name="" value=""></td>
+                        <td><asp:TextBox ID="TextBox7" runat="server" CssClass="CasillaEnvio" BorderColor="#e94f37" BorderStyle="solid"></asp:TextBox></td>
+						<td><asp:TextBox ID="TextBox8" runat="server" CssClass="Boton3personas" TextMode="Number"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td>Habitación 6 personas</td>
-						<td><input type="text" name="" class="CasillaEnvio" style="border-color: #3f88c5; border-style: solid;" disabled></td>
-						<td><input type="number" class="Boton6personas" name="" value=""></td>
+                        <td><asp:TextBox ID="TextBox9" runat="server" CssClass="CasillaEnvio" BorderColor="#3f88c5" BorderStyle="solid"></asp:TextBox></td>
+						<td><asp:TextBox ID="TextBox10" runat="server" CssClass="Boton6personas" TextMode="Number"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td>Habitación individual</td>
-						<td><input type="text" name="" class="CasillaEnvio" style="border-color: #AB4E68; border-style: solid;" disabled></td>
-						<td><input type="number" class="BotonIndividual" name="" value=""></td>
+                        <td><asp:TextBox ID="TextBox11" runat="server" CssClass="CasillaEnvio" BorderColor="#AB4E68" BorderStyle="solid"></asp:TextBox></td>
+						<td><asp:TextBox ID="TextBox12" runat="server" CssClass="BotonIndividual" TextMode="Number"></asp:TextBox></td>
 					</tr>
 				</table>
 			</div>
@@ -64,28 +64,24 @@
 			<br>
 
 			<div class="contenido">				
-				<b> Personas con habitación: </b><input type="text" name="" class="CasillaPersonas" disabled>
+				<b> Personas con habitación: </b><asp:TextBox ID="TextBox13" runat="server" CssClass="CasillaPersonas"></asp:TextBox>
 			</div>
 			<div class="casillaTotal">
-				<input type="submit" name="" class="SubmitEnviar" value="Siguiente">
+				 <asp:Button ID="Button1" runat="server" Text="Siguiente" CssClass="SubmitEnviar"/>
 			</div>
 	
 	</div>
 	<!--Fin COLUMNA1-->
 	<div class="columna2">
 		<h2>Ingreso de Personas</h2><br>
-		<div class="IngresoPersonas1" id="IngresoPersonas1">
-				
-				<div class="Casilla2-1">
-					
+		<div class="IngresoPersonas1" id="IngresoPersonas1">				
+				<div class="Casilla2-1">	
 					<input type="text" name="" class="CasillaPersona" placeholder="Ingrese Rut">
 				</div>
-				<div class="Casilla2-1">
-					
-					<input type="text" name="" class="CasillaPersona" placeholder="Nombre">
+				<div class="Casilla2-1">	
+			    	<input type="text" name="" class="CasillaPersona" placeholder="Nombre">
 				</div>
-				<div class="Casilla2-1">
-					
+				<div class="Casilla2-1">					
 					<input type="text" name="" class="CasillaPersona" placeholder="Apellido Paterno">
 				</div>
 				<div class="Casilla2-1">
