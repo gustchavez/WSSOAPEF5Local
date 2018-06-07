@@ -81,6 +81,21 @@ namespace CapaWSPresentacion.perfilEmpleado
 
             n = x.PerfilUsuarioProveedorCrear(n);
 
+            if (n.Retorno.Codigo.ToString() == "0")
+            {
+                txtRutEmpresa.Text = string.Empty;
+                txtRazonSocial.Text = string.Empty;
+                //n.Item.PerfilUsuario.Empresa.Rubro = txtNombreCiudad.Text;
+                txtCorreoElectronico.Text = string.Empty;
+                txtTelefonoEmpresa.Text = string.Empty;
+                txtCalle.Text = string.Empty;
+                txtMailUsuario.Text = string.Empty;
+                txtConstrasena.Text = string.Empty;
+            }
+            else
+            {
+                //definir donde se mostrara mensaje de error
+            }
          
 
         }

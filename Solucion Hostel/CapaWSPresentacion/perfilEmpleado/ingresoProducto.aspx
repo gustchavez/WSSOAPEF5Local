@@ -18,7 +18,7 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Cod. Producto</h4>	
-			<asp:TextBox ID="txtCodProdAgregar" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtCodProdAgregar" runat="server" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Detalle Producto</h4>	
@@ -45,7 +45,7 @@
 			<h2>Modificar producto de proveedor</h2><br>	
 			<div class="Casilla2-1">
 			<h4>Nombre Empresa</h4>		
-                <asp:DropDownList ID="txtProveedorModificar" runat="server" CssClass="droplist">
+                <asp:DropDownList ID="txtProveedorModificar" runat="server" CssClass="droplist" AutoPostBack="True" OnSelectedIndexChanged="txtProveedorModificar_SelectedIndexChanged">
                     <asp:ListItem Value="1">Seleccione una comuna</asp:ListItem>
                     <asp:ListItem Value="2">Empresa 1</asp:ListItem>
                     <asp:ListItem Value="3">Empresa 2</asp:ListItem>
