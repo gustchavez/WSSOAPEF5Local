@@ -47,6 +47,7 @@ body{
 	margin-top: 30px;
 	width: 670px;
 	height: 670px;
+	overflow: scroll;
 }
 
 .columna3{
@@ -217,36 +218,77 @@ margin-bottom: 15px;
 }
 
 .IngresoPersonas1{
-	margin: auto;
 	background: white;
 	border-color: #AB4E68;
 	border-style: solid;
-	height: 60px;
+	height: 45px;
 	width: 600px;
 	padding: 10px;
-    display:none*
+	margin-top: 10px;
+	margin-left: 25px;
+	display: none;
+}
+
+.IngresoPersonas2{
+	background: white;
+	border-color: #55828b;
+	border-style: solid;
+	height: 100px;
+	width: 600px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-left: 25px;
+	display: none;	
+}
+
+.IngresoPersonas3{
+	background: white;
+	border-color: #e94f37;
+	border-style: solid;
+	height: 155px;
+	width: 600px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-left: 25px;
+	display: none;	
+}
+
+.IngresoPersonas4{
+	background: white;
+	border-color: #3f88c5;
+	border-style: solid;
+	height: 205px;
+	width: 600px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-left: 25px;
+	display: none;	
 }
 
 .Casilla2-1 {
 float: left;
-margin-right: 10px;
-margin-left: 10px;
+margin-right: 5px;
+margin-left: 5px;
 }
 
 .CasillaPersona{
-width: 120px;
+width: 130px;
 }
 
 
 .OpcionComida {
+	top: 5px;
 	position: relative;
-	top: 15px;
-	left: 335px;
+	left:  5px;
+	margin-bottom: 15px;
+
+	
 }
 
 .comidas {
+	margin:auto;
+	width: 575px;
 
-	width: 240px;
 }
 
 /* ------------- */
