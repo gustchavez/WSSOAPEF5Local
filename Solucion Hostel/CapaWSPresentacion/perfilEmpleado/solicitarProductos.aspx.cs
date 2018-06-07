@@ -202,7 +202,7 @@ namespace CapaWSPresentacion.perfilEmpleado
                 ListaTemporal = (OrdenPedidoCompleta)Session["ListaTemporal"];
                 if (ListaTemporal != null)
                 {
-                    ListaTemporal.Cabecera.Monto = ListaTemporal.ListaDetalle.Sum(p => p.RegistroRecepcionPedido.PrecioCantidad);//realizar calculo de las habitaciones seleccionadas
+                    ListaTemporal.Cabecera.Monto = ListaTemporal.ListaDetalle.Sum(p => p.RegistroRecepcionPedido.PrecioCantidad);//realizar calculo de las productos seleccionados
 
                     WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
