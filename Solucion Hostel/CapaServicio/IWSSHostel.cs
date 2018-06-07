@@ -29,12 +29,18 @@ namespace CapaServicio
         ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(ContenedorPerfilUsuarioCliente entrada);
 
         [OperationContract]
+        ContenedorPerfilUsuarioCliente PerfilUsuarioClienteActualizar(ContenedorPerfilUsuarioCliente entrada);
+
+        [OperationContract]
         ContenedorPerfilUsuarioClientes PerfilUsuarioClienteRescatar(string token);
         //Fin PerfilUsuarioCliente
 
         //Inicio PerfilUsuarioProveedor
         [OperationContract]
         ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorCrear(ContenedorPerfilUsuarioProveedor entrada);
+
+        [OperationContract]
+        ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorActualizar(ContenedorPerfilUsuarioProveedor entrada);
 
         [OperationContract]
         ContenedorPerfilUsuarioProveedores PerfilUsuarioProveedorRescatar(string token);

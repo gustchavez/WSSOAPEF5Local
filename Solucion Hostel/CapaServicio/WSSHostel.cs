@@ -45,7 +45,12 @@ namespace CapaServicio
             x.LlamarSPCrear(entrada);
             return entrada;
         }
-
+        public ContenedorPerfilUsuarioCliente PerfilUsuarioClienteActualizar(ContenedorPerfilUsuarioCliente entrada)
+        {
+            CRUDPerfilUsuarioCliente x = new CRUDPerfilUsuarioCliente();
+            x.LlamarSPActualizar(entrada);
+            return entrada;
+        }
         public ContenedorPerfilUsuarioClientes PerfilUsuarioClienteRescatar(string token)
         {
             CRUDPerfilUsuarioCliente x = new CRUDPerfilUsuarioCliente();
@@ -61,7 +66,12 @@ namespace CapaServicio
             x.LlamarSPCrear(entrada);
             return entrada;
         }
-
+        public ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorActualizar(ContenedorPerfilUsuarioProveedor entrada)
+        {
+            CRUDPerfilUsuarioProveedor x = new CRUDPerfilUsuarioProveedor();
+            x.LlamarSPActualizar(entrada);
+            return entrada;
+        }
         public ContenedorPerfilUsuarioProveedores PerfilUsuarioProveedorRescatar(string token)
         {
             CRUDPerfilUsuarioProveedor x = new CRUDPerfilUsuarioProveedor();

@@ -27,6 +27,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrearResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioCliente> PerfilUsuarioClienteCrearAsync(CapaObjeto.ContenedorPerfilUsuarioCliente entrada);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteActualizar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteActualizarResponse")]
+        CapaObjeto.ContenedorPerfilUsuarioCliente PerfilUsuarioClienteActualizar(CapaObjeto.ContenedorPerfilUsuarioCliente entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteActualizar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioCliente> PerfilUsuarioClienteActualizarAsync(CapaObjeto.ContenedorPerfilUsuarioCliente entrada);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatarResponse")]
         CapaObjeto.ContenedorPerfilUsuarioClientes PerfilUsuarioClienteRescatar(string token);
         
@@ -38,6 +44,12 @@ namespace CapaWSPresentacion.WSSoap {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrearResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioProveedor> PerfilUsuarioProveedorCrearAsync(CapaObjeto.ContenedorPerfilUsuarioProveedor entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorActualizar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorActualizarResponse")]
+        CapaObjeto.ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorActualizar(CapaObjeto.ContenedorPerfilUsuarioProveedor entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorActualizar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioProveedor> PerfilUsuarioProveedorActualizarAsync(CapaObjeto.ContenedorPerfilUsuarioProveedor entrada);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatarResponse")]
         CapaObjeto.ContenedorPerfilUsuarioProveedores PerfilUsuarioProveedorRescatar(string token);
@@ -323,6 +335,14 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.PerfilUsuarioClienteCrearAsync(entrada);
         }
         
+        public CapaObjeto.ContenedorPerfilUsuarioCliente PerfilUsuarioClienteActualizar(CapaObjeto.ContenedorPerfilUsuarioCliente entrada) {
+            return base.Channel.PerfilUsuarioClienteActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioCliente> PerfilUsuarioClienteActualizarAsync(CapaObjeto.ContenedorPerfilUsuarioCliente entrada) {
+            return base.Channel.PerfilUsuarioClienteActualizarAsync(entrada);
+        }
+        
         public CapaObjeto.ContenedorPerfilUsuarioClientes PerfilUsuarioClienteRescatar(string token) {
             return base.Channel.PerfilUsuarioClienteRescatar(token);
         }
@@ -337,6 +357,14 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioProveedor> PerfilUsuarioProveedorCrearAsync(CapaObjeto.ContenedorPerfilUsuarioProveedor entrada) {
             return base.Channel.PerfilUsuarioProveedorCrearAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorActualizar(CapaObjeto.ContenedorPerfilUsuarioProveedor entrada) {
+            return base.Channel.PerfilUsuarioProveedorActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioProveedor> PerfilUsuarioProveedorActualizarAsync(CapaObjeto.ContenedorPerfilUsuarioProveedor entrada) {
+            return base.Channel.PerfilUsuarioProveedorActualizarAsync(entrada);
         }
         
         public CapaObjeto.ContenedorPerfilUsuarioProveedores PerfilUsuarioProveedorRescatar(string token) {
