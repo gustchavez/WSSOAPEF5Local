@@ -191,6 +191,7 @@
     <Content Include="scripts\ingresoFacturaProveedor.css" />
     <Content Include="scripts\jquery.min.js" />
     <Content Include="scripts\logPdf.png" />
+    <Content Include="scripts\mostrar.js" />
     <Content Include="scripts\ordenCliente.css" />
     <Content Include="scripts\pedidosProveedor.css" />
     <Content Include="scripts\perfilCliente.css" />
