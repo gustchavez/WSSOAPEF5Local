@@ -54,7 +54,7 @@
 		<asp:TextBox ID="TextBox10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">	
-		<asp:Button ID="btnModificar" runat="server" Text="Modificar Datos" CssClass="SubmitTotal" OnClick="Button1_Click" />
+		<asp:Button ID="btnModificar" runat="server" Text="Modificar Datos" CssClass="SubmitTotal" OnClick="btnModificar_Click" />
 		</div>
 	</div>
 		

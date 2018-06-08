@@ -15,7 +15,7 @@
 			        </div>
 			    <div class="Casilla2-1">
 			    <h4>Razón Social</h4>	
-			        <asp:TextBox ID="txtRazonSocial" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			        <asp:TextBox ID="txtRazonSocial" runat="server" CssClass="CasillaPersona" OnTextChanged="txtRazonSocial_TextChanged"></asp:TextBox>
 			        </div>
 			    <div class="Casilla2-1">
 			    <h4>Giro</h4>	    

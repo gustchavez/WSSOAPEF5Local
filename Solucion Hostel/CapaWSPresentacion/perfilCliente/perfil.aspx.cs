@@ -56,21 +56,56 @@ namespace CapaWSPresentacion.perfilCliente
 
             Sesion SesionUsuario = (Sesion)Session["SesionUsuario"];
 
-            var proveedor = n.Lista.Where(p => p.PerfilUsuario.Usuario.Nombre == SesionUsuario.Usuario).SingleOrDefault();
+            var cliente = n.Lista.Where(p => p.PerfilUsuario.Usuario.Nombre == SesionUsuario.Usuario).SingleOrDefault();
 
-            txtRutEmpresa.Text = proveedor.Cliente.Rut;
-            txtRazonSocial.Text = proveedor.PerfilUsuario.Empresa.RazonSocial;
-            txtCorreoElectronico.Text = proveedor.PerfilUsuario.Empresa.Email;
-            txtTelefono.Text = proveedor.PerfilUsuario.Empresa.Telefono;
-            txtNombreCiudad.SelectedValue = proveedor.PerfilUsuario.Direccion.NombreCiudad;
-            txtDireccion.Text = proveedor.PerfilUsuario.Direccion.Calle;
-            txtNombreUsuario.Text = proveedor.PerfilUsuario.Usuario.Nombre;
-            txtContraseña.Text = proveedor.PerfilUsuario.Usuario.Clave;
+            if (cliente != null)
+            {
+                txtRutEmpresa.Text            = cliente.Cliente.Rut;
+                txtRazonSocial.Text           = cliente.PerfilUsuario.Empresa.RazonSocial;
+                txtCorreoElectronico.Text     = cliente.PerfilUsuario.Empresa.Email;
+                txtTelefono.Text              = cliente.PerfilUsuario.Empresa.Telefono;
+                txtNombreCiudad.SelectedValue = cliente.PerfilUsuario.Direccion.NombreCiudad;
+                txtDireccion.Text             = cliente.PerfilUsuario.Direccion.Calle;
+                txtNombreUsuario.Text         = cliente.PerfilUsuario.Usuario.Nombre;
+                txtContraseña.Text            = cliente.PerfilUsuario.Usuario.Clave;
+
+                Session["SesionPerfilUsuarioCliente"]      = cliente;
+            } else {
+
+                Session["SesionPerfilUsuarioCliente"] = null;
+            }
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
+            PerfilUsuarioCliente m = (PerfilUsuarioCliente)Session["SesionPerfilUsuarioCliente"];
 
+            if (m != null)
+            {
+                WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+                ContenedorPerfilUsuarioCliente n = new ContenedorPerfilUsuarioCliente();
+
+                n.Item.Cliente = m.Cliente;
+                n.Item.PerfilUsuario = m.PerfilUsuario;
+                n.Retorno.Token = Session["TokenUsuario"].ToString();
+
+                n.Item.Cliente.Rut = txtRutEmpresa.Text;
+                n.Item.PerfilUsuario.Empresa.RazonSocial = txtRazonSocial.Text;
+                n.Item.PerfilUsuario.Empresa.Email = txtCorreoElectronico.Text;
+                n.Item.PerfilUsuario.Empresa.Telefono = txtTelefono.Text;
+                n.Item.PerfilUsuario.Direccion.NombreCiudad = txtNombreCiudad.SelectedValue;
+                n.Item.PerfilUsuario.Direccion.Calle = txtDireccion.Text;
+                n.Item.PerfilUsuario.Usuario.Nombre = txtNombreUsuario.Text;
+                n.Item.PerfilUsuario.Usuario.Clave = txtContraseña.Text;
+
+                n = x.PerfilUsuarioClienteActualizar(n);
+
+                if (n.Retorno.Codigo == 0)
+                {
+                    //correcto
+                }
+            }
         }
     }
 }
