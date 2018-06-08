@@ -114,7 +114,7 @@ namespace CapaNegocio
         {
             ContenedorOrdenesCompraCompleta LOrdenesCompra = new ContenedorOrdenesCompraCompleta();
 
-            if (ValidarPerfilCUD(token))
+            if (ValidarFecExp(token))
             {
                 try
                 {
