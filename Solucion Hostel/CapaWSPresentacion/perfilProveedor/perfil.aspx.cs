@@ -58,19 +58,53 @@ namespace CapaWSPresentacion.perfilProveedor
 
             var proveedor = n.Lista.Where(p => p.PerfilUsuario.Usuario.Nombre == SesionUsuario.Usuario).SingleOrDefault();
 
-            txtRutEmpresa.Text = proveedor.Proveedor.Rut;
-            txtRazonSocial.Text = proveedor.PerfilUsuario.Empresa.RazonSocial;
-            txtCorreoElectronico.Text = proveedor.PerfilUsuario.Empresa.Email;
-            txtTelefono.Text = proveedor.PerfilUsuario.Empresa.Telefono;
-            txtNombreCiudad.SelectedValue = proveedor.PerfilUsuario.Direccion.NombreCiudad;
-            txtDireccion.Text = proveedor.PerfilUsuario.Direccion.Calle;
-            txtNombreUsuario.Text = proveedor.PerfilUsuario.Usuario.Nombre;
-            txtContraseña.Text = proveedor.PerfilUsuario.Usuario.Clave;
+            if(proveedor != null)
+            {
+                txtRutEmpresa.Text = proveedor.Proveedor.Rut;
+                txtRazonSocial.Text = proveedor.PerfilUsuario.Empresa.RazonSocial;
+                txtCorreoElectronico.Text = proveedor.PerfilUsuario.Empresa.Email;
+                txtTelefono.Text = proveedor.PerfilUsuario.Empresa.Telefono;
+                txtNombreCiudad.SelectedValue = proveedor.PerfilUsuario.Direccion.NombreCiudad;
+                txtDireccion.Text = proveedor.PerfilUsuario.Direccion.Calle;
+                txtNombreUsuario.Text = proveedor.PerfilUsuario.Usuario.Nombre;
+                txtContraseña.Text = proveedor.PerfilUsuario.Usuario.Clave;
+
+                Session["SesionPerfilUsuarioProveedor"] = proveedor;
+            } else {
+                Session["SesionPerfilUsuarioProveedor"] = null;
+            }
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
+            PerfilUsuarioProveedor m = (PerfilUsuarioProveedor)Session["SesionPerfilUsuarioProveedor"];
 
+            if (m != null)
+            {
+                WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+                ContenedorPerfilUsuarioProveedor n = new ContenedorPerfilUsuarioProveedor();
+
+                n.Item.Proveedor = m.Proveedor;
+                n.Item.PerfilUsuario = m.PerfilUsuario;
+                n.Retorno.Token = Session["TokenUsuario"].ToString();
+
+                n.Item.Proveedor.Rut = txtRutEmpresa.Text;
+                n.Item.PerfilUsuario.Empresa.RazonSocial = txtRazonSocial.Text;
+                n.Item.PerfilUsuario.Empresa.Email = txtCorreoElectronico.Text;
+                n.Item.PerfilUsuario.Empresa.Telefono = txtTelefono.Text;
+                n.Item.PerfilUsuario.Direccion.NombreCiudad = txtNombreCiudad.SelectedValue;
+                n.Item.PerfilUsuario.Direccion.Calle = txtDireccion.Text;
+                n.Item.PerfilUsuario.Usuario.Nombre = txtNombreUsuario.Text;
+                n.Item.PerfilUsuario.Usuario.Clave = txtContraseña.Text;
+
+                n = x.PerfilUsuarioProveedorActualizar(n);
+
+                if (n.Retorno.Codigo == 0)
+                {
+                    //correcto
+                }
+            }
         }
     }
 }

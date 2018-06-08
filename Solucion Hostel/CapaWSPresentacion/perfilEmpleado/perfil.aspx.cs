@@ -68,7 +68,7 @@ namespace CapaWSPresentacion.perfilEmpleado
             //txtContraseña.Text = proveedor.PerfilUsuario.Usuario.Clave;
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnModificar_Click(object sender, EventArgs e)
         {
 
         }
