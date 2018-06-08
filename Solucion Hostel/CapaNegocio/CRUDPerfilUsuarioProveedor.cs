@@ -66,6 +66,59 @@ namespace CapaNegocio
 
             return nPUP;
         }
+        
+        public ContenedorPerfilUsuarioProveedor LlamarSPActualizar(ContenedorPerfilUsuarioProveedor aPUP)
+        {
+            if (ValidarPerfilCUD(aPUP.Retorno.Token))
+            {
+                var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
+                var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
+
+                CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                conex.SP_ACTUALIZAR_PROVEEDOR
+                    ( aPUP.Item.Proveedor.Rut
+                    , aPUP.Item.PerfilUsuario.Empresa.RazonSocial
+                    , aPUP.Item.PerfilUsuario.Empresa.Rubro
+                    , aPUP.Item.PerfilUsuario.Empresa.Email
+                    , aPUP.Item.PerfilUsuario.Empresa.Telefono
+                    , aPUP.Item.PerfilUsuario.Empresa.Logo
+                    , aPUP.Item.PerfilUsuario.Persona.Rut
+                    , aPUP.Item.PerfilUsuario.Persona.Nombre
+                    , aPUP.Item.PerfilUsuario.Persona.Apellido
+                    , aPUP.Item.PerfilUsuario.Persona.FechaNacimiento
+                    , aPUP.Item.PerfilUsuario.Persona.Email
+                    , aPUP.Item.PerfilUsuario.Persona.Telefono
+                    , aPUP.Item.PerfilUsuario.Direccion.Calle
+                    , aPUP.Item.PerfilUsuario.Direccion.Numero
+                    , aPUP.Item.PerfilUsuario.Direccion.Comuna
+                    , aPUP.Item.PerfilUsuario.Direccion.CodPostal
+                    , aPUP.Item.PerfilUsuario.Direccion.NombreCiudad
+                    , aPUP.Item.PerfilUsuario.Direccion.CodPais
+                    , aPUP.Item.PerfilUsuario.Usuario.Id
+                    , aPUP.Item.PerfilUsuario.Usuario.Clave
+                    , p_OUT_CODRET
+                    , p_OUT_GLSRET
+                    );
+
+                try
+                {
+                    aPUP.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
+                    aPUP.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                }
+                catch (Exception)
+                {
+                    aPUP.Retorno.Codigo = 1011;
+                    aPUP.Retorno.Glosa = "Err codret ORACLE";
+                }
+            }
+            else {
+                aPUP.Retorno.Codigo = 100;
+                aPUP.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+
+            return aPUP;
+        }
 
         public ContenedorPerfilUsuarioProveedores LlamarSPRescatar(string token)
         {

@@ -11,7 +11,28 @@ namespace CapaWSPresentacion.perfilEmpleado
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                string Perfil = Session["PerfilUsuario"].ToString();
 
+                if (Perfil.Equals("Empleado") || Perfil.Equals("Administrador"))
+                {
+                    if (!IsPostBack)
+                    {
+                        //RescatarDatos();
+                    }
+                }
+                else
+                {
+                    Session["TokenUsuario"] = null;
+                    Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
+                }
+            }
+            catch (Exception ex)
+            {
+                Session["TokenUsuario"] = null;
+                Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
+            }
         }
     }
 }

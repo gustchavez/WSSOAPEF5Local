@@ -69,7 +69,7 @@ namespace CapaNegocio
                         //Logica validacion Detalle
                         if (ErrorAltaDetalle != true)
                         {
-                            conex.SP_ACTUALIZAR_ENC_RESERVA
+                            conex.SP_ACTUALIZAR_ENC_PEDIDO
                             ( nOPC.Item.Cabecera.Numero
                             , nOPC.Item.Cabecera.Monto
                             , nOPC.Item.Cabecera.Observaciones

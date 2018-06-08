@@ -91,7 +91,6 @@ namespace CapaNegocio
 
             return aHabitacion;
         }
-
         public ContenedorHabitacion LlamarSPEliminar(ContenedorHabitacion eHabitacion)
         {
             if (ValidarFecExp(eHabitacion.Retorno.Token))
