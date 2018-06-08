@@ -2,11 +2,133 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
- <form id="form1" runat="server">
+    
 
         <link rel="stylesheet" type="text/css" href="/scripts/servicioCliente.css">
         <script src="/scripts/mostrar.js"></script>
         <script src="/scripts/jquery.min.js"></script>
+       
+
+       <script type="text/javascript">
+        function autenticarme() {
+            var habitacion1 = document.getElementById('<%= individual.ClientID %>').value;
+            var habitacion2 = document.getElementById('<%= doble.ClientID %>').value;
+            var habitacion3 = document.getElementById('<%= triple.ClientID %>').value;
+            var habitacion4 = document.getElementById('<%= sectuple.ClientID %>').value;
+
+            if (habitacion1 == 0) {
+                $('#IngresoPersonas1').fadeOut(1000);
+                $('#IngresoPersonas2').fadeOut(1000);
+                $('#IngresoPersonas3').fadeOut(1000);
+                $('#IngresoPersonas4').fadeOut(1000);
+            } else if (habitacion1 == 1) {
+                $('#IngresoPersonas1').fadeIn(1000);
+                $('#IngresoPersonas2').fadeOut(1000);
+                $('#IngresoPersonas3').fadeOut(1000);
+                $('#IngresoPersonas4').fadeOut(1000);
+            } else if (habitacion1 == 2) {
+                $('#IngresoPersonas1').fadeIn(1000);
+                $('#IngresoPersonas2').fadeIn(1000);
+                $('#IngresoPersonas3').fadeOut(1000);
+                $('#IngresoPersonas4').fadeOut(1000);
+            } else if (habitacion1 == 3) {
+                $('#IngresoPersonas1').fadeIn(1000);
+                $('#IngresoPersonas2').fadeIn(1000);
+                $('#IngresoPersonas3').fadeIn(1000);
+                $('#IngresoPersonas4').fadeOut(1000);
+            } else if (habitacion1 == 4) {
+                $('#IngresoPersonas1').fadeIn(1000);
+                $('#IngresoPersonas2').fadeIn(1000);
+                $('#IngresoPersonas3').fadeIn(1000);
+                $('#IngresoPersonas4').fadeIn(1000);
+            }
+
+
+            if (habitacion2 == 0) {
+                $('#IngresoPersonas5').fadeOut(1000);
+                $('#IngresoPersonas6').fadeOut(1000);
+                $('#IngresoPersonas7').fadeOut(1000);
+                $('#IngresoPersonas8').fadeOut(1000);
+            } else if (habitacion2 == 1) {
+                $('#IngresoPersonas5').fadeIn(1000);
+                $('#IngresoPersonas6').fadeOut(1000);
+                $('#IngresoPersonas7').fadeOut(1000);
+                $('#IngresoPersonas8').fadeOut(1000);
+            } else if (habitacion2 == 2) {
+                $('#IngresoPersonas5').fadeIn(1000);
+                $('#IngresoPersonas6').fadeIn(1000);
+                $('#IngresoPersonas7').fadeOut(1000);
+                $('#IngresoPersonas8').fadeOut(1000);
+            } else if (habitacion2 == 3) {
+                $('#IngresoPersonas5').fadeIn(1000);
+                $('#IngresoPersonas6').fadeIn(1000);
+                $('#IngresoPersonas7').fadeIn(1000);
+                $('#IngresoPersonas8').fadeOut(1000);
+            } else if (habitacion2 == 4) {
+                $('#IngresoPersonas5').fadeIn(1000);
+                $('#IngresoPersonas6').fadeIn(1000);
+                $('#IngresoPersonas7').fadeIn(1000);
+                $('#IngresoPersonas8').fadeIn(1000);
+            }
+
+            if (habitacion3 == 0) {
+                $('#IngresoPersonas9').fadeOut(1000);
+                $('#IngresoPersonas10').fadeOut(1000);
+                $('#IngresoPersonas11').fadeOut(1000);
+                $('#IngresoPersonas12').fadeOut(1000);
+            } else if (habitacion3 == 1) {
+                $('#IngresoPersonas9').fadeIn(1000);
+                $('#IngresoPersonas10').fadeOut(1000);
+                $('#IngresoPersonas11').fadeOut(1000);
+                $('#IngresoPersonas12').fadeOut(1000);
+            } else if (habitacion3 == 2) {
+                $('#IngresoPersonas9').fadeIn(1000);
+                $('#IngresoPersonas10').fadeIn(1000);
+                $('#IngresoPersonas11').fadeOut(1000);
+                $('#IngresoPersonas12').fadeOut(1000);
+            } else if (habitacion3 == 3) {
+                $('#IngresoPersonas9').fadeIn(1000);
+                $('#IngresoPersonas10').fadeIn(1000);
+                $('#IngresoPersonas11').fadeIn(1000);
+                $('#IngresoPersonas12').fadeOut(1000);
+            } else if (habitacion3 == 4) {
+                $('#IngresoPersonas9').fadeIn(1000);
+                $('#IngresoPersonas10').fadeIn(1000);
+                $('#IngresoPersonas11').fadeIn(1000);
+                $('#IngresoPersonas12').fadeIn(1000);
+            }
+
+            if (habitacion4 == 0) {
+                $('#IngresoPersonas13').fadeOut(1000);
+                $('#IngresoPersonas14').fadeOut(1000);
+                $('#IngresoPersonas15').fadeOut(1000);
+                $('#IngresoPersonas16').fadeOut(1000);
+            } else if (habitacion4 == 1) {
+                $('#IngresoPersonas13').fadeIn(1000);
+                $('#IngresoPersonas14').fadeOut(1000);
+                $('#IngresoPersonas15').fadeOut(1000);
+                $('#IngresoPersonas16').fadeOut(1000);
+            } else if (habitacion4 == 2) {
+                $('#IngresoPersonas13').fadeIn(1000);
+                $('#IngresoPersonas14').fadeIn(1000);
+                $('#IngresoPersonas15').fadeOut(1000);
+                $('#IngresoPersonas16').fadeOut(1000);
+            } else if (habitacion4 == 3) {
+                $('#IngresoPersonas13').fadeIn(1000);
+                $('#IngresoPersonas14').fadeIn(1000);
+                $('#IngresoPersonas15').fadeIn(1000);
+                $('#IngresoPersonas16').fadeOut(1000);
+            } else if (habitacion4 == 4) {
+                $('#IngresoPersonas13').fadeIn(1000);
+                $('#IngresoPersonas14').fadeIn(1000);
+                $('#IngresoPersonas15').fadeIn(1000);
+                $('#IngresoPersonas16').fadeIn(1000);
+            }
+        return false;
+             }
+        </script>
+
+      <form id="form1" runat="server">
 
 	<!--Fin Menu-->
 	<div class="columna1">
@@ -39,22 +161,22 @@
 					</tr>
 					<tr>
 						<td>Habitación individual</td>
-                        <td><asp:TextBox ID="TextBox1" runat="server" TextMode="Number" CssClass="CasillaEnvio" BorderColor="#AB4E68" BorderStyle="Solid"></asp:TextBox></td>
-                        <td><asp:TextBox ID="individual" runat="server" TextMode="Number" Max="4" min="0" CssClass="BotonIndividual"></asp:TextBox></td>
+                        <td><asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaEnvio" BorderColor="#AB4E68" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
+                        <td><asp:TextBox ID="individual" TextMode="Number" runat="server" Max="4" min="0" CssClass="BotonIndividual"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td>Habitación 2 personas</td>
-                        <td><asp:TextBox ID="TextBox2" runat="server" TextMode="Number" CssClass="CasillaEnvio" BorderColor="#55828b" BorderStyle="Solid"></asp:TextBox></td>
+                        <td><asp:TextBox ID="TextBox2" runat="server"  CssClass="CasillaEnvio" BorderColor="#55828b" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
                         <td><asp:TextBox ID="doble" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton2personas"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td>Habitación 3 personas</td>
-                        <td><asp:TextBox ID="TextBox3" runat="server" TextMode="Number" CssClass="CasillaEnvio" BorderColor="#e94f37" BorderStyle="Solid"></asp:TextBox></td>
+                        <td><asp:TextBox ID="TextBox3" runat="server"  CssClass="CasillaEnvio" BorderColor="#e94f37" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
                         <td><asp:TextBox ID="triple" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton3personas"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td>Habitación 4 personas</td>
-                        <td><asp:TextBox ID="TextBox4" runat="server" TextMode="Number" CssClass="CasillaEnvio" BorderColor="#3f88c5" BorderStyle="Solid"></asp:TextBox></td>
+                        <td><asp:TextBox ID="TextBox4" runat="server"  CssClass="CasillaEnvio" BorderColor="#3f88c5" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
                         <td><asp:TextBox ID="sectuple" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton6personas"></asp:TextBox></td>
 					</tr>	
 				</table>
@@ -68,10 +190,11 @@
 				<b> Personas con habitación: </b> <asp:TextBox ID="TextBox176" runat="server" CssClass="CasillaPersonas"></asp:TextBox>
 			</div>
 			<div class="casillaTotal">
-                <asp:Button ID="Button1" runat="server" Text="Mostrar"/>
+               <asp:Button ID="Button1" runat="server" Text="Entrar" OnClientClick="return autenticarme();" />
 			</div>
 
 	</div>
+
 	<!--Fin COLUMNA1-->
 	<div class="columna2">
 		<h2>Ingreso de Personas</h2>
@@ -953,50 +1076,11 @@
 				</div>
 		</div>
 	<!--Fin COLUMNA2-->
-	<div class="columna3">
-	
-		<div class="linea2">
 
-			<h2>Precios Finales</h2>
-
-			<div class="casillaTotal">
-				Habitación individual:  <asp:TextBox ID="TextBox165" runat="server" CssClass="CasillaPrecio"></asp:TextBox>
-			</div>
-			<div class="casillaTotal">
-				Habitación 2 personas:  <asp:TextBox ID="TextBox166" runat="server" CssClass="CasillaPrecio"></asp:TextBox>
-			</div>
-			<div class="casillaTotal">
-				Habitación 3 personas: <asp:TextBox ID="TextBox167" runat="server" CssClass="CasillaPrecio"></asp:TextBox>
-			</div>
-			<div class="casillaTotal">
-				Habitación 6 personas: <asp:TextBox ID="TextBox168" runat="server" CssClass="CasillaPrecio"></asp:TextBox>
-			</div>
-			<br>
-			<hr>
-			<br>
-
-			<div class="casillaTotal">
-				A pagar  <asp:TextBox ID="TextBox169" runat="server" CssClass="CasillaPrecio"></asp:TextBox>
-			</div>
-			<div class="casillaTotal">
-				Descuento <asp:TextBox ID="TextBox170" runat="server" CssClass="CasillaPrecio"></asp:TextBox>
-			</div>
-			<br>
-			<hr>
-			<br>
-			<div class="casillaTotal">
-				Total <asp:TextBox ID="TextBox171" runat="server" CssClass="CasillaPrecio"></asp:TextBox>
-			</div>
-			<div class="casillaTotal">
-				<asp:Button ID="Button2" runat="server" Text="Button" CssClass="SubmitTotal" />
-			</div>
-
-		</div>
-	</div>
     
        
 
 </form>
-
+        <script src="/scripts/mostrar.js"></script>
 
 </asp:Content>

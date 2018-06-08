@@ -1,4 +1,8 @@
 
+function lala() {
+    Alert('Logrado');
+}
+
 
 function mostrar(){
 

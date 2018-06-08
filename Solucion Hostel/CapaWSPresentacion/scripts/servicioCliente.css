@@ -11,7 +11,7 @@ body{
 
 .padre {
 	width: 1250px;
-	height: 700px;
+	height: 650px;
 	margin: auto;
 	position: relative;
 }
@@ -35,7 +35,7 @@ body{
 .columna1{
 	position: absolute;
 	width: 250px;
-	height: 670px;
+	height: 650px;
 	margin-top: 30px;
 	padding-left: 10px;	
 }
@@ -45,9 +45,9 @@ body{
 	background: #E9ECF5;
 	margin-left: 280px;
 	margin-top: 30px;
-	width: 670px;
-	height: 670px;
-	overflow: scroll;
+	width: 690px;
+	height: 620px;
+	overflow: auto;
 }
 
 .columna3{
@@ -55,7 +55,7 @@ body{
 	margin-left: 950px;
 	margin-top: 30px;
 	width: 300px;
-	height: 670px;
+	height: 650px;
 }
 
 /* Menu */
@@ -88,7 +88,7 @@ padding-top: 7px;
 background: #1C3144;
 width: 280px;
 z-index: 10;
-height: 770px;
+height: 650px;
 position: absolute;
 margin-top: 30px;
 display: none;

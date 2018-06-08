@@ -11,6 +11,7 @@ namespace CapaWSPresentacion.perfilCliente
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             try
             {
                 string Perfil = Session["PerfilUsuario"].ToString();
@@ -35,5 +36,9 @@ namespace CapaWSPresentacion.perfilCliente
             }
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), null, "mostrar()", true);
+        }
     }
 }
