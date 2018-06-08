@@ -45,10 +45,10 @@ namespace CapaDato
         public DbSet<PRODUCTO> PRODUCTO { get; set; }
         public DbSet<PROVEEDOR> PROVEEDOR { get; set; }
         public DbSet<PROVISION> PROVISION { get; set; }
-        public DbSet<RRP> RRP { get; set; }
         public DbSet<SERVICIO_COMIDA> SERVICIO_COMIDA { get; set; }
         public DbSet<USUARIO> USUARIO { get; set; }
         public DbSet<DIRECCION> DIRECCION { get; set; }
+        public DbSet<RRP> RRP { get; set; }
     
         public virtual int SP_ACTUALIZAR_CAMA(Nullable<decimal> p_IN_CODIGO, string p_IN_DESCRIPCION, string p_IN_DISPONIBLE, Nullable<decimal> p_IN_CODIGO_HABITACION, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {

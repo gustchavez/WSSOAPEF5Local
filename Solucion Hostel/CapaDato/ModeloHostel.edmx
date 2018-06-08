@@ -220,7 +220,8 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
         <EntityType Name="RRP">
           <Key>
             <PropertyRef Name="CODIGO" />
-            <PropertyRef Name="CANTIDAD" />
+            <PropertyRef Name="CODIGO_PRODUCTO" />
+            <PropertyRef Name="NUMERO_OP" />
           </Key>
           <Property Name="CODIGO" Type="number" Precision="14" Scale="0" Nullable="false" />
           <Property Name="CANTIDAD" Type="number" Precision="3" Scale="0" Nullable="false" />
@@ -1110,7 +1111,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <EntitySet Name="PRODUCTO" EntityType="Model.PRODUCTO" />
           <EntitySet Name="PROVEEDOR" EntityType="Model.PROVEEDOR" />
           <EntitySet Name="PROVISION" EntityType="Model.PROVISION" />
-          <EntitySet Name="RRP" EntityType="Model.RRP" />
           <EntitySet Name="SERVICIO_COMIDA" EntityType="Model.SERVICIO_COMIDA" />
           <EntitySet Name="USUARIO" EntityType="Model.USUARIO" />
           <EntitySet Name="DIRECCION" EntityType="Model.DIRECCION" />
@@ -1182,10 +1182,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
             <End Role="ORDEN_DE_PEDIDO" EntitySet="ORDEN_DE_PEDIDO" />
           </AssociationSet>
-          <AssociationSet Name="RRP_FK_OP" Association="Model.RRP_FK_OP">
-            <End Role="ORDEN_DE_PEDIDO" EntitySet="ORDEN_DE_PEDIDO" />
-            <End Role="RRP" EntitySet="RRP" />
-          </AssociationSet>
           <AssociationSet Name="DIRECCION_FK_PERSONA" Association="Model.DIRECCION_FK_PERSONA">
             <End Role="PERSONA" EntitySet="PERSONA" />
             <End Role="DIRECCION" EntitySet="DIRECCION" />
@@ -1201,10 +1197,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <AssociationSet Name="PROVISION_FK_PRODUCTO" Association="Model.PROVISION_FK_PRODUCTO">
             <End Role="PRODUCTO" EntitySet="PRODUCTO" />
             <End Role="PROVISION" EntitySet="PROVISION" />
-          </AssociationSet>
-          <AssociationSet Name="RRP_FK_PRODUCTO" Association="Model.RRP_FK_PRODUCTO">
-            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-            <End Role="RRP" EntitySet="RRP" />
           </AssociationSet>
           <AssociationSet Name="PROVISION_FK_PROVEEDOR" Association="Model.PROVISION_FK_PROVEEDOR">
             <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
@@ -1569,6 +1561,15 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
+          <EntitySet Name="RRP" EntityType="Model.RRP" />
+          <AssociationSet Name="RRP_FK_OP" Association="Model.RRP_FK_OP">
+            <End Role="ORDEN_DE_PEDIDO" EntitySet="ORDEN_DE_PEDIDO" />
+            <End Role="RRP" EntitySet="RRP" />
+          </AssociationSet>
+          <AssociationSet Name="RRP_FK_PRODUCTO" Association="Model.RRP_FK_PRODUCTO">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="RRP" EntitySet="RRP" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="ALOJAMIENTO">
           <Key>
@@ -1794,20 +1795,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <Property Name="PRECIO" Type="Int32" Nullable="false" />
           <NavigationProperty Name="PRODUCTO" Relationship="Model.PROVISION_FK_PRODUCTO" FromRole="PROVISION" ToRole="PRODUCTO" />
           <NavigationProperty Name="PROVEEDOR" Relationship="Model.PROVISION_FK_PROVEEDOR" FromRole="PROVISION" ToRole="PROVEEDOR" />
-        </EntityType>
-        <EntityType Name="RRP">
-          <Key>
-            <PropertyRef Name="CODIGO" />
-            <PropertyRef Name="CANTIDAD" />
-          </Key>
-          <Property Name="CODIGO" Type="Int64" Nullable="false" />
-          <Property Name="CANTIDAD" Type="Int16" Nullable="false" />
-          <Property Name="RECEPCION" Type="DateTime" Nullable="false" />
-          <Property Name="CONFIRMADO" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-          <Property Name="CODIGO_PRODUCTO" Type="Int16" Nullable="false" />
-          <Property Name="NUMERO_OP" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
-          <NavigationProperty Name="ORDEN_DE_PEDIDO" Relationship="Model.RRP_FK_OP" FromRole="RRP" ToRole="ORDEN_DE_PEDIDO" />
-          <NavigationProperty Name="PRODUCTO" Relationship="Model.RRP_FK_PRODUCTO" FromRole="RRP" ToRole="PRODUCTO" />
         </EntityType>
         <EntityType Name="SERVICIO_COMIDA">
           <Key>
@@ -2056,18 +2043,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="RRP_FK_OP">
-          <End Type="Model.ORDEN_DE_PEDIDO" Role="ORDEN_DE_PEDIDO" Multiplicity="1" />
-          <End Type="Model.RRP" Role="RRP" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ORDEN_DE_PEDIDO">
-              <PropertyRef Name="NUMERO" />
-            </Principal>
-            <Dependent Role="RRP">
-              <PropertyRef Name="NUMERO_OP" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="DIRECCION_FK_PERSONA">
           <End Type="Model.PERSONA" Role="PERSONA" Multiplicity="0..1" />
           <End Type="Model.DIRECCION" Role="DIRECCION" Multiplicity="*" />
@@ -2116,18 +2091,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="RRP_FK_PRODUCTO">
-          <End Type="Model.PRODUCTO" Role="PRODUCTO" Multiplicity="1" />
-          <End Type="Model.RRP" Role="RRP" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PRODUCTO">
-              <PropertyRef Name="CODIGO" />
-            </Principal>
-            <Dependent Role="RRP">
-              <PropertyRef Name="CODIGO_PRODUCTO" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="PROVISION_FK_PROVEEDOR">
           <End Type="Model.PROVEEDOR" Role="PROVEEDOR" Multiplicity="1" />
           <End Type="Model.PROVISION" Role="PROVISION" Multiplicity="*" />
@@ -2147,6 +2110,45 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
         <Association Name="PXP">
           <End Type="Model.PAIS" Role="PAIS" Multiplicity="*" />
           <End Type="Model.PERSONA" Role="PERSONA" Multiplicity="*" />
+        </Association>
+        <EntityType Name="RRP">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+            <PropertyRef Name="CODIGO_PRODUCTO" />
+            <PropertyRef Name="NUMERO_OP" />
+          </Key>
+          <Property Name="CODIGO" Type="Int64" Nullable="false" />
+          <Property Name="CANTIDAD" Type="Int16" Nullable="false" />
+          <Property Name="RECEPCION" Type="DateTime" Nullable="false" />
+          <Property Name="CONFIRMADO" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="CODIGO_PRODUCTO" Type="Int16" Nullable="false" />
+          <Property Name="NUMERO_OP" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="ORDEN_DE_PEDIDO" Relationship="Model.RRP_FK_OP" FromRole="RRP" ToRole="ORDEN_DE_PEDIDO" />
+          <NavigationProperty Name="PRODUCTO" Relationship="Model.RRP_FK_PRODUCTO" FromRole="RRP" ToRole="PRODUCTO" />
+        </EntityType>
+        <Association Name="RRP_FK_OP">
+          <End Type="Model.ORDEN_DE_PEDIDO" Role="ORDEN_DE_PEDIDO" Multiplicity="1" />
+          <End Type="Model.RRP" Role="RRP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDEN_DE_PEDIDO">
+              <PropertyRef Name="NUMERO" />
+            </Principal>
+            <Dependent Role="RRP">
+              <PropertyRef Name="NUMERO_OP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RRP_FK_PRODUCTO">
+          <End Type="Model.PRODUCTO" Role="PRODUCTO" Multiplicity="1" />
+          <End Type="Model.RRP" Role="RRP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="RRP">
+              <PropertyRef Name="CODIGO_PRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -2343,18 +2345,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="RRP">
-            <EntityTypeMapping TypeName="Model.RRP">
-              <MappingFragment StoreEntitySet="RRP">
-                <ScalarProperty Name="NUMERO_OP" ColumnName="NUMERO_OP" />
-                <ScalarProperty Name="CODIGO_PRODUCTO" ColumnName="CODIGO_PRODUCTO" />
-                <ScalarProperty Name="CONFIRMADO" ColumnName="CONFIRMADO" />
-                <ScalarProperty Name="RECEPCION" ColumnName="RECEPCION" />
-                <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
-                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SERVICIO_COMIDA">
             <EntityTypeMapping TypeName="Model.SERVICIO_COMIDA">
               <MappingFragment StoreEntitySet="SERVICIO_COMIDA">
@@ -2442,6 +2432,18 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_CLIENTE" FunctionName="Model.Store.SP_ACTUALIZAR_CLIENTE" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_EMPLEADO" FunctionName="Model.Store.SP_ACTUALIZAR_EMPLEADO" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_PROVEEDOR" FunctionName="Model.Store.SP_ACTUALIZAR_PROVEEDOR" />
+          <EntitySetMapping Name="RRP">
+            <EntityTypeMapping TypeName="Model.RRP">
+              <MappingFragment StoreEntitySet="RRP">
+                <ScalarProperty Name="NUMERO_OP" ColumnName="NUMERO_OP" />
+                <ScalarProperty Name="CODIGO_PRODUCTO" ColumnName="CODIGO_PRODUCTO" />
+                <ScalarProperty Name="CONFIRMADO" ColumnName="CONFIRMADO" />
+                <ScalarProperty Name="RECEPCION" ColumnName="RECEPCION" />
+                <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

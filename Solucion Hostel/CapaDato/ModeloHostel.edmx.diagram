@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="88ec9f49b059417a9dbd87e9ce388b4d" Name="Diagram1" ZoomLevel="11">
+      <Diagram DiagramId="88ec9f49b059417a9dbd87e9ce388b4d" Name="Diagram1" ZoomLevel="72">
         <EntityTypeShape EntityType="Model.ALOJAMIENTO" Width="1.5" PointX="10.5" PointY="19.75" />
         <EntityTypeShape EntityType="Model.CAMA" Width="1.5" PointX="8.25" PointY="31.25" />
         <EntityTypeShape EntityType="Model.CIUDAD" Width="1.5" PointX="3" PointY="10" />
@@ -22,7 +22,6 @@
         <EntityTypeShape EntityType="Model.PRODUCTO" Width="1.5" PointX="3" PointY="22.875" />
         <EntityTypeShape EntityType="Model.PROVEEDOR" Width="1.5" PointX="3" PointY="20.125" />
         <EntityTypeShape EntityType="Model.PROVISION" Width="1.5" PointX="5.25" PointY="19" />
-        <EntityTypeShape EntityType="Model.RRP" Width="1.5" PointX="7.5" PointY="22.375" />
         <EntityTypeShape EntityType="Model.SERVICIO_COMIDA" Width="1.5" PointX="3" PointY="6.5" />
         <EntityTypeShape EntityType="Model.USUARIO" Width="1.5" PointX="5.25" PointY="9.75" />
         <EntityTypeShape EntityType="Model.DIRECCION" Width="1.5" PointX="5.25" PointY="13.375" />
@@ -43,15 +42,16 @@
         <AssociationConnector Association="Model.FACTURA_FK_OP" />
         <AssociationConnector Association="Model.PAGO_FK_FACTURA" />
         <AssociationConnector Association="Model.ORDEN_DE_PEDIDO_FK_PROVEEDOR" />
-        <AssociationConnector Association="Model.RRP_FK_OP" />
         <AssociationConnector Association="Model.DIRECCION_FK_PERSONA" />
         <AssociationConnector Association="Model.USUARIO_FK_PERSONA" />
         <AssociationConnector Association="Model.PLATO_FK_SERVICIO_COMIDA" />
         <AssociationConnector Association="Model.PROVISION_FK_PRODUCTO" />
-        <AssociationConnector Association="Model.RRP_FK_PRODUCTO" />
         <AssociationConnector Association="Model.PROVISION_FK_PROVEEDOR" />
         <AssociationConnector Association="Model.PXE" />
         <AssociationConnector Association="Model.PXP" />
+        <EntityTypeShape EntityType="Model.RRP" Width="1.5" PointX="7.5" PointY="22.5" />
+        <AssociationConnector Association="Model.RRP_FK_OP" />
+        <AssociationConnector Association="Model.RRP_FK_PRODUCTO" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
