@@ -68,7 +68,7 @@
 				<b> Personas con habitación: </b> <asp:TextBox ID="TextBox176" runat="server" CssClass="CasillaPersonas"></asp:TextBox>
 			</div>
 			<div class="casillaTotal">
-                <asp:Button ID="Button1" runat="server" Text="Mostrar" OnClick="mostrar()"/>
+                <asp:Button ID="Button1" runat="server" Text="Mostrar"/>
 			</div>
 
 	</div>
