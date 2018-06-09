@@ -66,7 +66,7 @@ namespace CapaNegocio
 
             return nPUC;
         }
-        public ContenedorPerfilUsuarioCliente LlamarSPActualizar(ContenedorPerfilUsuarioCliente aPUC)
+        public ContenedorPerfilUsuarioCliente LlamarSPActualizar(ContenedorPerfilUsuarioCliente aPUC, string token)
         {
             if (ValidarPerfilCUD(aPUC.Retorno.Token))
             {

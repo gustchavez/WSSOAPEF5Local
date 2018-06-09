@@ -223,7 +223,7 @@ namespace CapaNegocio
                 try
                 {
                     var query = (from h in conex.HABITACION
-                                 group h by h.ESTADO into g
+                                 group h by new { h.CAPACIDAD , h.ESTADO} into g
                                  select new { estado = g.Select(q => q.ESTADO), capacidad = g.Select(q => q.CAPACIDAD), cantidad = g.Select(q => q.ESTADO).Count() }
                                  ).ToList();
                     foreach (var item in query)
@@ -329,27 +329,52 @@ namespace CapaNegocio
                 return null;
             }
         }
-
-        public string Solicitudes_NO_terminadas()
+        /*
+        create or replace PROCEDURE solic_noTerminadas(cantidadFact out ORDEN_DE_COMPRA.NUMERO%TYPE, 
+                cantidadOrdenC out ORDEN_DE_COMPRA.NUMERO%TYPE,
+                fecha out ORDEN_DE_COMPRA.RECEPCION%TYPE) 
+            is
+            CURSOR c1 is select Concat(EXTRACT(month from RECEPCION),concat('-',EXTRACT(year from RECEPCION))) as fechaEjerc from ORDEN_DE_COMPRA 
+                    group by EXTRACT(year from RECEPCION) ,EXTRACT(month from RECEPCION)
+                    order by Concat(EXTRACT(month from RECEPCION),concat('-',EXTRACT(year from RECEPCION))) desc;
+                    tabla c1%rowtype;
+        begin
+            FOR tabla in c1 LOOP
+                fecha:=tabla.fechaEjerc;
+                select count(NUMERO_OC) into cantidadFact from FACTURA
+                    where Concat(EXTRACT(month from FECHA),concat('-', EXTRACT(year from FECHA)))=tabla.fechaEjerc;
+                select count(NUMERO)into cantidadOrdenC from ORDEN_DE_COMPRA
+                    where Concat(EXTRACT(month from RECEPCION),concat('-', EXTRACT(year from RECEPCION)))=tabla.fechaEjerc;
+            end loop;
+        end solic_noTerminadas;
+        */
+        public List<ComodinJava> Solicitudes_NO_terminadas(string token)
         {
-            String text = "create or replace procedure solic_noTerminadas(cantidad out INTEGER) " +
-                "is " +
-                "facturas INTEGER:= 0; " +
-                "ordenes INTEGER:= 0; " +
-                "begin " +
-                "select count(ORDEN_DE_COMPRA.NUMERO)into ordenes from ORDEN_DE_COMPRA; " +
-                "select count(FACTURA.NUMERO_OC)into facturas from FACTURA " +
-                "inner join ORDEN_DE_COMPRA on ORDEN_DE_COMPRA.NUMERO = FACTURA.NUMERO_OC; " +
-                "cantidad:= ordenes - facturas; " +
-                "end; " +
-                "-- " +
-                "declare " +
-                "aux INTEGER;" +
-                "begin " +
-                "solic_noTerminadas(aux); " +
-                "dbms_output.put_line(aux); " +
-                "end; ";
-            return text;
+
+            CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+            List<ComodinJava> lista = new List<ComodinJava>();
+            if (ValidarPerfil(token))
+            {
+                try
+                {
+                    
+                    return lista;
+                }
+                catch (Exception e)
+                {
+                    ComodinJava obj = new ComodinJava();
+                    obj.Nombre = "Error=" + e.ToString();
+                    lista.Add(obj);
+                    return lista;
+                }
+            }
+            else
+            {
+                ComodinJava obj = new ComodinJava();
+                obj.Nombre = "Error Else";
+                lista.Add(obj);
+                return lista;
+            }
         }
 
         //**********---->Panel Finanzas
@@ -368,8 +393,8 @@ namespace CapaNegocio
                 {
                     var query = (from f in conex.FACTURA
                                  where f.NUMERO_OC != null
-                                 group f by new { f.FECHA.Year, f.FECHA.Month } into g
-                                 orderby g.Select(q => q.FECHA.Year) descending, g.Select(q => q.FECHA.Month) descending
+                                 group f by f.FECHA into g
+                                 //orderby g.Select(q => q.FECHA) descending
                                  select new
                                  {
                                      promedio = (g.Select(q => q.VALOR_BRUTO).Sum() / g.Select(q => q.VALOR_BRUTO).Count()),
@@ -389,14 +414,20 @@ namespace CapaNegocio
                     }
                     return lista;
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    return null;
+                    ComodinJava obj = new ComodinJava();
+                    obj.Nombre = "Error="+e.ToString();
+                    lista.Add(obj);
+                    return lista;
                 }
             }
             else
             {
-                return null;
+                ComodinJava obj = new ComodinJava();
+                obj.Nombre = "Error Else";
+                lista.Add(obj);
+                return lista;
             }
         }
 
