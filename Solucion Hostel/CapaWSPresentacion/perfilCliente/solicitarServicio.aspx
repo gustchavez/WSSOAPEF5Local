@@ -1,13 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilCliente/MasteCliente.Master" AutoEventWireup="true" CodeBehind="solicitarServicio.aspx.cs" Inherits="CapaWSPresentacion.perfilCliente.solicitarServicio" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
-    
-
         <link rel="stylesheet" type="text/css" href="/scripts/servicioCliente.css">
         <script src="/scripts/mostrar.js"></script>
         <script src="/scripts/jquery.min.js"></script>
-       
 
        <script type="text/javascript">
         function autenticarme() {
@@ -127,6 +123,9 @@
         return false;
              }
         </script>
+
+     
+
 
       <form id="form1" runat="server">
 
@@ -1077,19 +1076,15 @@
 		</div>
         </div>
 	<!--Fin COLUMNA2-->
-          <div class="columna3">
-
-            
+        <div class="columna3">            
 			<div class="casillaTotal">
-				<asp:Button ID="Siguiente" runat="server" Text="Siguiente" CssClass="SubmitTotal2" OnClick="Siguiente_Click"  />
-			</div>
+			
+        
 
+            </div>
 		</div>
 
-    
-       
+
 
 </form>
-       
-
 </asp:Content>
