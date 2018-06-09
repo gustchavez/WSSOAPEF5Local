@@ -372,5 +372,32 @@ namespace CapaServicio
             return x.LlamarSPRescatar(token);
         }
         //CRUD Provision - FIN
+
+        //Inicio CRUD Admin
+        public ContenedorPerfilAdmin LlamarSPCrear(ContenedorPerfilAdmin entrada)
+        {
+            CRUDAdmin x = new CRUDAdmin();
+            return x.LlamarSPCrear(entrada);
+        }
+
+        public ContenedorPerfilAdmin LlamarSPActualizar(ContenedorPerfilAdmin entrada)
+        {
+            CRUDAdmin x = new CRUDAdmin();
+            return x.LlamarSPActualizar(entrada);
+        }
+        //Fin Admin
+        //Inicio CRUD Empleado
+        public ContenedorPerfilEmpleado LlamarSPCrear(ContenedorPerfilEmpleado entrada)
+        {
+            CRUDEmpleado x = new CRUDEmpleado();
+            return x.LlamarSPCrear(entrada);
+        }
+
+        public ContenedorPerfilEmpleado LlamarSPActualizar(ContenedorPerfilEmpleado entrada)
+        {
+            CRUDEmpleado x = new CRUDEmpleado();
+            return x.LlamarSPActualizar(entrada);
+        }
+        //Fin Empleado
     }
 }
