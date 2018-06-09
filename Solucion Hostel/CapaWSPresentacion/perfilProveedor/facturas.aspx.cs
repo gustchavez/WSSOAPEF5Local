@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaObjeto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,7 +20,7 @@ namespace CapaWSPresentacion.perfilProveedor
                 {
                     if (!IsPostBack)
                     {
-                        //RescatarDatos();
+                        RescatarDatos();
                     }
                 }
                 else
@@ -33,6 +34,33 @@ namespace CapaWSPresentacion.perfilProveedor
                 Session["TokenUsuario"] = null;
                 Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
             }
+        }
+        private void RescatarDatos()
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            ContenedorFacturasPedidoCompleta n = new ContenedorFacturasPedidoCompleta();
+
+            n = x.FacturaPedidoCompletaRescatar(Session["TokenUsuario"].ToString());
+            
+            var facturas = (from l in n.Lista
+                            //where l.OPRelacionada.RutProveedor == Session["RutProveedor"].ToString()
+                            select new
+                            {
+                                Rut = l.OPRelacionada.RutProveedor,
+                                NroFactura = l.Cabecera.Numero,
+                                FecFactura = l.Cabecera.Fecha,
+                                ValorBruto = l.Cabecera.ValorBruto,
+                                ValorIva = l.Cabecera.ValorIva,
+                                ValorNeto = l.Cabecera.ValorNeto,
+                                MedioPago = l.Pago.MedioPago,
+                                NroOrdReserva = l.OPRelacionada.Numero
+                            }
+                            ).ToList();
+
+            gwFacturasPedido.DataSource = null;
+            gwFacturasPedido.DataSource = facturas;
+            gwFacturasPedido.DataBind();
         }
     }
 }

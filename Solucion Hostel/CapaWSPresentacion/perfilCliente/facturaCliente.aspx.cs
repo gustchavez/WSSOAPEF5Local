@@ -40,12 +40,28 @@ namespace CapaWSPresentacion.perfilCliente
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            ContenedorProductos n = new ContenedorProductos();
+            ContenedorFacturasCompraCompleta n = new ContenedorFacturasCompraCompleta();
 
-            n = x.ProductoRescatar(Session["TokenUsuario"].ToString());
+            n = x.FacturaCompraCompletaRescatar(Session["TokenUsuario"].ToString());
+
+
+            var facturas = (from l in n.Lista
+                                //where l.OCRelacionada.RutCliente == Session["RutCliente"].ToString()
+                            select new
+                            {
+                                Rut        = l.OCRelacionada.RutCliente,
+                                NroFactura = l.Cabecera.Numero,
+                                FecFactura = l.Cabecera.Fecha,
+                                ValorBruto = l.Cabecera.ValorBruto,
+                                ValorIva   = l.Cabecera.ValorIva,
+                                ValorNeto  = l.Cabecera.ValorNeto,
+                                MedioPago  = l.Pago.MedioPago,
+                                NroOrdReserva = l.OCRelacionada.Numero
+                            }
+                            ).ToList();
 
             gwFacturasCompra.DataSource = null;
-            gwFacturasCompra.DataSource = n.Lista;
+            gwFacturasCompra.DataSource = facturas;
             gwFacturasCompra.DataBind();
         }
     }

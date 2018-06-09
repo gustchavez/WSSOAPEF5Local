@@ -23,26 +23,6 @@
 	<div class="columna2">
 		
 				<h2>Mis Facturas</h2><br>
-				<table border="0" class="listaFactura">				
-					<tr>
-						<th>Fecha  </th>
-						<th>Forma de Pago  </th>
-						<th>Empresa </th>
-						<th>Factura  </th>
-					</tr>
-					<tr>
-						<td>13/03/2018</td>
-						<td>Debito</td>
-						<td>Nombre Empresa</td>
-						<td> <a href="#"> <img src="images/logPdf.png"></a></td>
-					</tr>
-					<tr>
-						<td>17/03/2018</td>
-						<td>Cheques</td>
-						<td>Nombre Empresa</td>
-						<td> <a href="#"> <img src="images/logPdf.png"></a></td>
-					</tr>
-		</table>
         <asp:GridView ID="gwFacturasCompra" runat="server" CssClass="listaFactura"
             EmptyDataText="No se encontraron Facturas..."
             ></asp:GridView>

@@ -15,6 +15,10 @@ namespace CapaWSPresentacion.PaginaComercial
             Session["TokenUsuario"] = null;
             Session["NombreUsuario"] = null;
             Session["PerfilUsuario"] = null;
+            Session["DatosEmpleado"] = null;
+            Session["RutCliente"]    = null;
+            Session["RutProvedor"]   = null;
+            
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
@@ -40,10 +44,36 @@ namespace CapaWSPresentacion.PaginaComercial
                     case "Empleado":
                         Response.Redirect("/perfilEmpleado/stock.aspx");
                         break;
+
                     case "Cliente":
+                        ContenedorPerfilUsuarioClientes nPC = new ContenedorPerfilUsuarioClientes();
+                        nPC = x.PerfilUsuarioClienteRescatar(Session["TokenUsuario"].ToString());
+                        
+                        var cliente = nPC.Lista.Where(p => p.PerfilUsuario.Usuario.Nombre == nLogin.Usuario).SingleOrDefault();
+
+                        if (cliente != null)
+                        {
+                            Session["RutCliente"] = cliente.Cliente.Rut;
+                        } else {
+                            Session["RutCliente"] = null;
+                        }
+
                         Response.Redirect("/perfilCliente/solicitarServicio.aspx");
                         break;
                     case "Proveedor":
+                        ContenedorPerfilUsuarioProveedores nPP = new ContenedorPerfilUsuarioProveedores();
+                        nPP = x.PerfilUsuarioProveedorRescatar(Session["TokenUsuario"].ToString());
+
+                        var proveedor = nPP.Lista.Where(p => p.PerfilUsuario.Usuario.Nombre == nLogin.Usuario).SingleOrDefault();
+
+                        if (proveedor != null)
+                        {
+                            Session["RutProveedor"] = proveedor.Proveedor.Rut;
+                        }
+                        else {
+                            Session["RutProveedor"] = null;
+                        }
+
                         Response.Redirect("/perfilProveedor/Pedidos.aspx");
                         break;
                     case "Administrador":
