@@ -139,13 +139,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox TextBox176;
         
         /// <summary>
-        /// Control Button1.
+        /// Control MostrarCasillas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button MostrarCasillas;
         
         /// <summary>
         /// Control TextBox5.
@@ -1946,5 +1946,14 @@ namespace CapaWSPresentacion.perfilCliente {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList40;
+        
+        /// <summary>
+        /// Control Siguiente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Siguiente;
     }
 }

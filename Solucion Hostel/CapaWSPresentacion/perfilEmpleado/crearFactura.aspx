@@ -1,0 +1,59 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilEmpleado/MasterEmpleado.Master" AutoEventWireup="true" CodeBehind="crearFactura.aspx.cs" Inherits="CapaWSPresentacion.perfilEmpleado.crearFactura" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    
+
+     <link rel="stylesheet" type="text/css" href="/scripts/crearFactura.css">
+
+      <form id="form1" runat="server">
+
+
+	<div class="columna2">
+		<div class="ModificarDatos">
+				
+			<h2>Crear Factura</h2><br>	
+	
+		    <div class="Casilla2-1">
+			<h4>Rut Cliente</h4>	
+                <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+			</div>
+			<div class="Casilla2-1">
+			<h4>Número Factura</h4>	
+			<asp:TextBox ID="txtNumeroFactura" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			</div>
+			<div class="Casilla2-1">
+			<h4>Fecha</h4>	
+			<asp:TextBox ID="txtFecha" runat="server" TextMode="Date" CssClass="CasillaPersona"></asp:TextBox>
+			</div>
+			<div class="Casilla2-1">
+			<h4>Valor Bruto</h4>	
+                <asp:TextBox ID="txtValorBruto" runat="server" TextMode="number" CssClass="CasillaPersona" value="0"></asp:TextBox>
+			</div>
+			<div class="Casilla2-1">
+			<h4>Valor IVA</h4>
+			<asp:TextBox ID="txtIVA" runat="server" TextMode="number" CssClass="CasillaPersona"></asp:TextBox>
+			</div>
+			<div class="Casilla2-1">
+				<h4>Valor Neto</h4>		
+                <asp:TextBox ID="txtNeto" runat="server" TextMode="number" CssClass="CasillaPersona"></asp:TextBox>			
+			</div>
+			<div class="Casilla2-1">
+				<h4>Observación</h4>					
+				<asp:TextBox ID="txtObservacion" runat="server" TextMode="MultiLine" CssClass="CasillaPersona"></asp:TextBox>					
+			</div>
+	</div>
+
+
+	<div class="ModificarDatos2">
+		<div class="Casilla2-2">	
+		    <asp:Button ID="btnAgregarFactura" runat="server" Text="Agregar"  CssClass="SubmitTotal" OnClick="btnAgregar_Click"/> 
+		</div>
+        
+	</div>
+		
+</div>
+
+    </form>
+
+
+</asp:Content>

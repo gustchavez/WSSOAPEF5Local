@@ -38,7 +38,14 @@ namespace CapaWSPresentacion.perfilCliente
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            ClientScript.RegisterStartupScript(this.GetType(), null, "mostrar()", true);
+           
         }
+
+        protected void Siguiente_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
     }
 }

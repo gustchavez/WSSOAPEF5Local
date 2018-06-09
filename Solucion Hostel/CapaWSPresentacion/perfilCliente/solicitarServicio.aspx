@@ -162,22 +162,22 @@
 					<tr>
 						<td>Habitación individual</td>
                         <td><asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaEnvio" BorderColor="#AB4E68" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
-                        <td><asp:TextBox ID="individual" TextMode="Number" runat="server" Max="4" min="0" CssClass="BotonIndividual"></asp:TextBox></td>
+                        <td><asp:TextBox ID="individual" TextMode="Number" runat="server" Max="4" min="0" CssClass="BotonIndividual" value="0"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td>Habitación 2 personas</td>
                         <td><asp:TextBox ID="TextBox2" runat="server"  CssClass="CasillaEnvio" BorderColor="#55828b" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
-                        <td><asp:TextBox ID="doble" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton2personas"></asp:TextBox></td>
+                        <td><asp:TextBox ID="doble" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton2personas" value="0" ></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td>Habitación 3 personas</td>
                         <td><asp:TextBox ID="TextBox3" runat="server"  CssClass="CasillaEnvio" BorderColor="#e94f37" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
-                        <td><asp:TextBox ID="triple" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton3personas"></asp:TextBox></td>
+                        <td><asp:TextBox ID="triple" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton3personas" value="0"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td>Habitación 4 personas</td>
                         <td><asp:TextBox ID="TextBox4" runat="server"  CssClass="CasillaEnvio" BorderColor="#3f88c5" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
-                        <td><asp:TextBox ID="sectuple" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton6personas"></asp:TextBox></td>
+                        <td><asp:TextBox ID="sectuple" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton6personas" value="0"></asp:TextBox></td>
 					</tr>	
 				</table>
 			</div>
@@ -190,7 +190,7 @@
 				<b> Personas con habitación: </b> <asp:TextBox ID="TextBox176" runat="server" CssClass="CasillaPersonas"></asp:TextBox>
 			</div>
 			<div class="casillaTotal">
-               <asp:Button ID="Button1" runat="server" Text="Entrar" OnClientClick="return autenticarme();" />
+               <asp:Button ID="MostrarCasillas" runat="server" Text="Ingresar Personas"  CssClass="SubmitTotal" OnClientClick="return autenticarme();" />
 			</div>
 
 	</div>
@@ -198,7 +198,7 @@
 	<!--Fin COLUMNA1-->
 	<div class="columna2">
 		<h2>Ingreso de Personas</h2>
-		<div class="IngresoPersonas1" id="IngresoPersonas1">
+		<div class="IngresoPersonas1" ID="IngresoPersonas1">
 				<div class="Casilla2-1">					
 					 <asp:TextBox ID="TextBox5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
@@ -1075,12 +1075,21 @@
                     </asp:DropDownList>                  				
 				</div>
 		</div>
+        </div>
 	<!--Fin COLUMNA2-->
+          <div class="columna3">
+
+            
+			<div class="casillaTotal">
+				<asp:Button ID="Siguiente" runat="server" Text="Siguiente" CssClass="SubmitTotal2" OnClick="Siguiente_Click"  />
+			</div>
+
+		</div>
 
     
        
 
 </form>
-        <script src="/scripts/mostrar.js"></script>
+       
 
 </asp:Content>
