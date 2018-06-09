@@ -6,6 +6,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+
 namespace CapaWSPresentacion.perfilAdministrador
 {
     public partial class AdminFacturaProveedorP : System.Web.UI.Page
@@ -48,7 +52,12 @@ namespace CapaWSPresentacion.perfilAdministrador
         }
         protected void generarPDF_Click(object sender, EventArgs e)
         {
-
+            Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+            PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Prueba.pdf", FileMode.Create));
+            doc.Open();
+            Paragraph texto = new Paragraph(" Texto de prueba ");
+            doc.Add(texto);
+            doc.Close(); 
         }
     }
 }
