@@ -46,6 +46,28 @@ namespace CapaServicio
         ContenedorPerfilUsuarioProveedores PerfilUsuarioProveedorRescatar(string token);
         //Fin PerfilUsuarioProveedor
 
+        //Inicio PerfilUsuarioEmpleado
+        [OperationContract]
+        ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoCrear(ContenedorPerfilUsuarioEmpleado entrada);
+
+        [OperationContract]
+        ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoActualizar(ContenedorPerfilUsuarioEmpleado entrada);
+
+        //[OperationContract]
+        //ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token);
+        //Fin PerfilUsuarioEmpleado
+
+        //Inicio PerfilUsuarioAdministrador
+        [OperationContract]
+        ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorCrear(ContenedorPerfilUsuarioAdministrador entrada);
+
+        [OperationContract]
+        ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorActualizar(ContenedorPerfilUsuarioAdministrador entrada);
+
+        //[OperationContract]
+        //ContenedorPerfilUsuarioAdministradores PerfilUsuarioAdministradorRescatar(string token);
+        //Fin PerfilUsuarioAdministrador
+
         //Inicio Producto
         [OperationContract]
         ContenedorProducto ProductoCrear(ContenedorProducto entrada);
@@ -195,5 +217,19 @@ namespace CapaServicio
         [OperationContract]
         ContenedorProvisiones ProvisionRescatar(string token);
         //Fin Provision
+        //Inicio Admin
+        [OperationContract]
+        ContenedorPerfilAdmin LlamarSPCrear(ContenedorPerfilAdmin entrada);
+
+        [OperationContract]
+        ContenedorPerfilAdmin LlamarSPActualizar(ContenedorPerfilAdmin entrada);
+        //Fin Admin
+        //Inicio Empleado
+        [OperationContract]
+        ContenedorPerfilEmpleado LlamarSPCrear(ContenedorPerfilEmpleado entrada);
+
+        [OperationContract]
+        ContenedorPerfilEmpleado LlamarSPActualizar(ContenedorPerfilEmpleado entrada);
+        //Fin Empleado
     }
 }

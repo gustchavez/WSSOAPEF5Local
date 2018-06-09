@@ -43,6 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -117,16 +126,6 @@
     <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
-    <Content Include="bootstrap\css\bootstrap-grid.css" />
-    <Content Include="bootstrap\css\bootstrap-grid.min.css" />
-    <Content Include="bootstrap\css\bootstrap-reboot.css" />
-    <Content Include="bootstrap\css\bootstrap-reboot.min.css" />
-    <Content Include="bootstrap\css\bootstrap.css" />
-    <Content Include="bootstrap\css\bootstrap.min.css" />
-    <Content Include="bootstrap\js\bootstrap.bundle.js" />
-    <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
-    <Content Include="bootstrap\js\bootstrap.js" />
-    <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="Index.aspx" />
     <Content Include="np_proveedor_producto_crud.aspx" />
     <Content Include="np_cliente_crear.aspx" />
@@ -241,16 +240,8 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorFacturaPedidoCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorFacturasCompraCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorFacturasPedidoCompleta.datasource" />
-    <Content Include="bootstrap\css\bootstrap-grid.css.map" />
-    <Content Include="bootstrap\css\bootstrap-grid.min.css.map" />
-    <Content Include="bootstrap\css\bootstrap-reboot.css.map" />
-    <Content Include="bootstrap\css\bootstrap-reboot.min.css.map" />
-    <Content Include="bootstrap\css\bootstrap.css.map" />
-    <Content Include="bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="bootstrap\js\bootstrap.bundle.js.map" />
-    <Content Include="bootstrap\js\bootstrap.bundle.min.js.map" />
-    <Content Include="bootstrap\js\bootstrap.js.map" />
-    <Content Include="bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioAdministrador.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioEmpleado.datasource" />
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>

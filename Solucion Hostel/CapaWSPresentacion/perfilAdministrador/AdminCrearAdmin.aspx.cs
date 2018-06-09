@@ -24,33 +24,29 @@ namespace CapaWSPresentacion.perfilAdministrador
             {
                 case 1:
                     //Admin
-                    /*
                     ContenedorPerfilAdmin a = new ContenedorPerfilAdmin();
-                    a.Item.PerfilUsuario.Persona.Rut = TextBox1.Text;
-                    a.Item.PerfilUsuario.Persona.Nombre = TextBox2.Text;
-                    a.Item.PerfilUsuario.Persona.Apellido = TextBox3.Text;
-                    a.Item.PerfilUsuario.Persona.FechaNacimiento = DateTime.Parse(TextBox4.Text);
-                    a.Item.PerfilUsuario.Persona.Email = TextBox5.Text;
-                    a.Item.PerfilUsuario.Persona.Telefono = TextBox6.Text;
-                    a.Item.PerfilUsuario.Usuario.Clave = TextBox14.Text;
+                    a.Item.Persona.Rut = TextBox1.Text;
+                    a.Item.Persona.Nombre = TextBox2.Text;
+                    a.Item.Persona.Apellido = TextBox3.Text;
+                    a.Item.Persona.FechaNacimiento = DateTime.Parse(TextBox4.Text);
+                    a.Item.Persona.Email = TextBox5.Text;
+                    a.Item.Persona.Telefono = TextBox6.Text;
+                    a.Item.Usuario.Clave = TextBox14.Text;
                     a.Retorno.Token = null; //Session["TokenUsuario"].ToString();
-                    a = x.PerfilUsuarioClienteCrear(n);
-                    */
+                    //a = x.PerfilUsuarioClienteCrear(n);
                     break;
                 case 2:
                     //Empleado
-                    /*
-                    ContenedorPerfilEmpleado e = new ContenedorPerfilEmpleado();
-                    e.Item.PerfilUsuario.Persona.Rut = TextBox1.Text;
-                    e.Item.PerfilUsuario.Persona.Nombre = TextBox2.Text;
-                    e.Item.PerfilUsuario.Persona.Apellido = TextBox3.Text;
-                    e.Item.PerfilUsuario.Persona.FechaNacimiento = DateTime.Parse(TextBox4.Text);
-                    e.Item.PerfilUsuario.Persona.Email = TextBox5.Text;
-                    e.Item.PerfilUsuario.Persona.Telefono = TextBox6.Text;
-                    e.Item.PerfilUsuario.Usuario.Clave = TextBox14.Text;
-                    e.Retorno.Token = null; //Session["TokenUsuario"].ToString();
-                    e = x.PerfilUsuarioClienteCrear(n);
-                    */
+                    ContenedorPerfilEmpleado em = new ContenedorPerfilEmpleado();
+                    em.Item.Persona.Rut = TextBox1.Text;
+                    em.Item.Persona.Nombre = TextBox2.Text;
+                    em.Item.Persona.Apellido = TextBox3.Text;
+                    em.Item.Persona.FechaNacimiento = DateTime.Parse(TextBox4.Text);
+                    em.Item.Persona.Email = TextBox5.Text;
+                    em.Item.Persona.Telefono = TextBox6.Text;
+                    em.Item.Usuario.Clave = TextBox14.Text;
+                    em.Retorno.Token = null; //Session["TokenUsuario"].ToString();
+                    //e = x.(e);
                     break;
                 case 3:
                     //Cliente      
@@ -102,7 +98,8 @@ namespace CapaWSPresentacion.perfilAdministrador
                     p.Item.PerfilUsuario.Persona.Email = TextBox5.Text;
                     p.Item.PerfilUsuario.Persona.Telefono = TextBox6.Text;
                     p.Item.PerfilUsuario.Usuario.Clave = TextBox14.Text;
-                    p.Retorno.Token = null; //Session["TokenUsuario"].ToString();                    
+                    p.Retorno.Token = null; //Session["TokenUsuario"].ToString();   
+                    p = x.PerfilUsuarioProveedorCrear(p);                 
                     break;
                 default:
                     break;

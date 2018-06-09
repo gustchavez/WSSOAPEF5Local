@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace CapaObjeto
 {
-    public class ContenedorPerfilAdmin
+    public class ContenedorPerfilUsuarioAdministrador
     {
-        public PerfilAdmin Item { get; set; }
+        public PerfilUsuarioAdministrador Item { get; set; }
         public Comunicacion Retorno { get; set; }
 
-        public ContenedorPerfilAdmin()
+        public ContenedorPerfilUsuarioAdministrador()
         {
             Init();
         }
 
         private void Init()
         {
-            this.Item = new PerfilAdmin();
+            this.Item = new PerfilUsuarioAdministrador();
             this.Retorno = new Comunicacion();
         }
     }
