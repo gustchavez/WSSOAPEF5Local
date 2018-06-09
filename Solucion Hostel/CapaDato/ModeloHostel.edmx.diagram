@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="88ec9f49b059417a9dbd87e9ce388b4d" Name="Diagram1" ZoomLevel="72">
-        <EntityTypeShape EntityType="Model.ALOJAMIENTO" Width="1.5" PointX="10.5" PointY="19.75" />
         <EntityTypeShape EntityType="Model.CAMA" Width="1.5" PointX="8.25" PointY="31.25" />
         <EntityTypeShape EntityType="Model.CIUDAD" Width="1.5" PointX="3" PointY="10" />
         <EntityTypeShape EntityType="Model.CLIENTE" Width="1.5" PointX="3" PointY="27" />
@@ -15,7 +14,6 @@
         <EntityTypeShape EntityType="Model.HABITACION" Width="1.5" PointX="6" PointY="31.25" />
         <EntityTypeShape EntityType="Model.ORDEN_DE_COMPRA" Width="1.5" PointX="5.25" PointY="26.125" />
         <EntityTypeShape EntityType="Model.ORDEN_DE_PEDIDO" Width="1.5" PointX="5.25" PointY="22.25" />
-        <EntityTypeShape EntityType="Model.PAGO" Width="1.5" PointX="9.75" PointY="26.5" />
         <EntityTypeShape EntityType="Model.PAIS" Width="1.5" PointX="0.75" PointY="10" />
         <EntityTypeShape EntityType="Model.PERSONA" Width="1.5" PointX="3" PointY="13.25" />
         <EntityTypeShape EntityType="Model.PLATO" Width="1.5" PointX="5.25" PointY="6.125" />
@@ -25,9 +23,6 @@
         <EntityTypeShape EntityType="Model.SERVICIO_COMIDA" Width="1.5" PointX="3" PointY="6.5" />
         <EntityTypeShape EntityType="Model.USUARIO" Width="1.5" PointX="5.25" PointY="9.75" />
         <EntityTypeShape EntityType="Model.DIRECCION" Width="1.5" PointX="5.25" PointY="13.375" />
-        <AssociationConnector Association="Model.ALOJAMIENTO_FK_CAMA" />
-        <AssociationConnector Association="Model.ALOJAMIENTO_FK_OC" />
-        <AssociationConnector Association="Model.ALOJAMIENTO_FK_PERSONA" />
         <AssociationConnector Association="Model.CAMA_FK_HABITACION" />
         <AssociationConnector Association="Model.CIUDAD_FK_PAIS" />
         <AssociationConnector Association="Model.DIRECCION_FK_CIUDAD" />
@@ -40,7 +35,6 @@
         <AssociationConnector Association="Model.PROVEEDOR_FK_EMPRESA" />
         <AssociationConnector Association="Model.FACTURA_FK_OC" />
         <AssociationConnector Association="Model.FACTURA_FK_OP" />
-        <AssociationConnector Association="Model.PAGO_FK_FACTURA" />
         <AssociationConnector Association="Model.ORDEN_DE_PEDIDO_FK_PROVEEDOR" />
         <AssociationConnector Association="Model.DIRECCION_FK_PERSONA" />
         <AssociationConnector Association="Model.USUARIO_FK_PERSONA" />
@@ -52,6 +46,12 @@
         <EntityTypeShape EntityType="Model.RRP" Width="1.5" PointX="7.5" PointY="22.5" />
         <AssociationConnector Association="Model.RRP_FK_OP" />
         <AssociationConnector Association="Model.RRP_FK_PRODUCTO" />
+        <EntityTypeShape EntityType="Model.ALOJAMIENTO" Width="1.5" PointX="10.5" PointY="21.75" />
+        <EntityTypeShape EntityType="Model.PAGO" Width="1.5" PointX="9.75" PointY="26.5" />
+        <AssociationConnector Association="Model.ALOJAMIENTO_FK_CAMA" />
+        <AssociationConnector Association="Model.ALOJAMIENTO_FK_OC" />
+        <AssociationConnector Association="Model.ALOJAMIENTO_FK_PERSONA" />
+        <AssociationConnector Association="Model.PAGO_FK_FACTURA" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

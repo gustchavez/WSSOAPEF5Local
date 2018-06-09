@@ -24,7 +24,7 @@ namespace CapaDato
         public string DISPONIBLE { get; set; }
         public short CODIGO_HABITACION { get; set; }
     
-        public virtual ICollection<ALOJAMIENTO> ALOJAMIENTO { get; set; }
         public virtual HABITACION HABITACION { get; set; }
+        public virtual ICollection<ALOJAMIENTO> ALOJAMIENTO { get; set; }
     }
 }

@@ -634,6 +634,28 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
         </Function>
+        <Function Name="SP_ACTUALIZAR_DET_PEDIDO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+          <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
+          <Parameter Name="P_IN_CANTIDAD" Type="number" Mode="In" />
+          <Parameter Name="P_IN_RECEPCION" Type="date" Mode="In" />
+          <Parameter Name="P_IN_CODIGO_PRODUCTO" Type="number" Mode="In" />
+          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
+          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="SP_ACTUALIZAR_DET_RESERVA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+          <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
+          <Parameter Name="P_IN_INGRESO" Type="date" Mode="In" />
+          <Parameter Name="P_IN_EGRESO" Type="date" Mode="In" />
+          <Parameter Name="P_IN_OBS_ALOJAMIENTO" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_RUT_PERSONA" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_CODIGO_CAMA" Type="number" Mode="In" />
+          <Parameter Name="P_IN_RECEPCION" Type="date" Mode="In" />
+          <Parameter Name="P_IN_OBS_COMIDA" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_TIPO_SERVICIO" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_CODIGO_PLATO" Type="number" Mode="In" />
+          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
+          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+        </Function>
         <Function Name="SP_ACTUALIZAR_EMPLEADO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
           <Parameter Name="P_IN_RUT_PERSONA" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_NOMBRE" Type="varchar2" Mode="In" />
@@ -661,6 +683,28 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_IN_OBSERVACIONES" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_UBICACION" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_ESTADO" Type="varchar2" Mode="In" />
+          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
+          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="SP_ACTUALIZAR_FACTURA_COMPRA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+          <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
+          <Parameter Name="P_IN_NUMERO_OC" Type="number" Mode="In" />
+          <Parameter Name="P_IN_VALOR_BRUTO" Type="number" Mode="In" />
+          <Parameter Name="P_IN_VALOR_IVA" Type="number" Mode="In" />
+          <Parameter Name="P_IN_VALOR_NETO" Type="number" Mode="In" />
+          <Parameter Name="P_IN_OBSERVACIONES" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_UBICACION" Type="varchar2" Mode="In" />
+          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
+          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="SP_ACTUALIZAR_FACTURA_VENTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+          <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
+          <Parameter Name="P_IN_NUMERO_OP" Type="number" Mode="In" />
+          <Parameter Name="P_IN_VALOR_BRUTO" Type="number" Mode="In" />
+          <Parameter Name="P_IN_VALOR_IVA" Type="number" Mode="In" />
+          <Parameter Name="P_IN_VALOR_NETO" Type="number" Mode="In" />
+          <Parameter Name="P_IN_OBSERVACIONES" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_UBICACION" Type="varchar2" Mode="In" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
         </Function>
@@ -815,6 +859,12 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_IN_VALOR_NETO" Type="number" Mode="In" />
           <Parameter Name="P_IN_OBSERVACIONES" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_UBICACION" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_MEDIO_PAGO" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_DIVISA" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_CODIGO_ISO" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_MONTO_DIV" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_TASA_CAMBIO_CLP" Type="number" Mode="In" />
+          <Parameter Name="P_IN_MONTO_OC" Type="number" Mode="In" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
           <Parameter Name="P_OUT_NUMERO" Type="number" Mode="Out" />
@@ -826,6 +876,12 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_IN_VALOR_NETO" Type="number" Mode="In" />
           <Parameter Name="P_IN_OBSERVACIONES" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_UBICACION" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_MEDIO_PAGO" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_DIVISA" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_CODIGO_ISO" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_MONTO_DIV" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_TASA_CAMBIO_CLP" Type="number" Mode="In" />
+          <Parameter Name="P_IN_MONTO_OP" Type="number" Mode="In" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
           <Parameter Name="P_OUT_NUMERO" Type="number" Mode="Out" />
@@ -1094,7 +1150,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="EntitiesBBDDHostel" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ALOJAMIENTO" EntityType="Model.ALOJAMIENTO" />
           <EntitySet Name="CAMA" EntityType="Model.CAMA" />
           <EntitySet Name="CIUDAD" EntityType="Model.CIUDAD" />
           <EntitySet Name="CLIENTE" EntityType="Model.CLIENTE" />
@@ -1104,7 +1159,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <EntitySet Name="HABITACION" EntityType="Model.HABITACION" />
           <EntitySet Name="ORDEN_DE_COMPRA" EntityType="Model.ORDEN_DE_COMPRA" />
           <EntitySet Name="ORDEN_DE_PEDIDO" EntityType="Model.ORDEN_DE_PEDIDO" />
-          <EntitySet Name="PAGO" EntityType="Model.PAGO" />
           <EntitySet Name="PAIS" EntityType="Model.PAIS" />
           <EntitySet Name="PERSONA" EntityType="Model.PERSONA" />
           <EntitySet Name="PLATO" EntityType="Model.PLATO" />
@@ -1114,18 +1168,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <EntitySet Name="SERVICIO_COMIDA" EntityType="Model.SERVICIO_COMIDA" />
           <EntitySet Name="USUARIO" EntityType="Model.USUARIO" />
           <EntitySet Name="DIRECCION" EntityType="Model.DIRECCION" />
-          <AssociationSet Name="ALOJAMIENTO_FK_CAMA" Association="Model.ALOJAMIENTO_FK_CAMA">
-            <End Role="CAMA" EntitySet="CAMA" />
-            <End Role="ALOJAMIENTO" EntitySet="ALOJAMIENTO" />
-          </AssociationSet>
-          <AssociationSet Name="ALOJAMIENTO_FK_OC" Association="Model.ALOJAMIENTO_FK_OC">
-            <End Role="ORDEN_DE_COMPRA" EntitySet="ORDEN_DE_COMPRA" />
-            <End Role="ALOJAMIENTO" EntitySet="ALOJAMIENTO" />
-          </AssociationSet>
-          <AssociationSet Name="ALOJAMIENTO_FK_PERSONA" Association="Model.ALOJAMIENTO_FK_PERSONA">
-            <End Role="PERSONA" EntitySet="PERSONA" />
-            <End Role="ALOJAMIENTO" EntitySet="ALOJAMIENTO" />
-          </AssociationSet>
           <AssociationSet Name="CAMA_FK_HABITACION" Association="Model.CAMA_FK_HABITACION">
             <End Role="HABITACION" EntitySet="HABITACION" />
             <End Role="CAMA" EntitySet="CAMA" />
@@ -1173,10 +1215,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <AssociationSet Name="FACTURA_FK_OP" Association="Model.FACTURA_FK_OP">
             <End Role="ORDEN_DE_PEDIDO" EntitySet="ORDEN_DE_PEDIDO" />
             <End Role="FACTURA" EntitySet="FACTURA" />
-          </AssociationSet>
-          <AssociationSet Name="PAGO_FK_FACTURA" Association="Model.PAGO_FK_FACTURA">
-            <End Role="FACTURA" EntitySet="FACTURA" />
-            <End Role="PAGO" EntitySet="PAGO" />
           </AssociationSet>
           <AssociationSet Name="ORDEN_DE_PEDIDO_FK_PROVEEDOR" Association="Model.ORDEN_DE_PEDIDO_FK_PROVEEDOR">
             <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
@@ -1330,28 +1368,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           </FunctionImport>
           <FunctionImport Name="SP_CREAR_ENC_RESERVA">
             <Parameter Name="P_IN_RUT_CLIENTE" Mode="In" Type="String" />
-            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
-            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
-            <Parameter Name="P_OUT_NUMERO" Mode="Out" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="SP_CREAR_FACTURA_COMPRA">
-            <Parameter Name="P_IN_NUMERO_OC" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_VALOR_BRUTO" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_VALOR_IVA" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_VALOR_NETO" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_OBSERVACIONES" Mode="In" Type="String" />
-            <Parameter Name="P_IN_UBICACION" Mode="In" Type="String" />
-            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
-            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
-            <Parameter Name="P_OUT_NUMERO" Mode="Out" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="SP_CREAR_FACTURA_VENTA">
-            <Parameter Name="P_IN_NUMERO_OP" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_VALOR_BRUTO" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_VALOR_IVA" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_VALOR_NETO" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_OBSERVACIONES" Mode="In" Type="String" />
-            <Parameter Name="P_IN_UBICACION" Mode="In" Type="String" />
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
             <Parameter Name="P_OUT_NUMERO" Mode="Out" Type="Decimal" />
@@ -1570,25 +1586,103 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <End Role="PRODUCTO" EntitySet="PRODUCTO" />
             <End Role="RRP" EntitySet="RRP" />
           </AssociationSet>
+          <FunctionImport Name="SP_ACTUALIZAR_DET_PEDIDO">
+            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_CANTIDAD" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_RECEPCION" Mode="In" Type="DateTime" />
+            <Parameter Name="P_IN_CODIGO_PRODUCTO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_ACTUALIZAR_DET_RESERVA">
+            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_INGRESO" Mode="In" Type="DateTime" />
+            <Parameter Name="P_IN_EGRESO" Mode="In" Type="DateTime" />
+            <Parameter Name="P_IN_OBS_ALOJAMIENTO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_CODIGO_CAMA" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_RECEPCION" Mode="In" Type="DateTime" />
+            <Parameter Name="P_IN_OBS_COMIDA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_TIPO_SERVICIO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_CODIGO_PLATO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="ALOJAMIENTO" EntityType="Model.ALOJAMIENTO" />
+          <EntitySet Name="PAGO" EntityType="Model.PAGO" />
+          <AssociationSet Name="ALOJAMIENTO_FK_CAMA" Association="Model.ALOJAMIENTO_FK_CAMA">
+            <End Role="CAMA" EntitySet="CAMA" />
+            <End Role="ALOJAMIENTO" EntitySet="ALOJAMIENTO" />
+          </AssociationSet>
+          <AssociationSet Name="ALOJAMIENTO_FK_OC" Association="Model.ALOJAMIENTO_FK_OC">
+            <End Role="ORDEN_DE_COMPRA" EntitySet="ORDEN_DE_COMPRA" />
+            <End Role="ALOJAMIENTO" EntitySet="ALOJAMIENTO" />
+          </AssociationSet>
+          <AssociationSet Name="ALOJAMIENTO_FK_PERSONA" Association="Model.ALOJAMIENTO_FK_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="ALOJAMIENTO" EntitySet="ALOJAMIENTO" />
+          </AssociationSet>
+          <AssociationSet Name="PAGO_FK_FACTURA" Association="Model.PAGO_FK_FACTURA">
+            <End Role="FACTURA" EntitySet="FACTURA" />
+            <End Role="PAGO" EntitySet="PAGO" />
+          </AssociationSet>
+          <FunctionImport Name="SP_ACTUALIZAR_FACTURA_COMPRA">
+            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_NUMERO_OC" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_VALOR_BRUTO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_VALOR_IVA" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_VALOR_NETO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_OBSERVACIONES" Mode="In" Type="String" />
+            <Parameter Name="P_IN_UBICACION" Mode="In" Type="String" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_ACTUALIZAR_FACTURA_VENTA">
+            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_NUMERO_OP" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_VALOR_BRUTO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_VALOR_IVA" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_VALOR_NETO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_OBSERVACIONES" Mode="In" Type="String" />
+            <Parameter Name="P_IN_UBICACION" Mode="In" Type="String" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREAR_FACTURA_COMPRA">
+            <Parameter Name="P_IN_NUMERO_OC" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_VALOR_BRUTO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_VALOR_IVA" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_VALOR_NETO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_OBSERVACIONES" Mode="In" Type="String" />
+            <Parameter Name="P_IN_UBICACION" Mode="In" Type="String" />
+            <Parameter Name="P_IN_MEDIO_PAGO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_DIVISA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_CODIGO_ISO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_MONTO_DIV" Mode="In" Type="String" />
+            <Parameter Name="P_IN_TASA_CAMBIO_CLP" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_MONTO_OC" Mode="In" Type="Decimal" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+            <Parameter Name="P_OUT_NUMERO" Mode="Out" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREAR_FACTURA_VENTA">
+            <Parameter Name="P_IN_NUMERO_OP" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_VALOR_BRUTO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_VALOR_IVA" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_VALOR_NETO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_OBSERVACIONES" Mode="In" Type="String" />
+            <Parameter Name="P_IN_UBICACION" Mode="In" Type="String" />
+            <Parameter Name="P_IN_MEDIO_PAGO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_DIVISA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_CODIGO_ISO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_MONTO_DIV" Mode="In" Type="String" />
+            <Parameter Name="P_IN_TASA_CAMBIO_CLP" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_MONTO_OP" Mode="In" Type="Decimal" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+            <Parameter Name="P_OUT_NUMERO" Mode="Out" Type="Decimal" />
+          </FunctionImport>
         </EntityContainer>
-        <EntityType Name="ALOJAMIENTO">
-          <Key>
-            <PropertyRef Name="INGRESO" />
-            <PropertyRef Name="RUT_PERSONA" />
-            <PropertyRef Name="CODIGO_CAMA" />
-          </Key>
-          <Property Name="INGRESO" Type="DateTime" Nullable="false" />
-          <Property Name="EGRESO" Type="DateTime" />
-          <Property Name="REGISTRO_DIAS" Type="Int16" />
-          <Property Name="OBSERVACIONES" Type="String" MaxLength="140" FixedLength="false" Unicode="false" />
-          <Property Name="CONFIRMADO" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-          <Property Name="RUT_PERSONA" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
-          <Property Name="CODIGO_CAMA" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
-          <Property Name="NUMERO_OC" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
-          <NavigationProperty Name="CAMA" Relationship="Model.ALOJAMIENTO_FK_CAMA" FromRole="ALOJAMIENTO" ToRole="CAMA" />
-          <NavigationProperty Name="ORDEN_DE_COMPRA" Relationship="Model.ALOJAMIENTO_FK_OC" FromRole="ALOJAMIENTO" ToRole="ORDEN_DE_COMPRA" />
-          <NavigationProperty Name="PERSONA" Relationship="Model.ALOJAMIENTO_FK_PERSONA" FromRole="ALOJAMIENTO" ToRole="PERSONA" />
-        </EntityType>
         <EntityType Name="CAMA">
           <Key>
             <PropertyRef Name="CODIGO" />
@@ -1597,8 +1691,8 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
           <Property Name="DISPONIBLE" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
           <Property Name="CODIGO_HABITACION" Type="Int16" Nullable="false" />
-          <NavigationProperty Name="ALOJAMIENTO" Relationship="Model.ALOJAMIENTO_FK_CAMA" FromRole="CAMA" ToRole="ALOJAMIENTO" />
           <NavigationProperty Name="HABITACION" Relationship="Model.CAMA_FK_HABITACION" FromRole="CAMA" ToRole="HABITACION" />
+          <NavigationProperty Name="ALOJAMIENTO" Relationship="Model.ALOJAMIENTO_FK_CAMA" FromRole="CAMA" ToRole="ALOJAMIENTO" />
         </EntityType>
         <EntityType Name="CIUDAD">
           <Key>
@@ -1692,10 +1786,10 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <Property Name="UBICACION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="RUT_CLIENTE" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ALOJAMIENTO" Relationship="Model.ALOJAMIENTO_FK_OC" FromRole="ORDEN_DE_COMPRA" ToRole="ALOJAMIENTO" />
           <NavigationProperty Name="CLIENTE" Relationship="Model.ORDEN_DE_COMPRA_FK_CLIENTE" FromRole="ORDEN_DE_COMPRA" ToRole="CLIENTE" />
           <NavigationProperty Name="COMIDA" Relationship="Model.COMIDA_FK_OC" FromRole="ORDEN_DE_COMPRA" ToRole="COMIDA" />
           <NavigationProperty Name="FACTURA" Relationship="Model.FACTURA_FK_OC" FromRole="ORDEN_DE_COMPRA" ToRole="FACTURA" />
+          <NavigationProperty Name="ALOJAMIENTO" Relationship="Model.ALOJAMIENTO_FK_OC" FromRole="ORDEN_DE_COMPRA" ToRole="ALOJAMIENTO" />
         </EntityType>
         <EntityType Name="ORDEN_DE_PEDIDO">
           <Key>
@@ -1711,20 +1805,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <NavigationProperty Name="FACTURA" Relationship="Model.FACTURA_FK_OP" FromRole="ORDEN_DE_PEDIDO" ToRole="FACTURA" />
           <NavigationProperty Name="PROVEEDOR" Relationship="Model.ORDEN_DE_PEDIDO_FK_PROVEEDOR" FromRole="ORDEN_DE_PEDIDO" ToRole="PROVEEDOR" />
           <NavigationProperty Name="RRP" Relationship="Model.RRP_FK_OP" FromRole="ORDEN_DE_PEDIDO" ToRole="RRP" />
-        </EntityType>
-        <EntityType Name="PAGO">
-          <Key>
-            <PropertyRef Name="TIPO_FACTURA" />
-            <PropertyRef Name="NUMERO_FACTURA" />
-          </Key>
-          <Property Name="TIPO_FACTURA" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
-          <Property Name="NUMERO_FACTURA" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
-          <Property Name="MEDIO_PAGO" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="DIVISA" Type="String" MaxLength="48" FixedLength="false" Unicode="false" />
-          <Property Name="CODIGO_ISO" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="MONTO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="TASA_CAMBIO_CLP" Type="Decimal" Precision="38" Scale="0" />
-          <NavigationProperty Name="FACTURA" Relationship="Model.PAGO_FK_FACTURA" FromRole="PAGO" ToRole="FACTURA" />
         </EntityType>
         <EntityType Name="PAIS">
           <Key>
@@ -1745,12 +1825,12 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <Property Name="NACIMIENTO" Type="DateTime" Nullable="false" />
           <Property Name="EMAIL" Type="String" MaxLength="230" FixedLength="false" Unicode="false" />
           <Property Name="TELEFONO" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ALOJAMIENTO" Relationship="Model.ALOJAMIENTO_FK_PERSONA" FromRole="PERSONA" ToRole="ALOJAMIENTO" />
           <NavigationProperty Name="COMIDA" Relationship="Model.COMIDA_FK_PERSONA" FromRole="PERSONA" ToRole="COMIDA" />
           <NavigationProperty Name="DIRECCION" Relationship="Model.DIRECCION_FK_PERSONA" FromRole="PERSONA" ToRole="DIRECCION" />
           <NavigationProperty Name="USUARIO" Relationship="Model.USUARIO_FK_PERSONA" FromRole="PERSONA" ToRole="USUARIO" />
           <NavigationProperty Name="EMPRESA" Relationship="Model.PXE" FromRole="PERSONA" ToRole="EMPRESA" />
           <NavigationProperty Name="PAIS" Relationship="Model.PXP" FromRole="PERSONA" ToRole="PAIS" />
+          <NavigationProperty Name="ALOJAMIENTO" Relationship="Model.ALOJAMIENTO_FK_PERSONA" FromRole="PERSONA" ToRole="ALOJAMIENTO" />
         </EntityType>
         <EntityType Name="PLATO">
           <Key>
@@ -1833,42 +1913,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <NavigationProperty Name="EMPRESA" Relationship="Model.DIRECCION_FK_EMPRESA" FromRole="DIRECCION" ToRole="EMPRESA" />
           <NavigationProperty Name="PERSONA" Relationship="Model.DIRECCION_FK_PERSONA" FromRole="DIRECCION" ToRole="PERSONA" />
         </EntityType>
-        <Association Name="ALOJAMIENTO_FK_CAMA">
-          <End Type="Model.CAMA" Role="CAMA" Multiplicity="1" />
-          <End Type="Model.ALOJAMIENTO" Role="ALOJAMIENTO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CAMA">
-              <PropertyRef Name="CODIGO" />
-            </Principal>
-            <Dependent Role="ALOJAMIENTO">
-              <PropertyRef Name="CODIGO_CAMA" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="ALOJAMIENTO_FK_OC">
-          <End Type="Model.ORDEN_DE_COMPRA" Role="ORDEN_DE_COMPRA" Multiplicity="1" />
-          <End Type="Model.ALOJAMIENTO" Role="ALOJAMIENTO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ORDEN_DE_COMPRA">
-              <PropertyRef Name="NUMERO" />
-            </Principal>
-            <Dependent Role="ALOJAMIENTO">
-              <PropertyRef Name="NUMERO_OC" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="ALOJAMIENTO_FK_PERSONA">
-          <End Type="Model.PERSONA" Role="PERSONA" Multiplicity="1" />
-          <End Type="Model.ALOJAMIENTO" Role="ALOJAMIENTO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PERSONA">
-              <PropertyRef Name="RUT" />
-            </Principal>
-            <Dependent Role="ALOJAMIENTO">
-              <PropertyRef Name="RUT_PERSONA" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="CAMA_FK_HABITACION">
           <End Type="Model.HABITACION" Role="HABITACION" Multiplicity="1" />
           <End Type="Model.CAMA" Role="CAMA" Multiplicity="*" />
@@ -2017,20 +2061,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="PAGO_FK_FACTURA">
-          <End Type="Model.FACTURA" Role="FACTURA" Multiplicity="1" />
-          <End Type="Model.PAGO" Role="PAGO" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="FACTURA">
-              <PropertyRef Name="TIPO" />
-              <PropertyRef Name="NUMERO" />
-            </Principal>
-            <Dependent Role="PAGO">
-              <PropertyRef Name="TIPO_FACTURA" />
-              <PropertyRef Name="NUMERO_FACTURA" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="ORDEN_DE_PEDIDO_FK_PROVEEDOR">
           <End Type="Model.PROVEEDOR" Role="PROVEEDOR" Multiplicity="1" />
           <End Type="Model.ORDEN_DE_PEDIDO" Role="ORDEN_DE_PEDIDO" Multiplicity="*" />
@@ -2150,26 +2180,94 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ALOJAMIENTO">
+          <Key>
+            <PropertyRef Name="INGRESO" />
+            <PropertyRef Name="RUT_PERSONA" />
+            <PropertyRef Name="CODIGO_CAMA" />
+          </Key>
+          <Property Name="INGRESO" Type="DateTime" Nullable="false" />
+          <Property Name="EGRESO" Type="DateTime" />
+          <Property Name="REGISTRO_DIAS" Type="Int16" />
+          <Property Name="OBSERVACIONES" Type="String" MaxLength="140" FixedLength="false" Unicode="false" />
+          <Property Name="CONFIRMADO" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="RUT_PERSONA" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO_CAMA" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NUMERO_OC" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="CAMA" Relationship="Model.ALOJAMIENTO_FK_CAMA" FromRole="ALOJAMIENTO" ToRole="CAMA" />
+          <NavigationProperty Name="ORDEN_DE_COMPRA" Relationship="Model.ALOJAMIENTO_FK_OC" FromRole="ALOJAMIENTO" ToRole="ORDEN_DE_COMPRA" />
+          <NavigationProperty Name="PERSONA" Relationship="Model.ALOJAMIENTO_FK_PERSONA" FromRole="ALOJAMIENTO" ToRole="PERSONA" />
+        </EntityType>
+        <EntityType Name="PAGO">
+          <Key>
+            <PropertyRef Name="TIPO_FACTURA" />
+            <PropertyRef Name="NUMERO_FACTURA" />
+          </Key>
+          <Property Name="TIPO_FACTURA" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="NUMERO_FACTURA" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="MEDIO_PAGO" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="DIVISA" Type="String" MaxLength="48" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO_ISO" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="MONTO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TASA_CAMBIO_CLP" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="FACTURA" Relationship="Model.PAGO_FK_FACTURA" FromRole="PAGO" ToRole="FACTURA" />
+        </EntityType>
+        <Association Name="ALOJAMIENTO_FK_CAMA">
+          <End Type="Model.CAMA" Role="CAMA" Multiplicity="1" />
+          <End Type="Model.ALOJAMIENTO" Role="ALOJAMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAMA">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="ALOJAMIENTO">
+              <PropertyRef Name="CODIGO_CAMA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ALOJAMIENTO_FK_OC">
+          <End Type="Model.ORDEN_DE_COMPRA" Role="ORDEN_DE_COMPRA" Multiplicity="1" />
+          <End Type="Model.ALOJAMIENTO" Role="ALOJAMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDEN_DE_COMPRA">
+              <PropertyRef Name="NUMERO" />
+            </Principal>
+            <Dependent Role="ALOJAMIENTO">
+              <PropertyRef Name="NUMERO_OC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ALOJAMIENTO_FK_PERSONA">
+          <End Type="Model.PERSONA" Role="PERSONA" Multiplicity="1" />
+          <End Type="Model.ALOJAMIENTO" Role="ALOJAMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="ALOJAMIENTO">
+              <PropertyRef Name="RUT_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PAGO_FK_FACTURA">
+          <End Type="Model.FACTURA" Role="FACTURA" Multiplicity="1" />
+          <End Type="Model.PAGO" Role="PAGO" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="FACTURA">
+              <PropertyRef Name="TIPO" />
+              <PropertyRef Name="NUMERO" />
+            </Principal>
+            <Dependent Role="PAGO">
+              <PropertyRef Name="TIPO_FACTURA" />
+              <PropertyRef Name="NUMERO_FACTURA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="EntitiesBBDDHostel">
-          <EntitySetMapping Name="ALOJAMIENTO">
-            <EntityTypeMapping TypeName="Model.ALOJAMIENTO">
-              <MappingFragment StoreEntitySet="ALOJAMIENTO">
-                <ScalarProperty Name="NUMERO_OC" ColumnName="NUMERO_OC" />
-                <ScalarProperty Name="CODIGO_CAMA" ColumnName="CODIGO_CAMA" />
-                <ScalarProperty Name="RUT_PERSONA" ColumnName="RUT_PERSONA" />
-                <ScalarProperty Name="CONFIRMADO" ColumnName="CONFIRMADO" />
-                <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
-                <ScalarProperty Name="REGISTRO_DIAS" ColumnName="REGISTRO_DIAS" />
-                <ScalarProperty Name="EGRESO" ColumnName="EGRESO" />
-                <ScalarProperty Name="INGRESO" ColumnName="INGRESO" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="CAMA">
             <EntityTypeMapping TypeName="Model.CAMA">
               <MappingFragment StoreEntitySet="CAMA">
@@ -2272,19 +2370,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
                 <ScalarProperty Name="MONTO" ColumnName="MONTO" />
                 <ScalarProperty Name="EMISION" ColumnName="EMISION" />
                 <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PAGO">
-            <EntityTypeMapping TypeName="Model.PAGO">
-              <MappingFragment StoreEntitySet="PAGO">
-                <ScalarProperty Name="TASA_CAMBIO_CLP" ColumnName="TASA_CAMBIO_CLP" />
-                <ScalarProperty Name="MONTO" ColumnName="MONTO" />
-                <ScalarProperty Name="CODIGO_ISO" ColumnName="CODIGO_ISO" />
-                <ScalarProperty Name="DIVISA" ColumnName="DIVISA" />
-                <ScalarProperty Name="MEDIO_PAGO" ColumnName="MEDIO_PAGO" />
-                <ScalarProperty Name="NUMERO_FACTURA" ColumnName="NUMERO_FACTURA" />
-                <ScalarProperty Name="TIPO_FACTURA" ColumnName="TIPO_FACTURA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2408,8 +2493,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_CREAR_EMPLEADO" FunctionName="Model.Store.SP_CREAR_EMPLEADO" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_ENC_PEDIDO" FunctionName="Model.Store.SP_CREAR_ENC_PEDIDO" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_ENC_RESERVA" FunctionName="Model.Store.SP_CREAR_ENC_RESERVA" />
-          <FunctionImportMapping FunctionImportName="SP_CREAR_FACTURA_COMPRA" FunctionName="Model.Store.SP_CREAR_FACTURA_COMPRA" />
-          <FunctionImportMapping FunctionImportName="SP_CREAR_FACTURA_VENTA" FunctionName="Model.Store.SP_CREAR_FACTURA_VENTA" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_HABITACION" FunctionName="Model.Store.SP_CREAR_HABITACION" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_PLATO" FunctionName="Model.Store.SP_CREAR_PLATO" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_PRODUCTO" FunctionName="Model.Store.SP_CREAR_PRODUCTO" />
@@ -2444,6 +2527,39 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_DET_PEDIDO" FunctionName="Model.Store.SP_ACTUALIZAR_DET_PEDIDO" />
+          <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_DET_RESERVA" FunctionName="Model.Store.SP_ACTUALIZAR_DET_RESERVA" />
+          <EntitySetMapping Name="ALOJAMIENTO">
+            <EntityTypeMapping TypeName="Model.ALOJAMIENTO">
+              <MappingFragment StoreEntitySet="ALOJAMIENTO">
+                <ScalarProperty Name="NUMERO_OC" ColumnName="NUMERO_OC" />
+                <ScalarProperty Name="CODIGO_CAMA" ColumnName="CODIGO_CAMA" />
+                <ScalarProperty Name="RUT_PERSONA" ColumnName="RUT_PERSONA" />
+                <ScalarProperty Name="CONFIRMADO" ColumnName="CONFIRMADO" />
+                <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+                <ScalarProperty Name="REGISTRO_DIAS" ColumnName="REGISTRO_DIAS" />
+                <ScalarProperty Name="EGRESO" ColumnName="EGRESO" />
+                <ScalarProperty Name="INGRESO" ColumnName="INGRESO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAGO">
+            <EntityTypeMapping TypeName="Model.PAGO">
+              <MappingFragment StoreEntitySet="PAGO">
+                <ScalarProperty Name="TASA_CAMBIO_CLP" ColumnName="TASA_CAMBIO_CLP" />
+                <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+                <ScalarProperty Name="CODIGO_ISO" ColumnName="CODIGO_ISO" />
+                <ScalarProperty Name="DIVISA" ColumnName="DIVISA" />
+                <ScalarProperty Name="MEDIO_PAGO" ColumnName="MEDIO_PAGO" />
+                <ScalarProperty Name="NUMERO_FACTURA" ColumnName="NUMERO_FACTURA" />
+                <ScalarProperty Name="TIPO_FACTURA" ColumnName="TIPO_FACTURA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_FACTURA_COMPRA" FunctionName="Model.Store.SP_ACTUALIZAR_FACTURA_COMPRA" />
+          <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_FACTURA_VENTA" FunctionName="Model.Store.SP_ACTUALIZAR_FACTURA_VENTA" />
+          <FunctionImportMapping FunctionImportName="SP_CREAR_FACTURA_COMPRA" FunctionName="Model.Store.SP_CREAR_FACTURA_COMPRA" />
+          <FunctionImportMapping FunctionImportName="SP_CREAR_FACTURA_VENTA" FunctionName="Model.Store.SP_CREAR_FACTURA_VENTA" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

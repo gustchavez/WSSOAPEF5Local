@@ -16,12 +16,12 @@ namespace CapaDato
     {
         public PERSONA()
         {
-            this.ALOJAMIENTO = new HashSet<ALOJAMIENTO>();
             this.COMIDA = new HashSet<COMIDA>();
             this.DIRECCION = new HashSet<DIRECCION>();
             this.USUARIO = new HashSet<USUARIO>();
             this.EMPRESA = new HashSet<EMPRESA>();
             this.PAIS = new HashSet<PAIS>();
+            this.ALOJAMIENTO = new HashSet<ALOJAMIENTO>();
         }
     
         public string RUT { get; set; }
@@ -31,11 +31,11 @@ namespace CapaDato
         public string EMAIL { get; set; }
         public string TELEFONO { get; set; }
     
-        public virtual ICollection<ALOJAMIENTO> ALOJAMIENTO { get; set; }
         public virtual ICollection<COMIDA> COMIDA { get; set; }
         public virtual ICollection<DIRECCION> DIRECCION { get; set; }
         public virtual ICollection<USUARIO> USUARIO { get; set; }
         public virtual ICollection<EMPRESA> EMPRESA { get; set; }
         public virtual ICollection<PAIS> PAIS { get; set; }
+        public virtual ICollection<ALOJAMIENTO> ALOJAMIENTO { get; set; }
     }
 }

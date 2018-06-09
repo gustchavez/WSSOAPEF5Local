@@ -16,9 +16,9 @@ namespace CapaDato
     {
         public ORDEN_DE_COMPRA()
         {
-            this.ALOJAMIENTO = new HashSet<ALOJAMIENTO>();
             this.COMIDA = new HashSet<COMIDA>();
             this.FACTURA = new HashSet<FACTURA>();
+            this.ALOJAMIENTO = new HashSet<ALOJAMIENTO>();
         }
     
         public decimal NUMERO { get; set; }
@@ -29,9 +29,9 @@ namespace CapaDato
         public string ESTADO { get; set; }
         public string RUT_CLIENTE { get; set; }
     
-        public virtual ICollection<ALOJAMIENTO> ALOJAMIENTO { get; set; }
         public virtual CLIENTE CLIENTE { get; set; }
         public virtual ICollection<COMIDA> COMIDA { get; set; }
         public virtual ICollection<FACTURA> FACTURA { get; set; }
+        public virtual ICollection<ALOJAMIENTO> ALOJAMIENTO { get; set; }
     }
 }
