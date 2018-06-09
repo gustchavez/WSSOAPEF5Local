@@ -240,6 +240,8 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorFacturaPedidoCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorFacturasCompraCompleta.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorFacturasPedidoCompleta.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioAdministrador.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioEmpleado.datasource" />
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>

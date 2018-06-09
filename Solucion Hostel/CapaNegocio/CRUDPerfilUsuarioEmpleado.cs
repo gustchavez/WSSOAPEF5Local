@@ -8,9 +8,14 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    public class CRUDEmpleado
+    public class CRUDPerfilUsuarioEmpleado
     {
-        public ContenedorPerfilEmpleado LlamarSPCrear(ContenedorPerfilEmpleado nPUC)
+        public CRUDPerfilUsuarioEmpleado()
+        {
+
+        }
+
+        public ContenedorPerfilUsuarioEmpleado LlamarSPCrear(ContenedorPerfilUsuarioEmpleado nPUC)
         {
             if (ValidarPerfilCUD(nPUC.Retorno.Token))
             {
@@ -49,7 +54,7 @@ namespace CapaNegocio
 
             return nPUC;
         }
-        public ContenedorPerfilEmpleado LlamarSPActualizar(ContenedorPerfilEmpleado nPUC)
+        public ContenedorPerfilUsuarioEmpleado LlamarSPActualizar(ContenedorPerfilUsuarioEmpleado nPUC)
         {
             if (ValidarPerfilCUD(nPUC.Retorno.Token))
             {
@@ -97,7 +102,6 @@ namespace CapaNegocio
             List<string> Perfiles = new List<string>();
 
             Perfiles.Add("Administrador");
-            Perfiles.Add("Empleado");
             if (x.ValidarPerfil(token, Perfiles))
             {
                 retorno = true;

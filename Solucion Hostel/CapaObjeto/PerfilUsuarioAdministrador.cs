@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CapaObjeto
 {
-    public class PerfilEmpleado
+    public class PerfilUsuarioAdministrador
     {
         public Persona Persona { get; set; }
         public Usuario Usuario { get; set; }
 
-        public PerfilEmpleado()
+        public PerfilUsuarioAdministrador()
         {
             Init();
         }

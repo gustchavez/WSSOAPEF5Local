@@ -100,45 +100,101 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="PerfilUsuarioEmpleadoCrear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q12:ContenedorPerfilUsuarioEmpleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerfilUsuarioEmpleadoCrearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PerfilUsuarioEmpleadoCrearResult" nillable="true" type="q13:ContenedorPerfilUsuarioEmpleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerfilUsuarioEmpleadoActualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q14:ContenedorPerfilUsuarioEmpleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerfilUsuarioEmpleadoActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PerfilUsuarioEmpleadoActualizarResult" nillable="true" type="q15:ContenedorPerfilUsuarioEmpleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerfilUsuarioAdministradorCrear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q16:ContenedorPerfilUsuarioAdministrador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerfilUsuarioAdministradorCrearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PerfilUsuarioAdministradorCrearResult" nillable="true" type="q17:ContenedorPerfilUsuarioAdministrador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerfilUsuarioAdministradorActualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q18:ContenedorPerfilUsuarioAdministrador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerfilUsuarioAdministradorActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PerfilUsuarioAdministradorActualizarResult" nillable="true" type="q19:ContenedorPerfilUsuarioAdministrador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ProductoCrear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q12:ContenedorProducto" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q20:ContenedorProducto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProductoCrearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProductoCrearResult" nillable="true" type="q13:ContenedorProducto" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProductoCrearResult" nillable="true" type="q21:ContenedorProducto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProductoActualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q14:ContenedorProducto" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q22:ContenedorProducto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProductoActualizarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProductoActualizarResult" nillable="true" type="q15:ContenedorProducto" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProductoActualizarResult" nillable="true" type="q23:ContenedorProducto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProductoEliminar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q16:ContenedorProducto" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q24:ContenedorProducto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProductoEliminarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProductoEliminarResult" nillable="true" type="q17:ContenedorProducto" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProductoEliminarResult" nillable="true" type="q25:ContenedorProducto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -152,7 +208,7 @@
   <xs:element name="ProductoRescatarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProductoRescatarResult" nillable="true" type="q18:ContenedorProductos" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProductoRescatarResult" nillable="true" type="q26:ContenedorProductos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -166,49 +222,49 @@
   <xs:element name="ServicioComidaRescatarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ServicioComidaRescatarResult" nillable="true" type="q19:ContenedorServiciosComida" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ServicioComidaRescatarResult" nillable="true" type="q27:ContenedorServiciosComida" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="PlatoCrear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q20:ContenedorPlato" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q28:ContenedorPlato" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="PlatoCrearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PlatoCrearResult" nillable="true" type="q21:ContenedorPlato" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PlatoCrearResult" nillable="true" type="q29:ContenedorPlato" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="PlatoActualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q22:ContenedorPlato" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q30:ContenedorPlato" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="PlatoActualizarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PlatoActualizarResult" nillable="true" type="q23:ContenedorPlato" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PlatoActualizarResult" nillable="true" type="q31:ContenedorPlato" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="PlatoEliminar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q24:ContenedorPlato" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q32:ContenedorPlato" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="PlatoEliminarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PlatoEliminarResult" nillable="true" type="q25:ContenedorPlato" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PlatoEliminarResult" nillable="true" type="q33:ContenedorPlato" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -222,49 +278,49 @@
   <xs:element name="PlatoRescatarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PlatoRescatarResult" nillable="true" type="q26:ContenedorPlatos" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PlatoRescatarResult" nillable="true" type="q34:ContenedorPlatos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="HabitacionCrear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q27:ContenedorHabitacion" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q35:ContenedorHabitacion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="HabitacionCrearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="HabitacionCrearResult" nillable="true" type="q28:ContenedorHabitacion" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="HabitacionCrearResult" nillable="true" type="q36:ContenedorHabitacion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="HabitacionActualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q29:ContenedorHabitacion" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q37:ContenedorHabitacion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="HabitacionActualizarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="HabitacionActualizarResult" nillable="true" type="q30:ContenedorHabitacion" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="HabitacionActualizarResult" nillable="true" type="q38:ContenedorHabitacion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="HabitacionEliminar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q31:ContenedorHabitacion" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q39:ContenedorHabitacion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="HabitacionEliminarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="HabitacionEliminarResult" nillable="true" type="q32:ContenedorHabitacion" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="HabitacionEliminarResult" nillable="true" type="q40:ContenedorHabitacion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -278,7 +334,7 @@
   <xs:element name="HabitacionRescatarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="HabitacionRescatarResult" nillable="true" type="q33:ContenedorHabitaciones" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="HabitacionRescatarResult" nillable="true" type="q41:ContenedorHabitaciones" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -292,49 +348,49 @@
   <xs:element name="CiudadRescatarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="CiudadRescatarResult" nillable="true" type="q34:ContenedorCiudades" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="CiudadRescatarResult" nillable="true" type="q42:ContenedorCiudades" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CamaCrear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q35:ContenedorCama" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q43:ContenedorCama" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CamaCrearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="CamaCrearResult" nillable="true" type="q36:ContenedorCama" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="CamaCrearResult" nillable="true" type="q44:ContenedorCama" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CamaActualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q37:ContenedorCama" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q45:ContenedorCama" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CamaActualizarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="CamaActualizarResult" nillable="true" type="q38:ContenedorCama" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="CamaActualizarResult" nillable="true" type="q46:ContenedorCama" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CamaEliminar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q39:ContenedorCama" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q47:ContenedorCama" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CamaEliminarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="CamaEliminarResult" nillable="true" type="q40:ContenedorCama" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="CamaEliminarResult" nillable="true" type="q48:ContenedorCama" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -348,21 +404,21 @@
   <xs:element name="CamaRescatarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="CamaRescatarResult" nillable="true" type="q41:ContenedorCamas" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="CamaRescatarResult" nillable="true" type="q49:ContenedorCamas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="OrdenCompraCompletaCrear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q42:ContenedorOrdenCompraCompleta" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q50:ContenedorOrdenCompraCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="OrdenCompraCompletaCrearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="OrdenCompraCompletaCrearResult" nillable="true" type="q43:ContenedorOrdenCompraCompleta" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="OrdenCompraCompletaCrearResult" nillable="true" type="q51:ContenedorOrdenCompraCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -376,21 +432,21 @@
   <xs:element name="OrdenCompraCompletaRescatarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="OrdenCompraCompletaRescatarResult" nillable="true" type="q44:ContenedorOrdenesCompraCompleta" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="OrdenCompraCompletaRescatarResult" nillable="true" type="q52:ContenedorOrdenesCompraCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="OrdenPedidoCompletaCrear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q45:ContenedorOrdenPedidoCompleta" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q53:ContenedorOrdenPedidoCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="OrdenPedidoCompletaCrearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="OrdenPedidoCompletaCrearResult" nillable="true" type="q46:ContenedorOrdenPedidoCompleta" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="OrdenPedidoCompletaCrearResult" nillable="true" type="q54:ContenedorOrdenPedidoCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -404,21 +460,21 @@
   <xs:element name="OrdenPedidoCompletaRescatarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="OrdenPedidoCompletaRescatarResult" nillable="true" type="q47:ContenedorOrdenesPedidoCompleta" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="OrdenPedidoCompletaRescatarResult" nillable="true" type="q55:ContenedorOrdenesPedidoCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="FacturaCompraCompletaCrear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q48:ContenedorFacturaCompraCompleta" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q56:ContenedorFacturaCompraCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="FacturaCompraCompletaCrearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="FacturaCompraCompletaCrearResult" nillable="true" type="q49:ContenedorFacturaCompraCompleta" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="FacturaCompraCompletaCrearResult" nillable="true" type="q57:ContenedorFacturaCompraCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -432,21 +488,21 @@
   <xs:element name="FacturaCompraCompletaRescatarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="FacturaCompraCompletaRescatarResult" nillable="true" type="q50:ContenedorFacturasCompraCompleta" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="FacturaCompraCompletaRescatarResult" nillable="true" type="q58:ContenedorFacturasCompraCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="FacturaPedidoCompletaCrear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q51:ContenedorFacturaPedidoCompleta" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q59:ContenedorFacturaPedidoCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="FacturaPedidoCompletaCrearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="FacturaPedidoCompletaCrearResult" nillable="true" type="q52:ContenedorFacturaPedidoCompleta" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="FacturaPedidoCompletaCrearResult" nillable="true" type="q60:ContenedorFacturaPedidoCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -460,7 +516,7 @@
   <xs:element name="FacturaPedidoCompletaRescatarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="FacturaPedidoCompletaRescatarResult" nillable="true" type="q53:ContenedorFacturasPedidoCompleta" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="FacturaPedidoCompletaRescatarResult" nillable="true" type="q61:ContenedorFacturasPedidoCompleta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -474,7 +530,7 @@
   <xs:element name="StockProductosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="StockProductosResult" nillable="true" type="q54:ArrayOfProducto" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="StockProductosResult" nillable="true" type="q62:ArrayOfProducto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -488,7 +544,7 @@
   <xs:element name="Productos_mas_solicitadosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Productos_mas_solicitadosResult" nillable="true" type="q55:ArrayOfComodinJava" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Productos_mas_solicitadosResult" nillable="true" type="q63:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -502,7 +558,7 @@
   <xs:element name="Segun_rubro_empresaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Segun_rubro_empresaResult" nillable="true" type="q56:ArrayOfComodinJava" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Segun_rubro_empresaResult" nillable="true" type="q64:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -516,7 +572,7 @@
   <xs:element name="Metodo_pago_mas_usadoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Metodo_pago_mas_usadoResult" nillable="true" type="q57:ArrayOfComodinJava" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Metodo_pago_mas_usadoResult" nillable="true" type="q65:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -530,7 +586,7 @@
   <xs:element name="Ciudad_mas_solicita_serviciosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Ciudad_mas_solicita_serviciosResult" nillable="true" type="q58:ArrayOfComodinJava" />
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Ciudad_mas_solicita_serviciosResult" nillable="true" type="q66:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -544,7 +600,7 @@
   <xs:element name="Estado_habitacionesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Estado_habitacionesResult" nillable="true" type="q59:ArrayOfComodinJava" />
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Estado_habitacionesResult" nillable="true" type="q67:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -558,7 +614,7 @@
   <xs:element name="Habitaciones_mas_solicitadasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Habitaciones_mas_solicitadasResult" nillable="true" type="q60:ArrayOfComodinJava" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Habitaciones_mas_solicitadasResult" nillable="true" type="q68:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -572,7 +628,7 @@
   <xs:element name="Fecha_mayor_augeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Fecha_mayor_augeResult" nillable="true" type="q61:ArrayOfComodinJava" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Fecha_mayor_augeResult" nillable="true" type="q69:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -598,7 +654,7 @@
   <xs:element name="Promedio_venta_mensualResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Promedio_venta_mensualResult" nillable="true" type="q62:ArrayOfComodinJava" />
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="Promedio_venta_mensualResult" nillable="true" type="q70:ArrayOfComodinJava" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -636,49 +692,49 @@
   <xs:element name="ProveedorRescatarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProveedorRescatarResult" nillable="true" type="q63:ContenedorProveedores" />
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProveedorRescatarResult" nillable="true" type="q71:ContenedorProveedores" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionCrear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q64:ContenedorProvision" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q72:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionCrearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionCrearResult" nillable="true" type="q65:ContenedorProvision" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionCrearResult" nillable="true" type="q73:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionActualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q66:ContenedorProvision" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q74:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionActualizarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionActualizarResult" nillable="true" type="q67:ContenedorProvision" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionActualizarResult" nillable="true" type="q75:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionEliminar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q68:ContenedorProvision" />
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q76:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionEliminarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionEliminarResult" nillable="true" type="q69:ContenedorProvision" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionEliminarResult" nillable="true" type="q77:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -692,7 +748,7 @@
   <xs:element name="ProvisionRescatarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionRescatarResult" nillable="true" type="q70:ContenedorProvisiones" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionRescatarResult" nillable="true" type="q78:ContenedorProvisiones" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

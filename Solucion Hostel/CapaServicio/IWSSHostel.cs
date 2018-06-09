@@ -46,6 +46,28 @@ namespace CapaServicio
         ContenedorPerfilUsuarioProveedores PerfilUsuarioProveedorRescatar(string token);
         //Fin PerfilUsuarioProveedor
 
+        //Inicio PerfilUsuarioEmpleado
+        [OperationContract]
+        ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoCrear(ContenedorPerfilUsuarioEmpleado entrada);
+
+        [OperationContract]
+        ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoActualizar(ContenedorPerfilUsuarioEmpleado entrada);
+
+        //[OperationContract]
+        //ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token);
+        //Fin PerfilUsuarioEmpleado
+
+        //Inicio PerfilUsuarioAdministrador
+        [OperationContract]
+        ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorCrear(ContenedorPerfilUsuarioAdministrador entrada);
+
+        [OperationContract]
+        ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorActualizar(ContenedorPerfilUsuarioAdministrador entrada);
+
+        //[OperationContract]
+        //ContenedorPerfilUsuarioAdministradores PerfilUsuarioAdministradorRescatar(string token);
+        //Fin PerfilUsuarioAdministrador
+
         //Inicio Producto
         [OperationContract]
         ContenedorProducto ProductoCrear(ContenedorProducto entrada);

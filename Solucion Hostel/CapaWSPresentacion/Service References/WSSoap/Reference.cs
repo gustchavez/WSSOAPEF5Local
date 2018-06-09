@@ -57,6 +57,30 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioProveedores> PerfilUsuarioProveedorRescatarAsync(string token);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoCrearResponse")]
+        CapaObjeto.ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoCrear(CapaObjeto.ContenedorPerfilUsuarioEmpleado entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoCrearResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioEmpleado> PerfilUsuarioEmpleadoCrearAsync(CapaObjeto.ContenedorPerfilUsuarioEmpleado entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoActualizar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoActualizarResponse")]
+        CapaObjeto.ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoActualizar(CapaObjeto.ContenedorPerfilUsuarioEmpleado entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoActualizar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioEmpleado> PerfilUsuarioEmpleadoActualizarAsync(CapaObjeto.ContenedorPerfilUsuarioEmpleado entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrearResponse")]
+        CapaObjeto.ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorCrear(CapaObjeto.ContenedorPerfilUsuarioAdministrador entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrearResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioAdministrador> PerfilUsuarioAdministradorCrearAsync(CapaObjeto.ContenedorPerfilUsuarioAdministrador entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorActualizar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorActualizarResponse")]
+        CapaObjeto.ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorActualizar(CapaObjeto.ContenedorPerfilUsuarioAdministrador entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorActualizar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioAdministrador> PerfilUsuarioAdministradorActualizarAsync(CapaObjeto.ContenedorPerfilUsuarioAdministrador entrada);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProductoCrear", ReplyAction="http://tempuri.org/IWSSHostel/ProductoCrearResponse")]
         CapaObjeto.ContenedorProducto ProductoCrear(CapaObjeto.ContenedorProducto entrada);
         
@@ -397,6 +421,38 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioProveedores> PerfilUsuarioProveedorRescatarAsync(string token) {
             return base.Channel.PerfilUsuarioProveedorRescatarAsync(token);
+        }
+        
+        public CapaObjeto.ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoCrear(CapaObjeto.ContenedorPerfilUsuarioEmpleado entrada) {
+            return base.Channel.PerfilUsuarioEmpleadoCrear(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioEmpleado> PerfilUsuarioEmpleadoCrearAsync(CapaObjeto.ContenedorPerfilUsuarioEmpleado entrada) {
+            return base.Channel.PerfilUsuarioEmpleadoCrearAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoActualizar(CapaObjeto.ContenedorPerfilUsuarioEmpleado entrada) {
+            return base.Channel.PerfilUsuarioEmpleadoActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioEmpleado> PerfilUsuarioEmpleadoActualizarAsync(CapaObjeto.ContenedorPerfilUsuarioEmpleado entrada) {
+            return base.Channel.PerfilUsuarioEmpleadoActualizarAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorCrear(CapaObjeto.ContenedorPerfilUsuarioAdministrador entrada) {
+            return base.Channel.PerfilUsuarioAdministradorCrear(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioAdministrador> PerfilUsuarioAdministradorCrearAsync(CapaObjeto.ContenedorPerfilUsuarioAdministrador entrada) {
+            return base.Channel.PerfilUsuarioAdministradorCrearAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorActualizar(CapaObjeto.ContenedorPerfilUsuarioAdministrador entrada) {
+            return base.Channel.PerfilUsuarioAdministradorActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioAdministrador> PerfilUsuarioAdministradorActualizarAsync(CapaObjeto.ContenedorPerfilUsuarioAdministrador entrada) {
+            return base.Channel.PerfilUsuarioAdministradorActualizarAsync(entrada);
         }
         
         public CapaObjeto.ContenedorProducto ProductoCrear(CapaObjeto.ContenedorProducto entrada) {
