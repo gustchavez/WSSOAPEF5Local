@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace CapaObjeto
 {
-    public class ContenedorOrdenPedidoCompleta
+    public class ContenedorFacturaPedidoCompleta
     {
-        public OrdenPedidoCompleta Item { get; set; }
+        public FacturaPedidoCompleta Item { get; set; }
         public Comunicacion Retorno { get; set; }
 
-        public ContenedorOrdenPedidoCompleta()
+        public ContenedorFacturaPedidoCompleta()
         {
             Init();
         }
 
         private void Init()
         {
-            this.Item = new OrdenPedidoCompleta();
+            this.Item = new FacturaPedidoCompleta();
             this.Retorno = new Comunicacion();
         }
     }

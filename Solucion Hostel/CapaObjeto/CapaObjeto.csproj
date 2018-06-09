@@ -49,6 +49,8 @@
     <Compile Include="ContenedorCama.cs" />
     <Compile Include="ContenedorCamas.cs" />
     <Compile Include="ContenedorCiudades.cs" />
+    <Compile Include="ContenedorFacturaCompraCompleta.cs" />
+    <Compile Include="ContenedorFacturaPedidoCompleta.cs" />
     <Compile Include="ContenedorHabitacion.cs" />
     <Compile Include="ContenedorHabitaciones.cs" />
     <Compile Include="ContenedorOrdenCompraCompleta.cs" />
@@ -67,6 +69,8 @@
     <Compile Include="Direccion.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="Factura.cs" />
+    <Compile Include="FacturaCompraCompleta.cs" />
+    <Compile Include="FacturaPedidoCompleta.cs" />
     <Compile Include="Habitacion.cs" />
     <Compile Include="OrdenCompra.cs" />
     <Compile Include="OrdenCompraCompleta.cs" />

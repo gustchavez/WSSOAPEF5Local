@@ -697,7 +697,7 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
         </Function>
-        <Function Name="SP_ACTUALIZAR_FACTURA_VENTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+        <Function Name="SP_ACTUALIZAR_FACTURA_PEDIDO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
           <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
           <Parameter Name="P_IN_NUMERO_OP" Type="number" Mode="In" />
           <Parameter Name="P_IN_VALOR_BRUTO" Type="number" Mode="In" />
@@ -869,7 +869,7 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
           <Parameter Name="P_OUT_NUMERO" Type="number" Mode="Out" />
         </Function>
-        <Function Name="SP_CREAR_FACTURA_VENTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+        <Function Name="SP_CREAR_FACTURA_PEDIDO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
           <Parameter Name="P_IN_NUMERO_OP" Type="number" Mode="In" />
           <Parameter Name="P_IN_VALOR_BRUTO" Type="number" Mode="In" />
           <Parameter Name="P_IN_VALOR_IVA" Type="number" Mode="In" />
@@ -1637,17 +1637,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SP_ACTUALIZAR_FACTURA_VENTA">
-            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_NUMERO_OP" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_VALOR_BRUTO" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_VALOR_IVA" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_VALOR_NETO" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_OBSERVACIONES" Mode="In" Type="String" />
-            <Parameter Name="P_IN_UBICACION" Mode="In" Type="String" />
-            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
-            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="SP_CREAR_FACTURA_COMPRA">
             <Parameter Name="P_IN_NUMERO_OC" Mode="In" Type="Decimal" />
             <Parameter Name="P_IN_VALOR_BRUTO" Mode="In" Type="Decimal" />
@@ -1665,7 +1654,18 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
             <Parameter Name="P_OUT_NUMERO" Mode="Out" Type="Decimal" />
           </FunctionImport>
-          <FunctionImport Name="SP_CREAR_FACTURA_VENTA">
+          <FunctionImport Name="SP_ACTUALIZAR_FACTURA_PEDIDO">
+            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_NUMERO_OP" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_VALOR_BRUTO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_VALOR_IVA" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_VALOR_NETO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_OBSERVACIONES" Mode="In" Type="String" />
+            <Parameter Name="P_IN_UBICACION" Mode="In" Type="String" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREAR_FACTURA_PEDIDO">
             <Parameter Name="P_IN_NUMERO_OP" Mode="In" Type="Decimal" />
             <Parameter Name="P_IN_VALOR_BRUTO" Mode="In" Type="Decimal" />
             <Parameter Name="P_IN_VALOR_IVA" Mode="In" Type="Decimal" />
@@ -2557,9 +2557,9 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_FACTURA_COMPRA" FunctionName="Model.Store.SP_ACTUALIZAR_FACTURA_COMPRA" />
-          <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_FACTURA_VENTA" FunctionName="Model.Store.SP_ACTUALIZAR_FACTURA_VENTA" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_FACTURA_COMPRA" FunctionName="Model.Store.SP_CREAR_FACTURA_COMPRA" />
-          <FunctionImportMapping FunctionImportName="SP_CREAR_FACTURA_VENTA" FunctionName="Model.Store.SP_CREAR_FACTURA_VENTA" />
+          <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_FACTURA_PEDIDO" FunctionName="Model.Store.SP_ACTUALIZAR_FACTURA_PEDIDO" />
+          <FunctionImportMapping FunctionImportName="SP_CREAR_FACTURA_PEDIDO" FunctionName="Model.Store.SP_CREAR_FACTURA_PEDIDO" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

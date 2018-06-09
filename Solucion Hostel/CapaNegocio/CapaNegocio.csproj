@@ -48,6 +48,8 @@
     <Compile Include="ConsultasJava.cs" />
     <Compile Include="CRUDCama.cs" />
     <Compile Include="CRUDCiudad.cs" />
+    <Compile Include="CRUDFacturaCompraCompleta.cs" />
+    <Compile Include="CRUDFacturaPedidoCompleta.cs" />
     <Compile Include="CRUDHabitacion.cs" />
     <Compile Include="CRUDOrdenCompraCompleta.cs" />
     <Compile Include="CRUDOrdenPedidoCompleta.cs" />
