@@ -27,10 +27,7 @@
 		</div>
 	</div>
 	
-	<div class="contenedorTabla">
-		
-		
-	</div>		
+	
 </div>
 
 </form>
