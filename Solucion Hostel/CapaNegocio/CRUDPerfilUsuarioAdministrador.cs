@@ -101,7 +101,6 @@ namespace CapaNegocio
             List<string> Perfiles = new List<string>();
 
             Perfiles.Add("Administrador");
-            Perfiles.Add("Empleado");
             if (x.ValidarPerfil(token, Perfiles))
             {
                 retorno = true;
