@@ -140,6 +140,34 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfPerfilUsuarioProveedor" nillable="true" type="tns:ArrayOfPerfilUsuarioProveedor" />
+  <xs:complexType name="ContenedorPerfilUsuarioEmpleado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:PerfilUsuarioEmpleado" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorPerfilUsuarioEmpleado" nillable="true" type="tns:ContenedorPerfilUsuarioEmpleado" />
+  <xs:complexType name="PerfilUsuarioEmpleado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Persona" nillable="true" type="tns:Persona" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="tns:Usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PerfilUsuarioEmpleado" nillable="true" type="tns:PerfilUsuarioEmpleado" />
+  <xs:complexType name="ContenedorPerfilUsuarioAdministrador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:PerfilUsuarioAdministrador" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorPerfilUsuarioAdministrador" nillable="true" type="tns:ContenedorPerfilUsuarioAdministrador" />
+  <xs:complexType name="PerfilUsuarioAdministrador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Persona" nillable="true" type="tns:Persona" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="tns:Usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PerfilUsuarioAdministrador" nillable="true" type="tns:PerfilUsuarioAdministrador" />
   <xs:complexType name="ContenedorProducto">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:Producto" />

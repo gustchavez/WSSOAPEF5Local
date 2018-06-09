@@ -79,6 +79,46 @@ namespace CapaServicio
         }
         //CRUD PerfilUsuarioProveedor - FIN
 
+        //CRUD PerfilUsuarioEmpleado - INI
+        public ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoCrear(ContenedorPerfilUsuarioEmpleado entrada)
+        {
+            CRUDPerfilUsuarioEmpleado x = new CRUDPerfilUsuarioEmpleado();
+            x.LlamarSPCrear(entrada);
+            return entrada;
+        }
+        public ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoActualizar(ContenedorPerfilUsuarioEmpleado entrada)
+        {
+            CRUDPerfilUsuarioEmpleado x = new CRUDPerfilUsuarioEmpleado();
+            x.LlamarSPActualizar(entrada);
+            return entrada;
+        }
+        //public ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token)
+        //{
+        //    CRUDPerfilUsuarioEmpleado x = new CRUDPerfilUsuarioEmpleado();
+        //    return x.LlamarSPRescatar(token);
+        //}
+        //CRUD PerfilUsuarioEmpleado - FIN
+
+        //CRUD PerfilUsuarioAdministrador - INI
+        public ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorCrear(ContenedorPerfilUsuarioAdministrador entrada)
+        {
+            CRUDPerfilUsuarioAdministrador x = new CRUDPerfilUsuarioAdministrador();
+            x.LlamarSPCrear(entrada);
+            return entrada;
+        }
+        public ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorActualizar(ContenedorPerfilUsuarioAdministrador entrada)
+        {
+            CRUDPerfilUsuarioAdministrador x = new CRUDPerfilUsuarioAdministrador();
+            x.LlamarSPActualizar(entrada);
+            return entrada;
+        }
+        //public ContenedorPerfilUsuarioAdministradores PerfilUsuarioAdministradorRescatar(string token)
+        //{
+        //    CRUDPerfilUsuarioAdministrador x = new CRUDPerfilUsuarioAdministrador();
+        //    return x.LlamarSPRescatar(token);
+        //}
+        //CRUD PerfilUsuarioAdministrador - FIN
+
         //CRUD Producto - INI
         public ContenedorProducto ProductoCrear(ContenedorProducto entrada)
         {

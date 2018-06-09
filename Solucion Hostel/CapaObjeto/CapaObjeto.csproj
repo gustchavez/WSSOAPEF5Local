@@ -60,8 +60,8 @@
     <Compile Include="ContenedorOrdenCompra.cs" />
     <Compile Include="ContenedorOrdenesCompraCompleta.cs" />
     <Compile Include="ContenedorOrdenPedidoCompleta.cs" />
-    <Compile Include="ContenedorPerfilAdmin.cs" />
-    <Compile Include="ContenedorPerfilEmpleado.cs" />
+    <Compile Include="ContenedorPerfilUsuarioAdministrador.cs" />
+    <Compile Include="ContenedorPerfilUsuarioEmpleado.cs" />
     <Compile Include="ContenedorPerfilUsuarioCliente.cs" />
     <Compile Include="ContenedorPerfilUsuarioClientes.cs" />
     <Compile Include="ContenedorPerfilUsuarioProveedor.cs" />
@@ -83,8 +83,8 @@
     <Compile Include="OrdenPedidoCompleta.cs" />
     <Compile Include="OrdenPedidoDetalle.cs" />
     <Compile Include="Pago.cs" />
-    <Compile Include="PerfilAdmin.cs" />
-    <Compile Include="PerfilEmpleado.cs" />
+    <Compile Include="PerfilUsuarioAdministrador.cs" />
+    <Compile Include="PerfilUsuarioEmpleado.cs" />
     <Compile Include="PerfilUsuario.cs" />
     <Compile Include="PerfilUsuarioCliente.cs" />
     <Compile Include="PerfilUsuarioProveedor.cs" />

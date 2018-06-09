@@ -49,6 +49,30 @@
   <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorRescatarResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorActualizarResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_ProductoCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:ProductoCrear" />
   </wsdl:message>
@@ -336,6 +360,22 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatar" message="tns:IWSSHostel_PerfilUsuarioProveedorRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatarResponse" message="tns:IWSSHostel_PerfilUsuarioProveedorRescatar_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioEmpleadoCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoCrear" message="tns:IWSSHostel_PerfilUsuarioEmpleadoCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoCrearResponse" message="tns:IWSSHostel_PerfilUsuarioEmpleadoCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioEmpleadoActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoActualizar" message="tns:IWSSHostel_PerfilUsuarioEmpleadoActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoActualizarResponse" message="tns:IWSSHostel_PerfilUsuarioEmpleadoActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioAdministradorCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrear" message="tns:IWSSHostel_PerfilUsuarioAdministradorCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrearResponse" message="tns:IWSSHostel_PerfilUsuarioAdministradorCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioAdministradorActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorActualizar" message="tns:IWSSHostel_PerfilUsuarioAdministradorActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorActualizarResponse" message="tns:IWSSHostel_PerfilUsuarioAdministradorActualizar_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ProductoCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProductoCrear" message="tns:IWSSHostel_ProductoCrear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ProductoCrearResponse" message="tns:IWSSHostel_ProductoCrear_OutputMessage" />
@@ -567,6 +607,42 @@
     </wsdl:operation>
     <wsdl:operation name="PerfilUsuarioProveedorRescatar">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioEmpleadoCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioEmpleadoActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioAdministradorCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioAdministradorActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorActualizar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

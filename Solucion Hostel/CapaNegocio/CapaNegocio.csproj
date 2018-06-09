@@ -46,10 +46,10 @@
   <ItemGroup>
     <Compile Include="CommonBD.cs" />
     <Compile Include="ConsultasJava.cs" />
-    <Compile Include="CRUDAdmin.cs" />
+    <Compile Include="CRUDPerfilUsuarioAdministrador.cs" />
     <Compile Include="CRUDCama.cs" />
     <Compile Include="CRUDCiudad.cs" />
-    <Compile Include="CRUDEmpleado.cs" />
+    <Compile Include="CRUDPerfilUsuarioEmpleado.cs" />
     <Compile Include="CRUDFacturaCompraCompleta.cs" />
     <Compile Include="CRUDFacturaPedidoCompleta.cs" />
     <Compile Include="CRUDHabitacion.cs" />
