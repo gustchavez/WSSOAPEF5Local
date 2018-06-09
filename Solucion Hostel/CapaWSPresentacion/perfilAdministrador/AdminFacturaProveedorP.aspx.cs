@@ -52,12 +52,89 @@ namespace CapaWSPresentacion.perfilAdministrador
         }
         protected void generarPDF_Click(object sender, EventArgs e)
         {
-            Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
-            PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Prueba.pdf", FileMode.Create));
-            doc.Open();
-            Paragraph texto = new Paragraph(" Texto de prueba ");
-            doc.Add(texto);
-            doc.Close(); 
+            //Informacion solo de prueba <-------------------------------------------
+            List<Persona> dtblTable = new List<Persona>();
+            Persona p = new Persona();
+            p.Nombre = "mauro";
+            p.Telefono = "1231231123";
+            p.Apellido = "guaton";
+            Persona p2 = new Persona();
+            p2.Nombre = "mauro2";
+            p2.Telefono = "1231231123--2";
+            p2.Apellido = "guaton2";
+            dtblTable.Add(p);
+            dtblTable.Add(p2);
+
+            //indicar Ruta en dode se generaran las facturas <-------------------------------------------
+            //cambiar "prueba" por numero de factura o algo asi <-------------------------------------------
+            String strPdfPath = @"C:\Users\Cochy\Desktop\prueba.pdf";
+
+            //Aqui va el titulo de la factura <-------------------------------------------
+            string strHeader = " Hostale ";
+
+            System.IO.FileStream fs = new FileStream(strPdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
+            Document document = new Document();
+            document.SetPageSize(iTextSharp.text.PageSize.A4);
+            PdfWriter writer = PdfWriter.GetInstance(document, fs);
+            document.Open();
+
+            //Report Header
+            BaseFont bfntHead = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            iTextSharp.text.Font fntHead = new iTextSharp.text.Font(bfntHead, 16, 1, iTextSharp.text.BaseColor.GRAY);
+            Paragraph prgHeading = new Paragraph();
+            prgHeading.Alignment = Element.ALIGN_CENTER;
+            prgHeading.Add(new Chunk(strHeader.ToUpper(), fntHead));
+            document.Add(prgHeading);
+
+            //Author
+            Paragraph prgAuthor = new Paragraph();
+            BaseFont btnAuthor = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            Font fntAuthor = new Font(btnAuthor, 8, 2);
+            prgAuthor.Alignment = Element.ALIGN_RIGHT; // alineacion del texto (derecha) <-------------------------------------------
+            prgAuthor.Add(new Chunk("Author : Dotnet Mob", fntAuthor));
+            prgAuthor.Add(new Chunk("\nRun Date : " + DateTime.Now.ToShortDateString(), fntAuthor));
+            document.Add(prgAuthor);
+
+            //Add a line seperation
+            Paragraph pr = new Paragraph(new Chunk(new iTextSharp.text.pdf.draw.LineSeparator(0.0F, 100.0F, iTextSharp.text.BaseColor.BLACK, Element.ALIGN_LEFT, 1)));
+            document.Add(pr);
+
+            //Add line break
+            document.Add(new Chunk("\n", fntHead));
+
+            //Write la table
+            //Indicar las columnas que se utilizaran <-------------------------------------------
+            PdfPTable table = new PdfPTable(3);
+            //Table header
+            //Nombrar columnas <-------------------------------------------
+            BaseFont btnColumnHeader = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            Font fntColumnHeader = new Font(btnColumnHeader, 10, 1, iTextSharp.text.BaseColor.WHITE);
+            //crear columna <-------------------------------------------
+            PdfPCell cell = new PdfPCell();
+            PdfPCell cell2 = new PdfPCell();
+            PdfPCell cell3 = new PdfPCell();
+            cell.BackgroundColor = iTextSharp.text.BaseColor.GRAY;
+            cell.AddElement(new Chunk("nombre", fntColumnHeader));
+            cell2.BackgroundColor = iTextSharp.text.BaseColor.GRAY;
+            cell2.AddElement(new Chunk("apellido", fntColumnHeader));
+            cell3.BackgroundColor = iTextSharp.text.BaseColor.GRAY;
+            cell3.AddElement(new Chunk("nombre", fntColumnHeader));
+            table.AddCell(cell);
+            table.AddCell(cell2);
+            table.AddCell(cell3);
+            //table Data
+            //Aqui hay que recorrer la tabla para añadirla al pdf <-------------------------------------------
+            foreach (Persona pe in dtblTable)
+            {
+                table.AddCell(pe.Nombre);
+                table.AddCell(pe.Apellido);
+                table.AddCell(pe.Telefono);
+            }
+
+            document.Add(table);
+            document.Close();
+            writer.Close();
+            fs.Close();
         }
     }
 }

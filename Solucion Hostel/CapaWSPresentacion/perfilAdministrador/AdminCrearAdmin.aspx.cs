@@ -24,7 +24,7 @@ namespace CapaWSPresentacion.perfilAdministrador
             {
                 case 1:
                     //Admin
-                    ContenedorPerfilAdmin a = new ContenedorPerfilAdmin();
+                    ContenedorPerfilUsuarioAdministrador a = new ContenedorPerfilUsuarioAdministrador();
                     a.Item.Persona.Rut = TextBox1.Text;
                     a.Item.Persona.Nombre = TextBox2.Text;
                     a.Item.Persona.Apellido = TextBox3.Text;
@@ -37,7 +37,7 @@ namespace CapaWSPresentacion.perfilAdministrador
                     break;
                 case 2:
                     //Empleado
-                    ContenedorPerfilEmpleado em = new ContenedorPerfilEmpleado();
+                    ContenedorPerfilUsuarioEmpleado em = new ContenedorPerfilUsuarioEmpleado();
                     em.Item.Persona.Rut = TextBox1.Text;
                     em.Item.Persona.Nombre = TextBox2.Text;
                     em.Item.Persona.Apellido = TextBox3.Text;

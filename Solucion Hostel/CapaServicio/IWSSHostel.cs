@@ -219,17 +219,17 @@ namespace CapaServicio
         //Fin Provision
         //Inicio Admin
         [OperationContract]
-        ContenedorPerfilAdmin LlamarSPCrear(ContenedorPerfilAdmin entrada);
+        ContenedorPerfilUsuarioAdministrador LlamarSPCrear(ContenedorPerfilUsuarioAdministrador entrada);
 
         [OperationContract]
-        ContenedorPerfilAdmin LlamarSPActualizar(ContenedorPerfilAdmin entrada);
+        ContenedorPerfilUsuarioAdministrador LlamarSPActualizar(ContenedorPerfilUsuarioAdministrador entrada);
         //Fin Admin
         //Inicio Empleado
         [OperationContract]
-        ContenedorPerfilEmpleado LlamarSPCrear(ContenedorPerfilEmpleado entrada);
+        ContenedorPerfilUsuarioEmpleado LlamarSPCrear(ContenedorPerfilUsuarioEmpleado entrada);
 
         [OperationContract]
-        ContenedorPerfilEmpleado LlamarSPActualizar(ContenedorPerfilEmpleado entrada);
+        ContenedorPerfilUsuarioEmpleado LlamarSPActualizar(ContenedorPerfilUsuarioEmpleado entrada);
         //Fin Empleado
     }
 }

@@ -414,28 +414,28 @@ namespace CapaServicio
         //CRUD Provision - FIN
 
         //Inicio CRUD Admin
-        public ContenedorPerfilAdmin LlamarSPCrear(ContenedorPerfilAdmin entrada)
+        public ContenedorPerfilUsuarioAdministrador LlamarSPCrear(ContenedorPerfilUsuarioAdministrador entrada)
         {
-            CRUDAdmin x = new CRUDAdmin();
+            CRUDPerfilUsuarioAdministrador x = new CRUDPerfilUsuarioAdministrador();
             return x.LlamarSPCrear(entrada);
         }
 
-        public ContenedorPerfilAdmin LlamarSPActualizar(ContenedorPerfilAdmin entrada)
+        public ContenedorPerfilUsuarioAdministrador LlamarSPActualizar(ContenedorPerfilUsuarioAdministrador entrada)
         {
-            CRUDAdmin x = new CRUDAdmin();
+            CRUDPerfilUsuarioAdministrador x = new CRUDPerfilUsuarioAdministrador();
             return x.LlamarSPActualizar(entrada);
         }
         //Fin Admin
         //Inicio CRUD Empleado
-        public ContenedorPerfilEmpleado LlamarSPCrear(ContenedorPerfilEmpleado entrada)
+        public ContenedorPerfilUsuarioEmpleado LlamarSPCrear(ContenedorPerfilUsuarioEmpleado entrada)
         {
-            CRUDEmpleado x = new CRUDEmpleado();
+            CRUDPerfilUsuarioEmpleado x = new CRUDPerfilUsuarioEmpleado();
             return x.LlamarSPCrear(entrada);
         }
 
-        public ContenedorPerfilEmpleado LlamarSPActualizar(ContenedorPerfilEmpleado entrada)
+        public ContenedorPerfilUsuarioEmpleado LlamarSPActualizar(ContenedorPerfilUsuarioEmpleado entrada)
         {
-            CRUDEmpleado x = new CRUDEmpleado();
+            CRUDPerfilUsuarioEmpleado x = new CRUDPerfilUsuarioEmpleado();
             return x.LlamarSPActualizar(entrada);
         }
         //Fin Empleado
