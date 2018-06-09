@@ -440,6 +440,90 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfOrdenPedidoCompleta" nillable="true" type="tns:ArrayOfOrdenPedidoCompleta" />
+  <xs:complexType name="ContenedorFacturaCompraCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:FacturaCompraCompleta" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorFacturaCompraCompleta" nillable="true" type="tns:ContenedorFacturaCompraCompleta" />
+  <xs:complexType name="FacturaCompraCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cabecera" nillable="true" type="tns:Factura" />
+      <xs:element minOccurs="0" name="OCRelacionada" nillable="true" type="tns:OrdenCompra" />
+      <xs:element minOccurs="0" name="Pago" nillable="true" type="tns:Pago" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FacturaCompraCompleta" nillable="true" type="tns:FacturaCompraCompleta" />
+  <xs:complexType name="Factura">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Numero" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NumeroOrdenCompra" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NumeroOrdenPedido" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ubicacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValorBruto" type="xs:int" />
+      <xs:element minOccurs="0" name="ValorIva" type="xs:int" />
+      <xs:element minOccurs="0" name="ValorNeto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Factura" nillable="true" type="tns:Factura" />
+  <xs:complexType name="Pago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoISO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Divisa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MedioPago" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Monto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroFactura" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TasaCambioCLP" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoFactura" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Pago" nillable="true" type="tns:Pago" />
+  <xs:complexType name="ContenedorFacturasCompraCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfFacturaCompraCompleta" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorFacturasCompraCompleta" nillable="true" type="tns:ContenedorFacturasCompraCompleta" />
+  <xs:complexType name="ArrayOfFacturaCompraCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FacturaCompraCompleta" nillable="true" type="tns:FacturaCompraCompleta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFacturaCompraCompleta" nillable="true" type="tns:ArrayOfFacturaCompraCompleta" />
+  <xs:complexType name="ContenedorFacturaPedidoCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:FacturaPedidoCompleta" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorFacturaPedidoCompleta" nillable="true" type="tns:ContenedorFacturaPedidoCompleta" />
+  <xs:complexType name="FacturaPedidoCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cabecera" nillable="true" type="tns:Factura" />
+      <xs:element minOccurs="0" name="OPRelacionada" nillable="true" type="tns:OrdenPedido" />
+      <xs:element minOccurs="0" name="Pago" nillable="true" type="tns:Pago" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FacturaPedidoCompleta" nillable="true" type="tns:FacturaPedidoCompleta" />
+  <xs:complexType name="ContenedorFacturasPedidoCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfFacturaPedidoCompleta" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorFacturasPedidoCompleta" nillable="true" type="tns:ContenedorFacturasPedidoCompleta" />
+  <xs:complexType name="ArrayOfFacturaPedidoCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FacturaPedidoCompleta" nillable="true" type="tns:FacturaPedidoCompleta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFacturaPedidoCompleta" nillable="true" type="tns:ArrayOfFacturaPedidoCompleta" />
   <xs:complexType name="ArrayOfComodinJava">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ComodinJava" nillable="true" type="tns:ComodinJava" />

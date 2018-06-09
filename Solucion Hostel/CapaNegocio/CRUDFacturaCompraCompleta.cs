@@ -63,6 +63,69 @@ namespace CapaNegocio
             return nFCC;
         }
 
+        public ContenedorFacturasCompraCompleta LlamarSPRescatar(string token)
+        {
+            ContenedorFacturasCompraCompleta LFacturasCompra = new ContenedorFacturasCompraCompleta();
+
+            if (ValidarFecExp(token))
+            {
+                try
+                {
+                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                    var collection = (from fac in conex.FACTURA
+                                      join pag in conex.PAGO on fac.NUMERO equals pag.NUMERO_FACTURA
+                                      join ord_comp in conex.ORDEN_DE_COMPRA on fac.NUMERO_OC equals ord_comp.NUMERO
+                                      orderby ord_comp.RUT_CLIENTE, fac.NUMERO
+                                      select new
+                                      {
+                                          RutCliente  = ord_comp.RUT_CLIENTE,
+                                          NroFactura  = fac.NUMERO,
+                                          FecFactura  = fac.FECHA,
+                                          ValorBruto  = fac.VALOR_BRUTO,
+                                          ValorIva    = fac.VALOR_IVA,
+                                          ValorNeto   = fac.VALOR_NETO,
+                                          FormaPago   = pag.MEDIO_PAGO,
+                                          NroOrdComp  = ord_comp.NUMERO
+                                      }
+                            ).ToList();
+
+                    //Se crea la FacturaCompleta
+
+                    foreach (var item in collection)
+                    {
+                        FacturaCompraCompleta n = new FacturaCompraCompleta();
+                        //Se carga valores de la cabecera
+                        n.OCRelacionada.RutCliente = item.RutCliente;
+                        n.Cabecera.Numero          = item.NroFactura;
+                        n.Cabecera.Fecha           = item.FecFactura;
+                        n.Cabecera.ValorBruto      = item.ValorBruto;
+                        n.Cabecera.ValorIva        = item.ValorIva;
+                        n.Cabecera.ValorNeto       = item.ValorNeto;
+                        n.Pago.MedioPago           = item.FormaPago;
+                        n.OCRelacionada.Numero     = item.NroOrdComp;
+                        
+                        //Se agrega la orden completa a la orden
+                        LFacturasCompra.Lista.Add(n);
+                    }
+                    
+                    LFacturasCompra.Retorno.Codigo = 0;
+                    LFacturasCompra.Retorno.Glosa = "OK";
+
+                }
+                catch (Exception)
+                {
+                    LFacturasCompra.Retorno.Codigo = 1011;
+                    LFacturasCompra.Retorno.Glosa = "Err codret ORACLE";
+                }
+            }
+            else {
+                LFacturasCompra.Retorno.Codigo = 100;
+                LFacturasCompra.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+
+            return LFacturasCompra;
+        }
         private bool ValidarPerfilCUD(string token)
         {
             bool retorno = false;

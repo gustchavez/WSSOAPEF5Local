@@ -51,6 +51,8 @@
     <Compile Include="ContenedorCiudades.cs" />
     <Compile Include="ContenedorFacturaCompraCompleta.cs" />
     <Compile Include="ContenedorFacturaPedidoCompleta.cs" />
+    <Compile Include="ContenedorFacturasCompraCompleta.cs" />
+    <Compile Include="ContenedorFacturasPedidoCompleta.cs" />
     <Compile Include="ContenedorHabitacion.cs" />
     <Compile Include="ContenedorHabitaciones.cs" />
     <Compile Include="ContenedorOrdenCompraCompleta.cs" />

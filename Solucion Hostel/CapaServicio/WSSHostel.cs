@@ -236,6 +236,37 @@ namespace CapaServicio
         }
         //Fin OrdenPedidoCompleta
 
+
+        //Ini FacturaCompraCompleta
+        public ContenedorFacturaCompraCompleta FacturaCompraCompletaCrear(ContenedorFacturaCompraCompleta entrada)
+        {
+            CRUDFacturaCompraCompleta x = new CRUDFacturaCompraCompleta();
+            x.LlamarSPCrear(entrada);
+            return entrada;
+        }
+        public ContenedorFacturasCompraCompleta FacturaCompraCompletaRescatar(string token)
+        {
+            CRUDFacturaCompraCompleta x = new CRUDFacturaCompraCompleta();
+            return x.LlamarSPRescatar(token);
+        }
+        //Fin FacturaCompraCompleta
+
+        //Ini FacturaPedidoCompleta
+        public ContenedorFacturaPedidoCompleta FacturaPedidoCompletaCrear(ContenedorFacturaPedidoCompleta entrada)
+        {
+            CRUDFacturaPedidoCompleta x = new CRUDFacturaPedidoCompleta();
+            x.LlamarSPCrear(entrada);
+            return entrada;
+        }
+
+        public ContenedorFacturasPedidoCompleta FacturaPedidoCompletaRescatar(string token)
+        {
+            CRUDFacturaPedidoCompleta x = new CRUDFacturaPedidoCompleta();
+            return x.LlamarSPRescatar(token);
+        }
+        //Fin FacturaPedidoCompleta
+
+
         //Consultas para Apicacion Java
 
         public List<Producto> StockProductos(string token)

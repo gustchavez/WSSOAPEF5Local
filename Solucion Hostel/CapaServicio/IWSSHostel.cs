@@ -124,6 +124,23 @@ namespace CapaServicio
         ContenedorOrdenesPedidoCompleta OrdenPedidoCompletaRescatar(string token);
         //Fin OrdenPedidoCompleta
 
+        //Ini FacturaCompraCompleta
+        [OperationContract]
+        ContenedorFacturaCompraCompleta FacturaCompraCompletaCrear(ContenedorFacturaCompraCompleta entrada);
+
+        [OperationContract]
+        ContenedorFacturasCompraCompleta FacturaCompraCompletaRescatar(string token);
+        //Fin FacturaCompraCompleta
+
+        //Ini FacturaPedidoCompleta
+        [OperationContract]
+        ContenedorFacturaPedidoCompleta FacturaPedidoCompletaCrear(ContenedorFacturaPedidoCompleta entrada);
+
+        [OperationContract]
+        ContenedorFacturasPedidoCompleta FacturaPedidoCompletaRescatar(string token);
+        //Fin FacturaPedidoCompleta
+
+
         //Consultas para Apicacion Java
 
         [OperationContract]

@@ -43,7 +43,9 @@
 						<td> <a href="#"> <img src="images/logPdf.png"></a></td>
 					</tr>
 		</table>
-		
+        <asp:GridView ID="gwFacturasCompra" runat="server" CssClass="listaFactura"
+            EmptyDataText="No se encontraron Facturas..."
+            ></asp:GridView>
 	</div>
 
     </form>

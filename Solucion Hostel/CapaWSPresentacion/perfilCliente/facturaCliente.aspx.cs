@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaObjeto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,7 +20,7 @@ namespace CapaWSPresentacion.perfilCliente
                 {
                     if (!IsPostBack)
                     {
-                        //RescatarDatos();
+                        RescatarDatos();
                     }
                 }
                 else
@@ -33,6 +34,19 @@ namespace CapaWSPresentacion.perfilCliente
                 Session["TokenUsuario"] = null;
                 Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
             }
+        }
+
+        private void RescatarDatos()
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            ContenedorProductos n = new ContenedorProductos();
+
+            n = x.ProductoRescatar(Session["TokenUsuario"].ToString());
+
+            gwFacturasCompra.DataSource = null;
+            gwFacturasCompra.DataSource = n.Lista;
+            gwFacturasCompra.DataBind();
         }
     }
 }
