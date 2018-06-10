@@ -992,6 +992,9 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_IN_NOMBRE" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_CLAVE" Type="varchar2" Mode="In" />
           <Parameter Name="P_OUT_PERFIL" Type="varchar2" Mode="Out" />
+          <Parameter Name="P_OUT_RUT_EMPRESA" Type="varchar2" Mode="Out" />
+          <Parameter Name="P_OUT_RAZON_SOCIAL" Type="varchar2" Mode="Out" />
+          <Parameter Name="P_OUT_RUT_PERSONA" Type="varchar2" Mode="Out" />
           <Parameter Name="P_OUT_NOMBRE" Type="varchar2" Mode="Out" />
           <Parameter Name="P_OUT_APELLIDO" Type="varchar2" Mode="Out" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
@@ -1474,15 +1477,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SP_VALIDAR_LOGIN">
-            <Parameter Name="P_IN_NOMBRE" Mode="In" Type="String" />
-            <Parameter Name="P_IN_CLAVE" Mode="In" Type="String" />
-            <Parameter Name="P_OUT_PERFIL" Mode="Out" Type="String" />
-            <Parameter Name="P_OUT_NOMBRE" Mode="Out" Type="String" />
-            <Parameter Name="P_OUT_APELLIDO" Mode="Out" Type="String" />
-            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
-            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="SP_CREAR_DET_RESERVA">
             <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
             <Parameter Name="P_IN_INGRESO" Mode="In" Type="DateTime" />
@@ -1681,6 +1675,18 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
             <Parameter Name="P_OUT_NUMERO" Mode="Out" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_VALIDAR_LOGIN">
+            <Parameter Name="P_IN_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="P_IN_CLAVE" Mode="In" Type="String" />
+            <Parameter Name="P_OUT_PERFIL" Mode="Out" Type="String" />
+            <Parameter Name="P_OUT_RUT_EMPRESA" Mode="Out" Type="String" />
+            <Parameter Name="P_OUT_RAZON_SOCIAL" Mode="Out" Type="String" />
+            <Parameter Name="P_OUT_RUT_PERSONA" Mode="Out" Type="String" />
+            <Parameter Name="P_OUT_NOMBRE" Mode="Out" Type="String" />
+            <Parameter Name="P_OUT_APELLIDO" Mode="Out" Type="String" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="CAMA">
@@ -2508,7 +2514,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_RESCATAR_PLATOS" FunctionName="Model.Store.SP_RESCATAR_PLATOS" />
           <FunctionImportMapping FunctionImportName="SP_RESCATAR_PRODUCTOS" FunctionName="Model.Store.SP_RESCATAR_PRODUCTOS" />
           <FunctionImportMapping FunctionImportName="SP_RESCATAR_PROVISIONES" FunctionName="Model.Store.SP_RESCATAR_PROVISIONES" />
-          <FunctionImportMapping FunctionImportName="SP_VALIDAR_LOGIN" FunctionName="Model.Store.SP_VALIDAR_LOGIN" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_DET_RESERVA" FunctionName="Model.Store.SP_CREAR_DET_RESERVA" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_DET_PEDIDO" FunctionName="Model.Store.SP_CREAR_DET_PEDIDO" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_ADMINISTRADOR" FunctionName="Model.Store.SP_ACTUALIZAR_ADMINISTRADOR" />
@@ -2560,6 +2565,7 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_CREAR_FACTURA_COMPRA" FunctionName="Model.Store.SP_CREAR_FACTURA_COMPRA" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_FACTURA_PEDIDO" FunctionName="Model.Store.SP_ACTUALIZAR_FACTURA_PEDIDO" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_FACTURA_PEDIDO" FunctionName="Model.Store.SP_CREAR_FACTURA_PEDIDO" />
+          <FunctionImportMapping FunctionImportName="SP_VALIDAR_LOGIN" FunctionName="Model.Store.SP_VALIDAR_LOGIN" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -31,8 +31,8 @@ namespace CapaWSPresentacion.perfilProveedor
                         lblPerfilUsuario.Text = string.Empty;
                         lblUsuario.Text = SesionUsuario.Usuario;
                         Session["TokenUsuario"] = null;
-                        Session["NombreUsuario"] = null;
                         Session["PerfilUsuario"] = null;
+                        Session["SesionUsuario"] = null;
                     }
                 }
                 catch (Exception)
@@ -41,8 +41,8 @@ namespace CapaWSPresentacion.perfilProveedor
                     lblPerfilUsuario.Text = string.Empty;
                     lblUsuario.Text = SesionUsuario.Usuario;
                     Session["TokenUsuario"] = null;
-                    Session["NombreUsuario"] = null;
                     Session["PerfilUsuario"] = null;
+                    Session["SesionUsuario"] = null;
                 }
             }
             else
@@ -51,8 +51,8 @@ namespace CapaWSPresentacion.perfilProveedor
                 lblPerfilUsuario.Text = string.Empty;
                 lblUsuario.Text = SesionUsuario.Usuario;
                 Session["TokenUsuario"] = null;
-                Session["NombreUsuario"] = null;
                 Session["PerfilUsuario"] = null;
+                Session["SesionUsuario"] = null;
             }
         }
     }

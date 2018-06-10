@@ -8,19 +8,15 @@
 
 	<div class="columna2">
 		
-				<h2>Mis Facturas</h2><br>
-				<table border="0" class="listaFactura">				
-					<tr>
-						<th>Fecha  </th>
-						<th>Empresa </th>
-						<th>Factura  </th>
-					</tr>
-					<tr>
-						<td>13/03/2018</td>
-						<td>Proveedor</td>
-						<td> <a href="#"> <img src="images/logPdf.png"></a></td>
-					</tr>
-		</table>
+	    <h2>Facturas Pedidos</h2><br>
+        <asp:GridView ID="gwFacturasPedido" runat="server" CssClass="listaFactura"
+            EmptyDataText="No se encontraron Facturas..."
+            ></asp:GridView>
+		
+        <h2>Facturas Compras</h2><br>
+        <asp:GridView ID="gwFacturasCompra" runat="server" CssClass="listaFactura"
+            EmptyDataText="No se encontraron Facturas..."
+            ></asp:GridView>
 		
 	</div>
 

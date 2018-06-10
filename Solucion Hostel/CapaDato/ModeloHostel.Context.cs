@@ -622,19 +622,6 @@ namespace CapaDato
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_RESCATAR_PROVISIONES", p_OUT_CODRET, p_OUT_GLSRET);
         }
     
-        public virtual int SP_VALIDAR_LOGIN(string p_IN_NOMBRE, string p_IN_CLAVE, ObjectParameter p_OUT_PERFIL, ObjectParameter p_OUT_NOMBRE, ObjectParameter p_OUT_APELLIDO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
-                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
-                new ObjectParameter("P_IN_NOMBRE", typeof(string));
-    
-            var p_IN_CLAVEParameter = p_IN_CLAVE != null ?
-                new ObjectParameter("P_IN_CLAVE", p_IN_CLAVE) :
-                new ObjectParameter("P_IN_CLAVE", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_VALIDAR_LOGIN", p_IN_NOMBREParameter, p_IN_CLAVEParameter, p_OUT_PERFIL, p_OUT_NOMBRE, p_OUT_APELLIDO, p_OUT_CODRET, p_OUT_GLSRET);
-        }
-    
         public virtual int SP_CREAR_DET_RESERVA(Nullable<decimal> p_IN_NUMERO, Nullable<System.DateTime> p_IN_INGRESO, Nullable<System.DateTime> p_IN_EGRESO, string p_IN_OBS_ALOJAMIENTO, string p_IN_RUT_PERSONA, Nullable<decimal> p_IN_CODIGO_CAMA, Nullable<System.DateTime> p_IN_RECEPCION, string p_IN_OBS_COMIDA, string p_IN_TIPO_SERVICIO, Nullable<decimal> p_IN_CODIGO_PLATO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
             var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
@@ -1181,6 +1168,19 @@ namespace CapaDato
                 new ObjectParameter("P_IN_MONTO_OP", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_FACTURA_PEDIDO", p_IN_NUMERO_OPParameter, p_IN_VALOR_BRUTOParameter, p_IN_VALOR_IVAParameter, p_IN_VALOR_NETOParameter, p_IN_OBSERVACIONESParameter, p_IN_UBICACIONParameter, p_IN_MEDIO_PAGOParameter, p_IN_DIVISAParameter, p_IN_CODIGO_ISOParameter, p_IN_MONTO_DIVParameter, p_IN_TASA_CAMBIO_CLPParameter, p_IN_MONTO_OPParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_NUMERO);
+        }
+    
+        public virtual int SP_VALIDAR_LOGIN(string p_IN_NOMBRE, string p_IN_CLAVE, ObjectParameter p_OUT_PERFIL, ObjectParameter p_OUT_RUT_EMPRESA, ObjectParameter p_OUT_RAZON_SOCIAL, ObjectParameter p_OUT_RUT_PERSONA, ObjectParameter p_OUT_NOMBRE, ObjectParameter p_OUT_APELLIDO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
+                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
+                new ObjectParameter("P_IN_NOMBRE", typeof(string));
+    
+            var p_IN_CLAVEParameter = p_IN_CLAVE != null ?
+                new ObjectParameter("P_IN_CLAVE", p_IN_CLAVE) :
+                new ObjectParameter("P_IN_CLAVE", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_VALIDAR_LOGIN", p_IN_NOMBREParameter, p_IN_CLAVEParameter, p_OUT_PERFIL, p_OUT_RUT_EMPRESA, p_OUT_RAZON_SOCIAL, p_OUT_RUT_PERSONA, p_OUT_NOMBRE, p_OUT_APELLIDO, p_OUT_CODRET, p_OUT_GLSRET);
         }
     }
 }

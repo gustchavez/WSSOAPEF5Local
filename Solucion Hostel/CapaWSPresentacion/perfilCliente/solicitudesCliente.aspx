@@ -19,36 +19,11 @@
 	</div>
 	<!--Fin COLUMNA1-->
 
-	<div class="columna2">
-		
-				<h2>Historico Solicitudes</h2><br>
-				<table border="0" class="listaFactura">				
-					<tr>
-						<th>Fecha Solicitud  </th>
-						<th>Total de días  </th>
-						<th>Nº Personas </th>
-						<th>Fecha Ingreso  </th>
-						<th>Fecha Salida</th>
-						<th>Solicitud  </th>
-					</tr>
-					<tr>
-						<td>13/03/2018</td>
-						<td>7</td>
-						<td>15</td>
-						<td>15/03/2018</td>
-						<td>22/03/2018</td>
-						<td><a href="#">Ver Solicitud</a></td>			
-					</tr>
-					<tr>
-						<td>13/03/2018</td>
-						<td>7</td>
-						<td>15</td>
-						<td>15/03/2018</td>
-						<td>22/03/2018</td>
-						<td><a href="#">Ver Solicitud</a></td>			
-					</tr>
-		</table>
-		
+	<div class="columna2"> 
+		<h2>Historico Solicitudes</h2><br>
+        <asp:GridView ID="gwOrdenesCompra" runat="server" CssClass="listaFactura"
+            EmptyDataText="No se encontraron Solicitudes..."
+            ></asp:GridView>
 	</div>
 </form>
 

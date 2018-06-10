@@ -13,12 +13,8 @@ namespace CapaWSPresentacion.PaginaComercial
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["TokenUsuario"] = null;
-            Session["NombreUsuario"] = null;
             Session["PerfilUsuario"] = null;
-            Session["DatosEmpleado"] = null;
-            Session["RutCliente"]    = null;
-            Session["RutProvedor"]   = null;
-            
+            Session["SesionUsuario"] = null;
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
@@ -35,7 +31,6 @@ namespace CapaWSPresentacion.PaginaComercial
             if (nLogin.Retorno.Codigo == 0)
             {
                 Session["TokenUsuario"] = nLogin.Retorno.Token;
-                Session["NombreUsuario"] = nLogin.Usuario;
                 Session["PerfilUsuario"] = nLogin.Perfil;
                 Session["SesionUsuario"] = nLogin;
 
@@ -46,34 +41,9 @@ namespace CapaWSPresentacion.PaginaComercial
                         break;
 
                     case "Cliente":
-                        ContenedorPerfilUsuarioClientes nPC = new ContenedorPerfilUsuarioClientes();
-                        nPC = x.PerfilUsuarioClienteRescatar(Session["TokenUsuario"].ToString());
-                        
-                        var cliente = nPC.Lista.Where(p => p.PerfilUsuario.Usuario.Nombre == nLogin.Usuario).SingleOrDefault();
-
-                        if (cliente != null)
-                        {
-                            Session["RutCliente"] = cliente.Cliente.Rut;
-                        } else {
-                            Session["RutCliente"] = null;
-                        }
-
                         Response.Redirect("/perfilCliente/solicitarServicio.aspx");
                         break;
                     case "Proveedor":
-                        ContenedorPerfilUsuarioProveedores nPP = new ContenedorPerfilUsuarioProveedores();
-                        nPP = x.PerfilUsuarioProveedorRescatar(Session["TokenUsuario"].ToString());
-
-                        var proveedor = nPP.Lista.Where(p => p.PerfilUsuario.Usuario.Nombre == nLogin.Usuario).SingleOrDefault();
-
-                        if (proveedor != null)
-                        {
-                            Session["RutProveedor"] = proveedor.Proveedor.Rut;
-                        }
-                        else {
-                            Session["RutProveedor"] = null;
-                        }
-
                         Response.Redirect("/perfilProveedor/Pedidos.aspx");
                         break;
                     case "Administrador":
@@ -81,14 +51,12 @@ namespace CapaWSPresentacion.PaginaComercial
                         break;
                     default:
                         Session["TokenUsuario"] = null;
-                        Session["NombreUsuario"] = null;
                         Session["PerfilUsuario"] = null;
                         Session["SesionUsuario"] = null;
                         break;
                 }
             } else {
                 Session["TokenUsuario"] = null;
-                Session["NombreUsuario"] = null;
                 Session["PerfilUsuario"] = null;
                 Session["SesionUsuario"] = null;
             }

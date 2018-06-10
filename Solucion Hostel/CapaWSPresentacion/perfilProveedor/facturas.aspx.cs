@@ -42,9 +42,11 @@ namespace CapaWSPresentacion.perfilProveedor
             ContenedorFacturasPedidoCompleta n = new ContenedorFacturasPedidoCompleta();
 
             n = x.FacturaPedidoCompletaRescatar(Session["TokenUsuario"].ToString());
-            
+
+            Sesion datSes = (Sesion)Session["SesionUsuario"];
+
             var facturas = (from l in n.Lista
-                            //where l.OPRelacionada.RutProveedor == Session["RutProveedor"].ToString()
+                            where l.OPRelacionada.RutProveedor == datSes.RutEmpresa
                             select new
                             {
                                 Rut = l.OPRelacionada.RutProveedor,

@@ -39,14 +39,14 @@ namespace CapaWSPresentacion.perfilCliente
         private void RescatarDatos()
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-
             ContenedorFacturasCompraCompleta n = new ContenedorFacturasCompraCompleta();
 
             n = x.FacturaCompraCompletaRescatar(Session["TokenUsuario"].ToString());
 
+            Sesion datSes = (Sesion)Session["SesionUsuario"];
 
             var facturas = (from l in n.Lista
-                                //where l.OCRelacionada.RutCliente == Session["RutCliente"].ToString()
+                            where l.OCRelacionada.RutCliente == datSes.RutEmpresa
                             select new
                             {
                                 Rut        = l.OCRelacionada.RutCliente,

@@ -35,16 +35,16 @@ namespace CapaWSPresentacion
             if (nLogin.Retorno.Codigo == 0)
             {
                 Session["TokenUsuario"] = nLogin.Retorno.Token;
-                Session["NombreUsuario"] = nLogin.Usuario;
                 Session["PerfilUsuario"] = nLogin.Perfil;
+                Session["SesionUsuario"] = null;
 
                 Response.Redirect("Index.aspx");
             }
             else
             {
                 Session["TokenUsuario"] = null;
-                Session["NombreUsuario"] = null;
                 Session["PerfilUsuario"] = null;
+                Session["SesionUsuario"] = null;
             }
         }
     }

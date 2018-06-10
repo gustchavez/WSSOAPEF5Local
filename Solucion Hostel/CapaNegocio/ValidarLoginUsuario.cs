@@ -24,26 +24,35 @@ namespace CapaNegocio
 
         public void LlamarSP()
         {
-            var p_OUT_PERFIL   = new ObjectParameter("P_OUT_PERFIL", typeof(string));
-            var p_OUT_NOMBRE   = new ObjectParameter("P_OUT_NOMBRE", typeof(string));
-            var p_OUT_APELLIDO = new ObjectParameter("P_OUT_APELLIDO", typeof(string));
-            var p_OUT_CODRET   = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
-            var p_OUT_GLSRET   = new ObjectParameter("P_OUT_GLSRET", typeof(string));
-
+            var p_OUT_PERFIL       = new ObjectParameter("P_OUT_PERFIL", typeof(string));
+            var p_OUT_RUT_EMPRESA  = new ObjectParameter("P_OUT_RUT_EMPRESA", typeof(string));
+            var p_OUT_RAZON_SOCIAL = new ObjectParameter("P_OUT_RAZON_SOCIAL", typeof(string));
+            var p_OUT_RUT_PERSONA  = new ObjectParameter("P_OUT_RUT_PERSONA", typeof(string));
+            var p_OUT_NOMBRE       = new ObjectParameter("P_OUT_NOMBRE", typeof(string));
+            var p_OUT_APELLIDO     = new ObjectParameter("P_OUT_APELLIDO", typeof(string));
+            var p_OUT_CODRET       = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
+            var p_OUT_GLSRET       = new ObjectParameter("P_OUT_GLSRET", typeof(string));
+            //
             CommonBD.Conexion.SP_VALIDAR_LOGIN
                 ( DatosLogin.Usuario
                 , DatosLogin.Clave
                 , p_OUT_PERFIL
+                , p_OUT_RUT_EMPRESA
+                , p_OUT_RAZON_SOCIAL
+                , p_OUT_RUT_PERSONA
                 , p_OUT_NOMBRE
                 , p_OUT_APELLIDO
                 , p_OUT_CODRET
                 , p_OUT_GLSRET
                 ) ;
-
-            DatosLogin.Perfil = p_OUT_PERFIL.Value.ToString();
-            DatosLogin.Nombre = p_OUT_NOMBRE.Value.ToString();
-            DatosLogin.Apellido = p_OUT_APELLIDO.Value.ToString();
-
+            //
+            DatosLogin.Perfil      = p_OUT_PERFIL.Value.ToString();
+            DatosLogin.RutEmpresa  = p_OUT_RUT_EMPRESA.Value.ToString();
+            DatosLogin.RazonSocial = p_OUT_RAZON_SOCIAL.Value.ToString();
+            DatosLogin.RutPersona  = p_OUT_RUT_PERSONA.Value.ToString();
+            DatosLogin.Nombre      = p_OUT_NOMBRE.Value.ToString();
+            DatosLogin.Apellido    = p_OUT_APELLIDO.Value.ToString();
+            //
             try
             {
                 TokenUsuario x = new TokenUsuario();

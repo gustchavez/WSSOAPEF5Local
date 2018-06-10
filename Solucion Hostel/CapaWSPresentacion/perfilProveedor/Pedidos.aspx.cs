@@ -45,9 +45,11 @@ namespace CapaWSPresentacion.perfilProveedor
 
             n = x.OrdenPedidoCompletaRescatar(Session["TokenUsuario"].ToString());
 
-            var pedidos = (from prov in n.Lista
-                               //where prov.Cabecera.RutProveedor == Session["RutProveedor"].ToString()
-                               select new
+            Sesion datSes = (Sesion)Session["SesionUsuario"];
+
+            var pedidos = (from  prov in n.Lista
+                           where prov.Cabecera.RutProveedor == datSes.RutEmpresa
+                           select new
                                {
                                    FechaSolicitud = prov.Cabecera.FechaEmision,
                                    Monto = prov.Cabecera.Monto,
