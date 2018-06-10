@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="CommonBD.cs" />
     <Compile Include="ConsultasJava.cs" />
+    <Compile Include="CRUDCliente.cs" />
     <Compile Include="CRUDPerfilUsuarioAdministrador.cs" />
     <Compile Include="CRUDCama.cs" />
     <Compile Include="CRUDCiudad.cs" />

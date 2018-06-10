@@ -315,6 +315,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProveedorRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ProveedorRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorProveedores> ProveedorRescatarAsync(string token);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ClienteRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ClienteRescatarResponse")]
+        CapaObjeto.ContenedorClientes ClienteRescatar(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ClienteRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ClienteRescatarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorClientes> ClienteRescatarAsync(string token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProvisionCrear", ReplyAction="http://tempuri.org/IWSSHostel/ProvisionCrearResponse")]
         CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada);
         
@@ -765,6 +771,14 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.ContenedorProveedores> ProveedorRescatarAsync(string token) {
             return base.Channel.ProveedorRescatarAsync(token);
+        }
+        
+        public CapaObjeto.ContenedorClientes ClienteRescatar(string token) {
+            return base.Channel.ClienteRescatar(token);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorClientes> ClienteRescatarAsync(string token) {
+            return base.Channel.ClienteRescatarAsync(token);
         }
         
         public CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada) {

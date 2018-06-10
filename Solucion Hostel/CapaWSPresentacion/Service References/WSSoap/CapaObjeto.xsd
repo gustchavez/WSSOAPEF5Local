@@ -583,6 +583,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfProveedor" nillable="true" type="tns:ArrayOfProveedor" />
+  <xs:complexType name="ContenedorClientes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfCliente" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorClientes" nillable="true" type="tns:ContenedorClientes" />
+  <xs:complexType name="ArrayOfCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cliente" nillable="true" type="tns:Cliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCliente" nillable="true" type="tns:ArrayOfCliente" />
   <xs:complexType name="ContenedorProvision">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:Provision" />
