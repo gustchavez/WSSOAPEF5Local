@@ -7,8 +7,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 using System.IO;
-//using iTextSharp.text;
-//using iTextSharp.text.pdf;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace CapaWSPresentacion.perfilAdministrador
 {
@@ -18,7 +18,7 @@ namespace CapaWSPresentacion.perfilAdministrador
         {
             //RescatarDatos();
         }
-        /*
+        
         private void RescatarDatos()
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
@@ -137,6 +137,6 @@ namespace CapaWSPresentacion.perfilAdministrador
             writer.Close();
             fs.Close();
         }
-        */
+        
     }
 }
