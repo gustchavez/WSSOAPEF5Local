@@ -403,19 +403,22 @@ h2{
 
 
 .droplistPrincipal {
-	position: relative;
+	border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    position: relative;
 	width: 790px;
 	height: 40px;
 	background-color: white;
 	font-size: 14px;
     color: #095256;
-	border: none;
-	
+	top: -2px;
+    left: 1px;
 }
 
 .Casilla2-1Principal {
-	left: 70px;
-	bottom: 20px;
+	left: 1px;
+	bottom: 0px;
 	position: relative;
 	width: 790px;
 	height: 20px;

@@ -16,40 +16,77 @@ namespace CapaWSPresentacion.perfilAdministrador
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            RescatarDatos();
+            try
+            {
+                string Perfil = Session["PerfilUsuario"].ToString();
+
+                if (Perfil.Equals("Administrador"))
+                {
+                    RescatarDatos();
+                }
+                else {
+                    Session["TokenUsuario"] = null;
+                    Response.Redirect("perfilIngreso.aspx");
+                }
+            }
+            catch (Exception)
+            {
+                Session["TokenUsuario"] = null;
+                Response.Redirect("perfilIngreso.aspx");
+            }
         }
         
         private void RescatarDatos()
         {
+
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-
-            //Recuperar datos de provisiones
-            ContenedorProvisiones m = new ContenedorProvisiones();
-            m = x.ProvisionRescatar(Session["TokenUsuario"].ToString());
-
             //Recuperar datos de proveedores
             ContenedorPerfilUsuarioProveedores n = new ContenedorPerfilUsuarioProveedores();
             n = x.PerfilUsuarioProveedorRescatar(Session["TokenUsuario"].ToString());
-
-            var proveedores = (from prvi in m.Lista
-                               join prov in n.Lista on prvi.RutProveedor equals prov.Proveedor.Rut
-                               orderby prov.PerfilUsuario.Empresa.RazonSocial
+            var proveedores = (from prov in n.Lista
                                select new
                                {
                                    Rut = prov.Proveedor.Rut,
                                    RazonSocial = prov.PerfilUsuario.Empresa.RazonSocial
                                }
-                              ).Distinct().ToList();
+                            ).ToList();
 
             DropDownList1.DataSource = null;
             DropDownList1.DataSource = proveedores;
             DropDownList1.DataValueField = "Rut";
             DropDownList1.DataTextField = "RazonSocial";
             DropDownList1.DataBind();
+            
 
-            //guardar los valores
-            Session["TemporalProvision"] = m.Lista;
-            Session["TemporalProveedor"] = n.Lista;
+        }
+        protected void generarListaFacturas(object sender, EventArgs e)
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            ContenedorFacturasPedidoCompleta n = new ContenedorFacturasPedidoCompleta();
+
+            n = x.FacturaPedidoCompletaRescatar(Session["TokenUsuario"].ToString());
+
+            String empresa = DropDownList1.SelectedValue;
+
+            var facturas = (from l in n.Lista
+                            where l.OPRelacionada.RutProveedor == empresa
+                            select new
+                            {
+                                Rut = l.OPRelacionada.RutProveedor,
+                                NroFactura = l.Cabecera.Numero,
+                                FecFactura = l.Cabecera.Fecha,
+                                ValorBruto = l.Cabecera.ValorBruto,
+                                ValorIva = l.Cabecera.ValorIva,
+                                ValorNeto = l.Cabecera.ValorNeto,
+                                MedioPago = l.Pago.MedioPago,
+                                NroOrdReserva = l.OPRelacionada.Numero
+                            }
+                            ).ToList();
+
+            GridView1.DataSource = null;
+            GridView1.DataSource = facturas;
+            GridView1.DataBind();
         }
         protected void generarPDF_Click(object sender, EventArgs e)
         {
@@ -137,6 +174,10 @@ namespace CapaWSPresentacion.perfilAdministrador
             writer.Close();
             fs.Close();
         }
-        
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            RescatarDatos();
+        }
     }
 }

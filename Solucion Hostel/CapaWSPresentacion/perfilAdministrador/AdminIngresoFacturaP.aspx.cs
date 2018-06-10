@@ -11,7 +11,24 @@ namespace CapaWSPresentacion.perfilAdministrador
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                string Perfil = Session["PerfilUsuario"].ToString();
 
+                if (Perfil.Equals("Administrador"))
+                {
+                    
+                }
+                else {
+                    Session["TokenUsuario"] = null;
+                    Response.Redirect("perfilIngreso.aspx");
+                }
+            }
+            catch (Exception)
+            {
+                Session["TokenUsuario"] = null;
+                Response.Redirect("perfilIngreso.aspx");
+            }
         }
     }
 }
