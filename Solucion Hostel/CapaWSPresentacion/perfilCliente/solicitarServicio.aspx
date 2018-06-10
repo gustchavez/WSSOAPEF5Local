@@ -128,7 +128,7 @@
     <form id="form1" runat="server">
 
 	<!--Fin Menu-->
-	<div class="columna1">
+	<div class="columna1v1">
 			
 			<h2>Solicitud de Ingreso</h2>
 
