@@ -46,6 +46,7 @@ namespace CapaWSPresentacion.perfilCliente
             txtFechaEgreso.Text = DateTime.Now.ToString("yyyy-mm-dd");
             txtFechaIngreso.Text = DateTime.Now.ToString("yyyy-mm-dd");
             MostrarCasillas.Enabled = false;
+            BtnSiguiente.Enabled = false;
         }
 
         protected void Siguiente_Click1(object sender, EventArgs e)
@@ -53,47 +54,61 @@ namespace CapaWSPresentacion.perfilCliente
 
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            ContenedorAlojamiento n = new ContenedorAlojamiento();
+            OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
 
-            n.Item.FechaIngreso = DateTime.Parse(txtFechaIngreso.Text);
-            n.Item.FechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
-            n.Item.RegistroDias = int.Parse(txtRegistroDias.Text);
-            n.Item.Observaciones = "No ingresada por panel";
-            n.Item.CodigoCama = 1;
-            n.Item.RutPersona = txtRutPersona1.Text;
-
-            n.Retorno.Token = null; //Session["TokenUsuario"].ToString();
-
-
-
-            //GUSTAVO ----->
-            /*
-           OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
-            //Armar Encabezado de Orden de Reserva
-            nOCC.Cabecera.RutCliente = txtRutCliente.Text;
+            nOCC.Cabecera.RutCliente = txtRutPersona.Text;
             nOCC.Cabecera.Monto = 1000;//realizar calculo de las habitaciones seleccionadas.
             nOCC.Cabecera.Observaciones = "Reserva habitación";
             nOCC.Cabecera.Ubicacion = "Nose";
             nOCC.Cabecera.Estado = "activa";
 
-            //
             int CantidadHuespedes = int.Parse(Session["CantidadHuespedes"].ToString());
 
             for (int i = 0; i < CantidadHuespedes; i++)
             {
-                OrdenCompraDetalle nOCD = new OrdenCompraDetalle(); 
-                nOCD.Alojamiento.RutPersona = item0.Text; 
-                nOCD.Alojamiento.FechaIngreso = DateTime.Parse(item1.Text );
-                nOCD.Alojamiento.FechaEgreso = DateTime.Parse(item2.Text); 
-                nOCD.Alojamiento.CodigoCama = 1; 
-                nOCD.Alojamiento.Observaciones = "bla bla"; 
-                nOCD.Comida.CodigoPlato = 1; 
-                nOCD.Comida.Observaciones = "bla bla"; 
-                nOCD.Comida.FechaRecepcion = DateTime.Now 
+                OrdenCompraDetalle nOCD = new OrdenCompraDetalle();
+                nOCD.Alojamiento.RutPersona = item0.Text;
+                nOCD.Alojamiento.FechaIngreso = DateTime.Parse(item1.Text);
+                nOCD.Alojamiento.FechaEgreso = DateTime.Parse(item2.Text);
+                nOCD.Alojamiento.CodigoCama = 1;
+                nOCD.Alojamiento.Observaciones = "bla bla";
+                nOCD.Comida.CodigoPlato = 1;
+                nOCD.Comida.Observaciones = "bla bla";
+                nOCD.Comida.FechaRecepcion = DateTime.Now
                 nOCC.ListaDetalle.Add(nOCD);
-            } */
+            }
 
         }
+
+
+        //GUSTAVO ----->
+        /*
+       OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
+        //Armar Encabezado de Orden de Reserva
+        nOCC.Cabecera.RutCliente = txtRutCliente.Text;
+        nOCC.Cabecera.Monto = 1000;//realizar calculo de las habitaciones seleccionadas.
+        nOCC.Cabecera.Observaciones = "Reserva habitación";
+        nOCC.Cabecera.Ubicacion = "Nose";
+        nOCC.Cabecera.Estado = "activa";
+
+        //
+        int CantidadHuespedes = int.Parse(Session["CantidadHuespedes"].ToString());
+
+        for (int i = 0; i < CantidadHuespedes; i++)
+        {
+            OrdenCompraDetalle nOCD = new OrdenCompraDetalle(); 
+            nOCD.Alojamiento.RutPersona = item0.Text; 
+            nOCD.Alojamiento.FechaIngreso = DateTime.Parse(item1.Text );
+            nOCD.Alojamiento.FechaEgreso = DateTime.Parse(item2.Text); 
+            nOCD.Alojamiento.CodigoCama = 1; 
+            nOCD.Alojamiento.Observaciones = "bla bla"; 
+            nOCD.Comida.CodigoPlato = 1; 
+            nOCD.Comida.Observaciones = "bla bla"; 
+            nOCD.Comida.FechaRecepcion = DateTime.Now 
+            nOCC.ListaDetalle.Add(nOCD);
+        } */
+
+
 
 
         protected void txtFechaIngreso_TextChanged1(object sender, EventArgs e)
