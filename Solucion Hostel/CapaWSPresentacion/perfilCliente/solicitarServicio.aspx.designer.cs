@@ -22,40 +22,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control TextBox172.
+        /// Control txtFechaIngreso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox172;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaIngreso;
         
         /// <summary>
-        /// Control TextBox173.
+        /// Control txtFechaEgreso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox173;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaEgreso;
         
         /// <summary>
-        /// Control TextBox174.
+        /// Control txtRegistroDias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox174;
+        protected global::System.Web.UI.WebControls.TextBox txtRegistroDias;
         
         /// <summary>
-        /// Control TextBox175.
+        /// Control txtNpersonas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox175;
+        protected global::System.Web.UI.WebControls.TextBox txtNpersonas;
         
         /// <summary>
         /// Control TextBox1.
@@ -130,13 +130,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox sectuple;
         
         /// <summary>
-        /// Control TextBox176.
+        /// Control txtPersonasHabitacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox176;
+        protected global::System.Web.UI.WebControls.TextBox txtPersonasHabitacion;
         
         /// <summary>
         /// Control MostrarCasillas.
@@ -148,13 +148,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.Button MostrarCasillas;
         
         /// <summary>
-        /// Control TextBox5.
+        /// Control txtRutPersona1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox txtRutPersona1;
         
         /// <summary>
         /// Control TextBox6.

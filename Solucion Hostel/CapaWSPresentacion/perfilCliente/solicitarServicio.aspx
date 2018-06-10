@@ -134,18 +134,18 @@
 
 			<div class="contenido">				
 				Fecha Ingreso <br>
-				  <asp:TextBox ID="TextBox172" runat="server" TextMode="Date" CssClass="CasillaFecha"></asp:TextBox>  </div>
+				  <asp:TextBox ID="txtFechaIngreso" runat="server" TextMode="Date" CssClass="CasillaFecha" AutoPostBack="True" OnTextChanged="txtFechaIngreso_TextChanged1" value="System.DateTime.Today" ></asp:TextBox>  </div>
 			<div class="contenido">				
 				Fecha Salida <br>
-				 <asp:TextBox ID="TextBox173" runat="server" TextMode="Date" CssClass="CasillaFecha"></asp:TextBox> 
+				 <asp:TextBox ID="txtFechaEgreso" runat="server" TextMode="Date" CssClass="CasillaFecha" Enabled="true"  AutoPostBack="True" OnTextChanged="txtFechaEgreso_TextChanged"></asp:TextBox> 
 			</div>
 
 			<div class="contenido">				
-				Total de días  <asp:TextBox ID="TextBox174" runat="server" CssClass="Casilladias"></asp:TextBox>
+				Total de días  <asp:TextBox ID="txtRegistroDias" runat="server" CssClass="Casilladias" Enabled="false" value="1" ></asp:TextBox>
 			</div>
 
 			<div class="contenido">				
-				Nº Personas <asp:TextBox ID="TextBox175" runat="server" CssClass="Casilladias"></asp:TextBox>
+				Nº Personas <asp:TextBox ID="txtNpersonas" runat="server" CssClass="Casilladias" value="0"></asp:TextBox>
 			</div>
 
 			<div class="contenido">
@@ -159,22 +159,22 @@
 					<tr>
 						<td>Habitación individual</td>
                         <td><asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaEnvio" BorderColor="#AB4E68" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
-                        <td><asp:TextBox ID="individual" TextMode="Number" runat="server" Max="4" min="0" CssClass="BotonIndividual" value="0"></asp:TextBox></td>
+                        <td><asp:TextBox ID="individual" TextMode="Number" runat="server" Max="4" min="0" CssClass="BotonIndividual" value="0" AutoPostBack="True" OnTextChanged="individual_TextChanged"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td>Habitación 2 personas</td>
                         <td><asp:TextBox ID="TextBox2" runat="server"  CssClass="CasillaEnvio" BorderColor="#55828b" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
-                        <td><asp:TextBox ID="doble" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton2personas" value="0" ></asp:TextBox></td>
+                        <td><asp:TextBox ID="doble" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton2personas" value="0" AutoPostBack="True" OnTextChanged="doble_TextChanged" ></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td>Habitación 3 personas</td>
                         <td><asp:TextBox ID="TextBox3" runat="server"  CssClass="CasillaEnvio" BorderColor="#e94f37" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
-                        <td><asp:TextBox ID="triple" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton3personas" value="0"></asp:TextBox></td>
+                        <td><asp:TextBox ID="triple" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton3personas" value="0" AutoPostBack="True" OnTextChanged="triple_TextChanged"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td>Habitación 4 personas</td>
                         <td><asp:TextBox ID="TextBox4" runat="server"  CssClass="CasillaEnvio" BorderColor="#3f88c5" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
-                        <td><asp:TextBox ID="sectuple" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton6personas" value="0"></asp:TextBox></td>
+                        <td><asp:TextBox ID="sectuple" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton6personas" value="0" AutoPostBack="True" OnTextChanged="sectuple_TextChanged"></asp:TextBox></td>
 					</tr>	
 				</table>
 			</div>
@@ -184,7 +184,7 @@
 			<br>
 
 			<div class="contenido">				
-				<b> Personas con habitación: </b> <asp:TextBox ID="TextBox176" runat="server" CssClass="CasillaPersonas"></asp:TextBox>
+				<b> Personas con habitación: </b> <asp:TextBox ID="txtPersonasHabitacion" runat="server" value="0" Enabled="false" CssClass="CasillaPersonas"></asp:TextBox>
 			</div>
 			<div class="casillaTotal">
                <asp:Button ID="MostrarCasillas" runat="server" Text="Ingresar Personas"  CssClass="SubmitTotal" OnClientClick="return autenticarme();" />
@@ -197,7 +197,7 @@
 		<h2>Ingreso de Personas</h2>
 		<div class="IngresoPersonas1" ID="IngresoPersonas1">
 				<div class="Casilla2-1">					
-					 <asp:TextBox ID="TextBox5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+					 <asp:TextBox ID="txtRutPersona1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="Casilla2-1">
 					<asp:TextBox ID="TextBox6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
