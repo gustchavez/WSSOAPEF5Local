@@ -20,7 +20,7 @@ namespace CapaWSPresentacion.perfilEmpleado
                 {
                     if (!IsPostBack)
                     {
-                        //RescatarDatos();
+                        RescatarDatos();
                     }
                 }
                 else

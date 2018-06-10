@@ -307,6 +307,12 @@
   <wsdl:message name="IWSSHostel_ProveedorRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ProveedorRescatarResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_ClienteRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClienteRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ClienteRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClienteRescatarResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_ProvisionCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:ProvisionCrear" />
   </wsdl:message>
@@ -531,6 +537,10 @@
     <wsdl:operation name="ProveedorRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProveedorRescatar" message="tns:IWSSHostel_ProveedorRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ProveedorRescatarResponse" message="tns:IWSSHostel_ProveedorRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClienteRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ClienteRescatar" message="tns:IWSSHostel_ClienteRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ClienteRescatarResponse" message="tns:IWSSHostel_ClienteRescatar_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ProvisionCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProvisionCrear" message="tns:IWSSHostel_ProvisionCrear_InputMessage" />
@@ -994,6 +1004,15 @@
     </wsdl:operation>
     <wsdl:operation name="ProveedorRescatar">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/ProveedorRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClienteRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ClienteRescatar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

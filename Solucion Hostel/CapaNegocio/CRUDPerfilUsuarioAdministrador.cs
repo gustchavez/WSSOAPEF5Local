@@ -93,6 +93,7 @@ namespace CapaNegocio
 
             return nPUA;
         }
+        
         private bool ValidarPerfilCUD(string token)
         {
             bool retorno = false;

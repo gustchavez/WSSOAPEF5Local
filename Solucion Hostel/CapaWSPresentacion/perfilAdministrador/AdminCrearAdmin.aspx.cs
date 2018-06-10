@@ -12,14 +12,31 @@ namespace CapaWSPresentacion.perfilAdministrador
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                string Perfil = Session["PerfilUsuario"].ToString();
 
+                if (Perfil.Equals("Administrador"))
+                {
+                    Session["PerfilUsuario"] = Perfil;
+                }
+                else {
+                    Session["TokenUsuario"] = null;
+                    Response.Redirect("perfilIngreso.aspx");
+                }
+            }
+            catch (Exception)
+            {
+                Session["TokenUsuario"] = null;
+                Response.Redirect("perfilIngreso.aspx");
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
             int perfil = DropDownList1.SelectedIndex;
-            TextBox7.Text = txtGiro.SelectedItem.Text;
+            //TextBox7.Text = txtGiro.SelectedItem.Text;
             switch (perfil)
             {
                 case 1:
@@ -32,8 +49,8 @@ namespace CapaWSPresentacion.perfilAdministrador
                     a.Item.Persona.Email = TextBox5.Text;
                     a.Item.Persona.Telefono = TextBox6.Text;
                     a.Item.Usuario.Clave = TextBox14.Text;
-                    a.Retorno.Token = null; //Session["TokenUsuario"].ToString();
-                    //a = x.PerfilUsuarioClienteCrear(n);
+                    a.Retorno.Token = Session["TokenUsuario"].ToString();
+                    a = x.PerfilUsuarioAdministradorCrear(a);
                     break;
                 case 2:
                     //Empleado
@@ -45,8 +62,8 @@ namespace CapaWSPresentacion.perfilAdministrador
                     em.Item.Persona.Email = TextBox5.Text;
                     em.Item.Persona.Telefono = TextBox6.Text;
                     em.Item.Usuario.Clave = TextBox14.Text;
-                    em.Retorno.Token = null; //Session["TokenUsuario"].ToString();
-                    //e = x.(e);
+                    em.Retorno.Token = Session["TokenUsuario"].ToString();
+                    em = x.PerfilUsuarioEmpleadoCrear(em);
                     break;
                 case 3:
                     //Cliente      
@@ -71,7 +88,7 @@ namespace CapaWSPresentacion.perfilAdministrador
                     n.Item.PerfilUsuario.Persona.Email = TextBox5.Text;
                     n.Item.PerfilUsuario.Persona.Telefono = TextBox6.Text;
                     n.Item.PerfilUsuario.Usuario.Clave = TextBox14.Text;
-                    n.Retorno.Token = null; //Session["TokenUsuario"].ToString();
+                    n.Retorno.Token = Session["TokenUsuario"].ToString();
                     n = x.PerfilUsuarioClienteCrear(n);
                     break;
                 case 4:
@@ -98,7 +115,7 @@ namespace CapaWSPresentacion.perfilAdministrador
                     p.Item.PerfilUsuario.Persona.Email = TextBox5.Text;
                     p.Item.PerfilUsuario.Persona.Telefono = TextBox6.Text;
                     p.Item.PerfilUsuario.Usuario.Clave = TextBox14.Text;
-                    p.Retorno.Token = null; //Session["TokenUsuario"].ToString();   
+                    p.Retorno.Token = Session["TokenUsuario"].ToString();   
                     p = x.PerfilUsuarioProveedorCrear(p);                 
                     break;
                 default:
