@@ -33,7 +33,7 @@ namespace CapaWSPresentacion.perfilAdministrador
                     a.Item.Persona.Telefono = TextBox6.Text;
                     a.Item.Usuario.Clave = TextBox14.Text;
                     a.Retorno.Token = null; //Session["TokenUsuario"].ToString();
-                    //a = x.PerfilUsuarioClienteCrear(n);
+                    a = x.PerfilUsuarioAdministradorCrear(a);
                     break;
                 case 2:
                     //Empleado
@@ -46,7 +46,7 @@ namespace CapaWSPresentacion.perfilAdministrador
                     em.Item.Persona.Telefono = TextBox6.Text;
                     em.Item.Usuario.Clave = TextBox14.Text;
                     em.Retorno.Token = null; //Session["TokenUsuario"].ToString();
-                    //e = x.(e);
+                    em = x.PerfilUsuarioEmpleadoCrear(em);
                     break;
                 case 3:
                     //Cliente      

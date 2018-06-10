@@ -16,7 +16,7 @@ namespace CapaWSPresentacion.perfilAdministrador
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //RescatarDatos();
+            RescatarDatos();
         }
         
         private void RescatarDatos()
