@@ -96,8 +96,6 @@ namespace CapaWSPresentacion.perfilEmpleado
             {
                 //definir donde se mostrara mensaje de error
             }
-         
-
         }
     }
 }

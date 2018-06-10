@@ -696,45 +696,59 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ClienteRescatar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClienteRescatarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ClienteRescatarResult" nillable="true" type="q72:ContenedorClientes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ProvisionCrear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q72:ContenedorProvision" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q73:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionCrearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionCrearResult" nillable="true" type="q73:ContenedorProvision" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionCrearResult" nillable="true" type="q74:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionActualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q74:ContenedorProvision" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q75:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionActualizarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionActualizarResult" nillable="true" type="q75:ContenedorProvision" />
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionActualizarResult" nillable="true" type="q76:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionEliminar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q76:ContenedorProvision" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q77:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionEliminarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionEliminarResult" nillable="true" type="q77:ContenedorProvision" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionEliminarResult" nillable="true" type="q78:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -748,7 +762,7 @@
   <xs:element name="ProvisionRescatarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionRescatarResult" nillable="true" type="q78:ContenedorProvisiones" />
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionRescatarResult" nillable="true" type="q79:ContenedorProvisiones" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

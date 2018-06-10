@@ -204,6 +204,9 @@ namespace CapaServicio
         [OperationContract]
         ContenedorProveedores ProveedorRescatar(string token);
 
+        [OperationContract]
+        ContenedorClientes ClienteRescatar(string token);
+
         //Inicio Provision
         [OperationContract]
         ContenedorProvision ProvisionCrear(ContenedorProvision entrada);

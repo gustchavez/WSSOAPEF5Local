@@ -384,6 +384,12 @@ namespace CapaServicio
             return x.LlamarSPRescatar(token);
         }
 
+        public ContenedorClientes ClienteRescatar(string token)
+        {
+            CRUDCliente x = new CRUDCliente();
+            return x.LlamarSPRescatar(token);
+        }
+
         //CRUD Provision - INI
         public ContenedorProvision ProvisionCrear(ContenedorProvision entrada)
         {

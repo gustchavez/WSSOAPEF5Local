@@ -49,6 +49,7 @@
     <Compile Include="ContenedorCama.cs" />
     <Compile Include="ContenedorCamas.cs" />
     <Compile Include="ContenedorCiudades.cs" />
+    <Compile Include="ContenedorClientes.cs" />
     <Compile Include="ContenedorFacturaCompraCompleta.cs" />
     <Compile Include="ContenedorFacturaPedidoCompleta.cs" />
     <Compile Include="ContenedorFacturasCompraCompleta.cs" />

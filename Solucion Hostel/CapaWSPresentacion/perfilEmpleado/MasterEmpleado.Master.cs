@@ -13,28 +13,15 @@ namespace CapaWSPresentacion.perfilEmpleado
         protected void Page_Load(object sender, EventArgs e)
         {
             Sesion SesionUsuario = (Sesion)Session["SesionUsuario"];
-
-            if (SesionUsuario != null)
+            
+            try
             {
-                try
+                if (SesionUsuario.Perfil == "Empleado")
                 {
-                    if (SesionUsuario.Perfil == "Empleado")
-                    {
-                        lblNombreUsuario.Text = SesionUsuario.Nombre + " " + SesionUsuario.Apellido;
-                        lblPerfilUsuario.Text = SesionUsuario.Perfil;
-                        lblUsuario.Text = SesionUsuario.Usuario; 
-                        //lblbtnLoginStatus.Text = "Cerrar Sesion"; 
-                    }else{
-                        lblNombreUsuario.Text = string.Empty;
-                        lblPerfilUsuario.Text = string.Empty;
-                        lblUsuario.Text = SesionUsuario.Usuario;
-                        Session["TokenUsuario"] = null;
-                        Session["PerfilUsuario"] = null;
-                        Session["SesionUsuario"] = null;
-                    }
-                }
-                catch (Exception)
-                {
+                    lblNombreUsuario.Text = SesionUsuario.Nombre + " " + SesionUsuario.Apellido;
+                    lblPerfilUsuario.Text = SesionUsuario.Perfil;
+                    lblUsuario.Text = SesionUsuario.Usuario; 
+                }else{
                     lblNombreUsuario.Text = string.Empty;
                     lblPerfilUsuario.Text = string.Empty;
                     lblUsuario.Text = SesionUsuario.Usuario;
@@ -43,7 +30,7 @@ namespace CapaWSPresentacion.perfilEmpleado
                     Session["SesionUsuario"] = null;
                 }
             }
-            else
+            catch (Exception)
             {
                 lblNombreUsuario.Text = string.Empty;
                 lblPerfilUsuario.Text = string.Empty;
