@@ -246,6 +246,10 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioAdministrador.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioEmpleado.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorClientes.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.PerfilUsuarioAdministrador.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.PerfilUsuarioCliente.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.PerfilUsuarioEmpleado.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.PerfilUsuarioProveedor.datasource" />
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>

@@ -33,15 +33,89 @@ namespace CapaWSPresentacion.perfilAdministrador
         }
         private void RescatarDatosProveedor()
         {
-            
+            String rutUsuario = DropDownList2.SelectedValue;
+            String token = Session["TokenUsuario"].ToString();
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            PerfilUsuarioProveedor a = new PerfilUsuarioProveedor();
+            a = x.PerfilUsuarioProveedorBuscarPorRut(rutUsuario, token);
+            TextBox7.Text = a.Proveedor.Rut;
+            TextBox8.Text = a.PerfilUsuario.Empresa.RazonSocial;
+            txtGiro.SelectedItem.Text = a.PerfilUsuario.Empresa.Rubro;
+            TextBox9.Text = a.PerfilUsuario.Empresa.Email;
+            TextBox10.Text = a.PerfilUsuario.Empresa.Telefono;
+            //a.PerfilUsuario.Direccion.CodPais = 56;
+            //a.PerfilUsuario.Direccion.CodPostal = "Codigo postal";
+            txtNombreCiudad.SelectedItem.Text = a.PerfilUsuario.Direccion.NombreCiudad;
+            txtComuna.SelectedItem.Text = a.PerfilUsuario.Direccion.Comuna;
+            //a.PerfilUsuario.Direccion.Calle = "";
+            //a.PerfilUsuario.Direccion.Numero = 0;
+            //a.PerfilUsuario.Empresa.Logo = "Logo";
+            TextBox1.Text = a.PerfilUsuario.Persona.Rut;
+            TextBox2.Text = a.PerfilUsuario.Persona.Nombre;
+            TextBox3.Text = a.PerfilUsuario.Persona.Apellido;
+            TextBox4.Text = a.PerfilUsuario.Persona.FechaNacimiento.ToString();
+            TextBox5.Text = a.PerfilUsuario.Persona.Email;
+            TextBox6.Text = a.PerfilUsuario.Persona.Telefono;
+            TextBox14.Text = a.PerfilUsuario.Usuario.Clave;
         }
         private void RescatarDatosCliente()
         {
-            
+            String rutUsuario = DropDownList2.SelectedValue;
+            String token = Session["TokenUsuario"].ToString();
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            PerfilUsuarioCliente a = new PerfilUsuarioCliente();
+            a = x.PerfilUsuarioClienteBuscarPorRut(rutUsuario, token);
+            TextBox7.Text = a.Cliente.Rut;
+            TextBox8.Text = a.PerfilUsuario.Empresa.RazonSocial;
+            txtGiro.SelectedItem.Text = a.PerfilUsuario.Empresa.Rubro;
+            TextBox9.Text = a.PerfilUsuario.Empresa.Email;
+            TextBox10.Text = a.PerfilUsuario.Empresa.Telefono;
+            //a.PerfilUsuario.Direccion.CodPais = 56;
+            //a.PerfilUsuario.Direccion.CodPostal = "Codigo postal";
+            txtNombreCiudad.SelectedItem.Text = a.PerfilUsuario.Direccion.NombreCiudad;
+            txtComuna.SelectedItem.Text = a.PerfilUsuario.Direccion.Comuna;
+            //a.PerfilUsuario.Direccion.Calle = "";
+            //a.PerfilUsuario.Direccion.Numero = 0;
+            //a.PerfilUsuario.Empresa.Logo = "Logo";
+            TextBox1.Text = a.PerfilUsuario.Persona.Rut;
+            TextBox2.Text = a.PerfilUsuario.Persona.Nombre;
+            TextBox3.Text = a.PerfilUsuario.Persona.Apellido;
+            TextBox4.Text = a.PerfilUsuario.Persona.FechaNacimiento.ToString();
+            TextBox5.Text = a.PerfilUsuario.Persona.Email;
+            TextBox6.Text = a.PerfilUsuario.Persona.Telefono;
+            TextBox14.Text = a.PerfilUsuario.Usuario.Clave;
         }
         private void RescatarDatosEmpleado()
         {
-           
+            String rutUsuario = DropDownList2.SelectedValue;
+            String token = Session["TokenUsuario"].ToString();
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            PerfilUsuarioEmpleado a = new PerfilUsuarioEmpleado();
+            a = x.PerfilUsuarioEmpleadoBuscarPorRut(rutUsuario, token);
+            TextBox1.Text = a.Persona.Rut;
+            TextBox2.Text = a.Persona.Nombre;
+            TextBox3.Text = a.Persona.Apellido;
+            //TextBox4.Text = a.Persona.FechaNacimiento.ToString();
+            TextBox5.Text = a.Persona.Email;
+            TextBox6.Text = a.Persona.Telefono;
+            TextBox14.Text = a.Usuario.Clave;
+            TextBox13.Text = a.Usuario.Nombre;
+        }
+        private void RescatarDatosAdministrador()
+        {
+            String rutUsuario = DropDownList2.SelectedValue;
+            String token = Session["TokenUsuario"].ToString();
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            PerfilUsuarioAdministrador a = new PerfilUsuarioAdministrador();
+            a = x.PerfilUsuarioAdministradorBuscarPorRut(rutUsuario,token);
+            TextBox1.Text = a.Persona.Rut;
+            TextBox2.Text = a.Persona.Nombre;
+            TextBox3.Text = a.Persona.Apellido;
+            //TextBox4.Text = a.Persona.FechaNacimiento.ToString();
+            TextBox5.Text = a.Persona.Email;
+            TextBox6.Text = a.Persona.Telefono;
+            TextBox14.Text = a.Usuario.Clave;
+            TextBox13.Text = a.Usuario.Nombre;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -133,6 +207,25 @@ namespace CapaWSPresentacion.perfilAdministrador
                 default:
                     break;
             }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            ContenedorPerfilUsuarioAdministrador a = new ContenedorPerfilUsuarioAdministrador();
+
+            //a.Item.Persona.Rut = TextBox1.Text;
+            //a.Item.Persona.Nombre = TextBox2.Text;
+            //a.Item.Persona.Apellido = TextBox3.Text;
+            //a.Item.Persona.FechaNacimiento = DateTime.Parse(TextBox4.Text);
+            //a.Item.Persona.Email = TextBox5.Text;
+            //a.Item.Persona.Telefono = TextBox6.Text;
+            //a.Item.Usuario.Clave = TextBox14.Text;
+            a.Item.Usuario.Nombre = TextBox13.Text;
+            a.Retorno.Token = Session["TokenUsuario"].ToString();
+
+            x.PerfilUsuarioAdministradorEliminar(a);
         }
     }
 }

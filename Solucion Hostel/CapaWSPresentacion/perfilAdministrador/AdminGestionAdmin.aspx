@@ -314,7 +314,7 @@
 			<asp:Button ID="Button1" runat="server" Text="MODIFICAR" CssClass="SubmitTotal2" OnClick="Button1_Click"/>
 			</div>
 			<div class="Casilla2-1">
-			<asp:Button ID="Button2" runat="server" Text="ELIMINAR" CssClass="SubmitTotal2" />
+			<asp:Button ID="Button2" runat="server" Text="ELIMINAR" CssClass="SubmitTotal2" OnClick="Button2_Click" />
 			</div>	
 	</div>
 		

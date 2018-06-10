@@ -57,6 +57,12 @@ namespace CapaServicio
             return x.LlamarSPRescatar(token);
         }
 
+        public PerfilUsuarioCliente PerfilUsuarioClienteBuscarPorRut(String rut, String token)
+        {
+            CRUDPerfilUsuarioCliente x = new CRUDPerfilUsuarioCliente();
+            return x.buscarClientePorRut(rut,token);
+        }
+
         //CRUD PerfilUsuarioCliente - FIN
 
         //CRUD PerfilUsuarioProveedor - INI
@@ -77,6 +83,11 @@ namespace CapaServicio
             CRUDPerfilUsuarioProveedor x = new CRUDPerfilUsuarioProveedor();
             return x.LlamarSPRescatar(token);
         }
+        public PerfilUsuarioProveedor PerfilUsuarioProveedorBuscarPorRut(String rut, String token)
+        {
+            CRUDPerfilUsuarioProveedor x = new CRUDPerfilUsuarioProveedor();
+            return x.buscarProveedorPorRut(rut,token);
+        }
         //CRUD PerfilUsuarioProveedor - FIN
 
         //CRUD PerfilUsuarioEmpleado - INI
@@ -91,6 +102,11 @@ namespace CapaServicio
             CRUDPerfilUsuarioEmpleado x = new CRUDPerfilUsuarioEmpleado();
             x.LlamarSPActualizar(entrada);
             return entrada;
+        }
+        public PerfilUsuarioEmpleado PerfilUsuarioEmpleadoBuscarPorRut(String rut, String token)
+        {
+            CRUDPerfilUsuarioEmpleado x = new CRUDPerfilUsuarioEmpleado();
+            return x.buscarEmpleadoPorRut(rut,token);
         }
         //public ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token)
         //{
@@ -111,6 +127,16 @@ namespace CapaServicio
             CRUDPerfilUsuarioAdministrador x = new CRUDPerfilUsuarioAdministrador();
             x.LlamarSPActualizar(entrada);
             return entrada;
+        }
+        public bool PerfilUsuarioAdministradorEliminar(ContenedorPerfilUsuarioAdministrador nPUA)
+        {
+            CRUDPerfilUsuarioAdministrador x = new CRUDPerfilUsuarioAdministrador();
+            return x.eliminarUsuario(nPUA);
+        }
+        public PerfilUsuarioAdministrador PerfilUsuarioAdministradorBuscarPorRut(String rut, String token)
+        {
+            CRUDPerfilUsuarioAdministrador x = new CRUDPerfilUsuarioAdministrador();
+            return x.buscarAdministradorPorRut(rut, token);
         }
         //public ContenedorPerfilUsuarioAdministradores PerfilUsuarioAdministradorRescatar(string token)
         //{

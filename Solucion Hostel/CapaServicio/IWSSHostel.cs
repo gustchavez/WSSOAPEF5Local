@@ -33,6 +33,9 @@ namespace CapaServicio
 
         [OperationContract]
         ContenedorPerfilUsuarioClientes PerfilUsuarioClienteRescatar(string token);
+
+        [OperationContract]
+        PerfilUsuarioCliente PerfilUsuarioClienteBuscarPorRut(String rut, String token);
         //Fin PerfilUsuarioCliente
 
         //Inicio PerfilUsuarioProveedor
@@ -44,6 +47,9 @@ namespace CapaServicio
 
         [OperationContract]
         ContenedorPerfilUsuarioProveedores PerfilUsuarioProveedorRescatar(string token);
+
+        [OperationContract]
+        PerfilUsuarioProveedor PerfilUsuarioProveedorBuscarPorRut(String rut, String token);
         //Fin PerfilUsuarioProveedor
 
         //Inicio PerfilUsuarioEmpleado
@@ -53,6 +59,8 @@ namespace CapaServicio
         [OperationContract]
         ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoActualizar(ContenedorPerfilUsuarioEmpleado entrada);
 
+        [OperationContract]
+        PerfilUsuarioEmpleado PerfilUsuarioEmpleadoBuscarPorRut(String rut, String token);
         //[OperationContract]
         //ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token);
         //Fin PerfilUsuarioEmpleado
@@ -63,6 +71,12 @@ namespace CapaServicio
 
         [OperationContract]
         ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorActualizar(ContenedorPerfilUsuarioAdministrador entrada);
+
+        [OperationContract]
+        bool PerfilUsuarioAdministradorEliminar(ContenedorPerfilUsuarioAdministrador nPUA);
+
+        [OperationContract]
+        PerfilUsuarioAdministrador PerfilUsuarioAdministradorBuscarPorRut(String rut, String token);
 
         //[OperationContract]
         //ContenedorPerfilUsuarioAdministradores PerfilUsuarioAdministradorRescatar(string token);

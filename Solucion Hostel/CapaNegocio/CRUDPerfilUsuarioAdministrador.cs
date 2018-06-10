@@ -93,7 +93,63 @@ namespace CapaNegocio
 
             return nPUA;
         }
-        
+        public bool eliminarUsuario(ContenedorPerfilUsuarioAdministrador nPUA)
+        {
+            if (ValidarPerfilCUD(nPUA.Retorno.Token))
+            {
+                try
+                {
+                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+                    var eliminar = conex.USUARIO.SingleOrDefault(b => b.NOMBRE == nPUA.Item.Usuario.Nombre);
+                    eliminar.ESTADO = "desactivado";
+                    conex.SaveChanges();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public PerfilUsuarioAdministrador buscarAdministradorPorRut(String  rut, String token)
+        {
+            if (ValidarPerfilCUD(token))
+            {
+                try
+                {
+                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+                    var usuario = conex.USUARIO.SingleOrDefault(b => b.RUT_PERSONA == rut);
+                    var persona = conex.PERSONA.SingleOrDefault(b => b.RUT == rut);
+                    PerfilUsuarioAdministrador pAdmin = new PerfilUsuarioAdministrador();
+                    pAdmin.Persona.Nombre = persona.NOMBRE;
+                    pAdmin.Persona.Apellido = persona.APELLIDO;
+                    pAdmin.Persona.Email = persona.EMAIL;
+                    pAdmin.Persona.FechaNacimiento = persona.NACIMIENTO;
+                    pAdmin.Persona.Rut = persona.RUT;
+                    pAdmin.Persona.Telefono = persona.TELEFONO;
+                    pAdmin.Usuario.Estado = usuario.ESTADO;
+                    pAdmin.Usuario.Clave = usuario.CLAVE;
+                    pAdmin.Usuario.Id = usuario.ID;
+                    pAdmin.Usuario.Nombre = usuario.NOMBRE;
+                    pAdmin.Usuario.Perfil = usuario.PERFIL;
+                    pAdmin.Usuario.RutPersona = usuario.RUT_PERSONA;
+                    return pAdmin;
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         private bool ValidarPerfilCUD(string token)
         {
             bool retorno = false;
