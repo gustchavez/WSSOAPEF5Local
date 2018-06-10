@@ -57,6 +57,7 @@ namespace CapaWSPresentacion.perfilEmpleado
 
             ContenedorPerfilUsuarioProveedor n = new ContenedorPerfilUsuarioProveedor();
 
+            
             n.Item.Proveedor.Rut = txtRutEmpresa.Text;
             n.Item.PerfilUsuario.Empresa.RazonSocial = txtRazonSocial.Text;
             n.Item.PerfilUsuario.Empresa.Rubro = txtNombreCiudad.Text;
