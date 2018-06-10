@@ -15,7 +15,7 @@ namespace CapaNegocio
 
         }
 
-        public ContenedorPerfilUsuarioAdministrador LlamarSPCrear(ContenedorPerfilUsuarioAdministrador nPUA)
+        public ContenedorPerfilUsuarioAdministrador LlamarSPCrearAdmin(ContenedorPerfilUsuarioAdministrador nPUA)
         {
            if (ValidarPerfilCUD(nPUA.Retorno.Token))
             {
