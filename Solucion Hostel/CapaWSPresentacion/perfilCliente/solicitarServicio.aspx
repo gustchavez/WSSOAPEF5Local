@@ -124,10 +124,8 @@
              }
         </script>
 
-     
-
-
-      <form id="form1" runat="server">
+   
+    <form id="form1" runat="server">
 
 	<!--Fin Menu-->
 	<div class="columna1">
@@ -1079,7 +1077,7 @@
         <div class="columna3">            
 			<div class="casillaTotal">
 			
-        
+                <asp:Button ID="Siguiente" runat="server" Text="Siguiente"  CssClass="SubmitTotal" OnClick="Siguiente_Click1"/>
 
             </div>
 		</div>
