@@ -217,5 +217,19 @@ namespace CapaServicio
         [OperationContract]
         ContenedorProvisiones ProvisionRescatar(string token);
         //Fin Provision
+        //Inicio Admin
+        [OperationContract]
+        ContenedorPerfilUsuarioAdministrador LlamarSPCrear(ContenedorPerfilUsuarioAdministrador entrada);
+
+        [OperationContract]
+        ContenedorPerfilUsuarioAdministrador LlamarSPActualizar(ContenedorPerfilUsuarioAdministrador entrada);
+        //Fin Admin
+        //Inicio Empleado
+        [OperationContract]
+        ContenedorPerfilUsuarioEmpleado LlamarSPCrear(ContenedorPerfilUsuarioEmpleado entrada);
+
+        [OperationContract]
+        ContenedorPerfilUsuarioEmpleado LlamarSPActualizar(ContenedorPerfilUsuarioEmpleado entrada);
+        //Fin Empleado
     }
 }

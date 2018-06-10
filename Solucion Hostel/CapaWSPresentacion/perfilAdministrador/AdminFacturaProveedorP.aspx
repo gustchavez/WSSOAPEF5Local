@@ -45,7 +45,8 @@
 				<td>13/03/2018</td>
 				<td>Debito</td>
 				<td>Proveedor</td>
-				<td> <a href="#"> <img src="/scripts/logPdf.png"></a></td>
+				<td> <a href="#"> <img src="/scripts/logPdf.png"><asp:Button ID="generarPDF" runat="server" OnClick="generarPDF_Click" Text="Generar PDF" />
+                    </a></td>
 			</tr>
 		</table>
 	</div>	
