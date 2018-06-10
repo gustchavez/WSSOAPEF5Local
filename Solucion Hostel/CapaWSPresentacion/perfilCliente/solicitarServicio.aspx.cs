@@ -151,10 +151,13 @@ namespace CapaWSPresentacion.perfilCliente
             if (valor2 >= valor1)
             {
                 MostrarCasillas.Enabled = true;
+                BtnSiguiente.Enabled = true;
+
             }
             else
             {
                 MostrarCasillas.Enabled = false;
+                BtnSiguiente.Enabled = true;
             }
         }
 

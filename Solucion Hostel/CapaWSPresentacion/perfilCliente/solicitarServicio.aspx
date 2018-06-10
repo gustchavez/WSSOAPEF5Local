@@ -1077,7 +1077,7 @@
         <div class="columna3">            
 			<div class="casillaTotal">
 			
-                <asp:Button ID="Siguiente" runat="server" Text="Siguiente"  CssClass="SubmitTotal" OnClick="Siguiente_Click1"/>
+                <asp:Button ID="BtnSiguiente" runat="server" Text="Siguiente"  CssClass="SubmitTotal" OnClick="Siguiente_Click1" Enabled="true"/>
 
             </div>
 		</div>
