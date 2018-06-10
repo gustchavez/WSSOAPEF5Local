@@ -22,22 +22,31 @@ namespace CapaWSPresentacion.perfilEmpleado {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control ddlClientes.
+        /// Control ddlTipoEmpresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlClientes;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoEmpresa;
         
         /// <summary>
-        /// Control ddlOrdenesCompra.
+        /// Control ddlEmpresas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlOrdenesCompra;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEmpresas;
+        
+        /// <summary>
+        /// Control ddlOrdenes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlOrdenes;
         
         /// <summary>
         /// Control txtNumeroFactura.
@@ -67,22 +76,22 @@ namespace CapaWSPresentacion.perfilEmpleado {
         protected global::System.Web.UI.WebControls.TextBox txtValorBruto;
         
         /// <summary>
-        /// Control txtIVA.
+        /// Control txtValorIVA.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIVA;
+        protected global::System.Web.UI.WebControls.TextBox txtValorIVA;
         
         /// <summary>
-        /// Control txtNeto.
+        /// Control txtValorNeto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNeto;
+        protected global::System.Web.UI.WebControls.TextBox txtValorNeto;
         
         /// <summary>
         /// Control txtObservacion.
@@ -110,15 +119,6 @@ namespace CapaWSPresentacion.perfilEmpleado {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlMedioPago;
-        
-        /// <summary>
-        /// Control DropDownList3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
         
         /// <summary>
         /// Control txtMonto.
