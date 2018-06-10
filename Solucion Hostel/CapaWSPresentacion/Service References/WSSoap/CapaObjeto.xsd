@@ -6,7 +6,10 @@
       <xs:element minOccurs="0" name="Clave" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Perfil" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RazonSocial" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+      <xs:element minOccurs="0" name="RutEmpresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RutPersona" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
