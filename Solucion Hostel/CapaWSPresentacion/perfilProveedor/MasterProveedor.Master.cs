@@ -12,32 +12,22 @@ namespace CapaWSPresentacion.perfilProveedor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             Sesion SesionUsuario = (Sesion)Session["SesionUsuario"];
 
-            if (SesionUsuario != null)
+            try
             {
-                try
+                if (SesionUsuario.Perfil == "Proveedor")
                 {
-                    if (SesionUsuario.Perfil == "Proveedor")
-                    {
-                        lblNombreUsuario.Text = SesionUsuario.Nombre + " " + SesionUsuario.Apellido;
-                        lblPerfilUsuario.Text = SesionUsuario.Perfil;
-                        lblUsuario.Text = SesionUsuario.Usuario;
-                        //lblbtnLoginStatus.Text = "Cerrar Sesion"; 
-                    }
-                    else {
-                        lblNombreUsuario.Text = string.Empty;
-                        lblPerfilUsuario.Text = string.Empty;
-                        lblUsuario.Text = SesionUsuario.Usuario;
-                        Session["TokenUsuario"] = null;
-                        Session["PerfilUsuario"] = null;
-                        Session["SesionUsuario"] = null;
-                    }
+                    lblRutEmpresa.Text = SesionUsuario.RutEmpresa;
+                    lblRazonSocial.Text = SesionUsuario.RazonSocial;
+                    //lblNombreUsuario.Text = SesionUsuario.Nombre + " " + SesionUsuario.Apellido;
+                    lblPerfilUsuario.Text = SesionUsuario.Perfil;
+                    lblUsuario.Text = SesionUsuario.Usuario;
                 }
-                catch (Exception)
-                {
-                    lblNombreUsuario.Text = string.Empty;
+                else {
+                    lblRutEmpresa.Text = string.Empty;
+                    lblRazonSocial.Text = string.Empty;
+                    //lblNombreUsuario.Text = string.Empty;
                     lblPerfilUsuario.Text = string.Empty;
                     lblUsuario.Text = SesionUsuario.Usuario;
                     Session["TokenUsuario"] = null;
@@ -45,9 +35,11 @@ namespace CapaWSPresentacion.perfilProveedor
                     Session["SesionUsuario"] = null;
                 }
             }
-            else
+            catch (Exception)
             {
-                lblNombreUsuario.Text = string.Empty;
+                lblRutEmpresa.Text = string.Empty;
+                lblRazonSocial.Text = string.Empty;
+                //lblNombreUsuario.Text = string.Empty;
                 lblPerfilUsuario.Text = string.Empty;
                 lblUsuario.Text = SesionUsuario.Usuario;
                 Session["TokenUsuario"] = null;
