@@ -1182,5 +1182,22 @@ namespace CapaDato
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_VALIDAR_LOGIN", p_IN_NOMBREParameter, p_IN_CLAVEParameter, p_OUT_PERFIL, p_OUT_RUT_EMPRESA, p_OUT_RAZON_SOCIAL, p_OUT_RUT_PERSONA, p_OUT_NOMBRE, p_OUT_APELLIDO, p_OUT_CODRET, p_OUT_GLSRET);
         }
+    
+        public virtual int SP_ACT_INGRESO_HUESPED(Nullable<decimal> p_IN_NUMERO_OC, string p_IN_RUT_PERSONA, string p_IN_CONFIRMADO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_NUMERO_OCParameter = p_IN_NUMERO_OC.HasValue ?
+                new ObjectParameter("P_IN_NUMERO_OC", p_IN_NUMERO_OC) :
+                new ObjectParameter("P_IN_NUMERO_OC", typeof(decimal));
+    
+            var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
+                new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
+                new ObjectParameter("P_IN_RUT_PERSONA", typeof(string));
+    
+            var p_IN_CONFIRMADOParameter = p_IN_CONFIRMADO != null ?
+                new ObjectParameter("P_IN_CONFIRMADO", p_IN_CONFIRMADO) :
+                new ObjectParameter("P_IN_CONFIRMADO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACT_INGRESO_HUESPED", p_IN_NUMERO_OCParameter, p_IN_RUT_PERSONAParameter, p_IN_CONFIRMADOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
     }
 }

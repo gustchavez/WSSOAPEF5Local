@@ -150,6 +150,9 @@ namespace CapaServicio
 
         [OperationContract]
         ContenedorOrdenesCompraCompleta OrdenCompraCompletaRescatar(string token);
+
+        [OperationContract]
+        ContenedorAlojamiento AlojConfirHueActualizar(ContenedorAlojamiento entrada);
         //Fin OrdenCompraCompleta
 
         //Ini OrdenPedidoCompleta

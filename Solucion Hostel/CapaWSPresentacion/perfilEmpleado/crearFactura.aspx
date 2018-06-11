@@ -15,18 +15,18 @@
 	
             <div class="Casilla2-1">
 				<h4>Tipo Empresa</h4>		
-                <asp:DropDownList ID="ddlTipoEmpresa" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlTipoEmpresa_SelectedIndexChanged">
+                <asp:DropDownList ID="ddlTipoEmpresa" CssClass="selectO" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlTipoEmpresa_SelectedIndexChanged">
                     <asp:ListItem>Proveedor</asp:ListItem>
                     <asp:ListItem>Cliente</asp:ListItem>
                 </asp:DropDownList>
 			</div>
 		    <div class="Casilla2-1">
 			<h4>Empresas</h4>	
-                <asp:DropDownList ID="ddlEmpresas" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEmpresas_SelectedIndexChanged"></asp:DropDownList>
+                <asp:DropDownList ID="ddlEmpresas" CssClass="selectO" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEmpresas_SelectedIndexChanged"></asp:DropDownList>
 			</div>
             <div class="Casilla2-1">
 			<h4>Ordenes</h4>	
-                <asp:DropDownList ID="ddlOrdenes" runat="server">
+                <asp:DropDownList ID="ddlOrdenes" CssClass="selectO" runat="server">
                     <asp:ListItem Value="de Compra">Compra</asp:ListItem>
                     <asp:ListItem Value="de Venta">Pedido</asp:ListItem>
                 </asp:DropDownList>
@@ -61,7 +61,7 @@
 			</div>
             <div class="Casilla2-1">
 				<h4>Medio de Pago</h4>		
-                <asp:DropDownList ID="ddlMedioPago" runat="server">
+                <asp:DropDownList ID="ddlMedioPago" CssClass="selectO" runat="server">
                     <asp:ListItem Value="Debito">Débito</asp:ListItem>
                     <asp:ListItem Value="Credito">Crédito</asp:ListItem>
                     <asp:ListItem Value="Transferencia electronica">Transferencia Electrónica</asp:ListItem>

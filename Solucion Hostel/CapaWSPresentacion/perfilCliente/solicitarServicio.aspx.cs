@@ -56,7 +56,7 @@ namespace CapaWSPresentacion.perfilCliente
 
             OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
 
-            nOCC.Cabecera.RutCliente = txtRutPersona.Text;
+            //nOCC.Cabecera.RutCliente = txtRutPersona.Text;
             nOCC.Cabecera.Monto = 1000;//realizar calculo de las habitaciones seleccionadas.
             nOCC.Cabecera.Observaciones = "Reserva habitación";
             nOCC.Cabecera.Ubicacion = "Nose";
@@ -67,14 +67,14 @@ namespace CapaWSPresentacion.perfilCliente
             for (int i = 0; i < CantidadHuespedes; i++)
             {
                 OrdenCompraDetalle nOCD = new OrdenCompraDetalle();
-                nOCD.Alojamiento.RutPersona = item0.Text;
-                nOCD.Alojamiento.FechaIngreso = DateTime.Parse(item1.Text);
-                nOCD.Alojamiento.FechaEgreso = DateTime.Parse(item2.Text);
+                //nOCD.Alojamiento.RutPersona = item0.Text;
+                //nOCD.Alojamiento.FechaIngreso = DateTime.Parse(item1.Text);
+                //nOCD.Alojamiento.FechaEgreso = DateTime.Parse(item2.Text);
                 nOCD.Alojamiento.CodigoCama = 1;
                 nOCD.Alojamiento.Observaciones = "bla bla";
                 nOCD.Comida.CodigoPlato = 1;
                 nOCD.Comida.Observaciones = "bla bla";
-                nOCD.Comida.FechaRecepcion = DateTime.Now
+                nOCD.Comida.FechaRecepcion = DateTime.Now;
                 nOCC.ListaDetalle.Add(nOCD);
             }
 

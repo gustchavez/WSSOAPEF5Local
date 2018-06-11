@@ -407,6 +407,13 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfOrdenCompraCompleta" nillable="true" type="tns:ArrayOfOrdenCompraCompleta" />
+  <xs:complexType name="ContenedorAlojamiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:Alojamiento" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorAlojamiento" nillable="true" type="tns:ContenedorAlojamiento" />
   <xs:complexType name="ContenedorOrdenPedidoCompleta">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:OrdenPedidoCompleta" />

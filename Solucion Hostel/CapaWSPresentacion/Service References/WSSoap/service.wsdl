@@ -223,6 +223,12 @@
   <wsdl:message name="IWSSHostel_OrdenCompraCompletaRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:OrdenCompraCompletaRescatarResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_AlojConfirHueActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlojConfirHueActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_AlojConfirHueActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlojConfirHueActualizarResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_OrdenPedidoCompletaCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaCrear" />
   </wsdl:message>
@@ -511,6 +517,10 @@
     <wsdl:operation name="OrdenCompraCompletaRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatar" message="tns:IWSSHostel_OrdenCompraCompletaRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatarResponse" message="tns:IWSSHostel_OrdenCompraCompletaRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlojConfirHueActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/AlojConfirHueActualizar" message="tns:IWSSHostel_AlojConfirHueActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/AlojConfirHueActualizarResponse" message="tns:IWSSHostel_AlojConfirHueActualizar_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="OrdenPedidoCompletaCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear" message="tns:IWSSHostel_OrdenPedidoCompletaCrear_InputMessage" />
@@ -928,6 +938,15 @@
     </wsdl:operation>
     <wsdl:operation name="OrdenCompraCompletaRescatar">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlojConfirHueActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/AlojConfirHueActualizar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

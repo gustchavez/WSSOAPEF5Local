@@ -285,6 +285,11 @@ namespace CapaServicio
             CRUDOrdenCompraCompleta x = new CRUDOrdenCompraCompleta();
             return x.LlamarSPRescatar(token);
         }
+        public ContenedorAlojamiento AlojConfirHueActualizar(ContenedorAlojamiento entrada)
+        {
+            CRUDOrdenCompraCompleta x = new CRUDOrdenCompraCompleta();
+            return x.LlamarSPActIngHuesped(entrada);
+        }
         //Fin OrdenCompraCompleta
 
         //Ini OrdenPedidoCompleta
@@ -300,6 +305,7 @@ namespace CapaServicio
             CRUDOrdenPedidoCompleta x = new CRUDOrdenPedidoCompleta();
             return x.LlamarSPRescatar(token);
         }
+        
         //Fin OrdenPedidoCompleta
 
 

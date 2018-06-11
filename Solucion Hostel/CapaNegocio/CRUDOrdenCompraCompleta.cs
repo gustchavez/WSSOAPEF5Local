@@ -123,7 +123,8 @@ namespace CapaNegocio
                     var collection = (from cab in conex.ORDEN_DE_COMPRA
                                       join det_aloj in conex.ALOJAMIENTO on cab.NUMERO equals det_aloj.NUMERO_OC
                                       join det_comi in conex.COMIDA      on cab.NUMERO equals det_comi.NUMERO_OC
-                                      orderby cab.RUT_CLIENTE, cab.NUMERO
+                                      where det_comi.RUT_PERSONA == det_aloj.RUT_PERSONA
+                                      orderby cab.NUMERO
                                       select new
                                       {
                                           RutCliente  = cab.RUT_CLIENTE,
@@ -160,6 +161,7 @@ namespace CapaNegocio
                             //Se crea el detalle Orden
                             OrdenCompraDetalle m = new OrdenCompraDetalle();
                             m.Alojamiento.NumerOrdenCompra = item.NumeroOC;
+                            m.Alojamiento.RutPersona = item.RutPersona;
                             m.Alojamiento.FechaIngreso = item.FecIngAloj;
                             m.Alojamiento.FechaEgreso = (item.FecEgrAloj == null) ? DateTime.MinValue : (DateTime)item.FecEgrAloj;
                             m.Alojamiento.RegistroDias = (item.CanDiasAloj == null) ? int.MinValue : (int)item.CanDiasAloj;
@@ -180,6 +182,7 @@ namespace CapaNegocio
                             //Se crea el detalle Orden
                             OrdenCompraDetalle m = new OrdenCompraDetalle();
                             m.Alojamiento.NumerOrdenCompra = item.NumeroOC;
+                            m.Alojamiento.RutPersona = item.RutPersona;
                             m.Alojamiento.FechaIngreso = item.FecIngAloj;
                             m.Alojamiento.FechaEgreso = (item.FecEgrAloj == null) ? DateTime.MinValue : (DateTime)item.FecEgrAloj;
                             m.Alojamiento.RegistroDias = (item.CanDiasAloj == null) ? int.MinValue : (int)item.CanDiasAloj;
@@ -237,6 +240,41 @@ namespace CapaNegocio
                 retorno = true;
             }
             return retorno;
+        }
+
+        public ContenedorAlojamiento LlamarSPActIngHuesped(ContenedorAlojamiento aA)
+        {
+            if (ValidarPerfilCUD(aA.Retorno.Token))
+            {
+                var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
+                var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
+
+                CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                conex.SP_ACT_INGRESO_HUESPED
+                    ( aA.Item.NumerOrdenCompra
+                    , aA.Item.RutPersona
+                    , aA.Item.Confirmado
+                    , p_OUT_CODRET
+                    , p_OUT_GLSRET
+                    );
+                try
+                {
+                    aA.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
+                    aA.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                }
+                catch (Exception)
+                {
+                    aA.Retorno.Codigo = 1011;
+                    aA.Retorno.Glosa = "Error actualizacion Ingreso Huesped";
+                }
+            }
+            else {
+                aA.Retorno.Codigo = 100;
+                aA.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+
+            return aA;
         }
     }
 }

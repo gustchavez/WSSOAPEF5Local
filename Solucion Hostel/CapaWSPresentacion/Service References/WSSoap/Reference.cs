@@ -231,6 +231,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenesCompraCompleta> OrdenCompraCompletaRescatarAsync(string token);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/AlojConfirHueActualizar", ReplyAction="http://tempuri.org/IWSSHostel/AlojConfirHueActualizarResponse")]
+        CapaObjeto.ContenedorAlojamiento AlojConfirHueActualizar(CapaObjeto.ContenedorAlojamiento entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/AlojConfirHueActualizar", ReplyAction="http://tempuri.org/IWSSHostel/AlojConfirHueActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorAlojamiento> AlojConfirHueActualizarAsync(CapaObjeto.ContenedorAlojamiento entrada);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrearResponse")]
         CapaObjeto.ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(CapaObjeto.ContenedorOrdenPedidoCompleta entrada);
         
@@ -689,6 +695,14 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenesCompraCompleta> OrdenCompraCompletaRescatarAsync(string token) {
             return base.Channel.OrdenCompraCompletaRescatarAsync(token);
+        }
+        
+        public CapaObjeto.ContenedorAlojamiento AlojConfirHueActualizar(CapaObjeto.ContenedorAlojamiento entrada) {
+            return base.Channel.AlojConfirHueActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorAlojamiento> AlojConfirHueActualizarAsync(CapaObjeto.ContenedorAlojamiento entrada) {
+            return base.Channel.AlojConfirHueActualizarAsync(entrada);
         }
         
         public CapaObjeto.ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(CapaObjeto.ContenedorOrdenPedidoCompleta entrada) {
