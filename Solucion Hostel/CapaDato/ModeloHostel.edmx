@@ -828,11 +828,10 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_IN_EGRESO" Type="date" Mode="In" />
           <Parameter Name="P_IN_OBS_ALOJAMIENTO" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_RUT_PERSONA" Type="varchar2" Mode="In" />
-          <Parameter Name="P_IN_CODIGO_CAMA" Type="number" Mode="In" />
+          <Parameter Name="P_IN_HAB_CAPACIDAD" Type="number" Mode="In" />
           <Parameter Name="P_IN_RECEPCION" Type="date" Mode="In" />
           <Parameter Name="P_IN_OBS_COMIDA" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_TIPO_SERVICIO" Type="varchar2" Mode="In" />
-          <Parameter Name="P_IN_CODIGO_PLATO" Type="number" Mode="In" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
         </Function>
@@ -1484,20 +1483,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SP_CREAR_DET_RESERVA">
-            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_INGRESO" Mode="In" Type="DateTime" />
-            <Parameter Name="P_IN_EGRESO" Mode="In" Type="DateTime" />
-            <Parameter Name="P_IN_OBS_ALOJAMIENTO" Mode="In" Type="String" />
-            <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
-            <Parameter Name="P_IN_CODIGO_CAMA" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_RECEPCION" Mode="In" Type="DateTime" />
-            <Parameter Name="P_IN_OBS_COMIDA" Mode="In" Type="String" />
-            <Parameter Name="P_IN_TIPO_SERVICIO" Mode="In" Type="String" />
-            <Parameter Name="P_IN_CODIGO_PLATO" Mode="In" Type="Decimal" />
-            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
-            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="SP_CREAR_DET_PEDIDO">
             <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
             <Parameter Name="P_IN_CANTIDAD" Mode="In" Type="Decimal" />
@@ -1699,6 +1684,19 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_IN_NUMERO_OC" Mode="In" Type="Decimal" />
             <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
             <Parameter Name="P_IN_CONFIRMADO" Mode="In" Type="String" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREAR_DET_RESERVA">
+            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_INGRESO" Mode="In" Type="DateTime" />
+            <Parameter Name="P_IN_EGRESO" Mode="In" Type="DateTime" />
+            <Parameter Name="P_IN_OBS_ALOJAMIENTO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_HAB_CAPACIDAD" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_RECEPCION" Mode="In" Type="DateTime" />
+            <Parameter Name="P_IN_OBS_COMIDA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_TIPO_SERVICIO" Mode="In" Type="String" />
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
@@ -2528,7 +2526,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_RESCATAR_PLATOS" FunctionName="Model.Store.SP_RESCATAR_PLATOS" />
           <FunctionImportMapping FunctionImportName="SP_RESCATAR_PRODUCTOS" FunctionName="Model.Store.SP_RESCATAR_PRODUCTOS" />
           <FunctionImportMapping FunctionImportName="SP_RESCATAR_PROVISIONES" FunctionName="Model.Store.SP_RESCATAR_PROVISIONES" />
-          <FunctionImportMapping FunctionImportName="SP_CREAR_DET_RESERVA" FunctionName="Model.Store.SP_CREAR_DET_RESERVA" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_DET_PEDIDO" FunctionName="Model.Store.SP_CREAR_DET_PEDIDO" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_ADMINISTRADOR" FunctionName="Model.Store.SP_ACTUALIZAR_ADMINISTRADOR" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_CLIENTE" FunctionName="Model.Store.SP_ACTUALIZAR_CLIENTE" />
@@ -2581,6 +2578,7 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_CREAR_FACTURA_PEDIDO" FunctionName="Model.Store.SP_CREAR_FACTURA_PEDIDO" />
           <FunctionImportMapping FunctionImportName="SP_VALIDAR_LOGIN" FunctionName="Model.Store.SP_VALIDAR_LOGIN" />
           <FunctionImportMapping FunctionImportName="SP_ACT_INGRESO_HUESPED" FunctionName="Model.Store.SP_ACT_INGRESO_HUESPED" />
+          <FunctionImportMapping FunctionImportName="SP_CREAR_DET_RESERVA" FunctionName="Model.Store.SP_CREAR_DET_RESERVA" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
