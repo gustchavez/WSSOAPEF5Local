@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Alojamiento.cs" />
     <Compile Include="Cama.cs" />
+    <Compile Include="CantHabXCapacidad.cs" />
     <Compile Include="Ciudad.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Comida.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="ContenedorAlojamiento.cs" />
     <Compile Include="ContenedorCama.cs" />
     <Compile Include="ContenedorCamas.cs" />
+    <Compile Include="ContenedorCantHabsXCapacidad.cs" />
     <Compile Include="ContenedorCiudades.cs" />
     <Compile Include="ContenedorClientes.cs" />
     <Compile Include="ContenedorFacturaCompraCompleta.cs" />

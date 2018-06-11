@@ -125,6 +125,9 @@ namespace CapaServicio
 
         [OperationContract]
         ContenedorHabitaciones HabitacionRescatar(string token);
+
+        [OperationContract]
+        ContenedorCantHabsXCapacidad LlamarSPHabitaHabXCapacidad(string token);
         //Fin Habitacion
 
         [OperationContract]

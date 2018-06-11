@@ -234,6 +234,12 @@ namespace CapaServicio
             CRUDHabitacion x = new CRUDHabitacion();
             return x.LlamarSPRescatar(token);
         }
+
+        public ContenedorCantHabsXCapacidad LlamarSPHabitaHabXCapacidad(string token)
+        {
+            CRUDHabitacion x = new CRUDHabitacion();
+            return x.LlamarSPHabitaHabXCapacidad(token);
+        }
         //Fin Habitacion
 
         public ContenedorCiudades CiudadRescatar(string token)

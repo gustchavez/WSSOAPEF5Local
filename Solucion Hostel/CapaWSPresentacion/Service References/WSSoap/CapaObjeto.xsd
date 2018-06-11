@@ -280,6 +280,27 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfHabitacion" nillable="true" type="tns:ArrayOfHabitacion" />
+  <xs:complexType name="ContenedorCantHabsXCapacidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfCantHabXCapacidad" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorCantHabsXCapacidad" nillable="true" type="tns:ContenedorCantHabsXCapacidad" />
+  <xs:complexType name="ArrayOfCantHabXCapacidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CantHabXCapacidad" nillable="true" type="tns:CantHabXCapacidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCantHabXCapacidad" nillable="true" type="tns:ArrayOfCantHabXCapacidad" />
+  <xs:complexType name="CantHabXCapacidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="Capacidad" type="xs:int" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CantHabXCapacidad" nillable="true" type="tns:CantHabXCapacidad" />
   <xs:complexType name="ContenedorCiudades">
     <xs:sequence>
       <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfCiudad" />
