@@ -25,7 +25,7 @@
 		 <asp:TextBox ID="TextBox4" runat="server" CssClass="CasillaPersona2"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">	
-	 <asp:Button ID="Button1" runat="server" Text="Agregar Producto" CssClass="SubmitTotal" OnClick="Button1_Click" /> 
+	 <asp:Button ID="Button1" runat="server" Text="Agregar Producto" CssClass="SubmitTotal" /> 
 		</div>
 	</div>
 	
@@ -74,7 +74,7 @@
 
 		</table>
 		<div class="Casilla2-1">	
-		<asp:Button ID="Button2" runat="server" Text="Enviar Factura" CssClass="SubmitTotal" OnClick="Button2_Click" />
+		<asp:Button ID="Button2" runat="server" Text="Enviar Factura" CssClass="SubmitTotal" />
 		</div>
 	</div>	
 </div>

@@ -34,15 +34,6 @@ namespace CapaWSPresentacion.perfilProveedor
                 Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
             }
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
