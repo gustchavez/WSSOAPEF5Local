@@ -43,8 +43,9 @@ namespace CapaWSPresentacion.perfilCliente
 
         private void bloqueados()
         {
-            txtFechaEgreso.Text = DateTime.Now.ToString("yyyy-mm-dd");
-            txtFechaIngreso.Text = DateTime.Now.ToString("yyyy-mm-dd");
+            txtFechaEgreso.Text = DateTime.Now.ToString("yyyy-MM-dd"); 
+            txtFechaIngreso.Text = DateTime.Now.ToString("yyyy-MM-dd");
+
             MostrarCasillas.Enabled = false;
             BtnSiguiente.Enabled = false;
         }
