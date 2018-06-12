@@ -37,7 +37,7 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Valor Bruto</h4>	
-                <asp:TextBox ID="txtValorBruto" runat="server" TextMode="number" CssClass="CasillaPersona" value="0"></asp:TextBox>
+                <asp:TextBox ID="txtValorBruto" runat="server" TextMode="number" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Valor IVA</h4>
