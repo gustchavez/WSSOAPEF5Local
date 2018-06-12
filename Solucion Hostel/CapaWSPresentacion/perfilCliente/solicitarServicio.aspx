@@ -197,7 +197,7 @@
 		<h2>Ingreso de Personas</h2>
 		<div class="IngresoPersonas1" ID="IngresoPersonas1">
 				<div class="Casilla2-1">					
-					 <asp:TextBox ID="txtRutPersona1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+					 <asp:TextBox ID="txtRut" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="Casilla2-1">
 					<asp:TextBox ID="TextBox6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
