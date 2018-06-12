@@ -67,7 +67,7 @@ namespace CapaWSPresentacion.perfilProveedor
             
             ContenedorFacturaPedidoCompleta xFPC = new ContenedorFacturaPedidoCompleta();
             xFPC.Item.Cabecera.Numero = 0;
-            xFPC.Item.Cabecera.NumeroOrdenCompra = decimal.Parse(ddlOrdenes.SelectedValue);
+            xFPC.Item.Cabecera.NumeroOrdenPedido = decimal.Parse(ddlOrdenes.SelectedValue);
             xFPC.Item.Cabecera.ValorBruto = int.Parse(txtValorBruto.Text);
             xFPC.Item.Cabecera.ValorIva = int.Parse(txtValorIVA.Text);
             xFPC.Item.Cabecera.ValorNeto = int.Parse(txtValorNeto.Text);

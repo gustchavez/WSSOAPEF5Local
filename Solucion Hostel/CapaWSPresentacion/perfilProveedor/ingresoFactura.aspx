@@ -19,10 +19,6 @@
                 </asp:DropDownList>
 			</div>
 			<div class="Casilla2-1">
-			<h4>Número Factura</h4>	
-			<asp:TextBox ID="txtNumeroFactura" runat="server" CssClass="CasillaPersona"></asp:TextBox>
-			</div>
-			<div class="Casilla2-1">
 			<h4>Fecha</h4>	
 			<asp:TextBox ID="txtFecha" runat="server" TextMode="Date" CssClass="CasillaPersona"></asp:TextBox>
 			</div>

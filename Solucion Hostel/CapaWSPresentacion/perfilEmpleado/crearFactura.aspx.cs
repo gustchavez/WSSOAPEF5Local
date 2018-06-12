@@ -75,7 +75,10 @@ namespace CapaWSPresentacion.perfilEmpleado
 
                 xFPC = x.FacturaPedidoCompletaCrear(xFPC);
 
-                txtNumeroFactura.Text = xFPC.Item.Cabecera.Numero.ToString();
+                if (xFPC.Item.Cabecera.Numero > 0)
+                {
+                    RescatarDatos();
+                }
             } else {
                 ContenedorFacturaCompraCompleta xFCC = new ContenedorFacturaCompraCompleta();
                 xFCC.Item.Cabecera.Numero = 0;
@@ -96,7 +99,10 @@ namespace CapaWSPresentacion.perfilEmpleado
 
                 xFCC = x.FacturaCompraCompletaCrear(xFCC);
 
-                txtNumeroFactura.Text = xFCC.Item.Cabecera.Numero.ToString();
+                if (xFCC.Item.Cabecera.Numero > 0)
+                {
+                    RescatarDatos();
+                }
 
             }
             
