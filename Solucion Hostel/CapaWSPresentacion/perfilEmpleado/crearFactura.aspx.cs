@@ -58,7 +58,7 @@ namespace CapaWSPresentacion.perfilEmpleado
             {
                 ContenedorFacturaPedidoCompleta xFPC = new ContenedorFacturaPedidoCompleta();
                 xFPC.Item.Cabecera.Numero = 0;
-                xFPC.Item.Cabecera.NumeroOrdenCompra = decimal.Parse(ddlOrdenes.SelectedValue);
+                xFPC.Item.Cabecera.NumeroOrdenPedido = decimal.Parse(ddlOrdenes.SelectedValue);
                 xFPC.Item.Cabecera.ValorBruto = int.Parse(txtValorBruto.Text);
                 xFPC.Item.Cabecera.ValorIva   = int.Parse(txtValorIVA.Text);
                 xFPC.Item.Cabecera.ValorNeto  = int.Parse(txtValorNeto.Text);
@@ -77,24 +77,24 @@ namespace CapaWSPresentacion.perfilEmpleado
 
                 txtNumeroFactura.Text = xFPC.Item.Cabecera.Numero.ToString();
             } else {
-                ContenedorFacturaPedidoCompleta xFCC = new ContenedorFacturaPedidoCompleta();
+                ContenedorFacturaCompraCompleta xFCC = new ContenedorFacturaCompraCompleta();
                 xFCC.Item.Cabecera.Numero = 0;
-                xFCC.Item.Cabecera.NumeroOrdenPedido = decimal.Parse(ddlOrdenes.SelectedValue);
+                xFCC.Item.Cabecera.NumeroOrdenCompra = decimal.Parse(ddlOrdenes.SelectedValue);
                 xFCC.Item.Cabecera.ValorBruto = int.Parse(txtValorBruto.Text);
                 xFCC.Item.Cabecera.ValorIva = int.Parse(txtValorIVA.Text);
                 xFCC.Item.Cabecera.ValorNeto = int.Parse(txtValorNeto.Text);
                 xFCC.Item.Cabecera.Observaciones = txtObservacion.Text;
                 xFCC.Item.Cabecera.Ubicacion = "logo";
-                xFCC.Item.Pago.MedioPago = ddlMedioPago.SelectedIndex.ToString();
+                xFCC.Item.Pago.MedioPago = ddlMedioPago.SelectedValue.ToString();
                 xFCC.Item.Pago.Divisa = txtDivisa.Text;
                 xFCC.Item.Pago.CodigoISO = txtCodigoISO.Text;
                 xFCC.Item.Pago.Monto = txtMonto.Text;
                 xFCC.Item.Pago.TasaCambioCLP = decimal.Parse(txtTasaCambio.Text);
-                xFCC.Item.OPRelacionada.Monto = decimal.Parse(txtMonto.Text);
+                xFCC.Item.OCRelacionada.Monto = decimal.Parse(txtMonto.Text);
 
                 xFCC.Retorno.Token = Session["TokenUsuario"].ToString();
 
-                xFCC = x.FacturaPedidoCompletaCrear(xFCC);
+                xFCC = x.FacturaCompraCompletaCrear(xFCC);
 
                 txtNumeroFactura.Text = xFCC.Item.Cabecera.Numero.ToString();
 

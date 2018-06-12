@@ -26,7 +26,7 @@ namespace CapaNegocio
                 CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
 
                 conex.SP_CREAR_FACTURA_PEDIDO
-                    ( nFPC.Item.Cabecera.NumeroOrdenCompra
+                    ( nFPC.Item.Cabecera.NumeroOrdenPedido
                     , nFPC.Item.Cabecera.ValorBruto
                     , nFPC.Item.Cabecera.ValorIva
                     , nFPC.Item.Cabecera.ValorNeto
