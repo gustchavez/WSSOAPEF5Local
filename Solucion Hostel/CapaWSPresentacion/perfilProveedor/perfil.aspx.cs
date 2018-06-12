@@ -60,14 +60,25 @@ namespace CapaWSPresentacion.perfilProveedor
 
             if(proveedor != null)
             {
-                txtRutEmpresa.Text = proveedor.Proveedor.Rut;
-                txtRazonSocial.Text = proveedor.PerfilUsuario.Empresa.RazonSocial;
-                txtCorreoElectronico.Text = proveedor.PerfilUsuario.Empresa.Email;
-                txtTelefono.Text = proveedor.PerfilUsuario.Empresa.Telefono;
+                txtRutEmpresa.Text            = proveedor.Proveedor.Rut;
+                txtRazonSocial.Text           = proveedor.PerfilUsuario.Empresa.RazonSocial;
+                txtCorreoElectronico.Text     = proveedor.PerfilUsuario.Empresa.Email;
+                txtTelefono.Text              = proveedor.PerfilUsuario.Empresa.Telefono;
                 txtNombreCiudad.SelectedValue = proveedor.PerfilUsuario.Direccion.NombreCiudad;
-                txtDireccion.Text = proveedor.PerfilUsuario.Direccion.Calle;
-                txtNombreUsuario.Text = proveedor.PerfilUsuario.Usuario.Nombre;
-                txtContraseña.Text = proveedor.PerfilUsuario.Usuario.Clave;
+                txtDireccion.Text             = proveedor.PerfilUsuario.Direccion.Calle;
+                txtNombreUsuario.Text         = proveedor.PerfilUsuario.Usuario.Nombre;
+                txtContraseña.Text            = proveedor.PerfilUsuario.Usuario.Clave;
+
+                try
+                {
+                    ddlRubro.SelectedValue    = proveedor.PerfilUsuario.Empresa.Rubro;
+                    ddlComunas.SelectedValue  = proveedor.PerfilUsuario.Direccion.Comuna;
+                }
+                catch (Exception)
+                {
+                    ddlRubro.SelectedValue    = "";
+                    ddlComunas.SelectedValue  = "";
+                }
 
                 Session["SesionPerfilUsuarioProveedor"] = proveedor;
             } else {
@@ -89,14 +100,16 @@ namespace CapaWSPresentacion.perfilProveedor
                 n.Item.PerfilUsuario = m.PerfilUsuario;
                 n.Retorno.Token = Session["TokenUsuario"].ToString();
 
-                n.Item.Proveedor.Rut = txtRutEmpresa.Text;
-                n.Item.PerfilUsuario.Empresa.RazonSocial = txtRazonSocial.Text;
-                n.Item.PerfilUsuario.Empresa.Email = txtCorreoElectronico.Text;
-                n.Item.PerfilUsuario.Empresa.Telefono = txtTelefono.Text;
+                n.Item.Proveedor.Rut                        = txtRutEmpresa.Text;
+                n.Item.PerfilUsuario.Empresa.RazonSocial    = txtRazonSocial.Text;
+                n.Item.PerfilUsuario.Empresa.Rubro          = ddlRubro.SelectedValue;
+                n.Item.PerfilUsuario.Empresa.Email          = txtCorreoElectronico.Text;
+                n.Item.PerfilUsuario.Empresa.Telefono       = txtTelefono.Text;
                 n.Item.PerfilUsuario.Direccion.NombreCiudad = txtNombreCiudad.SelectedValue;
-                n.Item.PerfilUsuario.Direccion.Calle = txtDireccion.Text;
-                n.Item.PerfilUsuario.Usuario.Nombre = txtNombreUsuario.Text;
-                n.Item.PerfilUsuario.Usuario.Clave = txtContraseña.Text;
+                n.Item.PerfilUsuario.Direccion.Comuna       = ddlComunas.SelectedValue;
+                n.Item.PerfilUsuario.Direccion.Calle        = txtDireccion.Text;
+                n.Item.PerfilUsuario.Usuario.Nombre         = txtNombreUsuario.Text;
+                n.Item.PerfilUsuario.Usuario.Clave          = txtContraseña.Text;
 
                 n = x.PerfilUsuarioProveedorActualizar(n);
 

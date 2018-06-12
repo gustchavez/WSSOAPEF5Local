@@ -40,13 +40,13 @@ namespace CapaWSPresentacion.perfilProveedor {
         protected global::System.Web.UI.WebControls.TextBox txtRazonSocial;
         
         /// <summary>
-        /// Control txtGiro.
+        /// Control ddlRubro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtGiro;
+        protected global::System.Web.UI.WebControls.DropDownList ddlRubro;
         
         /// <summary>
         /// Control txtDireccion.
@@ -67,13 +67,13 @@ namespace CapaWSPresentacion.perfilProveedor {
         protected global::System.Web.UI.WebControls.DropDownList txtNombreCiudad;
         
         /// <summary>
-        /// Control txtComuna.
+        /// Control ddlComunas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComuna;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComunas;
         
         /// <summary>
         /// Control txtCorreoElectronico.
