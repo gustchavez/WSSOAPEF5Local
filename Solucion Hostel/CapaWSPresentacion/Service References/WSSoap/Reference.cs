@@ -81,11 +81,11 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoActualizar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoActualizarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioEmpleado> PerfilUsuarioEmpleadoActualizarAsync(CapaObjeto.ContenedorPerfilUsuarioEmpleado entrada);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoBuscarPorRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoBuscarPorRutResponse")]
-        CapaObjeto.PerfilUsuarioEmpleado PerfilUsuarioEmpleadoBuscarPorRut(string rut, string token);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatarResponse")]
+        CapaObjeto.ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoBuscarPorRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoBuscarPorRutResponse")]
-        System.Threading.Tasks.Task<CapaObjeto.PerfilUsuarioEmpleado> PerfilUsuarioEmpleadoBuscarPorRutAsync(string rut, string token);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioEmpleados> PerfilUsuarioEmpleadoRescatarAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrearResponse")]
         CapaObjeto.ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorCrear(CapaObjeto.ContenedorPerfilUsuarioAdministrador entrada);
@@ -189,6 +189,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/HabitacionRescatar", ReplyAction="http://tempuri.org/IWSSHostel/HabitacionRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorHabitaciones> HabitacionRescatarAsync(string token);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidad", ReplyAction="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidadResponse")]
+        CapaObjeto.ContenedorCantHabsXCapacidad LlamarSPHabitaHabXCapacidad(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidad", ReplyAction="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidadResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorCantHabsXCapacidad> LlamarSPHabitaHabXCapacidadAsync(string token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CiudadRescatar", ReplyAction="http://tempuri.org/IWSSHostel/CiudadRescatarResponse")]
         CapaObjeto.ContenedorCiudades CiudadRescatar(string token);
         
@@ -230,6 +236,12 @@ namespace CapaWSPresentacion.WSSoap {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenesCompraCompleta> OrdenCompraCompletaRescatarAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/AlojConfirHueActualizar", ReplyAction="http://tempuri.org/IWSSHostel/AlojConfirHueActualizarResponse")]
+        CapaObjeto.ContenedorAlojamiento AlojConfirHueActualizar(CapaObjeto.ContenedorAlojamiento entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/AlojConfirHueActualizar", ReplyAction="http://tempuri.org/IWSSHostel/AlojConfirHueActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorAlojamiento> AlojConfirHueActualizarAsync(CapaObjeto.ContenedorAlojamiento entrada);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrearResponse")]
         CapaObjeto.ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(CapaObjeto.ContenedorOrdenPedidoCompleta entrada);
@@ -491,12 +503,12 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.PerfilUsuarioEmpleadoActualizarAsync(entrada);
         }
         
-        public CapaObjeto.PerfilUsuarioEmpleado PerfilUsuarioEmpleadoBuscarPorRut(string rut, string token) {
-            return base.Channel.PerfilUsuarioEmpleadoBuscarPorRut(rut, token);
+        public CapaObjeto.ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token) {
+            return base.Channel.PerfilUsuarioEmpleadoRescatar(token);
         }
         
-        public System.Threading.Tasks.Task<CapaObjeto.PerfilUsuarioEmpleado> PerfilUsuarioEmpleadoBuscarPorRutAsync(string rut, string token) {
-            return base.Channel.PerfilUsuarioEmpleadoBuscarPorRutAsync(rut, token);
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioEmpleados> PerfilUsuarioEmpleadoRescatarAsync(string token) {
+            return base.Channel.PerfilUsuarioEmpleadoRescatarAsync(token);
         }
         
         public CapaObjeto.ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorCrear(CapaObjeto.ContenedorPerfilUsuarioAdministrador entrada) {
@@ -635,6 +647,14 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.HabitacionRescatarAsync(token);
         }
         
+        public CapaObjeto.ContenedorCantHabsXCapacidad LlamarSPHabitaHabXCapacidad(string token) {
+            return base.Channel.LlamarSPHabitaHabXCapacidad(token);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorCantHabsXCapacidad> LlamarSPHabitaHabXCapacidadAsync(string token) {
+            return base.Channel.LlamarSPHabitaHabXCapacidadAsync(token);
+        }
+        
         public CapaObjeto.ContenedorCiudades CiudadRescatar(string token) {
             return base.Channel.CiudadRescatar(token);
         }
@@ -689,6 +709,14 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenesCompraCompleta> OrdenCompraCompletaRescatarAsync(string token) {
             return base.Channel.OrdenCompraCompletaRescatarAsync(token);
+        }
+        
+        public CapaObjeto.ContenedorAlojamiento AlojConfirHueActualizar(CapaObjeto.ContenedorAlojamiento entrada) {
+            return base.Channel.AlojConfirHueActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorAlojamiento> AlojConfirHueActualizarAsync(CapaObjeto.ContenedorAlojamiento entrada) {
+            return base.Channel.AlojConfirHueActualizarAsync(entrada);
         }
         
         public CapaObjeto.ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(CapaObjeto.ContenedorOrdenPedidoCompleta entrada) {

@@ -73,11 +73,11 @@
   <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoActualizar_OutputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoActualizarResponse" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoBuscarPorRut_InputMessage">
-    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoBuscarPorRut" />
+  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoRescatar" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoBuscarPorRut_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoBuscarPorRutResponse" />
+  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoRescatarResponse" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorCrear" />
@@ -181,6 +181,12 @@
   <wsdl:message name="IWSSHostel_HabitacionRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:HabitacionRescatarResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_LlamarSPHabitaHabXCapacidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:LlamarSPHabitaHabXCapacidad" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_LlamarSPHabitaHabXCapacidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LlamarSPHabitaHabXCapacidadResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_CiudadRescatar_InputMessage">
     <wsdl:part name="parameters" element="tns:CiudadRescatar" />
   </wsdl:message>
@@ -222,6 +228,12 @@
   </wsdl:message>
   <wsdl:message name="IWSSHostel_OrdenCompraCompletaRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:OrdenCompraCompletaRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_AlojConfirHueActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlojConfirHueActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_AlojConfirHueActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlojConfirHueActualizarResponse" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_OrdenPedidoCompletaCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaCrear" />
@@ -412,9 +424,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoActualizar" message="tns:IWSSHostel_PerfilUsuarioEmpleadoActualizar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoActualizarResponse" message="tns:IWSSHostel_PerfilUsuarioEmpleadoActualizar_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="PerfilUsuarioEmpleadoBuscarPorRut">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoBuscarPorRut" message="tns:IWSSHostel_PerfilUsuarioEmpleadoBuscarPorRut_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoBuscarPorRutResponse" message="tns:IWSSHostel_PerfilUsuarioEmpleadoBuscarPorRut_OutputMessage" />
+    <wsdl:operation name="PerfilUsuarioEmpleadoRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatar" message="tns:IWSSHostel_PerfilUsuarioEmpleadoRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatarResponse" message="tns:IWSSHostel_PerfilUsuarioEmpleadoRescatar_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="PerfilUsuarioAdministradorCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrear" message="tns:IWSSHostel_PerfilUsuarioAdministradorCrear_InputMessage" />
@@ -484,6 +496,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionRescatar" message="tns:IWSSHostel_HabitacionRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionRescatarResponse" message="tns:IWSSHostel_HabitacionRescatar_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="LlamarSPHabitaHabXCapacidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidad" message="tns:IWSSHostel_LlamarSPHabitaHabXCapacidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidadResponse" message="tns:IWSSHostel_LlamarSPHabitaHabXCapacidad_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="CiudadRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CiudadRescatar" message="tns:IWSSHostel_CiudadRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/CiudadRescatarResponse" message="tns:IWSSHostel_CiudadRescatar_OutputMessage" />
@@ -511,6 +527,10 @@
     <wsdl:operation name="OrdenCompraCompletaRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatar" message="tns:IWSSHostel_OrdenCompraCompletaRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatarResponse" message="tns:IWSSHostel_OrdenCompraCompletaRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlojConfirHueActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/AlojConfirHueActualizar" message="tns:IWSSHostel_AlojConfirHueActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/AlojConfirHueActualizarResponse" message="tns:IWSSHostel_AlojConfirHueActualizar_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="OrdenPedidoCompletaCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear" message="tns:IWSSHostel_OrdenPedidoCompletaCrear_InputMessage" />
@@ -710,8 +730,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PerfilUsuarioEmpleadoBuscarPorRut">
-      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoBuscarPorRut" style="document" />
+    <wsdl:operation name="PerfilUsuarioEmpleadoRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -872,6 +892,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="LlamarSPHabitaHabXCapacidad">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CiudadRescatar">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/CiudadRescatar" style="document" />
       <wsdl:input>
@@ -928,6 +957,15 @@
     </wsdl:operation>
     <wsdl:operation name="OrdenCompraCompletaRescatar">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlojConfirHueActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/AlojConfirHueActualizar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

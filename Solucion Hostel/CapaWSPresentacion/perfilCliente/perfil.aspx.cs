@@ -69,6 +69,17 @@ namespace CapaWSPresentacion.perfilCliente
                 txtNombreUsuario.Text         = cliente.PerfilUsuario.Usuario.Nombre;
                 txtContraseña.Text            = cliente.PerfilUsuario.Usuario.Clave;
 
+                try
+                {
+                    ddlRubro.SelectedValue = cliente.PerfilUsuario.Empresa.Rubro;
+                    ddlComunas.SelectedValue = cliente.PerfilUsuario.Direccion.Comuna;
+                }
+                catch (Exception)
+                {
+                    ddlRubro.SelectedValue = "";
+                    ddlComunas.SelectedValue = "";
+                }
+
                 Session["SesionPerfilUsuarioCliente"]      = cliente;
             } else {
 
@@ -90,14 +101,16 @@ namespace CapaWSPresentacion.perfilCliente
                 n.Item.PerfilUsuario = m.PerfilUsuario;
                 n.Retorno.Token = Session["TokenUsuario"].ToString();
 
-                n.Item.Cliente.Rut = txtRutEmpresa.Text;
-                n.Item.PerfilUsuario.Empresa.RazonSocial = txtRazonSocial.Text;
-                n.Item.PerfilUsuario.Empresa.Email = txtCorreoElectronico.Text;
-                n.Item.PerfilUsuario.Empresa.Telefono = txtTelefono.Text;
+                n.Item.Cliente.Rut                          = txtRutEmpresa.Text;
+                n.Item.PerfilUsuario.Empresa.RazonSocial    = txtRazonSocial.Text;
+                n.Item.PerfilUsuario.Empresa.Rubro          = ddlRubro.SelectedValue;
+                n.Item.PerfilUsuario.Empresa.Email          = txtCorreoElectronico.Text;
+                n.Item.PerfilUsuario.Empresa.Telefono       = txtTelefono.Text;
                 n.Item.PerfilUsuario.Direccion.NombreCiudad = txtNombreCiudad.SelectedValue;
-                n.Item.PerfilUsuario.Direccion.Calle = txtDireccion.Text;
-                n.Item.PerfilUsuario.Usuario.Nombre = txtNombreUsuario.Text;
-                n.Item.PerfilUsuario.Usuario.Clave = txtContraseña.Text;
+                n.Item.PerfilUsuario.Direccion.Comuna       = ddlComunas.SelectedValue;
+                n.Item.PerfilUsuario.Direccion.Calle        = txtDireccion.Text;
+                n.Item.PerfilUsuario.Usuario.Nombre         = txtNombreUsuario.Text;
+                n.Item.PerfilUsuario.Usuario.Clave          = txtContraseña.Text;
 
                 n = x.PerfilUsuarioClienteActualizar(n);
 

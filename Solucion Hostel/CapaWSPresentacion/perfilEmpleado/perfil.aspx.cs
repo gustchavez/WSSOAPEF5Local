@@ -38,38 +38,62 @@ namespace CapaWSPresentacion.perfilEmpleado
 
         private void RescatarDatos()
         {
-            //WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            Sesion SesionUsuario = (Sesion)Session["SesionUsuario"];
 
-            //ContenedorCiudades m = new ContenedorCiudades();
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            //m = x.CiudadRescatar(Session["TokenUsuario"].ToString());
+            ContenedorPerfilUsuarioEmpleados n = new ContenedorPerfilUsuarioEmpleados();
 
-            //txtNombreCiudad.DataSource = null;
-            //txtNombreCiudad.DataSource = m.Lista.Where(p => p.CodPais == 56);
-            //txtNombreCiudad.DataValueField = "Nombre";
-            //txtNombreCiudad.DataTextField = "Nombre";
-            //txtNombreCiudad.DataBind();
+            n = x.PerfilUsuarioEmpleadoRescatar(Session["TokenUsuario"].ToString());
+            
 
-            //ContenedorPerfilUsuarioClientes n = new ContenedorPerfilUsuarioClientes();
+            var empleado = n.Lista.Where(p => p.Usuario.Nombre == SesionUsuario.Usuario).SingleOrDefault();
 
-            //n = x.PerfilUsuarioClienteRescatar(Session["TokenUsuario"].ToString());
+            if (empleado != null)
+            {
+                txtRut.Text = empleado.Persona.Rut;
+                txtNombre.Text = empleado.Persona.Nombre;
+                txtApellido.Text = empleado.Persona.Apellido;
+                txtCorreoElectronico.Text = empleado.Persona.Email;
+                txtFechaNacimiento.Text = empleado.Persona.FechaNacimiento.ToString("yyyy-MM-dd");
+                txtTelefono.Text = empleado.Persona.Telefono;
+                txtUsuario.Text = empleado.Usuario.Nombre;
+                txtContraseña.Text = empleado.Usuario.Clave;
 
-            //Sesion SesionUsuario = (Sesion)Session["SesionUsuario"];
+                Session["SesionPerfilUsuarioEmpleado"] = empleado;
+            } else {
+                Session["SesionPerfilUsuarioEmpleado"] = null;
+            }
 
-            //var proveedor = n.Lista.Where(p => p.PerfilUsuario.Usuario.Nombre == SesionUsuario.Usuario).SingleOrDefault();
-
-            //txtRutEmpresa.Text = proveedor.Cliente.Rut;
-            //txtRazonSocial.Text = proveedor.PerfilUsuario.Empresa.RazonSocial;
-            //txtCorreoElectronico.Text = proveedor.PerfilUsuario.Empresa.Email;
-            //txtTelefono.Text = proveedor.PerfilUsuario.Empresa.Telefono;
-            //txtNombreCiudad.SelectedValue = proveedor.PerfilUsuario.Direccion.NombreCiudad;
-            //txtDireccion.Text = proveedor.PerfilUsuario.Direccion.Calle;
-            //txtNombreUsuario.Text = proveedor.PerfilUsuario.Usuario.Nombre;
-            //txtContraseña.Text = proveedor.PerfilUsuario.Usuario.Clave;
-        }
+}
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
+            PerfilUsuarioEmpleado m = (PerfilUsuarioEmpleado)Session["SesionPerfilUsuarioEmpleado"];
+
+            if (m != null)
+            {
+                WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+                ContenedorPerfilUsuarioEmpleado n = new ContenedorPerfilUsuarioEmpleado();
+                
+                n.Retorno.Token = Session["TokenUsuario"].ToString();
+                                
+                n.Item.Persona.Rut = txtRut.Text;
+                n.Item.Persona.Nombre = txtNombre.Text;
+                n.Item.Persona.Apellido = txtApellido.Text;
+                n.Item.Persona.Email = txtCorreoElectronico.Text;
+                n.Item.Persona.FechaNacimiento = DateTime.Parse(txtFechaNacimiento.Text);
+                n.Item.Persona.Telefono = txtTelefono.Text;
+                n.Item.Usuario.Clave = txtContraseña.Text;
+
+                n = x.PerfilUsuarioEmpleadoActualizar(n);
+
+                if (n.Retorno.Codigo == 0)
+                {
+                    //correcto
+                }
+            }
 
         }
     }

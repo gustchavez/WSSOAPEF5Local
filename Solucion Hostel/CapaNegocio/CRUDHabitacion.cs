@@ -161,7 +161,53 @@ namespace CapaNegocio
 
             return LHabitacions;
         }
-        
+
+        public ContenedorCantHabsXCapacidad LlamarSPHabitaHabXCapacidad(string token)
+        {
+            ContenedorCantHabsXCapacidad LHabitacionesXCapacidad = new ContenedorCantHabsXCapacidad();
+
+            if (ValidarFecExp(token))
+            {
+                try
+                {
+                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                    var collection = (from hab in conex.HABITACION
+                                      where hab.ESTADO == "habilitada"
+                                      group hab by hab.CAPACIDAD into g                                      
+                                      select new
+                                      {
+                                          Capacidad = g.Key,
+                                          Cantidad  = g.Count()
+                                      }
+                            ).ToList();
+
+                    foreach (var item in collection)
+                    {
+                        CantHabXCapacidad n = new CantHabXCapacidad();
+                        n.Capacidad = item.Capacidad;
+                        n.Estado    = "habilitada";
+                        n.Cantidad  = item.Capacidad;
+
+                        LHabitacionesXCapacidad.Lista.Add(n);
+                    }
+                    LHabitacionesXCapacidad.Retorno.Codigo = 0;
+                    LHabitacionesXCapacidad.Retorno.Glosa = "OK";
+                }
+                catch (Exception)
+                {
+                    LHabitacionesXCapacidad.Retorno.Codigo = 1011;
+                    LHabitacionesXCapacidad.Retorno.Glosa = "Err codret ORACLE";
+                }
+            }
+            else {
+                LHabitacionesXCapacidad.Retorno.Codigo = 100;
+                LHabitacionesXCapacidad.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+
+            return LHabitacionesXCapacidad;
+        }
+
         private bool ValidarPerfilCUD(string token)
         {
             bool retorno = false;

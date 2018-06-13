@@ -128,7 +128,7 @@
     <form id="form1" runat="server">
 
 	<!--Fin Menu-->
-	<div class="columna1">
+	<div class="columna1v1">
 			
 			<h2>Solicitud de Ingreso</h2>
 
@@ -197,7 +197,7 @@
 		<h2>Ingreso de Personas</h2>
 		<div class="IngresoPersonas1" ID="IngresoPersonas1">
 				<div class="Casilla2-1">					
-					 <asp:TextBox ID="txtRutPersona1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+					 <asp:TextBox ID="txtRut" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="Casilla2-1">
 					<asp:TextBox ID="TextBox6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
@@ -1077,7 +1077,7 @@
         <div class="columna3">            
 			<div class="casillaTotal">
 			
-                <asp:Button ID="Siguiente" runat="server" Text="Siguiente"  CssClass="SubmitTotal" OnClick="Siguiente_Click1"/>
+                <asp:Button ID="BtnSiguiente" runat="server" Text="Siguiente"  CssClass="SubmitTotal" OnClick="Siguiente_Click1" Enabled="true"/>
 
             </div>
 		</div>

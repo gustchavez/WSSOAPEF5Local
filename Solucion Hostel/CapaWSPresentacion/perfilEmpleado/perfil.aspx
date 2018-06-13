@@ -17,9 +17,9 @@
 			<h4>Nombre</h4>	
 			<asp:TextBox ID="txtNombre" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
-			<div class="Casilla2-1">
-			<h4>Cargo</h4>	
-			<asp:TextBox ID="txtCargo" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+            <div class="Casilla2-1">
+			<h4>Apellido</h4>	
+			<asp:TextBox ID="txtApellido" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Correo Electrónico</h4>
@@ -27,14 +27,10 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Fecha Nacimiento</h4>					
-			<asp:TextBox ID="txtFechaNacimiento" runat="server" CssClass="CasillaPersona"></asp:TextBox>
-			</div>
-			<div class="Casilla2-1">
-			<h4 style="color: red;">Dirección (modificable)</h4>					
-			<asp:TextBox ID="txtDireccion" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtFechaNacimiento" runat="server" CssClass="CasillaPersona" TextMode="Date"></asp:TextBox>
 			</div>			
 			<div class="Casilla2-1">
-			<h4 style="color: red;">Teléfono (modificable)</h4>					
+			<h4 style="color: red;">Teléfono</h4>					
 			<asp:TextBox ID="txtTelefono" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 	</div>
@@ -43,7 +39,7 @@
 	<div class="ModificarDatos2">
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nombre Usuario</h4>	
-		<asp:TextBox ID="txtUsuario" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+		<asp:TextBox ID="txtUsuario" runat="server" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nueva Contraseña</h4>	

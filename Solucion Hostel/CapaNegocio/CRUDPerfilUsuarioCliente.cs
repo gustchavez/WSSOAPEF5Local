@@ -135,14 +135,26 @@ namespace CapaNegocio
                                       orderby emp.RAZON_SOCIAL
                                       select new
                                       {
-                                          RutCliente  = cli.RUT,
-                                          RazonSocial = emp.RAZON_SOCIAL,
-                                          MailEmpresa = emp.EMAIL,
-                                          TelefonoEmp = emp.TELEFONO,
+                                          RutCliente   = cli.RUT,
+                                          RazonSocial  = emp.RAZON_SOCIAL,
+                                          Rubro        = emp.RUBRO,
+                                          MailEmpresa  = emp.EMAIL,
+                                          TelefonoEmp  = emp.TELEFONO,
+                                          LogoEmp      = emp.LOGO,
+                                          RutPersona   = per.RUT,
+                                          NombrePer    = per.NOMBRE,
+                                          ApellidoPer  = per.APELLIDO,
+                                          FecNacPer    = per.NACIMIENTO,
+                                          MailPer      = per.EMAIL,
+                                          TelefonoPer  = per.TELEFONO,
+                                          CalleDirecc  = dir.CALLE,
+                                          NumeroDir    = dir.NUMERO,
+                                          ComunaDir    = dir.COMUNA,
+                                          CodPostalDir = dir.COD_POSTAL,
                                           NomCiudadDir = dir.NOMBRE_CIUDAD,
-                                          CalleDirecc = dir.CALLE,
-                                          NomUsuario  = usu.NOMBRE,
-                                          PassUsiario = usu.CLAVE
+                                          PaisDirecc   = dir.COD_PAIS,
+                                          NomUsuario   = usu.NOMBRE,
+                                          PassUsiario  = usu.CLAVE
                                       }
                             ).ToList();
 
@@ -150,14 +162,29 @@ namespace CapaNegocio
                     {
                         PerfilUsuarioCliente m = new PerfilUsuarioCliente();
                         //
-                        m.Cliente.Rut = item.RutCliente;
-                        m.PerfilUsuario.Empresa.RazonSocial    = item.RazonSocial;
-                        m.PerfilUsuario.Empresa.Email          = item.MailEmpresa;
-                        m.PerfilUsuario.Empresa.Telefono       = item.MailEmpresa;
-                        m.PerfilUsuario.Direccion.NombreCiudad = item.CalleDirecc;
-                        m.PerfilUsuario.Direccion.Calle        = item.CalleDirecc;
-                        m.PerfilUsuario.Usuario.Nombre         = item.NomUsuario;
-                        m.PerfilUsuario.Usuario.Clave          = item.PassUsiario;
+                        m.Cliente.Rut                           = item.RutCliente;
+                        m.PerfilUsuario.Empresa.RazonSocial     = item.RazonSocial;
+                        m.PerfilUsuario.Empresa.Rubro           = item.Rubro;
+                        m.PerfilUsuario.Empresa.Email           = item.MailEmpresa;
+                        m.PerfilUsuario.Empresa.Telefono        = item.TelefonoEmp;
+                        m.PerfilUsuario.Empresa.Logo            = item.LogoEmp;
+                        //
+                        m.PerfilUsuario.Persona.Rut             = item.RutPersona;
+                        m.PerfilUsuario.Persona.Nombre          = item.NombrePer;
+                        m.PerfilUsuario.Persona.Apellido        = item.ApellidoPer;
+                        m.PerfilUsuario.Persona.FechaNacimiento = item.FecNacPer;
+                        m.PerfilUsuario.Persona.Email           = item.MailPer;
+                        m.PerfilUsuario.Persona.Telefono        = item.TelefonoPer;
+                        //
+                        m.PerfilUsuario.Direccion.Calle         = item.CalleDirecc;
+                        m.PerfilUsuario.Direccion.Numero        = item.NumeroDir;
+                        m.PerfilUsuario.Direccion.Comuna        = item.ComunaDir;
+                        m.PerfilUsuario.Direccion.CodPostal     = item.CodPostalDir;
+                        m.PerfilUsuario.Direccion.NombreCiudad  = item.NomCiudadDir;
+                        m.PerfilUsuario.Direccion.CodPais       = (int)item.PaisDirecc;
+                        //
+                        m.PerfilUsuario.Usuario.Nombre          = item.NomUsuario;
+                        m.PerfilUsuario.Usuario.Clave           = item.PassUsiario;
                         //
                         LPerfilUsuarioClientes.Lista.Add(m);
 
@@ -187,6 +214,7 @@ namespace CapaNegocio
 
             List<string> Perfiles = new List<string>();
 
+            Perfiles.Add("Cliente");
             Perfiles.Add("Empleado");
             Perfiles.Add("Administrador");
             if (x.ValidarPerfil(token, Perfiles))

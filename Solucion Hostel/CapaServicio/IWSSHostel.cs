@@ -60,10 +60,7 @@ namespace CapaServicio
         ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoActualizar(ContenedorPerfilUsuarioEmpleado entrada);
 
         [OperationContract]
-        PerfilUsuarioEmpleado PerfilUsuarioEmpleadoBuscarPorRut(String rut, String token);
-        //[OperationContract]
-        //ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token);
-        //Fin PerfilUsuarioEmpleado
+        ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(String token);
 
         //Inicio PerfilUsuarioAdministrador
         [OperationContract]
@@ -125,6 +122,9 @@ namespace CapaServicio
 
         [OperationContract]
         ContenedorHabitaciones HabitacionRescatar(string token);
+
+        [OperationContract]
+        ContenedorCantHabsXCapacidad LlamarSPHabitaHabXCapacidad(string token);
         //Fin Habitacion
 
         [OperationContract]
@@ -150,6 +150,9 @@ namespace CapaServicio
 
         [OperationContract]
         ContenedorOrdenesCompraCompleta OrdenCompraCompletaRescatar(string token);
+
+        [OperationContract]
+        ContenedorAlojamiento AlojConfirHueActualizar(ContenedorAlojamiento entrada);
         //Fin OrdenCompraCompleta
 
         //Ini OrdenPedidoCompleta

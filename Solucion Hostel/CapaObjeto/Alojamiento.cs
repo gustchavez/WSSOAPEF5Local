@@ -13,6 +13,7 @@ namespace CapaObjeto
         public int RegistroDias { get; set; }
         public string Observaciones { get; set; }
         public string Confirmado { get; set; }
+        public int CapacidadHabitacion { get; set; }
         public decimal CodigoCama { get; set; }
         public string RutPersona { get; set; }
         public decimal NumerOrdenCompra { get; set; }
@@ -30,6 +31,7 @@ namespace CapaObjeto
             this.Observaciones = string.Empty;
             this.Confirmado = string.Empty;
             this.RutPersona = string.Empty;
+            this.CapacidadHabitacion = int.MinValue;
             this.CodigoCama = decimal.MinValue;
             this.NumerOrdenCompra = decimal.MinValue;
         }

@@ -622,51 +622,6 @@ namespace CapaDato
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_RESCATAR_PROVISIONES", p_OUT_CODRET, p_OUT_GLSRET);
         }
     
-        public virtual int SP_CREAR_DET_RESERVA(Nullable<decimal> p_IN_NUMERO, Nullable<System.DateTime> p_IN_INGRESO, Nullable<System.DateTime> p_IN_EGRESO, string p_IN_OBS_ALOJAMIENTO, string p_IN_RUT_PERSONA, Nullable<decimal> p_IN_CODIGO_CAMA, Nullable<System.DateTime> p_IN_RECEPCION, string p_IN_OBS_COMIDA, string p_IN_TIPO_SERVICIO, Nullable<decimal> p_IN_CODIGO_PLATO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
-                new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
-                new ObjectParameter("P_IN_NUMERO", typeof(decimal));
-    
-            var p_IN_INGRESOParameter = p_IN_INGRESO.HasValue ?
-                new ObjectParameter("P_IN_INGRESO", p_IN_INGRESO) :
-                new ObjectParameter("P_IN_INGRESO", typeof(System.DateTime));
-    
-            var p_IN_EGRESOParameter = p_IN_EGRESO.HasValue ?
-                new ObjectParameter("P_IN_EGRESO", p_IN_EGRESO) :
-                new ObjectParameter("P_IN_EGRESO", typeof(System.DateTime));
-    
-            var p_IN_OBS_ALOJAMIENTOParameter = p_IN_OBS_ALOJAMIENTO != null ?
-                new ObjectParameter("P_IN_OBS_ALOJAMIENTO", p_IN_OBS_ALOJAMIENTO) :
-                new ObjectParameter("P_IN_OBS_ALOJAMIENTO", typeof(string));
-    
-            var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
-                new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
-                new ObjectParameter("P_IN_RUT_PERSONA", typeof(string));
-    
-            var p_IN_CODIGO_CAMAParameter = p_IN_CODIGO_CAMA.HasValue ?
-                new ObjectParameter("P_IN_CODIGO_CAMA", p_IN_CODIGO_CAMA) :
-                new ObjectParameter("P_IN_CODIGO_CAMA", typeof(decimal));
-    
-            var p_IN_RECEPCIONParameter = p_IN_RECEPCION.HasValue ?
-                new ObjectParameter("P_IN_RECEPCION", p_IN_RECEPCION) :
-                new ObjectParameter("P_IN_RECEPCION", typeof(System.DateTime));
-    
-            var p_IN_OBS_COMIDAParameter = p_IN_OBS_COMIDA != null ?
-                new ObjectParameter("P_IN_OBS_COMIDA", p_IN_OBS_COMIDA) :
-                new ObjectParameter("P_IN_OBS_COMIDA", typeof(string));
-    
-            var p_IN_TIPO_SERVICIOParameter = p_IN_TIPO_SERVICIO != null ?
-                new ObjectParameter("P_IN_TIPO_SERVICIO", p_IN_TIPO_SERVICIO) :
-                new ObjectParameter("P_IN_TIPO_SERVICIO", typeof(string));
-    
-            var p_IN_CODIGO_PLATOParameter = p_IN_CODIGO_PLATO.HasValue ?
-                new ObjectParameter("P_IN_CODIGO_PLATO", p_IN_CODIGO_PLATO) :
-                new ObjectParameter("P_IN_CODIGO_PLATO", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_DET_RESERVA", p_IN_NUMEROParameter, p_IN_INGRESOParameter, p_IN_EGRESOParameter, p_IN_OBS_ALOJAMIENTOParameter, p_IN_RUT_PERSONAParameter, p_IN_CODIGO_CAMAParameter, p_IN_RECEPCIONParameter, p_IN_OBS_COMIDAParameter, p_IN_TIPO_SERVICIOParameter, p_IN_CODIGO_PLATOParameter, p_OUT_CODRET, p_OUT_GLSRET);
-        }
-    
         public virtual int SP_CREAR_DET_PEDIDO(Nullable<decimal> p_IN_NUMERO, Nullable<decimal> p_IN_CANTIDAD, Nullable<System.DateTime> p_IN_RECEPCION, Nullable<decimal> p_IN_CODIGO_PRODUCTO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
             var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
@@ -1181,6 +1136,64 @@ namespace CapaDato
                 new ObjectParameter("P_IN_CLAVE", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_VALIDAR_LOGIN", p_IN_NOMBREParameter, p_IN_CLAVEParameter, p_OUT_PERFIL, p_OUT_RUT_EMPRESA, p_OUT_RAZON_SOCIAL, p_OUT_RUT_PERSONA, p_OUT_NOMBRE, p_OUT_APELLIDO, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_ACT_INGRESO_HUESPED(Nullable<decimal> p_IN_NUMERO_OC, string p_IN_RUT_PERSONA, string p_IN_CONFIRMADO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_NUMERO_OCParameter = p_IN_NUMERO_OC.HasValue ?
+                new ObjectParameter("P_IN_NUMERO_OC", p_IN_NUMERO_OC) :
+                new ObjectParameter("P_IN_NUMERO_OC", typeof(decimal));
+    
+            var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
+                new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
+                new ObjectParameter("P_IN_RUT_PERSONA", typeof(string));
+    
+            var p_IN_CONFIRMADOParameter = p_IN_CONFIRMADO != null ?
+                new ObjectParameter("P_IN_CONFIRMADO", p_IN_CONFIRMADO) :
+                new ObjectParameter("P_IN_CONFIRMADO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACT_INGRESO_HUESPED", p_IN_NUMERO_OCParameter, p_IN_RUT_PERSONAParameter, p_IN_CONFIRMADOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_CREAR_DET_RESERVA(Nullable<decimal> p_IN_NUMERO, Nullable<System.DateTime> p_IN_INGRESO, Nullable<System.DateTime> p_IN_EGRESO, string p_IN_OBS_ALOJAMIENTO, string p_IN_RUT_PERSONA, Nullable<decimal> p_IN_HAB_CAPACIDAD, Nullable<System.DateTime> p_IN_RECEPCION, string p_IN_OBS_COMIDA, string p_IN_TIPO_SERVICIO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
+                new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
+                new ObjectParameter("P_IN_NUMERO", typeof(decimal));
+    
+            var p_IN_INGRESOParameter = p_IN_INGRESO.HasValue ?
+                new ObjectParameter("P_IN_INGRESO", p_IN_INGRESO) :
+                new ObjectParameter("P_IN_INGRESO", typeof(System.DateTime));
+    
+            var p_IN_EGRESOParameter = p_IN_EGRESO.HasValue ?
+                new ObjectParameter("P_IN_EGRESO", p_IN_EGRESO) :
+                new ObjectParameter("P_IN_EGRESO", typeof(System.DateTime));
+    
+            var p_IN_OBS_ALOJAMIENTOParameter = p_IN_OBS_ALOJAMIENTO != null ?
+                new ObjectParameter("P_IN_OBS_ALOJAMIENTO", p_IN_OBS_ALOJAMIENTO) :
+                new ObjectParameter("P_IN_OBS_ALOJAMIENTO", typeof(string));
+    
+            var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
+                new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
+                new ObjectParameter("P_IN_RUT_PERSONA", typeof(string));
+    
+            var p_IN_HAB_CAPACIDADParameter = p_IN_HAB_CAPACIDAD.HasValue ?
+                new ObjectParameter("P_IN_HAB_CAPACIDAD", p_IN_HAB_CAPACIDAD) :
+                new ObjectParameter("P_IN_HAB_CAPACIDAD", typeof(decimal));
+    
+            var p_IN_RECEPCIONParameter = p_IN_RECEPCION.HasValue ?
+                new ObjectParameter("P_IN_RECEPCION", p_IN_RECEPCION) :
+                new ObjectParameter("P_IN_RECEPCION", typeof(System.DateTime));
+    
+            var p_IN_OBS_COMIDAParameter = p_IN_OBS_COMIDA != null ?
+                new ObjectParameter("P_IN_OBS_COMIDA", p_IN_OBS_COMIDA) :
+                new ObjectParameter("P_IN_OBS_COMIDA", typeof(string));
+    
+            var p_IN_TIPO_SERVICIOParameter = p_IN_TIPO_SERVICIO != null ?
+                new ObjectParameter("P_IN_TIPO_SERVICIO", p_IN_TIPO_SERVICIO) :
+                new ObjectParameter("P_IN_TIPO_SERVICIO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_DET_RESERVA", p_IN_NUMEROParameter, p_IN_INGRESOParameter, p_IN_EGRESOParameter, p_IN_OBS_ALOJAMIENTOParameter, p_IN_RUT_PERSONAParameter, p_IN_HAB_CAPACIDADParameter, p_IN_RECEPCIONParameter, p_IN_OBS_COMIDAParameter, p_IN_TIPO_SERVICIOParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     }
 }

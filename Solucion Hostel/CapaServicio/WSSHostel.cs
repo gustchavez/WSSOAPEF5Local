@@ -103,10 +103,10 @@ namespace CapaServicio
             x.LlamarSPActualizar(entrada);
             return entrada;
         }
-        public PerfilUsuarioEmpleado PerfilUsuarioEmpleadoBuscarPorRut(String rut, String token)
+        public ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(String token)
         {
             CRUDPerfilUsuarioEmpleado x = new CRUDPerfilUsuarioEmpleado();
-            return x.buscarEmpleadoPorRut(rut,token);
+            return x.LlamarSPRescatar(token);
         }
         //public ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token)
         //{
@@ -234,6 +234,12 @@ namespace CapaServicio
             CRUDHabitacion x = new CRUDHabitacion();
             return x.LlamarSPRescatar(token);
         }
+
+        public ContenedorCantHabsXCapacidad LlamarSPHabitaHabXCapacidad(string token)
+        {
+            CRUDHabitacion x = new CRUDHabitacion();
+            return x.LlamarSPHabitaHabXCapacidad(token);
+        }
         //Fin Habitacion
 
         public ContenedorCiudades CiudadRescatar(string token)
@@ -285,6 +291,11 @@ namespace CapaServicio
             CRUDOrdenCompraCompleta x = new CRUDOrdenCompraCompleta();
             return x.LlamarSPRescatar(token);
         }
+        public ContenedorAlojamiento AlojConfirHueActualizar(ContenedorAlojamiento entrada)
+        {
+            CRUDOrdenCompraCompleta x = new CRUDOrdenCompraCompleta();
+            return x.LlamarSPActIngHuesped(entrada);
+        }
         //Fin OrdenCompraCompleta
 
         //Ini OrdenPedidoCompleta
@@ -300,6 +311,7 @@ namespace CapaServicio
             CRUDOrdenPedidoCompleta x = new CRUDOrdenPedidoCompleta();
             return x.LlamarSPRescatar(token);
         }
+        
         //Fin OrdenPedidoCompleta
 
 
