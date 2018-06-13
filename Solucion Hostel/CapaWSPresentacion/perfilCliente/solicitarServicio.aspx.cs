@@ -65,8 +65,8 @@ namespace CapaWSPresentacion.perfilCliente
             nOCC.Cabecera.Estado = "activa";
 
             //
-            int CantidadHuespedes = int.Parse(Session[txtPersonasHabitacion.Text].ToString());
-
+           // int CantidadHuespedes = int.Parse(Session[txtPersonasHabitacion.Text].ToString());
+            int CantidadHuespedes = int.Parse(txtPersonasHabitacion.Text);
             for (int i = 0; i < CantidadHuespedes; i++)
             {
                 OrdenCompraDetalle nOCD = new OrdenCompraDetalle();
