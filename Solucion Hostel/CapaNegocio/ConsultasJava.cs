@@ -357,7 +357,28 @@ namespace CapaNegocio
             {
                 try
                 {
-                    
+                    var query = (from f in conex.FACTURA
+                                 join oc in conex.ORDEN_DE_COMPRA on f.NUMERO_OC equals oc.NUMERO
+                                 where f.NUMERO_OC != null
+                                 group f by f.FECHA into g
+                                 orderby g.Key.Year descending, g.Key.Month descending
+                                 select new {
+                                     FactOC = g.Select(q => q.NUMERO_OC).Count()
+                                            , mes = g.Select(q => q.FECHA.Month)
+                                            , anno = g.Select(q => q.FECHA.Year)
+                                            , Oc = g.Select(q => q.NUMERO).Count()
+                                 }
+                                 ).ToList();
+                    foreach (var item in query)
+                    {
+                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
+                        ComodinJava obj = new ComodinJava();
+                        obj.Nombre = item.mes.FirstOrDefault().ToString() + "-"+item.anno.FirstOrDefault().ToString();
+                        obj.numero1 = item.FactOC;
+                        obj.numero2 = item.Oc;
+                        lista.Add(obj);
+                    }
                     return lista;
                 }
                 catch (Exception e)
@@ -394,7 +415,7 @@ namespace CapaNegocio
                     var query = (from f in conex.FACTURA
                                  where f.NUMERO_OC != null
                                  group f by f.FECHA into g
-                                 //orderby g.Select(q => q.FECHA) descending
+                                 orderby g.Key.Year descending, g.Key.Month descending
                                  select new
                                  {
                                      promedio = (g.Select(q => q.VALOR_BRUTO).Sum() / g.Select(q => q.VALOR_BRUTO).Count()),
@@ -431,54 +452,110 @@ namespace CapaNegocio
             }
         }
 
-        public string Promedio_perdida_mensual()
+        public List<ComodinJava> Promedio_perdida_mensual(String token)
         {
-            String text = "create or replace procedure promedio_perdida(total out INTEGER) " +
-                "is " +
-                "valor_fact INTEGER:= 0;" +
-                "valor_OC INTEGER:= 0;" +
-                "begin " +
-                "select sum(VALOR_BRUTO) " +
-                "into valor_fact " +
-                "from FACTURA where TIPO = 'de Compra' group by TIPO;" +
-                "select sum(MONTO)" +
-                "into valor_OC " +
-                "from ORDEN_DE_COMPRA group by MONTO; " +
-                "total:= valor_OC - valor_fact;" +
-                "end;" +
-                "--" +
-                "declare" +
-                "aux INTEGER;" +
-                "begin" +
-                "promedio_perdida(aux);" +
-                "dbms_output.put_line(aux);" +
-                "end;";
-            return text;
+            CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+            List<ComodinJava> lista = new List<ComodinJava>();
+            if (ValidarPerfil(token))
+            {
+                try
+                {
+                    var query = (from f in conex.FACTURA
+                                 join oc in conex.ORDEN_DE_COMPRA on f.NUMERO_OC equals oc.NUMERO
+                                 where f.NUMERO_OC != null
+                                 group f by f.FECHA into g
+                                 orderby g.Key.Year descending, g.Key.Month descending
+                                 select new
+                                 {
+                                     FactOC = g.Select(q => q.VALOR_BRUTO).Sum()
+                                            , mes = g.Select(q => q.FECHA.Month)
+                                            , anno = g.Select(q => q.FECHA.Year)
+                                            , Oc = g.Select(q => q.ORDEN_DE_COMPRA.MONTO).Sum()
+                                 }
+                                 ).ToList();
+                    foreach (var item in query)
+                    {
+                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
+                        ComodinJava obj = new ComodinJava();
+                        obj.Nombre = item.mes.FirstOrDefault().ToString() + "-" + item.anno.FirstOrDefault().ToString();
+                        obj.numero1 = item.FactOC;
+                        obj.numero2 = item.Oc;
+                        lista.Add(obj);
+                    }
+                    return lista;
+                }
+                catch (Exception e)
+                {
+                    ComodinJava obj = new ComodinJava();
+                    obj.Nombre = "Error=" + e.ToString();
+                    lista.Add(obj);
+                    return lista;
+                }
+            }
+            else
+            {
+                ComodinJava obj = new ComodinJava();
+                obj.Nombre = "Error Else";
+                lista.Add(obj);
+                return lista;
+            }
         }
 
-        public string Porcentage_cierre_efectivo()
+        public List<ComodinJava> Porcentage_cierre_efectivo(String token)
         {
-            String text = "create or replace procedure porcentage_cierre(total out INTEGER) " +
-                "is" +
-                 "valor_fact INTEGER:= 0;" +
-             "valor_OC INTEGER:= 0;" +
-             "begin" +
-                " select count(VALOR_BRUTO)" +
-                " into valor_fact" +
-                " from FACTURA where TIPO = 'de Compra' group by TIPO;" +
-             "select count(MONTO)" +
-                " into valor_OC" +
-                " from ORDEN_DE_COMPRA group by MONTO;" +
-         "total:= round((valor_fact * 100) / valor_OC);" +
-             "end;" +
-            " --" +
-              "   declare" +
-             "    aux INTEGER;" +
-           "  begin" +
-             "    porcentage_cierre(aux);" +
-           "  dbms_output.put_line(aux);" +
-           "  end; ";
-            return text;
+            CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+            List<ComodinJava> lista = new List<ComodinJava>();
+            if (ValidarPerfil(token))
+            {
+                try
+                {
+                    var query = (from f in conex.FACTURA
+                                 join oc in conex.ORDEN_DE_COMPRA on f.NUMERO_OC equals oc.NUMERO
+                                 where f.NUMERO_OC != null
+                                 group f by f.FECHA into g
+                                 orderby g.Key.Year descending, g.Key.Month descending
+                                 select new
+                                 {
+                                     FactOC = g.Select(q => q.VALOR_BRUTO).Count()
+                                     , mes = g.Select(q => q.FECHA.Month)
+                                     , anno = g.Select(q => q.FECHA.Year)
+                                     , Oc = g.Select(q => q.ORDEN_DE_COMPRA.MONTO).Count()
+                                     ,totalVenta = g.Select(q => q.VALOR_BRUTO).Sum()
+                                     , ventaNoRealizada = g.Select(q => q.ORDEN_DE_COMPRA.MONTO).Sum()
+                                 }
+                                 ).ToList();
+                    foreach (var item in query)
+                    {
+                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
+                        ComodinJava obj = new ComodinJava();
+                        obj.Nombre = item.mes.FirstOrDefault().ToString() + "-" + item.anno.FirstOrDefault().ToString();
+                        int porcentajeVenta = (item.FactOC * 100)/ item.Oc;
+                        obj.numero1 = item.FactOC;
+                        obj.numero2 = item.Oc;
+                        obj.numero3 = porcentajeVenta;
+                        obj.numero4 = item.totalVenta;
+                        obj.numero5 = item.ventaNoRealizada;
+                        lista.Add(obj);
+                    }
+                    return lista;
+                }
+                catch (Exception e)
+                {
+                    ComodinJava obj = new ComodinJava();
+                    obj.Nombre = "Error=" + e.ToString();
+                    lista.Add(obj);
+                    return lista;
+                }
+            }
+            else
+            {
+                ComodinJava obj = new ComodinJava();
+                obj.Nombre = "Error Else";
+                lista.Add(obj);
+                return lista;
+            }
         }
 
         private bool ValidarPerfil(string token)

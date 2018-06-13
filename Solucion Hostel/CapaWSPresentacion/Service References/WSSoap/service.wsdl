@@ -307,11 +307,11 @@
   <wsdl:message name="IWSSHostel_Fecha_mayor_auge_OutputMessage">
     <wsdl:part name="parameters" element="tns:Fecha_mayor_augeResponse" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_Solicitudes_NO_terminadas_InputMessage">
-    <wsdl:part name="parameters" element="tns:Solicitudes_NO_terminadas" />
+  <wsdl:message name="IWSSHostel_SolicitudesNoTerminadas_InputMessage">
+    <wsdl:part name="parameters" element="tns:SolicitudesNoTerminadas" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_Solicitudes_NO_terminadas_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Solicitudes_NO_terminadasResponse" />
+  <wsdl:message name="IWSSHostel_SolicitudesNoTerminadas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SolicitudesNoTerminadasResponse" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_Promedio_venta_mensual_InputMessage">
     <wsdl:part name="parameters" element="tns:Promedio_venta_mensual" />
@@ -319,17 +319,17 @@
   <wsdl:message name="IWSSHostel_Promedio_venta_mensual_OutputMessage">
     <wsdl:part name="parameters" element="tns:Promedio_venta_mensualResponse" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_Promedio_perdida_mensual_InputMessage">
-    <wsdl:part name="parameters" element="tns:Promedio_perdida_mensual" />
+  <wsdl:message name="IWSSHostel_PromedioPerdidaMensual_InputMessage">
+    <wsdl:part name="parameters" element="tns:PromedioPerdidaMensual" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_Promedio_perdida_mensual_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Promedio_perdida_mensualResponse" />
+  <wsdl:message name="IWSSHostel_PromedioPerdidaMensual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PromedioPerdidaMensualResponse" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_Porcentage_cierre_efectivo_InputMessage">
-    <wsdl:part name="parameters" element="tns:Porcentage_cierre_efectivo" />
+  <wsdl:message name="IWSSHostel_PorcentageCierreEfectivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:PorcentageCierreEfectivo" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_Porcentage_cierre_efectivo_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Porcentage_cierre_efectivoResponse" />
+  <wsdl:message name="IWSSHostel_PorcentageCierreEfectivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PorcentageCierreEfectivoResponse" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_ProveedorRescatar_InputMessage">
     <wsdl:part name="parameters" element="tns:ProveedorRescatar" />
@@ -568,21 +568,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Fecha_mayor_auge" message="tns:IWSSHostel_Fecha_mayor_auge_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Fecha_mayor_augeResponse" message="tns:IWSSHostel_Fecha_mayor_auge_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Solicitudes_NO_terminadas">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Solicitudes_NO_terminadas" message="tns:IWSSHostel_Solicitudes_NO_terminadas_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Solicitudes_NO_terminadasResponse" message="tns:IWSSHostel_Solicitudes_NO_terminadas_OutputMessage" />
+    <wsdl:operation name="SolicitudesNoTerminadas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/SolicitudesNoTerminadas" message="tns:IWSSHostel_SolicitudesNoTerminadas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/SolicitudesNoTerminadasResponse" message="tns:IWSSHostel_SolicitudesNoTerminadas_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Promedio_venta_mensual">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Promedio_venta_mensual" message="tns:IWSSHostel_Promedio_venta_mensual_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Promedio_venta_mensualResponse" message="tns:IWSSHostel_Promedio_venta_mensual_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Promedio_perdida_mensual">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Promedio_perdida_mensual" message="tns:IWSSHostel_Promedio_perdida_mensual_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Promedio_perdida_mensualResponse" message="tns:IWSSHostel_Promedio_perdida_mensual_OutputMessage" />
+    <wsdl:operation name="PromedioPerdidaMensual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PromedioPerdidaMensual" message="tns:IWSSHostel_PromedioPerdidaMensual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PromedioPerdidaMensualResponse" message="tns:IWSSHostel_PromedioPerdidaMensual_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Porcentage_cierre_efectivo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivo" message="tns:IWSSHostel_Porcentage_cierre_efectivo_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivoResponse" message="tns:IWSSHostel_Porcentage_cierre_efectivo_OutputMessage" />
+    <wsdl:operation name="PorcentageCierreEfectivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PorcentageCierreEfectivo" message="tns:IWSSHostel_PorcentageCierreEfectivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PorcentageCierreEfectivoResponse" message="tns:IWSSHostel_PorcentageCierreEfectivo_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ProveedorRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProveedorRescatar" message="tns:IWSSHostel_ProveedorRescatar_InputMessage" />
@@ -1061,8 +1061,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Solicitudes_NO_terminadas">
-      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Solicitudes_NO_terminadas" style="document" />
+    <wsdl:operation name="SolicitudesNoTerminadas">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/SolicitudesNoTerminadas" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1079,8 +1079,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Promedio_perdida_mensual">
-      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Promedio_perdida_mensual" style="document" />
+    <wsdl:operation name="PromedioPerdidaMensual">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PromedioPerdidaMensual" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1088,8 +1088,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Porcentage_cierre_efectivo">
-      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivo" style="document" />
+    <wsdl:operation name="PorcentageCierreEfectivo">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PorcentageCierreEfectivo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

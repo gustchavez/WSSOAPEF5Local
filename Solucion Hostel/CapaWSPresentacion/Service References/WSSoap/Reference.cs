@@ -315,11 +315,11 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Fecha_mayor_auge", ReplyAction="http://tempuri.org/IWSSHostel/Fecha_mayor_augeResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ComodinJava[]> Fecha_mayor_augeAsync(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Solicitudes_NO_terminadas", ReplyAction="http://tempuri.org/IWSSHostel/Solicitudes_NO_terminadasResponse")]
-        string Solicitudes_NO_terminadas();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/SolicitudesNoTerminadas", ReplyAction="http://tempuri.org/IWSSHostel/SolicitudesNoTerminadasResponse")]
+        CapaObjeto.ComodinJava[] SolicitudesNoTerminadas(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Solicitudes_NO_terminadas", ReplyAction="http://tempuri.org/IWSSHostel/Solicitudes_NO_terminadasResponse")]
-        System.Threading.Tasks.Task<string> Solicitudes_NO_terminadasAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/SolicitudesNoTerminadas", ReplyAction="http://tempuri.org/IWSSHostel/SolicitudesNoTerminadasResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ComodinJava[]> SolicitudesNoTerminadasAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Promedio_venta_mensual", ReplyAction="http://tempuri.org/IWSSHostel/Promedio_venta_mensualResponse")]
         CapaObjeto.ComodinJava[] Promedio_venta_mensual(string token);
@@ -327,17 +327,17 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Promedio_venta_mensual", ReplyAction="http://tempuri.org/IWSSHostel/Promedio_venta_mensualResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ComodinJava[]> Promedio_venta_mensualAsync(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Promedio_perdida_mensual", ReplyAction="http://tempuri.org/IWSSHostel/Promedio_perdida_mensualResponse")]
-        string Promedio_perdida_mensual();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PromedioPerdidaMensual", ReplyAction="http://tempuri.org/IWSSHostel/PromedioPerdidaMensualResponse")]
+        CapaObjeto.ComodinJava[] PromedioPerdidaMensual(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Promedio_perdida_mensual", ReplyAction="http://tempuri.org/IWSSHostel/Promedio_perdida_mensualResponse")]
-        System.Threading.Tasks.Task<string> Promedio_perdida_mensualAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PromedioPerdidaMensual", ReplyAction="http://tempuri.org/IWSSHostel/PromedioPerdidaMensualResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ComodinJava[]> PromedioPerdidaMensualAsync(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivo", ReplyAction="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivoResponse")]
-        string Porcentage_cierre_efectivo();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PorcentageCierreEfectivo", ReplyAction="http://tempuri.org/IWSSHostel/PorcentageCierreEfectivoResponse")]
+        CapaObjeto.ComodinJava[] PorcentageCierreEfectivo(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivo", ReplyAction="http://tempuri.org/IWSSHostel/Porcentage_cierre_efectivoResponse")]
-        System.Threading.Tasks.Task<string> Porcentage_cierre_efectivoAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PorcentageCierreEfectivo", ReplyAction="http://tempuri.org/IWSSHostel/PorcentageCierreEfectivoResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ComodinJava[]> PorcentageCierreEfectivoAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProveedorRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ProveedorRescatarResponse")]
         CapaObjeto.ContenedorProveedores ProveedorRescatar(string token);
@@ -803,12 +803,12 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.Fecha_mayor_augeAsync(token);
         }
         
-        public string Solicitudes_NO_terminadas() {
-            return base.Channel.Solicitudes_NO_terminadas();
+        public CapaObjeto.ComodinJava[] SolicitudesNoTerminadas(string token) {
+            return base.Channel.SolicitudesNoTerminadas(token);
         }
         
-        public System.Threading.Tasks.Task<string> Solicitudes_NO_terminadasAsync() {
-            return base.Channel.Solicitudes_NO_terminadasAsync();
+        public System.Threading.Tasks.Task<CapaObjeto.ComodinJava[]> SolicitudesNoTerminadasAsync(string token) {
+            return base.Channel.SolicitudesNoTerminadasAsync(token);
         }
         
         public CapaObjeto.ComodinJava[] Promedio_venta_mensual(string token) {
@@ -819,20 +819,20 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.Promedio_venta_mensualAsync(token);
         }
         
-        public string Promedio_perdida_mensual() {
-            return base.Channel.Promedio_perdida_mensual();
+        public CapaObjeto.ComodinJava[] PromedioPerdidaMensual(string token) {
+            return base.Channel.PromedioPerdidaMensual(token);
         }
         
-        public System.Threading.Tasks.Task<string> Promedio_perdida_mensualAsync() {
-            return base.Channel.Promedio_perdida_mensualAsync();
+        public System.Threading.Tasks.Task<CapaObjeto.ComodinJava[]> PromedioPerdidaMensualAsync(string token) {
+            return base.Channel.PromedioPerdidaMensualAsync(token);
         }
         
-        public string Porcentage_cierre_efectivo() {
-            return base.Channel.Porcentage_cierre_efectivo();
+        public CapaObjeto.ComodinJava[] PorcentageCierreEfectivo(string token) {
+            return base.Channel.PorcentageCierreEfectivo(token);
         }
         
-        public System.Threading.Tasks.Task<string> Porcentage_cierre_efectivoAsync() {
-            return base.Channel.Porcentage_cierre_efectivoAsync();
+        public System.Threading.Tasks.Task<CapaObjeto.ComodinJava[]> PorcentageCierreEfectivoAsync(string token) {
+            return base.Channel.PorcentageCierreEfectivoAsync(token);
         }
         
         public CapaObjeto.ContenedorProveedores ProveedorRescatar(string token) {
