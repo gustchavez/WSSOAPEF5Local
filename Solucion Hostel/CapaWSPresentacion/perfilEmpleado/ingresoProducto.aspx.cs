@@ -91,17 +91,17 @@ namespace CapaWSPresentacion.perfilEmpleado
                 nProvision = x.ProvisionCrear(nProvision);
                 if (nProvision.Retorno.Codigo.ToString() == "0")
                 {
-                    txtCodProdAgregar.Text = nProducto.Item.Codigo.ToString();
+                    //txtCodProdAgregar.Text = nProducto.Item.Codigo.ToString();
                     RescatarRelacionProvProd();
                 }
                 else
                 {
-                    txtCodProdAgregar.Text = "-2";
+                    //txtCodProdAgregar.Text = "-2";
                     //nProvision.Retorno.Codigo.ToString();
                     //nProvision.Retorno.Glosa;
                 }
             } else  {
-                txtCodProdAgregar.Text = "-1";
+                //txtCodProdAgregar.Text = "-1";
                 //nProducto.Retorno.Codigo.ToString();
                 //nProducto.Retorno.Glosa;
             }

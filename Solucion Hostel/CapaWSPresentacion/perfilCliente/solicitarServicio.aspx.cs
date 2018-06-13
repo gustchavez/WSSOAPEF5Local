@@ -65,7 +65,6 @@ namespace CapaWSPresentacion.perfilCliente
             nOCC.Cabecera.Estado = "activa";
 
             //int CantidadHuespedes = int.Parse(Session[txtPersonasHabitacion.Text].ToString());
-
             try
             {                
                 int CantIndividual = int.Parse(individual.Text);
@@ -114,11 +113,11 @@ namespace CapaWSPresentacion.perfilCliente
                 TextBox item0 = (TextBox)form1.FindControl("txtRut" + TipoHab + i);
                 nOCD.Alojamiento.RutPersona = item0.Text;
 
-                TextBox item1 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
-                nOCD.Alojamiento.FechaIngreso = DateTime.Parse(item1.Text);
+                //TextBox item1 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
+                nOCD.Alojamiento.FechaIngreso = DateTime.Parse(txtFechaIngreso.Text);
 
-                TextBox item2 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
-                nOCD.Alojamiento.FechaEgreso = DateTime.Parse(item2.Text);
+                //TextBox item2 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
+                nOCD.Alojamiento.FechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
 
                 nOCD.Alojamiento.CapacidadHabitacion = CapHab;
 
@@ -132,8 +131,10 @@ namespace CapaWSPresentacion.perfilCliente
 
                 nOCD.Comida.TipoServicio = "general";
 
-                TextBox item5 = (TextBox)form1.FindControl("txtComidaObservaciones" + TipoHab + i);
-                nOCD.Comida.Observaciones = item5.Text;
+                //TextBox item5 = (TextBox)form1.FindControl("txtComidaObservaciones" + TipoHab + i);
+                //nOCD.Comida.Observaciones = item5.Text;
+
+                nOCD.Comida.Observaciones = "Observaciones Comida";
 
                 nOCD.Comida.FechaRecepcion = DateTime.Now;
 

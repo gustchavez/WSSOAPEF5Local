@@ -197,16 +197,16 @@
 		<h2>Ingreso de Personas</h2>
 		<div class="IngresoPersonas1" ID="IngresoPersonas1">
 				<div class="Casilla2-1">					
-					 <asp:TextBox ID="txtRutIndividual1" runat="server" CssClass="CasillaPersona" placeholder="Ingrese Rut" value="12"></asp:TextBox>
+					 <asp:TextBox ID="txtRutIndividual1" runat="server" CssClass="CasillaPersona" placeholder="Ingrese Rut" value="122212"></asp:TextBox>
 				</div>
 				<div class="Casilla2-1">
-					<asp:TextBox ID="txtNombreIndividual1" runat="server" CssClass="CasillaPersona" placeholder=" Ingrese Nombre"></asp:TextBox>
+					<asp:TextBox ID="txtNombreIndividual1" runat="server" CssClass="CasillaPersona" placeholder=" Ingrese Nombre" value="Rodrigo"></asp:TextBox>
 				</div>
 				<div class="Casilla2-1">
-					<asp:TextBox ID="txtApellidoIndividual1" runat="server" CssClass="CasillaPersona" placeholder="Ingrese Apellido"></asp:TextBox>
+					<asp:TextBox ID="txtApellidoIndividual1" runat="server" CssClass="CasillaPersona" placeholder="Ingrese Apellido" value="Bueno"></asp:TextBox>
 				</div>
 				<div class="Casilla2-1">
-					<asp:TextBox ID="txtOtroIndividual1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+					<asp:TextBox ID="txtOtroIndividual1" runat="server" CssClass="CasillaPersona" value="reserva pagina"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
                     <asp:DropDownList ID="txtComidaObservacionesIndividual1" runat="server" CssClass="comidas">
@@ -220,16 +220,16 @@
 		</div>
 		<div class="IngresoPersonas1" id="IngresoPersonas2">
 				<div class="Casilla2-1">					
-					 <asp:TextBox ID="txtRutIndividual2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+					 <asp:TextBox ID="txtRutIndividual2" runat="server" CssClass="CasillaPersona" value="122213"></asp:TextBox>
 				</div>
 				<div class="Casilla2-1">
-					<asp:TextBox ID="txtNombreIndividual2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+					<asp:TextBox ID="txtNombreIndividual2" runat="server" CssClass="CasillaPersona" value="Alejandro"></asp:TextBox>
 				</div>
 				<div class="Casilla2-1">
-					<asp:TextBox ID="txtApellidoIndividual2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+					<asp:TextBox ID="txtApellidoIndividual2" runat="server" CssClass="CasillaPersona" value="Bueno"></asp:TextBox>
 				</div>
 				<div class="Casilla2-1">
-					<asp:TextBox ID="txtOtroIndividual2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+					<asp:TextBox ID="txtOtroIndividual2" runat="server" CssClass="CasillaPersona" value="Segunda reserva on-line"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
                     <asp:DropDownList ID="txtComidaObservacionesIndividual2" runat="server" CssClass="comidas">
