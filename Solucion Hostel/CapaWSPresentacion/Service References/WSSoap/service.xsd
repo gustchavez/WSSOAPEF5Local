@@ -158,18 +158,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="PerfilUsuarioEmpleadoBuscarPorRut">
+  <xs:element name="PerfilUsuarioEmpleadoRescatar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="rut" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="PerfilUsuarioEmpleadoBuscarPorRutResponse">
+  <xs:element name="PerfilUsuarioEmpleadoRescatarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PerfilUsuarioEmpleadoBuscarPorRutResult" nillable="true" type="q18:PerfilUsuarioEmpleado" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="PerfilUsuarioEmpleadoRescatarResult" nillable="true" type="q18:ContenedorPerfilUsuarioEmpleados" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

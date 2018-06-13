@@ -103,10 +103,10 @@ namespace CapaServicio
             x.LlamarSPActualizar(entrada);
             return entrada;
         }
-        public PerfilUsuarioEmpleado PerfilUsuarioEmpleadoBuscarPorRut(String rut, String token)
+        public ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(String token)
         {
             CRUDPerfilUsuarioEmpleado x = new CRUDPerfilUsuarioEmpleado();
-            return x.buscarEmpleadoPorRut(rut,token);
+            return x.LlamarSPRescatar(token);
         }
         //public ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token)
         //{
@@ -395,9 +395,10 @@ namespace CapaServicio
             return cj.Fecha_mayor_auge(token);
         }
 
-        public string Solicitudes_NO_terminadas()
+        public List<ComodinJava> SolicitudesNoTerminadas(string token)
         {
-            throw new NotImplementedException();
+            ConsultasJava cj = new ConsultasJava();
+            return cj.Solicitudes_NO_terminadas(token);
         }
 
         public List<ComodinJava> Promedio_venta_mensual(string token)
@@ -406,14 +407,16 @@ namespace CapaServicio
             return cj.Promedio_venta_mensual(token);
         }
 
-        public string Promedio_perdida_mensual()
+        public List<ComodinJava> PromedioPerdidaMensual(String token)
         {
-            throw new NotImplementedException();
+            ConsultasJava cj = new ConsultasJava();
+            return cj.Promedio_perdida_mensual(token);
         }
 
-        public string Porcentage_cierre_efectivo()
+        public List<ComodinJava> PorcentageCierreEfectivo(String token)
         {
-            throw new NotImplementedException();
+            ConsultasJava cj = new ConsultasJava();
+            return cj.Porcentage_cierre_efectivo(token);
         }
 
         public ContenedorProveedores ProveedorRescatar(string token)

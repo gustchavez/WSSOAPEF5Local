@@ -60,10 +60,7 @@ namespace CapaServicio
         ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoActualizar(ContenedorPerfilUsuarioEmpleado entrada);
 
         [OperationContract]
-        PerfilUsuarioEmpleado PerfilUsuarioEmpleadoBuscarPorRut(String rut, String token);
-        //[OperationContract]
-        //ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token);
-        //Fin PerfilUsuarioEmpleado
+        ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(String token);
 
         //Inicio PerfilUsuarioAdministrador
         [OperationContract]
@@ -210,16 +207,16 @@ namespace CapaServicio
         List<ComodinJava> Fecha_mayor_auge(string token);
 
         [OperationContract]
-        string Solicitudes_NO_terminadas();
+        List<ComodinJava> SolicitudesNoTerminadas(string token);
 
         [OperationContract]
         List<ComodinJava> Promedio_venta_mensual(string token);
 
         [OperationContract]
-        string Promedio_perdida_mensual();
+        List<ComodinJava> PromedioPerdidaMensual(String token);
 
         [OperationContract]
-        string Porcentage_cierre_efectivo();
+        List<ComodinJava> PorcentageCierreEfectivo(String token);
 
         [OperationContract]
         ContenedorProveedores ProveedorRescatar(string token);

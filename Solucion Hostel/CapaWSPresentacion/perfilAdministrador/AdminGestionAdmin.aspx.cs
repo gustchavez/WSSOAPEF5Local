@@ -91,15 +91,15 @@ namespace CapaWSPresentacion.perfilAdministrador
             String token = Session["TokenUsuario"].ToString();
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
             PerfilUsuarioEmpleado a = new PerfilUsuarioEmpleado();
-            a = x.PerfilUsuarioEmpleadoBuscarPorRut(rutUsuario, token);
-            TextBox1.Text = a.Persona.Rut;
-            TextBox2.Text = a.Persona.Nombre;
-            TextBox3.Text = a.Persona.Apellido;
-            //TextBox4.Text = a.Persona.FechaNacimiento.ToString();
-            TextBox5.Text = a.Persona.Email;
-            TextBox6.Text = a.Persona.Telefono;
-            TextBox14.Text = a.Usuario.Clave;
-            TextBox13.Text = a.Usuario.Nombre;
+            //a = x.PerfilUsuarioEmpleadoBuscarPorRut(rutUsuario, token);
+            //TextBox1.Text = a.Persona.Rut;
+            //TextBox2.Text = a.Persona.Nombre;
+            //TextBox3.Text = a.Persona.Apellido;
+            ////TextBox4.Text = a.Persona.FechaNacimiento.ToString();
+            //TextBox5.Text = a.Persona.Email;
+            //TextBox6.Text = a.Persona.Telefono;
+            //TextBox14.Text = a.Usuario.Clave;
+            //TextBox13.Text = a.Usuario.Nombre;
         }
         private void RescatarDatosAdministrador()
         {

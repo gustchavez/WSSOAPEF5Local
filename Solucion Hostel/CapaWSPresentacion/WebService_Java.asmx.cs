@@ -215,26 +215,21 @@ namespace CapaWSPresentacion
             return lista;
         }
         [WebMethod]
-        public string Solicitudes_NO_terminadas(String token)
+        public List<ComodinJava> Solicitudes_NO_terminadas(String token)
         {
-            String text = "create or replace procedure solic_noTerminadas(cantidad out INTEGER) " +
-                "is " +
-                "facturas INTEGER:= 0; " +
-                "ordenes INTEGER:= 0; " +
-                "begin " +
-                "select count(ORDEN_DE_COMPRA.NUMERO)into ordenes from ORDEN_DE_COMPRA; " +
-                "select count(FACTURA.NUMERO_OC)into facturas from FACTURA " +
-                "inner join ORDEN_DE_COMPRA on ORDEN_DE_COMPRA.NUMERO = FACTURA.NUMERO_OC; " +
-                "cantidad:= ordenes - facturas; " +
-                "end; " +
-                "-- " +
-                "declare " +
-                "aux INTEGER;" +
-                "begin " +
-                "solic_noTerminadas(aux); " +
-                "dbms_output.put_line(aux); " +
-                "end; ";
-            return text;
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            List<ComodinJava> lista = new List<ComodinJava>();
+            try
+            {
+                var objetos = x.SolicitudesNoTerminadas(token).ToList();
+                return (List<ComodinJava>)objetos;
+            }
+            catch (Exception)
+            {
+                lista = null;
+            }
+
+            return lista;
         }
 
         //**********---->Panel Finanzas
@@ -257,54 +252,38 @@ namespace CapaWSPresentacion
             return lista;
         }
         [WebMethod]
-        public string Promedio_perdida_mensual(String token)
+        public List<ComodinJava> Promedio_perdida_mensual(String token)
         {
-            String text = "create or replace procedure promedio_perdida(total out INTEGER) " +
-                "is " +
-                "valor_fact INTEGER:= 0;" +
-                "valor_OC INTEGER:= 0;" +
-                "begin " +
-                "select sum(VALOR_BRUTO) " +
-                "into valor_fact " +
-                "from FACTURA where TIPO = 'de Compra' group by TIPO;" +
-                "select sum(MONTO)" +
-                "into valor_OC " +
-                "from ORDEN_DE_COMPRA group by MONTO; " +
-                "total:= valor_OC - valor_fact;" +
-                "end;" +
-                "--" +
-                "declare" +
-                "aux INTEGER;" +
-                "begin" +
-                "promedio_perdida(aux);" +
-                "dbms_output.put_line(aux);" +
-                "end;";
-            return text;
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            List<ComodinJava> lista = new List<ComodinJava>();
+            try
+            {
+                var objetos = x.PromedioPerdidaMensual(token).ToList();
+                return (List<ComodinJava>)objetos;
+            }
+            catch (Exception)
+            {
+                lista = null;
+            }
+
+            return lista;
         }
         [WebMethod]
-        public string Porcentage_cierre_efectivo(String token)
+        public List<ComodinJava> Porcentage_cierre_efectivo(String token)
         {
-            String text = "create or replace procedure porcentage_cierre(total out INTEGER) " +
-                "is" +
-                 "valor_fact INTEGER:= 0;" +
-             "valor_OC INTEGER:= 0;" +
-             "begin" +
-                " select count(VALOR_BRUTO)" +
-                " into valor_fact" +
-                " from FACTURA where TIPO = 'de Compra' group by TIPO;" +
-             "select count(MONTO)" +
-                " into valor_OC" +
-                " from ORDEN_DE_COMPRA group by MONTO;" +
-         "total:= round((valor_fact * 100) / valor_OC);" +
-             "end;" +
-            " --" +
-              "   declare" +
-             "    aux INTEGER;" +
-           "  begin" +
-             "    porcentage_cierre(aux);" +
-           "  dbms_output.put_line(aux);" +
-           "  end; ";
-            return text;
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            List<ComodinJava> lista = new List<ComodinJava>();
+            try
+            {
+                var objetos = x.PorcentageCierreEfectivo(token).ToList();
+                return (List<ComodinJava>)objetos;
+            }
+            catch (Exception)
+            {
+                lista = null;
+            }
+
+            return lista;
         }
     }
 }

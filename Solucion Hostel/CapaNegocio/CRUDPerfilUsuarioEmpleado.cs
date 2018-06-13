@@ -54,6 +54,7 @@ namespace CapaNegocio
 
             return nPUC;
         }
+
         public ContenedorPerfilUsuarioEmpleado LlamarSPActualizar(ContenedorPerfilUsuarioEmpleado nPUC)
         {
             if (ValidarPerfilCUD(nPUC.Retorno.Token))
@@ -94,6 +95,65 @@ namespace CapaNegocio
 
             return nPUC;
         }
+
+        public ContenedorPerfilUsuarioEmpleados LlamarSPRescatar(String token)
+        {
+            ContenedorPerfilUsuarioEmpleados LPerfilUsuarioEmpleados = new ContenedorPerfilUsuarioEmpleados();
+
+            if (ValidarPerfilCUD(token))
+            {
+                try
+                {
+                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                    var collection = (from per in conex.PERSONA
+                                      join usu in conex.USUARIO on per.RUT equals usu.RUT_PERSONA
+                                      orderby per.RUT
+                                      select new
+                                      {
+                                          RutPersona = per.RUT,
+                                          NombrePer = per.NOMBRE,
+                                          ApellidoPer = per.APELLIDO,
+                                          FecNacPer = per.NACIMIENTO,
+                                          MailPer = per.EMAIL,
+                                          TelefonoPer = per.TELEFONO,
+                                          NomUsuario = usu.NOMBRE,
+                                          PassUsiario = usu.CLAVE
+                                      }
+                            ).ToList();
+
+                    foreach (var item in collection)
+                    {
+                        PerfilUsuarioEmpleado m = new PerfilUsuarioEmpleado();
+                        //
+                        m.Persona.Rut = item.RutPersona;
+                        m.Persona.Nombre = item.NombrePer;
+                        m.Persona.Apellido = item.ApellidoPer;
+                        m.Persona.FechaNacimiento = item.FecNacPer;
+                        m.Persona.Email = item.MailPer;
+                        m.Persona.Telefono = item.TelefonoPer;
+                        //
+                        m.Usuario.Nombre = item.NomUsuario;
+                        m.Usuario.Clave = item.PassUsiario;
+                        //
+                        LPerfilUsuarioEmpleados.Lista.Add(m);
+                    }
+                    LPerfilUsuarioEmpleados.Retorno.Codigo = 0;
+                    LPerfilUsuarioEmpleados.Retorno.Glosa = "OK";
+                }
+                catch (Exception)
+                {
+                    LPerfilUsuarioEmpleados.Retorno.Codigo = 1011;
+                    LPerfilUsuarioEmpleados.Retorno.Glosa = "Err codret ORACLE";
+                }
+            }
+            else {
+                LPerfilUsuarioEmpleados.Retorno.Codigo = 100;
+                LPerfilUsuarioEmpleados.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+
+            return LPerfilUsuarioEmpleados;
+        }
         private bool ValidarPerfilCUD(string token)
         {
             bool retorno = false;
@@ -101,46 +161,13 @@ namespace CapaNegocio
 
             List<string> Perfiles = new List<string>();
 
+            Perfiles.Add("Empleado");
             Perfiles.Add("Administrador");
             if (x.ValidarPerfil(token, Perfiles))
             {
                 retorno = true;
             }
             return retorno;
-        }
-        public PerfilUsuarioEmpleado buscarEmpleadoPorRut(String rut, String token)
-        {
-            if (ValidarPerfilCUD(token))
-            {
-                try
-                {
-                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
-                    var usuario = conex.USUARIO.SingleOrDefault(b => b.RUT_PERSONA == rut);
-                    var persona = conex.PERSONA.SingleOrDefault(b => b.RUT == rut);
-                    PerfilUsuarioEmpleado pAdmin = new PerfilUsuarioEmpleado();
-                    pAdmin.Persona.Nombre = persona.NOMBRE;
-                    pAdmin.Persona.Apellido = persona.APELLIDO;
-                    pAdmin.Persona.Email = persona.EMAIL;
-                    pAdmin.Persona.FechaNacimiento = persona.NACIMIENTO;
-                    pAdmin.Persona.Rut = persona.RUT;
-                    pAdmin.Persona.Telefono = persona.TELEFONO;
-                    pAdmin.Usuario.Estado = usuario.ESTADO;
-                    pAdmin.Usuario.Clave = usuario.CLAVE;
-                    pAdmin.Usuario.Id = usuario.ID;
-                    pAdmin.Usuario.Nombre = usuario.NOMBRE;
-                    pAdmin.Usuario.Perfil = usuario.PERFIL;
-                    pAdmin.Usuario.RutPersona = usuario.RUT_PERSONA;
-                    return pAdmin;
-                }
-                catch (Exception)
-                {
-                    return null;
-                }
-            }
-            else
-            {
-                return null;
-            }
         }
     }
 }
