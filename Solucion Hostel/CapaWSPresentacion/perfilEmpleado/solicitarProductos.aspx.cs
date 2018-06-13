@@ -67,6 +67,9 @@ namespace CapaWSPresentacion.perfilEmpleado
             //guardar los valores
             Session["TemporalProvision"] = m.Lista;
             Session["TemporalProveedor"] = n.Lista;
+
+            //
+            gwListaCompra.DataBind();
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -90,47 +93,53 @@ namespace CapaWSPresentacion.perfilEmpleado
 
             try
             {
-                List<Provision> Lprvi = (List<Provision>)Session["TemporalProvision"];
-                List<Producto>  Lprod = (List<Producto>)Session["TemporalProducto"];
 
-                var producto = (from prvi in Lprvi
-                                join prod in Lprod on prvi.CodigoProducto equals prod.Codigo
-                                where prvi.RutProveedor   == txtProveedor.SelectedValue
-                                   && prvi.CodigoProducto == int.Parse(txtProducto.SelectedValue)
-                                select new
-                                {
-                                    CodProd     = prod.Codigo,
-                                    Descripcion = prod.Descripcion,
-                                    PreUni      = prvi.Precio,
-                                    Cantidad    = int.Parse(txtCantidad.Text),
-                                    PrecioCant  = prvi.Precio * int.Parse(txtCantidad.Text)
-                                }
-                                ).SingleOrDefault();
+                if(VerificarExisteProdEnListaTemp(ListaTemporal.ListaDetalle) == false)
+                {
 
-                opd.RegistroRecepcionPedido.Producto.Codigo = producto.CodProd;
-                opd.RegistroRecepcionPedido.Producto.Descripcion = producto.Descripcion;
-                opd.RegistroRecepcionPedido.PrecioUnitario = producto.PreUni;
-                opd.RegistroRecepcionPedido.Cantidad = producto.Cantidad;
-                opd.RegistroRecepcionPedido.PrecioCantidad = producto.PrecioCant;
+                    List<Provision> Lprvi = (List<Provision>)Session["TemporalProvision"];
+                    List<Producto> Lprod = (List<Producto>)Session["TemporalProducto"];
 
-                ListaTemporal.ListaDetalle.Add(opd);
+                    var producto = (from prvi in Lprvi
+                                    join prod in Lprod on prvi.CodigoProducto equals prod.Codigo
+                                    where prvi.RutProveedor == txtProveedor.SelectedValue
+                                       && prvi.CodigoProducto == int.Parse(txtProducto.SelectedValue)
+                                    select new
+                                    {
+                                        CodProd = prod.Codigo,
+                                        Descripcion = prod.Descripcion,
+                                        PreUni = prvi.Precio,
+                                        Cantidad = int.Parse(txtCantidad.Text),
+                                        PrecioCant = prvi.Precio * int.Parse(txtCantidad.Text)
+                                    }
+                                    ).SingleOrDefault();
 
-                var formatogw = (from fmgw in ListaTemporal.ListaDetalle
-                                 select new
-                                 {
-                                     CodProd = fmgw.RegistroRecepcionPedido.Producto.Codigo,
-                                     Descripcion = fmgw.RegistroRecepcionPedido.Producto.Descripcion,
-                                     PrecioUnitario = fmgw.RegistroRecepcionPedido.PrecioUnitario,
-                                     Cantidad = fmgw.RegistroRecepcionPedido.Cantidad,
-                                     PrecioCantidad = fmgw.RegistroRecepcionPedido.PrecioCantidad
-                                 }
-                                    ).ToList();
+                    opd.RegistroRecepcionPedido.Producto.Codigo = producto.CodProd;
+                    opd.RegistroRecepcionPedido.Producto.Descripcion = producto.Descripcion;
+                    opd.RegistroRecepcionPedido.PrecioUnitario = producto.PreUni;
+                    opd.RegistroRecepcionPedido.Cantidad = producto.Cantidad;
+                    opd.RegistroRecepcionPedido.PrecioCantidad = producto.PrecioCant;
 
-                gwListaCompra.DataSource = null;
-                gwListaCompra.DataSource = formatogw;
-                gwListaCompra.DataBind();
+                    ListaTemporal.ListaDetalle.Add(opd);
 
-                Session["ListaTemporal"] = ListaTemporal;
+                    var formatogw = (from fmgw in ListaTemporal.ListaDetalle
+                                     select new
+                                     {
+                                         CodProd = fmgw.RegistroRecepcionPedido.Producto.Codigo,
+                                         Descripcion = fmgw.RegistroRecepcionPedido.Producto.Descripcion,
+                                         PrecioUnitario = fmgw.RegistroRecepcionPedido.PrecioUnitario,
+                                         Cantidad = fmgw.RegistroRecepcionPedido.Cantidad,
+                                         PrecioCantidad = fmgw.RegistroRecepcionPedido.PrecioCantidad
+                                     }
+                                        ).ToList();
+
+                    gwListaCompra.DataSource = null;
+                    gwListaCompra.DataSource = formatogw;
+                    gwListaCompra.DataBind();
+
+                    Session["ListaTemporal"] = ListaTemporal;
+                }
+
             }
             catch (Exception ex)
             {
@@ -138,61 +147,76 @@ namespace CapaWSPresentacion.perfilEmpleado
             }                      
         }
 
-     /*  protected void btnSelectProveedor_Click(object sender, EventArgs e)
+        private bool VerificarExisteProdEnListaTemp(List<OrdenPedidoDetalle> listaDetalle)
         {
-            if (txtProveedor.Enabled == true) 
+            bool existe = false;
+
+            foreach (var item in listaDetalle)
             {
-                WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+                if (item.RegistroRecepcionPedido.Producto.Codigo == int.Parse(txtProducto.SelectedValue)) {
+                    existe = true;
+                    break;
+                }
+            }
 
-                //Recuperar datos de provisiones
-                ContenedorProvisiones m = new ContenedorProvisiones();
-                m = x.ProvisionRescatar(Session["TokenUsuario"].ToString());
+            return existe;
+        }
 
-                //Recuperar datos de productos
-                ContenedorProductos o = new ContenedorProductos();
-                o = x.ProductoRescatar(Session["TokenUsuario"].ToString());
+        /*  protected void btnSelectProveedor_Click(object sender, EventArgs e)
+           {
+               if (txtProveedor.Enabled == true) 
+               {
+                   WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-                var productos = (from prvi in m.Lista
-                                 join prod in o.Lista on prvi.CodigoProducto equals prod.Codigo
-                                 where prvi.RutProveedor == txtProveedor.SelectedValue
-                                 orderby prod.Descripcion
-                                 select new
-                                 {
-                                     Codigo = prod.Codigo,
-                                     Descripcion = prod.Descripcion
-                                 }
-                                ).ToList();
+                   //Recuperar datos de provisiones
+                   ContenedorProvisiones m = new ContenedorProvisiones();
+                   m = x.ProvisionRescatar(Session["TokenUsuario"].ToString());
 
-                txtProducto.DataSource = null;
-                txtProducto.DataSource = productos;
-                txtProducto.DataValueField = "Codigo";
-                txtProducto.DataTextField = "Descripcion";
-                txtProducto.DataBind();
+                   //Recuperar datos de productos
+                   ContenedorProductos o = new ContenedorProductos();
+                   o = x.ProductoRescatar(Session["TokenUsuario"].ToString());
 
-                Session["TemporalProducto"] = o.Lista;
+                   var productos = (from prvi in m.Lista
+                                    join prod in o.Lista on prvi.CodigoProducto equals prod.Codigo
+                                    where prvi.RutProveedor == txtProveedor.SelectedValue
+                                    orderby prod.Descripcion
+                                    select new
+                                    {
+                                        Codigo = prod.Codigo,
+                                        Descripcion = prod.Descripcion
+                                    }
+                                   ).ToList();
 
-                OrdenPedidoCompleta ListaTemporal = new OrdenPedidoCompleta();
+                   txtProducto.DataSource = null;
+                   txtProducto.DataSource = productos;
+                   txtProducto.DataValueField = "Codigo";
+                   txtProducto.DataTextField = "Descripcion";
+                   txtProducto.DataBind();
 
-                ListaTemporal.Cabecera.Estado = "activo";
-                ListaTemporal.Cabecera.FechaEmision = DateTime.Now;
-                ListaTemporal.Cabecera.Monto = 0;
-                ListaTemporal.Cabecera.Numero = 0;
-                ListaTemporal.Cabecera.RutProveedor = txtProveedor.SelectedValue;
-                ListaTemporal.Cabecera.Ubicacion = "Logo";
+                   Session["TemporalProducto"] = o.Lista;
 
-                Session["ListaTemporal"] = ListaTemporal;
+                   OrdenPedidoCompleta ListaTemporal = new OrdenPedidoCompleta();
 
-                txtProveedor.Enabled = false;
-                btnSelectProveedor.Text = "Modificar Proveedor";
-                txtProducto.Enabled = true;
-                txtCantidad.Enabled = true;
-                btnAgregar.Enabled = true;
-                btnRealizar.Enabled = true;
+                   ListaTemporal.Cabecera.Estado = "activo";
+                   ListaTemporal.Cabecera.FechaEmision = DateTime.Now;
+                   ListaTemporal.Cabecera.Monto = 0;
+                   ListaTemporal.Cabecera.Numero = 0;
+                   ListaTemporal.Cabecera.RutProveedor = txtProveedor.SelectedValue;
+                   ListaTemporal.Cabecera.Ubicacion = "Logo";
 
-            } else {
-                InicializarProveedor();
-            }            
-        } */
+                   Session["ListaTemporal"] = ListaTemporal;
+
+                   txtProveedor.Enabled = false;
+                   btnSelectProveedor.Text = "Modificar Proveedor";
+                   txtProducto.Enabled = true;
+                   txtCantidad.Enabled = true;
+                   btnAgregar.Enabled = true;
+                   btnRealizar.Enabled = true;
+
+               } else {
+                   InicializarProveedor();
+               }            
+           } */
         protected void btnRealizar_Click(object sender, EventArgs e)
         {
             OrdenPedidoCompleta ListaTemporal;

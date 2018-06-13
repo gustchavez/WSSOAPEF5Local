@@ -38,7 +38,8 @@
 	<div class="contenedorTabla">
 		
 
-        <asp:GridView ID="gwListaCompra" runat="server" CssClass="tabla" style="left: 0px; top: 50px">
+        <asp:GridView ID="gwListaCompra" runat="server" CssClass="tabla" style="left: 0px; top: 50px"
+            EmptyDataText="Agregue Productos...">
         </asp:GridView>
 
 		<div class="Casilla2-1">	
