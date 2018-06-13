@@ -48,6 +48,7 @@ body{
 	margin-top: 30px;
 	width: 970px;
 	height: 670px;
+    overflow: auto;
 }
 
 

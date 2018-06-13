@@ -148,1804 +148,1804 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.Button MostrarCasillas;
         
         /// <summary>
-        /// Control txtRut.
+        /// Control txtRutIndividual1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRut;
+        protected global::System.Web.UI.WebControls.TextBox txtRutIndividual1;
         
         /// <summary>
-        /// Control TextBox6.
+        /// Control txtNombreIndividual1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreIndividual1;
         
         /// <summary>
-        /// Control TextBox7.
+        /// Control txtApellidoIndividual1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoIndividual1;
         
         /// <summary>
-        /// Control TextBox8.
+        /// Control txtOtroIndividual1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox8;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroIndividual1;
         
         /// <summary>
-        /// Control DropDownList1.
+        /// Control txtComidaIndividualObservaciones1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaIndividualObservaciones1;
         
         /// <summary>
-        /// Control TextBox9.
+        /// Control txtRutIndividual2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.TextBox txtRutIndividual2;
         
         /// <summary>
-        /// Control TextBox10.
+        /// Control txtNombreIndividual2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox10;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreIndividual2;
         
         /// <summary>
-        /// Control TextBox11.
+        /// Control txtApellidoIndividual2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox11;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoIndividual2;
         
         /// <summary>
-        /// Control TextBox12.
+        /// Control txtOtroIndividual2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox12;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroIndividual2;
         
         /// <summary>
-        /// Control DropDownList2.
+        /// Control txtComidaIndividualObservaciones2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaIndividualObservaciones2;
         
         /// <summary>
-        /// Control TextBox13.
+        /// Control txtRutIndividual3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox13;
+        protected global::System.Web.UI.WebControls.TextBox txtRutIndividual3;
         
         /// <summary>
-        /// Control TextBox14.
+        /// Control txtNombreIndividual3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox14;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreIndividual3;
         
         /// <summary>
-        /// Control TextBox15.
+        /// Control txtApellidoIndividual3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox15;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoIndividual3;
         
         /// <summary>
-        /// Control TextBox16.
+        /// Control txtOtroIndividual3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox16;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroIndividual3;
         
         /// <summary>
-        /// Control DropDownList3.
+        /// Control txtComidaIndividualObservaciones3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaIndividualObservaciones3;
         
         /// <summary>
-        /// Control TextBox17.
+        /// Control txtRutIndividual4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox17;
+        protected global::System.Web.UI.WebControls.TextBox txtRutIndividual4;
         
         /// <summary>
-        /// Control TextBox18.
+        /// Control txtNombreIndividual4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox18;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreIndividual4;
         
         /// <summary>
-        /// Control TextBox19.
+        /// Control txtApellidoIndividual4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox19;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoIndividual4;
         
         /// <summary>
-        /// Control TextBox20.
+        /// Control txtOtroIndividual4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox20;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroIndividual4;
         
         /// <summary>
-        /// Control DropDownList4.
+        /// Control txtComidaIndividualObservaciones4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaIndividualObservaciones4;
         
         /// <summary>
-        /// Control TextBox21.
+        /// Control txtRutDoble1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox21;
+        protected global::System.Web.UI.WebControls.TextBox txtRutDoble1;
         
         /// <summary>
-        /// Control TextBox22.
+        /// Control txtNombreDoble1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox22;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreDoble1;
         
         /// <summary>
-        /// Control TextBox23.
+        /// Control txtApellidoDoble1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox23;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoDoble1;
         
         /// <summary>
-        /// Control TextBox24.
+        /// Control txtOtroDoble1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox24;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroDoble1;
         
         /// <summary>
-        /// Control DropDownList5.
+        /// Control txtComidaDobleObservaciones1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList5;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaDobleObservaciones1;
         
         /// <summary>
-        /// Control TextBox25.
+        /// Control txtRutDoble2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox25;
+        protected global::System.Web.UI.WebControls.TextBox txtRutDoble2;
         
         /// <summary>
-        /// Control TextBox26.
+        /// Control txtNombreDoble2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox26;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreDoble2;
         
         /// <summary>
-        /// Control TextBox27.
+        /// Control txtApellidoDoble2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox27;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoDoble2;
         
         /// <summary>
-        /// Control TextBox28.
+        /// Control txtOtroDoble2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox28;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroDoble2;
         
         /// <summary>
-        /// Control DropDownList6.
+        /// Control txtComidaDobleObservaciones2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList6;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaDobleObservaciones2;
         
         /// <summary>
-        /// Control TextBox29.
+        /// Control txtRutDoble3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox29;
+        protected global::System.Web.UI.WebControls.TextBox txtRutDoble3;
         
         /// <summary>
-        /// Control TextBox30.
+        /// Control txtNombreDoble3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox30;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreDoble3;
         
         /// <summary>
-        /// Control TextBox31.
+        /// Control txtApellidoDoble3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox31;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoDoble3;
         
         /// <summary>
-        /// Control TextBox32.
+        /// Control txtOtroDoble3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox32;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroDoble3;
         
         /// <summary>
-        /// Control DropDownList7.
+        /// Control txtComidaDobleObservaciones3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList7;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaDobleObservaciones3;
         
         /// <summary>
-        /// Control TextBox33.
+        /// Control txtRutDoble4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox33;
+        protected global::System.Web.UI.WebControls.TextBox txtRutDoble4;
         
         /// <summary>
-        /// Control TextBox34.
+        /// Control txtNombreDoble4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox34;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreDoble4;
         
         /// <summary>
-        /// Control TextBox35.
+        /// Control txtApellidoDoble4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox35;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoDoble4;
         
         /// <summary>
-        /// Control TextBox36.
+        /// Control txtOtroDoble4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox36;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroDoble4;
         
         /// <summary>
-        /// Control DropDownList8.
+        /// Control txtComidaDobleObservaciones4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList8;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaDobleObservaciones4;
         
         /// <summary>
-        /// Control TextBox37.
+        /// Control txtRutDoble5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox37;
+        protected global::System.Web.UI.WebControls.TextBox txtRutDoble5;
         
         /// <summary>
-        /// Control TextBox38.
+        /// Control txtNombreDoble5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox38;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreDoble5;
         
         /// <summary>
-        /// Control TextBox39.
+        /// Control txtApellidoDoble5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox39;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoDoble5;
         
         /// <summary>
-        /// Control TextBox40.
+        /// Control txtOtroDoble5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox40;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroDoble5;
         
         /// <summary>
-        /// Control DropDownList9.
+        /// Control txtComidaDobleObservaciones5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList9;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaDobleObservaciones5;
         
         /// <summary>
-        /// Control TextBox41.
+        /// Control txtRutDoble6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox41;
+        protected global::System.Web.UI.WebControls.TextBox txtRutDoble6;
         
         /// <summary>
-        /// Control TextBox42.
+        /// Control txtNombreDoble6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox42;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreDoble6;
         
         /// <summary>
-        /// Control TextBox43.
+        /// Control txtApellidoDoble6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox43;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoDoble6;
         
         /// <summary>
-        /// Control TextBox44.
+        /// Control txtOtroDoble6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox44;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroDoble6;
         
         /// <summary>
-        /// Control DropDownList10.
+        /// Control txtComidaDobleObservaciones6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList10;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaDobleObservaciones6;
         
         /// <summary>
-        /// Control TextBox45.
+        /// Control txtRutDoble7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox45;
+        protected global::System.Web.UI.WebControls.TextBox txtRutDoble7;
         
         /// <summary>
-        /// Control TextBox46.
+        /// Control txtNombreDoble7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox46;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreDoble7;
         
         /// <summary>
-        /// Control TextBox47.
+        /// Control txtApellidoDoble7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox47;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoDoble7;
         
         /// <summary>
-        /// Control TextBox48.
+        /// Control txtOtroDoble7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox48;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroDoble7;
         
         /// <summary>
-        /// Control DropDownList11.
+        /// Control txtComidaDobleObservaciones7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList11;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaDobleObservaciones7;
         
         /// <summary>
-        /// Control TextBox49.
+        /// Control txtRutDoble8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox49;
+        protected global::System.Web.UI.WebControls.TextBox txtRutDoble8;
         
         /// <summary>
-        /// Control TextBox50.
+        /// Control txtNombreDoble8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox50;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreDoble8;
         
         /// <summary>
-        /// Control TextBox51.
+        /// Control txtApellidoDoble8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox51;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoDoble8;
         
         /// <summary>
-        /// Control TextBox52.
+        /// Control txtOtroDoble8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox52;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroDoble8;
         
         /// <summary>
-        /// Control DropDownList12.
+        /// Control txtComidaDobleObservaciones8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList12;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaDobleObservaciones8;
         
         /// <summary>
-        /// Control TextBox53.
+        /// Control txtRutTriple1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox53;
+        protected global::System.Web.UI.WebControls.TextBox txtRutTriple1;
         
         /// <summary>
-        /// Control TextBox54.
+        /// Control txtNombreTriple1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox54;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreTriple1;
         
         /// <summary>
-        /// Control TextBox55.
+        /// Control txtApellidoTriple1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox55;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoTriple1;
         
         /// <summary>
-        /// Control TextBox56.
+        /// Control txtOtroTriple1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox56;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroTriple1;
         
         /// <summary>
-        /// Control DropDownList13.
+        /// Control txtComidaTripleObservaciones1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList13;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaTripleObservaciones1;
         
         /// <summary>
-        /// Control TextBox57.
+        /// Control txtRutTriple2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox57;
+        protected global::System.Web.UI.WebControls.TextBox txtRutTriple2;
         
         /// <summary>
-        /// Control TextBox58.
+        /// Control txtNombreTriple2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox58;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreTriple2;
         
         /// <summary>
-        /// Control TextBox59.
+        /// Control txtApellidoTriple2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox59;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoTriple2;
         
         /// <summary>
-        /// Control TextBox60.
+        /// Control txtOtroTriple2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox60;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroTriple2;
         
         /// <summary>
-        /// Control DropDownList14.
+        /// Control txtComidaTripleObservaciones2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList14;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaTripleObservaciones2;
         
         /// <summary>
-        /// Control TextBox85.
+        /// Control txtRutTriple3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox85;
+        protected global::System.Web.UI.WebControls.TextBox txtRutTriple3;
         
         /// <summary>
-        /// Control TextBox86.
+        /// Control txtNombreTriple3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox86;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreTriple3;
         
         /// <summary>
-        /// Control TextBox87.
+        /// Control txtApellidoTriple3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox87;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoTriple3;
         
         /// <summary>
-        /// Control TextBox88.
+        /// Control txtOtroTriple3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox88;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroTriple3;
         
         /// <summary>
-        /// Control DropDownList21.
+        /// Control txtComidaTripleObservaciones3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList21;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaTripleObservaciones3;
         
         /// <summary>
-        /// Control TextBox89.
+        /// Control txtRutTriple4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox89;
+        protected global::System.Web.UI.WebControls.TextBox txtRutTriple4;
         
         /// <summary>
-        /// Control TextBox90.
+        /// Control txtNombreTriple4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox90;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreTriple4;
         
         /// <summary>
-        /// Control TextBox91.
+        /// Control txtApellidoTriple4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox91;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoTriple4;
         
         /// <summary>
-        /// Control TextBox92.
+        /// Control txtOtroTriple4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox92;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroTriple4;
         
         /// <summary>
-        /// Control DropDownList22.
+        /// Control txtComidaTripleObservaciones4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList22;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaTripleObservaciones4;
         
         /// <summary>
-        /// Control TextBox61.
+        /// Control txtRutTriple5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox61;
+        protected global::System.Web.UI.WebControls.TextBox txtRutTriple5;
         
         /// <summary>
-        /// Control TextBox62.
+        /// Control txtNombreTriple5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox62;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreTriple5;
         
         /// <summary>
-        /// Control TextBox63.
+        /// Control txtApellidoTriple5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox63;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoTriple5;
         
         /// <summary>
-        /// Control TextBox64.
+        /// Control txtOtroTriple5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox64;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroTriple5;
         
         /// <summary>
-        /// Control DropDownList15.
+        /// Control txtComidaTripleObservaciones5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList15;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaTripleObservaciones5;
         
         /// <summary>
-        /// Control TextBox65.
+        /// Control txtRutTriple6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox65;
+        protected global::System.Web.UI.WebControls.TextBox txtRutTriple6;
         
         /// <summary>
-        /// Control TextBox66.
+        /// Control txtNombreTriple6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox66;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreTriple6;
         
         /// <summary>
-        /// Control TextBox67.
+        /// Control txtApellidoTriple6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox67;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoTriple6;
         
         /// <summary>
-        /// Control TextBox68.
+        /// Control txtOtroTriple6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox68;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroTriple6;
         
         /// <summary>
-        /// Control DropDownList16.
+        /// Control txtComidaTripleObservaciones6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList16;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaTripleObservaciones6;
         
         /// <summary>
-        /// Control TextBox93.
+        /// Control txtRutTriple7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox93;
+        protected global::System.Web.UI.WebControls.TextBox txtRutTriple7;
         
         /// <summary>
-        /// Control TextBox94.
+        /// Control txtNombreTriple7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox94;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreTriple7;
         
         /// <summary>
-        /// Control TextBox95.
+        /// Control txtApellidoTriple7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox95;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoTriple7;
         
         /// <summary>
-        /// Control TextBox96.
+        /// Control txtOtroTriple7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox96;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroTriple7;
         
         /// <summary>
-        /// Control DropDownList23.
+        /// Control txtComidaTripleObservaciones7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList23;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaTripleObservaciones7;
         
         /// <summary>
-        /// Control TextBox69.
+        /// Control txtRutTriple8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox69;
+        protected global::System.Web.UI.WebControls.TextBox txtRutTriple8;
         
         /// <summary>
-        /// Control TextBox70.
+        /// Control txtNombreTriple8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox70;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreTriple8;
         
         /// <summary>
-        /// Control TextBox71.
+        /// Control txtApellidoTriple8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox71;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoTriple8;
         
         /// <summary>
-        /// Control TextBox72.
+        /// Control txtOtroTriple8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox72;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroTriple8;
         
         /// <summary>
-        /// Control DropDownList17.
+        /// Control txtComidaTripleObservaciones8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList17;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaTripleObservaciones8;
         
         /// <summary>
-        /// Control TextBox73.
+        /// Control txtRutTriple9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox73;
+        protected global::System.Web.UI.WebControls.TextBox txtRutTriple9;
         
         /// <summary>
-        /// Control TextBox74.
+        /// Control txtNombreTriple9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox74;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreTriple9;
         
         /// <summary>
-        /// Control TextBox75.
+        /// Control txtApellidoTriple9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox75;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoTriple9;
         
         /// <summary>
-        /// Control TextBox76.
+        /// Control txtOtroTriple9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox76;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroTriple9;
         
         /// <summary>
-        /// Control DropDownList18.
+        /// Control txtComidaTripleObservaciones9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList18;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaTripleObservaciones9;
         
         /// <summary>
-        /// Control TextBox97.
+        /// Control txtRutTriple10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox97;
+        protected global::System.Web.UI.WebControls.TextBox txtRutTriple10;
         
         /// <summary>
-        /// Control TextBox98.
+        /// Control txtNombreTriple10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox98;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreTriple10;
         
         /// <summary>
-        /// Control TextBox99.
+        /// Control txtApellidoTriple10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox99;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoTriple10;
         
         /// <summary>
-        /// Control TextBox100.
+        /// Control txtOtroTriple10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox100;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroTriple10;
         
         /// <summary>
-        /// Control DropDownList24.
+        /// Control txtComidaTripleObservaciones10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList24;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaTripleObservaciones10;
         
         /// <summary>
-        /// Control TextBox77.
+        /// Control txtRutTriple11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox77;
+        protected global::System.Web.UI.WebControls.TextBox txtRutTriple11;
         
         /// <summary>
-        /// Control TextBox78.
+        /// Control txtNombreTriple11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox78;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreTriple11;
         
         /// <summary>
-        /// Control TextBox79.
+        /// Control txtApellidoTriple11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox79;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoTriple11;
         
         /// <summary>
-        /// Control TextBox80.
+        /// Control txtOtroTriple11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox80;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroTriple11;
         
         /// <summary>
-        /// Control DropDownList19.
+        /// Control txtComidaTripleObservaciones11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList19;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaTripleObservaciones11;
         
         /// <summary>
-        /// Control TextBox81.
+        /// Control txtRutTriple12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox81;
+        protected global::System.Web.UI.WebControls.TextBox txtRutTriple12;
         
         /// <summary>
-        /// Control TextBox82.
+        /// Control txtNombreTriple12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox82;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreTriple12;
         
         /// <summary>
-        /// Control TextBox83.
+        /// Control txtApellidoTriple12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox83;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoTriple12;
         
         /// <summary>
-        /// Control TextBox84.
+        /// Control txtOtroTriple12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox84;
+        protected global::System.Web.UI.WebControls.TextBox txtOtroTriple12;
         
         /// <summary>
-        /// Control DropDownList20.
+        /// Control txtComidaTripleObservaciones12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList20;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaTripleObservaciones12;
         
         /// <summary>
-        /// Control TextBox113.
+        /// Control txtRutCuadruple1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox113;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple1;
         
         /// <summary>
-        /// Control TextBox114.
+        /// Control txtNombreCuadruple1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox114;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple1;
         
         /// <summary>
-        /// Control TextBox115.
+        /// Control txtApellidoCuadruple1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox115;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple1;
         
         /// <summary>
-        /// Control TextBox116.
+        /// Control txtOtro1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox116;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro1;
         
         /// <summary>
-        /// Control DropDownList28.
+        /// Control txtComidaCuadrupleObservaciones1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList28;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones1;
         
         /// <summary>
-        /// Control TextBox101.
+        /// Control txtRutCuadruple2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox101;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple2;
         
         /// <summary>
-        /// Control TextBox102.
+        /// Control txtNombreCuadruple2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox102;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple2;
         
         /// <summary>
-        /// Control TextBox103.
+        /// Control txtApellidoCuadruple2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox103;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple2;
         
         /// <summary>
-        /// Control TextBox104.
+        /// Control txtOtro2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox104;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro2;
         
         /// <summary>
-        /// Control DropDownList25.
+        /// Control txtComidaCuadrupleObservaciones2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList25;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones2;
         
         /// <summary>
-        /// Control TextBox105.
+        /// Control txtRutCuadruple3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox105;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple3;
         
         /// <summary>
-        /// Control TextBox106.
+        /// Control txtNombreCuadruple3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox106;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple3;
         
         /// <summary>
-        /// Control TextBox107.
+        /// Control txtApellidoCuadruple3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox107;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple3;
         
         /// <summary>
-        /// Control TextBox108.
+        /// Control txtOtro3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox108;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro3;
         
         /// <summary>
-        /// Control DropDownList26.
+        /// Control txtComidaCuadrupleObservaciones3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList26;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones3;
         
         /// <summary>
-        /// Control TextBox109.
+        /// Control txtRutCuadruple4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox109;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple4;
         
         /// <summary>
-        /// Control TextBox110.
+        /// Control txtNombreCuadruple4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox110;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple4;
         
         /// <summary>
-        /// Control TextBox111.
+        /// Control txtApellidoCuadruple4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox111;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple4;
         
         /// <summary>
-        /// Control TextBox112.
+        /// Control txtOtro4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox112;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro4;
         
         /// <summary>
-        /// Control DropDownList27.
+        /// Control txtComidaCuadrupleObservaciones4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList27;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones4;
         
         /// <summary>
-        /// Control TextBox117.
+        /// Control txtRutCuadruple5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox117;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple5;
         
         /// <summary>
-        /// Control TextBox118.
+        /// Control txtNombreCuadruple5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox118;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple5;
         
         /// <summary>
-        /// Control TextBox119.
+        /// Control txtApellidoCuadruple5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox119;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple5;
         
         /// <summary>
-        /// Control TextBox120.
+        /// Control txtOtro5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox120;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro5;
         
         /// <summary>
-        /// Control DropDownList29.
+        /// Control txtComidaCuadrupleObservaciones5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList29;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones5;
         
         /// <summary>
-        /// Control TextBox121.
+        /// Control txtRutCuadruple6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox121;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple6;
         
         /// <summary>
-        /// Control TextBox122.
+        /// Control txtNombreCuadruple6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox122;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple6;
         
         /// <summary>
-        /// Control TextBox123.
+        /// Control txtApellidoCuadruple6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox123;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple6;
         
         /// <summary>
-        /// Control TextBox124.
+        /// Control txtOtro6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox124;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro6;
         
         /// <summary>
-        /// Control DropDownList30.
+        /// Control txtComidaCuadrupleObservaciones6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList30;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones6;
         
         /// <summary>
-        /// Control TextBox125.
+        /// Control txtRutCuadruple7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox125;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple7;
         
         /// <summary>
-        /// Control TextBox126.
+        /// Control txtNombreCuadruple7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox126;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple7;
         
         /// <summary>
-        /// Control TextBox127.
+        /// Control txtApellidoCuadruple7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox127;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple7;
         
         /// <summary>
-        /// Control TextBox128.
+        /// Control txtOtro7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox128;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro7;
         
         /// <summary>
-        /// Control DropDownList31.
+        /// Control txtComidaCuadrupleObservaciones7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList31;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones7;
         
         /// <summary>
-        /// Control TextBox129.
+        /// Control txtRutCuadruple8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox129;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple8;
         
         /// <summary>
-        /// Control TextBox130.
+        /// Control txtNombreCuadruple8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox130;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple8;
         
         /// <summary>
-        /// Control TextBox131.
+        /// Control txtApellidoCuadruple8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox131;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple8;
         
         /// <summary>
-        /// Control TextBox132.
+        /// Control txtOtro8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox132;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro8;
         
         /// <summary>
-        /// Control DropDownList32.
+        /// Control txtComidaCuadrupleObservaciones8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList32;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones8;
         
         /// <summary>
-        /// Control TextBox133.
+        /// Control txtRutCuadruple9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox133;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple9;
         
         /// <summary>
-        /// Control TextBox134.
+        /// Control txtNombreCuadruple9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox134;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple9;
         
         /// <summary>
-        /// Control TextBox135.
+        /// Control txtApellidoCuadruple9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox135;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple9;
         
         /// <summary>
-        /// Control TextBox136.
+        /// Control txtOtro9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox136;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro9;
         
         /// <summary>
-        /// Control DropDownList33.
+        /// Control txtComidaCuadrupleObservaciones9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList33;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones9;
         
         /// <summary>
-        /// Control TextBox137.
+        /// Control txtRutCuadruple10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox137;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple10;
         
         /// <summary>
-        /// Control TextBox138.
+        /// Control txtNombreCuadruple10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox138;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple10;
         
         /// <summary>
-        /// Control TextBox139.
+        /// Control txtApellidoCuadruple10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox139;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple10;
         
         /// <summary>
-        /// Control TextBox140.
+        /// Control txtOtro10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox140;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro10;
         
         /// <summary>
-        /// Control DropDownList34.
+        /// Control txtComidaCuadrupleObservaciones10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList34;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones10;
         
         /// <summary>
-        /// Control TextBox141.
+        /// Control txtRutCuadruple11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox141;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple11;
         
         /// <summary>
-        /// Control TextBox142.
+        /// Control txtNombreCuadruple11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox142;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple11;
         
         /// <summary>
-        /// Control TextBox143.
+        /// Control txtApellidoCuadruple11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox143;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple11;
         
         /// <summary>
-        /// Control TextBox144.
+        /// Control txtOtro11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox144;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro11;
         
         /// <summary>
-        /// Control DropDownList35.
+        /// Control txtComidaCuadrupleObservaciones11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList35;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones11;
         
         /// <summary>
-        /// Control TextBox145.
+        /// Control txtRutCuadruple12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox145;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple12;
         
         /// <summary>
-        /// Control TextBox146.
+        /// Control txtNombreCuadruple12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox146;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple12;
         
         /// <summary>
-        /// Control TextBox147.
+        /// Control txtApellidoCuadruple12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox147;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple12;
         
         /// <summary>
-        /// Control TextBox148.
+        /// Control txtOtro12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox148;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro12;
         
         /// <summary>
-        /// Control DropDownList36.
+        /// Control txtComidaCuadrupleObservaciones12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList36;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones12;
         
         /// <summary>
-        /// Control TextBox149.
+        /// Control txtRutCuadruple13.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox149;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple13;
         
         /// <summary>
-        /// Control TextBox150.
+        /// Control txtNombreCuadruple13.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox150;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple13;
         
         /// <summary>
-        /// Control TextBox151.
+        /// Control txtApellidoCuadruple13.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox151;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple13;
         
         /// <summary>
-        /// Control TextBox152.
+        /// Control txtOtro13.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox152;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro13;
         
         /// <summary>
-        /// Control DropDownList37.
+        /// Control txtComidaCuadrupleObservaciones13.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList37;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones13;
         
         /// <summary>
-        /// Control TextBox153.
+        /// Control txtRutCuadruple14.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox153;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple14;
         
         /// <summary>
-        /// Control TextBox154.
+        /// Control txtNombreCuadruple14.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox154;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple14;
         
         /// <summary>
-        /// Control TextBox155.
+        /// Control txtApellidoCuadruple14.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox155;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple14;
         
         /// <summary>
-        /// Control TextBox156.
+        /// Control txtOtro14.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox156;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro14;
         
         /// <summary>
-        /// Control DropDownList38.
+        /// Control txtComidaCuadrupleObservaciones14.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList38;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones14;
         
         /// <summary>
-        /// Control TextBox157.
+        /// Control txtRutCuadruple15.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox157;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple15;
         
         /// <summary>
-        /// Control TextBox158.
+        /// Control txtNombreCuadruple15.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox158;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple15;
         
         /// <summary>
-        /// Control TextBox159.
+        /// Control txtApellidoCuadruple15.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox159;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple15;
         
         /// <summary>
-        /// Control TextBox160.
+        /// Control txtOtro15.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox160;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro15;
         
         /// <summary>
-        /// Control DropDownList39.
+        /// Control txtComidaCuadrupleObservaciones15.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList39;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones15;
         
         /// <summary>
-        /// Control TextBox161.
+        /// Control txtRutCuadruple16.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox161;
+        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple16;
         
         /// <summary>
-        /// Control TextBox162.
+        /// Control txtNombreCuadruple16.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox162;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple16;
         
         /// <summary>
-        /// Control TextBox163.
+        /// Control txtApellidoCuadruple16.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox163;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple16;
         
         /// <summary>
-        /// Control TextBox164.
+        /// Control txtOtro16.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox164;
+        protected global::System.Web.UI.WebControls.TextBox txtOtro16;
         
         /// <summary>
-        /// Control DropDownList40.
+        /// Control txtComidaCuadrupleObservaciones16.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList40;
+        protected global::System.Web.UI.WebControls.DropDownList txtComidaCuadrupleObservaciones16;
         
         /// <summary>
         /// Control BtnSiguiente.
