@@ -59,45 +59,42 @@ namespace CapaWSPresentacion.perfilCliente
             OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
             //Armar Encabezado de Orden de Reserva
             nOCC.Cabecera.RutCliente = SesionUsuario.RutEmpresa;
-            nOCC.Cabecera.Monto = int.Parse(txtPersonasHabitacion.Text) ;//realizar calculo de las habitaciones seleccionadas.
+            nOCC.Cabecera.Monto = int.Parse(txtPersonasHabitacion.Text);//realizar calculo de las habitaciones seleccionadas.
             nOCC.Cabecera.Observaciones = "Reserva habitación";
-            nOCC.Cabecera.Ubicacion = "Nose";
+            nOCC.Cabecera.Ubicacion = "logo";
             nOCC.Cabecera.Estado = "activa";
 
-            //
-            int CantidadHuespedes = int.Parse(Session[txtPersonasHabitacion.Text].ToString());
+            //int CantidadHuespedes = int.Parse(Session[txtPersonasHabitacion.Text].ToString());
 
-            for (int i = 0; i < CantidadHuespedes; i++)
+            try
+            {                
+                int CantIndividual = int.Parse(individual.Text);
+                AgregarHuesped(nOCC, CantIndividual, "Individual", 1);
+            }
+            catch (Exception)
             {
-                OrdenCompraDetalle nOCD = new OrdenCompraDetalle();
-            
-
-                TextBox item0 = (TextBox)FindControl(txtRutIndividual1.Text + i);
-                nOCD.Alojamiento.RutPersona = item0.Text;
-
-                TextBox item1 = (TextBox)FindControl(txtFechaIngreso.Text + i);
-                nOCD.Alojamiento.FechaIngreso = DateTime.Parse(item1.Text);
-
-                TextBox item2 = (TextBox)FindControl(txtFechaEgreso.Text + i);
-                nOCD.Alojamiento.FechaEgreso = DateTime.Parse(item2.Text);
-
-                DropDownList item3 = (DropDownList)FindControl("1" + i);
-                nOCD.Alojamiento.CodigoCama = decimal.Parse(item3.SelectedValue);
-
-                TextBox item4 = (TextBox)FindControl(txtOtroIndividual1.Text + i);
-                nOCD.Alojamiento.Observaciones = item4.Text;
-
-                DropDownList item5 = (DropDownList)FindControl(txtComidaIndividualObservaciones1.Text + i);
-                nOCD.Comida.CodigoPlato = decimal.Parse(item5.SelectedValue);
-
-                TextBox item6 = (TextBox)FindControl("txtComidaObservaciones" + i);
-                nOCD.Comida.Observaciones = item6.Text;
-
-                nOCD.Comida.FechaRecepcion = DateTime.Now;
-
-                nOCC.ListaDetalle.Add(nOCD);
+                //No existe se continua siguiente validacion
             }
 
+            try
+            {
+                int CantIndividual = int.Parse(doble.Text);
+                AgregarHuesped(nOCC, CantIndividual, "Doble", 2);
+            }
+            catch (Exception)
+            {
+                //No existe se continua siguiente validacion
+            }
+
+            try
+            {
+                int CantIndividual = int.Parse(triple.Text);
+                AgregarHuesped(nOCC, CantIndividual, "Tiple", 3);
+            }
+            catch (Exception)
+            {
+                //No existe se continua siguiente validacion
+            }
 
             ContenedorOrdenCompraCompleta xOCC = new ContenedorOrdenCompraCompleta();
             xOCC.Item.Cabecera = nOCC.Cabecera;
@@ -106,40 +103,43 @@ namespace CapaWSPresentacion.perfilCliente
 
             xOCC = x.OrdenCompraCompletaCrear(xOCC);
 
-       
-
         }
 
-
-        //GUSTAVO ----->
-        /*
-       OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
-        //Armar Encabezado de Orden de Reserva
-        nOCC.Cabecera.RutCliente = txtRutCliente.Text;
-        nOCC.Cabecera.Monto = 1000;//realizar calculo de las habitaciones seleccionadas.
-        nOCC.Cabecera.Observaciones = "Reserva habitación";
-        nOCC.Cabecera.Ubicacion = "Nose";
-        nOCC.Cabecera.Estado = "activa";
-
-        //
-        int CantidadHuespedes = int.Parse(Session["CantidadHuespedes"].ToString());
-
-        for (int i = 0; i < CantidadHuespedes; i++)
+        private void AgregarHuesped(OrdenCompraCompleta nOCC, int CantHuesp, string TipoHab, int CapHab)
         {
-            OrdenCompraDetalle nOCD = new OrdenCompraDetalle(); 
-            nOCD.Alojamiento.RutPersona = item0.Text; 
-            nOCD.Alojamiento.FechaIngreso = DateTime.Parse(item1.Text );
-            nOCD.Alojamiento.FechaEgreso = DateTime.Parse(item2.Text); 
-            nOCD.Alojamiento.CodigoCama = 1; 
-            nOCD.Alojamiento.Observaciones = "bla bla"; 
-            nOCD.Comida.CodigoPlato = 1; 
-            nOCD.Comida.Observaciones = "bla bla"; 
-            nOCD.Comida.FechaRecepcion = DateTime.Now 
-            nOCC.ListaDetalle.Add(nOCD);
-        } */
+            for (int i = 1; i < CantHuesp+1; i++)
+            {
+                OrdenCompraDetalle nOCD = new OrdenCompraDetalle();
+                
+                TextBox item0 = (TextBox)form1.FindControl("txtRut" + TipoHab + i);
+                nOCD.Alojamiento.RutPersona = item0.Text;
 
+                TextBox item1 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
+                nOCD.Alojamiento.FechaIngreso = DateTime.Parse(item1.Text);
 
+                TextBox item2 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
+                nOCD.Alojamiento.FechaEgreso = DateTime.Parse(item2.Text);
 
+                nOCD.Alojamiento.CapacidadHabitacion = CapHab;
+
+                TextBox item3 = (TextBox)form1.FindControl("txtOtro" + TipoHab + i);
+                nOCD.Alojamiento.Observaciones = item3.Text;
+
+                /* //se debe incluir los dropdownlist de tipo de comida
+                DropDownList item4 = (DropDownList)FindControl(txtComidaIndividualObservaciones1.Text + i);
+                nOCD.Comida.CodigoPlato = decimal.Parse(item4.SelectedValue);
+                */
+
+                nOCD.Comida.TipoServicio = "general";
+
+                TextBox item5 = (TextBox)form1.FindControl("txtComidaObservaciones" + TipoHab + i);
+                nOCD.Comida.Observaciones = item5.Text;
+
+                nOCD.Comida.FechaRecepcion = DateTime.Now;
+
+                nOCC.ListaDetalle.Add(nOCD);
+            }
+        }
 
         protected void txtFechaIngreso_TextChanged1(object sender, EventArgs e)
         {
@@ -156,8 +156,7 @@ namespace CapaWSPresentacion.perfilCliente
             personasConHabitacion();
             desbloquearBoton();
         }
-
-    
+            
         protected void doble_TextChanged(object sender, EventArgs e)
         {
             personasConHabitacion();

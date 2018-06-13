@@ -197,7 +197,7 @@
 		<h2>Ingreso de Personas</h2>
 		<div class="IngresoPersonas1" ID="IngresoPersonas1">
 				<div class="Casilla2-1">					
-					 <asp:TextBox ID="txtRutIndividual1" runat="server" CssClass="CasillaPersona" placeholder="Ingrese Rut"></asp:TextBox>
+					 <asp:TextBox ID="txtRutIndividual1" runat="server" CssClass="CasillaPersona" placeholder="Ingrese Rut" value="12"></asp:TextBox>
 				</div>
 				<div class="Casilla2-1">
 					<asp:TextBox ID="txtNombreIndividual1" runat="server" CssClass="CasillaPersona" placeholder=" Ingrese Nombre"></asp:TextBox>
@@ -209,7 +209,7 @@
 					<asp:TextBox ID="txtOtroIndividual1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaIndividualObservaciones1" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesIndividual1" runat="server" CssClass="comidas">
                          <asp:ListItem >Selecciona un Plato</asp:ListItem>
                          <asp:ListItem >Plato 1</asp:ListItem>
                          <asp:ListItem >Plato 1</asp:ListItem>
@@ -232,7 +232,7 @@
 					<asp:TextBox ID="txtOtroIndividual2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaIndividualObservaciones2" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesIndividual2" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -255,7 +255,7 @@
 					<asp:TextBox ID="txtOtroIndividual3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaIndividualObservaciones3" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesIndividual3" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -278,7 +278,7 @@
 					<asp:TextBox ID="txtOtroIndividual4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaIndividualObservaciones4" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesIndividual4" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -304,7 +304,7 @@
 					<asp:TextBox ID="txtOtroDoble1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaDobleObservaciones1" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesDoble1" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -325,7 +325,7 @@
 					<asp:TextBox ID="txtOtroDoble2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaDobleObservaciones2" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesDoble2" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -348,7 +348,7 @@
 					<asp:TextBox ID="txtOtroDoble3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaDobleObservaciones3" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesDoble3" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -369,7 +369,7 @@
 					<asp:TextBox ID="txtOtroDoble4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaDobleObservaciones4" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesDoble4" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -392,7 +392,7 @@
 					<asp:TextBox ID="txtOtroDoble5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaDobleObservaciones5" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesDoble5" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -413,7 +413,7 @@
 					<asp:TextBox ID="txtOtroDoble6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaDobleObservaciones6" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesDoble6" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -436,7 +436,7 @@
 					<asp:TextBox ID="txtOtroDoble7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaDobleObservaciones7" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesDoble7" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -457,7 +457,7 @@
 					<asp:TextBox ID="txtOtroDoble8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaDobleObservaciones8" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesDoble8" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -481,7 +481,7 @@
 					<asp:TextBox ID="txtOtroTriple1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaTripleObservaciones1" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesTiple1" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -502,7 +502,7 @@
 					<asp:TextBox ID="txtOtroTriple2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaTripleObservaciones2" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesTiple2" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -523,7 +523,7 @@
 					<asp:TextBox ID="txtOtroTriple3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaTripleObservaciones3" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesTiple3" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -546,7 +546,7 @@
 					<asp:TextBox ID="txtOtroTriple4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaTripleObservaciones4" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesTiple4" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -567,7 +567,7 @@
 					<asp:TextBox ID="txtOtroTriple5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaTripleObservaciones5" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesTiple5" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -588,7 +588,7 @@
 					<asp:TextBox ID="txtOtroTriple6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaTripleObservaciones6" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesTiple6" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -611,7 +611,7 @@
 					<asp:TextBox ID="txtOtroTriple7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaTripleObservaciones7" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesTiple7" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -632,7 +632,7 @@
 					<asp:TextBox ID="txtOtroTriple8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaTripleObservaciones8" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesTiple8" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -653,7 +653,7 @@
 					<asp:TextBox ID="txtOtroTriple9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaTripleObservaciones9" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesTiple9" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -676,7 +676,7 @@
 					<asp:TextBox ID="txtOtroTriple10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaTripleObservaciones10" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesTiple10" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -697,7 +697,7 @@
 					<asp:TextBox ID="txtOtroTriple11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaTripleObservaciones11" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesTiple11" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -718,7 +718,7 @@
 					<asp:TextBox ID="txtOtroTriple12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaTripleObservaciones12" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesTiple12" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -742,7 +742,7 @@
 					<asp:TextBox ID="txtOtro1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones1" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple1" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -763,7 +763,7 @@
 					<asp:TextBox ID="txtOtro2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones2" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple2" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -784,7 +784,7 @@
 					<asp:TextBox ID="txtOtro3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones3" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple3" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -805,7 +805,7 @@
 					<asp:TextBox ID="txtOtro4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones4" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple4" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -828,7 +828,7 @@
 					<asp:TextBox ID="txtOtro5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones5" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple5" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -849,7 +849,7 @@
 					<asp:TextBox ID="txtOtro6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones6" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple6" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -870,7 +870,7 @@
 					<asp:TextBox ID="txtOtro7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones7" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple7" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -891,7 +891,7 @@
 					<asp:TextBox ID="txtOtro8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones8" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple8" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -914,7 +914,7 @@
 					<asp:TextBox ID="txtOtro9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones9" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple9" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -935,7 +935,7 @@
 					<asp:TextBox ID="txtOtro10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones10" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple10" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -956,7 +956,7 @@
 					<asp:TextBox ID="txtOtro11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones11" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple11" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -977,7 +977,7 @@
 					<asp:TextBox ID="txtOtro12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones12" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple12" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -1000,7 +1000,7 @@
 					<asp:TextBox ID="txtOtro13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones13" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple13" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -1021,7 +1021,7 @@
 					<asp:TextBox ID="txtOtro14" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones14" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple14" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -1042,7 +1042,7 @@
 					<asp:TextBox ID="txtOtro15" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones15" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple15" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -1063,7 +1063,7 @@
 					<asp:TextBox ID="txtOtro16" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
 				<div class="OpcionComida">
-                    <asp:DropDownList ID="txtComidaCuadrupleObservaciones16" runat="server" CssClass="comidas">
+                    <asp:DropDownList ID="txtComidaObservacionesCuadruple16" runat="server" CssClass="comidas">
                          <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
                          <asp:ListItem Value="1">Plato 1</asp:ListItem>
@@ -1081,8 +1081,5 @@
 
             </div>
 		</div>
-
-
-
 </form>
 </asp:Content>
