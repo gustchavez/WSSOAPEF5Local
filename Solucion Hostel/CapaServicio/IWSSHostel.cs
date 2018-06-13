@@ -60,10 +60,7 @@ namespace CapaServicio
         ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoActualizar(ContenedorPerfilUsuarioEmpleado entrada);
 
         [OperationContract]
-        PerfilUsuarioEmpleado PerfilUsuarioEmpleadoBuscarPorRut(String rut, String token);
-        //[OperationContract]
-        //ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token);
-        //Fin PerfilUsuarioEmpleado
+        ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(String token);
 
         //Inicio PerfilUsuarioAdministrador
         [OperationContract]

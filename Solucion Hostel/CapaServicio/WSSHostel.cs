@@ -103,10 +103,10 @@ namespace CapaServicio
             x.LlamarSPActualizar(entrada);
             return entrada;
         }
-        public PerfilUsuarioEmpleado PerfilUsuarioEmpleadoBuscarPorRut(String rut, String token)
+        public ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(String token)
         {
             CRUDPerfilUsuarioEmpleado x = new CRUDPerfilUsuarioEmpleado();
-            return x.buscarEmpleadoPorRut(rut,token);
+            return x.LlamarSPRescatar(token);
         }
         //public ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token)
         //{

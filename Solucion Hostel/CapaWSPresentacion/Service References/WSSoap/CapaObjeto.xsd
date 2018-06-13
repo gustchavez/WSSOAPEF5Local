@@ -157,6 +157,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PerfilUsuarioEmpleado" nillable="true" type="tns:PerfilUsuarioEmpleado" />
+  <xs:complexType name="ContenedorPerfilUsuarioEmpleados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfPerfilUsuarioEmpleado" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorPerfilUsuarioEmpleados" nillable="true" type="tns:ContenedorPerfilUsuarioEmpleados" />
+  <xs:complexType name="ArrayOfPerfilUsuarioEmpleado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PerfilUsuarioEmpleado" nillable="true" type="tns:PerfilUsuarioEmpleado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerfilUsuarioEmpleado" nillable="true" type="tns:ArrayOfPerfilUsuarioEmpleado" />
   <xs:complexType name="ContenedorPerfilUsuarioAdministrador">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:PerfilUsuarioAdministrador" />
@@ -392,6 +405,7 @@
   <xs:element name="OrdenCompraDetalle" nillable="true" type="tns:OrdenCompraDetalle" />
   <xs:complexType name="Alojamiento">
     <xs:sequence>
+      <xs:element minOccurs="0" name="CapacidadHabitacion" type="xs:int" />
       <xs:element minOccurs="0" name="CodigoCama" type="xs:decimal" />
       <xs:element minOccurs="0" name="Confirmado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaEgreso" type="xs:dateTime" />

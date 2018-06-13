@@ -68,6 +68,7 @@
     <Compile Include="ContenedorPerfilUsuarioEmpleado.cs" />
     <Compile Include="ContenedorPerfilUsuarioCliente.cs" />
     <Compile Include="ContenedorPerfilUsuarioClientes.cs" />
+    <Compile Include="ContenedorPerfilUsuarioEmpleados.cs" />
     <Compile Include="ContenedorPerfilUsuarioProveedor.cs" />
     <Compile Include="ContenedorPerfilUsuarioProveedores.cs" />
     <Compile Include="ContenedorProveedores.cs" />
