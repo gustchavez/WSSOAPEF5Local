@@ -22,7 +22,7 @@
 			</div>
 		    <div class="Casilla2-1">
 			<h4>Empresas</h4>	
-                <asp:DropDownList ID="ddlEmpresas" CssClass="droplist" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEmpresas_SelectedIndexChanged"></asp:DropDownList>
+                <asp:DropDownList ID="ddlEmpresas" CssClass="droplist" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEmpresas_SelectedIndexChanged" ></asp:DropDownList>
 			</div>
             <div class="Casilla2-1">
 			<h4>Ordenes</h4>	
@@ -63,6 +63,11 @@
                     <asp:ListItem Value="Transferencia electronica">Transferencia Electrónica</asp:ListItem>
                 </asp:DropDownList>
 			</div>
+	</div>
+    <div class="ModificarDatos2">
+
+        <h2>Pago Internacional</h2><br>
+
             <div class="Casilla2-1">
 				<h4>Monto</h4>		
                 <asp:TextBox ID="txtMonto" runat="server" TextMode="number" CssClass="CasillaPersona"></asp:TextBox>			
@@ -78,8 +83,9 @@
             <div class="Casilla2-1">	
 		    <asp:Button ID="btnAgregarFactura" runat="server" Text="Agregar"  CssClass="SubmitTotal" OnClick="btnAgregar_Click"/> 
 		</div>
-	</div>
 
+
+    </div>
 
 	
 		

@@ -16,10 +16,10 @@
 			<asp:DropDownList ID="txtProveedorAgregar" runat="server" CssClass="droplist">
             </asp:DropDownList>		
 			</div>
-			<div class="Casilla2-1">
+			<%--<div class="Casilla2-1">
 			<h4>Cod. Producto</h4>	
 			<asp:TextBox ID="txtCodProdAgregar" runat="server" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>
-			</div>
+			</div>--%>
 			<div class="Casilla2-1">
 			<h4>Detalle Producto</h4>	
 			<asp:TextBox ID="txtDetProdAgregar" runat="server" CssClass="CasillaPersona"></asp:TextBox>
