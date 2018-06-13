@@ -60,12 +60,12 @@ namespace CapaWSPresentacion.perfilEmpleado
             
             n.Item.Proveedor.Rut = txtRutEmpresa.Text;
             n.Item.PerfilUsuario.Empresa.RazonSocial = txtRazonSocial.Text;
-            n.Item.PerfilUsuario.Empresa.Rubro = txtNombreCiudad.Text;
+            n.Item.PerfilUsuario.Empresa.Rubro = txtNombreCiudad.SelectedValue;
             n.Item.PerfilUsuario.Empresa.Email = txtCorreoElectronico.Text;
             n.Item.PerfilUsuario.Empresa.Telefono = txtTelefonoEmpresa.Text;
             n.Item.PerfilUsuario.Direccion.CodPais = 56;
             n.Item.PerfilUsuario.Direccion.CodPostal = "1234";
-            n.Item.PerfilUsuario.Direccion.NombreCiudad = txtNombreCiudad.Text;
+            n.Item.PerfilUsuario.Direccion.NombreCiudad = txtNombreCiudad.SelectedValue;
             n.Item.PerfilUsuario.Direccion.Comuna = txtComuna.Text;
             n.Item.PerfilUsuario.Direccion.Calle = txtCalle.Text;
             n.Item.PerfilUsuario.Direccion.Numero = 123;
