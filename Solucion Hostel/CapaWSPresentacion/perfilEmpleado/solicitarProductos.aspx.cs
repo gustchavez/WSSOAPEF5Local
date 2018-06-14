@@ -88,63 +88,38 @@ namespace CapaWSPresentacion.perfilEmpleado
             {
                 ListaTemporal = new OrdenPedidoCompleta();
             }
-
-            OrdenPedidoDetalle opd = new OrdenPedidoDetalle();
-
-            try
+            
+            //Verificar Existe el Producto en la Lista Temporal
+            if (VerificarExisteProdEnListaTemp(ListaTemporal.ListaDetalle) == false)
             {
+                OrdenPedidoDetalle opd = new OrdenPedidoDetalle();
 
-                if(VerificarExisteProdEnListaTemp(ListaTemporal.ListaDetalle) == false)
-                {
+                List<Provision> Lprvi = (List<Provision>)Session["TemporalProvision"];
+                List<Producto> Lprod = (List<Producto>)Session["TemporalProducto"];
 
-                    List<Provision> Lprvi = (List<Provision>)Session["TemporalProvision"];
-                    List<Producto> Lprod = (List<Producto>)Session["TemporalProducto"];
+                var producto = (from prvi in Lprvi
+                                join prod in Lprod on prvi.CodigoProducto equals prod.Codigo
+                                where prvi.RutProveedor == txtProveedor.SelectedValue
+                                    && prvi.CodigoProducto == int.Parse(txtProducto.SelectedValue)
+                                select new
+                                {
+                                    CodProd = prod.Codigo,
+                                    Descripcion = prod.Descripcion,
+                                    PreUni = prvi.Precio,
+                                    Cantidad = int.Parse(txtCantidad.Text),
+                                    PrecioCant = prvi.Precio * int.Parse(txtCantidad.Text)
+                                }
+                                ).SingleOrDefault();
 
-                    var producto = (from prvi in Lprvi
-                                    join prod in Lprod on prvi.CodigoProducto equals prod.Codigo
-                                    where prvi.RutProveedor == txtProveedor.SelectedValue
-                                       && prvi.CodigoProducto == int.Parse(txtProducto.SelectedValue)
-                                    select new
-                                    {
-                                        CodProd = prod.Codigo,
-                                        Descripcion = prod.Descripcion,
-                                        PreUni = prvi.Precio,
-                                        Cantidad = int.Parse(txtCantidad.Text),
-                                        PrecioCant = prvi.Precio * int.Parse(txtCantidad.Text)
-                                    }
-                                    ).SingleOrDefault();
+                opd.RegistroRecepcionPedido.Producto.Codigo = producto.CodProd;
+                opd.RegistroRecepcionPedido.Producto.Descripcion = producto.Descripcion;
+                opd.RegistroRecepcionPedido.PrecioUnitario = producto.PreUni;
+                opd.RegistroRecepcionPedido.Cantidad = producto.Cantidad;
+                opd.RegistroRecepcionPedido.PrecioCantidad = producto.PrecioCant;
 
-                    opd.RegistroRecepcionPedido.Producto.Codigo = producto.CodProd;
-                    opd.RegistroRecepcionPedido.Producto.Descripcion = producto.Descripcion;
-                    opd.RegistroRecepcionPedido.PrecioUnitario = producto.PreUni;
-                    opd.RegistroRecepcionPedido.Cantidad = producto.Cantidad;
-                    opd.RegistroRecepcionPedido.PrecioCantidad = producto.PrecioCant;
-
-                    ListaTemporal.ListaDetalle.Add(opd);
-
-                    var formatogw = (from fmgw in ListaTemporal.ListaDetalle
-                                     select new
-                                     {
-                                         CodProd = fmgw.RegistroRecepcionPedido.Producto.Codigo,
-                                         Descripcion = fmgw.RegistroRecepcionPedido.Producto.Descripcion,
-                                         PrecioUnitario = fmgw.RegistroRecepcionPedido.PrecioUnitario,
-                                         Cantidad = fmgw.RegistroRecepcionPedido.Cantidad,
-                                         PrecioCantidad = fmgw.RegistroRecepcionPedido.PrecioCantidad
-                                     }
-                                        ).ToList();
-
-                    gwListaCompra.DataSource = null;
-                    gwListaCompra.DataSource = formatogw;
-                    gwListaCompra.DataBind();
-
-                    Session["ListaTemporal"] = ListaTemporal;
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-            }                      
+                ListaTemporal.ListaDetalle.Add(opd);
+                DesplegarGridView(ListaTemporal);
+            }            
         }
 
         private bool VerificarExisteProdEnListaTemp(List<OrdenPedidoDetalle> listaDetalle)
@@ -158,65 +133,9 @@ namespace CapaWSPresentacion.perfilEmpleado
                     break;
                 }
             }
-
             return existe;
         }
-
-        /*  protected void btnSelectProveedor_Click(object sender, EventArgs e)
-           {
-               if (txtProveedor.Enabled == true) 
-               {
-                   WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-
-                   //Recuperar datos de provisiones
-                   ContenedorProvisiones m = new ContenedorProvisiones();
-                   m = x.ProvisionRescatar(Session["TokenUsuario"].ToString());
-
-                   //Recuperar datos de productos
-                   ContenedorProductos o = new ContenedorProductos();
-                   o = x.ProductoRescatar(Session["TokenUsuario"].ToString());
-
-                   var productos = (from prvi in m.Lista
-                                    join prod in o.Lista on prvi.CodigoProducto equals prod.Codigo
-                                    where prvi.RutProveedor == txtProveedor.SelectedValue
-                                    orderby prod.Descripcion
-                                    select new
-                                    {
-                                        Codigo = prod.Codigo,
-                                        Descripcion = prod.Descripcion
-                                    }
-                                   ).ToList();
-
-                   txtProducto.DataSource = null;
-                   txtProducto.DataSource = productos;
-                   txtProducto.DataValueField = "Codigo";
-                   txtProducto.DataTextField = "Descripcion";
-                   txtProducto.DataBind();
-
-                   Session["TemporalProducto"] = o.Lista;
-
-                   OrdenPedidoCompleta ListaTemporal = new OrdenPedidoCompleta();
-
-                   ListaTemporal.Cabecera.Estado = "activo";
-                   ListaTemporal.Cabecera.FechaEmision = DateTime.Now;
-                   ListaTemporal.Cabecera.Monto = 0;
-                   ListaTemporal.Cabecera.Numero = 0;
-                   ListaTemporal.Cabecera.RutProveedor = txtProveedor.SelectedValue;
-                   ListaTemporal.Cabecera.Ubicacion = "Logo";
-
-                   Session["ListaTemporal"] = ListaTemporal;
-
-                   txtProveedor.Enabled = false;
-                   btnSelectProveedor.Text = "Modificar Proveedor";
-                   txtProducto.Enabled = true;
-                   txtCantidad.Enabled = true;
-                   btnAgregar.Enabled = true;
-                   btnRealizar.Enabled = true;
-
-               } else {
-                   InicializarProveedor();
-               }            
-           } */
+        
         protected void btnRealizar_Click(object sender, EventArgs e)
         {
             OrdenPedidoCompleta ListaTemporal;
@@ -334,5 +253,94 @@ namespace CapaWSPresentacion.perfilEmpleado
            
         
         }
+
+
+        private void DesplegarGridView(OrdenPedidoCompleta ListaTemporal)
+        {
+            var formatogw = (from fmgw in ListaTemporal.ListaDetalle
+                             select new
+                             {
+                                 CodProd = fmgw.RegistroRecepcionPedido.Producto.Codigo,
+                                 Descripcion = fmgw.RegistroRecepcionPedido.Producto.Descripcion,
+                                 PrecioUnitario = fmgw.RegistroRecepcionPedido.PrecioUnitario,
+                                 Cantidad = fmgw.RegistroRecepcionPedido.Cantidad,
+                                 PrecioCantidad = fmgw.RegistroRecepcionPedido.PrecioCantidad
+                             }
+                                                    ).ToList();
+
+            gwListaCompra.DataSource = null;
+            gwListaCompra.DataSource = formatogw;
+            gwListaCompra.DataBind();
+
+            Session["ListaTemporal"] = ListaTemporal;
+        }
+
+        protected void gwListaCompra_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            OrdenPedidoCompleta ListaTemporal;
+
+            try
+            {
+                ListaTemporal = (OrdenPedidoCompleta)Session["ListaTemporal"];
+                if (ListaTemporal != null)
+                {
+                    OrdenPedidoDetalle eliminar = new OrdenPedidoDetalle();
+                    //Buscar a eliminar
+                    foreach (var item in ListaTemporal.ListaDetalle)
+                    {
+                        if (item.RegistroRecepcionPedido.Producto.Codigo == int.Parse(gwListaCompra.Rows[e.RowIndex].Cells[1].Text))
+                        {
+                            eliminar = item;
+                            break;
+                        }
+                    }
+                    //eliminar
+                    if (eliminar != null)
+                    {
+                        ListaTemporal.ListaDetalle.Remove(eliminar);
+                        DesplegarGridView(ListaTemporal);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                //
+            }
+        }
+
+        //protected void gwListaCompra_RowDeleted(object sender, GridViewDeletedEventArgs e)
+        //{
+        //    //OrdenPedidoCompleta ListaTemporal;
+
+        //    //try
+        //    //{
+        //    //    ListaTemporal = (OrdenPedidoCompleta)Session["ListaTemporal"];
+        //    //    if (ListaTemporal == null)
+        //    //    {
+        //    //        ListaTemporal = new OrdenPedidoCompleta();
+                    
+        //    //        OrdenPedidoDetalle eliminar = new OrdenPedidoDetalle();
+        //    //        //Buscar a eliminar
+        //    //        foreach (var item in ListaTemporal.ListaDetalle)
+        //    //        {
+        //    //            if (item.RegistroRecepcionPedido.Producto.Codigo == int.Parse(gwListaCompra.Rows[e.RowIndex].Cells[1].Text))
+        //    //            {
+        //    //                eliminar = item;
+        //    //                break;
+        //    //            }
+        //    //        }
+        //    //        //eliminar
+        //    //        if (eliminar != null)
+        //    //        {
+        //    //            ListaTemporal.ListaDetalle.Remove(eliminar);
+        //    //            DesplegarGridView(ListaTemporal);
+        //    //        }                    
+        //    //    }
+        //    //}
+        //    //catch (Exception)
+        //    //{
+        //    //    //
+        //    //}
+        //}
     }
 }

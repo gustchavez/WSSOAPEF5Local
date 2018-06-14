@@ -39,7 +39,10 @@
 		
 
         <asp:GridView ID="gwListaCompra" runat="server" CssClass="tabla" style="left: 0px; top: 50px"
-            EmptyDataText="Agregue Productos...">
+            EmptyDataText="Agregue Productos..." OnRowDeleting="gwListaCompra_RowDeleting">
+            <Columns>
+                <asp:CommandField ShowDeleteButton="True" />
+            </Columns>
         </asp:GridView>
 
 		<div class="Casilla2-1">	
