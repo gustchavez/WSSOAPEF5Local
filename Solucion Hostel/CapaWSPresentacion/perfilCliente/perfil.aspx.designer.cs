@@ -13,13 +13,13 @@ namespace CapaWSPresentacion.perfilCliente {
     public partial class perfil {
         
         /// <summary>
-        /// Control form1.
+        /// Control formCliente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formCliente;
         
         /// <summary>
         /// Control txtRutEmpresa.
@@ -110,15 +110,6 @@ namespace CapaWSPresentacion.perfilCliente {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtContraseña;
-        
-        /// <summary>
-        /// Control txtConstraseñaConfirmar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConstraseñaConfirmar;
         
         /// <summary>
         /// Control btnModificar.

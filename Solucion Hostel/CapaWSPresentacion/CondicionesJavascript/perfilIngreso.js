@@ -8,9 +8,8 @@ var formularioRegistro = document.getElementById('formularioRegistro'),
  contrasena = formularioRegistro.contrasena,
  error = document.getElementById('error');
 
-
 function validarRut(e) {
-	if (rutEmpresa.value == null || rutEmpresa.value == '') {
+    if (rutEmpresa.value == null || rutEmpresa.value == '' ) {
 		error.style.display= 'block';
 		error.innerHTML = error.innerHTML + '<li> Ingrese solo los numeros de rut </li>';
 		e.preventDefault();
@@ -31,7 +30,7 @@ function validarRazon(e) {
 
 
 function validarGiro(e) {
-	if (giro.value == null || giro.value == '' || giro.value == 'Selecciona un Giro') {
+	if (giro.value == '' || giro.value == 'Selecciona un Giro') {
 		error.style.display= 'block';
 		error.innerHTML = error.innerHTML + '<li> Seleccione uno de los giros </li>';
 		e.preventDefault();
@@ -73,25 +72,25 @@ function validarContrasena(e) {
 
 
 function validarFormulario(e) {
-	error.innerHTML = '';
-	validarRut(e);
-	validarRazon(e);
-	validarGiro(e);
-	validarCorreo(e);
-	validarUsuario(e);
-	validarContrasena(e);
+    error.innerHTML = '';
+    validarRut(e);
+    validarRazon(e);
+    validarGiro(e);
+    validarCorreo(e);
+    validarUsuario(e);
+    validarContrasena(e);
+    if (error.innerHTML == '') {
+        alert("Usuario ingresado exitosamente");
+    }
 }
 
-formularioRegistro.addEventListener ('submit', validarFormulario);
-
-
+document.getElementById("btnRegistrar").addEventListener("click", validarFormulario);
 
 
 
  /* formulairo Ingreso */
 
-
-var formularioIngreso = document.getElementById('formularioIngreso'),
+var formularioIngreso = document.getElementById('formularioRegistro'),
  usuario2 = formularioIngreso.txtNombreUsuario,
  contrasena2 = formularioIngreso.txtClaveUsuario,
  error2 = document.getElementById('error2');
@@ -123,7 +122,9 @@ function validarFormularioIngreso(i) {
 	validarContrasena2(i);
 }
 
-formularioIngreso.addEventListener('btnAceptar', validarFormularioIngreso);
+document.getElementById("btnAceptar").addEventListener("click", validarFormularioIngreso);
+
+
 
 
 
