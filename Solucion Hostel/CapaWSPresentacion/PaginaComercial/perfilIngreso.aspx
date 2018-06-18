@@ -15,7 +15,6 @@
         <div class="ContenedorPaginaIngreso">
 	        <div class="Contenedor-Registro">
 			    <h3 class="Contenido">REGISTRO</h3>
-
 			    <div class="Contenido">
 				    Rut Empresa <br/>
 				     <asp:TextBox ID="rutEmpresa" runat="server"  CssClass="casilla" ></asp:TextBox><br/>	
