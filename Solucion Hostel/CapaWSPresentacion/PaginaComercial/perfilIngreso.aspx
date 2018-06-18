@@ -18,7 +18,7 @@
 
 			    <div class="Contenido">
 				    Rut Empresa <br/>
-				     <asp:TextBox ID="rutEmpresa" runat="server"  CssClass="casilla"   ></asp:TextBox><br/>	
+				     <asp:TextBox ID="rutEmpresa" runat="server"  CssClass="casilla" ></asp:TextBox><br/>	
 			    </div>
 			    <div class="Contenido">
 				    Razón Social <br/>
@@ -27,7 +27,7 @@
 			    <div class="Contenido" >
 				    Giro <br/>
                     <asp:DropDownList ID="giro" runat="server" CssClass="casilla">
-                        <asp:ListItem Value="1">Selecciona un Giro</asp:ListItem>
+                        <asp:ListItem >Selecciona un Giro</asp:ListItem>
                         <asp:ListItem Value="2">CULTIVOS EN GENERAL; CULTIVO DE PRODUCTOS DE MERCADO; HORTICULTURA</asp:ListItem>
                         <asp:ListItem Value="3">CRÍA DE ANIMALES</asp:ListItem>
                         <asp:ListItem Value="4">CULTIVO PROD. AGRÍCOLAS EN COMBINACIÓN CON CRÍA DE ANIMALES</asp:ListItem>
@@ -217,7 +217,7 @@
     </div>  
 </form>
 
-<%--<script src="/scripts/condiciones.js"></script>--%>	
+<script src="/CondicionesJavascript/perfilIngreso.js"></script>
    
 </body>
 </html>

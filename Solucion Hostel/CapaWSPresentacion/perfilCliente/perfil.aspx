@@ -3,8 +3,9 @@
     
     
     <link rel="stylesheet" type="text/css" href="/scripts/perfilCliente.css">
+    
 
-    <form id="form1" runat="server">
+    <form id="formCliente" runat="server" name="formCliente">
         
 	    <div class="columna2">
 		    <div class="ModificarDatos">
@@ -23,7 +24,7 @@
 			    <div class="Casilla2-1">
 			    <h4>Giro</h4>	
 			        <asp:DropDownList ID="ddlRubro" CssClass="droplist" runat="server">
-				        <asp:ListItem value="" >Selecciona un Giro</asp:ListItem>
+				        <asp:ListItem >Selecciona un Giro</asp:ListItem>
 				        <asp:ListItem value="1">CULTIVOS EN GENERAL; CULTIVO DE PRODUCTOS DE MERCADO; HORTICULTURA</asp:ListItem>
 				        <asp:ListItem value="2">CRÍA DE ANIMALES</asp:ListItem>
 				        <asp:ListItem value="3">CULTIVO PROD. AGRÍCOLAS EN COMBINACIÓN CON CRÍA DE ANIMALES</asp:ListItem>
@@ -231,16 +232,17 @@
                 <asp:TextBox ID="txtContraseña" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		    </div>
 		    <div class="Casilla2-2">
-		    <h4 style="color: red;">Confirmar Contraseña</h4>	
-		        <asp:TextBox ID="txtConstraseñaConfirmar" runat="server" CssClass="CasillaPersona"></asp:TextBox>
-		    </div>
-		    <div class="Casilla2-2">
                 <asp:Button ID="btnModificar" runat="server" Text="Modificar"  CssClass="SubmitTotal" OnClick="btnModificar_Click"/> 	
 		    </div>
+			    <div class="Contenido">
+				    <ul class="error" id="error"></ul>	
+			    </div>
 	    </div>
-		
+
     </div>
 
     </form>
+
+    <script src="/CondicionesJavascript/perfilCliente_perfil.js"></script>
 
 </asp:Content>
