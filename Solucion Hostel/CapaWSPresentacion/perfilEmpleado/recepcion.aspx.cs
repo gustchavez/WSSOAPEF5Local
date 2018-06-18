@@ -40,58 +40,121 @@ namespace CapaWSPresentacion.perfilEmpleado
         private void RescatarDatos()
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            ////
+            ContenedorPerfilUsuarioClientes m = new ContenedorPerfilUsuarioClientes();
+            m = x.PerfilUsuarioClienteRescatar(Session["TokenUsuario"].ToString());
 
-            ContenedorOrdenesCompraCompleta m = new ContenedorOrdenesCompraCompleta();
+            var clie = (from l in m.Lista
+                            //where l.OCRelacionada.RutCliente == datSes.RutEmpresa
+                        select new
+                        {
+                            Rut = l.Cliente.Rut,
+                            RazonSocial = l.PerfilUsuario.Empresa.RazonSocial
+                        }
+                        ).ToList();
 
-            m = x.OrdenCompraCompletaRescatar(Session["TokenUsuario"].ToString());
-            
-            var occ = (from l in m.Lista
-                           //where l.Cabecera.RutCliente == ddlEmpresas.SelectedValue
-                           //  &&
-                       where l.Cabecera.Estado == "activo"
+            if (clie != null) { 
+                ddlEmpresas.DataSource = clie;
+                ddlEmpresas.DataValueField = "Rut";
+                ddlEmpresas.DataTextField = "RazonSocial";
+                ddlEmpresas.Enabled = true;
+                ddlEmpresas.DataBind();
+                ////
+                RescatarOrdenesXEmpresa(x);
+                ////
+            } else {
+                ddlEmpresas.DataSource = null;
+                ddlEmpresas.Items.Add(new ListItem("No Existe", ""));
+                ddlEmpresas.Enabled = false;
+                ddlEmpresas.DataBind();
+                ////
+                ddlOrdenesCompra.DataSource = null;
+                ddlOrdenesCompra.Items.Add(new ListItem("No Existe", ""));
+                ddlOrdenesCompra.Enabled = false;
+                ddlOrdenesCompra.DataBind();
+            }
+            LlenarGrid();
+        }
+
+        private void RescatarOrdenesXEmpresa(WSSoap.WSSHostelClient x)
+        {
+            ContenedorOrdenesCompraCompleta n = new ContenedorOrdenesCompraCompleta();
+
+            n = x.OrdenCompraCompletaRescatar(Session["TokenUsuario"].ToString());
+            List<OrdenCompraCompleta> OrdenesCompra = n.Lista.Where(p => p.Cabecera.Estado == "activo").ToList();
+
+            var occ = (from l in OrdenesCompra
+                       where l.Cabecera.RutCliente == ddlEmpresas.SelectedValue
+                          //&& l.Cabecera.Estado == "activo"
                        select new
                        {
                            Numero = l.Cabecera.Numero
                        }
-                       ).ToList();
+                       ).ToList();            
 
-            Session["ListaOrdenesCompraCompleta"] = m.Lista.Where(p => p.Cabecera.Estado == "activo").ToList();
+            Session["ListaOrdenesCompraCompleta"] = OrdenesCompra;
 
-            ddlOrdenesCompra.DataSource = occ;
-            ddlOrdenesCompra.DataValueField = "Numero";
-            ddlOrdenesCompra.DataTextField = "Numero";
-            ddlOrdenesCompra.DataBind();
-
-            LlenarRuts(m.Lista.Where(p => p.Cabecera.Estado == "activo").ToList());
+            if(occ != null)
+            {
+                ddlOrdenesCompra.DataSource = occ;
+                ddlOrdenesCompra.DataValueField = "Numero";
+                ddlOrdenesCompra.DataTextField = "Numero";
+                ddlOrdenesCompra.Enabled = true;
+                ddlOrdenesCompra.DataBind();
+            } else {
+                ddlOrdenesCompra.DataSource = null;
+                ddlOrdenesCompra.Items.Add(new ListItem("No Existe", ""));
+                ddlOrdenesCompra.Enabled = false;
+                ddlOrdenesCompra.DataBind();
+            }
+            
         }
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            foreach (GridViewRow item in gwListaRecepcion.Rows)
+            {
+                if (item.Cells[0].Text != item.Cells[3].Text)
+                {
+                    WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            ContenedorAlojamiento m = new ContenedorAlojamiento();
+                    ContenedorAlojamiento m = new ContenedorAlojamiento();
 
-            m.Item.NumerOrdenCompra = decimal.Parse(ddlOrdenesCompra.SelectedValue);
-            m.Item.RutPersona = ddlRutsHuesped.SelectedValue;
-            m.Item.Confirmado = ddlEstado.SelectedValue;
+                    m.Item.NumerOrdenCompra = decimal.Parse(item.Cells[1].Text);
+                    m.Item.RutPersona = item.Cells[2].Text;
+                    m.Item.Confirmado = item.Cells[0].Text == "1" ? "Si" : "No";
 
-            m.Retorno.Token = Session["TokenUsuario"].ToString();
+                    //m.Retorno.Token = Session["TokenUsuario"].ToString();
 
-            m = x.AlojConfirHueActualizar(m);
+                    //m = x.AlojConfirHueActualizar(m);
+                }
+            }
+        //    WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            RescatarDatos();
+        //    ContenedorAlojamiento m = new ContenedorAlojamiento();
+
+        //    m.Item.NumerOrdenCompra = decimal.Parse(ddlOrdenesCompra.SelectedValue);
+        //    m.Item.RutPersona = ddlRutsHuesped.SelectedValue;
+        //    m.Item.Confirmado = ddlEstado.SelectedValue;
+
+        //    m.Retorno.Token = Session["TokenUsuario"].ToString();
+
+        //    m = x.AlojConfirHueActualizar(m);
+
+        //    RescatarDatos();
         }
 
         protected void ddlOrdenesCompra_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var collection = (List<OrdenCompraCompleta>)Session["ListaOrdenesCompraCompleta"];
-            LlenarRuts(collection);
+            LlenarGrid();
         }
 
-        private void LlenarRuts(List<OrdenCompraCompleta> collection)
-        {
-            if (collection != null)
+        private void LlenarGrid()
+        {            
+            if (ddlOrdenesCompra.SelectedValue != null && ddlOrdenesCompra.SelectedValue != string.Empty)
             {
+                var collection = (List<OrdenCompraCompleta>)Session["ListaOrdenesCompraCompleta"];
+                /////////////////
                 var ocd = (from l in collection
                            where l.Cabecera.Numero == decimal.Parse(ddlOrdenesCompra.SelectedValue)
                            select new
@@ -99,20 +162,36 @@ namespace CapaWSPresentacion.perfilEmpleado
                                ListaDetalle = l.ListaDetalle.ToList()
                            }
                            ).SingleOrDefault();
-
-                var per = (from m in ocd.ListaDetalle
+                /////////////////
+                var huespedes = (from m in ocd.ListaDetalle
                            select new
                            {
+                               NroOrden = m.Alojamiento.NumerOrdenCompra,
                                Rut = m.Alojamiento.RutPersona,
-                               Estado = m.Alojamiento.Confirmado
+                               //Estado = m.Alojamiento.Confirmado,
+                               EstadoBool = m.Alojamiento.Confirmado == "Si" ? true : false
                            }
                            ).ToList();
-
-                ddlRutsHuesped.DataSource = per;
-                ddlRutsHuesped.DataValueField = "Rut";
-                ddlRutsHuesped.DataTextField = "Rut";
-                ddlRutsHuesped.DataBind();
+                /////////////////
+                gwListaRecepcion.DataSource = null;
+                gwListaRecepcion.DataSource = huespedes;
+                gwListaRecepcion.DataBind();
+                /////////////////
             }
+            else
+            {
+                gwListaRecepcion.DataSource = null;
+                gwListaRecepcion.DataBind();
+            }
+        }
+
+        protected void ddlEmpresas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            RescatarOrdenesXEmpresa(x);
+
+            LlenarGrid();
         }
     }
 }

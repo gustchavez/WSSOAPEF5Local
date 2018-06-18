@@ -177,6 +177,7 @@ position: absolute;
 	height: 25px;
 	position: relative;
 	top: 20px;
+    left: -2px;
 }
 
 
@@ -223,4 +224,14 @@ position: absolute;
 
 
 
+.error{
 
+display: none;
+border-radius: 3px;
+margin-top: 10px;
+background: #ce1818;
+color: #fff;
+padding-left: 30px;
+padding-top: 5px;
+padding-bottom: 5px;
+}

@@ -129,6 +129,7 @@
     <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="CondicionesJavascript\perfilCliente_perfil.js" />
     <Content Include="Index.aspx" />
     <Content Include="np_proveedor_producto_crud.aspx" />
     <Content Include="np_cliente_crear.aspx" />
@@ -204,12 +205,13 @@
     <Content Include="scripts\AdminIngresoFacturaP.css" />
     <Content Include="scripts\AdminMostrarFacturas.css" />
     <Content Include="scripts\AdminSolicitarPP.css" />
-    <Content Include="scripts\condiciones.js" />
+    <Content Include="CondicionesJavascript\perfilIngreso.js" />
     <Content Include="scripts\detalleCliente.css" />
     <Content Include="scripts\empresaEmpleado.css" />
     <Content Include="scripts\facturaCliente.css" />
     <Content Include="scripts\facturaEmpleado.css" />
     <Content Include="scripts\facturaProveedor.css" />
+    <Content Include="scripts\fondo.jpg" />
     <Content Include="scripts\gestionAdmin.css" />
     <Content Include="scripts\index.css" />
     <Content Include="scripts\ingreso.css" />
