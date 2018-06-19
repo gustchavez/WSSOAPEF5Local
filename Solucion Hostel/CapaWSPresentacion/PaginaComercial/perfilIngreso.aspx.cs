@@ -62,7 +62,6 @@ namespace CapaWSPresentacion.PaginaComercial
                 Session["PerfilUsuario"] = null;
                 Session["SesionUsuario"] = null;
                 Response.Write(@"<script langauge='text/javascript'>alert('Error al ingresar usuario y/o contraseña');</script>");
-
             }
 
         }
