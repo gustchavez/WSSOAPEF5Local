@@ -41,7 +41,7 @@
                     Visible="True" />
                     <asp:BoundField DataField="Rut" HeaderText="Rut"  
                     Visible="True" />
-                    <asp:BoundField DataField="Estado" HeaderText="EstadoBool"
+                    <asp:BoundField DataField="Estado" HeaderText="Estado"
                     Visible="False" />
                 </Columns>
             </asp:GridView>

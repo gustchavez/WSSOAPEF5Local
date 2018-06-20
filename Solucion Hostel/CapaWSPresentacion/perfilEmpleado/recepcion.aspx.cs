@@ -49,7 +49,7 @@ namespace CapaWSPresentacion.perfilEmpleado
                         select new
                         {
                             Rut = l.Cliente.Rut,
-                            RazonSocial = l.PerfilUsuario.Empresa.RazonSocial
+                            RazonSocial = l.PerfilUsuario.Empresa.RazonSocial,
                         }
                         ).ToList();
 
@@ -63,15 +63,21 @@ namespace CapaWSPresentacion.perfilEmpleado
                 RescatarOrdenesXEmpresa(x);
                 ////
             } else {
-                ddlEmpresas.DataSource = null;
-                ddlEmpresas.Items.Add(new ListItem("No Existe", ""));
-                ddlEmpresas.Enabled = false;
+                //////////////
+                ddlEmpresas.DataSource = clie;
                 ddlEmpresas.DataBind();
-                ////
-                ddlOrdenesCompra.DataSource = null;
-                ddlOrdenesCompra.Items.Add(new ListItem("No Existe", ""));
-                ddlOrdenesCompra.Enabled = false;
+                ddlEmpresas.Items.Add(new ListItem("No Existe", ""));
+                ddlEmpresas.SelectedIndex = 0;
+                //////////////
+                ddlEmpresas.Enabled = false;
+
+                //////////////
+                ddlOrdenesCompra.DataSource = clie;
                 ddlOrdenesCompra.DataBind();
+                ddlOrdenesCompra.Items.Add(new ListItem("No Existe", ""));
+                ddlOrdenesCompra.SelectedIndex = 0;
+                //////////////
+                ddlOrdenesCompra.Enabled = false;
             }
             LlenarGrid();
         }
@@ -94,7 +100,7 @@ namespace CapaWSPresentacion.perfilEmpleado
 
             Session["ListaOrdenesCompraCompleta"] = OrdenesCompra;
 
-            if(occ != null)
+            if(occ.Count > 0)
             {
                 ddlOrdenesCompra.DataSource = occ;
                 ddlOrdenesCompra.DataValueField = "Numero";
@@ -102,19 +108,29 @@ namespace CapaWSPresentacion.perfilEmpleado
                 ddlOrdenesCompra.Enabled = true;
                 ddlOrdenesCompra.DataBind();
             } else {
-                ddlOrdenesCompra.DataSource = null;
-                ddlOrdenesCompra.Items.Add(new ListItem("No Existe", ""));
-                ddlOrdenesCompra.Enabled = false;
+                //////////////
+                ddlOrdenesCompra.DataSource = occ;
                 ddlOrdenesCompra.DataBind();
+                ddlOrdenesCompra.Items.Add(new ListItem("No Existe", ""));
+                ddlOrdenesCompra.SelectedIndex = 0;
+                //////////////
+                ddlOrdenesCompra.Enabled = false;         
             }
-            
         }
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
             foreach (GridViewRow item in gwListaRecepcion.Rows)
             {
-                if (item.Cells[0].Text != item.Cells[3].Text)
+                ////string x = item.Cells[2].Text;
+                //if (item.RowType == DataControlRowType.DataRow)
+                //{
+                CheckBox EstadoReserva = (item.Cells[0].Controls[1] as CheckBox);
+                bool EstadoReservaBBDD = item.Cells[3].Text == "Si" ? true : false; 
+                //(item.Cells[3].Controls[0] as CheckBox);
+                //CheckBox a = (item.Cells[0].FindControl("chkEstado") as CheckBox);
+                //CheckBox b = (item.Cells[3].FindControl("Estado") as CheckBox); //bool.Parse(item.Cells[3].Text);
+                if (EstadoReserva.Checked != EstadoReservaBBDD)
                 {
                     WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
@@ -122,26 +138,30 @@ namespace CapaWSPresentacion.perfilEmpleado
 
                     m.Item.NumerOrdenCompra = decimal.Parse(item.Cells[1].Text);
                     m.Item.RutPersona = item.Cells[2].Text;
-                    m.Item.Confirmado = item.Cells[0].Text == "1" ? "Si" : "No";
+                    //m.Item.Confirmado = item.Cells[0].Text == "1" ? "Si" : "No";
+                    m.Item.Confirmado = EstadoReserva.Checked == true ? "Si" : "No";
 
-                    //m.Retorno.Token = Session["TokenUsuario"].ToString();
+                    m.Retorno.Token = Session["TokenUsuario"].ToString();
 
-                    //m = x.AlojConfirHueActualizar(m);
+                    m = x.AlojConfirHueActualizar(m);
                 }
+                //}   
+            
             }
+            RescatarDatos();
         //    WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-        //    ContenedorAlojamiento m = new ContenedorAlojamiento();
+            //    ContenedorAlojamiento m = new ContenedorAlojamiento();
 
-        //    m.Item.NumerOrdenCompra = decimal.Parse(ddlOrdenesCompra.SelectedValue);
-        //    m.Item.RutPersona = ddlRutsHuesped.SelectedValue;
-        //    m.Item.Confirmado = ddlEstado.SelectedValue;
+            //    m.Item.NumerOrdenCompra = decimal.Parse(ddlOrdenesCompra.SelectedValue);
+            //    m.Item.RutPersona = ddlRutsHuesped.SelectedValue;
+            //    m.Item.Confirmado = ddlEstado.SelectedValue;
 
-        //    m.Retorno.Token = Session["TokenUsuario"].ToString();
+            //    m.Retorno.Token = Session["TokenUsuario"].ToString();
 
-        //    m = x.AlojConfirHueActualizar(m);
+            //    m = x.AlojConfirHueActualizar(m);
 
-        //    RescatarDatos();
+            //    RescatarDatos();
         }
 
         protected void ddlOrdenesCompra_SelectedIndexChanged(object sender, EventArgs e)
@@ -168,7 +188,8 @@ namespace CapaWSPresentacion.perfilEmpleado
                            {
                                NroOrden = m.Alojamiento.NumerOrdenCompra,
                                Rut = m.Alojamiento.RutPersona,
-                               //Estado = m.Alojamiento.Confirmado,
+                               //NombreCompleto = m.Alojamiento.Apellido + ' ' + m.PerfilUsuario.Persona.Nombre,
+                               Estado = m.Alojamiento.Confirmado,
                                EstadoBool = m.Alojamiento.Confirmado == "Si" ? true : false
                            }
                            ).ToList();
