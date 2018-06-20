@@ -145,6 +145,17 @@
     <Content Include="PaginaComercial\index.html" />
     <Content Include="PaginaComercial\muse_manifest.xml" />
     <Content Include="PaginaComercial\perfilIngreso.aspx" />
+    <Content Include="PaginaComercial\scripts\jquery-1.8.3.min.js" />
+    <Content Include="PaginaComercial\scripts\jquery.museoverlay.js" />
+    <Content Include="PaginaComercial\scripts\jquery.musepolyfill.bgsize.js" />
+    <Content Include="PaginaComercial\scripts\jquery.watch.js" />
+    <Content Include="PaginaComercial\scripts\museconfig.js" />
+    <Content Include="PaginaComercial\scripts\museutils.js" />
+    <Content Include="PaginaComercial\scripts\musewpslideshow.js" />
+    <Content Include="PaginaComercial\scripts\require.js" />
+    <Content Include="PaginaComercial\scripts\touchswipe.js" />
+    <Content Include="PaginaComercial\scripts\webpro.js" />
+    <Content Include="PaginaComercial\scripts\whatinput.js" />
     <Content Include="perfilAdministrador\AdminCrearAdmin.aspx" />
     <Content Include="perfilAdministrador\AdminFacturaProveedorP.aspx" />
     <Content Include="perfilAdministrador\AdminGestionAdmin.aspx" />
@@ -255,6 +266,10 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorAlojamiento.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorCantHabsXCapacidad.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioEmpleados.datasource" />
+    <Content Include="PaginaComercial\scripts\form-u1358.php" />
+    <Content Include="PaginaComercial\scripts\form_check.php" />
+    <Content Include="PaginaComercial\scripts\form_process.php" />
+    <Content Include="PaginaComercial\scripts\form_throttle.php" />
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>
@@ -600,7 +615,6 @@
     <Folder Include="PaginaComercial\assets\" />
     <Folder Include="PaginaComercial\css\" />
     <Folder Include="PaginaComercial\images\" />
-    <Folder Include="PaginaComercial\scripts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

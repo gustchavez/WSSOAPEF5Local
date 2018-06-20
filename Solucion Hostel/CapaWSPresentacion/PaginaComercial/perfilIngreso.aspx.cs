@@ -8,8 +8,10 @@ using System.Web.UI.WebControls;
 
 namespace CapaWSPresentacion.PaginaComercial
 {
+    
     public partial class perfilIngreso : System.Web.UI.Page
     {
+    
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["TokenUsuario"] = null;
@@ -59,6 +61,7 @@ namespace CapaWSPresentacion.PaginaComercial
                 Session["TokenUsuario"] = null;
                 Session["PerfilUsuario"] = null;
                 Session["SesionUsuario"] = null;
+                Response.Write(@"<script langauge='text/javascript'>alert('Error al ingresar usuario y/o contraseña');</script>");
             }
 
         }
