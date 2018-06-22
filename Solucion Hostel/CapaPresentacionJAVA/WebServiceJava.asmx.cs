@@ -5,23 +5,24 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 
-namespace CapaWSPresentacion
+namespace CapaPresentacionJAVA
 {
     /// <summary>
-    /// Descripción breve de WebService_Java
+    /// Descripción breve de WebServicesJAVA
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
     // [System.Web.Script.Services.ScriptService]
-    public class WebService_Java : System.Web.Services.WebService
+    public class WebServicesJAVA : System.Web.Services.WebService
     {
 
         [WebMethod]
         public string HelloWorld()
         {
             return "Hola a todos";
+            
         }
 
         //**********------> Login
@@ -30,7 +31,7 @@ namespace CapaWSPresentacion
         public List<Object> ValidarLogin(String nombre, String clave)
         {
 
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            ServiceReference.WSSHostelClient x = new ServiceReference.WSSHostelClient();
 
             Sesion nLogin = new Sesion();
 
@@ -61,7 +62,8 @@ namespace CapaWSPresentacion
         [WebMethod]
         public List<Producto> StockProductos(String token)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            ServiceReference.WSSHostelClient x = new ServiceReference.WSSHostelClient();
             List<Producto> contenProduc = new List<Producto>();
             var prodList = x.StockProductos(token).ToList();
             return (List<Producto>)prodList;
@@ -70,7 +72,7 @@ namespace CapaWSPresentacion
         [WebMethod]
         public List<ComodinJava> Productos_mas_solicitados(String token)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            ServiceReference.WSSHostelClient x = new ServiceReference.WSSHostelClient();
             List<ComodinJava> lista = new List<ComodinJava>();
             try
             {
@@ -90,7 +92,7 @@ namespace CapaWSPresentacion
         [WebMethod]
         public List<ComodinJava> Segun_rubro_empresa(String token)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            ServiceReference.WSSHostelClient x = new ServiceReference.WSSHostelClient();
             List<ComodinJava> lista = new List<ComodinJava>();
             try
             {
@@ -106,7 +108,7 @@ namespace CapaWSPresentacion
         [WebMethod]
         public List<ComodinJava> Metodo_pago_mas_usado(String token)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            ServiceReference.WSSHostelClient x = new ServiceReference.WSSHostelClient();
             List<ComodinJava> lista = new List<ComodinJava>();
             try
             {
@@ -125,7 +127,7 @@ namespace CapaWSPresentacion
         [WebMethod]
         public List<ComodinJava> Ciudad_mas_solicita_servicios(String token)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            ServiceReference.WSSHostelClient x = new ServiceReference.WSSHostelClient();
             List<ComodinJava> lista = new List<ComodinJava>();
             try
             {
@@ -145,7 +147,7 @@ namespace CapaWSPresentacion
         [WebMethod]
         public List<ComodinJava> Promedio_Edad(String token)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            ServiceReference.WSSHostelClient x = new ServiceReference.WSSHostelClient();
             List<ComodinJava> lista = new List<ComodinJava>();
             try
             {
@@ -165,7 +167,7 @@ namespace CapaWSPresentacion
         [WebMethod]
         public List<ComodinJava> Estado_habitaciones(String token)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            ServiceReference.WSSHostelClient x = new ServiceReference.WSSHostelClient();
             List<ComodinJava> lista = new List<ComodinJava>();
             try
             {
@@ -183,7 +185,7 @@ namespace CapaWSPresentacion
         [WebMethod]
         public List<ComodinJava> Habitaciones_mas_solicitadas(String token)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            ServiceReference.WSSHostelClient x = new ServiceReference.WSSHostelClient();
             List<ComodinJava> lista = new List<ComodinJava>();
             try
             {
@@ -200,7 +202,7 @@ namespace CapaWSPresentacion
         [WebMethod]
         public List<ComodinJava> Fecha_mayor_auge(String token)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            ServiceReference.WSSHostelClient x = new ServiceReference.WSSHostelClient();
             List<ComodinJava> lista = new List<ComodinJava>();
             try
             {
@@ -217,7 +219,7 @@ namespace CapaWSPresentacion
         [WebMethod]
         public List<ComodinJava> Solicitudes_NO_terminadas(String token)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            ServiceReference.WSSHostelClient x = new ServiceReference.WSSHostelClient();
             List<ComodinJava> lista = new List<ComodinJava>();
             try
             {
@@ -237,7 +239,7 @@ namespace CapaWSPresentacion
         [WebMethod]
         public List<ComodinJava> Promedio_venta_mensual(String token)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            ServiceReference.WSSHostelClient x = new ServiceReference.WSSHostelClient();
             List<ComodinJava> lista = new List<ComodinJava>();
             try
             {
@@ -254,7 +256,7 @@ namespace CapaWSPresentacion
         [WebMethod]
         public List<ComodinJava> Promedio_perdida_mensual(String token)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            ServiceReference.WSSHostelClient x = new ServiceReference.WSSHostelClient();
             List<ComodinJava> lista = new List<ComodinJava>();
             try
             {
@@ -271,11 +273,11 @@ namespace CapaWSPresentacion
         [WebMethod]
         public List<ComodinJava> Porcentage_cierre_efectivo(String token)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            ServiceReference.WSSHostelClient x = new ServiceReference.WSSHostelClient();
             List<ComodinJava> lista = new List<ComodinJava>();
             try
             {
-                var objetos = x.PorcentageCierreEfectivo(token).ToList();
+                List<ComodinJava> objetos = x.PorcentageCierreEfectivo(token).ToList();
                 return (List<ComodinJava>)objetos;
             }
             catch (Exception)

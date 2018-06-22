@@ -1,0 +1,1198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WSSHostel" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CapaObjeto" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWSSHostel_ValidarLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarLogin" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ValidarLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteBuscarPorRut_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteBuscarPorRut" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteBuscarPorRut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteBuscarPorRutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorBuscarPorRut_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorBuscarPorRut" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorBuscarPorRut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorBuscarPorRutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorEliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorEliminar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorEliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorBuscarPorRut_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorBuscarPorRut" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorBuscarPorRut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorBuscarPorRutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProductoCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProductoCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProductoCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProductoCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProductoActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProductoActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProductoActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProductoActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProductoEliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProductoEliminar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProductoEliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProductoEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProductoRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProductoRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProductoRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProductoRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ServicioComidaRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServicioComidaRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ServicioComidaRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServicioComidaRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoEliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoEliminar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoEliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PlatoRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlatoRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionEliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionEliminar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionEliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_LlamarSPHabitaHabXCapacidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:LlamarSPHabitaHabXCapacidad" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_LlamarSPHabitaHabXCapacidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LlamarSPHabitaHabXCapacidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CiudadRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CiudadRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CiudadRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CiudadRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:CamaCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CamaCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CamaActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CamaActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaEliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CamaEliminar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaEliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CamaEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CamaRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_CamaRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CamaRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenCompraCompletaCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenCompraCompletaCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenCompraCompletaCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenCompraCompletaCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenCompraCompletaRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenCompraCompletaRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenCompraCompletaRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenCompraCompletaRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_AlojConfirHueActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlojConfirHueActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_AlojConfirHueActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlojConfirHueActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenPedidoCompletaCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenPedidoCompletaCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenPedidoCompletaRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenPedidoCompletaRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_FacturaCompraCompletaCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:FacturaCompraCompletaCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_FacturaCompraCompletaCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FacturaCompraCompletaCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_FacturaCompraCompletaRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:FacturaCompraCompletaRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_FacturaCompraCompletaRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FacturaCompraCompletaRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_FacturaPedidoCompletaCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:FacturaPedidoCompletaCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_FacturaPedidoCompletaCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FacturaPedidoCompletaCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_FacturaPedidoCompletaRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:FacturaPedidoCompletaRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_FacturaPedidoCompletaRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FacturaPedidoCompletaRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_StockProductos_InputMessage">
+    <wsdl:part name="parameters" element="tns:StockProductos" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_StockProductos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StockProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Productos_mas_solicitados_InputMessage">
+    <wsdl:part name="parameters" element="tns:Productos_mas_solicitados" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Productos_mas_solicitados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Productos_mas_solicitadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Segun_rubro_empresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:Segun_rubro_empresa" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Segun_rubro_empresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Segun_rubro_empresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Metodo_pago_mas_usado_InputMessage">
+    <wsdl:part name="parameters" element="tns:Metodo_pago_mas_usado" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Metodo_pago_mas_usado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Metodo_pago_mas_usadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Ciudad_mas_solicita_servicios_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ciudad_mas_solicita_servicios" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Ciudad_mas_solicita_servicios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Ciudad_mas_solicita_serviciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Estado_habitaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:Estado_habitaciones" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Estado_habitaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Estado_habitacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Habitaciones_mas_solicitadas_InputMessage">
+    <wsdl:part name="parameters" element="tns:Habitaciones_mas_solicitadas" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Habitaciones_mas_solicitadas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Habitaciones_mas_solicitadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Fecha_mayor_auge_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fecha_mayor_auge" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Fecha_mayor_auge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fecha_mayor_augeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_SolicitudesNoTerminadas_InputMessage">
+    <wsdl:part name="parameters" element="tns:SolicitudesNoTerminadas" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_SolicitudesNoTerminadas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SolicitudesNoTerminadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Promedio_venta_mensual_InputMessage">
+    <wsdl:part name="parameters" element="tns:Promedio_venta_mensual" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_Promedio_venta_mensual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Promedio_venta_mensualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PromedioPerdidaMensual_InputMessage">
+    <wsdl:part name="parameters" element="tns:PromedioPerdidaMensual" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PromedioPerdidaMensual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PromedioPerdidaMensualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PorcentageCierreEfectivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:PorcentageCierreEfectivo" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PorcentageCierreEfectivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PorcentageCierreEfectivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProveedorRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProveedorRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProveedorRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProveedorRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ClienteRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClienteRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ClienteRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClienteRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProvisionCrear_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionCrear" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProvisionCrear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProvisionActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProvisionActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProvisionEliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionEliminar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProvisionEliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProvisionRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProvisionRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionRescatarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWSSHostel">
+    <wsdl:operation name="ValidarLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ValidarLogin" message="tns:IWSSHostel_ValidarLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ValidarLoginResponse" message="tns:IWSSHostel_ValidarLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioClienteCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear" message="tns:IWSSHostel_PerfilUsuarioClienteCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrearResponse" message="tns:IWSSHostel_PerfilUsuarioClienteCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioClienteActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteActualizar" message="tns:IWSSHostel_PerfilUsuarioClienteActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteActualizarResponse" message="tns:IWSSHostel_PerfilUsuarioClienteActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioClienteRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatar" message="tns:IWSSHostel_PerfilUsuarioClienteRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatarResponse" message="tns:IWSSHostel_PerfilUsuarioClienteRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioClienteBuscarPorRut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteBuscarPorRut" message="tns:IWSSHostel_PerfilUsuarioClienteBuscarPorRut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteBuscarPorRutResponse" message="tns:IWSSHostel_PerfilUsuarioClienteBuscarPorRut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioProveedorCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrear" message="tns:IWSSHostel_PerfilUsuarioProveedorCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrearResponse" message="tns:IWSSHostel_PerfilUsuarioProveedorCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioProveedorActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorActualizar" message="tns:IWSSHostel_PerfilUsuarioProveedorActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorActualizarResponse" message="tns:IWSSHostel_PerfilUsuarioProveedorActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioProveedorRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatar" message="tns:IWSSHostel_PerfilUsuarioProveedorRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatarResponse" message="tns:IWSSHostel_PerfilUsuarioProveedorRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioProveedorBuscarPorRut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorBuscarPorRut" message="tns:IWSSHostel_PerfilUsuarioProveedorBuscarPorRut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorBuscarPorRutResponse" message="tns:IWSSHostel_PerfilUsuarioProveedorBuscarPorRut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioEmpleadoCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoCrear" message="tns:IWSSHostel_PerfilUsuarioEmpleadoCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoCrearResponse" message="tns:IWSSHostel_PerfilUsuarioEmpleadoCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioEmpleadoActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoActualizar" message="tns:IWSSHostel_PerfilUsuarioEmpleadoActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoActualizarResponse" message="tns:IWSSHostel_PerfilUsuarioEmpleadoActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioEmpleadoRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatar" message="tns:IWSSHostel_PerfilUsuarioEmpleadoRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatarResponse" message="tns:IWSSHostel_PerfilUsuarioEmpleadoRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioAdministradorCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrear" message="tns:IWSSHostel_PerfilUsuarioAdministradorCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrearResponse" message="tns:IWSSHostel_PerfilUsuarioAdministradorCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioAdministradorActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorActualizar" message="tns:IWSSHostel_PerfilUsuarioAdministradorActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorActualizarResponse" message="tns:IWSSHostel_PerfilUsuarioAdministradorActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioAdministradorEliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorEliminar" message="tns:IWSSHostel_PerfilUsuarioAdministradorEliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorEliminarResponse" message="tns:IWSSHostel_PerfilUsuarioAdministradorEliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioAdministradorBuscarPorRut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorBuscarPorRut" message="tns:IWSSHostel_PerfilUsuarioAdministradorBuscarPorRut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorBuscarPorRutResponse" message="tns:IWSSHostel_PerfilUsuarioAdministradorBuscarPorRut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductoCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProductoCrear" message="tns:IWSSHostel_ProductoCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ProductoCrearResponse" message="tns:IWSSHostel_ProductoCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductoActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProductoActualizar" message="tns:IWSSHostel_ProductoActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ProductoActualizarResponse" message="tns:IWSSHostel_ProductoActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductoEliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProductoEliminar" message="tns:IWSSHostel_ProductoEliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ProductoEliminarResponse" message="tns:IWSSHostel_ProductoEliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductoRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProductoRescatar" message="tns:IWSSHostel_ProductoRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ProductoRescatarResponse" message="tns:IWSSHostel_ProductoRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComidaRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ServicioComidaRescatar" message="tns:IWSSHostel_ServicioComidaRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ServicioComidaRescatarResponse" message="tns:IWSSHostel_ServicioComidaRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlatoCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PlatoCrear" message="tns:IWSSHostel_PlatoCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PlatoCrearResponse" message="tns:IWSSHostel_PlatoCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlatoActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PlatoActualizar" message="tns:IWSSHostel_PlatoActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PlatoActualizarResponse" message="tns:IWSSHostel_PlatoActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlatoEliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PlatoEliminar" message="tns:IWSSHostel_PlatoEliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PlatoEliminarResponse" message="tns:IWSSHostel_PlatoEliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlatoRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PlatoRescatar" message="tns:IWSSHostel_PlatoRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PlatoRescatarResponse" message="tns:IWSSHostel_PlatoRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionCrear" message="tns:IWSSHostel_HabitacionCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionCrearResponse" message="tns:IWSSHostel_HabitacionCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionActualizar" message="tns:IWSSHostel_HabitacionActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionActualizarResponse" message="tns:IWSSHostel_HabitacionActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionEliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionEliminar" message="tns:IWSSHostel_HabitacionEliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionEliminarResponse" message="tns:IWSSHostel_HabitacionEliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionRescatar" message="tns:IWSSHostel_HabitacionRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionRescatarResponse" message="tns:IWSSHostel_HabitacionRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LlamarSPHabitaHabXCapacidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidad" message="tns:IWSSHostel_LlamarSPHabitaHabXCapacidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidadResponse" message="tns:IWSSHostel_LlamarSPHabitaHabXCapacidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CiudadRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CiudadRescatar" message="tns:IWSSHostel_CiudadRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/CiudadRescatarResponse" message="tns:IWSSHostel_CiudadRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CamaCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CamaCrear" message="tns:IWSSHostel_CamaCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/CamaCrearResponse" message="tns:IWSSHostel_CamaCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CamaActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CamaActualizar" message="tns:IWSSHostel_CamaActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/CamaActualizarResponse" message="tns:IWSSHostel_CamaActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CamaEliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CamaEliminar" message="tns:IWSSHostel_CamaEliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/CamaEliminarResponse" message="tns:IWSSHostel_CamaEliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CamaRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CamaRescatar" message="tns:IWSSHostel_CamaRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/CamaRescatarResponse" message="tns:IWSSHostel_CamaRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrdenCompraCompletaCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear" message="tns:IWSSHostel_OrdenCompraCompletaCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrearResponse" message="tns:IWSSHostel_OrdenCompraCompletaCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrdenCompraCompletaRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatar" message="tns:IWSSHostel_OrdenCompraCompletaRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatarResponse" message="tns:IWSSHostel_OrdenCompraCompletaRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlojConfirHueActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/AlojConfirHueActualizar" message="tns:IWSSHostel_AlojConfirHueActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/AlojConfirHueActualizarResponse" message="tns:IWSSHostel_AlojConfirHueActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrdenPedidoCompletaCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear" message="tns:IWSSHostel_OrdenPedidoCompletaCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrearResponse" message="tns:IWSSHostel_OrdenPedidoCompletaCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrdenPedidoCompletaRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatar" message="tns:IWSSHostel_OrdenPedidoCompletaRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatarResponse" message="tns:IWSSHostel_OrdenPedidoCompletaRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FacturaCompraCompletaCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaCrear" message="tns:IWSSHostel_FacturaCompraCompletaCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaCrearResponse" message="tns:IWSSHostel_FacturaCompraCompletaCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FacturaCompraCompletaRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaRescatar" message="tns:IWSSHostel_FacturaCompraCompletaRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaRescatarResponse" message="tns:IWSSHostel_FacturaCompraCompletaRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FacturaPedidoCompletaCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaCrear" message="tns:IWSSHostel_FacturaPedidoCompletaCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaCrearResponse" message="tns:IWSSHostel_FacturaPedidoCompletaCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FacturaPedidoCompletaRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaRescatar" message="tns:IWSSHostel_FacturaPedidoCompletaRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaRescatarResponse" message="tns:IWSSHostel_FacturaPedidoCompletaRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StockProductos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/StockProductos" message="tns:IWSSHostel_StockProductos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/StockProductosResponse" message="tns:IWSSHostel_StockProductos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Productos_mas_solicitados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Productos_mas_solicitados" message="tns:IWSSHostel_Productos_mas_solicitados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Productos_mas_solicitadosResponse" message="tns:IWSSHostel_Productos_mas_solicitados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Segun_rubro_empresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Segun_rubro_empresa" message="tns:IWSSHostel_Segun_rubro_empresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Segun_rubro_empresaResponse" message="tns:IWSSHostel_Segun_rubro_empresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Metodo_pago_mas_usado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Metodo_pago_mas_usado" message="tns:IWSSHostel_Metodo_pago_mas_usado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Metodo_pago_mas_usadoResponse" message="tns:IWSSHostel_Metodo_pago_mas_usado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ciudad_mas_solicita_servicios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Ciudad_mas_solicita_servicios" message="tns:IWSSHostel_Ciudad_mas_solicita_servicios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Ciudad_mas_solicita_serviciosResponse" message="tns:IWSSHostel_Ciudad_mas_solicita_servicios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Estado_habitaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Estado_habitaciones" message="tns:IWSSHostel_Estado_habitaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Estado_habitacionesResponse" message="tns:IWSSHostel_Estado_habitaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Habitaciones_mas_solicitadas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Habitaciones_mas_solicitadas" message="tns:IWSSHostel_Habitaciones_mas_solicitadas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Habitaciones_mas_solicitadasResponse" message="tns:IWSSHostel_Habitaciones_mas_solicitadas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fecha_mayor_auge">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Fecha_mayor_auge" message="tns:IWSSHostel_Fecha_mayor_auge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Fecha_mayor_augeResponse" message="tns:IWSSHostel_Fecha_mayor_auge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudesNoTerminadas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/SolicitudesNoTerminadas" message="tns:IWSSHostel_SolicitudesNoTerminadas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/SolicitudesNoTerminadasResponse" message="tns:IWSSHostel_SolicitudesNoTerminadas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Promedio_venta_mensual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/Promedio_venta_mensual" message="tns:IWSSHostel_Promedio_venta_mensual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/Promedio_venta_mensualResponse" message="tns:IWSSHostel_Promedio_venta_mensual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PromedioPerdidaMensual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PromedioPerdidaMensual" message="tns:IWSSHostel_PromedioPerdidaMensual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PromedioPerdidaMensualResponse" message="tns:IWSSHostel_PromedioPerdidaMensual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PorcentageCierreEfectivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PorcentageCierreEfectivo" message="tns:IWSSHostel_PorcentageCierreEfectivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PorcentageCierreEfectivoResponse" message="tns:IWSSHostel_PorcentageCierreEfectivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProveedorRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProveedorRescatar" message="tns:IWSSHostel_ProveedorRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ProveedorRescatarResponse" message="tns:IWSSHostel_ProveedorRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClienteRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ClienteRescatar" message="tns:IWSSHostel_ClienteRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ClienteRescatarResponse" message="tns:IWSSHostel_ClienteRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionCrear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProvisionCrear" message="tns:IWSSHostel_ProvisionCrear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ProvisionCrearResponse" message="tns:IWSSHostel_ProvisionCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProvisionActualizar" message="tns:IWSSHostel_ProvisionActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ProvisionActualizarResponse" message="tns:IWSSHostel_ProvisionActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionEliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProvisionEliminar" message="tns:IWSSHostel_ProvisionEliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ProvisionEliminarResponse" message="tns:IWSSHostel_ProvisionEliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProvisionRescatar" message="tns:IWSSHostel_ProvisionRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ProvisionRescatarResponse" message="tns:IWSSHostel_ProvisionRescatar_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWSSHostel" type="tns:IWSSHostel">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidarLogin">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ValidarLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioClienteCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioClienteActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioClienteRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioClienteBuscarPorRut">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteBuscarPorRut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioProveedorCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioProveedorActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioProveedorRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioProveedorBuscarPorRut">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorBuscarPorRut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioEmpleadoCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioEmpleadoActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioEmpleadoRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioAdministradorCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioAdministradorActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioAdministradorEliminar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioAdministradorBuscarPorRut">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorBuscarPorRut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductoCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ProductoCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductoActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ProductoActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductoEliminar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ProductoEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductoRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ProductoRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioComidaRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ServicioComidaRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlatoCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PlatoCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlatoActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PlatoActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlatoEliminar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PlatoEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlatoRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PlatoRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/HabitacionCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/HabitacionActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionEliminar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/HabitacionEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/HabitacionRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LlamarSPHabitaHabXCapacidad">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CiudadRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/CiudadRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CamaCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/CamaCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CamaActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/CamaActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CamaEliminar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/CamaEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CamaRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/CamaRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrdenCompraCompletaCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrdenCompraCompletaRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlojConfirHueActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/AlojConfirHueActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrdenPedidoCompletaCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrdenPedidoCompletaRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FacturaCompraCompletaCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/FacturaCompraCompletaCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FacturaCompraCompletaRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/FacturaCompraCompletaRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FacturaPedidoCompletaCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FacturaPedidoCompletaRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StockProductos">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/StockProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Productos_mas_solicitados">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Productos_mas_solicitados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Segun_rubro_empresa">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Segun_rubro_empresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Metodo_pago_mas_usado">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Metodo_pago_mas_usado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ciudad_mas_solicita_servicios">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Ciudad_mas_solicita_servicios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estado_habitaciones">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Estado_habitaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Habitaciones_mas_solicitadas">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Habitaciones_mas_solicitadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fecha_mayor_auge">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Fecha_mayor_auge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudesNoTerminadas">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/SolicitudesNoTerminadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Promedio_venta_mensual">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/Promedio_venta_mensual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PromedioPerdidaMensual">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PromedioPerdidaMensual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PorcentageCierreEfectivo">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PorcentageCierreEfectivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProveedorRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ProveedorRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClienteRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ClienteRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionCrear">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ProvisionCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ProvisionActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionEliminar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ProvisionEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ProvisionRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSSHostel">
+    <wsdl:port name="BasicHttpBinding_IWSSHostel" binding="tns:BasicHttpBinding_IWSSHostel">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
