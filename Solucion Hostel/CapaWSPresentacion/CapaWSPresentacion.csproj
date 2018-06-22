@@ -227,7 +227,6 @@
     <Content Include="scripts\recepcion.css" />
     <Content Include="scripts\solicitarEmpleado.css" />
     <Content Include="scripts\solicitudesCliente.css" />
-    <Content Include="WebService_Java.asmx" />
     <Content Include="PerfilCliente.sitemap">
       <SubType>Designer</SubType>
     </Content>
@@ -591,10 +590,6 @@
     </Compile>
     <Compile Include="SitioPrincipal.Master.designer.cs">
       <DependentUpon>SitioPrincipal.Master</DependentUpon>
-    </Compile>
-    <Compile Include="WebService_Java.asmx.cs">
-      <DependentUpon>WebService_Java.asmx</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
