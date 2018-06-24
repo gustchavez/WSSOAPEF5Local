@@ -111,6 +111,15 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Property Name="DESCRIPCION" Type="varchar2" MaxLength="140" />
           <Property Name="PRECIO" Type="number" Precision="6" Scale="0" Nullable="false" />
         </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'PFT5447.LOG_TMP' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="LOG_TMP">
+          <Property Name="SECION" Type="number" Precision="38" Scale="0" />
+          <Property Name="ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="500" />
+          <Property Name="FECHA" Type="date" />
+          <Property Name="USUARIO" Type="varchar2" MaxLength="50" />
+        </EntityType>-->
         <EntityType Name="ORDEN_DE_COMPRA">
           <Key>
             <PropertyRef Name="NUMERO" />
