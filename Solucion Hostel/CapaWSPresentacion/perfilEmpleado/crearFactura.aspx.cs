@@ -243,9 +243,7 @@ namespace CapaWSPresentacion.perfilEmpleado
                 {
                     RescatarDatos();
                 }
-
-            }
-            
+            }            
         }
 
         protected void ddlTipoEmpresa_SelectedIndexChanged(object sender, EventArgs e)
