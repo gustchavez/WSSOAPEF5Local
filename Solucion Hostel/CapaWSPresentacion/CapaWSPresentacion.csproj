@@ -129,7 +129,14 @@
     <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="CondicionesJavascript\empleadoAgregarProveedor.js" />
+    <Content Include="CondicionesJavascript\empleadoCrearFactura.js" />
+    <Content Include="CondicionesJavascript\empleadoIngresoProducto.js" />
+    <Content Include="CondicionesJavascript\empleadoPerfil.js" />
+    <Content Include="CondicionesJavascript\empleadoSolicitarProductos.js" />
     <Content Include="CondicionesJavascript\perfilCliente_perfil.js" />
+    <Content Include="CondicionesJavascript\proveedorIngresoFactura.js" />
+    <Content Include="CondicionesJavascript\proveedorPerfil.js" />
     <Content Include="images\LogoDefecto.png" />
     <Content Include="Index.aspx" />
     <Content Include="np_proveedor_producto_crud.aspx" />

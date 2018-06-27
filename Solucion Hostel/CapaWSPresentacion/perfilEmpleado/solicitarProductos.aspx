@@ -17,6 +17,7 @@
 		<div class="Casilla2-2" >
 		<h4 style="color: red;">Proveedor</h4>
         <asp:DropDownList ID="txtProveedor" runat="server" CssClass="selectO" AutoPostBack="True" OnSelectedIndexChanged="txtProveedor_SelectedIndexChanged">
+            <asp:ListItem>Seleccione una opción</asp:ListItem>
             </asp:DropDownList>
 		</div>        
 		
@@ -24,6 +25,7 @@
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nombre producto</h4>	
 		<asp:DropDownList ID="txtProducto" runat="server" CssClass="selectO" Enabled="False">
+            <asp:ListItem>Seleccione una opción</asp:ListItem>
             </asp:DropDownList>
 		</div>
 		<div class="Casilla2-2">

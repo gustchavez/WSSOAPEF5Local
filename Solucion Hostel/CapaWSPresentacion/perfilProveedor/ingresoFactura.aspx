@@ -14,6 +14,7 @@
             <div class="Casilla2-1">
 			<h4>Ordenes</h4>	
                 <asp:DropDownList ID="ddlOrdenes" CssClass="droplist" runat="server">
+                    <asp:ListItem Value="Seleccione una opción">Seleccione una opción</asp:ListItem>
                     <asp:ListItem Value="de Compra">Compra</asp:ListItem>
                     <asp:ListItem Value="de Venta">Pedido</asp:ListItem>
                 </asp:DropDownList>
@@ -45,6 +46,7 @@
             <div class="Casilla2-1">
 				<h4>Medio de Pago</h4>		
                 <asp:DropDownList ID="ddlMedioPago" CssClass="droplist" runat="server">
+                    <asp:ListItem Value="Seleccione un medio de pago">Seleccione un medio de pago</asp:ListItem>
                     <asp:ListItem Value="Debito">Débito</asp:ListItem>
                     <asp:ListItem Value="Credito">Crédito</asp:ListItem>
                     <asp:ListItem Value="Transferencia electronica">Transferencia Electrónica</asp:ListItem>
