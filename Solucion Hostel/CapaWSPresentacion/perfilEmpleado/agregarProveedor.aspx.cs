@@ -69,7 +69,7 @@ namespace CapaWSPresentacion.perfilEmpleado
             n.Item.PerfilUsuario.Direccion.Comuna = txtComuna.Text;
             n.Item.PerfilUsuario.Direccion.Calle = txtCalle.Text;
             n.Item.PerfilUsuario.Direccion.Numero = 123;
-            n.Item.PerfilUsuario.Empresa.Logo = "Logo";
+            n.Item.PerfilUsuario.Empresa.Logo = "LogoDefecto.png";
             n.Item.PerfilUsuario.Persona.Rut = txtRutEmpresa.Text + "Z";
             n.Item.PerfilUsuario.Persona.Nombre = "Perfil";
             n.Item.PerfilUsuario.Persona.Apellido = "Proveedor";

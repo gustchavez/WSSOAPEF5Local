@@ -130,6 +130,7 @@
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="CondicionesJavascript\perfilCliente_perfil.js" />
+    <Content Include="images\LogoDefecto.png" />
     <Content Include="Index.aspx" />
     <Content Include="np_proveedor_producto_crud.aspx" />
     <Content Include="np_cliente_crear.aspx" />
@@ -605,7 +606,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="images\" />
     <Folder Include="obj\Debug\" />
     <Folder Include="PaginaComercial\assets\" />
     <Folder Include="PaginaComercial\css\" />

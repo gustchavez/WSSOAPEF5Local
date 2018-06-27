@@ -8,8 +8,17 @@
 	<script src="/scripts/efectos.js"></script>
 	<script src="/scripts/jquery.min.js"></script>
 	<title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
 </head>
 <body>
+
+
+    <form id="form1" runat="server">
 
 
 <div class="padre">
@@ -18,7 +27,11 @@
 
 		<div class="BotonMenu" onclick="efecto()">MENU</div>		
 		<div class="desplegable">		
-			<div class="subMenu"> <div class="imagen-logo"></div> </div>
+			<div class="subMenu"> 
+                <div class="imagen-logo">
+                    <asp:Image ID="imgLogoPress" runat="server" class="auto-style1" ImageUrl="../images/LogoDefecto.png"/>
+			    </div>
+			</div>
 			<div class="subMenu"> <a href="solicitarServicio.aspx" style="color: #e2e2e2;"> Solicitar Servicio </a></div>
 			<div class="subMenu"> <a href="perfil.aspx" style="color: #e2e2e2;"> Modificar Perfil </a></div>
 			<div class="subMenu"> <a href="solicitudesCliente.aspx" style="color: #e2e2e2;"> Solicitudes </a></div>
@@ -31,7 +44,11 @@
     
     <div class="columna1">
 		<div class="perfilCliente">		
-			<div class="datosEmpresa"> <div class="imagen-logo-empresa"></div> </div>
+			<div class="datosEmpresa"> 
+                <div class="imagen-logo-empresa">
+                    <asp:Image ID="imgLogoNormal" runat="server" class="auto-style1" ImageUrl="../images/LogoDefecto.png"/>
+                </div> 
+            </div>
 			<div class="datosEmpresa"> <h3> Datos Usuario </h3> </div>
             <div class="datosEmpresa"> <b>Rut Empresa</b>  <br> <asp:Label ID="lblRutEmpresa" runat="server"></asp:Label> </div>
             <div class="datosEmpresa"> <b>Razon Social</b>  <br> <asp:Label ID="lblRazonSocial" runat="server"></asp:Label> </div>
@@ -49,6 +66,10 @@
     </asp:ContentPlaceHolder>
 
 </div>
+
+
+
+    </form>
 
 
 

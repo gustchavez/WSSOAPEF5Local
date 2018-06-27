@@ -83,7 +83,7 @@ namespace CapaWSPresentacion.PaginaComercial
             n.Item.PerfilUsuario.Direccion.Comuna = "Ingrese comuna";
             n.Item.PerfilUsuario.Direccion.Calle = "Ingrese Calle";
             n.Item.PerfilUsuario.Direccion.Numero = 123;
-            n.Item.PerfilUsuario.Empresa.Logo = "Logo";
+            n.Item.PerfilUsuario.Empresa.Logo = "LogoDefecto.png";
             n.Item.PerfilUsuario.Persona.Rut = rutEmpresa.Text + "Z"; // "Rut empleado";
             n.Item.PerfilUsuario.Persona.Nombre = "Nombre";
             n.Item.PerfilUsuario.Persona.Apellido = "Apellido";
