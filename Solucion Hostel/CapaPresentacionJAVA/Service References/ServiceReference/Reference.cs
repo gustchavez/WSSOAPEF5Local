@@ -363,6 +363,18 @@ namespace CapaPresentacionJAVA.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ClienteRescatar", ReplyAction="http://tempuri.org/IWSSHostel/ClienteRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorClientes> ClienteRescatarAsync(string token);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/listaProveedores", ReplyAction="http://tempuri.org/IWSSHostel/listaProveedoresResponse")]
+        string[][] listaProveedores(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/listaProveedores", ReplyAction="http://tempuri.org/IWSSHostel/listaProveedoresResponse")]
+        System.Threading.Tasks.Task<string[][]> listaProveedoresAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/listaClientes", ReplyAction="http://tempuri.org/IWSSHostel/listaClientesResponse")]
+        string[][] listaClientes(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/listaClientes", ReplyAction="http://tempuri.org/IWSSHostel/listaClientesResponse")]
+        System.Threading.Tasks.Task<string[][]> listaClientesAsync(string token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProvisionCrear", ReplyAction="http://tempuri.org/IWSSHostel/ProvisionCrearResponse")]
         CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada);
         
@@ -877,6 +889,22 @@ namespace CapaPresentacionJAVA.ServiceReference {
         
         public System.Threading.Tasks.Task<CapaObjeto.ContenedorClientes> ClienteRescatarAsync(string token) {
             return base.Channel.ClienteRescatarAsync(token);
+        }
+        
+        public string[][] listaProveedores(string token) {
+            return base.Channel.listaProveedores(token);
+        }
+        
+        public System.Threading.Tasks.Task<string[][]> listaProveedoresAsync(string token) {
+            return base.Channel.listaProveedoresAsync(token);
+        }
+        
+        public string[][] listaClientes(string token) {
+            return base.Channel.listaClientes(token);
+        }
+        
+        public System.Threading.Tasks.Task<string[][]> listaClientesAsync(string token) {
+            return base.Channel.listaClientesAsync(token);
         }
         
         public CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada) {

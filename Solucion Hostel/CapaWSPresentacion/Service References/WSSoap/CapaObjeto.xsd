@@ -609,6 +609,8 @@
       <xs:element minOccurs="0" name="numero1" type="xs:int" />
       <xs:element minOccurs="0" name="numero2" type="xs:int" />
       <xs:element minOccurs="0" name="numero3" type="xs:int" />
+      <xs:element minOccurs="0" name="numero4" type="xs:int" />
+      <xs:element minOccurs="0" name="numero5" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ComodinJava" nillable="true" type="tns:ComodinJava" />

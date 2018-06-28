@@ -430,6 +430,16 @@ namespace CapaServicio
             CRUDCliente x = new CRUDCliente();
             return x.LlamarSPRescatar(token);
         }
+        public List<String[]> listaClientes(string token)
+        {
+            ConsultasJava cj = new ConsultasJava();
+            return cj.clientes(token);
+        }
+        public List<String[]> listaProveedores(string token)
+        {
+            ConsultasJava cj = new ConsultasJava();
+            return cj.proveedores(token); 
+        }
 
         //CRUD Provision - INI
         public ContenedorProvision ProvisionCrear(ContenedorProvision entrada)

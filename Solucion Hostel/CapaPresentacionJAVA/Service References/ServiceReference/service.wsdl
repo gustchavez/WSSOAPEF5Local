@@ -5,6 +5,7 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/CapaObjeto" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IWSSHostel_ValidarLogin_InputMessage">
@@ -355,6 +356,18 @@
   <wsdl:message name="IWSSHostel_ClienteRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ClienteRescatarResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_listaProveedores_InputMessage">
+    <wsdl:part name="parameters" element="tns:listaProveedores" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_listaProveedores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listaProveedoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_listaClientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:listaClientes" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_listaClientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listaClientesResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_ProvisionCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:ProvisionCrear" />
   </wsdl:message>
@@ -611,6 +624,14 @@
     <wsdl:operation name="ClienteRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ClienteRescatar" message="tns:IWSSHostel_ClienteRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ClienteRescatarResponse" message="tns:IWSSHostel_ClienteRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listaProveedores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/listaProveedores" message="tns:IWSSHostel_listaProveedores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/listaProveedoresResponse" message="tns:IWSSHostel_listaProveedores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listaClientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/listaClientes" message="tns:IWSSHostel_listaClientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/listaClientesResponse" message="tns:IWSSHostel_listaClientes_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ProvisionCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProvisionCrear" message="tns:IWSSHostel_ProvisionCrear_InputMessage" />
@@ -1146,6 +1167,24 @@
     </wsdl:operation>
     <wsdl:operation name="ClienteRescatar">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/ClienteRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaProveedores">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/listaProveedores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaClientes">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/listaClientes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

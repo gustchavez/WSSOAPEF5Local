@@ -269,6 +269,9 @@
     <Content Include="PaginaComercial\scripts\form_check.php" />
     <Content Include="PaginaComercial\scripts\form_process.php" />
     <Content Include="PaginaComercial\scripts\form_throttle.php" />
+    <None Include="Service References\WSSoap\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\WSSoap\service.wsdl" />
     <None Include="Service References\WSSoap\service.xsd">
       <SubType>Designer</SubType>

@@ -224,6 +224,12 @@ namespace CapaServicio
         [OperationContract]
         ContenedorClientes ClienteRescatar(string token);
 
+        [OperationContract]
+        List<String[]> listaProveedores(String token);
+
+        [OperationContract]
+        List<String[]> listaClientes(String token);
+
         //Inicio Provision
         [OperationContract]
         ContenedorProvision ProvisionCrear(ContenedorProvision entrada);
