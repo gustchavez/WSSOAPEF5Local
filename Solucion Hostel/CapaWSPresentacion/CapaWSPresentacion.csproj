@@ -129,6 +129,11 @@
     <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="CondicionesJavascript\adminCrearAdmin.js" />
+    <Content Include="CondicionesJavascript\adminGestionAdmin.js" />
+    <Content Include="CondicionesJavascript\adminIngresoFactura.js" />
+    <Content Include="CondicionesJavascript\adminSolicitarProductoProveedor.js" />
+    <Content Include="CondicionesJavascript\clienteSolicitarServicio.js" />
     <Content Include="CondicionesJavascript\empleadoAgregarProveedor.js" />
     <Content Include="CondicionesJavascript\empleadoCrearFactura.js" />
     <Content Include="CondicionesJavascript\empleadoIngresoProducto.js" />
