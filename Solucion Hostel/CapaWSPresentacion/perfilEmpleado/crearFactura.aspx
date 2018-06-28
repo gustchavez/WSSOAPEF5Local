@@ -16,6 +16,7 @@
             <div class="Casilla2-1">
 				<h4>Tipo Empresa</h4>		
                 <asp:DropDownList ID="ddlTipoEmpresa" CssClass="droplist" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlTipoEmpresa_SelectedIndexChanged">
+                    <asp:ListItem>Seleccione una opción</asp:ListItem>
                     <asp:ListItem>Proveedor</asp:ListItem>
                     <asp:ListItem>Cliente</asp:ListItem>
                 </asp:DropDownList>
@@ -27,6 +28,7 @@
             <div class="Casilla2-1">
 			<h4>Ordenes</h4>	
                 <asp:DropDownList ID="ddlOrdenes" CssClass="droplist" runat="server">
+                    <asp:ListItem Value="Seleccione una opción">Seleccione una opción</asp:ListItem>
                     <asp:ListItem Value="de Compra">Compra</asp:ListItem>
                     <asp:ListItem Value="de Venta">Pedido</asp:ListItem>
                 </asp:DropDownList>

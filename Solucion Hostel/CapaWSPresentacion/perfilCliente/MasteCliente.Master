@@ -27,7 +27,7 @@
 		<div class="desplegable">		
 			<div class="subMenu"> 
                 <div class="imagen-logo">
-                    <asp:Image ID="imgLogoPress" runat="server" class="auto-style1" ImageUrl="../images/LogoDefecto.png"/>
+                    <asp:Image ID="imgLogoPress" runat="server" class="auto-style1" ImageUrl="../images/cliente.png"/>
 			    </div>
 			</div>
 			<div class="subMenu"> <a href="solicitarServicio.aspx" style="color: #e2e2e2;"> Solicitar Servicio </a></div>
@@ -44,7 +44,7 @@
 		<div class="perfilCliente">		
 			<div class="datosEmpresa"> 
                 <div class="imagen-logo-empresa">
-                    <asp:Image ID="imgLogoNormal" runat="server" class="auto-style1" ImageUrl="../images/LogoDefecto.png"/>
+                    <asp:Image ID="imgLogoNormal" runat="server" class="auto-style1" ImageUrl="../images/cliente.png"/>
                 </div> 
             </div>
 			<div class="datosEmpresa"> <h3> Datos Usuario </h3> </div>

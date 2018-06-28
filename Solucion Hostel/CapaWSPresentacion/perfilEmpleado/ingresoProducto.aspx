@@ -14,6 +14,7 @@
 			<div class="Casilla2-1">
 			<h4>Nombre Empresa</h4>				
 			<asp:DropDownList ID="txtProveedorAgregar" runat="server" CssClass="droplist">
+                <asp:ListItem>Seleccione una opción</asp:ListItem>
             </asp:DropDownList>		
 			</div>
 			<%--<div class="Casilla2-1">
@@ -30,11 +31,11 @@
 			</div>
         	<div class="Casilla2-1">
 			<h4>Stock</h4>
-			<asp:TextBox ID="txtStock" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtStock" runat="server" CssClass="CasillaPersona" min="0" Max="100"></asp:TextBox>
 			</div>
         	<div class="Casilla2-1">
 			<h4>Stock Critico</h4>
-			<asp:TextBox ID="txtStockCritico" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtStockCritico" runat="server" CssClass="CasillaPersona" min="10"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">	
 		    <asp:Button ID="btnAgregar" runat="server" Text="Agregar Producto" CssClass="SubmitTotal" OnClick="btnAgregar_click" />
