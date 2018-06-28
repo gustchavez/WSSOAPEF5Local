@@ -137,6 +137,9 @@
     <Content Include="Properties\DataSources\CapaObjeto.PerfilUsuarioProveedor.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.Producto.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.Sesion.datasource" />
+    <None Include="Service References\ServiceReference\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ServiceReference\CapaObjeto.xsd">
       <SubType>Designer</SubType>
     </None>

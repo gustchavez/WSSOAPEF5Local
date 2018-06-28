@@ -26,6 +26,7 @@
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="3fb1e0c7-c93a-4246-9586-3b31a7642473" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="6d0163ed-69fc-4116-886b-8eaf0d811c2d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/mex" />
     <MetadataFile FileName="CapaObjeto.xsd" MetadataType="Schema" ID="e2fd297f-ec6b-4b79-92ef-0118e403de69" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="0c8d7bc0-d7cb-4df4-b2a8-525789aeaa6d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

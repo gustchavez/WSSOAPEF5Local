@@ -558,6 +558,138 @@ namespace CapaNegocio
             }
         }
 
+        public List<String[]> clientes(String token)
+        {
+            CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+            List<String[]> lista = new List<String[]>();
+            if (ValidarPerfil(token))
+            {
+                try
+                {
+                    var query = (from c in conex.CLIENTE
+                                    join em in conex.EMPRESA on c.RUT equals em.RUT
+                                    select new
+                                    {
+                                        rut = em.RUT,
+                                        razon_soc =  em.RAZON_SOCIAL,
+                                        rubro = em.RUBRO,
+                                        email = em.EMAIL
+                                    }
+                                 ).ToList();
+                    foreach (var item in query)
+                    {
+                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
+                        String[] cliente = new String[3];
+                        cliente[0] = item.rut;
+                        cliente[1] = item.razon_soc;
+                        cliente[2] = item.rubro;
+                        cliente[3] = item.email;
+                        lista.Add(cliente);
+                    }
+                    return lista;
+                }
+                catch (Exception e)
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public List<String[]> proveedores(String token)
+        {
+            CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+            List<String[]> lista = new List<String[]>();
+            if (ValidarPerfil(token))
+            {
+                try
+                {
+                    var query = (from c in conex.PROVEEDOR
+                                 join em in conex.EMPRESA on c.RUT equals em.RUT
+                                 select new
+                                 {
+                                     rut = em.RUT,
+                                     razon_soc = em.RAZON_SOCIAL,
+                                     rubro = em.RUBRO,
+                                     email = em.EMAIL
+                                 }
+                                 ).ToList();
+                    foreach (var item in query)
+                    {
+                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
+                        String[] cliente = new String[3];
+                        cliente[0] = item.rut;
+                        cliente[1] = item.razon_soc;
+                        cliente[2] = item.rubro;
+                        cliente[3] = item.email;
+                        lista.Add(cliente);
+                    }
+                    return lista;
+                }
+                catch (Exception e)
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public List<String[]> log_tabla(String token)
+        {
+            CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+            List<String[]> lista = new List<String[]>();
+            if (ValidarPerfil(token))
+            {
+                try
+                {
+                    var query = (from c in conex.PROVEEDOR
+                                 join em in conex.EMPRESA on c.RUT equals em.RUT
+                                 select new
+                                 {
+                                     rut = em.RUT,
+                                     razon_soc = em.RAZON_SOCIAL,
+                                     rubro = em.RUBRO,
+                                     email = em.EMAIL
+                                 }
+                                 ).ToList();
+                    foreach (var item in query)
+                    {
+                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
+                        String[] cliente = new String[3];
+                        cliente[0] = item.rut;
+                        cliente[1] = item.razon_soc;
+                        cliente[2] = item.rubro;
+                        cliente[3] = item.email;
+                        lista.Add(cliente);
+                    }
+                    return lista;
+                }
+                catch (Exception e)
+                {
+                    String[] obj = new String[0];
+                    obj[0] = "Error=" + e.ToString();
+                    lista.Add(obj);
+                    return lista;
+                }
+            }
+            else
+            {
+                String[] obj = new String[0];
+                obj[0] = "Error Else";
+                lista.Add(obj);
+                return lista;
+            }
+        }
+
         private bool ValidarPerfil(string token)
         {
             bool retorno = false;
