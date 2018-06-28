@@ -45,10 +45,6 @@
 		<h4 style="color: red;">Nueva Contraseña</h4>	
 		<asp:TextBox ID="txtContraseña" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		</div>
-		<div class="Casilla2-2">
-		<h4 style="color: red;">Confirmar Contraseña</h4>	
-		<asp:TextBox ID="TextBox10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
-		</div>
 		<div class="Casilla2-2">	
 		<asp:Button ID="btnModificar" runat="server" Text="Modificar Datos" CssClass="SubmitTotal" OnClick="btnModificar_Click" />
 		</div>

@@ -1,5 +1,4 @@
-
-var formularioRegistro = document.getElementById('formularioRegistro'),
+ var formularioRegistro = document.getElementById('formularioRegistro'),
  rutEmpresa = formularioRegistro.rutEmpresa,
  razonSocial = formularioRegistro.razonSocial,
  giro = formularioRegistro.giro,

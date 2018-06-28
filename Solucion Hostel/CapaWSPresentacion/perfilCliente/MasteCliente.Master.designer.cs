@@ -13,6 +13,24 @@ namespace CapaWSPresentacion.perfilCliente {
     public partial class MasteCliente {
         
         /// <summary>
+        /// Control imgLogoPress.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgLogoPress;
+        
+        /// <summary>
+        /// Control imgLogoNormal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgLogoNormal;
+        
+        /// <summary>
         /// Control lblRutEmpresa.
         /// </summary>
         /// <remarks>

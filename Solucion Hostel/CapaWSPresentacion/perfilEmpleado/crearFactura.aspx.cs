@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CapaWSPresentacion.WSSoap;
 
 namespace CapaWSPresentacion.perfilEmpleado
 {
@@ -40,16 +41,155 @@ namespace CapaWSPresentacion.perfilEmpleado
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            ContenedorClientes n = new ContenedorClientes();
+            if (ddlTipoEmpresa.SelectedValue == "Proveedor")
+            {
+                ContenedorPerfilUsuarioProveedores m = new ContenedorPerfilUsuarioProveedores();
+                m = x.PerfilUsuarioProveedorRescatar(Session["TokenUsuario"].ToString());
 
-            n = x.ClienteRescatar(Session["TokenUsuario"].ToString());
+                var prov = (from l in m.Lista
+                                //where l.OCRelacionada.RutCliente == datSes.RutEmpresa
+                            select new
+                            {
+                                Rut = l.Proveedor.Rut,
+                                RazonSocial = l.PerfilUsuario.Empresa.RazonSocial
+                            }
+                            ).ToList();
 
-            ddlEmpresas.DataSource = null;
-            ddlEmpresas.DataSource = n.Lista;
-            ddlEmpresas.DataValueField = "Rut";
-            ddlEmpresas.DataTextField = "Rut";
-            ddlEmpresas.DataBind();
+                if (prov != null)
+                {
+                    ddlEmpresas.DataSource = prov;
+                    ddlEmpresas.DataValueField = "Rut";
+                    ddlEmpresas.DataTextField = "RazonSocial";
+                    ddlEmpresas.DataBind();
+                    ddlEmpresas.Enabled = true;
+                    ////
+                    RescatarOrdenesXEmpresa(x);
+                    ////
+                } else {
+                    //////////////
+                    ddlEmpresas.DataSource = prov;
+                    ddlEmpresas.DataBind();
+                    ddlEmpresas.Items.Add(new ListItem("No Existe", ""));
+                    ddlEmpresas.SelectedIndex = 0;
+                    //////////////
+                    ddlEmpresas.Enabled = false;
+
+                    //////////////
+                    ddlOrdenes.DataSource = prov;
+                    ddlOrdenes.DataBind();
+                    ddlOrdenes.Items.Add(new ListItem("No Existe", ""));
+                    ddlOrdenes.SelectedIndex = 0;
+                    //////////////
+                    ddlOrdenes.Enabled = false;
+                }
+            } else {
+                ContenedorPerfilUsuarioClientes m = new ContenedorPerfilUsuarioClientes();
+                m = x.PerfilUsuarioClienteRescatar(Session["TokenUsuario"].ToString());
+
+                var clie = (from l in m.Lista
+                                //where l.OCRelacionada.RutCliente == datSes.RutEmpresa
+                            select new
+                            {
+                                Rut = l.Cliente.Rut,
+                                RazonSocial = l.PerfilUsuario.Empresa.RazonSocial
+                            }
+                            ).ToList();
+
+                if (clie != null)
+                {
+                    ddlEmpresas.DataSource = clie;
+                    ddlEmpresas.DataValueField = "Rut";
+                    ddlEmpresas.DataTextField = "RazonSocial";
+                    ddlEmpresas.DataBind();
+                    ddlEmpresas.Enabled = true;
+                    ////
+                    RescatarOrdenesXEmpresa(x);
+                    ////
+                } else {
+                    //////////////
+                    ddlEmpresas.DataSource = clie;
+                    ddlEmpresas.DataBind();
+                    ddlEmpresas.Items.Add(new ListItem("No Existe", ""));
+                    ddlEmpresas.SelectedIndex = 0;
+                    //////////////
+                    ddlEmpresas.Enabled = false;
+
+                    //////////////
+                    ddlOrdenes.DataSource = clie;
+                    ddlOrdenes.DataBind();
+                    ddlOrdenes.Items.Add(new ListItem("No Existe", ""));
+                    ddlOrdenes.SelectedIndex = 0;
+                    //////////////
+                    ddlOrdenes.Enabled = false;
+                }
+            }
         }
+
+        private void RescatarOrdenesXEmpresa(WSSHostelClient x)
+        {
+            if (ddlTipoEmpresa.SelectedValue == "Proveedor")
+            {
+                ContenedorOrdenesPedidoCompleta m = new ContenedorOrdenesPedidoCompleta();
+                m = x.OrdenPedidoCompletaRescatar(Session["TokenUsuario"].ToString());
+
+                var opc = (from l in m.Lista
+                           where l.Cabecera.RutProveedor == ddlEmpresas.SelectedValue
+                              && l.Cabecera.Estado == "activo"
+                           select new
+                           {
+                               Numero = l.Cabecera.Numero
+                           }
+                            ).ToList();
+                if (opc.Count > 0)
+                {
+                    ddlOrdenes.DataSource = opc;
+                    ddlOrdenes.DataValueField = "Numero";
+                    ddlOrdenes.DataTextField = "Numero";
+                    ddlOrdenes.DataBind();
+                    ddlOrdenes.Enabled = true;
+                }
+                else {
+                    //////////////
+                    ddlOrdenes.DataSource = opc;
+                    ddlOrdenes.DataBind();
+                    ddlOrdenes.Items.Add(new ListItem("No Existe", ""));
+                    ddlOrdenes.SelectedIndex = 0;
+                    //////////////
+                    ddlOrdenes.Enabled = false;
+                }
+            }
+            else {
+                ContenedorOrdenesCompraCompleta m = new ContenedorOrdenesCompraCompleta();
+                m = x.OrdenCompraCompletaRescatar(Session["TokenUsuario"].ToString());
+
+                var occ = (from l in m.Lista
+                           where l.Cabecera.RutCliente == ddlEmpresas.SelectedValue
+                              && l.Cabecera.Estado == "activo"
+                           select new
+                           {
+                               Numero = l.Cabecera.Numero
+                           }
+                            ).ToList();
+
+                if (occ.Count > 0)
+                {
+                    ddlOrdenes.DataSource = occ;
+                    ddlOrdenes.DataValueField = "Numero";
+                    ddlOrdenes.DataTextField = "Numero";
+                    ddlOrdenes.DataBind();
+                    ddlOrdenes.Enabled = true;
+                } else {
+                    //////////////
+                    ddlOrdenes.DataSource = occ;
+                    ddlOrdenes.DataBind();
+                    ddlOrdenes.Items.Add(new ListItem("No Existe", ""));
+                    ddlOrdenes.SelectedIndex = 0;
+                    //////////////
+                    ddlOrdenes.Enabled = false;
+                }
+            }
+        }
+
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
@@ -103,98 +243,101 @@ namespace CapaWSPresentacion.perfilEmpleado
                 {
                     RescatarDatos();
                 }
-
-            }
-            
+            }            
         }
 
         protected void ddlTipoEmpresa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ddlEmpresas.DataSource = null;
+            RescatarDatos();
 
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            //ddlEmpresas.DataSource = null;
 
-            if (ddlTipoEmpresa.SelectedValue == "Proveedor")
-            {
-                ContenedorPerfilUsuarioProveedores m = new ContenedorPerfilUsuarioProveedores();
-                m = x.PerfilUsuarioProveedorRescatar(Session["TokenUsuario"].ToString());
+            //WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-                var prov = (from l in m.Lista
-                           //where l.OCRelacionada.RutCliente == datSes.RutEmpresa
-                            select new
-                            {
-                                Rut = l.Proveedor.Rut,
-                                RazonSocial = l.PerfilUsuario.Empresa.RazonSocial
-                            }
-                            ).ToList();
+            //if (ddlTipoEmpresa.SelectedValue == "Proveedor")
+            //{
+            //    ContenedorPerfilUsuarioProveedores m = new ContenedorPerfilUsuarioProveedores();
+            //    m = x.PerfilUsuarioProveedorRescatar(Session["TokenUsuario"].ToString());
 
-                ddlEmpresas.DataSource = prov;
-                ddlEmpresas.DataValueField = "Rut";
-                ddlEmpresas.DataTextField = "RazonSocial";
-                ddlEmpresas.DataBind();
-            } else {
-                ContenedorPerfilUsuarioClientes m = new ContenedorPerfilUsuarioClientes();
-                m = x.PerfilUsuarioClienteRescatar(Session["TokenUsuario"].ToString());
+            //    var prov = (from l in m.Lista
+            //               //where l.OCRelacionada.RutCliente == datSes.RutEmpresa
+            //                select new
+            //                {
+            //                    Rut = l.Proveedor.Rut,
+            //                    RazonSocial = l.PerfilUsuario.Empresa.RazonSocial
+            //                }
+            //                ).ToList();
 
-                var clie = (from l in m.Lista
-                                //where l.OCRelacionada.RutCliente == datSes.RutEmpresa
-                            select new
-                            {
-                                Rut = l.Cliente.Rut,
-                                RazonSocial = l.PerfilUsuario.Empresa.RazonSocial
-                            }
-                            ).ToList();
+            //    ddlEmpresas.DataSource = prov;
+            //    ddlEmpresas.DataValueField = "Rut";
+            //    ddlEmpresas.DataTextField = "RazonSocial";
+            //    ddlEmpresas.DataBind();
+            //} else {
+            //    ContenedorPerfilUsuarioClientes m = new ContenedorPerfilUsuarioClientes();
+            //    m = x.PerfilUsuarioClienteRescatar(Session["TokenUsuario"].ToString());
 
-                ddlEmpresas.DataSource = clie;
-                ddlEmpresas.DataValueField = "Rut";
-                ddlEmpresas.DataTextField = "RazonSocial";
-                ddlEmpresas.DataBind();
-            }
+            //    var clie = (from l in m.Lista
+            //                    //where l.OCRelacionada.RutCliente == datSes.RutEmpresa
+            //                select new
+            //                {
+            //                    Rut = l.Cliente.Rut,
+            //                    RazonSocial = l.PerfilUsuario.Empresa.RazonSocial
+            //                }
+            //                ).ToList();
+
+            //    ddlEmpresas.DataSource = clie;
+            //    ddlEmpresas.DataValueField = "Rut";
+            //    ddlEmpresas.DataTextField = "RazonSocial";
+            //    ddlEmpresas.DataBind();
+            //}
         }
 
         protected void ddlEmpresas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ddlOrdenes.DataSource = null;
-
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-            if (ddlTipoEmpresa.SelectedValue == "Proveedor")
-            {
-                ContenedorOrdenesPedidoCompleta m = new ContenedorOrdenesPedidoCompleta();
-                m = x.OrdenPedidoCompletaRescatar(Session["TokenUsuario"].ToString());
+            RescatarOrdenesXEmpresa(x);
 
-                var opc = (from l in m.Lista
-                            where l.Cabecera.RutProveedor == ddlEmpresas.SelectedValue
-                               && l.Cabecera.Estado == "activo"
-                            select new
-                            {
-                                Numero = l.Cabecera.Numero
-                            }
-                            ).ToList();
+            //ddlOrdenes.DataSource = null;
 
-                ddlOrdenes.DataSource = opc;
-                ddlOrdenes.DataValueField = "Numero";
-                ddlOrdenes.DataTextField = "Numero";
-                ddlOrdenes.DataBind();
-            } else {
-                ContenedorOrdenesCompraCompleta m = new ContenedorOrdenesCompraCompleta();
-                m = x.OrdenCompraCompletaRescatar(Session["TokenUsuario"].ToString());
+            //WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-                var occ = (from l in m.Lista
-                           where l.Cabecera.RutCliente == ddlEmpresas.SelectedValue
-                              && l.Cabecera.Estado == "activo"
-                           select new
-                           {
-                               Numero = l.Cabecera.Numero
-                           }
-                            ).ToList();
+            //if (ddlTipoEmpresa.SelectedValue == "Proveedor")
+            //{
+            //    ContenedorOrdenesPedidoCompleta m = new ContenedorOrdenesPedidoCompleta();
+            //    m = x.OrdenPedidoCompletaRescatar(Session["TokenUsuario"].ToString());
 
-                ddlOrdenes.DataSource = occ;
-                ddlOrdenes.DataValueField = "Numero";
-                ddlOrdenes.DataTextField = "Numero";
-                ddlOrdenes.DataBind();
-            }
+            //    var opc = (from l in m.Lista
+            //                where l.Cabecera.RutProveedor == ddlEmpresas.SelectedValue
+            //                   && l.Cabecera.Estado == "activo"
+            //                select new
+            //                {
+            //                    Numero = l.Cabecera.Numero
+            //                }
+            //                ).ToList();
 
+            //    ddlOrdenes.DataSource = opc;
+            //    ddlOrdenes.DataValueField = "Numero";
+            //    ddlOrdenes.DataTextField = "Numero";
+            //    ddlOrdenes.DataBind();
+            //} else {
+            //    ContenedorOrdenesCompraCompleta m = new ContenedorOrdenesCompraCompleta();
+            //    m = x.OrdenCompraCompletaRescatar(Session["TokenUsuario"].ToString());
+
+            //    var occ = (from l in m.Lista
+            //               where l.Cabecera.RutCliente == ddlEmpresas.SelectedValue
+            //                  && l.Cabecera.Estado == "activo"
+            //               select new
+            //               {
+            //                   Numero = l.Cabecera.Numero
+            //               }
+            //                ).ToList();
+
+            //    ddlOrdenes.DataSource = occ;
+            //    ddlOrdenes.DataValueField = "Numero";
+            //    ddlOrdenes.DataTextField = "Numero";
+            //    ddlOrdenes.DataBind();
+            //}
         }
     }
 }
