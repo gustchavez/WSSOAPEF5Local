@@ -142,4 +142,4 @@ function validarFormulario(e) {
     }
 }
 
-document.getElementById("btnRegistrar").addEventListener("click", validarFormulario);
+document.getElementById("btnAgregarFactura").addEventListener("click", validarFormulario);

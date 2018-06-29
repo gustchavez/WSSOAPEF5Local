@@ -64,9 +64,12 @@
 				<h4>Divisa</h4>		
                 <asp:TextBox ID="txtDivisa" runat="server" CssClass="CasillaPersona"></asp:TextBox>			
 			</div>
-            <div class="Casilla2-1">	
-		    <asp:Button ID="btnAgregarFactura" runat="server" Text="Agregar"  CssClass="SubmitTotal" OnClick="btnAgregar_Click"/> 
-		</div>
+           <div class="Casilla2-1">	
+		        <asp:Button ID="btnAgregarFactura" runat="server" Text="Agregar"  CssClass="SubmitTotal"/> 
+		  </div>
+          <div class="Casilla2-1">	
+		        <ul class="error" id="error" style="display:none;"></ul>
+		  </div>
 	</div>
 
 
