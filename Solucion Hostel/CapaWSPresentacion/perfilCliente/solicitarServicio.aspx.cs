@@ -119,7 +119,7 @@ namespace CapaWSPresentacion.perfilCliente
                 //TextBox item2 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
                 nOCD.Alojamiento.FechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
 
-                nOCD.Alojamiento.CapacidadHabitacion = CapHab;
+                nOCD.Alojamiento.Habitacion.Capacidad = CapHab;
 
                 TextBox item3 = (TextBox)form1.FindControl("txtOtro" + TipoHab + i);
                 nOCD.Alojamiento.Observaciones = item3.Text;
@@ -129,7 +129,7 @@ namespace CapaWSPresentacion.perfilCliente
                 nOCD.Comida.CodigoPlato = decimal.Parse(item4.SelectedValue);
                 */
 
-                nOCD.Comida.TipoServicio = "general";
+                nOCD.Comida.ServicioComida.Tipo = "general";
 
                 //TextBox item5 = (TextBox)form1.FindControl("txtComidaObservaciones" + TipoHab + i);
                 //nOCD.Comida.Observaciones = item5.Text;

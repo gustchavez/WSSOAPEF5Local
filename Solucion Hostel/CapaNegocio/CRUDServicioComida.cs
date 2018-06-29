@@ -29,7 +29,7 @@ namespace CapaNegocio
                     {
                         ServicioComida n = new ServicioComida();
                         n.Tipo = item.TIPO;
-                        n.Precio = (decimal)item.PRECIO;
+                        n.Precio = (int)item.PRECIO;
                         LServiciosComida.Lista.Add(n);
                     }
                     LServiciosComida.Retorno.Codigo = 0;

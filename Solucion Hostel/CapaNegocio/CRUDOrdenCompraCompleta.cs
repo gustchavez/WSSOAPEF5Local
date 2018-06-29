@@ -51,10 +51,10 @@ namespace CapaNegocio
                             , item.Alojamiento.Observaciones
                             , item.Alojamiento.RutPersona //Puede ponerse cualquier de los 2 ruts Comida o Alojamiento
                             //, item.Alojamiento.CodigoCama
-                            , item.Alojamiento.CapacidadHabitacion
+                            , item.Alojamiento.Habitacion.Capacidad
                             , item.Comida.FechaRecepcion
                             , item.Comida.Observaciones
-                            , item.Comida.TipoServicio
+                            , item.Comida.ServicioComida.Tipo
                             //, item.Comida.CodigoPlato
                             , p_OUT_CODRET
                             , p_OUT_GLSRET
@@ -122,25 +122,32 @@ namespace CapaNegocio
                     CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
 
                     var collection = (from cab in conex.ORDEN_DE_COMPRA
-                                      join det_aloj in conex.ALOJAMIENTO on cab.NUMERO equals det_aloj.NUMERO_OC
-                                      join det_comi in conex.COMIDA      on cab.NUMERO equals det_comi.NUMERO_OC
+                                      join det_aloj in conex.ALOJAMIENTO     on cab.NUMERO             equals det_aloj.NUMERO_OC
+                                      join det_comi in conex.COMIDA          on cab.NUMERO             equals det_comi.NUMERO_OC
+                                      join tip_serv in conex.SERVICIO_COMIDA on det_comi.TIPO_SERVICIO equals tip_serv.TIPO
                                       where det_comi.RUT_PERSONA == det_aloj.RUT_PERSONA
                                       orderby cab.NUMERO
                                       select new
                                       {
-                                          RutCliente  = cab.RUT_CLIENTE,
-                                          NumeroOC    = cab.NUMERO,
-                                          FecRecepOC  = cab.RECEPCION,
-                                          MontoOC     = cab.MONTO,
-                                          EstadoOC    = cab.ESTADO,
-                                          FecIngAloj  = det_aloj.INGRESO,
-                                          FecEgrAloj  = det_aloj.EGRESO,
-                                          CanDiasAloj = det_aloj.REGISTRO_DIAS,
-                                          EstadoAloj  = det_aloj.CONFIRMADO,
-                                          RutPersona  = det_aloj.RUT_PERSONA,
-                                          FecRecepCom = det_comi.RECEPCION,
-                                          EstadoCom   = det_comi.CONFIRMADA,
-                                          CodPlatoCom = det_comi.CODIGO_PLATO
+                                          RutCliente    = cab.RUT_CLIENTE,
+                                          NumeroOC      = cab.NUMERO,
+                                          FecRecepOC    = cab.RECEPCION,
+                                          MontoOC       = cab.MONTO,
+                                          EstadoOC      = cab.ESTADO,
+                                          //
+                                          FecIngAloj    = det_aloj.INGRESO,
+                                          FecEgrAloj    = det_aloj.EGRESO,
+                                          CanDiasAloj   = det_aloj.REGISTRO_DIAS,
+                                          EstadoAloj    = det_aloj.CONFIRMADO,
+                                          RutPersona    = det_aloj.RUT_PERSONA,
+                                          CapaHab       = det_aloj.CAMA.HABITACION.CAPACIDAD,
+                                          PrecioHab     = det_aloj.CAMA.HABITACION.PRECIO,
+                                          //
+                                          FecRecepCom   = det_comi.RECEPCION,
+                                          EstadoCom     = det_comi.CONFIRMADA,
+                                          //CodPlatoCom = det_comi.CODIGO_PLATO,
+                                          TipoServ      = det_comi.TIPO_SERVICIO,
+                                          PrecioCom     = tip_serv.PRECIO
                                       }
                             ).ToList();
 
@@ -153,24 +160,30 @@ namespace CapaNegocio
                             //Se crea la OrdenCompleta
                             OrdenCompraCompleta n = new OrdenCompraCompleta();
                             //Se carga valores de la cabecera
-                            n.Cabecera.RutCliente = item.RutCliente;
-                            n.Cabecera.Numero = item.NumeroOC;
-                            n.Cabecera.FechaRecepcion = item.FecRecepOC;
-                            n.Cabecera.Monto = item.MontoOC;
-                            n.Cabecera.Estado = item.EstadoOC;
-
+                            n.Cabecera.RutCliente              = item.RutCliente;
+                            n.Cabecera.Numero                  = item.NumeroOC;
+                            n.Cabecera.FechaRecepcion          = item.FecRecepOC;
+                            n.Cabecera.Monto                   = item.MontoOC;
+                            n.Cabecera.Estado                  = item.EstadoOC;
+                            //
                             //Se crea el detalle Orden
                             OrdenCompraDetalle m = new OrdenCompraDetalle();
-                            m.Alojamiento.NumerOrdenCompra = item.NumeroOC;
-                            m.Alojamiento.RutPersona = item.RutPersona;
-                            m.Alojamiento.FechaIngreso = item.FecIngAloj;
-                            m.Alojamiento.FechaEgreso = (item.FecEgrAloj == null) ? DateTime.MinValue : (DateTime)item.FecEgrAloj;
-                            m.Alojamiento.RegistroDias = (item.CanDiasAloj == null) ? int.MinValue : (int)item.CanDiasAloj;
-                            m.Alojamiento.Confirmado = item.EstadoAloj;
-                            m.Comida.NumerOrdenCompra = item.NumeroOC;
-                            m.Comida.FechaRecepcion = item.FecRecepCom;
-                            m.Comida.Confirmada = item.EstadoCom;
-                            //m.Comida.CodigoPlato = item.CodPlatoCom;
+                            m.Alojamiento.NumerOrdenCompra     = item.NumeroOC;
+                            m.Alojamiento.RutPersona           = item.RutPersona;
+                            m.Alojamiento.FechaIngreso         = item.FecIngAloj;
+                            m.Alojamiento.FechaEgreso          = (item.FecEgrAloj  == null) ? DateTime.MinValue : (DateTime)item.FecEgrAloj;
+                            m.Alojamiento.RegistroDias         = (item.CanDiasAloj == null) ? 0 : (int)item.CanDiasAloj;
+                            m.Alojamiento.Confirmado           = item.EstadoAloj;
+                            m.Alojamiento.Habitacion.Capacidad = item.CapaHab;
+                            m.Alojamiento.Habitacion.Precio    = item.PrecioHab;
+                            //m.Alojamiento.
+                            //
+                            m.Comida.NumerOrdenCompra          = item.NumeroOC;
+                            m.Comida.FechaRecepcion            = item.FecRecepCom;
+                            m.Comida.Confirmada                = item.EstadoCom;
+                            //m.Comida.CodigoPlato             = item.CodPlatoCom;
+                            m.Comida.ServicioComida.Tipo       = item.TipoServ;
+                            m.Comida.ServicioComida.Precio     = (item.PrecioCom == null) ? 0 : (int)item.PrecioCom; //(int)item.PrecioCom;
                             //Se agrega el detalle a la cabecera
 
                             n.ListaDetalle.Add(m);
@@ -182,16 +195,21 @@ namespace CapaNegocio
                         } else {
                             //Se crea el detalle Orden
                             OrdenCompraDetalle m = new OrdenCompraDetalle();
-                            m.Alojamiento.NumerOrdenCompra = item.NumeroOC;
-                            m.Alojamiento.RutPersona = item.RutPersona;
-                            m.Alojamiento.FechaIngreso = item.FecIngAloj;
-                            m.Alojamiento.FechaEgreso = (item.FecEgrAloj == null) ? DateTime.MinValue : (DateTime)item.FecEgrAloj;
-                            m.Alojamiento.RegistroDias = (item.CanDiasAloj == null) ? int.MinValue : (int)item.CanDiasAloj;
-                            m.Alojamiento.Confirmado = item.EstadoAloj;
-                            m.Comida.NumerOrdenCompra = item.NumeroOC;
-                            m.Comida.FechaRecepcion = item.FecRecepCom;
-                            m.Comida.Confirmada = item.EstadoCom;
-                            //m.Comida.CodigoPlato = item.CodPlatoCom;
+                            m.Alojamiento.NumerOrdenCompra     = item.NumeroOC;
+                            m.Alojamiento.RutPersona           = item.RutPersona;
+                            m.Alojamiento.FechaIngreso         = item.FecIngAloj;
+                            m.Alojamiento.FechaEgreso          = (item.FecEgrAloj == null) ? DateTime.MinValue : (DateTime)item.FecEgrAloj;
+                            m.Alojamiento.RegistroDias         = (item.CanDiasAloj == null) ? 0 : (int)item.CanDiasAloj;
+                            m.Alojamiento.Confirmado           = item.EstadoAloj;
+                            m.Alojamiento.Habitacion.Capacidad = item.CapaHab;
+                            m.Alojamiento.Habitacion.Precio    = item.PrecioHab;
+                            //
+                            m.Comida.NumerOrdenCompra          = item.NumeroOC;
+                            m.Comida.FechaRecepcion            = item.FecRecepCom;
+                            m.Comida.Confirmada                = item.EstadoCom;
+                            //m.Comida.CodigoPlato             = item.CodPlatoCom;
+                            m.Comida.ServicioComida.Tipo       = item.TipoServ;
+                            m.Comida.ServicioComida.Precio     = (item.PrecioCom == null) ? 0 : (int)item.PrecioCom; //(int)item.PrecioCom;
                             //Se agrega el detalle a la ultima orden de compra
                             LOrdenesCompra.Lista.Last().ListaDetalle.Add(m);
                         }
@@ -200,7 +218,7 @@ namespace CapaNegocio
                     LOrdenesCompra.Retorno.Glosa = "OK";
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     LOrdenesCompra.Retorno.Codigo = 1011;
                     LOrdenesCompra.Retorno.Glosa = "Err codret ORACLE";

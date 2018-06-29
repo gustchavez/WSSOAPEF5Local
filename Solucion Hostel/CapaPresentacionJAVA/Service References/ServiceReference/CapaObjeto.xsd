@@ -405,11 +405,11 @@
   <xs:element name="OrdenCompraDetalle" nillable="true" type="tns:OrdenCompraDetalle" />
   <xs:complexType name="Alojamiento">
     <xs:sequence>
-      <xs:element minOccurs="0" name="CapacidadHabitacion" type="xs:int" />
       <xs:element minOccurs="0" name="CodigoCama" type="xs:decimal" />
       <xs:element minOccurs="0" name="Confirmado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaEgreso" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaIngreso" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Habitacion" nillable="true" type="tns:Habitacion" />
       <xs:element minOccurs="0" name="NumerOrdenCompra" type="xs:decimal" />
       <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RegistroDias" type="xs:int" />
@@ -425,7 +425,7 @@
       <xs:element minOccurs="0" name="NumerOrdenCompra" type="xs:decimal" />
       <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RutPersona" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TipoServicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServicioComida" nillable="true" type="tns:ServicioComida" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Comida" nillable="true" type="tns:Comida" />
