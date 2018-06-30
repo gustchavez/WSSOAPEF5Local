@@ -122,14 +122,8 @@ namespace CapaWSPresentacion.perfilEmpleado
         {
             foreach (GridViewRow item in gwListaRecepcion.Rows)
             {
-                ////string x = item.Cells[2].Text;
-                //if (item.RowType == DataControlRowType.DataRow)
-                //{
                 CheckBox EstadoReserva = (item.Cells[0].Controls[1] as CheckBox);
                 bool EstadoReservaBBDD = item.Cells[3].Text == "Si" ? true : false; 
-                //(item.Cells[3].Controls[0] as CheckBox);
-                //CheckBox a = (item.Cells[0].FindControl("chkEstado") as CheckBox);
-                //CheckBox b = (item.Cells[3].FindControl("Estado") as CheckBox); //bool.Parse(item.Cells[3].Text);
                 if (EstadoReserva.Checked != EstadoReservaBBDD)
                 {
                     WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
@@ -145,23 +139,8 @@ namespace CapaWSPresentacion.perfilEmpleado
 
                     m = x.AlojConfirHueActualizar(m);
                 }
-                //}   
-            
             }
             RescatarDatos();
-        //    WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-
-            //    ContenedorAlojamiento m = new ContenedorAlojamiento();
-
-            //    m.Item.NumerOrdenCompra = decimal.Parse(ddlOrdenesCompra.SelectedValue);
-            //    m.Item.RutPersona = ddlRutsHuesped.SelectedValue;
-            //    m.Item.Confirmado = ddlEstado.SelectedValue;
-
-            //    m.Retorno.Token = Session["TokenUsuario"].ToString();
-
-            //    m = x.AlojConfirHueActualizar(m);
-
-            //    RescatarDatos();
         }
 
         protected void ddlOrdenesCompra_SelectedIndexChanged(object sender, EventArgs e)
@@ -186,11 +165,14 @@ namespace CapaWSPresentacion.perfilEmpleado
                 var huespedes = (from m in ocd.ListaDetalle
                            select new
                            {
-                               NroOrden = m.Alojamiento.NumerOrdenCompra,
-                               Rut = m.Alojamiento.RutPersona,
-                               //NombreCompleto = m.Alojamiento.Apellido + ' ' + m.PerfilUsuario.Persona.Nombre,
-                               Estado = m.Alojamiento.Confirmado,
-                               EstadoBool = m.Alojamiento.Confirmado == "Si" ? true : false
+                               NroOrden           = m.Alojamiento.NumerOrdenCompra,
+                               Rut                = m.Persona.Rut,
+                               NombreCompleto     = m.Persona.Apellido + ' ' + m.Persona.Nombre,
+                               NroHabitacion      = m.Alojamiento.Habitacion.Codigo,
+                               TipoHabitacion     = m.Alojamiento.Habitacion.Capacidad,
+                               TipoServicioComida = m.Comida.ServicioComida.Tipo,
+                               Estado             = m.Alojamiento.Confirmado,
+                               EstadoBool         = m.Alojamiento.Confirmado == "Si" ? true : false
                            }
                            ).ToList();
                 /////////////////

@@ -16,7 +16,7 @@
 		
 			<div class="Casilla2-1">
 			<h4>Rut Empresa</h4>	
-			<asp:TextBox ID="txtRutEmpresa" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtRutEmpresa" runat="server" CssClass="CasillaPersona" required></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Razón Social</h4>	

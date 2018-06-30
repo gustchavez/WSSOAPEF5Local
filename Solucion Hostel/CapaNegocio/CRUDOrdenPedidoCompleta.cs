@@ -114,8 +114,12 @@ namespace CapaNegocio
                 {
                     CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
 
-                    var collection = (from cab in conex.ORDEN_DE_PEDIDO
-                                      join det_prod in conex.RRP on cab.NUMERO equals det_prod.NUMERO_OP
+                    var collection = (from cab  in conex.ORDEN_DE_PEDIDO
+                                      join det  in conex.RRP      on cab.NUMERO          equals det.NUMERO_OP
+                                      join prod in conex.PRODUCTO on det.CODIGO_PRODUCTO equals prod.CODIGO
+                                      join prov in conex.PROVISION 
+                                                on     new { rut = cab.RUT_PROVEEDOR  , cod = prod.CODIGO}
+                                                equals new { rut = prov.RUT_PROVEEDOR , cod = prov.CODIGO_PRODUCTO}
                                       orderby cab.RUT_PROVEEDOR, cab.NUMERO
                                       select new
                                       {
@@ -124,10 +128,12 @@ namespace CapaNegocio
                                           FecRecepOP   = cab.EMISION,
                                           MontoOP      = cab.MONTO,
                                           EstadoOP     = cab.ESTADO,
-                                          CodProd      = det_prod.CODIGO_PRODUCTO,
-                                          CantProd     = det_prod.CANTIDAD,
-                                          FecRecProd   = det_prod.RECEPCION,
-                                          EstadoProd   = det_prod.CONFIRMADO
+                                          CodProd      = det.CODIGO_PRODUCTO,
+                                          NomProd      = prod.DESCRIPCION,
+                                          PreUniProd   = prov.PRECIO,
+                                          CantProd     = det.CANTIDAD,
+                                          FecRecProd   = det.RECEPCION,
+                                          EstadoProd   = det.CONFIRMADO
                                       }
                             ).ToList();
 
@@ -138,21 +144,23 @@ namespace CapaNegocio
                         if (NumeroOrdenAnterior != item.NumeroOP)
                         {
                             //Se crea la OrdenCompleta
-                            OrdenPedidoCompleta n = new OrdenPedidoCompleta();
+                            OrdenPedidoCompleta n   = new OrdenPedidoCompleta();
                             //Se carga valores de la cabecera
                             n.Cabecera.RutProveedor = item.RutProveedor;
-                            n.Cabecera.Numero = item.NumeroOP;
+                            n.Cabecera.Numero       = item.NumeroOP;
                             n.Cabecera.FechaEmision = item.FecRecepOP;
-                            n.Cabecera.Monto = item.MontoOP;
-                            n.Cabecera.Estado = item.EstadoOP;
+                            n.Cabecera.Monto        = item.MontoOP;
+                            n.Cabecera.Estado       = item.EstadoOP;
 
                             //Se crea el detalle Orden
                             OrdenPedidoDetalle m = new OrdenPedidoDetalle();
-                            m.RegistroRecepcionPedido.NumeroOrdenPedido = item.NumeroOP;
-                            m.RegistroRecepcionPedido.Producto.Codigo = item.CodProd;
-                            m.RegistroRecepcionPedido.Cantidad = item.CantProd;
-                            m.RegistroRecepcionPedido.Recepcion = item.FecRecProd;
-                            m.RegistroRecepcionPedido.Confirmado = item.EstadoProd;
+                            m.RegistroRecepcionPedido.NumeroOrdenPedido    = item.NumeroOP;
+                            m.RegistroRecepcionPedido.Producto.Codigo      = item.CodProd;
+                            m.RegistroRecepcionPedido.Producto.Descripcion = item.NomProd;
+                            m.RegistroRecepcionPedido.PrecioUnitario       = item.PreUniProd;
+                            m.RegistroRecepcionPedido.Cantidad             = item.CantProd;
+                            m.RegistroRecepcionPedido.Recepcion            = item.FecRecProd;
+                            m.RegistroRecepcionPedido.Confirmado           = item.EstadoProd;
                             
                             //Se agrega el detalle a la cabecera
                             n.ListaDetalle.Add(m);
@@ -166,11 +174,13 @@ namespace CapaNegocio
                         else {
                             //Se crea el detalle Orden
                             OrdenPedidoDetalle m = new OrdenPedidoDetalle();
-                            m.RegistroRecepcionPedido.NumeroOrdenPedido = item.NumeroOP;
-                            m.RegistroRecepcionPedido.Producto.Codigo = item.CodProd;
-                            m.RegistroRecepcionPedido.Cantidad = item.CantProd;
-                            m.RegistroRecepcionPedido.Recepcion = item.FecRecProd;
-                            m.RegistroRecepcionPedido.Confirmado = item.EstadoProd;
+                            m.RegistroRecepcionPedido.NumeroOrdenPedido    = item.NumeroOP;
+                            m.RegistroRecepcionPedido.Producto.Codigo      = item.CodProd;
+                            m.RegistroRecepcionPedido.Producto.Descripcion = item.NomProd;
+                            m.RegistroRecepcionPedido.PrecioUnitario       = item.PreUniProd;
+                            m.RegistroRecepcionPedido.Cantidad             = item.CantProd;
+                            m.RegistroRecepcionPedido.Recepcion            = item.FecRecProd;
+                            m.RegistroRecepcionPedido.Confirmado           = item.EstadoProd;
 
                             //Se agrega el detalle a la ultima orden de compra
                             LOrdenesPedido.Lista.Last().ListaDetalle.Add(m);

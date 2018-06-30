@@ -163,7 +163,7 @@ namespace CapaWSPresentacion.perfilEmpleado
                 }
                 Session["ListaTemporal"] = null;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 Session["ListaTemporal"] = null;
             }

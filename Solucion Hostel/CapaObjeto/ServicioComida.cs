@@ -9,7 +9,7 @@ namespace CapaObjeto
     public class ServicioComida
     {
         public string Tipo { get; set; }
-        public decimal Precio { get; set; }
+        public int Precio { get; set; }
 
         public ServicioComida()
         {
@@ -19,7 +19,7 @@ namespace CapaObjeto
         private void Init()
         {
             this.Tipo = string.Empty;
-            this.Precio = decimal.MinValue;
+            this.Precio = int.MinValue;
         }
     }
 }

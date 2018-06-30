@@ -31,15 +31,6 @@ namespace CapaWSPresentacion.perfilProveedor {
         protected global::System.Web.UI.WebControls.DropDownList ddlOrdenes;
         
         /// <summary>
-        /// Control txtFecha.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFecha;
-        
-        /// <summary>
         /// Control txtValorBruto.
         /// </summary>
         /// <remarks>
@@ -67,22 +58,13 @@ namespace CapaWSPresentacion.perfilProveedor {
         protected global::System.Web.UI.WebControls.TextBox txtValorNeto;
         
         /// <summary>
-        /// Control txtObservacion.
+        /// Control txtFecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtObservacion;
-        
-        /// <summary>
-        /// Control txtCodigoISO.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigoISO;
+        protected global::System.Web.UI.WebControls.TextBox txtFecha;
         
         /// <summary>
         /// Control ddlMedioPago.
@@ -94,6 +76,15 @@ namespace CapaWSPresentacion.perfilProveedor {
         protected global::System.Web.UI.WebControls.DropDownList ddlMedioPago;
         
         /// <summary>
+        /// Control ddlCodigoISO.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCodigoISO;
+        
+        /// <summary>
         /// Control txtMonto.
         /// </summary>
         /// <remarks>
@@ -103,22 +94,13 @@ namespace CapaWSPresentacion.perfilProveedor {
         protected global::System.Web.UI.WebControls.TextBox txtMonto;
         
         /// <summary>
-        /// Control txtTasaCambio.
+        /// Control txtObservacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTasaCambio;
-        
-        /// <summary>
-        /// Control txtDivisa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDivisa;
+        protected global::System.Web.UI.WebControls.TextBox txtObservacion;
         
         /// <summary>
         /// Control btnAgregarFactura.
@@ -128,5 +110,14 @@ namespace CapaWSPresentacion.perfilProveedor {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregarFactura;
+        
+        /// <summary>
+        /// Control gwOrdenDetalle.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gwOrdenDetalle;
     }
 }

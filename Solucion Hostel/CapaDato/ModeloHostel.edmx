@@ -111,15 +111,6 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Property Name="DESCRIPCION" Type="varchar2" MaxLength="140" />
           <Property Name="PRECIO" Type="number" Precision="6" Scale="0" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6013: La tabla o vista 'PFT5447.LOG_TMP' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-        <EntityType Name="LOG_TMP">
-          <Property Name="SECION" Type="number" Precision="38" Scale="0" />
-          <Property Name="ID" Type="number" Precision="38" Scale="0" />
-          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="500" />
-          <Property Name="FECHA" Type="date" />
-          <Property Name="USUARIO" Type="varchar2" MaxLength="50" />
-        </EntityType>-->
         <EntityType Name="ORDEN_DE_COMPRA">
           <Key>
             <PropertyRef Name="NUMERO" />
@@ -837,6 +828,8 @@ advertencia 6013: La tabla o vista 'PFT5447.LOG_TMP' no tiene definida una clave
           <Parameter Name="P_IN_EGRESO" Type="date" Mode="In" />
           <Parameter Name="P_IN_OBS_ALOJAMIENTO" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_RUT_PERSONA" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_NOMBRE_PERSONA" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_APELLIDO_PERSONA" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_HAB_CAPACIDAD" Type="number" Mode="In" />
           <Parameter Name="P_IN_RECEPCION" Type="date" Mode="In" />
           <Parameter Name="P_IN_OBS_COMIDA" Type="varchar2" Mode="In" />
@@ -1384,12 +1377,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
             <Parameter Name="P_OUT_NUMERO" Mode="Out" Type="Decimal" />
           </FunctionImport>
-          <FunctionImport Name="SP_CREAR_ENC_RESERVA">
-            <Parameter Name="P_IN_RUT_CLIENTE" Mode="In" Type="String" />
-            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
-            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
-            <Parameter Name="P_OUT_NUMERO" Mode="Out" Type="Decimal" />
-          </FunctionImport>
           <FunctionImport Name="SP_CREAR_HABITACION">
             <Parameter Name="P_IN_ESTADO" Mode="In" Type="String" />
             <Parameter Name="P_IN_CAPACIDAD" Mode="In" Type="Decimal" />
@@ -1702,12 +1689,20 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_IN_EGRESO" Mode="In" Type="DateTime" />
             <Parameter Name="P_IN_OBS_ALOJAMIENTO" Mode="In" Type="String" />
             <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NOMBRE_PERSONA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_APELLIDO_PERSONA" Mode="In" Type="String" />
             <Parameter Name="P_IN_HAB_CAPACIDAD" Mode="In" Type="Decimal" />
             <Parameter Name="P_IN_RECEPCION" Mode="In" Type="DateTime" />
             <Parameter Name="P_IN_OBS_COMIDA" Mode="In" Type="String" />
             <Parameter Name="P_IN_TIPO_SERVICIO" Mode="In" Type="String" />
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREAR_ENC_RESERVA">
+            <Parameter Name="P_IN_RUT_CLIENTE" Mode="In" Type="String" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+            <Parameter Name="P_OUT_NUMERO" Mode="Out" Type="Decimal" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="CAMA">
@@ -2519,7 +2514,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_CREAR_CLIENTE" FunctionName="Model.Store.SP_CREAR_CLIENTE" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_EMPLEADO" FunctionName="Model.Store.SP_CREAR_EMPLEADO" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_ENC_PEDIDO" FunctionName="Model.Store.SP_CREAR_ENC_PEDIDO" />
-          <FunctionImportMapping FunctionImportName="SP_CREAR_ENC_RESERVA" FunctionName="Model.Store.SP_CREAR_ENC_RESERVA" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_HABITACION" FunctionName="Model.Store.SP_CREAR_HABITACION" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_PLATO" FunctionName="Model.Store.SP_CREAR_PLATO" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_PRODUCTO" FunctionName="Model.Store.SP_CREAR_PRODUCTO" />
@@ -2588,6 +2582,7 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_VALIDAR_LOGIN" FunctionName="Model.Store.SP_VALIDAR_LOGIN" />
           <FunctionImportMapping FunctionImportName="SP_ACT_INGRESO_HUESPED" FunctionName="Model.Store.SP_ACT_INGRESO_HUESPED" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_DET_RESERVA" FunctionName="Model.Store.SP_CREAR_DET_RESERVA" />
+          <FunctionImportMapping FunctionImportName="SP_CREAR_ENC_RESERVA" FunctionName="Model.Store.SP_CREAR_ENC_RESERVA" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
