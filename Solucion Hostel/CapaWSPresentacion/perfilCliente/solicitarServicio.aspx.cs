@@ -111,28 +111,34 @@ namespace CapaWSPresentacion.perfilCliente
                 OrdenCompraDetalle nOCD = new OrdenCompraDetalle();
                 
                 TextBox item0 = (TextBox)form1.FindControl("txtRut" + TipoHab + i);
-                nOCD.Alojamiento.RutPersona = item0.Text;
+                nOCD.Persona.Rut = item0.Text;
 
-                //TextBox item1 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
+                TextBox item1 = (TextBox)form1.FindControl("txtNombre" + TipoHab + i);
+                nOCD.Persona.Rut = item0.Text;
+
+                TextBox item2 = (TextBox)form1.FindControl("txtApellido" + TipoHab + i);
+                nOCD.Persona.Rut = item0.Text;
+
+                //TextBox item3 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
                 nOCD.Alojamiento.FechaIngreso = DateTime.Parse(txtFechaIngreso.Text);
 
-                //TextBox item2 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
+                //TextBox item4 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
                 nOCD.Alojamiento.FechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
 
                 nOCD.Alojamiento.Habitacion.Capacidad = CapHab;
 
-                TextBox item3 = (TextBox)form1.FindControl("txtOtro" + TipoHab + i);
-                nOCD.Alojamiento.Observaciones = item3.Text;
+                TextBox item5 = (TextBox)form1.FindControl("txtOtro" + TipoHab + i);
+                nOCD.Alojamiento.Observaciones = item5.Text;
 
                 /* //se debe incluir los dropdownlist de tipo de comida
-                DropDownList item4 = (DropDownList)FindControl(txtComidaIndividualObservaciones1.Text + i);
-                nOCD.Comida.CodigoPlato = decimal.Parse(item4.SelectedValue);
+                DropDownList item6 = (DropDownList)FindControl(txtComidaIndividualObservaciones1.Text + i);
+                nOCD.Comida.CodigoPlato = decimal.Parse(item6.SelectedValue);
                 */
 
                 nOCD.Comida.ServicioComida.Tipo = "general";
 
-                //TextBox item5 = (TextBox)form1.FindControl("txtComidaObservaciones" + TipoHab + i);
-                //nOCD.Comida.Observaciones = item5.Text;
+                //TextBox item7 = (TextBox)form1.FindControl("txtComidaObservaciones" + TipoHab + i);
+                //nOCD.Comida.Observaciones = item7.Text;
 
                 nOCD.Comida.Observaciones = "Observaciones Comida";
 

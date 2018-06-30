@@ -45,11 +45,13 @@ namespace CapaNegocio
                         foreach (var item in nOCC.Item.ListaDetalle)
                         {
                             conex.SP_CREAR_DET_RESERVA
-                            (nOCC.Item.Cabecera.Numero
+                            ( nOCC.Item.Cabecera.Numero
                             , item.Alojamiento.FechaIngreso
                             , item.Alojamiento.FechaEgreso
                             , item.Alojamiento.Observaciones
-                            , item.Alojamiento.RutPersona //Puede ponerse cualquier de los 2 ruts Comida o Alojamiento
+                            , item.Persona.Rut //Puede ponerse cualquier de los 2 ruts Comida o Alojamiento
+                            , item.Persona.Nombre
+                            , item.Persona.Apellido
                             //, item.Alojamiento.CodigoCama
                             , item.Alojamiento.Habitacion.Capacidad
                             , item.Comida.FechaRecepcion
@@ -140,6 +142,9 @@ namespace CapaNegocio
                                           CanDiasAloj   = det_aloj.REGISTRO_DIAS,
                                           EstadoAloj    = det_aloj.CONFIRMADO,
                                           RutPersona    = det_aloj.RUT_PERSONA,
+                                          NomPersona    = det_aloj.PERSONA.NOMBRE,
+                                          ApePersona    = det_aloj.PERSONA.APELLIDO,
+                                          NroHab        = det_aloj.CAMA.HABITACION.CODIGO,
                                           CapaHab       = det_aloj.CAMA.HABITACION.CAPACIDAD,
                                           PrecioHab     = det_aloj.CAMA.HABITACION.PRECIO,
                                           //
@@ -169,13 +174,17 @@ namespace CapaNegocio
                             //Se crea el detalle Orden
                             OrdenCompraDetalle m = new OrdenCompraDetalle();
                             m.Alojamiento.NumerOrdenCompra     = item.NumeroOC;
-                            m.Alojamiento.RutPersona           = item.RutPersona;
+                            m.Persona.Rut                      = item.RutPersona;
+                            m.Persona.Nombre                   = item.NomPersona;
+                            m.Persona.Apellido                 = item.ApePersona;
                             m.Alojamiento.FechaIngreso         = item.FecIngAloj;
                             m.Alojamiento.FechaEgreso          = (item.FecEgrAloj  == null) ? DateTime.MinValue : (DateTime)item.FecEgrAloj;
                             m.Alojamiento.RegistroDias         = (item.CanDiasAloj == null) ? 0 : (int)item.CanDiasAloj;
+                            m.Alojamiento.Habitacion.Codigo    = item.NroHab;
                             m.Alojamiento.Confirmado           = item.EstadoAloj;
                             m.Alojamiento.Habitacion.Capacidad = item.CapaHab;
                             m.Alojamiento.Habitacion.Precio    = item.PrecioHab;
+                            
                             //m.Alojamiento.
                             //
                             m.Comida.NumerOrdenCompra          = item.NumeroOC;
@@ -196,10 +205,13 @@ namespace CapaNegocio
                             //Se crea el detalle Orden
                             OrdenCompraDetalle m = new OrdenCompraDetalle();
                             m.Alojamiento.NumerOrdenCompra     = item.NumeroOC;
-                            m.Alojamiento.RutPersona           = item.RutPersona;
+                            m.Persona.Rut                      = item.RutPersona;
+                            m.Persona.Nombre                   = item.NomPersona;
+                            m.Persona.Apellido                 = item.ApePersona;
                             m.Alojamiento.FechaIngreso         = item.FecIngAloj;
                             m.Alojamiento.FechaEgreso          = (item.FecEgrAloj == null) ? DateTime.MinValue : (DateTime)item.FecEgrAloj;
                             m.Alojamiento.RegistroDias         = (item.CanDiasAloj == null) ? 0 : (int)item.CanDiasAloj;
+                            m.Alojamiento.Habitacion.Codigo    = item.NroHab;
                             m.Alojamiento.Confirmado           = item.EstadoAloj;
                             m.Alojamiento.Habitacion.Capacidad = item.CapaHab;
                             m.Alojamiento.Habitacion.Precio    = item.PrecioHab;

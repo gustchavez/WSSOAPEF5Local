@@ -400,6 +400,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Alojamiento" nillable="true" type="tns:Alojamiento" />
       <xs:element minOccurs="0" name="Comida" nillable="true" type="tns:Comida" />
+      <xs:element minOccurs="0" name="Persona" nillable="true" type="tns:Persona" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OrdenCompraDetalle" nillable="true" type="tns:OrdenCompraDetalle" />

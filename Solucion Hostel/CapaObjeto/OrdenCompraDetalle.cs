@@ -10,6 +10,7 @@ namespace CapaObjeto
     {
         public Alojamiento Alojamiento { get; set; }
         public Comida Comida { get; set; }
+        public Persona Persona { get; set; }
 
         public OrdenCompraDetalle()
         {
@@ -20,6 +21,7 @@ namespace CapaObjeto
         {
             this.Alojamiento = new Alojamiento();
             this.Comida = new Comida();
+            this.Persona = new Persona();
         }
     }
 }

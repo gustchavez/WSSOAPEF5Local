@@ -41,8 +41,16 @@
                     Visible="True" />
                     <asp:BoundField DataField="Rut" HeaderText="Rut"  
                     Visible="True" />
-                    <asp:BoundField DataField="Estado" HeaderText="Estado"
-                    Visible="False" />
+                    <asp:BoundField DataField="NombreCompleto" HeaderText="Nombre/Apellido"  
+                    Visible="True" />
+                    <asp:BoundField DataField="NroHabitacion" HeaderText="Nro. Hab."  
+                    Visible="True" />
+                    <asp:BoundField DataField="TipoHabitacion" HeaderText="Tipo Hab."  
+                    Visible="True" />
+                    <asp:BoundField DataField="TipoServicioComida" HeaderText="Tipo Serv. Comida"  
+                    Visible="True" />
+                    <asp:BoundField DataField="Estado" HeaderText="¿Ingresado?"
+                    Visible="True" />
                 </Columns>
             </asp:GridView>
         	    
