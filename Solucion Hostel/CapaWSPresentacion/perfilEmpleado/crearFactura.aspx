@@ -1,13 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilEmpleado/MasterEmpleado.Master" AutoEventWireup="true" CodeBehind="crearFactura.aspx.cs" Inherits="CapaWSPresentacion.perfilEmpleado.crearFactura" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    
-
      <link rel="stylesheet" type="text/css" href="/scripts/crearFactura.css">
-
       <form id="form1" runat="server">
-
-
 	<div class="columna2">
 		<div class="ModificarDatos">
 				
@@ -73,6 +67,9 @@
 				<h4>Observación</h4>					
 				<asp:TextBox ID="txtObservacion" runat="server" TextMode="MultiLine" CssClass="CasillaPersona"></asp:TextBox>					
 			</div>
+            <div class="Casilla2-1">	
+		        <asp:Button ID="btnAgregarFactura" runat="server" Text="Agregar"  CssClass="SubmitTotal" OnClick="btnAgregar_Click"/> 
+		    </div>
 	</div>
     <div class="ModificarDatos2">
         <div class="columna2-1"> 
@@ -81,14 +78,7 @@
                 EmptyDataText="No se encontraron Solicitudes..."
                 ></asp:GridView>
 	    </div>
-
-        <div class="Casilla2-1">	
-		    <asp:Button ID="btnAgregarFactura" runat="server" Text="Agregar"  CssClass="SubmitTotal" OnClick="btnAgregar_Click"/> 
-		</div>
-
     </div>
-
-	
 		
 </div>
 
