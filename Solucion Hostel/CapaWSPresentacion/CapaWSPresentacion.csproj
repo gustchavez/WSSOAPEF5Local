@@ -209,6 +209,7 @@
     <Content Include="perfilEmpleado\ingresoProducto.aspx" />
     <Content Include="perfilEmpleado\perfil.aspx" />
     <Content Include="perfilEmpleado\recepcion.aspx" />
+    <Content Include="perfilEmpleado\recepcionProducto.aspx" />
     <Content Include="perfilEmpleado\solicitarProductos.aspx" />
     <Content Include="perfilEmpleado\stock.aspx" />
     <Content Include="perfilProveedor\facturas.aspx" />
@@ -559,6 +560,13 @@
     </Compile>
     <Compile Include="perfilEmpleado\recepcion.aspx.designer.cs">
       <DependentUpon>recepcion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilEmpleado\recepcionProducto.aspx.cs">
+      <DependentUpon>recepcionProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilEmpleado\recepcionProducto.aspx.designer.cs">
+      <DependentUpon>recepcionProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="perfilEmpleado\solicitarProductos.aspx.cs">
       <DependentUpon>solicitarProductos.aspx</DependentUpon>

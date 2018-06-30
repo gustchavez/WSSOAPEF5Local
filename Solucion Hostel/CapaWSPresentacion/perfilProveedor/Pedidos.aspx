@@ -4,13 +4,15 @@
     <form id="form1" runat="server">
 
 	    <div class="columna2">
-		
+		   <div class="ModificarDatos">
 				<h2>Solicitudes de Doña Clarita</h2><br>
 		
 	            <br />
-                <asp:GridView ID="gwSolicitudes" runat="server" CssClass="listaFactura">
+                <asp:GridView ID="gwSolicitudes" runat="server" CssClass="listaFactura"
+                     EmptyDataText="No se encontraron solicitudes...">
+               
                 </asp:GridView>
-		
+		    </div>
 	</div>
 	<!--Fin COLUMNA2-->
 

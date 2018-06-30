@@ -8,12 +8,12 @@
 	<!--Fin Menu-->
 
 	<div class="columna2">
-		
+		<div class="ModificarDatos">
 				<h2>Mis Facturas</h2><br>
         <asp:GridView ID="gwFacturasPedido" runat="server" CssClass="listaFactura"
             EmptyDataText="No se encontraron Facturas..."
             ></asp:GridView>
-		
+		</div>
 	</div>
     </form>
 </asp:Content>

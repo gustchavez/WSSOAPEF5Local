@@ -8,6 +8,8 @@ margin: 0px;
 body{
 	font-family: arial;
 	font-size: 13px;
+      color: #ffa500;
+	background: #e4572e;
 }
 
 .padre {
@@ -20,7 +22,7 @@ body{
 .totalmenu {
 	width: 100%;
 	height: 30px;
-	background: #035E7B;
+	background: #7a2800;
 	position: absolute;
 	z-index: 11;
 }
@@ -28,7 +30,7 @@ body{
 .menu {
 	width: 1250px;
 	height: 30px;
-	background: #035E7B;
+	background: #7a2800;
 	position: absolute;
 	z-index: 11;
 }
@@ -37,13 +39,13 @@ body{
 	position: absolute;
 	width: 250px;
 	height: 670px;
-	margin-top: 30px;
+	margin-top: 10px;
 	padding-left: 10px;	
 }
 
 .columna2{
 	position: absolute;
-	background: #E9ECF5;
+	background: #933600;
 	margin-left: 280px;
 	margin-top: 30px;
 	width: 970px;
@@ -70,7 +72,7 @@ height: 23px;
 text-align: center;
 color: white;
 position: relative;
-background: #55828b;
+background: #ffa500;
 z-index: 11;
 padding-top: 7px;
 }
@@ -78,7 +80,7 @@ padding-top: 7px;
 
 /* Contenido Desplegable */
 .desplegable{	
-background: #1C3144;
+background: #ffa500;
 width: 280px;
 z-index: 10;
 height: 770px;
@@ -88,13 +90,14 @@ display: none;
 }
 
 .imagen-logo {
-	background: white;
-	height: 150px;
-	width: 150px;
+	
+	height: 180px;
+	width: 180px;
 	margin: auto;
 	border-radius: 50%;
 	position: relative;
 	bottom: 10px;
+    background:none;
 }
 
 .subMenu {
@@ -114,24 +117,26 @@ width: 250px;
 margin: auto;
 height: 100%;
 position: absolute;
+
 }
 
 .datosEmpresa {
 	position: relative;
 	top: 50px;
-	margin-top: 15px;
+	margin-top: 10px;
 	color: black;
 	text-align: center;
 }
 
 .imagen-logo-empresa {
-	background: blue;
-	height: 150px;
-	width: 150px;
+	
+	height: 180px;
+	width: 180px;
 	margin: auto;
 	border-radius: 50%;
 	position: relative;
-	bottom: 30px;
+	bottom: 10px;
+    background:none;
 
 }
 
@@ -146,14 +151,24 @@ position: absolute;
 
 .listaFactura {
 
-	width: 800px;
+	width: 750px;
 	margin: auto;
 	text-align: center;
 }
 
+.ModificarDatos{
+	margin: auto;
+	height: 700px;
+	width: 900px;
+	position: relative;
+	top: 10px;
+    left:10px;
+    overflow:auto;
+}
+
 .columna2 h2{
 
-	text-align: center;
+	text-align: left;
 	margin-top: 40px;
 	margin-bottom: 10px;
 }
