@@ -14,7 +14,37 @@
         <!-- Crear Usuario -->
         <div class="ContenedorPaginaIngreso">
 	        <div class="Contenedor-Registro">
-			    <h3 class="Contenido">REGISTRO</h3>
+
+                	    <h3 class="Contenido">INGRESO</h3>
+			<div class="Contenido">
+				Correo Electrónico <br/>
+			    <asp:TextBox ID="txtNombreUsuario" runat="server" CssClass="casilla"></asp:TextBox> <br/>		
+			</div>
+			<div class="Contenido">
+				Contraseña <br/>
+			    <asp:TextBox ID="txtClaveUsuario" runat="server"  TextMode="Password" CssClass="casilla"></asp:TextBox><br/>
+			</div>
+            
+			<div class="Contenido">
+				<asp:Button ID="btnAceptar" runat="server" Text="Ingresar"  OnClick="btnAceptar_Click" CssClass="casillaEnvio" /><br/>		
+			</div>
+
+			<div class="Contenido">
+				<ul class="error2" id="error2"></ul>	
+			</div>
+
+			  
+
+    	    </div>
+    
+	    <div class="Contenedor-Registro">
+		    <div class="linea"></div>
+	    </div>
+
+        <!-- Ingreso usuario contraseña -->
+
+	    <div class="Contenedor-Ingreso">	
+	             <h3 class="Contenido">REGISTRO</h3>
 			    <div class="Contenido">
 				    Rut Empresa <br/>
 				     <asp:TextBox ID="rutEmpresa" runat="server"  CssClass="casilla" ></asp:TextBox><br/>	
@@ -185,33 +215,6 @@
 			    <div class="Contenido">
 				    <ul class="error" id="error"></ul>	
 			    </div>
-
-    	    </div>
-    
-	    <div class="Contenedor-Registro">
-		    <div class="linea"></div>
-	    </div>
-
-        <!-- Ingreso usuario contraseña -->
-
-	    <div class="Contenedor-Ingreso">	
-		    <h3 class="Contenido">INGRESO</h3>
-			<div class="Contenido">
-				Correo Electrónico <br/>
-			    <asp:TextBox ID="txtNombreUsuario" runat="server" CssClass="casilla"></asp:TextBox> <br/>		
-			</div>
-			<div class="Contenido">
-				Contraseña <br/>
-			    <asp:TextBox ID="txtClaveUsuario" runat="server"  TextMode="Password" CssClass="casilla"></asp:TextBox><br/>
-			</div>
-            
-			<div class="Contenido">
-				<asp:Button ID="btnAceptar" runat="server" Text="Ingresar"  OnClick="btnAceptar_Click" CssClass="casillaEnvio" /><br/>		
-			</div>
-
-			<div class="Contenido">
-				<ul class="error2" id="error2"></ul>	
-			</div>
 	    </div>
     </div>  
 </form>

@@ -7,6 +7,8 @@ margin: 0px;
 body{
 	font-family: arial;
 	font-size: 13px;
+    color: #ffa500;
+	background: #e4572e;
 }
 
 .padre {
@@ -19,7 +21,7 @@ body{
 .totalmenu {
 	width: 100%;
 	height: 30px;
-	background: #035E7B;
+	background: #7a2800;
 	position: absolute;
 	z-index: 11;
 }
@@ -27,7 +29,7 @@ body{
 .menu {
 	width: 1250px;
 	height: 30px;
-	background: #035E7B;
+	background: #7a2800;
 	position: absolute;
 	z-index: 11;
 }
@@ -36,13 +38,13 @@ body{
 	position: absolute;
 	width: 250px;
 	height: 670px;
-	margin-top: 30px;
+	margin-top: 10px;
 	padding-left: 10px;	
 }
 
 .columna2{
 	position: absolute;
-	background: #E9ECF5;
+	background: #933600;
 	margin-left: 280px;
 	margin-top: 30px;
 	width: 970px;
@@ -69,7 +71,7 @@ height: 23px;
 text-align: center;
 color: white;
 position: relative;
-background: #55828b;
+background: #ffa500;
 z-index: 11;
 padding-top: 7px;
 }
@@ -77,7 +79,7 @@ padding-top: 7px;
 
 /* Contenido Desplegable */
 .desplegable{	
-background: #1C3144;
+background: #ffa500;
 width: 280px;
 z-index: 10;
 height: 770px;
@@ -86,15 +88,7 @@ margin-top: 30px;
 display: none;
 }
 
-.imagen-logo {
-	background: white;
-	height: 150px;
-	width: 150px;
-	margin: auto;
-	border-radius: 50%;
-	position: relative;
-	bottom: 10px;
-}
+
 
 .subMenu {
 	position: relative;
@@ -123,16 +117,7 @@ position: absolute;
 	text-align: center;
 }
 
-.imagen-logo-empresa {
-	background: blue;
-	height: 150px;
-	width: 150px;
-	margin: auto;
-	border-radius: 50%;
-	position: relative;
-	bottom: 30px;
 
-}
 
 
 /* ----------------------- */
@@ -148,11 +133,12 @@ position: absolute;
 	height: 300px;
 	width: 900px;
 	position: relative;
-	top: 30px;
+	top: 10px;
+    left:40px;
 }
 
 .ModificarDatos h2{
-	text-align: center;
+	text-align: left;
 }
 
 .Casilla2-1 {
@@ -166,7 +152,8 @@ position: absolute;
 	margin: auto;
 	width: 900px;
 	position: relative;
-    top:40px;
+    top:10px;
+    left:40px;
 	
 }
 
@@ -187,7 +174,11 @@ position: absolute;
 	position: relative;
 	width: 230px;
 	height: 25px;
-
+    
+    background: none;
+	color: white;
+ 	border: none;
+    border-bottom: 2px solid white;
 }
 
 .droplist {
@@ -195,6 +186,11 @@ position: absolute;
 	width: 230px;
 	height: 30px;
 	float: left;
+
+    	background: none;
+	color: white;
+	border: none;
+	 border-bottom: 2px solid white;
 }
 
 .SubmitTotal{
@@ -205,6 +201,11 @@ position: absolute;
 	height: 30px;
     top:18px;
 
+    background: none;
+    color: white;
+    border: 2px solid #ffa500;
+    border-radius: 8px;
+    transition-duration: 0.4s;
 
 }
 
@@ -212,9 +213,13 @@ position: absolute;
 	position: relative;
 	width: 235px;
 	height: 30px;
-	background: #035E7B;
-	color: white;
-     top:18px;
+    top:18px;
+
+    background: none;
+    color: white;
+    border: 2px solid #f26419;
+    border-radius: 8px;
+    transition-duration: 0.4s;
 }
 
 
@@ -225,13 +230,16 @@ position: absolute;
 
 
 .error{
-
+    top:45px;
+    right:350px;
+    margin-bottom:5px;
+    text-align:center;
+    position:relative;
 display: none;
 border-radius: 3px;
-margin-top: 10px;
-background: #ce1818;
-color: #fff;
-padding-left: 30px;
-padding-top: 5px;
-padding-bottom: 5px;
+background: #fff;
+color: #ce1818;
+font-weight:bold;
+padding-top: 3px;
+padding-bottom: 3px;
 }

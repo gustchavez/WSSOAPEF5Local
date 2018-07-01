@@ -2,8 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <link rel="stylesheet" type="text/css" href="/scripts/perfilCliente.css">
-    
-      <form id="form2" runat="server">
+
+
+    <form id="form2" runat="server">
         
 	    <div class="columna2">
 		    <div class="ModificarDatos">
@@ -22,7 +23,7 @@
 			    <div class="Casilla2-1">
 			    <h4>Giro</h4>	
 			        <asp:DropDownList ID="ddlRubro" CssClass="droplist" runat="server">
-				        <asp:ListItem value="" >Selecciona un Giro</asp:ListItem>
+				        <asp:ListItem value="Selecciona un Giro" >Selecciona un Giro</asp:ListItem>
 				        <asp:ListItem value="1">CULTIVOS EN GENERAL; CULTIVO DE PRODUCTOS DE MERCADO; HORTICULTURA</asp:ListItem>
 				        <asp:ListItem value="2">CRÍA DE ANIMALES</asp:ListItem>
 				        <asp:ListItem value="3">CULTIVO PROD. AGRÍCOLAS EN COMBINACIÓN CON CRÍA DE ANIMALES</asp:ListItem>
@@ -222,16 +223,27 @@
 
 	    <div class="ModificarDatos2">
 		    <div class="Casilla2-2">
-		    <h4 style="color: red;">Nombre Usuario</h4>	
+		    <h4 style="color: white;">Nombre Usuario</h4>	
                 <asp:TextBox ID="txtNombreUsuario" runat="server" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>
 		    </div>
 		    <div class="Casilla2-2">
-		    <h4 style="color: red;">Nueva Contraseña</h4>	
+		    <h4 style="color: white;">Nueva Contraseña</h4>	
                 <asp:TextBox ID="txtContraseña" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		    </div>
 		    <div class="Casilla2-2">
-                <asp:Button ID="Button1" runat="server" Text="Modificar"  CssClass="SubmitTotal" OnClick="btnModificar_Click"/> 	
+                <asp:Button ID="Button1" runat="server" Text="Modificar Datos"  CssClass="SubmitTotal" OnClick="btnModificar_Click" OnClientClick="return valida();"/> 	
 		    </div>
+            <div class="Casilla2-2">
+                <div class="error" id="error1"> Ingrese una razón social </div>
+                <div class="error" id="error2"> Seleccione un Giro </div>
+                <div class="error" id="error3"> Ingrese una dirección </div>
+                <div class="error" id="error4"> Seleccione una ciudad </div>
+                <div class="error" id="error5"> Seleccione una comuna </div>
+                <div class="error" id="error6"> Ingrese un correo electrónico </div>
+                <div class="error" id="error7"> Ingrese un número de telefono </div>
+                <div class="error" id="error8"> Ingrese una contraseña </div>
+            </div>
+           
 	    </div>
 		
     </div>
@@ -240,4 +252,70 @@
 
 
 
+
+    <!----VALIDACIONES ------->
+
+<script type="text/javascript">
+     function valida() 
+     {      
+         var razonSocial = document.getElementById('<%= txtRazonSocial.ClientID %>').value;
+         var rubro = document.getElementById('<%= ddlRubro.ClientID %>').value;
+         var direccion = document.getElementById('<%= txtDireccion.ClientID %>').value;
+         var ciudad = document.getElementById('<%= txtNombreCiudad.ClientID %>').value;
+         var comuna = document.getElementById('<%= ddlComunas.ClientID %>').value;
+         var correo = document.getElementById('<%= txtCorreoElectronico.ClientID %>').value;
+         var telefono = document.getElementById('<%= txtTelefono.ClientID %>').value;
+         var contrasena = document.getElementById('<%= txtContraseña.ClientID %>').value;
+
+         if (razonSocial == "" || razonSocial == null) {
+             $('#error1').fadeIn(500);         
+         } else {
+             $('#error1').fadeOut(500); 
+         }
+
+         if (rubro == "" || rubro == null || rubro == "Selecciona un Giro") {
+             $('#error2').fadeIn(500);
+         } else {
+             $('#error2').fadeOut(500);
+         }
+
+         if (direccion == "" || direccion == null || direccion == "Selecciona un Giro") {
+             $('#error3').fadeIn(500);
+         } else {
+             $('#error3').fadeOut(500);
+         }
+
+         if (ciudad == "" || ciudad == null || ciudad == "Selecciona un Giro") {
+             $('#error4').fadeIn(500);
+         } else {
+             $('#error4').fadeOut(500);
+         }
+
+         if (comuna == "" || comuna == null || comuna == "Selecciona un Giro") {
+             $('#error5').fadeIn(500);
+         } else {
+             $('#error5').fadeOut(500);
+         }
+
+         if (correo == "" || correo == null || correo == "Selecciona un Giro") {
+             $('#error6').fadeIn(500);
+         } else {
+             $('#error6').fadeOut(500);
+         }
+
+         if (telefono == "" || telefono == null || telefono == "Selecciona un Giro") {
+             $('#error7').fadeIn(500);
+         } else {
+             $('#error7').fadeOut(500);
+         }
+
+         if (contrasena == "" || contrasena == null || contrasena == "Selecciona un Giro") {
+             $('#error8').fadeIn(500);
+         } else {
+             $('#error8').fadeOut(500);
+         }
+         return false;
+     }
+ </script>
+    
 </asp:Content>

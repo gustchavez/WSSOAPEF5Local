@@ -116,6 +116,8 @@ namespace CapaWSPresentacion.perfilProveedor
                 if (n.Retorno.Codigo == 0)
                 {
                     //correcto
+                    Response.Write(@"<script langauge='text/javascript'>alert('Modificación Exitosa');</script>");
+
                 }
             }
         }
