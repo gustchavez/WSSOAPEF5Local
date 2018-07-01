@@ -146,10 +146,10 @@ namespace CapaWSPresentacion.perfilCliente
                 nOCD.Persona.Rut = item0.Text;
 
                 TextBox item1 = (TextBox)form1.FindControl("txtNombre" + TipoHab + i);
-                nOCD.Persona.Rut = item0.Text;
+                nOCD.Persona.Nombre = item0.Text;
 
                 TextBox item2 = (TextBox)form1.FindControl("txtApellido" + TipoHab + i);
-                nOCD.Persona.Rut = item0.Text;
+                nOCD.Persona.Apellido = item0.Text;
 
                 //TextBox item3 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
                 nOCD.Alojamiento.FechaIngreso = DateTime.Parse(txtFechaIngreso.Text);

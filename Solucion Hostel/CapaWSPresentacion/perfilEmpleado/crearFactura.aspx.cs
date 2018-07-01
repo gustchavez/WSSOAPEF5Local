@@ -247,7 +247,7 @@ namespace CapaWSPresentacion.perfilEmpleado
             var detalleOrden = (from l in orden.DetalleOC
                                 select new
                                 {
-                                    RutPersona     = l.Alojamiento.RutPersona,
+                                    RutPersona     = l.Persona.Rut,
                                     FecIng         = l.Alojamiento.FechaIngreso,
                                     FecEgr         = l.Alojamiento.FechaEgreso,
                                     CantDias       = l.Alojamiento.RegistroDias,
