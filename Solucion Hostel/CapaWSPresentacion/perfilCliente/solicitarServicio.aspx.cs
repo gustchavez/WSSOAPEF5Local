@@ -6,8 +6,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
-
 namespace CapaWSPresentacion.perfilCliente
 {
     public partial class solicitarServicio : System.Web.UI.Page
@@ -23,9 +21,7 @@ namespace CapaWSPresentacion.perfilCliente
                 {
                     if (!IsPostBack)
                     {
-                       
-                        bloqueados();
-                        //RescatarDatos();
+                        RescatarDatos();
                     }
                 }
                 else
@@ -40,17 +36,44 @@ namespace CapaWSPresentacion.perfilCliente
                 Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
             }
         }
+        private void RescatarDatos()
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            ContenedorServiciosComida n = new ContenedorServiciosComida();
+            n = x.ServicioComidaRescatar(Session["TokenUsuario"].ToString());
+
+            //Llenar los combos con los tipo Comida
+            LlenerDDLTipoServicio(n.Lista, "Individual", 1);
+            LlenerDDLTipoServicio(n.Lista, "Doble", 2);
+            LlenerDDLTipoServicio(n.Lista, "Tiple", 3);
+
+            bloqueados();
+        }
+        private void LlenerDDLTipoServicio(List<ServicioComida> Lista, string TipoHab, int CapHab)
+        {
+            int CantidadHab = (CapHab * 4) + 1;
+
+            for (int i = 1; i < CantidadHab; i++)
+            {
+                DropDownList item0 = (DropDownList)form1.FindControl("ddlComidaTipoServ" + TipoHab + i);
+                item0.DataSource = Lista;
+                item0.DataValueField = "Tipo";
+                item0.DataTextField = "Tipo";
+                item0.DataBind();
+            }
+        }
 
         private void bloqueados()
         {
-            txtFechaEgreso.Text = DateTime.Now.ToString("yyyy-MM-dd"); 
+            txtFechaEgreso.Text  = DateTime.Now.ToString("yyyy-MM-dd"); 
             txtFechaIngreso.Text = DateTime.Now.ToString("yyyy-MM-dd");
 
             MostrarCasillas.Enabled = false;
-            BtnSiguiente.Enabled = false;
+            BtnSiguiente.Enabled    = false;
         }
 
-        protected void Siguiente_Click1(object sender, EventArgs e)
+        protected void BtnSiguiente_Click(object sender, EventArgs e)
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
             Sesion SesionUsuario = (Sesion)Session["SesionUsuario"];
@@ -94,6 +117,16 @@ namespace CapaWSPresentacion.perfilCliente
                 //No existe se continua siguiente validacion
             }
 
+            try
+            {
+                int CantIndividual = int.Parse(triple.Text);
+                AgregarHuesped(nOCC, CantIndividual, "Sectuple", 6);
+            }
+            catch (Exception)
+            {
+                //No existe se continua siguiente validacion
+            }
+
             ContenedorOrdenCompraCompleta xOCC = new ContenedorOrdenCompraCompleta();
             xOCC.Item.Cabecera = nOCC.Cabecera;
             xOCC.Item.ListaDetalle = nOCC.ListaDetalle;
@@ -129,18 +162,11 @@ namespace CapaWSPresentacion.perfilCliente
                 TextBox item5 = (TextBox)form1.FindControl("txtOtro" + TipoHab + i);
                 nOCD.Alojamiento.Observaciones = item5.Text;
 
-                /* //se debe incluir los dropdownlist de tipo de comida
-                DropDownList item6 = (DropDownList)FindControl(txtComidaIndividualObservaciones1.Text + i);
-                nOCD.Comida.CodigoPlato = decimal.Parse(item6.SelectedValue);
-                */
-
-                nOCD.Comida.ServicioComida.Tipo = "general";
-
-                //TextBox item7 = (TextBox)form1.FindControl("txtComidaObservaciones" + TipoHab + i);
-                //nOCD.Comida.Observaciones = item7.Text;
-
-                nOCD.Comida.Observaciones = "Observaciones Comida";
-
+                DropDownList item6 = (DropDownList)form1.FindControl("ddlComidaTipoServ" + TipoHab + i);
+                nOCD.Comida.ServicioComida.Tipo = item6.SelectedValue;
+                
+                //nOCD.Comida.ServicioComida.Tipo = "general";
+                nOCD.Comida.Observaciones = "Sin Observaciones";
                 nOCD.Comida.FechaRecepcion = DateTime.Now;
 
                 nOCC.ListaDetalle.Add(nOCD);
@@ -218,7 +244,7 @@ namespace CapaWSPresentacion.perfilCliente
                 DateTime fechaIngreso = DateTime.Parse(txtFechaIngreso.Text);
                 DateTime fechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
 
-                if(fechaIngreso != null && fechaIngreso != null)
+                if(fechaIngreso != null && fechaEgreso != null && fechaIngreso < fechaEgreso)
                 {
                     TimeSpan total = fechaEgreso - fechaIngreso;
 
@@ -232,11 +258,6 @@ namespace CapaWSPresentacion.perfilCliente
                     ContenedorHabDispCant n = new ContenedorHabDispCant();
                     n = x.HabitacionHabXCapacidad(Session["TokenUsuario"].ToString(), fechaIngreso, fechaEgreso);
                     
-                    //ContenedorHabDispCant
-                    //OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
-                    ////Armar Encabezado de Orden de Reserva
-                    //nOCC.Cabecera.RutCliente = SesionUsuario.RutEmpresa;
-
                     txtCantHabDispSim.Text = n.Item.CantHabSimple.ToString();
                     txtCantHabDispDob.Text = n.Item.CantHabDoble.ToString();
                     txtCantHabDispTri.Text = n.Item.CantHabTriple.ToString();
@@ -255,9 +276,7 @@ namespace CapaWSPresentacion.perfilCliente
                 txtCantHabDispDob.Text = "0";
                 txtCantHabDispTri.Text = "0";
                 txtCantHabDispSec.Text = "0";
-
             }
         }
-
     }
 }

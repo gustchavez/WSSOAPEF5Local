@@ -293,27 +293,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfHabitacion" nillable="true" type="tns:ArrayOfHabitacion" />
-  <xs:complexType name="ContenedorCantHabsXCapacidad">
+  <xs:complexType name="ContenedorHabDispCant">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfCantHabXCapacidad" />
+      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:HabDispCant" />
       <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ContenedorCantHabsXCapacidad" nillable="true" type="tns:ContenedorCantHabsXCapacidad" />
-  <xs:complexType name="ArrayOfCantHabXCapacidad">
+  <xs:element name="ContenedorHabDispCant" nillable="true" type="tns:ContenedorHabDispCant" />
+  <xs:complexType name="HabDispCant">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="CantHabXCapacidad" nillable="true" type="tns:CantHabXCapacidad" />
+      <xs:element minOccurs="0" name="CantHabDoble" type="xs:int" />
+      <xs:element minOccurs="0" name="CantHabSectuple" type="xs:int" />
+      <xs:element minOccurs="0" name="CantHabSimple" type="xs:int" />
+      <xs:element minOccurs="0" name="CantHabTriple" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfCantHabXCapacidad" nillable="true" type="tns:ArrayOfCantHabXCapacidad" />
-  <xs:complexType name="CantHabXCapacidad">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
-      <xs:element minOccurs="0" name="Capacidad" type="xs:int" />
-      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="CantHabXCapacidad" nillable="true" type="tns:CantHabXCapacidad" />
+  <xs:element name="HabDispCant" nillable="true" type="tns:HabDispCant" />
   <xs:complexType name="ContenedorCiudades">
     <xs:sequence>
       <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfCiudad" />

@@ -184,13 +184,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroIndividual1;
         
         /// <summary>
-        /// Control txtComidaObservacionesIndividual1.
+        /// Control ddlComidaTipoServIndividual1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesIndividual1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServIndividual1;
         
         /// <summary>
         /// Control txtRutIndividual2.
@@ -229,13 +229,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroIndividual2;
         
         /// <summary>
-        /// Control txtComidaObservacionesIndividual2.
+        /// Control ddlComidaTipoServIndividual2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesIndividual2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServIndividual2;
         
         /// <summary>
         /// Control txtRutIndividual3.
@@ -274,13 +274,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroIndividual3;
         
         /// <summary>
-        /// Control txtComidaObservacionesIndividual3.
+        /// Control ddlComidaTipoServIndividual3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesIndividual3;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServIndividual3;
         
         /// <summary>
         /// Control txtRutIndividual4.
@@ -319,13 +319,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroIndividual4;
         
         /// <summary>
-        /// Control txtComidaObservacionesIndividual4.
+        /// Control ddlComidaTipoServIndividual4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesIndividual4;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServIndividual4;
         
         /// <summary>
         /// Control txtRutDoble1.
@@ -364,13 +364,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroDoble1;
         
         /// <summary>
-        /// Control txtComidaObservacionesDoble1.
+        /// Control ddlComidaTipoServDoble1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesDoble1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServDoble1;
         
         /// <summary>
         /// Control txtRutDoble2.
@@ -409,13 +409,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroDoble2;
         
         /// <summary>
-        /// Control txtComidaObservacionesDoble2.
+        /// Control ddlComidaTipoServDoble2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesDoble2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServDoble2;
         
         /// <summary>
         /// Control txtRutDoble3.
@@ -454,13 +454,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroDoble3;
         
         /// <summary>
-        /// Control txtComidaObservacionesDoble3.
+        /// Control ddlComidaTipoServDoble3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesDoble3;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServDoble3;
         
         /// <summary>
         /// Control txtRutDoble4.
@@ -499,13 +499,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroDoble4;
         
         /// <summary>
-        /// Control txtComidaObservacionesDoble4.
+        /// Control ddlComidaTipoServDoble4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesDoble4;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServDoble4;
         
         /// <summary>
         /// Control txtRutDoble5.
@@ -544,13 +544,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroDoble5;
         
         /// <summary>
-        /// Control txtComidaObservacionesDoble5.
+        /// Control ddlComidaTipoServDoble5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesDoble5;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServDoble5;
         
         /// <summary>
         /// Control txtRutDoble6.
@@ -589,13 +589,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroDoble6;
         
         /// <summary>
-        /// Control txtComidaObservacionesDoble6.
+        /// Control ddlComidaTipoServDoble6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesDoble6;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServDoble6;
         
         /// <summary>
         /// Control txtRutDoble7.
@@ -634,13 +634,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroDoble7;
         
         /// <summary>
-        /// Control txtComidaObservacionesDoble7.
+        /// Control ddlComidaTipoServDoble7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesDoble7;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServDoble7;
         
         /// <summary>
         /// Control txtRutDoble8.
@@ -679,13 +679,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroDoble8;
         
         /// <summary>
-        /// Control txtComidaObservacionesDoble8.
+        /// Control ddlComidaTipoServDoble8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesDoble8;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServDoble8;
         
         /// <summary>
         /// Control txtRutTriple1.
@@ -724,13 +724,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroTriple1;
         
         /// <summary>
-        /// Control txtComidaObservacionesTiple1.
+        /// Control ddlComidaTipoServTiple1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesTiple1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServTiple1;
         
         /// <summary>
         /// Control txtRutTriple2.
@@ -769,13 +769,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroTriple2;
         
         /// <summary>
-        /// Control txtComidaObservacionesTiple2.
+        /// Control ddlComidaTipoServTiple2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesTiple2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServTiple2;
         
         /// <summary>
         /// Control txtRutTriple3.
@@ -814,13 +814,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroTriple3;
         
         /// <summary>
-        /// Control txtComidaObservacionesTiple3.
+        /// Control ddlComidaTipoServTiple3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesTiple3;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServTiple3;
         
         /// <summary>
         /// Control txtRutTriple4.
@@ -859,13 +859,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroTriple4;
         
         /// <summary>
-        /// Control txtComidaObservacionesTiple4.
+        /// Control ddlComidaTipoServTiple4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesTiple4;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServTiple4;
         
         /// <summary>
         /// Control txtRutTriple5.
@@ -904,13 +904,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroTriple5;
         
         /// <summary>
-        /// Control txtComidaObservacionesTiple5.
+        /// Control ddlComidaTipoServTiple5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesTiple5;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServTiple5;
         
         /// <summary>
         /// Control txtRutTriple6.
@@ -949,13 +949,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroTriple6;
         
         /// <summary>
-        /// Control txtComidaObservacionesTiple6.
+        /// Control ddlComidaTipoServTiple6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesTiple6;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServTiple6;
         
         /// <summary>
         /// Control txtRutTriple7.
@@ -994,13 +994,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroTriple7;
         
         /// <summary>
-        /// Control txtComidaObservacionesTiple7.
+        /// Control ddlComidaTipoServTiple7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesTiple7;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServTiple7;
         
         /// <summary>
         /// Control txtRutTriple8.
@@ -1039,13 +1039,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroTriple8;
         
         /// <summary>
-        /// Control txtComidaObservacionesTiple8.
+        /// Control ddlComidaTipoServTiple8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesTiple8;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServTiple8;
         
         /// <summary>
         /// Control txtRutTriple9.
@@ -1084,13 +1084,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroTriple9;
         
         /// <summary>
-        /// Control txtComidaObservacionesTiple9.
+        /// Control ddlComidaTipoServTiple9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesTiple9;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServTiple9;
         
         /// <summary>
         /// Control txtRutTriple10.
@@ -1129,13 +1129,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroTriple10;
         
         /// <summary>
-        /// Control txtComidaObservacionesTiple10.
+        /// Control ddlComidaTipoServTiple10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesTiple10;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServTiple10;
         
         /// <summary>
         /// Control txtRutTriple11.
@@ -1174,13 +1174,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroTriple11;
         
         /// <summary>
-        /// Control txtComidaObservacionesTiple11.
+        /// Control ddlComidaTipoServTiple11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesTiple11;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServTiple11;
         
         /// <summary>
         /// Control txtRutTriple12.
@@ -1219,40 +1219,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtroTriple12;
         
         /// <summary>
-        /// Control txtComidaObservacionesTiple12.
+        /// Control ddlComidaTipoServTiple12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesTiple12;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServTiple12;
         
         /// <summary>
-        /// Control txtRutCuadruple1.
+        /// Control txtRutSectuple1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple1;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple1;
         
         /// <summary>
-        /// Control txtNombreCuadruple1.
+        /// Control txtNombreSectuple1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple1;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple1;
         
         /// <summary>
-        /// Control txtApellidoCuadruple1.
+        /// Control txtApellidoSectuple1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple1;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple1;
         
         /// <summary>
         /// Control txtOtro1.
@@ -1264,40 +1264,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro1;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple1.
+        /// Control ddlComidaTipoServSectuple1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple1;
         
         /// <summary>
-        /// Control txtRutCuadruple2.
+        /// Control txtRutSectuple2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple2;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple2;
         
         /// <summary>
-        /// Control txtNombreCuadruple2.
+        /// Control txtNombreSectuple2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple2;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple2;
         
         /// <summary>
-        /// Control txtApellidoCuadruple2.
+        /// Control txtApellidoSectuple2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple2;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple2;
         
         /// <summary>
         /// Control txtOtro2.
@@ -1309,40 +1309,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro2;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple2.
+        /// Control ddlComidaTipoServSectuple2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple2;
         
         /// <summary>
-        /// Control txtRutCuadruple3.
+        /// Control txtRutSectuple3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple3;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple3;
         
         /// <summary>
-        /// Control txtNombreCuadruple3.
+        /// Control txtNombreSectuple3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple3;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple3;
         
         /// <summary>
-        /// Control txtApellidoCuadruple3.
+        /// Control txtApellidoSectuple3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple3;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple3;
         
         /// <summary>
         /// Control txtOtro3.
@@ -1354,40 +1354,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro3;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple3.
+        /// Control ddlComidaTipoServSectuple3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple3;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple3;
         
         /// <summary>
-        /// Control txtRutCuadruple4.
+        /// Control txtRutSectuple4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple4;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple4;
         
         /// <summary>
-        /// Control txtNombreCuadruple4.
+        /// Control txtNombreSectuple4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple4;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple4;
         
         /// <summary>
-        /// Control txtApellidoCuadruple4.
+        /// Control txtApellidoSectuple4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple4;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple4;
         
         /// <summary>
         /// Control txtOtro4.
@@ -1399,40 +1399,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro4;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple4.
+        /// Control ddlComidaTipoServSectuple4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple4;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple4;
         
         /// <summary>
-        /// Control txtRutCuadruple5.
+        /// Control txtRutSectuple5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple5;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple5;
         
         /// <summary>
-        /// Control txtNombreCuadruple5.
+        /// Control txtNombreSectuple5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple5;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple5;
         
         /// <summary>
-        /// Control txtApellidoCuadruple5.
+        /// Control txtApellidoSectuple5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple5;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple5;
         
         /// <summary>
         /// Control txtOtro5.
@@ -1444,40 +1444,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro5;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple5.
+        /// Control ddlComidaTipoServSectuple5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple5;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple5;
         
         /// <summary>
-        /// Control txtRutCuadruple6.
+        /// Control txtRutSectuple6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple6;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple6;
         
         /// <summary>
-        /// Control txtNombreCuadruple6.
+        /// Control txtNombreSectuple6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple6;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple6;
         
         /// <summary>
-        /// Control txtApellidoCuadruple6.
+        /// Control txtApellidoSectuple6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple6;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple6;
         
         /// <summary>
         /// Control txtOtro6.
@@ -1489,40 +1489,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro6;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple6.
+        /// Control ddlComidaTipoServSectuple6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple6;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple6;
         
         /// <summary>
-        /// Control txtRutCuadruple7.
+        /// Control txtRutSectuple7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple7;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple7;
         
         /// <summary>
-        /// Control txtNombreCuadruple7.
+        /// Control txtNombreSectuple7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple7;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple7;
         
         /// <summary>
-        /// Control txtApellidoCuadruple7.
+        /// Control txtApellidoSectuple7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple7;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple7;
         
         /// <summary>
         /// Control txtOtro7.
@@ -1534,40 +1534,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro7;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple7.
+        /// Control ddlComidaTipoServSectuple7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple7;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple7;
         
         /// <summary>
-        /// Control txtRutCuadruple8.
+        /// Control txtRutSectuple8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple8;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple8;
         
         /// <summary>
-        /// Control txtNombreCuadruple8.
+        /// Control txtNombreSectuple8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple8;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple8;
         
         /// <summary>
-        /// Control txtApellidoCuadruple8.
+        /// Control txtApellidoSectuple8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple8;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple8;
         
         /// <summary>
         /// Control txtOtro8.
@@ -1579,40 +1579,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro8;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple8.
+        /// Control ddlComidaTipoServSectuple8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple8;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple8;
         
         /// <summary>
-        /// Control txtRutCuadruple9.
+        /// Control txtRutSectuple9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple9;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple9;
         
         /// <summary>
-        /// Control txtNombreCuadruple9.
+        /// Control txtNombreSectuple9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple9;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple9;
         
         /// <summary>
-        /// Control txtApellidoCuadruple9.
+        /// Control txtApellidoSectuple9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple9;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple9;
         
         /// <summary>
         /// Control txtOtro9.
@@ -1624,40 +1624,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro9;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple9.
+        /// Control ddlComidaTipoServSectuple9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple9;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple9;
         
         /// <summary>
-        /// Control txtRutCuadruple10.
+        /// Control txtRutSectuple10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple10;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple10;
         
         /// <summary>
-        /// Control txtNombreCuadruple10.
+        /// Control txtNombreSectuple10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple10;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple10;
         
         /// <summary>
-        /// Control txtApellidoCuadruple10.
+        /// Control txtApellidoSectuple10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple10;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple10;
         
         /// <summary>
         /// Control txtOtro10.
@@ -1669,40 +1669,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro10;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple10.
+        /// Control ddlComidaTipoServSectuple10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple10;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple10;
         
         /// <summary>
-        /// Control txtRutCuadruple11.
+        /// Control txtRutSectuple11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple11;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple11;
         
         /// <summary>
-        /// Control txtNombreCuadruple11.
+        /// Control txtNombreSectuple11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple11;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple11;
         
         /// <summary>
-        /// Control txtApellidoCuadruple11.
+        /// Control txtApellidoSectuple11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple11;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple11;
         
         /// <summary>
         /// Control txtOtro11.
@@ -1714,40 +1714,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro11;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple11.
+        /// Control ddlComidaTipoServSectuple11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple11;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple11;
         
         /// <summary>
-        /// Control txtRutCuadruple12.
+        /// Control txtRutSectuple12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple12;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple12;
         
         /// <summary>
-        /// Control txtNombreCuadruple12.
+        /// Control txtNombreSectuple12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple12;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple12;
         
         /// <summary>
-        /// Control txtApellidoCuadruple12.
+        /// Control txtApellidoSectuple12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple12;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple12;
         
         /// <summary>
         /// Control txtOtro12.
@@ -1759,40 +1759,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro12;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple12.
+        /// Control ddlComidaTipoServSectuple12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple12;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple12;
         
         /// <summary>
-        /// Control txtRutCuadruple13.
+        /// Control txtRutSectuple13.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple13;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple13;
         
         /// <summary>
-        /// Control txtNombreCuadruple13.
+        /// Control txtNombreSectuple13.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple13;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple13;
         
         /// <summary>
-        /// Control txtApellidoCuadruple13.
+        /// Control txtApellidoSectuple13.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple13;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple13;
         
         /// <summary>
         /// Control txtOtro13.
@@ -1804,40 +1804,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro13;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple13.
+        /// Control ddlComidaTipoServSectuple13.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple13;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple13;
         
         /// <summary>
-        /// Control txtRutCuadruple14.
+        /// Control txtRutSectuple14.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple14;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple14;
         
         /// <summary>
-        /// Control txtNombreCuadruple14.
+        /// Control txtNombreSectuple14.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple14;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple14;
         
         /// <summary>
-        /// Control txtApellidoCuadruple14.
+        /// Control txtApellidoSectuple14.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple14;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple14;
         
         /// <summary>
         /// Control txtOtro14.
@@ -1849,40 +1849,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro14;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple14.
+        /// Control ddlComidaTipoServSectuple14.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple14;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple14;
         
         /// <summary>
-        /// Control txtRutCuadruple15.
+        /// Control txtRutSectuple15.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple15;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple15;
         
         /// <summary>
-        /// Control txtNombreCuadruple15.
+        /// Control txtNombreSectuple15.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple15;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple15;
         
         /// <summary>
-        /// Control txtApellidoCuadruple15.
+        /// Control txtApellidoSectuple15.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple15;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple15;
         
         /// <summary>
         /// Control txtOtro15.
@@ -1894,40 +1894,40 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro15;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple15.
+        /// Control ddlComidaTipoServSectuple15.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple15;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple15;
         
         /// <summary>
-        /// Control txtRutCuadruple16.
+        /// Control txtRutSectuple16.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRutCuadruple16;
+        protected global::System.Web.UI.WebControls.TextBox txtRutSectuple16;
         
         /// <summary>
-        /// Control txtNombreCuadruple16.
+        /// Control txtNombreSectuple16.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCuadruple16;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSectuple16;
         
         /// <summary>
-        /// Control txtApellidoCuadruple16.
+        /// Control txtApellidoSectuple16.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoCuadruple16;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoSectuple16;
         
         /// <summary>
         /// Control txtOtro16.
@@ -1939,13 +1939,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtOtro16;
         
         /// <summary>
-        /// Control txtComidaObservacionesCuadruple16.
+        /// Control ddlComidaTipoServSectuple16.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtComidaObservacionesCuadruple16;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComidaTipoServSectuple16;
         
         /// <summary>
         /// Control BtnSiguiente.

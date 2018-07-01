@@ -23,7 +23,7 @@ namespace CapaNegocio
                 var p_OUT_NUMERO = new ObjectParameter("P_OUT_NUMERO", typeof(decimal));
                 var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
                 var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
-
+                var p_OUT_HAB_CODIGO = new ObjectParameter("P_OUT_HAB_CODIGO", typeof(decimal));
                 CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
 
                 conex.SP_CREAR_ENC_RESERVA
@@ -35,13 +35,14 @@ namespace CapaNegocio
                 try
                 {
                     nOCC.Item.Cabecera.Numero = decimal.Parse(p_OUT_NUMERO.Value.ToString());
+
                     nOCC.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
                     nOCC.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
 
                     if (nOCC.Retorno.Codigo == 0 && nOCC.Item.Cabecera.Numero > 0)
                     {
                         bool ErrorAltaDetalle = false;
-
+                        decimal CodigoHabitacionTemporal = 0;
                         foreach (var item in nOCC.Item.ListaDetalle)
                         {
                             conex.SP_CREAR_DET_RESERVA
@@ -54,18 +55,21 @@ namespace CapaNegocio
                             , item.Persona.Apellido
                             //, item.Alojamiento.CodigoCama
                             , item.Alojamiento.Habitacion.Capacidad
+                            , CodigoHabitacionTemporal
                             , item.Comida.FechaRecepcion
                             , item.Comida.Observaciones
                             , item.Comida.ServicioComida.Tipo
                             //, item.Comida.CodigoPlato
                             , p_OUT_CODRET
                             , p_OUT_GLSRET
+                            , p_OUT_HAB_CODIGO
                             );
                             //
                             try
                             {
-                                nOCC.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
-                                nOCC.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                                nOCC.Retorno.Codigo      = decimal.Parse(p_OUT_CODRET.Value.ToString());
+                                nOCC.Retorno.Glosa       = p_OUT_GLSRET.Value.ToString();
+                                CodigoHabitacionTemporal = decimal.Parse(p_OUT_HAB_CODIGO.Value.ToString());
                             }
                             catch (Exception)
                             {
