@@ -124,7 +124,7 @@ namespace CapaServicio
         ContenedorHabitaciones HabitacionRescatar(string token);
 
         [OperationContract]
-        ContenedorCantHabsXCapacidad LlamarSPHabitaHabXCapacidad(string token);
+        ContenedorHabDispCant HabitacionHabXCapacidad(string token, DateTime fecIng, DateTime fecEgr);
         //Fin Habitacion
 
         [OperationContract]

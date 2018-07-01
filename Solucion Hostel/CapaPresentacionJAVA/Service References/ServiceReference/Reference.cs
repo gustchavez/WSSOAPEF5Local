@@ -190,10 +190,10 @@ namespace CapaPresentacionJAVA.ServiceReference {
         System.Threading.Tasks.Task<CapaObjeto.ContenedorHabitaciones> HabitacionRescatarAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidad", ReplyAction="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidadResponse")]
-        CapaObjeto.ContenedorCantHabsXCapacidad LlamarSPHabitaHabXCapacidad(string token);
+        CapaObjeto.ContenedorHabDispCant LlamarSPHabitaHabXCapacidad(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidad", ReplyAction="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidadResponse")]
-        System.Threading.Tasks.Task<CapaObjeto.ContenedorCantHabsXCapacidad> LlamarSPHabitaHabXCapacidadAsync(string token);
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorHabDispCant> LlamarSPHabitaHabXCapacidadAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CiudadRescatar", ReplyAction="http://tempuri.org/IWSSHostel/CiudadRescatarResponse")]
         CapaObjeto.ContenedorCiudades CiudadRescatar(string token);
@@ -659,11 +659,11 @@ namespace CapaPresentacionJAVA.ServiceReference {
             return base.Channel.HabitacionRescatarAsync(token);
         }
         
-        public CapaObjeto.ContenedorCantHabsXCapacidad LlamarSPHabitaHabXCapacidad(string token) {
+        public CapaObjeto.ContenedorHabDispCant LlamarSPHabitaHabXCapacidad(string token) {
             return base.Channel.LlamarSPHabitaHabXCapacidad(token);
         }
         
-        public System.Threading.Tasks.Task<CapaObjeto.ContenedorCantHabsXCapacidad> LlamarSPHabitaHabXCapacidadAsync(string token) {
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorHabDispCant> LlamarSPHabitaHabXCapacidadAsync(string token) {
             return base.Channel.LlamarSPHabitaHabXCapacidadAsync(token);
         }
         

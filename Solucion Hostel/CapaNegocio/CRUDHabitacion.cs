@@ -126,7 +126,7 @@ namespace CapaNegocio
 
         public ContenedorHabitaciones LlamarSPRescatar(string token)
         {
-            ContenedorHabitaciones LHabitacions = new ContenedorHabitaciones();
+            ContenedorHabitaciones LHabitaciones = new ContenedorHabitaciones();
 
             if (ValidarFecExp(token))
             {
@@ -144,68 +144,106 @@ namespace CapaNegocio
                         n.Capacidad = item.CAPACIDAD;
                         n.Descripcion = item.DESCRIPCION;
                         n.Precio = item.PRECIO;
-                        LHabitacions.Lista.Add(n);
+                        LHabitaciones.Lista.Add(n);
                     }
-                    LHabitacions.Retorno.Codigo = 0;
-                    LHabitacions.Retorno.Glosa = "OK";
+                    LHabitaciones.Retorno.Codigo = 0;
+                    LHabitaciones.Retorno.Glosa = "OK";
                 }
                 catch (Exception)
                 {
-                    LHabitacions.Retorno.Codigo = 1011;
-                    LHabitacions.Retorno.Glosa = "Err codret ORACLE";
+                    LHabitaciones.Retorno.Codigo = 1011;
+                    LHabitaciones.Retorno.Glosa = "Err codret ORACLE";
                 }
             } else {
-                LHabitacions.Retorno.Codigo = 100;
-                LHabitacions.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+                LHabitaciones.Retorno.Codigo = 100;
+                LHabitaciones.Retorno.Glosa = "Err expiro sesion o perfil invalido";
             }
 
-            return LHabitacions;
+            return LHabitaciones;
         }
 
-        public ContenedorCantHabsXCapacidad LlamarSPHabitaHabXCapacidad(string token)
+        public ContenedorHabDispCant LlamarSPHabitaHabXCapacidad(string token, DateTime fecIng, DateTime fecEgr)
         {
-            ContenedorCantHabsXCapacidad LHabitacionesXCapacidad = new ContenedorCantHabsXCapacidad();
+            ContenedorHabDispCant LHabDispCant = new ContenedorHabDispCant();
 
             if (ValidarFecExp(token))
             {
+                var p_OUT_CODRET      = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
+                var p_OUT_GLSRET      = new ObjectParameter("P_OUT_GLSRET", typeof(string));
+                var p_OUT_COD_HAB_SIM = new ObjectParameter("P_OUT_COD_HAB_SIM", typeof(decimal));
+                var p_OUT_COD_HAB_DOB = new ObjectParameter("P_OUT_COD_HAB_DOB", typeof(decimal));
+                var p_OUT_COD_HAB_TRI = new ObjectParameter("P_OUT_COD_HAB_TRI", typeof(decimal));
+                var p_OUT_COD_HAB_SEC = new ObjectParameter("P_OUT_COD_HAB_SEC", typeof(decimal));
+
+                CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                conex.SP_OBTENER_DISPONIBILIDAD
+                    ( fecIng
+                    , fecEgr
+                    , p_OUT_CODRET
+                    , p_OUT_GLSRET
+                    , p_OUT_COD_HAB_SIM
+                    , p_OUT_COD_HAB_DOB
+                    , p_OUT_COD_HAB_TRI
+                    , p_OUT_COD_HAB_SEC
+                    );
+
                 try
-                {
-                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+                { 
+                    HabDispCant n = new HabDispCant();
+                    n.CantHabSimple   = int.Parse(p_OUT_COD_HAB_SIM.Value.ToString());
+                    n.CantHabDoble    = int.Parse(p_OUT_COD_HAB_DOB.Value.ToString());
+                    n.CantHabTriple   = int.Parse(p_OUT_COD_HAB_TRI.Value.ToString());
+                    n.CantHabSectuple = int.Parse(p_OUT_COD_HAB_SEC.Value.ToString());
+                    LHabDispCant.Item = n;
 
-                    var collection = (from hab in conex.HABITACION
-                                      where hab.ESTADO == "habilitada"
-                                      group hab by hab.CAPACIDAD into g                                      
-                                      select new
-                                      {
-                                          Capacidad = g.Key,
-                                          Cantidad  = g.Count()
-                                      }
-                            ).ToList();
-
-                    foreach (var item in collection)
-                    {
-                        CantHabXCapacidad n = new CantHabXCapacidad();
-                        n.Capacidad = item.Capacidad;
-                        n.Estado    = "habilitada";
-                        n.Cantidad  = item.Capacidad;
-
-                        LHabitacionesXCapacidad.Lista.Add(n);
-                    }
-                    LHabitacionesXCapacidad.Retorno.Codigo = 0;
-                    LHabitacionesXCapacidad.Retorno.Glosa = "OK";
+                    LHabDispCant.Retorno.Codigo = 0;
+                    LHabDispCant.Retorno.Glosa = "OK";
                 }
                 catch (Exception)
                 {
-                    LHabitacionesXCapacidad.Retorno.Codigo = 1011;
-                    LHabitacionesXCapacidad.Retorno.Glosa = "Err codret ORACLE";
+                    LHabDispCant.Retorno.Codigo = 1011;
+                    LHabDispCant.Retorno.Glosa = "Err codret ORACLE";
                 }
+                //try
+                //{
+                //    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                //    var collection = (from hab in conex.HABITACION
+                //                      where hab.ESTADO == "habilitada"
+                //                      group hab by hab.CAPACIDAD into g                                      
+                //                      select new
+                //                      {
+                //                          Capacidad = g.Key,
+                //                          Cantidad  = g.Count()
+                //                      }
+                //            ).ToList();
+
+                //    foreach (var item in collection)
+                //    {
+                //        CantHabXCapacidad n = new CantHabXCapacidad();
+                //        n.Capacidad = item.Capacidad;
+                //        n.Estado    = "habilitada";
+                //        n.Cantidad  = item.Capacidad;
+
+                //        LHabitacionesXCapacidad.Lista.Add(n);
+                //    }
+
+                //    LHabitacionesXCapacidad.Retorno.Codigo = 0;
+                //    LHabitacionesXCapacidad.Retorno.Glosa = "OK";
+                //}
+                //catch (Exception)
+                //{
+                //    LHabitacionesXCapacidad.Retorno.Codigo = 1011;
+                //    LHabitacionesXCapacidad.Retorno.Glosa = "Err codret ORACLE";
+                //}
             }
             else {
-                LHabitacionesXCapacidad.Retorno.Codigo = 100;
-                LHabitacionesXCapacidad.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+                LHabDispCant.Retorno.Codigo = 100;
+                LHabDispCant.Retorno.Glosa = "Err expiro sesion o perfil invalido";
             }
 
-            return LHabitacionesXCapacidad;
+            return LHabDispCant;
         }
 
         private bool ValidarPerfilCUD(string token)

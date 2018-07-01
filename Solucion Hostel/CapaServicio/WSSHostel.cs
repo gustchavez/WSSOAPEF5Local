@@ -235,10 +235,10 @@ namespace CapaServicio
             return x.LlamarSPRescatar(token);
         }
 
-        public ContenedorCantHabsXCapacidad LlamarSPHabitaHabXCapacidad(string token)
+        public ContenedorHabDispCant HabitacionHabXCapacidad(string token, DateTime fecIng, DateTime fecEgr)
         {
             CRUDHabitacion x = new CRUDHabitacion();
-            return x.LlamarSPHabitaHabXCapacidad(token);
+            return x.LlamarSPHabitaHabXCapacidad(token, fecIng, fecEgr);
         }
         //Fin Habitacion
 

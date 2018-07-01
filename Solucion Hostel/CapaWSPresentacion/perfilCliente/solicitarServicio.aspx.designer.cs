@@ -58,13 +58,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtNpersonas;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control txtCantHabDispSim.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtCantHabDispSim;
         
         /// <summary>
         /// Control individual.
@@ -76,13 +76,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox individual;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control txtCantHabDispDob.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtCantHabDispDob;
         
         /// <summary>
         /// Control doble.
@@ -94,13 +94,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox doble;
         
         /// <summary>
-        /// Control TextBox3.
+        /// Control txtCantHabDispTri.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txtCantHabDispTri;
         
         /// <summary>
         /// Control triple.
@@ -112,13 +112,13 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox triple;
         
         /// <summary>
-        /// Control TextBox4.
+        /// Control txtCantHabDispSec.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox txtCantHabDispSec;
         
         /// <summary>
         /// Control sectuple.

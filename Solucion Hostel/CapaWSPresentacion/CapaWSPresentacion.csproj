@@ -305,6 +305,7 @@
     <Content Include="PaginaComercial\scripts\form_check.php" />
     <Content Include="PaginaComercial\scripts\form_process.php" />
     <Content Include="PaginaComercial\scripts\form_throttle.php" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorHabDispCant.datasource" />
     <None Include="Service References\WSSoap\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>

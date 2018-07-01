@@ -412,17 +412,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="LlamarSPHabitaHabXCapacidad">
+  <xs:element name="HabitacionHabXCapacidad">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fecIng" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fecEgr" type="xs:dateTime" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="LlamarSPHabitaHabXCapacidadResponse">
+  <xs:element name="HabitacionHabXCapacidadResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="LlamarSPHabitaHabXCapacidadResult" nillable="true" type="q47:ContenedorCantHabsXCapacidad" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="HabitacionHabXCapacidadResult" nillable="true" type="q47:ContenedorHabDispCant" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

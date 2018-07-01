@@ -1203,5 +1203,18 @@ namespace CapaDato
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_ENC_RESERVA", p_IN_RUT_CLIENTEParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_NUMERO);
         }
+    
+        public virtual int SP_OBTENER_DISPONIBILIDAD(Nullable<System.DateTime> p_IN_INGRESO, Nullable<System.DateTime> p_IN_EGRESO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_COD_HAB_SIM, ObjectParameter p_OUT_COD_HAB_DOB, ObjectParameter p_OUT_COD_HAB_TRI, ObjectParameter p_OUT_COD_HAB_SEC)
+        {
+            var p_IN_INGRESOParameter = p_IN_INGRESO.HasValue ?
+                new ObjectParameter("P_IN_INGRESO", p_IN_INGRESO) :
+                new ObjectParameter("P_IN_INGRESO", typeof(System.DateTime));
+    
+            var p_IN_EGRESOParameter = p_IN_EGRESO.HasValue ?
+                new ObjectParameter("P_IN_EGRESO", p_IN_EGRESO) :
+                new ObjectParameter("P_IN_EGRESO", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_OBTENER_DISPONIBILIDAD", p_IN_INGRESOParameter, p_IN_EGRESOParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_COD_HAB_SIM, p_OUT_COD_HAB_DOB, p_OUT_COD_HAB_TRI, p_OUT_COD_HAB_SEC);
+        }
     }
 }

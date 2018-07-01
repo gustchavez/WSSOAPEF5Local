@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace CapaObjeto
 {
-    public class ContenedorCantHabsXCapacidad
+    public class ContenedorHabDispCant
     {
-        public List<CantHabXCapacidad> Lista { get; set; }
+        public HabDispCant Item { get; set; }
 
         public Comunicacion Retorno { get; set; }
 
-        public ContenedorCantHabsXCapacidad()
+        public ContenedorHabDispCant()
         {
             Init();
         }
 
         private void Init()
         {
-            this.Lista = new List<CantHabXCapacidad>();
+            this.Item = new HabDispCant();
             this.Retorno = new Comunicacion();
         }
     }

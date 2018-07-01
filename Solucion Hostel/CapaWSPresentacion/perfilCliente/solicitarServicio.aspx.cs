@@ -52,7 +52,6 @@ namespace CapaWSPresentacion.perfilCliente
 
         protected void Siguiente_Click1(object sender, EventArgs e)
         {
-
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
             Sesion SesionUsuario = (Sesion)Session["SesionUsuario"];
 
@@ -214,14 +213,50 @@ namespace CapaWSPresentacion.perfilCliente
 
         private void TotaldeDias()
         {
-            DateTime fechaIngreso = DateTime.Parse(txtFechaIngreso.Text);
-            DateTime fechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
+            try
+            {
+                DateTime fechaIngreso = DateTime.Parse(txtFechaIngreso.Text);
+                DateTime fechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
 
-            TimeSpan total = fechaEgreso - fechaIngreso;
+                if(fechaIngreso != null && fechaIngreso != null)
+                {
+                    TimeSpan total = fechaEgreso - fechaIngreso;
 
-            int dias = total.Days + 1;
+                    int dias = total.Days + 1;
 
-            txtRegistroDias.Text = dias.ToString();
+                    txtRegistroDias.Text = dias.ToString();
+
+                    WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+                    Sesion SesionUsuario = (Sesion)Session["SesionUsuario"];
+
+                    ContenedorHabDispCant n = new ContenedorHabDispCant();
+                    n = x.HabitacionHabXCapacidad(Session["TokenUsuario"].ToString(), fechaIngreso, fechaEgreso);
+                    
+                    //ContenedorHabDispCant
+                    //OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
+                    ////Armar Encabezado de Orden de Reserva
+                    //nOCC.Cabecera.RutCliente = SesionUsuario.RutEmpresa;
+
+                    txtCantHabDispSim.Text = n.Item.CantHabSimple.ToString();
+                    txtCantHabDispDob.Text = n.Item.CantHabDoble.ToString();
+                    txtCantHabDispTri.Text = n.Item.CantHabTriple.ToString();
+                    txtCantHabDispSec.Text = n.Item.CantHabSectuple.ToString();
+                } else {
+                    txtCantHabDispSim.Text = "0";
+                    txtCantHabDispDob.Text = "0";
+                    txtCantHabDispTri.Text = "0";
+                    txtCantHabDispSec.Text = "0";
+                }
+            }
+            catch (Exception)
+            {
+                txtRegistroDias.Text   = "0";
+                txtCantHabDispSim.Text = "0";
+                txtCantHabDispDob.Text = "0";
+                txtCantHabDispTri.Text = "0";
+                txtCantHabDispSec.Text = "0";
+
+            }
         }
 
     }
