@@ -567,20 +567,18 @@ namespace CapaNegocio
                 try
                 {
                     var query = (from c in conex.CLIENTE
-                                    join em in conex.EMPRESA on c.RUT equals em.RUT
-                                    select new
+                                 join em in conex.EMPRESA on c.RUT equals em.RUT
+                                 select new
                                     {
                                         rut = em.RUT,
-                                        razon_soc =  em.RAZON_SOCIAL,
+                                        razon_soc = em.RAZON_SOCIAL,
                                         rubro = em.RUBRO,
                                         email = em.EMAIL
-                                    }
+                                 }
                                  ).ToList();
                     foreach (var item in query)
                     {
-                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
-                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
-                        String[] cliente = new String[3];
+                        String[] cliente = new String[4];
                         cliente[0] = item.rut;
                         cliente[1] = item.razon_soc;
                         cliente[2] = item.rubro;
@@ -610,6 +608,7 @@ namespace CapaNegocio
                 {
                     var query = (from c in conex.PROVEEDOR
                                  join em in conex.EMPRESA on c.RUT equals em.RUT
+
                                  select new
                                  {
                                      rut = em.RUT,
@@ -622,7 +621,7 @@ namespace CapaNegocio
                     {
                         // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
                         // Estas se usan solamente como contenedores de la data proveniente de la "query"
-                        String[] cliente = new String[3];
+                        String[] cliente = new String[4];
                         cliente[0] = item.rut;
                         cliente[1] = item.razon_soc;
                         cliente[2] = item.rubro;
@@ -650,43 +649,30 @@ namespace CapaNegocio
             {
                 try
                 {
-                    var query = (from c in conex.PROVEEDOR
-                                 join em in conex.EMPRESA on c.RUT equals em.RUT
-                                 select new
-                                 {
-                                     rut = em.RUT,
-                                     razon_soc = em.RAZON_SOCIAL,
-                                     rubro = em.RUBRO,
-                                     email = em.EMAIL
-                                 }
-                                 ).ToList();
+                    var query = conex.Database.SqlQuery<String[]>("SELECT * FROM LOG_TMP").ToList();
                     foreach (var item in query)
                     {
                         // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
                         // Estas se usan solamente como contenedores de la data proveniente de la "query"
-                        String[] cliente = new String[3];
-                        cliente[0] = item.rut;
-                        cliente[1] = item.razon_soc;
-                        cliente[2] = item.rubro;
-                        cliente[3] = item.email;
+                        String[] cliente = new String[4];
+                        cliente[0] = item[0].ToString();
+                        cliente[1] = item[1].ToString();
+                        cliente[2] = item[2].ToString();
+                        cliente[3] = item[3].ToString();
                         lista.Add(cliente);
                     }
                     return lista;
                 }
                 catch (Exception e)
                 {
-                    String[] obj = new String[0];
-                    obj[0] = "Error=" + e.ToString();
-                    lista.Add(obj);
-                    return lista;
+                    
+                    return null;
                 }
             }
             else
             {
-                String[] obj = new String[0];
-                obj[0] = "Error Else";
-                lista.Add(obj);
-                return lista;
+                
+                return null;
             }
         }
 
