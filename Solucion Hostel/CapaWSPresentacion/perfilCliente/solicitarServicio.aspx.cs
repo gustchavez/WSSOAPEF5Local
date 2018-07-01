@@ -134,6 +134,10 @@ namespace CapaWSPresentacion.perfilCliente
 
             xOCC = x.OrdenCompraCompletaCrear(xOCC);
 
+            if (xOCC.Retorno.Codigo == 0)
+            {
+                RescatarDatos();
+            }
         }
 
         private void AgregarHuesped(OrdenCompraCompleta nOCC, int CantHuesp, string TipoHab, int CapHab)
