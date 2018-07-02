@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="/scripts/solicitudesCliente.css">
+<link rel="stylesheet" type="text/css" href="/scripts/masterProveedor.css">
 	<script src="/scripts/efectos.js"></script>
 	<script src="/scripts/jquery.min.js"></script>
 	<title></title>

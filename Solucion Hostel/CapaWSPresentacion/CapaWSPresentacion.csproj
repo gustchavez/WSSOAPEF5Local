@@ -245,6 +245,7 @@
     <Content Include="scripts\detalleCliente.css" />
     <Content Include="scripts\empresaEmpleado.css" />
     <Content Include="scripts\facturaCliente.css" />
+    <Content Include="scripts\facturaEmpleadoMaster.css" />
     <Content Include="scripts\facturaEmpleado.css" />
     <Content Include="scripts\facturaProveedor.css" />
     <Content Include="scripts\fondo.jpg" />
@@ -254,9 +255,14 @@
     <Content Include="scripts\ingresoFacturaProveedor.css" />
     <Content Include="scripts\jquery.min.js" />
     <Content Include="scripts\logPdf.png" />
+    <Content Include="scripts\masterAdministrador.css" />
+    <Content Include="scripts\masterCliente.css" />
+    <Content Include="scripts\masterEmpleado.css" />
+    <Content Include="scripts\masterProveedor.css" />
     <Content Include="scripts\ordenCliente.css" />
     <Content Include="scripts\pedidosProveedor.css" />
     <Content Include="scripts\crearFactura.css" />
+    <Content Include="scripts\perfilCliente2.css" />
     <Content Include="scripts\perfilCliente.css" />
     <Content Include="scripts\servicioCliente.css" />
     <Content Include="scripts\site_global.css" />

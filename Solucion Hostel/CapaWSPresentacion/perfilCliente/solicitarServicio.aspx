@@ -17,108 +17,167 @@
                 $('#IngresoPersonas2').fadeOut(1000);
                 $('#IngresoPersonas3').fadeOut(1000);
                 $('#IngresoPersonas4').fadeOut(1000);
+                $('#IngresoPersonas5').fadeOut(1000);
+                $('#IngresoPersonas6').fadeOut(1000);
             } else if (habitacion1 == 1) {
                 $('#IngresoPersonas1').fadeIn(1000);
                 $('#IngresoPersonas2').fadeOut(1000);
                 $('#IngresoPersonas3').fadeOut(1000);
                 $('#IngresoPersonas4').fadeOut(1000);
+                $('#IngresoPersonas5').fadeOut(1000);
+                $('#IngresoPersonas6').fadeOut(1000);
             } else if (habitacion1 == 2) {
                 $('#IngresoPersonas1').fadeIn(1000);
                 $('#IngresoPersonas2').fadeIn(1000);
                 $('#IngresoPersonas3').fadeOut(1000);
                 $('#IngresoPersonas4').fadeOut(1000);
+                $('#IngresoPersonas5').fadeOut(1000);
+                $('#IngresoPersonas6').fadeOut(1000);
             } else if (habitacion1 == 3) {
                 $('#IngresoPersonas1').fadeIn(1000);
                 $('#IngresoPersonas2').fadeIn(1000);
                 $('#IngresoPersonas3').fadeIn(1000);
                 $('#IngresoPersonas4').fadeOut(1000);
+                $('#IngresoPersonas5').fadeOut(1000);
+                $('#IngresoPersonas6').fadeOut(1000);
             } else if (habitacion1 == 4) {
                 $('#IngresoPersonas1').fadeIn(1000);
                 $('#IngresoPersonas2').fadeIn(1000);
                 $('#IngresoPersonas3').fadeIn(1000);
                 $('#IngresoPersonas4').fadeIn(1000);
+                $('#IngresoPersonas5').fadeOut(1000);
+                $('#IngresoPersonas6').fadeOut(1000);
+            } else if (habitacion1 == 5) {
+                $('#IngresoPersonas1').fadeIn(1000);
+                $('#IngresoPersonas2').fadeIn(1000);
+                $('#IngresoPersonas3').fadeIn(1000);
+                $('#IngresoPersonas4').fadeIn(1000);
+                $('#IngresoPersonas5').fadeIn(1000);
+                $('#IngresoPersonas6').fadeOut(1000);
+            } else if (habitacion1 == 6) {
+                $('#IngresoPersonas1').fadeIn(1000);
+                $('#IngresoPersonas2').fadeIn(1000);
+                $('#IngresoPersonas3').fadeIn(1000);
+                $('#IngresoPersonas4').fadeIn(1000);
+                $('#IngresoPersonas5').fadeIn(1000);
+                $('#IngresoPersonas6').fadeIn(1000);
             }
 
 
             if (habitacion2 == 0) {
-                $('#IngresoPersonas5').fadeOut(1000);
-                $('#IngresoPersonas6').fadeOut(1000);
                 $('#IngresoPersonas7').fadeOut(1000);
                 $('#IngresoPersonas8').fadeOut(1000);
-            } else if (habitacion2 == 1) {
-                $('#IngresoPersonas5').fadeIn(1000);
-                $('#IngresoPersonas6').fadeOut(1000);
-                $('#IngresoPersonas7').fadeOut(1000);
-                $('#IngresoPersonas8').fadeOut(1000);
-            } else if (habitacion2 == 2) {
-                $('#IngresoPersonas5').fadeIn(1000);
-                $('#IngresoPersonas6').fadeIn(1000);
-                $('#IngresoPersonas7').fadeOut(1000);
-                $('#IngresoPersonas8').fadeOut(1000);
-            } else if (habitacion2 == 3) {
-                $('#IngresoPersonas5').fadeIn(1000);
-                $('#IngresoPersonas6').fadeIn(1000);
-                $('#IngresoPersonas7').fadeIn(1000);
-                $('#IngresoPersonas8').fadeOut(1000);
-            } else if (habitacion2 == 4) {
-                $('#IngresoPersonas5').fadeIn(1000);
-                $('#IngresoPersonas6').fadeIn(1000);
-                $('#IngresoPersonas7').fadeIn(1000);
-                $('#IngresoPersonas8').fadeIn(1000);
-            }
-
-            if (habitacion3 == 0) {
                 $('#IngresoPersonas9').fadeOut(1000);
                 $('#IngresoPersonas10').fadeOut(1000);
                 $('#IngresoPersonas11').fadeOut(1000);
                 $('#IngresoPersonas12').fadeOut(1000);
-            } else if (habitacion3 == 1) {
+            } else if (habitacion2 == 1) {
+                $('#IngresoPersonas7').fadeIn(1000);
+                $('#IngresoPersonas8').fadeOut(1000);
+                $('#IngresoPersonas9').fadeOut(1000);
+                $('#IngresoPersonas10').fadeOut(1000);
+                $('#IngresoPersonas11').fadeOut(1000);
+                $('#IngresoPersonas12').fadeOut(1000);
+            } else if (habitacion2 == 2) {
+                $('#IngresoPersonas7').fadeIn(1000);
+                $('#IngresoPersonas8').fadeIn(1000);
+                $('#IngresoPersonas9').fadeOut(1000);
+                $('#IngresoPersonas10').fadeOut(1000);
+                $('#IngresoPersonas11').fadeOut(1000);
+                $('#IngresoPersonas12').fadeOut(1000);
+            } else if (habitacion2 == 3) {
+                $('#IngresoPersonas7').fadeIn(1000);
+                $('#IngresoPersonas8').fadeIn(1000);
                 $('#IngresoPersonas9').fadeIn(1000);
                 $('#IngresoPersonas10').fadeOut(1000);
                 $('#IngresoPersonas11').fadeOut(1000);
                 $('#IngresoPersonas12').fadeOut(1000);
-            } else if (habitacion3 == 2) {
+            } else if (habitacion2 == 4) {
+                $('#IngresoPersonas7').fadeIn(1000);
+                $('#IngresoPersonas8').fadeIn(1000);
                 $('#IngresoPersonas9').fadeIn(1000);
                 $('#IngresoPersonas10').fadeIn(1000);
                 $('#IngresoPersonas11').fadeOut(1000);
                 $('#IngresoPersonas12').fadeOut(1000);
-            } else if (habitacion3 == 3) {
+            } else if (habitacion2 == 5) {
+                $('#IngresoPersonas7').fadeIn(1000);
+                $('#IngresoPersonas8').fadeIn(1000);
                 $('#IngresoPersonas9').fadeIn(1000);
                 $('#IngresoPersonas10').fadeIn(1000);
                 $('#IngresoPersonas11').fadeIn(1000);
                 $('#IngresoPersonas12').fadeOut(1000);
-            } else if (habitacion3 == 4) {
+            } else if (habitacion2 == 6) {
+                $('#IngresoPersonas7').fadeIn(1000);
+                $('#IngresoPersonas8').fadeIn(1000);
                 $('#IngresoPersonas9').fadeIn(1000);
                 $('#IngresoPersonas10').fadeIn(1000);
                 $('#IngresoPersonas11').fadeIn(1000);
                 $('#IngresoPersonas12').fadeIn(1000);
             }
 
-            if (habitacion4 == 0) {
+            if (habitacion3 == 0) {
                 $('#IngresoPersonas13').fadeOut(1000);
                 $('#IngresoPersonas14').fadeOut(1000);
                 $('#IngresoPersonas15').fadeOut(1000);
                 $('#IngresoPersonas16').fadeOut(1000);
-            } else if (habitacion4 == 1) {
+                $('#IngresoPersonas17').fadeOut(1000);
+            } else if (habitacion3 == 1) {
                 $('#IngresoPersonas13').fadeIn(1000);
                 $('#IngresoPersonas14').fadeOut(1000);
                 $('#IngresoPersonas15').fadeOut(1000);
                 $('#IngresoPersonas16').fadeOut(1000);
-            } else if (habitacion4 == 2) {
+                $('#IngresoPersonas17').fadeOut(1000);
+            } else if (habitacion3 == 2) {
                 $('#IngresoPersonas13').fadeIn(1000);
                 $('#IngresoPersonas14').fadeIn(1000);
                 $('#IngresoPersonas15').fadeOut(1000);
                 $('#IngresoPersonas16').fadeOut(1000);
-            } else if (habitacion4 == 3) {
+                $('#IngresoPersonas17').fadeOut(1000);
+            } else if (habitacion3 == 3) {
                 $('#IngresoPersonas13').fadeIn(1000);
                 $('#IngresoPersonas14').fadeIn(1000);
                 $('#IngresoPersonas15').fadeIn(1000);
                 $('#IngresoPersonas16').fadeOut(1000);
-            } else if (habitacion4 == 4) {
+                $('#IngresoPersonas17').fadeOut(1000);
+            } else if (habitacion3 == 4) {
                 $('#IngresoPersonas13').fadeIn(1000);
                 $('#IngresoPersonas14').fadeIn(1000);
                 $('#IngresoPersonas15').fadeIn(1000);
                 $('#IngresoPersonas16').fadeIn(1000);
+                $('#IngresoPersonas17').fadeOut(1000);
+            } else if (habitacion3 == 5) {
+                $('#IngresoPersonas13').fadeIn(1000);
+                $('#IngresoPersonas14').fadeIn(1000);
+                $('#IngresoPersonas15').fadeIn(1000);
+                $('#IngresoPersonas16').fadeIn(1000);
+                $('#IngresoPersonas17').fadeIn(1000);
+            }
+
+            if (habitacion4 == 0) {
+                $('#IngresoPersonas18').fadeOut(1000);
+                $('#IngresoPersonas19').fadeOut(1000);
+                $('#IngresoPersonas20').fadeOut(1000);
+                $('#IngresoPersonas21').fadeOut(1000);
+            } else if (habitacion4 == 1) {
+                $('#IngresoPersonas18').fadeIn(1000);
+                $('#IngresoPersonas19').fadeOut(1000);
+                $('#IngresoPersonas20').fadeOut(1000);
+                $('#IngresoPersonas21').fadeOut(1000);
+            } else if (habitacion4 == 2) {
+                $('#IngresoPersonas18').fadeIn(1000);
+                $('#IngresoPersonas19').fadeIn(1000);
+                $('#IngresoPersonas20').fadeOut(1000);
+                $('#IngresoPersonas21').fadeOut(1000);
+            } else if (habitacion4 == 3) {
+                $('#IngresoPersonas18').fadeIn(1000);
+                $('#IngresoPersonas19').fadeIn(1000);
+                $('#IngresoPersonas20').fadeIn(1000);
+                $('#IngresoPersonas21').fadeOut(1000);
+            } else if (habitacion4 == 4) {
+                $('#IngresoPersonas18').fadeIn(1000);
+                $('#IngresoPersonas19').fadeIn(1000);
+                $('#IngresoPersonas20').fadeIn(1000);
+                $('#IngresoPersonas21').fadeIn(1000);
             }
         return false;
              }
@@ -131,7 +190,7 @@
 	<div class="columna1v1">
 			
 			<h2>Solicitud de Ingreso</h2>
-
+            <h5></h5>
 			<div class="contenido">				
 				Fecha Ingreso <br>
 				  <asp:TextBox ID="txtFechaIngreso" runat="server" TextMode="Date" CssClass="CasillaFecha" AutoPostBack="True" OnTextChanged="txtFechaIngreso_TextChanged1" value="System.DateTime.Today" ></asp:TextBox>  </div>
@@ -159,17 +218,17 @@
 					<tr>
 						<td>Habitación individual</td>
                         <td><asp:TextBox ID="txtCantHabDispSim" runat="server" CssClass="CasillaEnvio" BorderColor="#AB4E68" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
-                        <td><asp:TextBox ID="individual" TextMode="Number" runat="server" Max="4" min="0" CssClass="BotonIndividual" value="0" AutoPostBack="True" OnTextChanged="individual_TextChanged"></asp:TextBox></td>
+                        <td><asp:TextBox ID="individual" TextMode="Number" runat="server" Max="6" min="0" CssClass="BotonIndividual" value="0" AutoPostBack="True" OnTextChanged="individual_TextChanged"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td>Habitación 2 personas</td>
                         <td><asp:TextBox ID="txtCantHabDispDob" runat="server"  CssClass="CasillaEnvio" BorderColor="#55828b" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
-                        <td><asp:TextBox ID="doble" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton2personas" value="0" AutoPostBack="True" OnTextChanged="doble_TextChanged" ></asp:TextBox></td>
+                        <td><asp:TextBox ID="doble" runat="server" TextMode="Number" Max="6" min="0" CssClass="Boton2personas" value="0" AutoPostBack="True" OnTextChanged="doble_TextChanged" ></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td>Habitación 3 personas</td>
                         <td><asp:TextBox ID="txtCantHabDispTri" runat="server"  CssClass="CasillaEnvio" BorderColor="#e94f37" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
-                        <td><asp:TextBox ID="triple" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton3personas" value="0" AutoPostBack="True" OnTextChanged="triple_TextChanged"></asp:TextBox></td>
+                        <td><asp:TextBox ID="triple" runat="server" TextMode="Number" Max="5" min="0" CssClass="Boton3personas" value="0" AutoPostBack="True" OnTextChanged="triple_TextChanged"></asp:TextBox></td>
 					</tr>
 					<tr>
 						<td>Habitación 4 personas</td>
@@ -287,10 +346,56 @@
                     </asp:DropDownList>                  				
 				</div>
 		</div>
+        <div class="IngresoPersonas1" id="IngresoPersonas5">
+				<div class="Casilla2-1">					
+					 <asp:TextBox ID="txtRutIndividual5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtNombreIndividual5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtApellidoIndividual5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtOtroIndividual5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="OpcionComida">
+                    <asp:DropDownList ID="txtComidaObservacionesIndividual5" runat="server" CssClass="comidas">
+                         <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                    </asp:DropDownList>                  				
+				</div>
+		</div>
+        <div class="IngresoPersonas1" id="IngresoPersonas6">
+				<div class="Casilla2-1">					
+					 <asp:TextBox ID="txtRutIndividual6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtNombreIndividual6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtApellidoIndividual6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtOtroIndividual6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="OpcionComida">
+                    <asp:DropDownList ID="txtComidaObservacionesIndividual6" runat="server" CssClass="comidas">
+                         <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                    </asp:DropDownList>                  				
+				</div>
+		</div>
         <!--Fin COLUMNA1-->
 	
 
-		<div class="IngresoPersonas2" id="IngresoPersonas5">
+		<div class="IngresoPersonas2" id="IngresoPersonas7">
 				<div class="Casilla2-1">					
 					 <asp:TextBox ID="txtRutDoble1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
@@ -334,7 +439,7 @@
                     </asp:DropDownList>                  				
 				</div>
 		</div>
-        <div class="IngresoPersonas2" id="IngresoPersonas6">
+        <div class="IngresoPersonas2" id="IngresoPersonas8">
 				<div class="Casilla2-1">					
 					 <asp:TextBox ID="txtRutDoble3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
@@ -378,7 +483,7 @@
                     </asp:DropDownList>                  				
 				</div>
 		</div>
-        <div class="IngresoPersonas2" id="IngresoPersonas7">
+        <div class="IngresoPersonas2" id="IngresoPersonas9">
 				<div class="Casilla2-1">					
 					 <asp:TextBox ID="txtRutDoble5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
@@ -422,7 +527,7 @@
                     </asp:DropDownList>                  				
 				</div>
 		</div>
-        <div class="IngresoPersonas2" id="IngresoPersonas8">
+        <div class="IngresoPersonas2" id="IngresoPersonas10">
 				<div class="Casilla2-1">					
 					 <asp:TextBox ID="txtRutDoble7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
@@ -466,8 +571,96 @@
                     </asp:DropDownList>                  				
 				</div>
 		</div>
+         <div class="IngresoPersonas2" id="IngresoPersonas11">
+				<div class="Casilla2-1">					
+					 <asp:TextBox ID="txtRutDoble9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtNombreDoble9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtApellidoDoble9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtOtroDoble9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="OpcionComida">
+                    <asp:DropDownList ID="txtComidaObservacionesDoble9" runat="server" CssClass="comidas">
+                         <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                    </asp:DropDownList>                  				
+				</div>
+            	<div class="Casilla2-1">					
+					 <asp:TextBox ID="txtRutDoble10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtNombreDoble10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtApellidoDoble10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtOtroDoble10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="OpcionComida">
+                    <asp:DropDownList ID="txtComidaObservacionesDoble10" runat="server" CssClass="comidas">
+                         <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                    </asp:DropDownList>                  				
+				</div>
+		</div>
+         <div class="IngresoPersonas2" id="IngresoPersonas12">
+				<div class="Casilla2-1">					
+					 <asp:TextBox ID="txtRutDoble11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtNombreDoble11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtApellidoDoble11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtOtroDoble11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="OpcionComida">
+                    <asp:DropDownList ID="txtComidaObservacionesDoble11" runat="server" CssClass="comidas">
+                         <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                    </asp:DropDownList>                  				
+				</div>
+            	<div class="Casilla2-1">					
+					 <asp:TextBox ID="txtRutDoble12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtNombreDoble12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtApellidoDoble12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtOtroDoble12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="OpcionComida">
+                    <asp:DropDownList ID="txtComidaObservacionesDoble12" runat="server" CssClass="comidas">
+                         <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                    </asp:DropDownList>                  				
+				</div>
+		</div>
                <!--Fin COLUMNA1-->
-         <div class="IngresoPersonas3" id="IngresoPersonas9">
+         <div class="IngresoPersonas3" id="IngresoPersonas13">
 				<div class="Casilla2-1">					
 					 <asp:TextBox ID="txtRutTriple1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
@@ -532,7 +725,7 @@
                     </asp:DropDownList>                  				
 				</div>
 		</div>
-         <div class="IngresoPersonas3" id="IngresoPersonas10">
+         <div class="IngresoPersonas3" id="IngresoPersonas14">
                          	<div class="Casilla2-1">					
 					 <asp:TextBox ID="txtRutTriple4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
@@ -597,7 +790,7 @@
                     </asp:DropDownList>                  				
 				</div>
 		</div>
-         <div class="IngresoPersonas3" id="IngresoPersonas11">
+         <div class="IngresoPersonas3" id="IngresoPersonas15">
                          	<div class="Casilla2-1">					
 					 <asp:TextBox ID="txtRutTriple7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
@@ -662,7 +855,7 @@
                     </asp:DropDownList>                  				
 				</div>
 		</div>
-         <div class="IngresoPersonas3" id="IngresoPersonas12">
+         <div class="IngresoPersonas3" id="IngresoPersonas16">
                          	<div class="Casilla2-1">					
 					 <asp:TextBox ID="txtRutTriple10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
@@ -727,8 +920,73 @@
                     </asp:DropDownList>                  				
 				</div>
 		</div>
+         <div class="IngresoPersonas3" id="IngresoPersonas17">
+                         	<div class="Casilla2-1">					
+					 <asp:TextBox ID="txtRutTriple13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtNombreTriple13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtApellidoTriple13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtOtroTriple13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="OpcionComida">
+                    <asp:DropDownList ID="txtComidaObservacionesTiple13" runat="server" CssClass="comidas">
+                         <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                    </asp:DropDownList>                  				
+				</div>
+				<div class="Casilla2-1">					
+					 <asp:TextBox ID="txtRutTriple14" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtNombreTriple14" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtApellidoTriple14" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtOtroTriple14" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="OpcionComida">
+                    <asp:DropDownList ID="txtComidaObservacionesTiple14" runat="server" CssClass="comidas">
+                         <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                    </asp:DropDownList>                  				
+				</div>
+            	<div class="Casilla2-1">					
+					 <asp:TextBox ID="txtRutTriple15" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtNombreTriple15" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtApellidoTriple15" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="Casilla2-1">
+					<asp:TextBox ID="txtOtroTriple15" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+				</div>
+				<div class="OpcionComida">
+                    <asp:DropDownList ID="txtComidaObservacionesTiple15" runat="server" CssClass="comidas">
+                         <asp:ListItem Value="1">Selecciona un Plato</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                         <asp:ListItem Value="1">Plato 1</asp:ListItem>
+                    </asp:DropDownList>                  				
+				</div>
+		</div>
 		   <!--Fin COLUMNA1-->
-		   <div class="IngresoPersonas4" id="IngresoPersonas13">
+		   <div class="IngresoPersonas4" id="IngresoPersonas18">
                <div class="Casilla2-1">					
 					 <asp:TextBox ID="txtRutCuadruple1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
@@ -814,7 +1072,7 @@
                     </asp:DropDownList>                  				
 				</div>
 		</div>
-        	   <div class="IngresoPersonas4" id="IngresoPersonas14">
+        	   <div class="IngresoPersonas4" id="IngresoPersonas19">
                <div class="Casilla2-1">					
 					 <asp:TextBox ID="txtRutCuadruple5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
@@ -900,7 +1158,7 @@
                     </asp:DropDownList>                  				
 				</div>
 		</div>
-        	   <div class="IngresoPersonas4" id="IngresoPersonas15">
+        	   <div class="IngresoPersonas4" id="IngresoPersonas20">
                <div class="Casilla2-1">					
 					 <asp:TextBox ID="txtRutCuadruple9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
@@ -986,7 +1244,7 @@
                     </asp:DropDownList>                  				
 				</div>
 		</div>
-        	   <div class="IngresoPersonas4" id="IngresoPersonas16">
+        	   <div class="IngresoPersonas4" id="IngresoPersonas21">
                <div class="Casilla2-1">					
 					 <asp:TextBox ID="txtRutCuadruple13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 				</div>
@@ -1077,7 +1335,7 @@
         <div class="columna3">            
 			<div class="casillaTotal">
 			
-                <asp:Button ID="BtnSiguiente" runat="server" Text="Siguiente"  CssClass="SubmitTotal" OnClick="Siguiente_Click1" Enabled="true"/>
+                <asp:Button ID="BtnSiguiente" runat="server" Text="Confirmar Personas Ingresadas"  CssClass="SubmitTotal" OnClick="Siguiente_Click1" Enabled="true"/>
 
             </div>
 		</div>

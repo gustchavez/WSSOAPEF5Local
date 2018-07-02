@@ -1,51 +1,11 @@
 /* Bases pagina */
-*{
-padding: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-}
 
-body{
-	font-family: arial;
-	font-size: 13px;
-}
 
-.padre {
-	width: 1250px;
-	height: 650px;
-	margin: auto;
-	position: relative;
-}
-
-.totalmenu {
-	width: 100%;
-	height: 30px;
-	background: #035E7B;
-	position: absolute;
-	z-index: 11;
-}
-
-.menu {
-	width: 1250px;
-	height: 30px;
-	background: #035E7B;
-	position: absolute;
-	z-index: 11;
-}
-
-.columna1{
-	position: absolute;
-	width: 250px;
-	height: 600px;
-	margin-top: 30px;
-	padding-left: 10px;	
-}
 
 .columna1v1 {
 	position: absolute;
 	width: 250px;
-	height: 600px;
+	height: 650px;
     left:280px;
 	margin-top: 30px;
 	padding-left: 10px;	
@@ -70,6 +30,7 @@ body{
 
 .columna3{
 	position: absolute;
+   
 	margin-left: 980px;
 	margin-top: 600px;
 	width: 220px;
@@ -78,27 +39,7 @@ body{
 
 /* Menu */
 
-.BotonMenu {
-width: 280px;
-height: 30px;
-text-align: center;
-color: white;
-position: relative;
-float: left;
-z-index: 11;
-padding-top: 7px;
-}
 
-.BotonMenu:HOVER{
-width: 280px;
-height: 23px;
-text-align: center;
-color: white;
-position: relative;
-background: #55828b;
-z-index: 11;
-padding-top: 7px;
-}
 
 
 /* Contenido Desplegable */
@@ -112,15 +53,7 @@ margin-top: 30px;
 display: none;
 }
 
-.imagen-logo {
-	background: white;
-	height: 150px;
-	width: 150px;
-	margin: auto;
-	border-radius: 50%;
-	position: relative;
-	bottom: 10px;
-}
+
 
 .subMenu {
 	position: relative;
@@ -345,6 +278,14 @@ width: 130px;
 	width: 200px;
 	height: 30px;
     left: 15px;
+
+    
+       background: none;
+    color: black;
+    border: 2px solid #1B998B;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+
 }
 
 .SubmitTotal2{
@@ -354,6 +295,14 @@ width: 130px;
 	width: 200px;
 	height: 30px;
    margin:auto;
+
+   
+       background: none;
+    color: white;
+    border: 2px solid #ffa500;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+
 }
 
 .SubmitTotal:Hover{
@@ -362,8 +311,14 @@ width: 130px;
 	width: 200px;
 	height: 30px;
     left: 15px;
-	background: #035E7B;
-	color: white;
+
+    
+       background: none;
+    color: black;
+    border: 2px solid #ffa500;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+
 
 }
 

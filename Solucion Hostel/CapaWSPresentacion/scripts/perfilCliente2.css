@@ -28,9 +28,6 @@ height: 100%;
 position: absolute;
 }
 
-
-
-
 /* ----------------------- */
 /* Fin Contenido columna 1 */
 /* ----------------------- */
@@ -39,57 +36,58 @@ position: absolute;
 /* Inicio Contenido columna 2 */
 /* -------------------------- */
 
-.tabla{
-	
-	height: 70px;
-	width: 780px;
-    margin:auto;
+.ModificarDatos{
+	margin: auto;
+	height: 300px;
+	width: 900px;
 	position: relative;
-	top: 50px;
-	text-align: center;
+
+	top: 10px;
+    left:40px;
 }
 
-.tabla th{
-	background: white;
-	color :black;
-	height: 30px;
+.ModificarDatos h2{
+	text-align: left;
+}
+
+.Casilla2-1 {
+	float: left;
+	margin: 20px;
+	width: 230px;
+	height: 25px;
 }
 
 .ModificarDatos2{
 	margin: auto;
-	top: 30px;
-	width: 800px;
+	width: 900px;
 	position: relative;
+    top:10px;
+    left:40px;
 	
 }
 
 .Casilla2-2 {
 	float: left;
-	margin: 5px;
+	margin: 20px;
+	width: 230px;
+	height: 25px;
 	position: relative;
-	top: 10px;	
-    left:5px;
+	top: 20px;
+    left: -2px;
 }
 
-.Casilla2-1 {
-	float: right;
-	margin: 5px;
-	position: relative;
-	right: 115px;
-	top: 100px;	
-}
+
+
 
 .CasillaPersona{
 	position: relative;
-	width: 250px;
+	width: 230px;
 	height: 25px;
-}
-
-.CasillaPersona2{
-	position: relative;
-	width: 80px;
-	height: 33px;
-    left:10px;
+    
+    background: none;
+	color: black;
+ 	border: none;
+    border-bottom: 2px solid #1B998B;
 }
 
 .droplist {
@@ -97,56 +95,40 @@ position: absolute;
 	width: 230px;
 	height: 30px;
 	float: left;
+
+    	background: none;
+	color: black;
+	border: none;
+	 border-bottom: 2px solid #1B998B;
 }
 
 .SubmitTotal{
 
 	margin: auto;
 	position: relative;
-	top: 15px;
-	width: 245px;
-	height: 35px;
-	background: #a5668b;
-	color: white;
-	left: 20px;
-
-}
-
-.selectO {
-    
-	width: 200px;
-	height: 35px;
-    
-
-}
-
-.SubmitTotal2{
-
-    background: #861657;
-    color: white;
-	position: relative;
 	width: 235px;
 	height: 30px;
+    top:18px;
 
-}
-
-.SubmitTotal2:Hover{
-
-    background: #035E7B;
-    color: white;
-	position: relative;
-	width: 235px;
-	height: 30px;
+    background: none;
+    color: black;
+    border: 2px solid #1B998B;
+    border-radius: 8px;
+    transition-duration: 0.4s;
 
 }
 
 .SubmitTotal:Hover{
 	position: relative;
-	top: 15px;
 	width: 235px;
 	height: 30px;
-	background: #035E7B;
-	color: white;
+    top:18px;
+
+    background: none;
+    color: white;
+    border: 2px solid #f26419;
+    border-radius: 8px;
+    transition-duration: 0.4s;
 }
 
 
@@ -156,4 +138,17 @@ position: absolute;
 
 
 
-
+.error{
+    top:45px;
+    right:350px;
+    margin-bottom:5px;
+    text-align:center;
+    position:relative;
+display: none;
+border-radius: 3px;
+background: #fff;
+color: #ce1818;
+font-weight:bold;
+padding-top: 3px;
+padding-bottom: 3px;
+}
