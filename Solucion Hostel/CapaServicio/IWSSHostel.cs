@@ -161,6 +161,9 @@ namespace CapaServicio
 
         [OperationContract]
         ContenedorOrdenesPedidoCompleta OrdenPedidoCompletaRescatar(string token);
+
+        [OperationContract]
+        ContenedorRegistroRecepcionPedido ProdConfirRecepActualizar(ContenedorRegistroRecepcionPedido entrada);
         //Fin OrdenPedidoCompleta
 
         //Ini FacturaCompraCompleta

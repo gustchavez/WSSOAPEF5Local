@@ -509,6 +509,13 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfOrdenPedidoCompleta" nillable="true" type="tns:ArrayOfOrdenPedidoCompleta" />
+  <xs:complexType name="ContenedorRegistroRecepcionPedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:RegistroRecepcionPedido" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorRegistroRecepcionPedido" nillable="true" type="tns:ContenedorRegistroRecepcionPedido" />
   <xs:complexType name="ContenedorFacturaCompraCompleta">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:FacturaCompraCompleta" />

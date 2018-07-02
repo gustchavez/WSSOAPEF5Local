@@ -19,7 +19,7 @@
 		</div>   
 		<div class="Casilla2-2" >
 		    <h4 style="color: red;">Nº de Orden</h4>
-            <asp:DropDownList ID="ddlOrden" CssClass="selectO" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlOrdenesCompra_SelectedIndexChanged"></asp:dropdownlist>
+            <asp:DropDownList ID="ddlOrdenes" CssClass="selectO" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlOrdenesCompra_SelectedIndexChanged"></asp:dropdownlist>
 		</div>     
         
 	    <div class="contenedorTabla">
@@ -38,13 +38,11 @@
                     </asp:TemplateField>
                     <asp:BoundField DataField="NroOrden" HeaderText="Numero Orden"
                     Visible="True" />
-                    <asp:BoundField DataField="Cod" HeaderText="Cod"  
+                    <asp:BoundField DataField="CodProducto" HeaderText="Cod. Producto"  
                     Visible="True" />
-                    <asp:BoundField DataField="NombreCompleto" HeaderText="Detalle"  
+                    <asp:BoundField DataField="Nombre" HeaderText="Descripción"  
                     Visible="True" />
-                    <asp:BoundField DataField="NroHabitacion" HeaderText="Precio"  
-                    Visible="True" />
-                    <asp:BoundField DataField="TipoHabitacion" HeaderText="Cantidad"  
+                    <asp:BoundField DataField="Cantidad" HeaderText="Cantidad"  
                     Visible="True" />
                     <asp:BoundField DataField="Estado" HeaderText="¿Ingresado?"
                     Visible="True" />

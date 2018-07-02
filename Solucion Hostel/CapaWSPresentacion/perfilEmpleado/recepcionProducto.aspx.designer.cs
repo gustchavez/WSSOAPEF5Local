@@ -31,13 +31,13 @@ namespace CapaWSPresentacion.perfilEmpleado {
         protected global::System.Web.UI.WebControls.DropDownList ddlEmpresas;
         
         /// <summary>
-        /// Control ddlOrden.
+        /// Control ddlOrdenes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlOrden;
+        protected global::System.Web.UI.WebControls.DropDownList ddlOrdenes;
         
         /// <summary>
         /// Control btnConfirmar.

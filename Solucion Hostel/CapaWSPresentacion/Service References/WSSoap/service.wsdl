@@ -248,6 +248,12 @@
   <wsdl:message name="IWSSHostel_OrdenPedidoCompletaRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaRescatarResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProdConfirRecepActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProdConfirRecepActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ProdConfirRecepActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProdConfirRecepActualizarResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_FacturaCompraCompletaCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:FacturaCompraCompletaCrear" />
   </wsdl:message>
@@ -552,6 +558,10 @@
     <wsdl:operation name="OrdenPedidoCompletaRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatar" message="tns:IWSSHostel_OrdenPedidoCompletaRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatarResponse" message="tns:IWSSHostel_OrdenPedidoCompletaRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProdConfirRecepActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProdConfirRecepActualizar" message="tns:IWSSHostel_ProdConfirRecepActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ProdConfirRecepActualizarResponse" message="tns:IWSSHostel_ProdConfirRecepActualizar_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="FacturaCompraCompletaCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaCrear" message="tns:IWSSHostel_FacturaCompraCompletaCrear_InputMessage" />
@@ -1005,6 +1015,15 @@
     </wsdl:operation>
     <wsdl:operation name="OrdenPedidoCompletaRescatar">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProdConfirRecepActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ProdConfirRecepActualizar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

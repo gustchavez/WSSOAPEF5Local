@@ -255,6 +255,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenesPedidoCompleta> OrdenPedidoCompletaRescatarAsync(string token);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProdConfirRecepActualizar", ReplyAction="http://tempuri.org/IWSSHostel/ProdConfirRecepActualizarResponse")]
+        CapaObjeto.ContenedorRegistroRecepcionPedido ProdConfirRecepActualizar(CapaObjeto.ContenedorRegistroRecepcionPedido entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProdConfirRecepActualizar", ReplyAction="http://tempuri.org/IWSSHostel/ProdConfirRecepActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorRegistroRecepcionPedido> ProdConfirRecepActualizarAsync(CapaObjeto.ContenedorRegistroRecepcionPedido entrada);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/FacturaCompraCompletaCrearResponse")]
         CapaObjeto.ContenedorFacturaCompraCompleta FacturaCompraCompletaCrear(CapaObjeto.ContenedorFacturaCompraCompleta entrada);
         
@@ -745,6 +751,14 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenesPedidoCompleta> OrdenPedidoCompletaRescatarAsync(string token) {
             return base.Channel.OrdenPedidoCompletaRescatarAsync(token);
+        }
+        
+        public CapaObjeto.ContenedorRegistroRecepcionPedido ProdConfirRecepActualizar(CapaObjeto.ContenedorRegistroRecepcionPedido entrada) {
+            return base.Channel.ProdConfirRecepActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorRegistroRecepcionPedido> ProdConfirRecepActualizarAsync(CapaObjeto.ContenedorRegistroRecepcionPedido entrada) {
+            return base.Channel.ProdConfirRecepActualizarAsync(entrada);
         }
         
         public CapaObjeto.ContenedorFacturaCompraCompleta FacturaCompraCompletaCrear(CapaObjeto.ContenedorFacturaCompraCompleta entrada) {

@@ -182,11 +182,11 @@
   <wsdl:message name="IWSSHostel_HabitacionRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:HabitacionRescatarResponse" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_LlamarSPHabitaHabXCapacidad_InputMessage">
-    <wsdl:part name="parameters" element="tns:LlamarSPHabitaHabXCapacidad" />
+  <wsdl:message name="IWSSHostel_HabitacionHabXCapacidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionHabXCapacidad" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_LlamarSPHabitaHabXCapacidad_OutputMessage">
-    <wsdl:part name="parameters" element="tns:LlamarSPHabitaHabXCapacidadResponse" />
+  <wsdl:message name="IWSSHostel_HabitacionHabXCapacidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionHabXCapacidadResponse" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_CiudadRescatar_InputMessage">
     <wsdl:part name="parameters" element="tns:CiudadRescatar" />
@@ -509,9 +509,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionRescatar" message="tns:IWSSHostel_HabitacionRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionRescatarResponse" message="tns:IWSSHostel_HabitacionRescatar_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="LlamarSPHabitaHabXCapacidad">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidad" message="tns:IWSSHostel_LlamarSPHabitaHabXCapacidad_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidadResponse" message="tns:IWSSHostel_LlamarSPHabitaHabXCapacidad_OutputMessage" />
+    <wsdl:operation name="HabitacionHabXCapacidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionHabXCapacidad" message="tns:IWSSHostel_HabitacionHabXCapacidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionHabXCapacidadResponse" message="tns:IWSSHostel_HabitacionHabXCapacidad_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CiudadRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CiudadRescatar" message="tns:IWSSHostel_CiudadRescatar_InputMessage" />
@@ -913,8 +913,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="LlamarSPHabitaHabXCapacidad">
-      <soap:operation soapAction="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidad" style="document" />
+    <wsdl:operation name="HabitacionHabXCapacidad">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/HabitacionHabXCapacidad" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

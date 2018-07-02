@@ -311,6 +311,12 @@ namespace CapaServicio
             CRUDOrdenPedidoCompleta x = new CRUDOrdenPedidoCompleta();
             return x.LlamarSPRescatar(token);
         }
+
+        public ContenedorRegistroRecepcionPedido ProdConfirRecepActualizar(ContenedorRegistroRecepcionPedido entrada)
+        {
+            CRUDOrdenPedidoCompleta x = new CRUDOrdenPedidoCompleta();
+            return x.LlamarSPActRecepProd(entrada);
+        }
         
         //Fin OrdenPedidoCompleta
 
