@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Alojamiento.cs" />
     <Compile Include="Cama.cs" />
+    <Compile Include="ContenedorRegistroRecepcionPedido.cs" />
     <Compile Include="HabDispCant.cs" />
     <Compile Include="Ciudad.cs" />
     <Compile Include="Cliente.cs" />

@@ -597,6 +597,13 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
         </Function>
+        <Function Name="SP_ACT_RECEPCION_PRODUCTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+          <Parameter Name="P_IN_CODIGO_PRODUCTO" Type="number" Mode="In" />
+          <Parameter Name="P_IN_NUMERO_OP" Type="number" Mode="In" />
+          <Parameter Name="P_IN_CONFIRMADO" Type="char" Mode="In" />
+          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
+          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+        </Function>
         <Function Name="SP_ACTUALIZAR_ADMINISTRADOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
           <Parameter Name="P_IN_RUT_PERSONA" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_NOMBRE" Type="varchar2" Mode="In" />
@@ -1728,6 +1735,13 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
             <Parameter Name="P_OUT_HAB_CODIGO" Mode="Out" Type="Decimal" />
           </FunctionImport>
+          <FunctionImport Name="SP_ACT_RECEPCION_PRODUCTO">
+            <Parameter Name="P_IN_CODIGO_PRODUCTO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_NUMERO_OP" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_CONFIRMADO" Mode="In" Type="String" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="CAMA">
           <Key>
@@ -2608,6 +2622,7 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_CREAR_ENC_RESERVA" FunctionName="Model.Store.SP_CREAR_ENC_RESERVA" />
           <FunctionImportMapping FunctionImportName="SP_OBTENER_DISPONIBILIDAD" FunctionName="Model.Store.SP_OBTENER_DISPONIBILIDAD" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_DET_RESERVA" FunctionName="Model.Store.SP_CREAR_DET_RESERVA" />
+          <FunctionImportMapping FunctionImportName="SP_ACT_RECEPCION_PRODUCTO" FunctionName="Model.Store.SP_ACT_RECEPCION_PRODUCTO" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

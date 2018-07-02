@@ -1220,5 +1220,22 @@ namespace CapaDato
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_DET_RESERVA", p_IN_NUMEROParameter, p_IN_INGRESOParameter, p_IN_EGRESOParameter, p_IN_OBS_ALOJAMIENTOParameter, p_IN_RUT_PERSONAParameter, p_IN_NOMBRE_PERSONAParameter, p_IN_APELLIDO_PERSONAParameter, p_IN_HAB_CAPACIDADParameter, p_IN_HAB_CODIGOParameter, p_IN_RECEPCIONParameter, p_IN_OBS_COMIDAParameter, p_IN_TIPO_SERVICIOParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_HAB_CODIGO);
         }
+    
+        public virtual int SP_ACT_RECEPCION_PRODUCTO(Nullable<decimal> p_IN_CODIGO_PRODUCTO, Nullable<decimal> p_IN_NUMERO_OP, string p_IN_CONFIRMADO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_CODIGO_PRODUCTOParameter = p_IN_CODIGO_PRODUCTO.HasValue ?
+                new ObjectParameter("P_IN_CODIGO_PRODUCTO", p_IN_CODIGO_PRODUCTO) :
+                new ObjectParameter("P_IN_CODIGO_PRODUCTO", typeof(decimal));
+    
+            var p_IN_NUMERO_OPParameter = p_IN_NUMERO_OP.HasValue ?
+                new ObjectParameter("P_IN_NUMERO_OP", p_IN_NUMERO_OP) :
+                new ObjectParameter("P_IN_NUMERO_OP", typeof(decimal));
+    
+            var p_IN_CONFIRMADOParameter = p_IN_CONFIRMADO != null ?
+                new ObjectParameter("P_IN_CONFIRMADO", p_IN_CONFIRMADO) :
+                new ObjectParameter("P_IN_CONFIRMADO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACT_RECEPCION_PRODUCTO", p_IN_CODIGO_PRODUCTOParameter, p_IN_NUMERO_OPParameter, p_IN_CONFIRMADOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
     }
 }

@@ -277,9 +277,9 @@ namespace CapaNegocio
             return retorno;
         }
 
-        public ContenedorAlojamiento LlamarSPActIngHuesped(ContenedorAlojamiento aA)
+        public ContenedorAlojamiento LlamarSPActIngHuesped(ContenedorAlojamiento Huesped)
         {
-            if (ValidarPerfilCUD(aA.Retorno.Token))
+            if (ValidarPerfilCUD(Huesped.Retorno.Token))
             {
                 var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
                 var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
@@ -287,29 +287,29 @@ namespace CapaNegocio
                 CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
 
                 conex.SP_ACT_INGRESO_HUESPED
-                    ( aA.Item.NumerOrdenCompra
-                    , aA.Item.RutPersona
-                    , aA.Item.Confirmado
+                    ( Huesped.Item.NumerOrdenCompra
+                    , Huesped.Item.RutPersona
+                    , Huesped.Item.Confirmado
                     , p_OUT_CODRET
                     , p_OUT_GLSRET
                     );
                 try
                 {
-                    aA.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
-                    aA.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                    Huesped.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
+                    Huesped.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
                 }
                 catch (Exception)
                 {
-                    aA.Retorno.Codigo = 1011;
-                    aA.Retorno.Glosa = "Error actualizacion Ingreso Huesped";
+                    Huesped.Retorno.Codigo = 1011;
+                    Huesped.Retorno.Glosa = "Error actualizacion Ingreso Huesped";
                 }
             }
             else {
-                aA.Retorno.Codigo = 100;
-                aA.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+                Huesped.Retorno.Codigo = 100;
+                Huesped.Retorno.Glosa = "Err expiro sesion o perfil invalido";
             }
 
-            return aA;
+            return Huesped;
         }
     }
 }
