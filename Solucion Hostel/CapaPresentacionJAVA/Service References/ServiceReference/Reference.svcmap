@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e20d99b3-7552-4e07-9fd5-f39263d6775b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="99c5cade-fc2c-4222-ad74-75eecb12e037" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="c448d689-6d82-4474-a57e-1470bfccdada" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="3fb1e0c7-c93a-4246-9586-3b31a7642473" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="6d0163ed-69fc-4116-886b-8eaf0d811c2d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/mex" />
-    <MetadataFile FileName="CapaObjeto.xsd" MetadataType="Schema" ID="e2fd297f-ec6b-4b79-92ef-0118e403de69" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/mex" />
-    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="0c8d7bc0-d7cb-4df4-b2a8-525789aeaa6d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="773cadb2-538a-480b-a03b-2d98ae4e29b9" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="9a1ee880-06dd-414d-a892-0cbf4f6c343c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="1bbbaa3b-596c-47a6-ad52-21ea9eedcc31" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/mex" />
+    <MetadataFile FileName="CapaObjeto.xsd" MetadataType="Schema" ID="b8d02ba4-fcdb-4694-9013-01fd64a182c4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="da9fee37-9656-49a1-a82f-81755c925416" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/CapaServicio/Service1/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

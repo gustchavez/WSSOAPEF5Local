@@ -375,6 +375,12 @@ namespace CapaPresentacionJAVA.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/listaClientes", ReplyAction="http://tempuri.org/IWSSHostel/listaClientesResponse")]
         System.Threading.Tasks.Task<string[][]> listaClientesAsync(string token);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ListaUsuario", ReplyAction="http://tempuri.org/IWSSHostel/ListaUsuarioResponse")]
+        string[][] ListaUsuario(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ListaUsuario", ReplyAction="http://tempuri.org/IWSSHostel/ListaUsuarioResponse")]
+        System.Threading.Tasks.Task<string[][]> ListaUsuarioAsync(string token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProvisionCrear", ReplyAction="http://tempuri.org/IWSSHostel/ProvisionCrearResponse")]
         CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada);
         
@@ -905,6 +911,14 @@ namespace CapaPresentacionJAVA.ServiceReference {
         
         public System.Threading.Tasks.Task<string[][]> listaClientesAsync(string token) {
             return base.Channel.listaClientesAsync(token);
+        }
+        
+        public string[][] ListaUsuario(string token) {
+            return base.Channel.ListaUsuario(token);
+        }
+        
+        public System.Threading.Tasks.Task<string[][]> ListaUsuarioAsync(string token) {
+            return base.Channel.ListaUsuarioAsync(token);
         }
         
         public CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada) {

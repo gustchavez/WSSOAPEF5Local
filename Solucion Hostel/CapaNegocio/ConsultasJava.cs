@@ -641,6 +641,54 @@ namespace CapaNegocio
             }
         }
 
+        public List<String[]> ListaUsuarios(String token)
+        {
+            CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+            List<String[]> lista = new List<String[]>();
+            if (ValidarPerfil(token))
+            {
+                try
+                {
+                    var query = (from u in conex.USUARIO
+                                 join p in conex.PERSONA on u.RUT_PERSONA equals p.RUT
+                                 //join e in conex.EMPRESA on p.EMPRESA equals e.PERSONA
+                                 where u.ESTADO == "activo"
+                                 orderby p.APELLIDO descending
+                                 select new
+                                 {
+                                     nomUsuario = u.NOMBRE,
+                                     perfil = u.PERFIL,
+                                     estado = u.ESTADO,
+                                     nombre = p.NOMBRE,
+                                     apellido = p.APELLIDO,
+                                     rut = p.RUT 
+                                 }
+                                 ).ToList();
+                    foreach (var item in query)
+                    {
+                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
+                        String[] cliente = new String[5];
+                        cliente[0] = item.rut;
+                        cliente[1] = item.nombre + " " + item.apellido;
+                        cliente[2] = item.nomUsuario;
+                        cliente[3] = item.perfil;
+                        cliente[4] = item.estado;                        
+                        lista.Add(cliente);
+                    }
+                    return lista;
+                }
+                catch (Exception e)
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public List<String[]> log_tabla(String token)
         {
             CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
