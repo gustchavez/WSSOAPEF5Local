@@ -12,7 +12,7 @@
 			<h2>Seleccione un perfil para modificar o eliminar</h2>	
 			<div class="Casilla2-1Principal">
 			<h4>Seleccion de Perfil</h4>
-		    <asp:DropDownList ID="DropDownList1" runat="server" CssClass="droplistPrincipal">
+		    <asp:DropDownList ID="ddlTipoPerfil" runat="server" CssClass="droplistPrincipal">
                 <asp:ListItem Value="1">Selecciona un Perfil</asp:ListItem>
                 <asp:ListItem Value="2">Administrador</asp:ListItem>
                 <asp:ListItem Value="3">Empleado</asp:ListItem>
@@ -22,7 +22,7 @@
 			</div>
 			<div class="Casilla2-1Principal">
 			<h4>Seleccione un Rut</h4>
-			<asp:DropDownList ID="DropDownList2" runat="server" CssClass="droplistPrincipal">
+			<asp:DropDownList ID="ddlRutPerfil" runat="server" CssClass="droplistPrincipal">
                 <asp:ListItem Value="1">Selecciona un Rut</asp:ListItem>
                 <asp:ListItem Value="2">11111111</asp:ListItem>
                 <asp:ListItem Value="3">22222222</asp:ListItem>
@@ -32,27 +32,27 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Rut</h4>	
-			<asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtRutPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Nombre</h4>	
-			<asp:TextBox ID="TextBox2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtNombrePersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Apellido</h4>	
-			<asp:TextBox ID="TextBox3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtApellidoPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Fecha Nacimiento</h4>	
-			<asp:TextBox ID="TextBox4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtFecNacPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Correo Electrónico</h4>	
-			<asp:TextBox ID="TextBox5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtMailPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Telefono</h4>	
-			<asp:TextBox ID="TextBox6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtTelPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>	
 	</div>
 
@@ -61,15 +61,15 @@
 			<h3>Datos empresa</h3>
 			<div class="Casilla2-1">
 			<h4>Rut Empresa</h4>	
-			<asp:TextBox ID="TextBox7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtRutEmpresa" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Razón Social</h4>	
-			<asp:TextBox ID="TextBox8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtRazonSocial" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Giro</h4>	
-			<asp:DropDownList ID="txtGiro" runat="server" CssClass="droplist">
+			<asp:DropDownList ID="ddlGiro" runat="server" CssClass="droplist">
                     <asp:ListItem Value="1">Selecciona un Giro</asp:ListItem>
                     <asp:ListItem Value="2">CULTIVOS EN GENERAL; CULTIVO DE PRODUCTOS DE MERCADO; HORTICULTURA</asp:ListItem>
                     <asp:ListItem Value="3">CRÍA DE ANIMALES</asp:ListItem>
@@ -208,19 +208,15 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Correo Electrónico</h4>	
-			<asp:TextBox ID="TextBox9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtMailEmpresa" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Teléfono</h4>	
-			<asp:TextBox ID="TextBox10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
-			</div>
-			<div class="Casilla2-1">
-			<h4>Logo</h4>	
-			<asp:TextBox ID="TextBox11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtTelEmpresa" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 				<h4>Ciudad</h4>					
-				<asp:DropDownList ID="txtNombreCiudad" runat="server" CssClass="droplist">
+				<asp:DropDownList ID="ddlNombreCiudad" runat="server" CssClass="droplist">
                     <asp:ListItem Value="1">Seleccione una ciudad</asp:ListItem>
                     <asp:ListItem Value="2">Metropolitana de Santiago</asp:ListItem>
                     <asp:ListItem Value="3">Biobío</asp:ListItem>
@@ -253,7 +249,7 @@
 			</div>
 			<div class="Casilla2-1">
 				<h4>Comuna</h4>					
-				<asp:DropDownList ID="txtComuna" runat="server" CssClass="droplist">
+				<asp:DropDownList ID="ddlComuna" runat="server" CssClass="droplist">
 				    <asp:ListItem Value="1">Seleccione una comuna</asp:ListItem>
                     <asp:ListItem Value="2">Cerrillos</asp:ListItem>
                     <asp:ListItem Value="3">Cerro Navia</asp:ListItem>
@@ -295,7 +291,7 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Dirección</h4>
-			<asp:TextBox ID="TextBox12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtDirEmp" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 	</div>
 
@@ -304,17 +300,17 @@
 			<h3>Usuario y Contraseña</h3>		
 			<div class="Casilla2-1">
 			<h4 style="color: #EAE0CC;">Nombre Usuario</h4>	
-			<asp:TextBox ID="TextBox13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtUsuario" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4 style="color: #EAE0CC;">Nueva Contraseña</h4>	
-			<asp:TextBox ID="TextBox14" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtClave" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
-			<asp:Button ID="Button1" runat="server" Text="MODIFICAR" CssClass="SubmitTotal2" OnClick="Button1_Click"/>
+			<asp:Button ID="btnModificar" runat="server" Text="MODIFICAR" CssClass="SubmitTotal2" OnClick="Button1_Click"/>
 			</div>
 			<div class="Casilla2-1">
-			<asp:Button ID="Button2" runat="server" Text="ELIMINAR" CssClass="SubmitTotal2" OnClick="Button2_Click" />
+			<asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="SubmitTotal2" OnClick="Button2_Click" />
 			</div>	
 	</div>
 		
