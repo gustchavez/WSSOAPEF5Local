@@ -17,6 +17,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaObjeto", "CapaObjeto\CapaObjeto.csproj", "{C4DF87B7-504B-489C-9A49-E753D00D9A43}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaWSPresentacionJAVA", "CapaPresentacionJAVA\CapaWSPresentacionJAVA.csproj", "{6CE5C08A-278E-4E83-8844-51C8005F605F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A7C649C1-E050-47B0-B280-D5530B916A4A} = {A7C649C1-E050-47B0-B280-D5530B916A4A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

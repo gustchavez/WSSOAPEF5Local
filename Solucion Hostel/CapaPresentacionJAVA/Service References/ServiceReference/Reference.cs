@@ -189,11 +189,11 @@ namespace CapaPresentacionJAVA.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/HabitacionRescatar", ReplyAction="http://tempuri.org/IWSSHostel/HabitacionRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorHabitaciones> HabitacionRescatarAsync(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidad", ReplyAction="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidadResponse")]
-        CapaObjeto.ContenedorHabDispCant LlamarSPHabitaHabXCapacidad(string token);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/HabitacionHabXCapacidad", ReplyAction="http://tempuri.org/IWSSHostel/HabitacionHabXCapacidadResponse")]
+        CapaObjeto.ContenedorHabDispCant HabitacionHabXCapacidad(string token, System.DateTime fecIng, System.DateTime fecEgr);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidad", ReplyAction="http://tempuri.org/IWSSHostel/LlamarSPHabitaHabXCapacidadResponse")]
-        System.Threading.Tasks.Task<CapaObjeto.ContenedorHabDispCant> LlamarSPHabitaHabXCapacidadAsync(string token);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/HabitacionHabXCapacidad", ReplyAction="http://tempuri.org/IWSSHostel/HabitacionHabXCapacidadResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorHabDispCant> HabitacionHabXCapacidadAsync(string token, System.DateTime fecIng, System.DateTime fecEgr);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/CiudadRescatar", ReplyAction="http://tempuri.org/IWSSHostel/CiudadRescatarResponse")]
         CapaObjeto.ContenedorCiudades CiudadRescatar(string token);
@@ -374,6 +374,12 @@ namespace CapaPresentacionJAVA.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/listaClientes", ReplyAction="http://tempuri.org/IWSSHostel/listaClientesResponse")]
         System.Threading.Tasks.Task<string[][]> listaClientesAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ListaUsuario", ReplyAction="http://tempuri.org/IWSSHostel/ListaUsuarioResponse")]
+        string[][] ListaUsuario(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ListaUsuario", ReplyAction="http://tempuri.org/IWSSHostel/ListaUsuarioResponse")]
+        System.Threading.Tasks.Task<string[][]> ListaUsuarioAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProvisionCrear", ReplyAction="http://tempuri.org/IWSSHostel/ProvisionCrearResponse")]
         CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada);
@@ -659,12 +665,12 @@ namespace CapaPresentacionJAVA.ServiceReference {
             return base.Channel.HabitacionRescatarAsync(token);
         }
         
-        public CapaObjeto.ContenedorHabDispCant LlamarSPHabitaHabXCapacidad(string token) {
-            return base.Channel.LlamarSPHabitaHabXCapacidad(token);
+        public CapaObjeto.ContenedorHabDispCant HabitacionHabXCapacidad(string token, System.DateTime fecIng, System.DateTime fecEgr) {
+            return base.Channel.HabitacionHabXCapacidad(token, fecIng, fecEgr);
         }
         
-        public System.Threading.Tasks.Task<CapaObjeto.ContenedorHabDispCant> LlamarSPHabitaHabXCapacidadAsync(string token) {
-            return base.Channel.LlamarSPHabitaHabXCapacidadAsync(token);
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorHabDispCant> HabitacionHabXCapacidadAsync(string token, System.DateTime fecIng, System.DateTime fecEgr) {
+            return base.Channel.HabitacionHabXCapacidadAsync(token, fecIng, fecEgr);
         }
         
         public CapaObjeto.ContenedorCiudades CiudadRescatar(string token) {
@@ -905,6 +911,14 @@ namespace CapaPresentacionJAVA.ServiceReference {
         
         public System.Threading.Tasks.Task<string[][]> listaClientesAsync(string token) {
             return base.Channel.listaClientesAsync(token);
+        }
+        
+        public string[][] ListaUsuario(string token) {
+            return base.Channel.ListaUsuario(token);
+        }
+        
+        public System.Threading.Tasks.Task<string[][]> ListaUsuarioAsync(string token) {
+            return base.Channel.ListaUsuarioAsync(token);
         }
         
         public CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada) {

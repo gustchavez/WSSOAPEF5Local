@@ -321,5 +321,23 @@ namespace CapaPresentacionJAVA
 
             return lista;
         }
+
+        [WebMethod]
+        public List<String[]> ListUsuarios(String token)
+        {
+            ServiceReference.WSSHostelClient x = new ServiceReference.WSSHostelClient();
+            List<String[]> lista = new List<String[]>();
+            try
+            {
+                List<String[]> objetos = x.ListaUsuario(token).ToList();
+                return (List<String[]>)objetos;
+            }
+            catch (Exception)
+            {
+                lista = null;
+            }
+
+            return lista;
+        }
     }
 }
