@@ -14,6 +14,12 @@
   <wsdl:message name="IWSSHostel_ValidarLogin_OutputMessage">
     <wsdl:part name="parameters" element="tns:ValidarLoginResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_UsuarioRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:UsuarioRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_UsuarioRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UsuarioRescatarResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_PerfilUsuarioClienteCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteCrear" />
   </wsdl:message>
@@ -403,6 +409,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ValidarLogin" message="tns:IWSSHostel_ValidarLogin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ValidarLoginResponse" message="tns:IWSSHostel_ValidarLogin_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UsuarioRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/UsuarioRescatar" message="tns:IWSSHostel_UsuarioRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/UsuarioRescatarResponse" message="tns:IWSSHostel_UsuarioRescatar_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="PerfilUsuarioClienteCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear" message="tns:IWSSHostel_PerfilUsuarioClienteCrear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrearResponse" message="tns:IWSSHostel_PerfilUsuarioClienteCrear_OutputMessage" />
@@ -664,6 +674,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ValidarLogin">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/ValidarLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/UsuarioRescatar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -63,6 +63,7 @@
     <Compile Include="CRUDProveedor.cs" />
     <Compile Include="CRUDProvision.cs" />
     <Compile Include="CRUDServicioComida.cs" />
+    <Compile Include="CRUDUsuario.cs" />
     <Compile Include="TokenUsuario.cs" />
     <Compile Include="ValidarLoginUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

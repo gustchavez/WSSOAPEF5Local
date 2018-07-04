@@ -74,8 +74,9 @@ namespace CapaWSPresentacion.perfilEmpleado
             n.Item.PerfilUsuario.Persona.Nombre = "Perfil";
             n.Item.PerfilUsuario.Persona.Apellido = "Proveedor";
             n.Item.PerfilUsuario.Persona.FechaNacimiento = DateTime.Now;
-            n.Item.PerfilUsuario.Persona.Email = txtMailUsuario.Text;
+            n.Item.PerfilUsuario.Persona.Email = "ingrese mail";
             n.Item.PerfilUsuario.Persona.Telefono = "123";
+            n.Item.PerfilUsuario.Usuario.Nombre = txtNombreUsuario.Text;
             n.Item.PerfilUsuario.Usuario.Clave = txtConstrasena.Text;
             n.Retorno.Token = Session["TokenUsuario"].ToString();
             //n.Item.PerfilUsuario.Empresa.Rut = txtRutEmpresa.Text;
@@ -90,7 +91,7 @@ namespace CapaWSPresentacion.perfilEmpleado
                 txtCorreoElectronico.Text = string.Empty;
                 txtTelefonoEmpresa.Text = string.Empty;
                 txtCalle.Text = string.Empty;
-                txtMailUsuario.Text = string.Empty;
+                txtNombreUsuario.Text = string.Empty;
                 txtConstrasena.Text = string.Empty;
             }
             else

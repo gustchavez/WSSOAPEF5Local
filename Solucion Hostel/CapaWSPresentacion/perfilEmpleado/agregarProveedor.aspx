@@ -226,7 +226,7 @@
 	<div class="ModificarDatos2">
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nombre Usuario</h4>	
-		<asp:TextBox ID="txtMailUsuario" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+		<asp:TextBox ID="txtNombreUsuario" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nueva Contraseña</h4>	

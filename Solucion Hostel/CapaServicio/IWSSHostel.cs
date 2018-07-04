@@ -24,6 +24,12 @@ namespace CapaServicio
         //[OperationContract]
         //string TokenRecuperarPerfil(string token);
 
+        //Inicio Usuario
+        [OperationContract]
+        ContenedorUsuarios UsuarioRescatar(string token);
+        
+        //Fin Usuario
+
         //Inicio PerfilUsuarioCliente
         [OperationContract]
         ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(ContenedorPerfilUsuarioCliente entrada);

@@ -19,6 +19,7 @@ namespace CapaWSPresentacion.perfilAdministrador
                 if (Perfil.Equals("Administrador"))
                 {
                     Session["PerfilUsuario"] = Perfil;
+                    RescatarDatos();
                 }
                 else {
                     Session["TokenUsuario"] = null;
@@ -31,97 +32,193 @@ namespace CapaWSPresentacion.perfilAdministrador
                 Response.Redirect("perfilIngreso.aspx");
             }
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
+        private void RescatarDatos()
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-            int perfil = DropDownList1.SelectedIndex;
-            //TextBox7.Text = txtGiro.SelectedItem.Text;
+
+            ContenedorCiudades n = new ContenedorCiudades();
+
+            n = x.CiudadRescatar(Session["TokenUsuario"].ToString());
+
+            ddlNombreCiudad.DataSource = null;
+            ddlNombreCiudad.DataSource = n.Lista.Where(p => p.CodPais == 56);
+            ddlNombreCiudad.DataValueField = "Nombre";
+            ddlNombreCiudad.DataTextField = "Nombre";
+            ddlNombreCiudad.DataBind();
+        }
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            int perfil = ddlTipoPerfil.SelectedIndex;
+            //
             switch (perfil)
             {
                 case 1:
                     //Admin
                     ContenedorPerfilUsuarioAdministrador a = new ContenedorPerfilUsuarioAdministrador();
-                    a.Item.Persona.Rut = TextBox1.Text;
-                    a.Item.Persona.Nombre = TextBox2.Text;
-                    a.Item.Persona.Apellido = TextBox3.Text;
-                    a.Item.Persona.FechaNacimiento = DateTime.Parse(TextBox4.Text);
-                    a.Item.Persona.Email = TextBox5.Text;
-                    a.Item.Persona.Telefono = TextBox6.Text;
-                    a.Item.Usuario.Clave = TextBox14.Text;
-                    a.Retorno.Token = Session["TokenUsuario"].ToString();
-                    a = x.PerfilUsuarioAdministradorCrear(a);
+                    a.Item.Persona.Rut              = txtRutPersona.Text;
+                    a.Item.Persona.Nombre           = txtNombrePersona.Text;
+                    a.Item.Persona.Apellido         = txtApellidoPersona.Text;
+                    a.Item.Persona.FechaNacimiento  = DateTime.Parse(txtFecNacPersona.Text);
+                    a.Item.Persona.Email            = txtMailPersona.Text;
+                    a.Item.Persona.Telefono         = txtTelPersona.Text;
+                    a.Item.Usuario.Nombre           = txtUsuario.Text;
+                    a.Item.Usuario.Clave            = txtClave.Text;
+                    a.Retorno.Token                 = Session["TokenUsuario"].ToString();
+                    a                               = x.PerfilUsuarioAdministradorCrear(a);
+                    //
+                    if (a.Retorno.Codigo == 0)
+                    {
+                        //realizado correctamente
+                        LimpiarControles();
+                    }
                     break;
                 case 2:
                     //Empleado
                     ContenedorPerfilUsuarioEmpleado em = new ContenedorPerfilUsuarioEmpleado();
-                    em.Item.Persona.Rut = TextBox1.Text;
-                    em.Item.Persona.Nombre = TextBox2.Text;
-                    em.Item.Persona.Apellido = TextBox3.Text;
-                    em.Item.Persona.FechaNacimiento = DateTime.Parse(TextBox4.Text);
-                    em.Item.Persona.Email = TextBox5.Text;
-                    em.Item.Persona.Telefono = TextBox6.Text;
-                    em.Item.Usuario.Clave = TextBox14.Text;
-                    em.Retorno.Token = Session["TokenUsuario"].ToString();
-                    em = x.PerfilUsuarioEmpleadoCrear(em);
+                    em.Item.Persona.Rut             = txtRutPersona.Text;
+                    em.Item.Persona.Nombre          = txtNombrePersona.Text;
+                    em.Item.Persona.Apellido        = txtApellidoPersona.Text;
+                    em.Item.Persona.FechaNacimiento = DateTime.Parse(txtFecNacPersona.Text);
+                    em.Item.Persona.Email           = txtMailPersona.Text;
+                    em.Item.Persona.Telefono        = txtTelPersona.Text;
+                    em.Item.Usuario.Nombre          = txtUsuario.Text;
+                    em.Item.Usuario.Clave           = txtClave.Text;
+                    em.Retorno.Token                = Session["TokenUsuario"].ToString();
+                    em                              = x.PerfilUsuarioEmpleadoCrear(em);
+                    //
+                    if (em.Retorno.Codigo == 0)
+                    {
+                        //realizado correctamente
+                        LimpiarControles();
+                    }
                     break;
                 case 3:
                     //Cliente      
                     ContenedorPerfilUsuarioCliente n = new ContenedorPerfilUsuarioCliente();
 
-                    n.Item.Cliente.Rut = TextBox7.Text;
-                    n.Item.PerfilUsuario.Empresa.RazonSocial = TextBox8.Text;
-                    n.Item.PerfilUsuario.Empresa.Rubro = txtGiro.SelectedItem.Text;
-                    n.Item.PerfilUsuario.Empresa.Email = TextBox9.Text;
-                    n.Item.PerfilUsuario.Empresa.Telefono = TextBox10.Text;
-                    n.Item.PerfilUsuario.Direccion.CodPais = 56;
-                    n.Item.PerfilUsuario.Direccion.CodPostal = "Codigo postal";
-                    n.Item.PerfilUsuario.Direccion.NombreCiudad = txtNombreCiudad.SelectedItem.Text;
-                    n.Item.PerfilUsuario.Direccion.Comuna = txtComuna.SelectedItem.Text;
-                    n.Item.PerfilUsuario.Direccion.Calle = "";
-                    n.Item.PerfilUsuario.Direccion.Numero = 0;
-                    n.Item.PerfilUsuario.Empresa.Logo = "Logo";
-                    n.Item.PerfilUsuario.Persona.Rut = TextBox1.Text;
-                    n.Item.PerfilUsuario.Persona.Nombre = TextBox2.Text;
-                    n.Item.PerfilUsuario.Persona.Apellido = TextBox3.Text;
-                    n.Item.PerfilUsuario.Persona.FechaNacimiento = DateTime.Parse(TextBox4.Text);
-                    n.Item.PerfilUsuario.Persona.Email = TextBox5.Text;
-                    n.Item.PerfilUsuario.Persona.Telefono = TextBox6.Text;
-                    n.Item.PerfilUsuario.Usuario.Clave = TextBox14.Text;
-                    n.Retorno.Token = Session["TokenUsuario"].ToString();
-                    n = x.PerfilUsuarioClienteCrear(n);
+                    n.Item.Cliente.Rut                           = txtRutEmpresa.Text;
+                    n.Item.PerfilUsuario.Empresa.RazonSocial     = txtRazonSocial.Text;
+                    n.Item.PerfilUsuario.Empresa.Rubro           = ddlGiro.SelectedItem.Value;
+                    n.Item.PerfilUsuario.Empresa.Email           = txtMailEmpresa.Text;
+                    n.Item.PerfilUsuario.Empresa.Telefono        = txtTelEmpresa.Text;
+                    n.Item.PerfilUsuario.Empresa.Logo            = "Logo";
+                    n.Item.PerfilUsuario.Persona.Rut             = txtRutPersona.Text;
+                    n.Item.PerfilUsuario.Persona.Nombre          = txtNombrePersona.Text;
+                    n.Item.PerfilUsuario.Persona.Apellido        = txtApellidoPersona.Text;
+                    n.Item.PerfilUsuario.Persona.FechaNacimiento = DateTime.Parse(txtFecNacPersona.Text);
+                    n.Item.PerfilUsuario.Persona.Email           = txtMailPersona.Text;
+                    n.Item.PerfilUsuario.Persona.Telefono        = txtTelPersona.Text;
+                    n.Item.PerfilUsuario.Direccion.Calle         = txtDirEmp.Text;
+                    n.Item.PerfilUsuario.Direccion.Numero        = 0;
+                    n.Item.PerfilUsuario.Direccion.Comuna        = ddlComuna.SelectedItem.Value;
+                    n.Item.PerfilUsuario.Direccion.CodPostal     = "Codigo postal";
+                    n.Item.PerfilUsuario.Direccion.NombreCiudad  = ddlNombreCiudad.SelectedItem.Value;
+                    n.Item.PerfilUsuario.Direccion.CodPais       = 56;
+                    n.Item.PerfilUsuario.Usuario.Nombre          = txtUsuario.Text;
+                    n.Item.PerfilUsuario.Usuario.Clave           = txtClave.Text;
+                    n.Retorno.Token                              = Session["TokenUsuario"].ToString();
+                    n                                            = x.PerfilUsuarioClienteCrear(n);
+                    //
+                    if (n.Retorno.Codigo == 0)
+                    {
+                        //realizado correctamente
+                        LimpiarControles();
+                    }
                     break;
                 case 4:
-                    //Proveedor
-                    
+                    //Proveedor                    
                     ContenedorPerfilUsuarioProveedor p = new ContenedorPerfilUsuarioProveedor();
 
-                    p.Item.Proveedor.Rut = TextBox7.Text;
-                    p.Item.PerfilUsuario.Empresa.RazonSocial = TextBox8.Text;
-                    p.Item.PerfilUsuario.Empresa.Rubro = txtGiro.SelectedItem.Text;
-                    p.Item.PerfilUsuario.Empresa.Email = TextBox9.Text;
-                    p.Item.PerfilUsuario.Empresa.Telefono = TextBox10.Text;
-                    p.Item.PerfilUsuario.Direccion.CodPais = 56;
-                    p.Item.PerfilUsuario.Direccion.CodPostal = "Codigo postal";
-                    p.Item.PerfilUsuario.Direccion.NombreCiudad = txtNombreCiudad.SelectedItem.Text;
-                    p.Item.PerfilUsuario.Direccion.Comuna = txtComuna.SelectedItem.Text;
-                    p.Item.PerfilUsuario.Direccion.Calle = "";
-                    p.Item.PerfilUsuario.Direccion.Numero = 0;
-                    p.Item.PerfilUsuario.Empresa.Logo = "Logo";
-                    p.Item.PerfilUsuario.Persona.Rut = TextBox1.Text;
-                    p.Item.PerfilUsuario.Persona.Nombre = TextBox2.Text;
-                    p.Item.PerfilUsuario.Persona.Apellido = TextBox3.Text;
-                    p.Item.PerfilUsuario.Persona.FechaNacimiento = DateTime.Parse(TextBox4.Text);
-                    p.Item.PerfilUsuario.Persona.Email = TextBox5.Text;
-                    p.Item.PerfilUsuario.Persona.Telefono = TextBox6.Text;
-                    p.Item.PerfilUsuario.Usuario.Clave = TextBox14.Text;
-                    p.Retorno.Token = Session["TokenUsuario"].ToString();   
-                    p = x.PerfilUsuarioProveedorCrear(p);                 
+                    p.Item.Proveedor.Rut                         = txtRutEmpresa.Text;
+                    p.Item.PerfilUsuario.Empresa.RazonSocial     = txtRazonSocial.Text;
+                    p.Item.PerfilUsuario.Empresa.Rubro           = ddlGiro.SelectedItem.Value;
+                    p.Item.PerfilUsuario.Empresa.Email           = txtMailEmpresa.Text;
+                    p.Item.PerfilUsuario.Empresa.Telefono        = txtTelEmpresa.Text;
+                    p.Item.PerfilUsuario.Direccion.CodPais       = 56;
+                    p.Item.PerfilUsuario.Direccion.CodPostal     = "Codigo postal";
+                    p.Item.PerfilUsuario.Direccion.NombreCiudad  = ddlNombreCiudad.SelectedItem.Value;
+                    p.Item.PerfilUsuario.Direccion.Comuna        = ddlComuna.SelectedItem.Value;
+                    p.Item.PerfilUsuario.Direccion.Calle         = txtDirEmp.Text;
+                    p.Item.PerfilUsuario.Direccion.Numero        = 0;
+                    p.Item.PerfilUsuario.Empresa.Logo            = "Logo";
+                    p.Item.PerfilUsuario.Persona.Rut             = txtRutPersona.Text;
+                    p.Item.PerfilUsuario.Persona.Nombre          = txtNombrePersona.Text;
+                    p.Item.PerfilUsuario.Persona.Apellido        = txtApellidoPersona.Text;
+                    p.Item.PerfilUsuario.Persona.FechaNacimiento = DateTime.Parse(txtFecNacPersona.Text);
+                    p.Item.PerfilUsuario.Persona.Email           = txtMailPersona.Text;
+                    p.Item.PerfilUsuario.Persona.Telefono        = txtTelPersona.Text;
+                    p.Item.PerfilUsuario.Usuario.Nombre          = txtUsuario.Text;
+                    p.Item.PerfilUsuario.Usuario.Clave           = txtClave.Text;
+                    p.Retorno.Token                              = Session["TokenUsuario"].ToString();   
+                    p                                            = x.PerfilUsuarioProveedorCrear(p);
+                    //
+                    if (p.Retorno.Codigo == 0)
+                    {
+                        //realizado correctamente
+                        LimpiarControles();
+                    }
                     break;
                 default:
                     break;
             }
+        }
 
+        private void LimpiarControles()
+        {
+            txtApellidoPersona.Text = string.Empty;
+            txtClave.Text = string.Empty;
+            txtDirEmp.Text = string.Empty;
+            txtFecNacPersona.Text = string.Empty;
+            txtMailEmpresa.Text = string.Empty;
+            txtMailPersona.Text = string.Empty;
+            txtNombrePersona.Text = string.Empty;
+            txtRazonSocial.Text = string.Empty;
+            txtRutEmpresa.Text = string.Empty;
+            txtRutPersona.Text = string.Empty;
+            txtTelEmpresa.Text = string.Empty;
+            txtTelPersona.Text = string.Empty;
+            txtUsuario.Text = string.Empty;
+            //
+            ddlComuna.SelectedIndex = 0;
+            ddlGiro.SelectedIndex = 0;
+            ddlNombreCiudad.SelectedIndex = 0;
+            //
+            ddlTipoPerfil.SelectedIndex = 0;
+        }
+
+        protected void ddlTipoPerfil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlTipoPerfil.SelectedIndex == 3 || ddlTipoPerfil.SelectedIndex == 4)
+            {
+                HabilitarControlesEmpresa();
+            } else {
+                DeshabilitarControlesEmpresa();
+            }
+        }
+
+        private void DeshabilitarControlesEmpresa()
+        {
+            txtDirEmp.Enabled       = false;
+            txtMailEmpresa.Enabled  = false;
+            txtRazonSocial.Enabled  = false;
+            txtRutEmpresa.Enabled   = false;
+            txtTelEmpresa.Enabled   = false;
+            ddlComuna.Enabled       = false;
+            ddlGiro.Enabled         = false;
+            ddlNombreCiudad.Enabled = false;
+        }
+
+        private void HabilitarControlesEmpresa()
+        {
+            txtDirEmp.Enabled       = true;
+            txtMailEmpresa.Enabled  = true;
+            txtRazonSocial.Enabled  = true;
+            txtRutEmpresa.Enabled   = true;
+            txtTelEmpresa.Enabled   = true;
+            ddlComuna.Enabled       = true;
+            ddlGiro.Enabled         = true;
+            ddlNombreCiudad.Enabled = true;
         }
     }
 }

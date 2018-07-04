@@ -209,39 +209,6 @@ namespace CapaDato
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_PROVISION", p_IN_RUT_PROVEEDORParameter, p_IN_CODIGO_PRODUCTOParameter, p_IN_PRECIOParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
-        public virtual int SP_CREAR_ADMINISTRADOR(string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
-                new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
-                new ObjectParameter("P_IN_RUT_PERSONA", typeof(string));
-    
-            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
-                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
-                new ObjectParameter("P_IN_NOMBRE", typeof(string));
-    
-            var p_IN_APELLIDOParameter = p_IN_APELLIDO != null ?
-                new ObjectParameter("P_IN_APELLIDO", p_IN_APELLIDO) :
-                new ObjectParameter("P_IN_APELLIDO", typeof(string));
-    
-            var p_IN_NACIMIENTOParameter = p_IN_NACIMIENTO.HasValue ?
-                new ObjectParameter("P_IN_NACIMIENTO", p_IN_NACIMIENTO) :
-                new ObjectParameter("P_IN_NACIMIENTO", typeof(System.DateTime));
-    
-            var p_IN_EMAIL_PERParameter = p_IN_EMAIL_PER != null ?
-                new ObjectParameter("P_IN_EMAIL_PER", p_IN_EMAIL_PER) :
-                new ObjectParameter("P_IN_EMAIL_PER", typeof(string));
-    
-            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER != null ?
-                new ObjectParameter("P_IN_TELEFONO_PER", p_IN_TELEFONO_PER) :
-                new ObjectParameter("P_IN_TELEFONO_PER", typeof(string));
-    
-            var p_IN_CLAVEParameter = p_IN_CLAVE != null ?
-                new ObjectParameter("P_IN_CLAVE", p_IN_CLAVE) :
-                new ObjectParameter("P_IN_CLAVE", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_ADMINISTRADOR", p_IN_RUT_PERSONAParameter, p_IN_NOMBREParameter, p_IN_APELLIDOParameter, p_IN_NACIMIENTOParameter, p_IN_EMAIL_PERParameter, p_IN_TELEFONO_PERParameter, p_IN_CLAVEParameter, p_OUT_CODRET, p_OUT_GLSRET);
-        }
-    
         public virtual int SP_CREAR_CAMA(string p_IN_DESCRIPCION, string p_IN_DISPONIBLE, Nullable<decimal> p_IN_CODIGO_HABITACION, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_CODIGO)
         {
             var p_IN_DESCRIPCIONParameter = p_IN_DESCRIPCION != null ?
@@ -257,120 +224,6 @@ namespace CapaDato
                 new ObjectParameter("P_IN_CODIGO_HABITACION", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_CAMA", p_IN_DESCRIPCIONParameter, p_IN_DISPONIBLEParameter, p_IN_CODIGO_HABITACIONParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_CODIGO);
-        }
-    
-        public virtual int SP_CREAR_CLIENTE(string p_IN_RUT_EMPRESA, string p_IN_RAZON_SOCIAL, string p_IN_RUBRO, string p_IN_EMAIL_EMP, string p_IN_TELEFONO_EMP, string p_IN_LOGO, string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CALLE, Nullable<decimal> p_IN_NUMERO, string p_IN_COMUNA, string p_IN_COD_POSTAL, string p_IN_NOMBRE_CIUDAD, Nullable<decimal> p_IN_COD_PAIS, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            var p_IN_RUT_EMPRESAParameter = p_IN_RUT_EMPRESA != null ?
-                new ObjectParameter("P_IN_RUT_EMPRESA", p_IN_RUT_EMPRESA) :
-                new ObjectParameter("P_IN_RUT_EMPRESA", typeof(string));
-    
-            var p_IN_RAZON_SOCIALParameter = p_IN_RAZON_SOCIAL != null ?
-                new ObjectParameter("P_IN_RAZON_SOCIAL", p_IN_RAZON_SOCIAL) :
-                new ObjectParameter("P_IN_RAZON_SOCIAL", typeof(string));
-    
-            var p_IN_RUBROParameter = p_IN_RUBRO != null ?
-                new ObjectParameter("P_IN_RUBRO", p_IN_RUBRO) :
-                new ObjectParameter("P_IN_RUBRO", typeof(string));
-    
-            var p_IN_EMAIL_EMPParameter = p_IN_EMAIL_EMP != null ?
-                new ObjectParameter("P_IN_EMAIL_EMP", p_IN_EMAIL_EMP) :
-                new ObjectParameter("P_IN_EMAIL_EMP", typeof(string));
-    
-            var p_IN_TELEFONO_EMPParameter = p_IN_TELEFONO_EMP != null ?
-                new ObjectParameter("P_IN_TELEFONO_EMP", p_IN_TELEFONO_EMP) :
-                new ObjectParameter("P_IN_TELEFONO_EMP", typeof(string));
-    
-            var p_IN_LOGOParameter = p_IN_LOGO != null ?
-                new ObjectParameter("P_IN_LOGO", p_IN_LOGO) :
-                new ObjectParameter("P_IN_LOGO", typeof(string));
-    
-            var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
-                new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
-                new ObjectParameter("P_IN_RUT_PERSONA", typeof(string));
-    
-            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
-                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
-                new ObjectParameter("P_IN_NOMBRE", typeof(string));
-    
-            var p_IN_APELLIDOParameter = p_IN_APELLIDO != null ?
-                new ObjectParameter("P_IN_APELLIDO", p_IN_APELLIDO) :
-                new ObjectParameter("P_IN_APELLIDO", typeof(string));
-    
-            var p_IN_NACIMIENTOParameter = p_IN_NACIMIENTO.HasValue ?
-                new ObjectParameter("P_IN_NACIMIENTO", p_IN_NACIMIENTO) :
-                new ObjectParameter("P_IN_NACIMIENTO", typeof(System.DateTime));
-    
-            var p_IN_EMAIL_PERParameter = p_IN_EMAIL_PER != null ?
-                new ObjectParameter("P_IN_EMAIL_PER", p_IN_EMAIL_PER) :
-                new ObjectParameter("P_IN_EMAIL_PER", typeof(string));
-    
-            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER != null ?
-                new ObjectParameter("P_IN_TELEFONO_PER", p_IN_TELEFONO_PER) :
-                new ObjectParameter("P_IN_TELEFONO_PER", typeof(string));
-    
-            var p_IN_CALLEParameter = p_IN_CALLE != null ?
-                new ObjectParameter("P_IN_CALLE", p_IN_CALLE) :
-                new ObjectParameter("P_IN_CALLE", typeof(string));
-    
-            var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
-                new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
-                new ObjectParameter("P_IN_NUMERO", typeof(decimal));
-    
-            var p_IN_COMUNAParameter = p_IN_COMUNA != null ?
-                new ObjectParameter("P_IN_COMUNA", p_IN_COMUNA) :
-                new ObjectParameter("P_IN_COMUNA", typeof(string));
-    
-            var p_IN_COD_POSTALParameter = p_IN_COD_POSTAL != null ?
-                new ObjectParameter("P_IN_COD_POSTAL", p_IN_COD_POSTAL) :
-                new ObjectParameter("P_IN_COD_POSTAL", typeof(string));
-    
-            var p_IN_NOMBRE_CIUDADParameter = p_IN_NOMBRE_CIUDAD != null ?
-                new ObjectParameter("P_IN_NOMBRE_CIUDAD", p_IN_NOMBRE_CIUDAD) :
-                new ObjectParameter("P_IN_NOMBRE_CIUDAD", typeof(string));
-    
-            var p_IN_COD_PAISParameter = p_IN_COD_PAIS.HasValue ?
-                new ObjectParameter("P_IN_COD_PAIS", p_IN_COD_PAIS) :
-                new ObjectParameter("P_IN_COD_PAIS", typeof(decimal));
-    
-            var p_IN_CLAVEParameter = p_IN_CLAVE != null ?
-                new ObjectParameter("P_IN_CLAVE", p_IN_CLAVE) :
-                new ObjectParameter("P_IN_CLAVE", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_CLIENTE", p_IN_RUT_EMPRESAParameter, p_IN_RAZON_SOCIALParameter, p_IN_RUBROParameter, p_IN_EMAIL_EMPParameter, p_IN_TELEFONO_EMPParameter, p_IN_LOGOParameter, p_IN_RUT_PERSONAParameter, p_IN_NOMBREParameter, p_IN_APELLIDOParameter, p_IN_NACIMIENTOParameter, p_IN_EMAIL_PERParameter, p_IN_TELEFONO_PERParameter, p_IN_CALLEParameter, p_IN_NUMEROParameter, p_IN_COMUNAParameter, p_IN_COD_POSTALParameter, p_IN_NOMBRE_CIUDADParameter, p_IN_COD_PAISParameter, p_IN_CLAVEParameter, p_OUT_CODRET, p_OUT_GLSRET);
-        }
-    
-        public virtual int SP_CREAR_EMPLEADO(string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
-                new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
-                new ObjectParameter("P_IN_RUT_PERSONA", typeof(string));
-    
-            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
-                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
-                new ObjectParameter("P_IN_NOMBRE", typeof(string));
-    
-            var p_IN_APELLIDOParameter = p_IN_APELLIDO != null ?
-                new ObjectParameter("P_IN_APELLIDO", p_IN_APELLIDO) :
-                new ObjectParameter("P_IN_APELLIDO", typeof(string));
-    
-            var p_IN_NACIMIENTOParameter = p_IN_NACIMIENTO.HasValue ?
-                new ObjectParameter("P_IN_NACIMIENTO", p_IN_NACIMIENTO) :
-                new ObjectParameter("P_IN_NACIMIENTO", typeof(System.DateTime));
-    
-            var p_IN_EMAIL_PERParameter = p_IN_EMAIL_PER != null ?
-                new ObjectParameter("P_IN_EMAIL_PER", p_IN_EMAIL_PER) :
-                new ObjectParameter("P_IN_EMAIL_PER", typeof(string));
-    
-            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER != null ?
-                new ObjectParameter("P_IN_TELEFONO_PER", p_IN_TELEFONO_PER) :
-                new ObjectParameter("P_IN_TELEFONO_PER", typeof(string));
-    
-            var p_IN_CLAVEParameter = p_IN_CLAVE != null ?
-                new ObjectParameter("P_IN_CLAVE", p_IN_CLAVE) :
-                new ObjectParameter("P_IN_CLAVE", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_EMPLEADO", p_IN_RUT_PERSONAParameter, p_IN_NOMBREParameter, p_IN_APELLIDOParameter, p_IN_NACIMIENTOParameter, p_IN_EMAIL_PERParameter, p_IN_TELEFONO_PERParameter, p_IN_CLAVEParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
         public virtual int SP_CREAR_ENC_PEDIDO(string p_IN_RUT_PROVEEDOR, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET, ObjectParameter p_OUT_NUMERO)
@@ -439,87 +292,6 @@ namespace CapaDato
                 new ObjectParameter("P_IN_STOCK_CRITICO", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_PRODUCTO", p_IN_DESCRIPCIONParameter, p_IN_STOCKParameter, p_IN_STOCK_CRITICOParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_CODIGO);
-        }
-    
-        public virtual int SP_CREAR_PROVEEDOR(string p_IN_RUT_EMPRESA, string p_IN_RAZON_SOCIAL, string p_IN_RUBRO, string p_IN_EMAIL_EMP, string p_IN_TELEFONO_EMP, string p_IN_LOGO, string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CALLE, Nullable<decimal> p_IN_NUMERO, string p_IN_COMUNA, string p_IN_COD_POSTAL, string p_IN_NOMBRE_CIUDAD, Nullable<decimal> p_IN_COD_PAIS, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
-        {
-            var p_IN_RUT_EMPRESAParameter = p_IN_RUT_EMPRESA != null ?
-                new ObjectParameter("P_IN_RUT_EMPRESA", p_IN_RUT_EMPRESA) :
-                new ObjectParameter("P_IN_RUT_EMPRESA", typeof(string));
-    
-            var p_IN_RAZON_SOCIALParameter = p_IN_RAZON_SOCIAL != null ?
-                new ObjectParameter("P_IN_RAZON_SOCIAL", p_IN_RAZON_SOCIAL) :
-                new ObjectParameter("P_IN_RAZON_SOCIAL", typeof(string));
-    
-            var p_IN_RUBROParameter = p_IN_RUBRO != null ?
-                new ObjectParameter("P_IN_RUBRO", p_IN_RUBRO) :
-                new ObjectParameter("P_IN_RUBRO", typeof(string));
-    
-            var p_IN_EMAIL_EMPParameter = p_IN_EMAIL_EMP != null ?
-                new ObjectParameter("P_IN_EMAIL_EMP", p_IN_EMAIL_EMP) :
-                new ObjectParameter("P_IN_EMAIL_EMP", typeof(string));
-    
-            var p_IN_TELEFONO_EMPParameter = p_IN_TELEFONO_EMP != null ?
-                new ObjectParameter("P_IN_TELEFONO_EMP", p_IN_TELEFONO_EMP) :
-                new ObjectParameter("P_IN_TELEFONO_EMP", typeof(string));
-    
-            var p_IN_LOGOParameter = p_IN_LOGO != null ?
-                new ObjectParameter("P_IN_LOGO", p_IN_LOGO) :
-                new ObjectParameter("P_IN_LOGO", typeof(string));
-    
-            var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
-                new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
-                new ObjectParameter("P_IN_RUT_PERSONA", typeof(string));
-    
-            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
-                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
-                new ObjectParameter("P_IN_NOMBRE", typeof(string));
-    
-            var p_IN_APELLIDOParameter = p_IN_APELLIDO != null ?
-                new ObjectParameter("P_IN_APELLIDO", p_IN_APELLIDO) :
-                new ObjectParameter("P_IN_APELLIDO", typeof(string));
-    
-            var p_IN_NACIMIENTOParameter = p_IN_NACIMIENTO.HasValue ?
-                new ObjectParameter("P_IN_NACIMIENTO", p_IN_NACIMIENTO) :
-                new ObjectParameter("P_IN_NACIMIENTO", typeof(System.DateTime));
-    
-            var p_IN_EMAIL_PERParameter = p_IN_EMAIL_PER != null ?
-                new ObjectParameter("P_IN_EMAIL_PER", p_IN_EMAIL_PER) :
-                new ObjectParameter("P_IN_EMAIL_PER", typeof(string));
-    
-            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER != null ?
-                new ObjectParameter("P_IN_TELEFONO_PER", p_IN_TELEFONO_PER) :
-                new ObjectParameter("P_IN_TELEFONO_PER", typeof(string));
-    
-            var p_IN_CALLEParameter = p_IN_CALLE != null ?
-                new ObjectParameter("P_IN_CALLE", p_IN_CALLE) :
-                new ObjectParameter("P_IN_CALLE", typeof(string));
-    
-            var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
-                new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
-                new ObjectParameter("P_IN_NUMERO", typeof(decimal));
-    
-            var p_IN_COMUNAParameter = p_IN_COMUNA != null ?
-                new ObjectParameter("P_IN_COMUNA", p_IN_COMUNA) :
-                new ObjectParameter("P_IN_COMUNA", typeof(string));
-    
-            var p_IN_COD_POSTALParameter = p_IN_COD_POSTAL != null ?
-                new ObjectParameter("P_IN_COD_POSTAL", p_IN_COD_POSTAL) :
-                new ObjectParameter("P_IN_COD_POSTAL", typeof(string));
-    
-            var p_IN_NOMBRE_CIUDADParameter = p_IN_NOMBRE_CIUDAD != null ?
-                new ObjectParameter("P_IN_NOMBRE_CIUDAD", p_IN_NOMBRE_CIUDAD) :
-                new ObjectParameter("P_IN_NOMBRE_CIUDAD", typeof(string));
-    
-            var p_IN_COD_PAISParameter = p_IN_COD_PAIS.HasValue ?
-                new ObjectParameter("P_IN_COD_PAIS", p_IN_COD_PAIS) :
-                new ObjectParameter("P_IN_COD_PAIS", typeof(decimal));
-    
-            var p_IN_CLAVEParameter = p_IN_CLAVE != null ?
-                new ObjectParameter("P_IN_CLAVE", p_IN_CLAVE) :
-                new ObjectParameter("P_IN_CLAVE", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_PROVEEDOR", p_IN_RUT_EMPRESAParameter, p_IN_RAZON_SOCIALParameter, p_IN_RUBROParameter, p_IN_EMAIL_EMPParameter, p_IN_TELEFONO_EMPParameter, p_IN_LOGOParameter, p_IN_RUT_PERSONAParameter, p_IN_NOMBREParameter, p_IN_APELLIDOParameter, p_IN_NACIMIENTOParameter, p_IN_EMAIL_PERParameter, p_IN_TELEFONO_PERParameter, p_IN_CALLEParameter, p_IN_NUMEROParameter, p_IN_COMUNAParameter, p_IN_COD_POSTALParameter, p_IN_NOMBRE_CIUDADParameter, p_IN_COD_PAISParameter, p_IN_CLAVEParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
         public virtual int SP_CREAR_PROVISION(string p_IN_RUT_PROVEEDOR, Nullable<decimal> p_IN_CODIGO_PRODUCTO, Nullable<decimal> p_IN_PRECIO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
@@ -1236,6 +1008,250 @@ namespace CapaDato
                 new ObjectParameter("P_IN_EGRESO", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_OBTENER_DISPONIBILIDAD", p_IN_INGRESOParameter, p_IN_EGRESOParameter, p_OUT_CODRET, p_OUT_GLSRET, p_OUT_COD_HAB_SIM, p_OUT_COD_HAB_DOB, p_OUT_COD_HAB_TRI, p_OUT_COD_HAB_CUA);
+        }
+    
+        public virtual int SP_CREAR_ADMINISTRADOR(string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_NOMBRE_USU, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
+                new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
+                new ObjectParameter("P_IN_RUT_PERSONA", typeof(string));
+    
+            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
+                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
+                new ObjectParameter("P_IN_NOMBRE", typeof(string));
+    
+            var p_IN_APELLIDOParameter = p_IN_APELLIDO != null ?
+                new ObjectParameter("P_IN_APELLIDO", p_IN_APELLIDO) :
+                new ObjectParameter("P_IN_APELLIDO", typeof(string));
+    
+            var p_IN_NACIMIENTOParameter = p_IN_NACIMIENTO.HasValue ?
+                new ObjectParameter("P_IN_NACIMIENTO", p_IN_NACIMIENTO) :
+                new ObjectParameter("P_IN_NACIMIENTO", typeof(System.DateTime));
+    
+            var p_IN_EMAIL_PERParameter = p_IN_EMAIL_PER != null ?
+                new ObjectParameter("P_IN_EMAIL_PER", p_IN_EMAIL_PER) :
+                new ObjectParameter("P_IN_EMAIL_PER", typeof(string));
+    
+            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER != null ?
+                new ObjectParameter("P_IN_TELEFONO_PER", p_IN_TELEFONO_PER) :
+                new ObjectParameter("P_IN_TELEFONO_PER", typeof(string));
+    
+            var p_IN_NOMBRE_USUParameter = p_IN_NOMBRE_USU != null ?
+                new ObjectParameter("P_IN_NOMBRE_USU", p_IN_NOMBRE_USU) :
+                new ObjectParameter("P_IN_NOMBRE_USU", typeof(string));
+    
+            var p_IN_CLAVEParameter = p_IN_CLAVE != null ?
+                new ObjectParameter("P_IN_CLAVE", p_IN_CLAVE) :
+                new ObjectParameter("P_IN_CLAVE", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_ADMINISTRADOR", p_IN_RUT_PERSONAParameter, p_IN_NOMBREParameter, p_IN_APELLIDOParameter, p_IN_NACIMIENTOParameter, p_IN_EMAIL_PERParameter, p_IN_TELEFONO_PERParameter, p_IN_NOMBRE_USUParameter, p_IN_CLAVEParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_CREAR_CLIENTE(string p_IN_RUT_EMPRESA, string p_IN_RAZON_SOCIAL, string p_IN_RUBRO, string p_IN_EMAIL_EMP, string p_IN_TELEFONO_EMP, string p_IN_LOGO, string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CALLE, Nullable<decimal> p_IN_NUMERO, string p_IN_COMUNA, string p_IN_COD_POSTAL, string p_IN_NOMBRE_CIUDAD, Nullable<decimal> p_IN_COD_PAIS, string p_IN_NOMBRE_USU, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_RUT_EMPRESAParameter = p_IN_RUT_EMPRESA != null ?
+                new ObjectParameter("P_IN_RUT_EMPRESA", p_IN_RUT_EMPRESA) :
+                new ObjectParameter("P_IN_RUT_EMPRESA", typeof(string));
+    
+            var p_IN_RAZON_SOCIALParameter = p_IN_RAZON_SOCIAL != null ?
+                new ObjectParameter("P_IN_RAZON_SOCIAL", p_IN_RAZON_SOCIAL) :
+                new ObjectParameter("P_IN_RAZON_SOCIAL", typeof(string));
+    
+            var p_IN_RUBROParameter = p_IN_RUBRO != null ?
+                new ObjectParameter("P_IN_RUBRO", p_IN_RUBRO) :
+                new ObjectParameter("P_IN_RUBRO", typeof(string));
+    
+            var p_IN_EMAIL_EMPParameter = p_IN_EMAIL_EMP != null ?
+                new ObjectParameter("P_IN_EMAIL_EMP", p_IN_EMAIL_EMP) :
+                new ObjectParameter("P_IN_EMAIL_EMP", typeof(string));
+    
+            var p_IN_TELEFONO_EMPParameter = p_IN_TELEFONO_EMP != null ?
+                new ObjectParameter("P_IN_TELEFONO_EMP", p_IN_TELEFONO_EMP) :
+                new ObjectParameter("P_IN_TELEFONO_EMP", typeof(string));
+    
+            var p_IN_LOGOParameter = p_IN_LOGO != null ?
+                new ObjectParameter("P_IN_LOGO", p_IN_LOGO) :
+                new ObjectParameter("P_IN_LOGO", typeof(string));
+    
+            var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
+                new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
+                new ObjectParameter("P_IN_RUT_PERSONA", typeof(string));
+    
+            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
+                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
+                new ObjectParameter("P_IN_NOMBRE", typeof(string));
+    
+            var p_IN_APELLIDOParameter = p_IN_APELLIDO != null ?
+                new ObjectParameter("P_IN_APELLIDO", p_IN_APELLIDO) :
+                new ObjectParameter("P_IN_APELLIDO", typeof(string));
+    
+            var p_IN_NACIMIENTOParameter = p_IN_NACIMIENTO.HasValue ?
+                new ObjectParameter("P_IN_NACIMIENTO", p_IN_NACIMIENTO) :
+                new ObjectParameter("P_IN_NACIMIENTO", typeof(System.DateTime));
+    
+            var p_IN_EMAIL_PERParameter = p_IN_EMAIL_PER != null ?
+                new ObjectParameter("P_IN_EMAIL_PER", p_IN_EMAIL_PER) :
+                new ObjectParameter("P_IN_EMAIL_PER", typeof(string));
+    
+            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER != null ?
+                new ObjectParameter("P_IN_TELEFONO_PER", p_IN_TELEFONO_PER) :
+                new ObjectParameter("P_IN_TELEFONO_PER", typeof(string));
+    
+            var p_IN_CALLEParameter = p_IN_CALLE != null ?
+                new ObjectParameter("P_IN_CALLE", p_IN_CALLE) :
+                new ObjectParameter("P_IN_CALLE", typeof(string));
+    
+            var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
+                new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
+                new ObjectParameter("P_IN_NUMERO", typeof(decimal));
+    
+            var p_IN_COMUNAParameter = p_IN_COMUNA != null ?
+                new ObjectParameter("P_IN_COMUNA", p_IN_COMUNA) :
+                new ObjectParameter("P_IN_COMUNA", typeof(string));
+    
+            var p_IN_COD_POSTALParameter = p_IN_COD_POSTAL != null ?
+                new ObjectParameter("P_IN_COD_POSTAL", p_IN_COD_POSTAL) :
+                new ObjectParameter("P_IN_COD_POSTAL", typeof(string));
+    
+            var p_IN_NOMBRE_CIUDADParameter = p_IN_NOMBRE_CIUDAD != null ?
+                new ObjectParameter("P_IN_NOMBRE_CIUDAD", p_IN_NOMBRE_CIUDAD) :
+                new ObjectParameter("P_IN_NOMBRE_CIUDAD", typeof(string));
+    
+            var p_IN_COD_PAISParameter = p_IN_COD_PAIS.HasValue ?
+                new ObjectParameter("P_IN_COD_PAIS", p_IN_COD_PAIS) :
+                new ObjectParameter("P_IN_COD_PAIS", typeof(decimal));
+    
+            var p_IN_NOMBRE_USUParameter = p_IN_NOMBRE_USU != null ?
+                new ObjectParameter("P_IN_NOMBRE_USU", p_IN_NOMBRE_USU) :
+                new ObjectParameter("P_IN_NOMBRE_USU", typeof(string));
+    
+            var p_IN_CLAVEParameter = p_IN_CLAVE != null ?
+                new ObjectParameter("P_IN_CLAVE", p_IN_CLAVE) :
+                new ObjectParameter("P_IN_CLAVE", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_CLIENTE", p_IN_RUT_EMPRESAParameter, p_IN_RAZON_SOCIALParameter, p_IN_RUBROParameter, p_IN_EMAIL_EMPParameter, p_IN_TELEFONO_EMPParameter, p_IN_LOGOParameter, p_IN_RUT_PERSONAParameter, p_IN_NOMBREParameter, p_IN_APELLIDOParameter, p_IN_NACIMIENTOParameter, p_IN_EMAIL_PERParameter, p_IN_TELEFONO_PERParameter, p_IN_CALLEParameter, p_IN_NUMEROParameter, p_IN_COMUNAParameter, p_IN_COD_POSTALParameter, p_IN_NOMBRE_CIUDADParameter, p_IN_COD_PAISParameter, p_IN_NOMBRE_USUParameter, p_IN_CLAVEParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_CREAR_EMPLEADO(string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_NOMBRE_USU, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
+                new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
+                new ObjectParameter("P_IN_RUT_PERSONA", typeof(string));
+    
+            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
+                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
+                new ObjectParameter("P_IN_NOMBRE", typeof(string));
+    
+            var p_IN_APELLIDOParameter = p_IN_APELLIDO != null ?
+                new ObjectParameter("P_IN_APELLIDO", p_IN_APELLIDO) :
+                new ObjectParameter("P_IN_APELLIDO", typeof(string));
+    
+            var p_IN_NACIMIENTOParameter = p_IN_NACIMIENTO.HasValue ?
+                new ObjectParameter("P_IN_NACIMIENTO", p_IN_NACIMIENTO) :
+                new ObjectParameter("P_IN_NACIMIENTO", typeof(System.DateTime));
+    
+            var p_IN_EMAIL_PERParameter = p_IN_EMAIL_PER != null ?
+                new ObjectParameter("P_IN_EMAIL_PER", p_IN_EMAIL_PER) :
+                new ObjectParameter("P_IN_EMAIL_PER", typeof(string));
+    
+            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER != null ?
+                new ObjectParameter("P_IN_TELEFONO_PER", p_IN_TELEFONO_PER) :
+                new ObjectParameter("P_IN_TELEFONO_PER", typeof(string));
+    
+            var p_IN_NOMBRE_USUParameter = p_IN_NOMBRE_USU != null ?
+                new ObjectParameter("P_IN_NOMBRE_USU", p_IN_NOMBRE_USU) :
+                new ObjectParameter("P_IN_NOMBRE_USU", typeof(string));
+    
+            var p_IN_CLAVEParameter = p_IN_CLAVE != null ?
+                new ObjectParameter("P_IN_CLAVE", p_IN_CLAVE) :
+                new ObjectParameter("P_IN_CLAVE", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_EMPLEADO", p_IN_RUT_PERSONAParameter, p_IN_NOMBREParameter, p_IN_APELLIDOParameter, p_IN_NACIMIENTOParameter, p_IN_EMAIL_PERParameter, p_IN_TELEFONO_PERParameter, p_IN_NOMBRE_USUParameter, p_IN_CLAVEParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_CREAR_PROVEEDOR(string p_IN_RUT_EMPRESA, string p_IN_RAZON_SOCIAL, string p_IN_RUBRO, string p_IN_EMAIL_EMP, string p_IN_TELEFONO_EMP, string p_IN_LOGO, string p_IN_RUT_PERSONA, string p_IN_NOMBRE, string p_IN_APELLIDO, Nullable<System.DateTime> p_IN_NACIMIENTO, string p_IN_EMAIL_PER, string p_IN_TELEFONO_PER, string p_IN_CALLE, Nullable<decimal> p_IN_NUMERO, string p_IN_COMUNA, string p_IN_COD_POSTAL, string p_IN_NOMBRE_CIUDAD, Nullable<decimal> p_IN_COD_PAIS, string p_IN_NOMBRE_USU, string p_IN_CLAVE, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_RUT_EMPRESAParameter = p_IN_RUT_EMPRESA != null ?
+                new ObjectParameter("P_IN_RUT_EMPRESA", p_IN_RUT_EMPRESA) :
+                new ObjectParameter("P_IN_RUT_EMPRESA", typeof(string));
+    
+            var p_IN_RAZON_SOCIALParameter = p_IN_RAZON_SOCIAL != null ?
+                new ObjectParameter("P_IN_RAZON_SOCIAL", p_IN_RAZON_SOCIAL) :
+                new ObjectParameter("P_IN_RAZON_SOCIAL", typeof(string));
+    
+            var p_IN_RUBROParameter = p_IN_RUBRO != null ?
+                new ObjectParameter("P_IN_RUBRO", p_IN_RUBRO) :
+                new ObjectParameter("P_IN_RUBRO", typeof(string));
+    
+            var p_IN_EMAIL_EMPParameter = p_IN_EMAIL_EMP != null ?
+                new ObjectParameter("P_IN_EMAIL_EMP", p_IN_EMAIL_EMP) :
+                new ObjectParameter("P_IN_EMAIL_EMP", typeof(string));
+    
+            var p_IN_TELEFONO_EMPParameter = p_IN_TELEFONO_EMP != null ?
+                new ObjectParameter("P_IN_TELEFONO_EMP", p_IN_TELEFONO_EMP) :
+                new ObjectParameter("P_IN_TELEFONO_EMP", typeof(string));
+    
+            var p_IN_LOGOParameter = p_IN_LOGO != null ?
+                new ObjectParameter("P_IN_LOGO", p_IN_LOGO) :
+                new ObjectParameter("P_IN_LOGO", typeof(string));
+    
+            var p_IN_RUT_PERSONAParameter = p_IN_RUT_PERSONA != null ?
+                new ObjectParameter("P_IN_RUT_PERSONA", p_IN_RUT_PERSONA) :
+                new ObjectParameter("P_IN_RUT_PERSONA", typeof(string));
+    
+            var p_IN_NOMBREParameter = p_IN_NOMBRE != null ?
+                new ObjectParameter("P_IN_NOMBRE", p_IN_NOMBRE) :
+                new ObjectParameter("P_IN_NOMBRE", typeof(string));
+    
+            var p_IN_APELLIDOParameter = p_IN_APELLIDO != null ?
+                new ObjectParameter("P_IN_APELLIDO", p_IN_APELLIDO) :
+                new ObjectParameter("P_IN_APELLIDO", typeof(string));
+    
+            var p_IN_NACIMIENTOParameter = p_IN_NACIMIENTO.HasValue ?
+                new ObjectParameter("P_IN_NACIMIENTO", p_IN_NACIMIENTO) :
+                new ObjectParameter("P_IN_NACIMIENTO", typeof(System.DateTime));
+    
+            var p_IN_EMAIL_PERParameter = p_IN_EMAIL_PER != null ?
+                new ObjectParameter("P_IN_EMAIL_PER", p_IN_EMAIL_PER) :
+                new ObjectParameter("P_IN_EMAIL_PER", typeof(string));
+    
+            var p_IN_TELEFONO_PERParameter = p_IN_TELEFONO_PER != null ?
+                new ObjectParameter("P_IN_TELEFONO_PER", p_IN_TELEFONO_PER) :
+                new ObjectParameter("P_IN_TELEFONO_PER", typeof(string));
+    
+            var p_IN_CALLEParameter = p_IN_CALLE != null ?
+                new ObjectParameter("P_IN_CALLE", p_IN_CALLE) :
+                new ObjectParameter("P_IN_CALLE", typeof(string));
+    
+            var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
+                new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
+                new ObjectParameter("P_IN_NUMERO", typeof(decimal));
+    
+            var p_IN_COMUNAParameter = p_IN_COMUNA != null ?
+                new ObjectParameter("P_IN_COMUNA", p_IN_COMUNA) :
+                new ObjectParameter("P_IN_COMUNA", typeof(string));
+    
+            var p_IN_COD_POSTALParameter = p_IN_COD_POSTAL != null ?
+                new ObjectParameter("P_IN_COD_POSTAL", p_IN_COD_POSTAL) :
+                new ObjectParameter("P_IN_COD_POSTAL", typeof(string));
+    
+            var p_IN_NOMBRE_CIUDADParameter = p_IN_NOMBRE_CIUDAD != null ?
+                new ObjectParameter("P_IN_NOMBRE_CIUDAD", p_IN_NOMBRE_CIUDAD) :
+                new ObjectParameter("P_IN_NOMBRE_CIUDAD", typeof(string));
+    
+            var p_IN_COD_PAISParameter = p_IN_COD_PAIS.HasValue ?
+                new ObjectParameter("P_IN_COD_PAIS", p_IN_COD_PAIS) :
+                new ObjectParameter("P_IN_COD_PAIS", typeof(decimal));
+    
+            var p_IN_NOMBRE_USUParameter = p_IN_NOMBRE_USU != null ?
+                new ObjectParameter("P_IN_NOMBRE_USU", p_IN_NOMBRE_USU) :
+                new ObjectParameter("P_IN_NOMBRE_USU", typeof(string));
+    
+            var p_IN_CLAVEParameter = p_IN_CLAVE != null ?
+                new ObjectParameter("P_IN_CLAVE", p_IN_CLAVE) :
+                new ObjectParameter("P_IN_CLAVE", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_CREAR_PROVEEDOR", p_IN_RUT_EMPRESAParameter, p_IN_RAZON_SOCIALParameter, p_IN_RUBROParameter, p_IN_EMAIL_EMPParameter, p_IN_TELEFONO_EMPParameter, p_IN_LOGOParameter, p_IN_RUT_PERSONAParameter, p_IN_NOMBREParameter, p_IN_APELLIDOParameter, p_IN_NACIMIENTOParameter, p_IN_EMAIL_PERParameter, p_IN_TELEFONO_PERParameter, p_IN_CALLEParameter, p_IN_NUMEROParameter, p_IN_COMUNAParameter, p_IN_COD_POSTALParameter, p_IN_NOMBRE_CIUDADParameter, p_IN_COD_PAISParameter, p_IN_NOMBRE_USUParameter, p_IN_CLAVEParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     }
 }

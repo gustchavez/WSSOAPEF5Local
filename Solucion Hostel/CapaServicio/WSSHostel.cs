@@ -38,6 +38,14 @@ namespace CapaServicio
         //    return x.LeerPerfil(token);
         //}
 
+        //Inicio Usuario
+        public ContenedorUsuarios UsuarioRescatar(string token)
+        {
+            CRUDUsuario x = new CRUDUsuario();
+            return x.LlamarSPRescatar(token);
+        }
+        //Fin Usuario
+
         //CRUD PerfilUsuarioCliente - INI
         public ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(ContenedorPerfilUsuarioCliente entrada)
         {

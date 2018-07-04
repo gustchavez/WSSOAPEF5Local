@@ -88,13 +88,32 @@ namespace CapaWSPresentacion.PaginaComercial
             n.Item.PerfilUsuario.Persona.Nombre = "Nombre";
             n.Item.PerfilUsuario.Persona.Apellido = "Apellido";
             n.Item.PerfilUsuario.Persona.FechaNacimiento = DateTime.Now;
-            n.Item.PerfilUsuario.Persona.Email = nombreUsuario.Text;
+            n.Item.PerfilUsuario.Persona.Email = "Ingrese mail";
             n.Item.PerfilUsuario.Persona.Telefono = "Ingrese tel";
+            n.Item.PerfilUsuario.Usuario.Nombre = nombreUsuario.Text;
             n.Item.PerfilUsuario.Usuario.Clave = contrasena.Text;
             n.Retorno.Token = null; //Session["TokenUsuario"].ToString();
 
             n = x.PerfilUsuarioClienteCrear(n);
 
+            if (n.Retorno.Codigo == 0)
+            {
+                //termino ok
+                rutEmpresa.Text = string.Empty;
+                razonSocial.Text = string.Empty;
+                giro.SelectedIndex = 0;
+                correoElectronico.Text = string.Empty;
+
+                txtNombreUsuario.Text = nombreUsuario.Text;
+                nombreUsuario.Text = string.Empty;
+
+                txtClaveUsuario.Text = contrasena.Text;
+                contrasena.Text = string.Empty;
+            }
+            else
+            {
+                //Error
+            }
         }
     }
 }

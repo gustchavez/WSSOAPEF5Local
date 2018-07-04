@@ -17,42 +17,51 @@ namespace CapaNegocio
 
         public ContenedorPerfilUsuarioAdministrador LlamarSPCrearAdmin(ContenedorPerfilUsuarioAdministrador nPUA)
         {
-           if (ValidarPerfilCUD(nPUA.Retorno.Token))
+            if (ValidarPerfilCUD(nPUA.Retorno.Token))
             {
-            var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
-            var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
+                CRUDUsuario n = new CRUDUsuario();
 
-            CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+                if(n.ExisteNomUsuActivo(nPUA.Item.Usuario.Nombre) == true)
+                {
+                    nPUA.Retorno.Codigo = 200;
+                    nPUA.Retorno.Glosa = "Nombre de Usuario ya existe";
+                } else {
+                    var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
+                    var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
 
-            conex.SP_CREAR_ADMINISTRADOR
-                ( nPUA.Item.Persona.Rut
-                , nPUA.Item.Persona.Nombre
-                , nPUA.Item.Persona.Apellido
-                , nPUA.Item.Persona.FechaNacimiento
-                , nPUA.Item.Persona.Email
-                , nPUA.Item.Persona.Telefono
-                , nPUA.Item.Usuario.Clave
-                , p_OUT_CODRET
-                , p_OUT_GLSRET
-                );
+                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
 
-            try
-            {
-                nPUA.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
-                nPUA.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
-            }
-            catch (Exception)
-            {
-                nPUA.Retorno.Codigo = 1011;
-                nPUA.Retorno.Glosa = "Err codret ORACLE";
-            }
+                    conex.SP_CREAR_ADMINISTRADOR
+                        (nPUA.Item.Persona.Rut
+                        , nPUA.Item.Persona.Nombre
+                        , nPUA.Item.Persona.Apellido
+                        , nPUA.Item.Persona.FechaNacimiento
+                        , nPUA.Item.Persona.Email
+                        , nPUA.Item.Persona.Telefono
+                        , nPUA.Item.Usuario.Nombre
+                        , nPUA.Item.Usuario.Clave
+                        , p_OUT_CODRET
+                        , p_OUT_GLSRET
+                        );
+
+                    try
+                    {
+                        nPUA.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
+                        nPUA.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                    }
+                    catch (Exception)
+                    {
+                        nPUA.Retorno.Codigo = 1011;
+                        nPUA.Retorno.Glosa = "Err codret ORACLE";
+                    }
+                }                
             } else {
-               nPUA.Retorno.Codigo = 100;
+                nPUA.Retorno.Codigo = 100;
                 nPUA.Retorno.Glosa = "Err expiro sesion o perfil invalido";
             }
-
             return nPUA;
         }
+
         public ContenedorPerfilUsuarioAdministrador LlamarSPActualizar(ContenedorPerfilUsuarioAdministrador nPUA)
         {
             if (ValidarPerfilCUD(nPUA.Retorno.Token))

@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace CapaObjeto
 {
-    public class ContenedorCamas
+    public class ContenedorUsuario
     {
-        public List<Cama> Lista { get; set; }
+        public Usuario Item { get; set; }
 
         public Comunicacion Retorno { get; set; }
 
-        public ContenedorCamas()
+        public ContenedorUsuario()
         {
             Init();
         }
 
         private void Init()
         {
-            this.Lista = new List<Cama>();
+            this.Item = new Usuario();
             this.Retorno = new Comunicacion();
         }
     }

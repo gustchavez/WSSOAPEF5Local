@@ -18,8 +18,14 @@ namespace CapaNegocio
         
         public ContenedorPerfilUsuarioCliente LlamarSPCrear(ContenedorPerfilUsuarioCliente nPUC)
         {
-            //if (ValidarPerfilCUD(nPUC.Retorno.Token))
-            //{
+            CRUDUsuario n = new CRUDUsuario();
+
+            if (n.ExisteNomUsuActivo(nPUC.Item.PerfilUsuario.Usuario.Nombre) == true)
+            {
+                nPUC.Retorno.Codigo = 200;
+                nPUC.Retorno.Glosa = "Nombre de Usuario ya existe";
+            }
+            else {
                 var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
                 var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
 
@@ -44,6 +50,7 @@ namespace CapaNegocio
                     , nPUC.Item.PerfilUsuario.Direccion.CodPostal
                     , nPUC.Item.PerfilUsuario.Direccion.NombreCiudad
                     , nPUC.Item.PerfilUsuario.Direccion.CodPais
+                    , nPUC.Item.PerfilUsuario.Usuario.Nombre
                     , nPUC.Item.PerfilUsuario.Usuario.Clave
                     , p_OUT_CODRET
                     , p_OUT_GLSRET
@@ -59,11 +66,7 @@ namespace CapaNegocio
                     nPUC.Retorno.Codigo = 1011;
                     nPUC.Retorno.Glosa = "Err codret ORACLE";
                 }
-            //} else {
-            //    nPUC.Retorno.Codigo = 100;
-            //    nPUC.Retorno.Glosa = "Err expiro sesion o perfil invalido";
-            //}
-
+            }
             return nPUC;
         }
         public ContenedorPerfilUsuarioCliente LlamarSPActualizar(ContenedorPerfilUsuarioCliente aPUC)

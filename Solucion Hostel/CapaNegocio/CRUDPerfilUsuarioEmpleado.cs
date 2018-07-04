@@ -19,32 +19,42 @@ namespace CapaNegocio
         {
             if (ValidarPerfilCUD(nPUC.Retorno.Token))
             {
-                var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
-                var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
+                CRUDUsuario n = new CRUDUsuario();
 
-                CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
-
-                conex.SP_CREAR_EMPLEADO
-                    (nPUC.Item.Persona.Rut
-                    , nPUC.Item.Persona.Nombre
-                    , nPUC.Item.Persona.Apellido
-                    , nPUC.Item.Persona.FechaNacimiento
-                    , nPUC.Item.Persona.Email
-                    , nPUC.Item.Persona.Telefono
-                    , nPUC.Item.Usuario.Clave
-                    , p_OUT_CODRET
-                    , p_OUT_GLSRET
-                    );
-
-                try
+                if (n.ExisteNomUsuActivo(nPUC.Item.Usuario.Nombre) == true)
                 {
-                    nPUC.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
-                    nPUC.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                    nPUC.Retorno.Codigo = 200;
+                    nPUC.Retorno.Glosa = "Nombre de Usuario ya existe";
                 }
-                catch (Exception)
-                {
-                    nPUC.Retorno.Codigo = 1011;
-                    nPUC.Retorno.Glosa = "Err codret ORACLE";
+                else {
+                    var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
+                    var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
+
+                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                    conex.SP_CREAR_EMPLEADO
+                        ( nPUC.Item.Persona.Rut
+                        , nPUC.Item.Persona.Nombre
+                        , nPUC.Item.Persona.Apellido
+                        , nPUC.Item.Persona.FechaNacimiento
+                        , nPUC.Item.Persona.Email
+                        , nPUC.Item.Persona.Telefono
+                        , nPUC.Item.Usuario.Nombre
+                        , nPUC.Item.Usuario.Clave
+                        , p_OUT_CODRET
+                        , p_OUT_GLSRET
+                        );
+
+                    try
+                    {
+                        nPUC.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
+                        nPUC.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                    }
+                    catch (Exception)
+                    {
+                        nPUC.Retorno.Codigo = 1011;
+                        nPUC.Retorno.Glosa = "Err codret ORACLE";
+                    }
                 }
             }
             else {

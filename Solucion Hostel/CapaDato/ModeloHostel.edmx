@@ -786,6 +786,7 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_IN_NACIMIENTO" Type="date" Mode="In" />
           <Parameter Name="P_IN_EMAIL_PER" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_TELEFONO_PER" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_NOMBRE_USU" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_CLAVE" Type="varchar2" Mode="In" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
@@ -817,6 +818,7 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_IN_COD_POSTAL" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_NOMBRE_CIUDAD" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_COD_PAIS" Type="number" Mode="In" />
+          <Parameter Name="P_IN_NOMBRE_USU" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_CLAVE" Type="varchar2" Mode="In" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
@@ -853,6 +855,7 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_IN_NACIMIENTO" Type="date" Mode="In" />
           <Parameter Name="P_IN_EMAIL_PER" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_TELEFONO_PER" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_NOMBRE_USU" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_CLAVE" Type="varchar2" Mode="In" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
@@ -948,6 +951,7 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_IN_COD_POSTAL" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_NOMBRE_CIUDAD" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_COD_PAIS" Type="number" Mode="In" />
+          <Parameter Name="P_IN_NOMBRE_USU" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_CLAVE" Type="varchar2" Mode="In" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
@@ -1337,17 +1341,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SP_CREAR_ADMINISTRADOR">
-            <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
-            <Parameter Name="P_IN_NOMBRE" Mode="In" Type="String" />
-            <Parameter Name="P_IN_APELLIDO" Mode="In" Type="String" />
-            <Parameter Name="P_IN_NACIMIENTO" Mode="In" Type="DateTime" />
-            <Parameter Name="P_IN_EMAIL_PER" Mode="In" Type="String" />
-            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="String" />
-            <Parameter Name="P_IN_CLAVE" Mode="In" Type="String" />
-            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
-            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="SP_CREAR_CAMA">
             <Parameter Name="P_IN_DESCRIPCION" Mode="In" Type="String" />
             <Parameter Name="P_IN_DISPONIBLE" Mode="In" Type="String" />
@@ -1355,40 +1348,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
             <Parameter Name="P_OUT_CODIGO" Mode="Out" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="SP_CREAR_CLIENTE">
-            <Parameter Name="P_IN_RUT_EMPRESA" Mode="In" Type="String" />
-            <Parameter Name="P_IN_RAZON_SOCIAL" Mode="In" Type="String" />
-            <Parameter Name="P_IN_RUBRO" Mode="In" Type="String" />
-            <Parameter Name="P_IN_EMAIL_EMP" Mode="In" Type="String" />
-            <Parameter Name="P_IN_TELEFONO_EMP" Mode="In" Type="String" />
-            <Parameter Name="P_IN_LOGO" Mode="In" Type="String" />
-            <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
-            <Parameter Name="P_IN_NOMBRE" Mode="In" Type="String" />
-            <Parameter Name="P_IN_APELLIDO" Mode="In" Type="String" />
-            <Parameter Name="P_IN_NACIMIENTO" Mode="In" Type="DateTime" />
-            <Parameter Name="P_IN_EMAIL_PER" Mode="In" Type="String" />
-            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="String" />
-            <Parameter Name="P_IN_CALLE" Mode="In" Type="String" />
-            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_COMUNA" Mode="In" Type="String" />
-            <Parameter Name="P_IN_COD_POSTAL" Mode="In" Type="String" />
-            <Parameter Name="P_IN_NOMBRE_CIUDAD" Mode="In" Type="String" />
-            <Parameter Name="P_IN_COD_PAIS" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_CLAVE" Mode="In" Type="String" />
-            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
-            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SP_CREAR_EMPLEADO">
-            <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
-            <Parameter Name="P_IN_NOMBRE" Mode="In" Type="String" />
-            <Parameter Name="P_IN_APELLIDO" Mode="In" Type="String" />
-            <Parameter Name="P_IN_NACIMIENTO" Mode="In" Type="DateTime" />
-            <Parameter Name="P_IN_EMAIL_PER" Mode="In" Type="String" />
-            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="String" />
-            <Parameter Name="P_IN_CLAVE" Mode="In" Type="String" />
-            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
-            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_CREAR_ENC_PEDIDO">
             <Parameter Name="P_IN_RUT_PROVEEDOR" Mode="In" Type="String" />
@@ -1421,29 +1380,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
             <Parameter Name="P_OUT_CODIGO" Mode="Out" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="SP_CREAR_PROVEEDOR">
-            <Parameter Name="P_IN_RUT_EMPRESA" Mode="In" Type="String" />
-            <Parameter Name="P_IN_RAZON_SOCIAL" Mode="In" Type="String" />
-            <Parameter Name="P_IN_RUBRO" Mode="In" Type="String" />
-            <Parameter Name="P_IN_EMAIL_EMP" Mode="In" Type="String" />
-            <Parameter Name="P_IN_TELEFONO_EMP" Mode="In" Type="String" />
-            <Parameter Name="P_IN_LOGO" Mode="In" Type="String" />
-            <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
-            <Parameter Name="P_IN_NOMBRE" Mode="In" Type="String" />
-            <Parameter Name="P_IN_APELLIDO" Mode="In" Type="String" />
-            <Parameter Name="P_IN_NACIMIENTO" Mode="In" Type="DateTime" />
-            <Parameter Name="P_IN_EMAIL_PER" Mode="In" Type="String" />
-            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="String" />
-            <Parameter Name="P_IN_CALLE" Mode="In" Type="String" />
-            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_COMUNA" Mode="In" Type="String" />
-            <Parameter Name="P_IN_COD_POSTAL" Mode="In" Type="String" />
-            <Parameter Name="P_IN_NOMBRE_CIUDAD" Mode="In" Type="String" />
-            <Parameter Name="P_IN_COD_PAIS" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_CLAVE" Mode="In" Type="String" />
-            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
-            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_CREAR_PROVISION">
             <Parameter Name="P_IN_RUT_PROVEEDOR" Mode="In" Type="String" />
@@ -1741,6 +1677,78 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_COD_HAB_DOB" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_COD_HAB_TRI" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_COD_HAB_CUA" Mode="Out" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREAR_ADMINISTRADOR">
+            <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="P_IN_APELLIDO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NACIMIENTO" Mode="In" Type="DateTime" />
+            <Parameter Name="P_IN_EMAIL_PER" Mode="In" Type="String" />
+            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NOMBRE_USU" Mode="In" Type="String" />
+            <Parameter Name="P_IN_CLAVE" Mode="In" Type="String" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREAR_CLIENTE">
+            <Parameter Name="P_IN_RUT_EMPRESA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_RAZON_SOCIAL" Mode="In" Type="String" />
+            <Parameter Name="P_IN_RUBRO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_EMAIL_EMP" Mode="In" Type="String" />
+            <Parameter Name="P_IN_TELEFONO_EMP" Mode="In" Type="String" />
+            <Parameter Name="P_IN_LOGO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="P_IN_APELLIDO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NACIMIENTO" Mode="In" Type="DateTime" />
+            <Parameter Name="P_IN_EMAIL_PER" Mode="In" Type="String" />
+            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="String" />
+            <Parameter Name="P_IN_CALLE" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_COMUNA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_COD_POSTAL" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NOMBRE_CIUDAD" Mode="In" Type="String" />
+            <Parameter Name="P_IN_COD_PAIS" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_NOMBRE_USU" Mode="In" Type="String" />
+            <Parameter Name="P_IN_CLAVE" Mode="In" Type="String" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREAR_EMPLEADO">
+            <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="P_IN_APELLIDO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NACIMIENTO" Mode="In" Type="DateTime" />
+            <Parameter Name="P_IN_EMAIL_PER" Mode="In" Type="String" />
+            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NOMBRE_USU" Mode="In" Type="String" />
+            <Parameter Name="P_IN_CLAVE" Mode="In" Type="String" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREAR_PROVEEDOR">
+            <Parameter Name="P_IN_RUT_EMPRESA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_RAZON_SOCIAL" Mode="In" Type="String" />
+            <Parameter Name="P_IN_RUBRO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_EMAIL_EMP" Mode="In" Type="String" />
+            <Parameter Name="P_IN_TELEFONO_EMP" Mode="In" Type="String" />
+            <Parameter Name="P_IN_LOGO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="P_IN_APELLIDO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NACIMIENTO" Mode="In" Type="DateTime" />
+            <Parameter Name="P_IN_EMAIL_PER" Mode="In" Type="String" />
+            <Parameter Name="P_IN_TELEFONO_PER" Mode="In" Type="String" />
+            <Parameter Name="P_IN_CALLE" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_COMUNA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_COD_POSTAL" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NOMBRE_CIUDAD" Mode="In" Type="String" />
+            <Parameter Name="P_IN_COD_PAIS" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_NOMBRE_USU" Mode="In" Type="String" />
+            <Parameter Name="P_IN_CLAVE" Mode="In" Type="String" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="CAMA">
@@ -2547,15 +2555,11 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_PLATO" FunctionName="Model.Store.SP_ACTUALIZAR_PLATO" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_PRODUCTO" FunctionName="Model.Store.SP_ACTUALIZAR_PRODUCTO" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_PROVISION" FunctionName="Model.Store.SP_ACTUALIZAR_PROVISION" />
-          <FunctionImportMapping FunctionImportName="SP_CREAR_ADMINISTRADOR" FunctionName="Model.Store.SP_CREAR_ADMINISTRADOR" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_CAMA" FunctionName="Model.Store.SP_CREAR_CAMA" />
-          <FunctionImportMapping FunctionImportName="SP_CREAR_CLIENTE" FunctionName="Model.Store.SP_CREAR_CLIENTE" />
-          <FunctionImportMapping FunctionImportName="SP_CREAR_EMPLEADO" FunctionName="Model.Store.SP_CREAR_EMPLEADO" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_ENC_PEDIDO" FunctionName="Model.Store.SP_CREAR_ENC_PEDIDO" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_HABITACION" FunctionName="Model.Store.SP_CREAR_HABITACION" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_PLATO" FunctionName="Model.Store.SP_CREAR_PLATO" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_PRODUCTO" FunctionName="Model.Store.SP_CREAR_PRODUCTO" />
-          <FunctionImportMapping FunctionImportName="SP_CREAR_PROVEEDOR" FunctionName="Model.Store.SP_CREAR_PROVEEDOR" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_PROVISION" FunctionName="Model.Store.SP_CREAR_PROVISION" />
           <FunctionImportMapping FunctionImportName="SP_ELIMINAR_CAMA" FunctionName="Model.Store.SP_ELIMINAR_CAMA" />
           <FunctionImportMapping FunctionImportName="SP_ELIMINAR_HABITACION" FunctionName="Model.Store.SP_ELIMINAR_HABITACION" />
@@ -2623,6 +2627,10 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_CREAR_DET_RESERVA" FunctionName="Model.Store.SP_CREAR_DET_RESERVA" />
           <FunctionImportMapping FunctionImportName="SP_ACT_RECEPCION_PRODUCTO" FunctionName="Model.Store.SP_ACT_RECEPCION_PRODUCTO" />
           <FunctionImportMapping FunctionImportName="SP_OBTENER_DISPONIBILIDAD" FunctionName="Model.Store.SP_OBTENER_DISPONIBILIDAD" />
+          <FunctionImportMapping FunctionImportName="SP_CREAR_ADMINISTRADOR" FunctionName="Model.Store.SP_CREAR_ADMINISTRADOR" />
+          <FunctionImportMapping FunctionImportName="SP_CREAR_CLIENTE" FunctionName="Model.Store.SP_CREAR_CLIENTE" />
+          <FunctionImportMapping FunctionImportName="SP_CREAR_EMPLEADO" FunctionName="Model.Store.SP_CREAR_EMPLEADO" />
+          <FunctionImportMapping FunctionImportName="SP_CREAR_PROVEEDOR" FunctionName="Model.Store.SP_CREAR_PROVEEDOR" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

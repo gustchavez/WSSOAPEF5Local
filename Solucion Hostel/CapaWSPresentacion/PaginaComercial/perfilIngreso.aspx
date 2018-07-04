@@ -17,7 +17,7 @@
 
                 	    <h3 class="Contenido">INGRESO</h3>
 			<div class="Contenido">
-				Correo Electrónico <br/>
+				Nombre Usuario<br/>
 			    <asp:TextBox ID="txtNombreUsuario" runat="server" CssClass="casilla"></asp:TextBox> <br/>		
 			</div>
 			<div class="Contenido">

@@ -21,6 +21,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ValidarLogin", ReplyAction="http://tempuri.org/IWSSHostel/ValidarLoginResponse")]
         System.Threading.Tasks.Task<CapaObjeto.Sesion> ValidarLoginAsync(string usuario, string clave);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/UsuarioRescatar", ReplyAction="http://tempuri.org/IWSSHostel/UsuarioRescatarResponse")]
+        CapaObjeto.ContenedorUsuarios UsuarioRescatar(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/UsuarioRescatar", ReplyAction="http://tempuri.org/IWSSHostel/UsuarioRescatarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorUsuarios> UsuarioRescatarAsync(string token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrearResponse")]
         CapaObjeto.ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(CapaObjeto.ContenedorPerfilUsuarioCliente entrada);
         
@@ -439,6 +445,14 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.Sesion> ValidarLoginAsync(string usuario, string clave) {
             return base.Channel.ValidarLoginAsync(usuario, clave);
+        }
+        
+        public CapaObjeto.ContenedorUsuarios UsuarioRescatar(string token) {
+            return base.Channel.UsuarioRescatar(token);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorUsuarios> UsuarioRescatarAsync(string token) {
+            return base.Channel.UsuarioRescatarAsync(token);
         }
         
         public CapaObjeto.ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(CapaObjeto.ContenedorPerfilUsuarioCliente entrada) {

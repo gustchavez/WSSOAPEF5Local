@@ -12,7 +12,7 @@
 			<h2>Seleccione un perfil para comenzar</h2>	
 			<div class="Casilla2-1Principal">
 			<h4>Seleccion de Perfil</h4>
-            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="droplistPrincipal">
+            <asp:DropDownList ID="ddlTipoPerfil" runat="server" CssClass="droplistPrincipal" AutoPostBack="True" OnSelectedIndexChanged="ddlTipoPerfil_SelectedIndexChanged" style="left: 0px; top: 0px">
                 <asp:ListItem Value="1">Selecciona un Perfil</asp:ListItem>
                 <asp:ListItem Value="2">Administrador</asp:ListItem>
                 <asp:ListItem Value="3">Empleado</asp:ListItem>
@@ -22,27 +22,27 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Rut</h4>	
-			<asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtRutPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Nombre</h4>	
-			<asp:TextBox ID="TextBox2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtNombrePersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Apellido</h4>	
-			<asp:TextBox ID="TextBox3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtApellidoPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Fecha Nacimiento</h4>	
-			<asp:TextBox ID="TextBox4" runat="server" TextMode="Date" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtFecNacPersona" runat="server" TextMode="Date" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Correo Electrónico</h4>	
-			<asp:TextBox ID="TextBox5" runat="server" TextMode="Email" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtMailPersona" runat="server" TextMode="Email" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Telefono</h4>	
-			<asp:TextBox ID="TextBox6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtTelPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>	
 	</div>
 
@@ -51,15 +51,15 @@
 			<h3>Datos empresa</h3>
 			<div class="Casilla2-1">
 			<h4>Rut Empresa</h4>	
-			<asp:TextBox ID="TextBox7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtRutEmpresa" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Razón Social</h4>	
-			<asp:TextBox ID="TextBox8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtRazonSocial" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Giro</h4>	
-			<asp:DropDownList ID="txtGiro" runat="server" CssClass="droplist">
+			<asp:DropDownList ID="ddlGiro" runat="server" CssClass="droplist">
                     <asp:ListItem Value="1">Selecciona un Giro</asp:ListItem>
                     <asp:ListItem Value="2">CULTIVOS EN GENERAL; CULTIVO DE PRODUCTOS DE MERCADO; HORTICULTURA</asp:ListItem>
                     <asp:ListItem Value="3">CRÍA DE ANIMALES</asp:ListItem>
@@ -198,52 +198,20 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Correo Electrónico</h4>	
-			<asp:TextBox ID="TextBox9" runat="server" TextMode="Email" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtMailEmpresa" runat="server" TextMode="Email" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Teléfono</h4>	
-			<asp:TextBox ID="TextBox10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
-			</div>
-			<div class="Casilla2-1">
-			<h4>Logo</h4>	
-			<asp:TextBox ID="TextBox11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtTelEmpresa" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 				<h4>Ciudad</h4>					
-				<asp:DropDownList ID="txtNombreCiudad" runat="server" CssClass="droplist">
-                    <asp:ListItem Value="1">Seleccione una ciudad</asp:ListItem>
-                    <asp:ListItem Value="2">Metropolitana de Santiago</asp:ListItem>
-                    <asp:ListItem Value="3">Biobío</asp:ListItem>
-                    <asp:ListItem Value="4">Valparaíso</asp:ListItem>
-                    <asp:ListItem Value="5">Coquimbo</asp:ListItem>
-                    <asp:ListItem Value="6">Antofagasta</asp:ListItem>
-                    <asp:ListItem Value="7">Araucanía</asp:ListItem>
-                    <asp:ListItem Value="8">O'Higgins</asp:ListItem>
-                    <asp:ListItem Value="9">Tarapacá</asp:ListItem>
-                    <asp:ListItem Value="10">Maule</asp:ListItem>
-                    <asp:ListItem Value="11">Arica y Parinacota</asp:ListItem>
-                    <asp:ListItem Value="12">Los Lagos</asp:ListItem>
-                    <asp:ListItem Value="13">Biobío</asp:ListItem>
-                    <asp:ListItem Value="14">Biobío</asp:ListItem>
-                    <asp:ListItem Value="15">Antofagasta</asp:ListItem>
-                    <asp:ListItem Value="16">Atacama</asp:ListItem>
-                    <asp:ListItem Value="17">Los Lagos</asp:ListItem>
-                    <asp:ListItem Value="18">Valparaíso</asp:ListItem>
-                    <asp:ListItem Value="19">Los Ríos</asp:ListItem>
-                    <asp:ListItem Value="20">Magallanes</asp:ListItem>
-                    <asp:ListItem Value="21">Valparaíso</asp:ListItem>
-                    <asp:ListItem Value="22">Maule</asp:ListItem>
-                    <asp:ListItem Value="23">Coquimbo</asp:ListItem>
-                    <asp:ListItem Value="24">Maule</asp:ListItem>
-                    <asp:ListItem Value="25">Valparaíso</asp:ListItem>
-                    <asp:ListItem Value="26">Metropolitana de Santiago</asp:ListItem>
-                    <asp:ListItem Value="27">Valparaíso</asp:ListItem>
-                    <asp:ListItem Value="Santiago">Santiago</asp:ListItem>
+				<asp:DropDownList ID="ddlNombreCiudad" runat="server" CssClass="droplist">
                  </asp:DropDownList>
 			</div>
 			<div class="Casilla2-1">
 				<h4>Comuna</h4>					
-				<asp:DropDownList ID="txtComuna" runat="server" CssClass="droplist">
+				<asp:DropDownList ID="ddlComuna" runat="server" CssClass="droplist">
 				    <asp:ListItem Value="1">Seleccione una comuna</asp:ListItem>
                     <asp:ListItem Value="2">Cerrillos</asp:ListItem>
                     <asp:ListItem Value="3">Cerro Navia</asp:ListItem>
@@ -285,7 +253,7 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Dirección</h4>
-			<asp:TextBox ID="TextBox12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtDirEmp" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 	</div>
 
@@ -294,14 +262,14 @@
 			<h3>Usuario y Contraseña</h3>		
 			<div class="Casilla2-1">
 			<h4 style="color: #EAE0CC;">Nombre Usuario</h4>	
-			<asp:TextBox ID="TextBox13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtUsuario" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4 style="color: #EAE0CC;">Nueva Contraseña</h4>	
-			<asp:TextBox ID="TextBox14" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtClave" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1Button">	
-			<asp:Button ID="Button1" runat="server" Text="AGREGAR" CssClass="SubmitTotal2" OnClick="Button1_Click" />
+			<asp:Button ID="btnAgregar" runat="server" Text="AGREGAR" CssClass="SubmitTotal2" OnClick="btnAgregar_Click" />
 			</div>
 	</div>
 		

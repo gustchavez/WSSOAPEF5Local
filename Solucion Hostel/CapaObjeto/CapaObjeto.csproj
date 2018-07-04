@@ -43,6 +43,8 @@
     <Compile Include="Alojamiento.cs" />
     <Compile Include="Cama.cs" />
     <Compile Include="ContenedorRegistroRecepcionPedido.cs" />
+    <Compile Include="ContenedorUsuario.cs" />
+    <Compile Include="ContenedorUsuarios.cs" />
     <Compile Include="HabDispCant.cs" />
     <Compile Include="Ciudad.cs" />
     <Compile Include="Cliente.cs" />
