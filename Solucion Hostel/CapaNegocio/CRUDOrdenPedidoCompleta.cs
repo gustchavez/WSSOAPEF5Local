@@ -230,5 +230,41 @@ namespace CapaNegocio
             }
             return retorno;
         }
+
+
+        public ContenedorRegistroRecepcionPedido LlamarSPActRecepProd(ContenedorRegistroRecepcionPedido Producto)
+        {
+            if (ValidarPerfilCUD(Producto.Retorno.Token))
+            {
+                var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
+                var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
+
+                CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                conex.SP_ACT_RECEPCION_PRODUCTO
+                    ( Producto.Item.Producto.Codigo
+                    , Producto.Item.NumeroOrdenPedido
+                    , Producto.Item.Confirmado
+                    , p_OUT_CODRET
+                    , p_OUT_GLSRET
+                    );
+                try
+                {
+                    Producto.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
+                    Producto.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                }
+                catch (Exception)
+                {
+                    Producto.Retorno.Codigo = 1011;
+                    Producto.Retorno.Glosa = "Error actualizacion Recepcion Producto";
+                }
+            }
+            else {
+                Producto.Retorno.Codigo = 100;
+                Producto.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+
+            return Producto;
+        }
     }
 }

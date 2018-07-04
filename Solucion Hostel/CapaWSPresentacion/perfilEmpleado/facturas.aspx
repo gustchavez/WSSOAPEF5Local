@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <link rel="stylesheet" type="text/css" href="/scripts/facturaEmpleado.css">
+ <link rel="stylesheet" type="text/css" href="/scripts/facturaEmpleado.css">
 
  <form id="form1" runat="server">
 

@@ -173,7 +173,7 @@ namespace CapaNegocio
                 var p_OUT_COD_HAB_SIM = new ObjectParameter("P_OUT_COD_HAB_SIM", typeof(decimal));
                 var p_OUT_COD_HAB_DOB = new ObjectParameter("P_OUT_COD_HAB_DOB", typeof(decimal));
                 var p_OUT_COD_HAB_TRI = new ObjectParameter("P_OUT_COD_HAB_TRI", typeof(decimal));
-                var p_OUT_COD_HAB_SEC = new ObjectParameter("P_OUT_COD_HAB_SEC", typeof(decimal));
+                var p_OUT_COD_HAB_CUA = new ObjectParameter("P_OUT_COD_HAB_CUA", typeof(decimal));
 
                 CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
 
@@ -185,7 +185,7 @@ namespace CapaNegocio
                     , p_OUT_COD_HAB_SIM
                     , p_OUT_COD_HAB_DOB
                     , p_OUT_COD_HAB_TRI
-                    , p_OUT_COD_HAB_SEC
+                    , p_OUT_COD_HAB_CUA
                     );
 
                 try
@@ -194,7 +194,7 @@ namespace CapaNegocio
                     n.CantHabSimple   = int.Parse(p_OUT_COD_HAB_SIM.Value.ToString());
                     n.CantHabDoble    = int.Parse(p_OUT_COD_HAB_DOB.Value.ToString());
                     n.CantHabTriple   = int.Parse(p_OUT_COD_HAB_TRI.Value.ToString());
-                    n.CantHabSectuple = int.Parse(p_OUT_COD_HAB_SEC.Value.ToString());
+                    n.CantHabSectuple = int.Parse(p_OUT_COD_HAB_CUA.Value.ToString());
                     LHabDispCant.Item = n;
 
                     LHabDispCant.Retorno.Codigo = 0;

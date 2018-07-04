@@ -4,15 +4,12 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="/scripts/facturaEmpleado.css">
+<link rel="stylesheet" type="text/css" href="/scripts/facturaEmpleadoMaster.css">
 	<script src="/scripts/efectos.js"></script>
 	<script src="/scripts/jquery.min.js"></script>
 	<title></title>
     <style type="text/css">
-        .auto-style1 {
-            width: 150px;
-            height: 150px;
-        }
+    
     </style>
 </head>
 <body>
@@ -25,19 +22,21 @@
 		<div class="desplegable">		
 			<div class="subMenu"> 
                 <div class="imagen-logo">
-                    <asp:Image ID="imgLogoPress" runat="server" class="auto-style1" ImageUrl="../images/empleado.png"/>
+                    <asp:Image ID="imgLogoPress" runat="server" class="imagen-logo-empresa" ImageUrl="../images/empleado.png"/>
                 </div> 
 			</div>
 			<div class="subMenu"> <a href="stock.aspx" style="color: #e2e2e2;"> Stock Productos </a></div>
-			<div class="subMenu"> <a href="perfil.aspx" style="color: #e2e2e2;"> Modificar Perfil </a></div>
-			<div class="subMenu"> <a href="facturas.aspx" style="color: #e2e2e2;"> Ver Facturas Proveedores </a></div> 
-			<div class="subMenu"> <a href="agregarProveedor.aspx" style="color: #e2e2e2;"> Ingresar Empresa </a></div>
-			<div class="subMenu"> <a href="ingresoProducto.aspx" style="color: #e2e2e2;"> Ingresar Productos </a></div>
-			<div class="subMenu"> <a href="solicitarProductos.aspx" style="color: #e2e2e2;"> Solicitar Productos </a></div><br>            
-            <div class="subMenu"> <a href="recepcion.aspx" style="color: #e2e2e2;"> Recepcion Huéspedes </a></div> <br>
-            <div class="subMenu"> <a href="CrearFactura.aspx" style="color: #e2e2e2;"> Crear factura a cliente </a></div> <br>
-             <div class="subMenu"> <a href="recepcionProducto.aspx" style="color: #e2e2e2;"> Crear factura a cliente </a></div> <br>
-			<div class="subMenu"> <a href="/PaginaComercial/perfilIngreso.aspx" style="color: #e2e2e2;"> Cerrar Sesión</a></div>
+			<div class="subMenu"> <a href="perfil.aspx" style="color: #e2e2e2;"> Modificar Perfil </a></div><br />
+            <div class="subMenu" style="font-weight:bold;">  Proveedores </div> 
+			<div class="subMenu"> <a href="agregarProveedor.aspx" style="color: #e2e2e2;"> Ingresar Proveedor </a></div>
+			<div class="subMenu"> <a href="ingresoProducto.aspx" style="color: #e2e2e2;"> Ingresar Producto Proveedor </a></div>
+			<div class="subMenu"> <a href="solicitarProductos.aspx" style="color: #e2e2e2;"> Solicitar Productos Proveedor </a></div>            
+            <div class="subMenu"> <a href="recepcionProducto.aspx" style="color: #e2e2e2;"> Recepción de producto </a></div> 		
+            <div class="subMenu"> <a href="facturas.aspx" style="color: #e2e2e2;"> Ver Facturas Proveedores </a></div><br />
+            <div class="subMenu" style="font-weight:bold;">  Cliente </div>
+            <div class="subMenu"> <a href="recepcion.aspx" style="color: #e2e2e2;"> Recepcion Huéspedes </a></div>
+            <div class="subMenu"> <a href="CrearFactura.aspx" style="color: #e2e2e2;"> Crear factura a cliente </a></div> <br />
+            <div class="subMenu"> <a href="/PaginaComercial/perfilIngreso.aspx" style="color: #e2e2e2; font-weight:bold;"> Cerrar Sesión</a></div>
 		</div>
 
 	</div>
@@ -47,7 +46,7 @@
 		<div class="perfilCliente">		
 			<div class="datosEmpresa">
                 <div class="imagen-logo-empresa">
-                    <asp:Image ID="imgLogoNormal" runat="server" class="auto-style1" ImageUrl="../images/empleado.png"/>
+                    <asp:Image ID="imgLogoNormal" runat="server" class="imagen-logo" ImageUrl="../images/empleado.png"/>
                 </div>
 			</div>
 			<div class="datosEmpresa"> <h3> Datos Usuario </h3> </div>

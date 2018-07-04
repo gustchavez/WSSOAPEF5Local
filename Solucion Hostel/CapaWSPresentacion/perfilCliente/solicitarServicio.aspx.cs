@@ -6,15 +6,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
-
 namespace CapaWSPresentacion.perfilCliente
 {
     public partial class solicitarServicio : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             try
             {
                 string Perfil = Session["PerfilUsuario"].ToString();
@@ -23,9 +20,7 @@ namespace CapaWSPresentacion.perfilCliente
                 {
                     if (!IsPostBack)
                     {
-                       
-                        bloqueados();
-                        //RescatarDatos();
+                        RescatarDatos();
                     }
                 }
                 else
@@ -41,33 +36,68 @@ namespace CapaWSPresentacion.perfilCliente
             }
         }
 
-        private void bloqueados()
+        private void RescatarDatos()
+        {
+            LlenarDDLTipoComida();
+
+            Bloqueados();
+        }
+
+        private void LlenarDDLTipoComida()
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            ContenedorServiciosComida n = new ContenedorServiciosComida();
+            n = x.ServicioComidaRescatar(Session["TokenUsuario"].ToString());
+
+            if (n.Retorno.Codigo == 0)
+            {
+                RecorrerDDLXCapacHab(n.Lista, 6, "Individual", 1);
+                RecorrerDDLXCapacHab(n.Lista, 6, "Doble"     , 2);
+                RecorrerDDLXCapacHab(n.Lista, 5, "Triple"    , 3);
+                RecorrerDDLXCapacHab(n.Lista, 4, "Cuadruple" , 4);
+            }
+        }
+        private void RecorrerDDLXCapacHab ( List<ServicioComida> Lista, int CantHuesp, string TipoHab, int CapHab)
+        {
+            for (int i = 1; i < CantHuesp + 1; i++)
+            {
+                DropDownList item6   = (DropDownList)form1.FindControl("ddlTipoServCom" + TipoHab + i);
+                item6.DataSource     = null;
+                item6.DataSource     = Lista;
+                item6.DataValueField = "Tipo";
+                item6.DataTextField  = "Tipo";
+                item6.DataBind();
+            }
+        }
+
+        private void Bloqueados()
         {
             txtFechaEgreso.Text = DateTime.Now.ToString("yyyy-MM-dd"); 
             txtFechaIngreso.Text = DateTime.Now.ToString("yyyy-MM-dd");
-
+            //
             MostrarCasillas.Enabled = false;
             BtnSiguiente.Enabled = false;
         }
 
-        protected void Siguiente_Click1(object sender, EventArgs e)
+        protected void BtnSiguiente_Click(object sender, EventArgs e)
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
             Sesion SesionUsuario = (Sesion)Session["SesionUsuario"];
 
             OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
             //Armar Encabezado de Orden de Reserva
-            nOCC.Cabecera.RutCliente = SesionUsuario.RutEmpresa;
-            nOCC.Cabecera.Monto = int.Parse(txtPersonasHabitacion.Text);//realizar calculo de las habitaciones seleccionadas.
+            nOCC.Cabecera.RutCliente    = SesionUsuario.RutEmpresa;
+            nOCC.Cabecera.Monto         = int.Parse(txtPersonasHabitacion.Text);//realizar calculo de las habitaciones seleccionadas.
             nOCC.Cabecera.Observaciones = "Reserva habitación";
-            nOCC.Cabecera.Ubicacion = "logo";
-            nOCC.Cabecera.Estado = "activa";
+            nOCC.Cabecera.Ubicacion     = "logo";
+            nOCC.Cabecera.Estado        = "activa";
 
             //int CantidadHuespedes = int.Parse(Session[txtPersonasHabitacion.Text].ToString());
             try
             {                
-                int CantIndividual = int.Parse(individual.Text);
-                AgregarHuesped(nOCC, CantIndividual, "Individual", 1);
+                int CantHuspedes = int.Parse(individual.Text);
+                AgregarHuesped(nOCC, CantHuspedes, "Individual", 1);
             }
             catch (Exception)
             {
@@ -76,8 +106,8 @@ namespace CapaWSPresentacion.perfilCliente
 
             try
             {
-                int CantIndividual = int.Parse(doble.Text);
-                AgregarHuesped(nOCC, CantIndividual, "Doble", 2);
+                int CantHuspedes = int.Parse(doble.Text) * 2;
+                AgregarHuesped(nOCC, CantHuspedes, "Doble", 2);
             }
             catch (Exception)
             {
@@ -86,8 +116,18 @@ namespace CapaWSPresentacion.perfilCliente
 
             try
             {
-                int CantIndividual = int.Parse(triple.Text);
-                AgregarHuesped(nOCC, CantIndividual, "Tiple", 3);
+                int CantHuspedes = int.Parse(triple.Text) * 3;
+                AgregarHuesped(nOCC, CantHuspedes, "Tiple", 3);
+            }
+            catch (Exception)
+            {
+                //No existe se continua siguiente validacion
+            }
+
+            try
+            {
+                int CantHuspedes = int.Parse(triple.Text) * 4;
+                AgregarHuesped(nOCC, CantHuspedes, "Cuadruple", 4);
             }
             catch (Exception)
             {
@@ -110,40 +150,41 @@ namespace CapaWSPresentacion.perfilCliente
                 OrdenCompraDetalle nOCD = new OrdenCompraDetalle();
                 
                 TextBox item0 = (TextBox)form1.FindControl("txtRut" + TipoHab + i);
-                nOCD.Persona.Rut = item0.Text;
+                if(item0.Text.Trim().Length > 0)
+                {
+                    nOCD.Persona.Rut = item0.Text;
 
-                TextBox item1 = (TextBox)form1.FindControl("txtNombre" + TipoHab + i);
-                nOCD.Persona.Rut = item0.Text;
+                    TextBox item1 = (TextBox)form1.FindControl("txtNombre" + TipoHab + i);
+                    nOCD.Persona.Nombre = item0.Text;
 
-                TextBox item2 = (TextBox)form1.FindControl("txtApellido" + TipoHab + i);
-                nOCD.Persona.Rut = item0.Text;
+                    TextBox item2 = (TextBox)form1.FindControl("txtApellido" + TipoHab + i);
+                    nOCD.Persona.Apellido = item0.Text;
 
-                //TextBox item3 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
-                nOCD.Alojamiento.FechaIngreso = DateTime.Parse(txtFechaIngreso.Text);
+                    //TextBox item3 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
+                    nOCD.Alojamiento.FechaIngreso = DateTime.Parse(txtFechaIngreso.Text);
 
-                //TextBox item4 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
-                nOCD.Alojamiento.FechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
+                    //TextBox item4 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
+                    nOCD.Alojamiento.FechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
 
-                nOCD.Alojamiento.Habitacion.Capacidad = CapHab;
+                    nOCD.Alojamiento.Habitacion.Capacidad = CapHab;
 
-                TextBox item5 = (TextBox)form1.FindControl("txtOtro" + TipoHab + i);
-                nOCD.Alojamiento.Observaciones = item5.Text;
+                    TextBox item5 = (TextBox)form1.FindControl("txtAlojaObs" + TipoHab + i);
+                    nOCD.Alojamiento.Observaciones = item5.Text;
 
-                /* //se debe incluir los dropdownlist de tipo de comida
-                DropDownList item6 = (DropDownList)FindControl(txtComidaIndividualObservaciones1.Text + i);
-                nOCD.Comida.CodigoPlato = decimal.Parse(item6.SelectedValue);
-                */
+                    //se debe incluir los dropdownlist de tipo de comida
+                    DropDownList item6 = (DropDownList)form1.FindControl("ddlTipoServCom" + TipoHab + i);
+                    nOCD.Comida.ServicioComida.Tipo = item6.SelectedValue;
+                    //nOCD.Comida.ServicioComida.Tipo = "general";
 
-                nOCD.Comida.ServicioComida.Tipo = "general";
+                    //TextBox item7 = (TextBox)form1.FindControl("txtComidaObservaciones" + TipoHab + i);
+                    //nOCD.Comida.Observaciones = item7.Text;
 
-                //TextBox item7 = (TextBox)form1.FindControl("txtComidaObservaciones" + TipoHab + i);
-                //nOCD.Comida.Observaciones = item7.Text;
+                    nOCD.Comida.Observaciones = "Sin Observaciones";
 
-                nOCD.Comida.Observaciones = "Observaciones Comida";
+                    nOCD.Comida.FechaRecepcion = DateTime.Now;
 
-                nOCD.Comida.FechaRecepcion = DateTime.Now;
-
-                nOCC.ListaDetalle.Add(nOCD);
+                    nOCC.ListaDetalle.Add(nOCD);
+                }
             }
         }
 
@@ -175,7 +216,7 @@ namespace CapaWSPresentacion.perfilCliente
             desbloquearBoton();
         }
 
-        protected void sectuple_TextChanged(object sender, EventArgs e)
+        protected void cuadruple_TextChanged(object sender, EventArgs e)
         {
             personasConHabitacion();
             desbloquearBoton();
@@ -183,12 +224,12 @@ namespace CapaWSPresentacion.perfilCliente
 
         private void personasConHabitacion()
         {
-            int uno = int.Parse(individual.Text);
-            int dos = int.Parse(doble.Text);
-            int tres = int.Parse(triple.Text);
-            int cuatro = int.Parse(sectuple.Text);
+            int uno    = int.Parse(individual.Text);
+            int dos    = int.Parse(doble.Text);
+            int tres   = int.Parse(triple.Text);
+            int cuatro = int.Parse(cuadruple.Text);
 
-            int total = uno + (dos * 2) + (tres * 3) + (cuatro * 4);
+            int total  = uno + (dos * 2) + (tres * 3) + (cuatro * 4);
 
             txtPersonasHabitacion.Text = total.ToString();
         }
@@ -202,7 +243,6 @@ namespace CapaWSPresentacion.perfilCliente
             {
                 MostrarCasillas.Enabled = true;
                 BtnSiguiente.Enabled = true;
-
             }
             else
             {
@@ -218,7 +258,7 @@ namespace CapaWSPresentacion.perfilCliente
                 DateTime fechaIngreso = DateTime.Parse(txtFechaIngreso.Text);
                 DateTime fechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
 
-                if(fechaIngreso != null && fechaIngreso != null)
+                if(fechaIngreso != null && fechaEgreso != null && fechaIngreso < fechaEgreso)
                 {
                     TimeSpan total = fechaEgreso - fechaIngreso;
 
@@ -240,12 +280,12 @@ namespace CapaWSPresentacion.perfilCliente
                     txtCantHabDispSim.Text = n.Item.CantHabSimple.ToString();
                     txtCantHabDispDob.Text = n.Item.CantHabDoble.ToString();
                     txtCantHabDispTri.Text = n.Item.CantHabTriple.ToString();
-                    txtCantHabDispSec.Text = n.Item.CantHabSectuple.ToString();
+                    txtCantHabDispCua.Text = n.Item.CantHabSectuple.ToString();
                 } else {
                     txtCantHabDispSim.Text = "0";
                     txtCantHabDispDob.Text = "0";
                     txtCantHabDispTri.Text = "0";
-                    txtCantHabDispSec.Text = "0";
+                    txtCantHabDispCua.Text = "0";
                 }
             }
             catch (Exception)
@@ -254,10 +294,8 @@ namespace CapaWSPresentacion.perfilCliente
                 txtCantHabDispSim.Text = "0";
                 txtCantHabDispDob.Text = "0";
                 txtCantHabDispTri.Text = "0";
-                txtCantHabDispSec.Text = "0";
-
+                txtCantHabDispCua.Text = "0";
             }
         }
-
     }
 }
