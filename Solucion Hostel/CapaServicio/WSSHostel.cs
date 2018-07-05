@@ -65,10 +65,10 @@ namespace CapaServicio
             return x.LlamarSPRescatar(token);
         }
 
-        public PerfilUsuarioCliente PerfilUsuarioClienteBuscarPorRut(String rut, String token)
+        public ContenedorPerfilUsuarioCliente PerfilUsuarioClienteRescatarXRut(string rut, string token)
         {
             CRUDPerfilUsuarioCliente x = new CRUDPerfilUsuarioCliente();
-            return x.buscarClientePorRut(rut,token);
+            return x.LlamarSPRescatarXRut(rut,token);
         }
 
         //CRUD PerfilUsuarioCliente - FIN
@@ -91,10 +91,10 @@ namespace CapaServicio
             CRUDPerfilUsuarioProveedor x = new CRUDPerfilUsuarioProveedor();
             return x.LlamarSPRescatar(token);
         }
-        public PerfilUsuarioProveedor PerfilUsuarioProveedorBuscarPorRut(String rut, String token)
+        public ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorRescatarXRut(string rut, string token)
         {
             CRUDPerfilUsuarioProveedor x = new CRUDPerfilUsuarioProveedor();
-            return x.buscarProveedorPorRut(rut,token);
+            return x.LlamarSPRescatarXRut(rut, token);
         }
         //CRUD PerfilUsuarioProveedor - FIN
 
@@ -111,16 +111,16 @@ namespace CapaServicio
             x.LlamarSPActualizar(entrada);
             return entrada;
         }
-        public ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(String token)
+        public ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token)
         {
             CRUDPerfilUsuarioEmpleado x = new CRUDPerfilUsuarioEmpleado();
             return x.LlamarSPRescatar(token);
         }
-        //public ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token)
-        //{
-        //    CRUDPerfilUsuarioEmpleado x = new CRUDPerfilUsuarioEmpleado();
-        //    return x.LlamarSPRescatar(token);
-        //}
+        public ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoRescatarXRut(string rut, string token)
+        {
+            CRUDPerfilUsuarioEmpleado x = new CRUDPerfilUsuarioEmpleado();
+            return x.LlamarSPRescatarXRut(rut, token);
+        }
         //CRUD PerfilUsuarioEmpleado - FIN
 
         //CRUD PerfilUsuarioAdministrador - INI
@@ -136,15 +136,21 @@ namespace CapaServicio
             x.LlamarSPActualizar(entrada);
             return entrada;
         }
+
+        public ContenedorPerfilUsuarioAdministradores PerfilUsuarioAdministradorRescatar(string token)
+        {
+            CRUDPerfilUsuarioAdministrador x = new CRUDPerfilUsuarioAdministrador();
+            return x.LlamarSPRescatar(token);
+        }
         public bool PerfilUsuarioAdministradorEliminar(ContenedorPerfilUsuarioAdministrador nPUA)
         {
             CRUDPerfilUsuarioAdministrador x = new CRUDPerfilUsuarioAdministrador();
             return x.eliminarUsuario(nPUA);
         }
-        public PerfilUsuarioAdministrador PerfilUsuarioAdministradorBuscarPorRut(String rut, String token)
+        public ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorRescatarXRut(string rut, string token)
         {
             CRUDPerfilUsuarioAdministrador x = new CRUDPerfilUsuarioAdministrador();
-            return x.buscarAdministradorPorRut(rut, token);
+            return x.LlamarSPRescatarXRut(rut, token);
         }
         //public ContenedorPerfilUsuarioAdministradores PerfilUsuarioAdministradorRescatar(string token)
         //{

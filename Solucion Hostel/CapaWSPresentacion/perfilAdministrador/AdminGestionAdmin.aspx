@@ -12,7 +12,7 @@
 			<h2>Seleccione un perfil para modificar o eliminar</h2>	
 			<div class="Casilla2-1Principal">
 			<h4>Seleccion de Perfil</h4>
-		    <asp:DropDownList ID="ddlTipoPerfil" runat="server" CssClass="droplistPrincipal">
+		    <asp:DropDownList ID="ddlTipoPerfil" runat="server" CssClass="droplistPrincipal" AutoPostBack="True" OnSelectedIndexChanged="ddlTipoPerfil_SelectedIndexChanged">
                 <asp:ListItem Value="1">Selecciona un Perfil</asp:ListItem>
                 <asp:ListItem Value="2">Administrador</asp:ListItem>
                 <asp:ListItem Value="3">Empleado</asp:ListItem>
@@ -22,7 +22,7 @@
 			</div>
 			<div class="Casilla2-1Principal">
 			<h4>Seleccione un Rut</h4>
-			<asp:DropDownList ID="ddlRutPerfil" runat="server" CssClass="droplistPrincipal">
+			<asp:DropDownList ID="ddlRutPerfil" runat="server" CssClass="droplistPrincipal" AutoPostBack="True" OnSelectedIndexChanged="ddlRutPerfil_SelectedIndexChanged">
                 <asp:ListItem Value="1">Selecciona un Rut</asp:ListItem>
                 <asp:ListItem Value="2">11111111</asp:ListItem>
                 <asp:ListItem Value="3">22222222</asp:ListItem>
@@ -44,7 +44,7 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Fecha Nacimiento</h4>	
-			<asp:TextBox ID="txtFecNacPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtFecNacPersona" runat="server" CssClass="CasillaPersona" TextMode="Date"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Correo Electrónico</h4>	
@@ -307,7 +307,7 @@
 			<asp:TextBox ID="txtClave" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
-			<asp:Button ID="btnModificar" runat="server" Text="MODIFICAR" CssClass="SubmitTotal2" OnClick="Button1_Click"/>
+			<asp:Button ID="btnModificar" runat="server" Text="MODIFICAR" CssClass="SubmitTotal2" OnClick="btnModificar_Click"/>
 			</div>
 			<div class="Casilla2-1">
 			<asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="SubmitTotal2" OnClick="Button2_Click" />

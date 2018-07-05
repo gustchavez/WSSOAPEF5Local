@@ -41,7 +41,7 @@ namespace CapaServicio
         ContenedorPerfilUsuarioClientes PerfilUsuarioClienteRescatar(string token);
 
         [OperationContract]
-        PerfilUsuarioCliente PerfilUsuarioClienteBuscarPorRut(String rut, String token);
+        ContenedorPerfilUsuarioCliente PerfilUsuarioClienteRescatarXRut(string rut, string token);
         //Fin PerfilUsuarioCliente
 
         //Inicio PerfilUsuarioProveedor
@@ -55,7 +55,7 @@ namespace CapaServicio
         ContenedorPerfilUsuarioProveedores PerfilUsuarioProveedorRescatar(string token);
 
         [OperationContract]
-        PerfilUsuarioProveedor PerfilUsuarioProveedorBuscarPorRut(String rut, String token);
+        ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorRescatarXRut(string rut, string token);
         //Fin PerfilUsuarioProveedor
 
         //Inicio PerfilUsuarioEmpleado
@@ -66,8 +66,10 @@ namespace CapaServicio
         ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoActualizar(ContenedorPerfilUsuarioEmpleado entrada);
 
         [OperationContract]
-        ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(String token);
+        ContenedorPerfilUsuarioEmpleados PerfilUsuarioEmpleadoRescatar(string token);
 
+        [OperationContract]
+        ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoRescatarXRut(string rut, string token);
         //Inicio PerfilUsuarioAdministrador
         [OperationContract]
         ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorCrear(ContenedorPerfilUsuarioAdministrador entrada);
@@ -76,11 +78,14 @@ namespace CapaServicio
         ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorActualizar(ContenedorPerfilUsuarioAdministrador entrada);
 
         [OperationContract]
-        bool PerfilUsuarioAdministradorEliminar(ContenedorPerfilUsuarioAdministrador nPUA);
+        ContenedorPerfilUsuarioAdministradores PerfilUsuarioAdministradorRescatar(string token);
 
         [OperationContract]
-        PerfilUsuarioAdministrador PerfilUsuarioAdministradorBuscarPorRut(String rut, String token);
+        ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorRescatarXRut(string rut, string token);
 
+        [OperationContract]
+        bool PerfilUsuarioAdministradorEliminar(ContenedorPerfilUsuarioAdministrador nPUA);
+        
         //[OperationContract]
         //ContenedorPerfilUsuarioAdministradores PerfilUsuarioAdministradorRescatar(string token);
         //Fin PerfilUsuarioAdministrador

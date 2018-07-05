@@ -18,7 +18,10 @@ namespace CapaWSPresentacion.perfilAdministrador
 
                 if (Perfil.Equals("Administrador"))
                 {
-                   
+                    if (!IsPostBack)
+                    {
+                        //RescatarDatos();
+                    }
                 }
                 else {
                     Session["TokenUsuario"] = null;
@@ -35,90 +38,116 @@ namespace CapaWSPresentacion.perfilAdministrador
         {
             String rutUsuario = ddlRutPerfil.SelectedValue;
             String token = Session["TokenUsuario"].ToString();
+
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-            PerfilUsuarioProveedor a = new PerfilUsuarioProveedor();
-            a = x.PerfilUsuarioProveedorBuscarPorRut(rutUsuario, token);
-            txtRutEmpresa.Text = a.Proveedor.Rut;
-            txtRazonSocial.Text = a.PerfilUsuario.Empresa.RazonSocial;
-            ddlGiro.SelectedItem.Text = a.PerfilUsuario.Empresa.Rubro;
-            txtMailEmpresa.Text = a.PerfilUsuario.Empresa.Email;
-            txtTelEmpresa.Text = a.PerfilUsuario.Empresa.Telefono;
-            //a.PerfilUsuario.Direccion.CodPais = 56;
-            //a.PerfilUsuario.Direccion.CodPostal = "Codigo postal";
-            ddlNombreCiudad.SelectedItem.Text = a.PerfilUsuario.Direccion.NombreCiudad;
-            ddlComuna.SelectedItem.Text = a.PerfilUsuario.Direccion.Comuna;
-            //a.PerfilUsuario.Direccion.Calle = "";
-            //a.PerfilUsuario.Direccion.Numero = 0;
-            //a.PerfilUsuario.Empresa.Logo = "Logo";
-            txtRutPersona.Text = a.PerfilUsuario.Persona.Rut;
-            txtNombrePersona.Text = a.PerfilUsuario.Persona.Nombre;
-            txtApellidoPersona.Text = a.PerfilUsuario.Persona.Apellido;
-            txtFecNacPersona.Text = a.PerfilUsuario.Persona.FechaNacimiento.ToString();
-            txtMailPersona.Text = a.PerfilUsuario.Persona.Email;
-            txtTelPersona.Text = a.PerfilUsuario.Persona.Telefono;
-            txtClave.Text = a.PerfilUsuario.Usuario.Clave;
+            ContenedorPerfilUsuarioProveedor n = new ContenedorPerfilUsuarioProveedor();
+            n = x.PerfilUsuarioProveedorRescatarXRut(rutUsuario, token);
+
+            if(n.Retorno.Codigo == 0)
+            {
+                PerfilUsuarioProveedor a = n.Item;
+                txtRutEmpresa.Text = a.Proveedor.Rut;
+                txtRazonSocial.Text = a.PerfilUsuario.Empresa.RazonSocial;
+                ddlGiro.SelectedValue = a.PerfilUsuario.Empresa.Rubro;
+                txtMailEmpresa.Text = a.PerfilUsuario.Empresa.Email;
+                txtTelEmpresa.Text = a.PerfilUsuario.Empresa.Telefono;
+                //a.PerfilUsuario.Direccion.CodPais = 56;
+                //a.PerfilUsuario.Direccion.CodPostal = "Codigo postal";
+                ddlNombreCiudad.SelectedValue = a.PerfilUsuario.Direccion.NombreCiudad;
+                ddlComuna.SelectedValue = a.PerfilUsuario.Direccion.Comuna;
+                txtDirEmp.Text = a.PerfilUsuario.Direccion.Calle;
+                //a.PerfilUsuario.Direccion.Numero = 0;
+                //a.PerfilUsuario.Empresa.Logo = "Logo";
+                txtRutPersona.Text = a.PerfilUsuario.Persona.Rut;
+                txtNombrePersona.Text = a.PerfilUsuario.Persona.Nombre;
+                txtApellidoPersona.Text = a.PerfilUsuario.Persona.Apellido;
+                txtFecNacPersona.Text = a.PerfilUsuario.Persona.FechaNacimiento.ToString("yyyy-MM-dd");
+                txtMailPersona.Text = a.PerfilUsuario.Persona.Email;
+                txtTelPersona.Text = a.PerfilUsuario.Persona.Telefono;
+                txtUsuario.Text = a.PerfilUsuario.Usuario.Nombre;
+                txtClave.Text = a.PerfilUsuario.Usuario.Clave;
+            }
         }
         private void RescatarDatosCliente()
         {
             String rutUsuario = ddlRutPerfil.SelectedValue;
             String token = Session["TokenUsuario"].ToString();
+
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-            PerfilUsuarioCliente a = new PerfilUsuarioCliente();
-            a = x.PerfilUsuarioClienteBuscarPorRut(rutUsuario, token);
-            txtRutEmpresa.Text = a.Cliente.Rut;
-            txtRazonSocial.Text = a.PerfilUsuario.Empresa.RazonSocial;
-            ddlGiro.SelectedItem.Text = a.PerfilUsuario.Empresa.Rubro;
-            txtMailEmpresa.Text = a.PerfilUsuario.Empresa.Email;
-            txtTelEmpresa.Text = a.PerfilUsuario.Empresa.Telefono;
-            //a.PerfilUsuario.Direccion.CodPais = 56;
-            //a.PerfilUsuario.Direccion.CodPostal = "Codigo postal";
-            ddlNombreCiudad.SelectedItem.Text = a.PerfilUsuario.Direccion.NombreCiudad;
-            ddlComuna.SelectedItem.Text = a.PerfilUsuario.Direccion.Comuna;
-            //a.PerfilUsuario.Direccion.Calle = "";
-            //a.PerfilUsuario.Direccion.Numero = 0;
-            //a.PerfilUsuario.Empresa.Logo = "Logo";
-            txtRutPersona.Text = a.PerfilUsuario.Persona.Rut;
-            txtNombrePersona.Text = a.PerfilUsuario.Persona.Nombre;
-            txtApellidoPersona.Text = a.PerfilUsuario.Persona.Apellido;
-            txtFecNacPersona.Text = a.PerfilUsuario.Persona.FechaNacimiento.ToString();
-            txtMailPersona.Text = a.PerfilUsuario.Persona.Email;
-            txtTelPersona.Text = a.PerfilUsuario.Persona.Telefono;
-            txtClave.Text = a.PerfilUsuario.Usuario.Clave;
+            ContenedorPerfilUsuarioCliente n = new ContenedorPerfilUsuarioCliente();
+            n = x.PerfilUsuarioClienteRescatarXRut(rutUsuario, token);
+
+            if (n.Retorno.Codigo == 0)
+            {
+                PerfilUsuarioCliente a = n.Item;
+                txtRutEmpresa.Text = a.Cliente.Rut;
+                txtRazonSocial.Text = a.PerfilUsuario.Empresa.RazonSocial;
+                ddlGiro.SelectedValue = a.PerfilUsuario.Empresa.Rubro;
+                txtMailEmpresa.Text = a.PerfilUsuario.Empresa.Email;
+                txtTelEmpresa.Text = a.PerfilUsuario.Empresa.Telefono;
+                //a.PerfilUsuario.Direccion.CodPais = 56;
+                //a.PerfilUsuario.Direccion.CodPostal = "Codigo postal";
+                ddlNombreCiudad.SelectedValue = a.PerfilUsuario.Direccion.NombreCiudad;
+                ddlComuna.SelectedValue = a.PerfilUsuario.Direccion.Comuna;
+                txtDirEmp.Text = a.PerfilUsuario.Direccion.Calle;
+                //a.PerfilUsuario.Direccion.Numero = 0;
+                //a.PerfilUsuario.Empresa.Logo = "Logo";
+                txtRutPersona.Text = a.PerfilUsuario.Persona.Rut;
+                txtNombrePersona.Text = a.PerfilUsuario.Persona.Nombre;
+                txtApellidoPersona.Text = a.PerfilUsuario.Persona.Apellido;
+                txtFecNacPersona.Text = a.PerfilUsuario.Persona.FechaNacimiento.ToString("yyyy-MM-dd");
+                txtMailPersona.Text = a.PerfilUsuario.Persona.Email;
+                txtTelPersona.Text = a.PerfilUsuario.Persona.Telefono;
+                txtUsuario.Text = a.PerfilUsuario.Usuario.Nombre;
+                txtClave.Text = a.PerfilUsuario.Usuario.Clave;
+            }
         }
         private void RescatarDatosEmpleado()
         {
             String rutUsuario = ddlRutPerfil.SelectedValue;
             String token = Session["TokenUsuario"].ToString();
+
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-            PerfilUsuarioEmpleado a = new PerfilUsuarioEmpleado();
-            //a = x.PerfilUsuarioEmpleadoBuscarPorRut(rutUsuario, token);
-            //TextBox1.Text = a.Persona.Rut;
-            //TextBox2.Text = a.Persona.Nombre;
-            //TextBox3.Text = a.Persona.Apellido;
-            ////TextBox4.Text = a.Persona.FechaNacimiento.ToString();
-            //TextBox5.Text = a.Persona.Email;
-            //TextBox6.Text = a.Persona.Telefono;
-            //TextBox14.Text = a.Usuario.Clave;
-            //TextBox13.Text = a.Usuario.Nombre;
+            ContenedorPerfilUsuarioEmpleado n = new ContenedorPerfilUsuarioEmpleado();
+            n = x.PerfilUsuarioEmpleadoRescatarXRut(rutUsuario, token);
+
+            if (n.Retorno.Codigo == 0)
+            {
+                PerfilUsuarioEmpleado a = n.Item;
+                txtRutPersona.Text = a.Persona.Rut;
+                txtNombrePersona.Text = a.Persona.Nombre;
+                txtApellidoPersona.Text = a.Persona.Apellido;
+                txtFecNacPersona.Text = a.Persona.FechaNacimiento.ToString("yyyy-MM-dd");
+                txtMailPersona.Text = a.Persona.Email;
+                txtTelPersona.Text = a.Persona.Telefono;
+                txtClave.Text = a.Usuario.Clave;
+                txtUsuario.Text = a.Usuario.Nombre;
+            }
         }
         private void RescatarDatosAdministrador()
         {
             String rutUsuario = ddlRutPerfil.SelectedValue;
             String token = Session["TokenUsuario"].ToString();
+
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-            PerfilUsuarioAdministrador a = new PerfilUsuarioAdministrador();
-            a = x.PerfilUsuarioAdministradorBuscarPorRut(rutUsuario,token);
-            txtRutPersona.Text = a.Persona.Rut;
-            txtNombrePersona.Text = a.Persona.Nombre;
-            txtApellidoPersona.Text = a.Persona.Apellido;
-            //TextBox4.Text = a.Persona.FechaNacimiento.ToString();
-            txtMailPersona.Text = a.Persona.Email;
-            txtTelPersona.Text = a.Persona.Telefono;
-            txtClave.Text = a.Usuario.Clave;
-            txtUsuario.Text = a.Usuario.Nombre;
+            ContenedorPerfilUsuarioAdministrador n = new ContenedorPerfilUsuarioAdministrador();
+            n = x.PerfilUsuarioAdministradorRescatarXRut(rutUsuario, token);
+
+            if (n.Retorno.Codigo == 0)
+            {
+                PerfilUsuarioAdministrador a = n.Item;
+                txtRutPersona.Text = a.Persona.Rut;
+                txtNombrePersona.Text = a.Persona.Nombre;
+                txtApellidoPersona.Text = a.Persona.Apellido;
+                txtFecNacPersona.Text = a.Persona.FechaNacimiento.ToString("yyyy-MM-dd");
+                txtMailPersona.Text = a.Persona.Email;
+                txtTelPersona.Text = a.Persona.Telefono;
+                txtClave.Text = a.Usuario.Clave;
+                txtUsuario.Text = a.Usuario.Nombre;
+            }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnModificar_Click(object sender, EventArgs e)
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
             int perfil = ddlTipoPerfil.SelectedIndex;
@@ -226,6 +255,165 @@ namespace CapaWSPresentacion.perfilAdministrador
             a.Retorno.Token = Session["TokenUsuario"].ToString();
 
             x.PerfilUsuarioAdministradorEliminar(a);
+        }
+
+        protected void ddlTipoPerfil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            int perfil = ddlTipoPerfil.SelectedIndex;
+
+            switch (perfil)
+            {
+                case 1:
+                    //Admin
+                    ContenedorPerfilUsuarioAdministradores m = new ContenedorPerfilUsuarioAdministradores();
+                    m = x.PerfilUsuarioAdministradorRescatar(Session["TokenUsuario"].ToString());
+
+                    var adm = (from l in m.Lista
+                                select new
+                                {
+                                    Rut = l.Persona.Rut,
+                                    NombreCompleto = l.Persona.Apellido + l.Persona.Nombre
+                                }
+                                ).ToList();
+
+                    if (adm != null)
+                    {
+                        ddlRutPerfil.DataSource = adm;
+                        ddlRutPerfil.DataValueField = "Rut";
+                        ddlRutPerfil.DataTextField = "NombreCompleto";
+                        ddlRutPerfil.DataBind();
+                        ddlRutPerfil.Enabled = true;
+                        ////
+                        RescatarDatosAdministrador();
+                        ////
+                    }
+                    else {
+                        LimpiarControles();
+                    }
+                    break;
+                case 2:
+                    //Empleado
+                    ContenedorPerfilUsuarioEmpleados n = new ContenedorPerfilUsuarioEmpleados();
+                    n = x.PerfilUsuarioEmpleadoRescatar(Session["TokenUsuario"].ToString());
+
+                    var emp = (from l in n.Lista
+                                select new
+                                {
+                                    Rut = l.Persona.Rut,
+                                    NombreCompleto = l.Persona.Apellido + l.Persona.Nombre
+                                }
+                                ).ToList();
+
+                    if (emp != null)
+                    {
+                        ddlRutPerfil.DataSource = emp;
+                        ddlRutPerfil.DataValueField = "Rut";
+                        ddlRutPerfil.DataTextField = "NombreCompleto";
+                        ddlRutPerfil.DataBind();
+                        ddlRutPerfil.Enabled = true;
+                        ////
+                        RescatarDatosEmpleado();
+                        ////
+                    }
+                    else {
+                        LimpiarControles();
+                    }
+                    break;
+                case 3:
+                    //Cliente      
+                    ContenedorPerfilUsuarioClientes o = new ContenedorPerfilUsuarioClientes();
+                    o = x.PerfilUsuarioClienteRescatar(Session["TokenUsuario"].ToString());
+
+                    var clie = (from l in o.Lista
+                                select new
+                                {
+                                    Rut = l.Cliente.Rut,
+                                    RazonSocial = l.PerfilUsuario.Empresa.RazonSocial
+                                }
+                                ).ToList();
+
+                    if (clie != null)
+                    {
+                        ddlRutPerfil.DataSource = clie;
+                        ddlRutPerfil.DataValueField = "Rut";
+                        ddlRutPerfil.DataTextField = "RazonSocial";
+                        ddlRutPerfil.DataBind();
+                        ddlRutPerfil.Enabled = true;
+                        ////
+                        RescatarDatosCliente();
+                        ////
+                    }
+                    else {
+                        LimpiarControles();
+                    }
+                    break;
+                case 4:
+                    //Proveedor
+                    ContenedorPerfilUsuarioProveedores p = new ContenedorPerfilUsuarioProveedores();
+                    p = x.PerfilUsuarioProveedorRescatar(Session["TokenUsuario"].ToString());
+
+                    var prov = (from l in p.Lista
+                                select new
+                                {
+                                    Rut = l.Proveedor.Rut,
+                                    RazonSocial = l.PerfilUsuario.Empresa.RazonSocial
+                                }
+                                ).ToList();
+
+                    if (prov != null)
+                    {
+                        ddlRutPerfil.DataSource = prov;
+                        ddlRutPerfil.DataValueField = "Rut";
+                        ddlRutPerfil.DataTextField = "RazonSocial";
+                        ddlRutPerfil.DataBind();
+                        ddlRutPerfil.Enabled = true;
+                        ////
+                        RescatarDatosProveedor();
+                        ////
+                    }
+                    else {
+                        LimpiarControles();
+                    }
+                    break;
+                default:
+                    LimpiarControles();
+                    break;
+            }
+        }
+
+        private void LimpiarControles()
+        {
+            ddlRutPerfil.Items.Clear();
+            ddlRutPerfil.Items.Add(new ListItem("No Existe", ""));
+            ddlRutPerfil.DataBind();
+            ddlRutPerfil.SelectedIndex = 0;
+            //////////////
+            ddlRutPerfil.Enabled = false;
+        }
+
+        protected void ddlRutPerfil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int perfil = ddlTipoPerfil.SelectedIndex;
+
+            switch (perfil)
+            {
+                case 1:
+                    RescatarDatosAdministrador();
+                    break;
+                case 2:
+                    RescatarDatosEmpleado();
+                    break;
+                case 3:
+                    RescatarDatosCliente();
+                    break;
+                case 4:
+                    RescatarDatosProveedor();
+                    break;
+                default:
+                    LimpiarControles();
+                    break;
+            }
         }
     }
 }

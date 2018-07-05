@@ -33,7 +33,7 @@ namespace CapaNegocio
                     CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
 
                     conex.SP_CREAR_EMPLEADO
-                        ( nPUC.Item.Persona.Rut
+                        (nPUC.Item.Persona.Rut
                         , nPUC.Item.Persona.Nombre
                         , nPUC.Item.Persona.Apellido
                         , nPUC.Item.Persona.FechaNacimiento
@@ -118,6 +118,7 @@ namespace CapaNegocio
 
                     var collection = (from per in conex.PERSONA
                                       join usu in conex.USUARIO on per.RUT equals usu.RUT_PERSONA
+                                      where usu.PERFIL == "Empleado"
                                       orderby per.RUT
                                       select new
                                       {
@@ -178,6 +179,68 @@ namespace CapaNegocio
                 retorno = true;
             }
             return retorno;
+        }
+        public ContenedorPerfilUsuarioEmpleado LlamarSPRescatarXRut(String rut, String token)
+        {
+            ContenedorPerfilUsuarioEmpleado cPUE = new ContenedorPerfilUsuarioEmpleado();
+
+            if (ValidarPerfilCUD(token))
+            {
+                try
+                {
+                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                    var item = (from per in conex.PERSONA
+                                      join usu in conex.USUARIO on per.RUT equals usu.RUT_PERSONA
+                                      where usu.PERFIL == "Empleado"
+                                         && usu.RUT_PERSONA == rut
+                                      orderby per.RUT
+                                      select new
+                                      {
+                                          RutPersona = per.RUT,
+                                          NombrePer = per.NOMBRE,
+                                          ApellidoPer = per.APELLIDO,
+                                          FecNacPer = per.NACIMIENTO,
+                                          MailPer = per.EMAIL,
+                                          TelefonoPer = per.TELEFONO,
+                                          NomUsuario = usu.NOMBRE,
+                                          PassUsiario = usu.CLAVE
+                                      }
+                            ).SingleOrDefault();
+
+                    if (item != null)
+                    {
+                        PerfilUsuarioEmpleado m = new PerfilUsuarioEmpleado();
+                        //
+                        m.Persona.Rut = item.RutPersona;
+                        m.Persona.Nombre = item.NombrePer;
+                        m.Persona.Apellido = item.ApellidoPer;
+                        m.Persona.FechaNacimiento = item.FecNacPer;
+                        m.Persona.Email = item.MailPer;
+                        m.Persona.Telefono = item.TelefonoPer;
+                        //
+                        m.Usuario.Nombre = item.NomUsuario;
+                        m.Usuario.Clave = item.PassUsiario;
+                        //
+                        cPUE.Item = m;
+                        cPUE.Retorno.Codigo = 0;
+                        cPUE.Retorno.Glosa = "OK";
+                    } else {
+                        cPUE.Retorno.Codigo = 200;
+                        cPUE.Retorno.Glosa = "Aviso, dato no encontrado";
+                    }
+                }
+                catch (Exception)
+                {
+                    cPUE.Retorno.Codigo = 1011;
+                    cPUE.Retorno.Glosa = "Err codret ORACLE";
+                }
+            } else {
+                cPUE.Retorno.Codigo = 100;
+                cPUE.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+
+            return cPUE;
         }
     }
 }

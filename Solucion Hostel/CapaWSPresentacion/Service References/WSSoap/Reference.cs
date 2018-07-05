@@ -45,11 +45,11 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioClientes> PerfilUsuarioClienteRescatarAsync(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteBuscarPorRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteBuscarPorRutResponse")]
-        CapaObjeto.PerfilUsuarioCliente PerfilUsuarioClienteBuscarPorRut(string rut, string token);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatarXRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatarXRutResponse")]
+        CapaObjeto.ContenedorPerfilUsuarioCliente PerfilUsuarioClienteRescatarXRut(string rut, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteBuscarPorRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteBuscarPorRutResponse")]
-        System.Threading.Tasks.Task<CapaObjeto.PerfilUsuarioCliente> PerfilUsuarioClienteBuscarPorRutAsync(string rut, string token);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatarXRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatarXRutResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioCliente> PerfilUsuarioClienteRescatarXRutAsync(string rut, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrearResponse")]
         CapaObjeto.ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorCrear(CapaObjeto.ContenedorPerfilUsuarioProveedor entrada);
@@ -69,11 +69,11 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioProveedores> PerfilUsuarioProveedorRescatarAsync(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorBuscarPorRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorBuscarPorRutResponse")]
-        CapaObjeto.PerfilUsuarioProveedor PerfilUsuarioProveedorBuscarPorRut(string rut, string token);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatarXRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatarXRutResponse")]
+        CapaObjeto.ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorRescatarXRut(string rut, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorBuscarPorRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorBuscarPorRutResponse")]
-        System.Threading.Tasks.Task<CapaObjeto.PerfilUsuarioProveedor> PerfilUsuarioProveedorBuscarPorRutAsync(string rut, string token);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatarXRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatarXRutResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioProveedor> PerfilUsuarioProveedorRescatarXRutAsync(string rut, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoCrearResponse")]
         CapaObjeto.ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoCrear(CapaObjeto.ContenedorPerfilUsuarioEmpleado entrada);
@@ -93,6 +93,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioEmpleados> PerfilUsuarioEmpleadoRescatarAsync(string token);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatarXRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatarXRutResponse")]
+        CapaObjeto.ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoRescatarXRut(string rut, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatarXRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatarXRutResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioEmpleado> PerfilUsuarioEmpleadoRescatarXRutAsync(string rut, string token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrearResponse")]
         CapaObjeto.ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorCrear(CapaObjeto.ContenedorPerfilUsuarioAdministrador entrada);
         
@@ -105,17 +111,23 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorActualizar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorActualizarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioAdministrador> PerfilUsuarioAdministradorActualizarAsync(CapaObjeto.ContenedorPerfilUsuarioAdministrador entrada);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorRescatarResponse")]
+        CapaObjeto.ContenedorPerfilUsuarioAdministradores PerfilUsuarioAdministradorRescatar(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorRescatar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorRescatarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioAdministradores> PerfilUsuarioAdministradorRescatarAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorRescatarXRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorRescatarXRutResponse")]
+        CapaObjeto.ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorRescatarXRut(string rut, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorRescatarXRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorRescatarXRutResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioAdministrador> PerfilUsuarioAdministradorRescatarXRutAsync(string rut, string token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorEliminar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorEliminarResponse")]
         bool PerfilUsuarioAdministradorEliminar(CapaObjeto.ContenedorPerfilUsuarioAdministrador nPUA);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorEliminar", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorEliminarResponse")]
         System.Threading.Tasks.Task<bool> PerfilUsuarioAdministradorEliminarAsync(CapaObjeto.ContenedorPerfilUsuarioAdministrador nPUA);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorBuscarPorRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorBuscarPorRutResponse")]
-        CapaObjeto.PerfilUsuarioAdministrador PerfilUsuarioAdministradorBuscarPorRut(string rut, string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorBuscarPorRut", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorBuscarPorRutResponse")]
-        System.Threading.Tasks.Task<CapaObjeto.PerfilUsuarioAdministrador> PerfilUsuarioAdministradorBuscarPorRutAsync(string rut, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProductoCrear", ReplyAction="http://tempuri.org/IWSSHostel/ProductoCrearResponse")]
         CapaObjeto.ContenedorProducto ProductoCrear(CapaObjeto.ContenedorProducto entrada);
@@ -387,6 +399,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/listaClientes", ReplyAction="http://tempuri.org/IWSSHostel/listaClientesResponse")]
         System.Threading.Tasks.Task<string[][]> listaClientesAsync(string token);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ListaUsuario", ReplyAction="http://tempuri.org/IWSSHostel/ListaUsuarioResponse")]
+        string[][] ListaUsuario(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ListaUsuario", ReplyAction="http://tempuri.org/IWSSHostel/ListaUsuarioResponse")]
+        System.Threading.Tasks.Task<string[][]> ListaUsuarioAsync(string token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProvisionCrear", ReplyAction="http://tempuri.org/IWSSHostel/ProvisionCrearResponse")]
         CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada);
         
@@ -479,12 +497,12 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.PerfilUsuarioClienteRescatarAsync(token);
         }
         
-        public CapaObjeto.PerfilUsuarioCliente PerfilUsuarioClienteBuscarPorRut(string rut, string token) {
-            return base.Channel.PerfilUsuarioClienteBuscarPorRut(rut, token);
+        public CapaObjeto.ContenedorPerfilUsuarioCliente PerfilUsuarioClienteRescatarXRut(string rut, string token) {
+            return base.Channel.PerfilUsuarioClienteRescatarXRut(rut, token);
         }
         
-        public System.Threading.Tasks.Task<CapaObjeto.PerfilUsuarioCliente> PerfilUsuarioClienteBuscarPorRutAsync(string rut, string token) {
-            return base.Channel.PerfilUsuarioClienteBuscarPorRutAsync(rut, token);
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioCliente> PerfilUsuarioClienteRescatarXRutAsync(string rut, string token) {
+            return base.Channel.PerfilUsuarioClienteRescatarXRutAsync(rut, token);
         }
         
         public CapaObjeto.ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorCrear(CapaObjeto.ContenedorPerfilUsuarioProveedor entrada) {
@@ -511,12 +529,12 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.PerfilUsuarioProveedorRescatarAsync(token);
         }
         
-        public CapaObjeto.PerfilUsuarioProveedor PerfilUsuarioProveedorBuscarPorRut(string rut, string token) {
-            return base.Channel.PerfilUsuarioProveedorBuscarPorRut(rut, token);
+        public CapaObjeto.ContenedorPerfilUsuarioProveedor PerfilUsuarioProveedorRescatarXRut(string rut, string token) {
+            return base.Channel.PerfilUsuarioProveedorRescatarXRut(rut, token);
         }
         
-        public System.Threading.Tasks.Task<CapaObjeto.PerfilUsuarioProveedor> PerfilUsuarioProveedorBuscarPorRutAsync(string rut, string token) {
-            return base.Channel.PerfilUsuarioProveedorBuscarPorRutAsync(rut, token);
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioProveedor> PerfilUsuarioProveedorRescatarXRutAsync(string rut, string token) {
+            return base.Channel.PerfilUsuarioProveedorRescatarXRutAsync(rut, token);
         }
         
         public CapaObjeto.ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoCrear(CapaObjeto.ContenedorPerfilUsuarioEmpleado entrada) {
@@ -543,6 +561,14 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.PerfilUsuarioEmpleadoRescatarAsync(token);
         }
         
+        public CapaObjeto.ContenedorPerfilUsuarioEmpleado PerfilUsuarioEmpleadoRescatarXRut(string rut, string token) {
+            return base.Channel.PerfilUsuarioEmpleadoRescatarXRut(rut, token);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioEmpleado> PerfilUsuarioEmpleadoRescatarXRutAsync(string rut, string token) {
+            return base.Channel.PerfilUsuarioEmpleadoRescatarXRutAsync(rut, token);
+        }
+        
         public CapaObjeto.ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorCrear(CapaObjeto.ContenedorPerfilUsuarioAdministrador entrada) {
             return base.Channel.PerfilUsuarioAdministradorCrear(entrada);
         }
@@ -559,20 +585,28 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.PerfilUsuarioAdministradorActualizarAsync(entrada);
         }
         
+        public CapaObjeto.ContenedorPerfilUsuarioAdministradores PerfilUsuarioAdministradorRescatar(string token) {
+            return base.Channel.PerfilUsuarioAdministradorRescatar(token);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioAdministradores> PerfilUsuarioAdministradorRescatarAsync(string token) {
+            return base.Channel.PerfilUsuarioAdministradorRescatarAsync(token);
+        }
+        
+        public CapaObjeto.ContenedorPerfilUsuarioAdministrador PerfilUsuarioAdministradorRescatarXRut(string rut, string token) {
+            return base.Channel.PerfilUsuarioAdministradorRescatarXRut(rut, token);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorPerfilUsuarioAdministrador> PerfilUsuarioAdministradorRescatarXRutAsync(string rut, string token) {
+            return base.Channel.PerfilUsuarioAdministradorRescatarXRutAsync(rut, token);
+        }
+        
         public bool PerfilUsuarioAdministradorEliminar(CapaObjeto.ContenedorPerfilUsuarioAdministrador nPUA) {
             return base.Channel.PerfilUsuarioAdministradorEliminar(nPUA);
         }
         
         public System.Threading.Tasks.Task<bool> PerfilUsuarioAdministradorEliminarAsync(CapaObjeto.ContenedorPerfilUsuarioAdministrador nPUA) {
             return base.Channel.PerfilUsuarioAdministradorEliminarAsync(nPUA);
-        }
-        
-        public CapaObjeto.PerfilUsuarioAdministrador PerfilUsuarioAdministradorBuscarPorRut(string rut, string token) {
-            return base.Channel.PerfilUsuarioAdministradorBuscarPorRut(rut, token);
-        }
-        
-        public System.Threading.Tasks.Task<CapaObjeto.PerfilUsuarioAdministrador> PerfilUsuarioAdministradorBuscarPorRutAsync(string rut, string token) {
-            return base.Channel.PerfilUsuarioAdministradorBuscarPorRutAsync(rut, token);
         }
         
         public CapaObjeto.ContenedorProducto ProductoCrear(CapaObjeto.ContenedorProducto entrada) {
@@ -933,6 +967,14 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<string[][]> listaClientesAsync(string token) {
             return base.Channel.listaClientesAsync(token);
+        }
+        
+        public string[][] ListaUsuario(string token) {
+            return base.Channel.ListaUsuario(token);
+        }
+        
+        public System.Threading.Tasks.Task<string[][]> ListaUsuarioAsync(string token) {
+            return base.Channel.ListaUsuarioAsync(token);
         }
         
         public CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada) {

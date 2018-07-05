@@ -197,6 +197,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PerfilUsuarioAdministrador" nillable="true" type="tns:PerfilUsuarioAdministrador" />
+  <xs:complexType name="ContenedorPerfilUsuarioAdministradores">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfPerfilUsuarioAdministrador" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorPerfilUsuarioAdministradores" nillable="true" type="tns:ContenedorPerfilUsuarioAdministradores" />
+  <xs:complexType name="ArrayOfPerfilUsuarioAdministrador">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PerfilUsuarioAdministrador" nillable="true" type="tns:PerfilUsuarioAdministrador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerfilUsuarioAdministrador" nillable="true" type="tns:ArrayOfPerfilUsuarioAdministrador" />
   <xs:complexType name="ContenedorProducto">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:Producto" />

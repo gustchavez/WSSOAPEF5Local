@@ -247,23 +247,25 @@ namespace CapaNegocio
             }
             return retorno;
         }
-        public PerfilUsuarioProveedor buscarProveedorPorRut(String rut, String token)
+        public ContenedorPerfilUsuarioProveedor LlamarSPRescatarXRut(String rut, String token)
         {
+            ContenedorPerfilUsuarioProveedor cPUP = new ContenedorPerfilUsuarioProveedor();
+
             if (ValidarPerfilCUD(token))
             {
                 try
                 {
                     CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
 
-                    var item = (from cli in conex.CLIENTE
-                                join emp in conex.EMPRESA on cli.RUT equals emp.RUT
-                                join dir in conex.DIRECCION on cli.RUT equals dir.RUT_EMPRESA
+                    var item = (from prov in conex.PROVEEDOR
+                                join emp in conex.EMPRESA on prov.RUT equals emp.RUT
+                                join dir in conex.DIRECCION on prov.RUT equals dir.RUT_EMPRESA
                                 join per in conex.PERSONA on dir.RUT_PERSONA equals per.RUT
                                 join usu in conex.USUARIO on per.RUT equals usu.RUT_PERSONA
-                                where per.RUT == rut
+                                where prov.RUT == rut
                                 select new
                                 {
-                                    RutCliente             = cli.RUT,
+                                    RutProveedor           = prov.RUT,
                                     RazonSocial            = emp.RAZON_SOCIAL,
                                     MailEmpresa            = emp.EMAIL,
                                     TelefonoEmp            = emp.TELEFONO,
@@ -286,41 +288,52 @@ namespace CapaNegocio
                                 }
                             ).SingleOrDefault();
 
-                    PerfilUsuarioProveedor m = new PerfilUsuarioProveedor();
-                    //
-                    m.Proveedor.Rut = item.RutCliente;
-                    m.PerfilUsuario.Empresa.RazonSocial = item.RazonSocial;
-                    m.PerfilUsuario.Empresa.Rubro = item.Rubro;
-                    m.PerfilUsuario.Empresa.Email = item.MailEmpresa;
-                    m.PerfilUsuario.Empresa.Telefono = item.TelefonoEmp;
-                    m.PerfilUsuario.Direccion.CodPais = int.Parse(item.CodPais.ToString());
-                    m.PerfilUsuario.Direccion.CodPostal = item.CodPostal;
-                    m.PerfilUsuario.Direccion.NombreCiudad = item.NomCiudadDir;
-                    m.PerfilUsuario.Direccion.Comuna = item.Comuna;
-                    m.PerfilUsuario.Direccion.Calle = item.CalleDirecc;
-                    m.PerfilUsuario.Direccion.Numero = item.Numero;
-                    m.PerfilUsuario.Empresa.Logo = item.Rubro;
-                    m.PerfilUsuario.Persona.Rut = item.RutPersona;
-                    m.PerfilUsuario.Persona.Nombre = item.NombrePersona;
-                    m.PerfilUsuario.Persona.Apellido = item.ApellidoPersona;
-                    m.PerfilUsuario.Persona.FechaNacimiento = item.FechaNacimientoPersona;
-                    m.PerfilUsuario.Persona.Email = item.EmailPersona;
-                    m.PerfilUsuario.Persona.Telefono = item.TelefonoPersona;
-                    m.PerfilUsuario.Usuario.Nombre = item.NomUsuario;
-                    m.PerfilUsuario.Usuario.Clave = item.PassUsiario;
+                    if(item != null)
+                    {
+                        PerfilUsuarioProveedor m = new PerfilUsuarioProveedor();
+                        //
+                        m.Proveedor.Rut = item.RutProveedor;
+                        m.PerfilUsuario.Empresa.RazonSocial = item.RazonSocial;
+                        m.PerfilUsuario.Empresa.Rubro = item.Rubro;
+                        m.PerfilUsuario.Empresa.Email = item.MailEmpresa;
+                        m.PerfilUsuario.Empresa.Telefono = item.TelefonoEmp;
+                        m.PerfilUsuario.Direccion.CodPais = int.Parse(item.CodPais.ToString());
+                        m.PerfilUsuario.Direccion.CodPostal = item.CodPostal;
+                        m.PerfilUsuario.Direccion.NombreCiudad = item.NomCiudadDir;
+                        m.PerfilUsuario.Direccion.Comuna = item.Comuna;
+                        m.PerfilUsuario.Direccion.Calle = item.CalleDirecc;
+                        m.PerfilUsuario.Direccion.Numero = item.Numero;
+                        m.PerfilUsuario.Empresa.Logo = item.Rubro;
+                        m.PerfilUsuario.Persona.Rut = item.RutPersona;
+                        m.PerfilUsuario.Persona.Nombre = item.NombrePersona;
+                        m.PerfilUsuario.Persona.Apellido = item.ApellidoPersona;
+                        m.PerfilUsuario.Persona.FechaNacimiento = item.FechaNacimientoPersona;
+                        m.PerfilUsuario.Persona.Email = item.EmailPersona;
+                        m.PerfilUsuario.Persona.Telefono = item.TelefonoPersona;
+                        m.PerfilUsuario.Usuario.Nombre = item.NomUsuario;
+                        m.PerfilUsuario.Usuario.Clave = item.PassUsiario;
 
-                    return m;
+                        cPUP.Item = m;
+                        cPUP.Retorno.Codigo = 0;
+                        cPUP.Retorno.Glosa = "OK";
+                    }
+                    else {
+                        cPUP.Retorno.Codigo = 200;
+                        cPUP.Retorno.Glosa = "Aviso, dato no encontrado";
+                    }
                 }
                 catch (Exception)
                 {
-                    return null;
+                    cPUP.Retorno.Codigo = 1011;
+                    cPUP.Retorno.Glosa = "Err codret ORACLE";
                 }
             }
-            else
-            {
-                return null;
+            else {
+                cPUP.Retorno.Codigo = 100;
+                cPUP.Retorno.Glosa = "Err expiro sesion o perfil invalido";
             }
-        }
 
+            return cPUP;
+        }
     }
 }
