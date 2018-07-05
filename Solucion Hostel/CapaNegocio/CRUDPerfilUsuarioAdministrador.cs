@@ -72,14 +72,16 @@ namespace CapaNegocio
                 CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
 
                 conex.SP_ACTUALIZAR_ADMINISTRADOR
-                    (nPUA.Item.Persona.Rut
+                    ( nPUA.Item.Persona.Rut
                     , nPUA.Item.Persona.Nombre
                     , nPUA.Item.Persona.Apellido
                     , nPUA.Item.Persona.FechaNacimiento
                     , nPUA.Item.Persona.Email
                     , nPUA.Item.Persona.Telefono
                     , nPUA.Item.Usuario.Id
+                    , nPUA.Item.Usuario.Nombre
                     , nPUA.Item.Usuario.Clave
+                    , nPUA.Item.Usuario.Estado
                     , p_OUT_CODRET
                     , p_OUT_GLSRET
                     );
@@ -119,14 +121,16 @@ namespace CapaNegocio
                                       orderby per.RUT
                                       select new
                                       {
-                                          RutPersona = per.RUT,
-                                          NombrePer = per.NOMBRE,
+                                          RutPersona  = per.RUT,
+                                          NombrePer   = per.NOMBRE,
                                           ApellidoPer = per.APELLIDO,
-                                          FecNacPer = per.NACIMIENTO,
-                                          MailPer = per.EMAIL,
+                                          FecNacPer   = per.NACIMIENTO,
+                                          MailPer     = per.EMAIL,
                                           TelefonoPer = per.TELEFONO,
-                                          NomUsuario = usu.NOMBRE,
-                                          PassUsiario = usu.CLAVE
+                                          IdUsuario   = usu.ID,
+                                          NomUsuario  = usu.NOMBRE,
+                                          PassUsuario = usu.CLAVE,
+                                          EstUsuario  = usu.ESTADO
                                       }
                             ).ToList();
 
@@ -134,15 +138,17 @@ namespace CapaNegocio
                     {
                         PerfilUsuarioAdministrador m = new PerfilUsuarioAdministrador();
                         //
-                        m.Persona.Rut = item.RutPersona;
-                        m.Persona.Nombre = item.NombrePer;
-                        m.Persona.Apellido = item.ApellidoPer;
+                        m.Persona.Rut             = item.RutPersona;
+                        m.Persona.Nombre          = item.NombrePer;
+                        m.Persona.Apellido        = item.ApellidoPer;
                         m.Persona.FechaNacimiento = item.FecNacPer;
-                        m.Persona.Email = item.MailPer;
-                        m.Persona.Telefono = item.TelefonoPer;
+                        m.Persona.Email           = item.MailPer;
+                        m.Persona.Telefono        = item.TelefonoPer;
                         //
-                        m.Usuario.Nombre = item.NomUsuario;
-                        m.Usuario.Clave = item.PassUsiario;
+                        m.Usuario.Id              = item.IdUsuario;
+                        m.Usuario.Nombre          = item.NomUsuario;
+                        m.Usuario.Clave           = item.PassUsuario;
+                        m.Usuario.Estado          = item.EstUsuario;
                         //
                         LPerfilUsuarioAdministradores.Lista.Add(m);
                     }
@@ -203,14 +209,16 @@ namespace CapaNegocio
                                 orderby per.RUT
                                 select new
                                 {
-                                    RutPersona = per.RUT,
-                                    NombrePer = per.NOMBRE,
+                                    RutPersona  = per.RUT,
+                                    NombrePer   = per.NOMBRE,
                                     ApellidoPer = per.APELLIDO,
-                                    FecNacPer = per.NACIMIENTO,
-                                    MailPer = per.EMAIL,
+                                    FecNacPer   = per.NACIMIENTO,
+                                    MailPer     = per.EMAIL,
                                     TelefonoPer = per.TELEFONO,
-                                    NomUsuario = usu.NOMBRE,
-                                    PassUsiario = usu.CLAVE
+                                    IdUsuario   = usu.ID,
+                                    NomUsuario  = usu.NOMBRE,
+                                    PassUsuario = usu.CLAVE,
+                                    EstUsuario  = usu.ESTADO
                                 }
                             ).SingleOrDefault();
 
@@ -218,15 +226,17 @@ namespace CapaNegocio
                     {
                         PerfilUsuarioAdministrador m = new PerfilUsuarioAdministrador();
                         //
-                        m.Persona.Rut = item.RutPersona;
-                        m.Persona.Nombre = item.NombrePer;
-                        m.Persona.Apellido = item.ApellidoPer;
+                        m.Persona.Rut             = item.RutPersona;
+                        m.Persona.Nombre          = item.NombrePer;
+                        m.Persona.Apellido        = item.ApellidoPer;
                         m.Persona.FechaNacimiento = item.FecNacPer;
-                        m.Persona.Email = item.MailPer;
-                        m.Persona.Telefono = item.TelefonoPer;
+                        m.Persona.Email           = item.MailPer;
+                        m.Persona.Telefono        = item.TelefonoPer;
                         //
-                        m.Usuario.Nombre = item.NomUsuario;
-                        m.Usuario.Clave = item.PassUsiario;
+                        m.Usuario.Id              = item.IdUsuario;
+                        m.Usuario.Nombre          = item.NomUsuario;
+                        m.Usuario.Clave           = item.PassUsuario;
+                        m.Usuario.Estado          = item.EstUsuario;
                         //
                         cPUA.Item = m;
                         cPUA.Retorno.Codigo = 0;

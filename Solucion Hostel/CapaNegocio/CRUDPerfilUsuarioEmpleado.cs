@@ -82,7 +82,9 @@ namespace CapaNegocio
                     , nPUC.Item.Persona.Email
                     , nPUC.Item.Persona.Telefono
                     , nPUC.Item.Usuario.Id
+                    , nPUC.Item.Usuario.Nombre
                     , nPUC.Item.Usuario.Clave
+                    , nPUC.Item.Usuario.Estado
                     , p_OUT_CODRET
                     , p_OUT_GLSRET
                     );
@@ -122,14 +124,16 @@ namespace CapaNegocio
                                       orderby per.RUT
                                       select new
                                       {
-                                          RutPersona = per.RUT,
-                                          NombrePer = per.NOMBRE,
+                                          RutPersona  = per.RUT,
+                                          NombrePer   = per.NOMBRE,
                                           ApellidoPer = per.APELLIDO,
-                                          FecNacPer = per.NACIMIENTO,
-                                          MailPer = per.EMAIL,
+                                          FecNacPer   = per.NACIMIENTO,
+                                          MailPer     = per.EMAIL,
                                           TelefonoPer = per.TELEFONO,
-                                          NomUsuario = usu.NOMBRE,
-                                          PassUsiario = usu.CLAVE
+                                          IdUsuario   = usu.ID,
+                                          NomUsuario  = usu.NOMBRE,
+                                          PassUsuario = usu.CLAVE,
+                                          EstUsuario  = usu.ESTADO
                                       }
                             ).ToList();
 
@@ -137,15 +141,17 @@ namespace CapaNegocio
                     {
                         PerfilUsuarioEmpleado m = new PerfilUsuarioEmpleado();
                         //
-                        m.Persona.Rut = item.RutPersona;
-                        m.Persona.Nombre = item.NombrePer;
-                        m.Persona.Apellido = item.ApellidoPer;
+                        m.Persona.Rut             = item.RutPersona;
+                        m.Persona.Nombre          = item.NombrePer;
+                        m.Persona.Apellido        = item.ApellidoPer;
                         m.Persona.FechaNacimiento = item.FecNacPer;
-                        m.Persona.Email = item.MailPer;
-                        m.Persona.Telefono = item.TelefonoPer;
+                        m.Persona.Email           = item.MailPer;
+                        m.Persona.Telefono        = item.TelefonoPer;
                         //
-                        m.Usuario.Nombre = item.NomUsuario;
-                        m.Usuario.Clave = item.PassUsiario;
+                        m.Usuario.Id              = item.IdUsuario;
+                        m.Usuario.Nombre          = item.NomUsuario;
+                        m.Usuario.Clave           = item.PassUsuario;
+                        m.Usuario.Estado          = item.EstUsuario;
                         //
                         LPerfilUsuarioEmpleados.Lista.Add(m);
                     }
@@ -197,30 +203,34 @@ namespace CapaNegocio
                                       orderby per.RUT
                                       select new
                                       {
-                                          RutPersona = per.RUT,
-                                          NombrePer = per.NOMBRE,
+                                          RutPersona  = per.RUT,
+                                          NombrePer   = per.NOMBRE,
                                           ApellidoPer = per.APELLIDO,
-                                          FecNacPer = per.NACIMIENTO,
-                                          MailPer = per.EMAIL,
+                                          FecNacPer   = per.NACIMIENTO,
+                                          MailPer     = per.EMAIL,
                                           TelefonoPer = per.TELEFONO,
-                                          NomUsuario = usu.NOMBRE,
-                                          PassUsiario = usu.CLAVE
+                                          IdUsuario   = usu.ID,
+                                          NomUsuario  = usu.NOMBRE,
+                                          PassUsuario = usu.CLAVE,
+                                          EstUsuario  = usu.ESTADO
                                       }
                             ).SingleOrDefault();
 
                     if (item != null)
                     {
                         PerfilUsuarioEmpleado m = new PerfilUsuarioEmpleado();
-                        //
-                        m.Persona.Rut = item.RutPersona;
-                        m.Persona.Nombre = item.NombrePer;
-                        m.Persona.Apellido = item.ApellidoPer;
+                        // 
+                        m.Persona.Rut             = item.RutPersona;
+                        m.Persona.Nombre          = item.NombrePer;
+                        m.Persona.Apellido        = item.ApellidoPer;
                         m.Persona.FechaNacimiento = item.FecNacPer;
-                        m.Persona.Email = item.MailPer;
-                        m.Persona.Telefono = item.TelefonoPer;
+                        m.Persona.Email           = item.MailPer;
+                        m.Persona.Telefono        = item.TelefonoPer;
                         //
-                        m.Usuario.Nombre = item.NomUsuario;
-                        m.Usuario.Clave = item.PassUsiario;
+                        m.Usuario.Id              = item.IdUsuario;
+                        m.Usuario.Nombre          = item.NomUsuario;
+                        m.Usuario.Clave           = item.PassUsuario;
+                        m.Usuario.Estado          = item.EstUsuario;
                         //
                         cPUE.Item = m;
                         cPUE.Retorno.Codigo = 0;

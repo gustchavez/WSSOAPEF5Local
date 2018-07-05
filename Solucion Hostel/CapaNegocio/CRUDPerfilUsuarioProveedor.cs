@@ -106,7 +106,9 @@ namespace CapaNegocio
                     , aPUP.Item.PerfilUsuario.Direccion.NombreCiudad
                     , aPUP.Item.PerfilUsuario.Direccion.CodPais
                     , aPUP.Item.PerfilUsuario.Usuario.Id
+                    , aPUP.Item.PerfilUsuario.Usuario.Nombre
                     , aPUP.Item.PerfilUsuario.Usuario.Clave
+                    , aPUP.Item.PerfilUsuario.Usuario.Estado
                     , p_OUT_CODRET
                     , p_OUT_GLSRET
                     );
@@ -149,25 +151,27 @@ namespace CapaNegocio
                                       select new
                                       {
                                           RutProveedor = prov.RUT,
-                                          RazonSocial = emp.RAZON_SOCIAL,
-                                          Rubro = emp.RUBRO,
-                                          MailEmpresa = emp.EMAIL,
-                                          TelefonoEmp = emp.TELEFONO,
-                                          LogoEmp = emp.LOGO,
-                                          RutPersona = per.RUT,
-                                          NombrePer = per.NOMBRE,
-                                          ApellidoPer = per.APELLIDO,
-                                          FecNacPer = per.NACIMIENTO,
-                                          MailPer = per.EMAIL,
-                                          TelefonoPer = per.TELEFONO,
-                                          CalleDirecc = dir.CALLE,
-                                          NumeroDir = dir.NUMERO,
-                                          ComunaDir = dir.COMUNA,
+                                          RazonSocial  = emp.RAZON_SOCIAL,
+                                          Rubro        = emp.RUBRO,
+                                          MailEmpresa  = emp.EMAIL,
+                                          TelefonoEmp  = emp.TELEFONO,
+                                          LogoEmp      = emp.LOGO,
+                                          RutPersona   = per.RUT,
+                                          NombrePer    = per.NOMBRE,
+                                          ApellidoPer  = per.APELLIDO,
+                                          FecNacPer    = per.NACIMIENTO,
+                                          MailPer      = per.EMAIL,
+                                          TelefonoPer  = per.TELEFONO,
+                                          CalleDirecc  = dir.CALLE,
+                                          NumeroDir    = dir.NUMERO,
+                                          ComunaDir    = dir.COMUNA,
                                           CodPostalDir = dir.COD_POSTAL,
                                           NomCiudadDir = dir.NOMBRE_CIUDAD,
-                                          PaisDirecc = dir.COD_PAIS,
-                                          NomUsuario = usu.NOMBRE,
-                                          PassUsiario = usu.CLAVE
+                                          PaisDirecc   = dir.COD_PAIS,
+                                          IdUsuario    = usu.ID,
+                                          NomUsuario   = usu.NOMBRE,
+                                          PassUsiario  = usu.CLAVE,
+                                          EstUsuario   = usu.ESTADO
                                       }
                             ).ToList();
 
@@ -196,8 +200,10 @@ namespace CapaNegocio
                         m.PerfilUsuario.Direccion.NombreCiudad  = item.NomCiudadDir;
                         m.PerfilUsuario.Direccion.CodPais       = (int)item.PaisDirecc;
                         //
+                        m.PerfilUsuario.Usuario.Id              = item.IdUsuario;
                         m.PerfilUsuario.Usuario.Nombre          = item.NomUsuario;
                         m.PerfilUsuario.Usuario.Clave           = item.PassUsiario;
+                        m.PerfilUsuario.Usuario.Estado          = item.EstUsuario;
                         //
                         LPerfilUsuarioProveedores.Lista.Add(m);
                         
@@ -265,26 +271,28 @@ namespace CapaNegocio
                                 where prov.RUT == rut
                                 select new
                                 {
-                                    RutProveedor           = prov.RUT,
-                                    RazonSocial            = emp.RAZON_SOCIAL,
-                                    MailEmpresa            = emp.EMAIL,
-                                    TelefonoEmp            = emp.TELEFONO,
-                                    Rubro                  = emp.RUBRO,
-                                    Logo                   = emp.RUBRO,
-                                    NomCiudadDir           = dir.NOMBRE_CIUDAD,
-                                    CalleDirecc            = dir.CALLE,
-                                    CodPais                = dir.COD_PAIS,
-                                    CodPostal              = dir.COD_POSTAL,
-                                    Comuna                 = dir.COMUNA,
-                                    Numero                 = dir.NUMERO,
-                                    NomUsuario             = usu.NOMBRE,
-                                    PassUsiario            = usu.CLAVE,
-                                    RutPersona             = per.RUT,
-                                    NombrePersona          = per.NOMBRE,
-                                    ApellidoPersona        = per.APELLIDO,
-                                    FechaNacimientoPersona = per.NACIMIENTO,
-                                    EmailPersona           = per.EMAIL,
-                                    TelefonoPersona        = per.TELEFONO
+                                          RutProveedor = prov.RUT,
+                                          RazonSocial  = emp.RAZON_SOCIAL,
+                                          Rubro        = emp.RUBRO,
+                                          MailEmpresa  = emp.EMAIL,
+                                          TelefonoEmp  = emp.TELEFONO,
+                                          LogoEmp      = emp.LOGO,
+                                          RutPersona   = per.RUT,
+                                          NombrePer    = per.NOMBRE,
+                                          ApellidoPer  = per.APELLIDO,
+                                          FecNacPer    = per.NACIMIENTO,
+                                          MailPer      = per.EMAIL,
+                                          TelefonoPer  = per.TELEFONO,
+                                          CalleDirecc  = dir.CALLE,
+                                          NumeroDir    = dir.NUMERO,
+                                          ComunaDir    = dir.COMUNA,
+                                          CodPostalDir = dir.COD_POSTAL,
+                                          NomCiudadDir = dir.NOMBRE_CIUDAD,
+                                          PaisDirecc   = dir.COD_PAIS,
+                                          IdUsuario    = usu.ID,
+                                          NomUsuario   = usu.NOMBRE,
+                                          PassUsiario  = usu.CLAVE,
+                                          EstUsuario   = usu.ESTADO
                                 }
                             ).SingleOrDefault();
 
@@ -292,26 +300,32 @@ namespace CapaNegocio
                     {
                         PerfilUsuarioProveedor m = new PerfilUsuarioProveedor();
                         //
-                        m.Proveedor.Rut = item.RutProveedor;
-                        m.PerfilUsuario.Empresa.RazonSocial = item.RazonSocial;
-                        m.PerfilUsuario.Empresa.Rubro = item.Rubro;
-                        m.PerfilUsuario.Empresa.Email = item.MailEmpresa;
-                        m.PerfilUsuario.Empresa.Telefono = item.TelefonoEmp;
-                        m.PerfilUsuario.Direccion.CodPais = int.Parse(item.CodPais.ToString());
-                        m.PerfilUsuario.Direccion.CodPostal = item.CodPostal;
-                        m.PerfilUsuario.Direccion.NombreCiudad = item.NomCiudadDir;
-                        m.PerfilUsuario.Direccion.Comuna = item.Comuna;
-                        m.PerfilUsuario.Direccion.Calle = item.CalleDirecc;
-                        m.PerfilUsuario.Direccion.Numero = item.Numero;
-                        m.PerfilUsuario.Empresa.Logo = item.Rubro;
-                        m.PerfilUsuario.Persona.Rut = item.RutPersona;
-                        m.PerfilUsuario.Persona.Nombre = item.NombrePersona;
-                        m.PerfilUsuario.Persona.Apellido = item.ApellidoPersona;
-                        m.PerfilUsuario.Persona.FechaNacimiento = item.FechaNacimientoPersona;
-                        m.PerfilUsuario.Persona.Email = item.EmailPersona;
-                        m.PerfilUsuario.Persona.Telefono = item.TelefonoPersona;
-                        m.PerfilUsuario.Usuario.Nombre = item.NomUsuario;
-                        m.PerfilUsuario.Usuario.Clave = item.PassUsiario;
+                        m.Proveedor.Rut                         = item.RutProveedor;
+                        m.PerfilUsuario.Empresa.RazonSocial     = item.RazonSocial;
+                        m.PerfilUsuario.Empresa.Rubro           = item.Rubro;
+                        m.PerfilUsuario.Empresa.Email           = item.MailEmpresa;
+                        m.PerfilUsuario.Empresa.Telefono        = item.TelefonoEmp;
+                        m.PerfilUsuario.Empresa.Logo            = item.LogoEmp;
+                        //
+                        m.PerfilUsuario.Persona.Rut             = item.RutPersona;
+                        m.PerfilUsuario.Persona.Nombre          = item.NombrePer;
+                        m.PerfilUsuario.Persona.Apellido        = item.ApellidoPer;
+                        m.PerfilUsuario.Persona.FechaNacimiento = item.FecNacPer;
+                        m.PerfilUsuario.Persona.Email           = item.MailPer;
+                        m.PerfilUsuario.Persona.Telefono        = item.TelefonoPer;
+                        //
+                        m.PerfilUsuario.Direccion.Calle         = item.CalleDirecc;
+                        m.PerfilUsuario.Direccion.Numero        = item.NumeroDir;
+                        m.PerfilUsuario.Direccion.Comuna        = item.ComunaDir;
+                        m.PerfilUsuario.Direccion.CodPostal     = item.CodPostalDir;
+                        m.PerfilUsuario.Direccion.NombreCiudad  = item.NomCiudadDir;
+                        m.PerfilUsuario.Direccion.CodPais       = (int)item.PaisDirecc;
+                        //
+                        m.PerfilUsuario.Usuario.Id              = item.IdUsuario;
+                        m.PerfilUsuario.Usuario.Nombre          = item.NomUsuario;
+                        m.PerfilUsuario.Usuario.Clave           = item.PassUsiario;
+                        m.PerfilUsuario.Usuario.Estado          = item.EstUsuario;
+                        //
 
                         cPUP.Item = m;
                         cPUP.Retorno.Codigo = 0;

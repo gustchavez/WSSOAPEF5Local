@@ -41,7 +41,6 @@ namespace CapaWSPresentacion.perfilProveedor
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
             ContenedorCiudades m = new ContenedorCiudades();
-
             m = x.CiudadRescatar(Session["TokenUsuario"].ToString());
 
             txtNombreCiudad.DataSource = null;
@@ -49,30 +48,27 @@ namespace CapaWSPresentacion.perfilProveedor
             txtNombreCiudad.DataValueField = "Nombre";
             txtNombreCiudad.DataTextField = "Nombre";
             txtNombreCiudad.DataBind();
-
-            ContenedorPerfilUsuarioProveedores n = new ContenedorPerfilUsuarioProveedores();
-
-            n = x.PerfilUsuarioProveedorRescatar(Session["TokenUsuario"].ToString());
-
+            //
             Sesion SesionUsuario = (Sesion)Session["SesionUsuario"];
-
-            var proveedor = n.Lista.Where(p => p.PerfilUsuario.Usuario.Nombre == SesionUsuario.Usuario).SingleOrDefault();
-
-            if(proveedor != null)
+            //
+            ContenedorPerfilUsuarioProveedor n = new ContenedorPerfilUsuarioProveedor();
+            n = x.PerfilUsuarioProveedorRescatarXRut(SesionUsuario.RutEmpresa, Session["TokenUsuario"].ToString());
+            //
+            if(n.Item != null)
             {
-                txtRutEmpresa.Text            = proveedor.Proveedor.Rut;
-                txtRazonSocial.Text           = proveedor.PerfilUsuario.Empresa.RazonSocial;
-                txtCorreoElectronico.Text     = proveedor.PerfilUsuario.Empresa.Email;
-                txtTelefono.Text              = proveedor.PerfilUsuario.Empresa.Telefono;
-                txtNombreCiudad.SelectedValue = proveedor.PerfilUsuario.Direccion.NombreCiudad;
-                txtDireccion.Text             = proveedor.PerfilUsuario.Direccion.Calle;
-                txtNombreUsuario.Text         = proveedor.PerfilUsuario.Usuario.Nombre;
-                txtContraseña.Text            = proveedor.PerfilUsuario.Usuario.Clave;
+                txtRutEmpresa.Text            = n.Item.Proveedor.Rut;
+                txtRazonSocial.Text           = n.Item.PerfilUsuario.Empresa.RazonSocial;
+                txtCorreoElectronico.Text     = n.Item.PerfilUsuario.Empresa.Email;
+                txtTelefono.Text              = n.Item.PerfilUsuario.Empresa.Telefono;
+                txtNombreCiudad.SelectedValue = n.Item.PerfilUsuario.Direccion.NombreCiudad;
+                txtDireccion.Text             = n.Item.PerfilUsuario.Direccion.Calle;
+                txtNombreUsuario.Text         = n.Item.PerfilUsuario.Usuario.Nombre;
+                txtContraseña.Text            = n.Item.PerfilUsuario.Usuario.Clave;
 
                 try
                 {
-                    ddlRubro.SelectedValue    = proveedor.PerfilUsuario.Empresa.Rubro;
-                    ddlComunas.SelectedValue  = proveedor.PerfilUsuario.Direccion.Comuna;
+                    ddlRubro.SelectedValue    = n.Item.PerfilUsuario.Empresa.Rubro;
+                    ddlComunas.SelectedValue  = n.Item.PerfilUsuario.Direccion.Comuna;
                 }
                 catch (Exception)
                 {
@@ -80,7 +76,7 @@ namespace CapaWSPresentacion.perfilProveedor
                     ddlComunas.SelectedValue  = "";
                 }
 
-                Session["SesionPerfilUsuarioProveedor"] = proveedor;
+                Session["SesionPerfilUsuarioProveedor"] = n.Item;
             } else {
                 Session["SesionPerfilUsuarioProveedor"] = null;
             }
@@ -95,12 +91,9 @@ namespace CapaWSPresentacion.perfilProveedor
                 WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
                 ContenedorPerfilUsuarioProveedor n = new ContenedorPerfilUsuarioProveedor();
-
-                n.Item.Proveedor = m.Proveedor;
-                n.Item.PerfilUsuario = m.PerfilUsuario;
-                n.Retorno.Token = Session["TokenUsuario"].ToString();
-
-                n.Item.Proveedor.Rut                        = txtRutEmpresa.Text;
+                n.Item = m;
+                //
+                n.Retorno.Token                             = Session["TokenUsuario"].ToString();                
                 n.Item.PerfilUsuario.Empresa.RazonSocial    = txtRazonSocial.Text;
                 n.Item.PerfilUsuario.Empresa.Rubro          = ddlRubro.SelectedValue;
                 n.Item.PerfilUsuario.Empresa.Email          = txtCorreoElectronico.Text;
@@ -108,9 +101,8 @@ namespace CapaWSPresentacion.perfilProveedor
                 n.Item.PerfilUsuario.Direccion.NombreCiudad = txtNombreCiudad.SelectedValue;
                 n.Item.PerfilUsuario.Direccion.Comuna       = ddlComunas.SelectedValue;
                 n.Item.PerfilUsuario.Direccion.Calle        = txtDireccion.Text;
-                n.Item.PerfilUsuario.Usuario.Nombre         = txtNombreUsuario.Text;
                 n.Item.PerfilUsuario.Usuario.Clave          = txtContraseña.Text;
-
+                //
                 n = x.PerfilUsuarioProveedorActualizar(n);
 
                 if (n.Retorno.Codigo == 0)

@@ -32,7 +32,7 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Rut</h4>	
-			<asp:TextBox ID="txtRutPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtRutPersona" runat="server" CssClass="CasillaPersona" Enabled="False" style="left: 0px; top: 0px"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Nombre</h4>	
@@ -61,7 +61,7 @@
 			<h3>Datos empresa</h3>
 			<div class="Casilla2-1">
 			<h4>Rut Empresa</h4>	
-			<asp:TextBox ID="txtRutEmpresa" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtRutEmpresa" runat="server" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Razón Social</h4>	
@@ -300,17 +300,21 @@
 			<h3>Usuario y Contraseña</h3>		
 			<div class="Casilla2-1">
 			<h4 style="color: #EAE0CC;">Nombre Usuario</h4>	
-			<asp:TextBox ID="txtUsuario" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtUsuario" runat="server" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
-			<h4 style="color: #EAE0CC;">Nueva Contraseña</h4>	
-			<asp:TextBox ID="txtClave" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			    <h4 style="color: #EAE0CC;">Nueva Contraseña</h4>	
+			    <asp:TextBox ID="txtClave" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
-			<asp:Button ID="btnModificar" runat="server" Text="MODIFICAR" CssClass="SubmitTotal2" OnClick="btnModificar_Click"/>
+				<h4 style="color: #EAE0CC;">Estado</h4>					
+				<asp:DropDownList ID="ddlEstado" runat="server" CssClass="droplist">
+				    <asp:ListItem Value="activo">Activo</asp:ListItem>
+                    <asp:ListItem Value="desactivado">Bloqueado</asp:ListItem>
+                </asp:DropDownList>
 			</div>
 			<div class="Casilla2-1">
-			<asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="SubmitTotal2" OnClick="Button2_Click" />
+                <asp:Button ID="btnModificar" runat="server" Text="MODIFICAR" CssClass="SubmitTotal2" OnClick="btnModificar_Click"/>
 			</div>	
 	</div>
 		
