@@ -249,6 +249,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrearResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenCompraCompleta> OrdenCompraCompletaCrearAsync(CapaObjeto.ContenedorOrdenCompraCompleta entrada);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaActualizar", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaActualizarResponse")]
+        CapaObjeto.ContenedorOrdenCompraCompleta OrdenCompraCompletaActualizar(CapaObjeto.ContenedorOrdenCompraCompleta entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaActualizar", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenCompraCompleta> OrdenCompraCompletaActualizarAsync(CapaObjeto.ContenedorOrdenCompraCompleta entrada);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatarResponse")]
         CapaObjeto.ContenedorOrdenesCompraCompleta OrdenCompraCompletaRescatar(string token);
         
@@ -266,6 +272,12 @@ namespace CapaWSPresentacion.WSSoap {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrearResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenPedidoCompleta> OrdenPedidoCompletaCrearAsync(CapaObjeto.ContenedorOrdenPedidoCompleta entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaActualizar", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaActualizarResponse")]
+        CapaObjeto.ContenedorOrdenPedidoCompleta OrdenPedidoCompletaActualizar(CapaObjeto.ContenedorOrdenPedidoCompleta entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaActualizar", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenPedidoCompleta> OrdenPedidoCompletaActualizarAsync(CapaObjeto.ContenedorOrdenPedidoCompleta entrada);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatarResponse")]
         CapaObjeto.ContenedorOrdenesPedidoCompleta OrdenPedidoCompletaRescatar(string token);
@@ -285,6 +297,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/FacturaCompraCompletaCrearResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorFacturaCompraCompleta> FacturaCompraCompletaCrearAsync(CapaObjeto.ContenedorFacturaCompraCompleta entrada);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaActualizar", ReplyAction="http://tempuri.org/IWSSHostel/FacturaCompraCompletaActualizarResponse")]
+        CapaObjeto.ContenedorFacturaCompraCompleta FacturaCompraCompletaActualizar(CapaObjeto.ContenedorFacturaCompraCompleta entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaActualizar", ReplyAction="http://tempuri.org/IWSSHostel/FacturaCompraCompletaActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorFacturaCompraCompleta> FacturaCompraCompletaActualizarAsync(CapaObjeto.ContenedorFacturaCompraCompleta entrada);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/FacturaCompraCompletaRescatarResponse")]
         CapaObjeto.ContenedorFacturasCompraCompleta FacturaCompraCompletaRescatar(string token);
         
@@ -296,6 +314,12 @@ namespace CapaWSPresentacion.WSSoap {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaCrearResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorFacturaPedidoCompleta> FacturaPedidoCompletaCrearAsync(CapaObjeto.ContenedorFacturaPedidoCompleta entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaActualizar", ReplyAction="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaActualizarResponse")]
+        CapaObjeto.ContenedorFacturaPedidoCompleta FacturaPedidoCompletaActualizar(CapaObjeto.ContenedorFacturaPedidoCompleta entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaActualizar", ReplyAction="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorFacturaPedidoCompleta> FacturaPedidoCompletaActualizarAsync(CapaObjeto.ContenedorFacturaPedidoCompleta entrada);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaRescatarResponse")]
         CapaObjeto.ContenedorFacturasPedidoCompleta FacturaPedidoCompletaRescatar(string token);
@@ -769,6 +793,14 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.OrdenCompraCompletaCrearAsync(entrada);
         }
         
+        public CapaObjeto.ContenedorOrdenCompraCompleta OrdenCompraCompletaActualizar(CapaObjeto.ContenedorOrdenCompraCompleta entrada) {
+            return base.Channel.OrdenCompraCompletaActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenCompraCompleta> OrdenCompraCompletaActualizarAsync(CapaObjeto.ContenedorOrdenCompraCompleta entrada) {
+            return base.Channel.OrdenCompraCompletaActualizarAsync(entrada);
+        }
+        
         public CapaObjeto.ContenedorOrdenesCompraCompleta OrdenCompraCompletaRescatar(string token) {
             return base.Channel.OrdenCompraCompletaRescatar(token);
         }
@@ -791,6 +823,14 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenPedidoCompleta> OrdenPedidoCompletaCrearAsync(CapaObjeto.ContenedorOrdenPedidoCompleta entrada) {
             return base.Channel.OrdenPedidoCompletaCrearAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorOrdenPedidoCompleta OrdenPedidoCompletaActualizar(CapaObjeto.ContenedorOrdenPedidoCompleta entrada) {
+            return base.Channel.OrdenPedidoCompletaActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenPedidoCompleta> OrdenPedidoCompletaActualizarAsync(CapaObjeto.ContenedorOrdenPedidoCompleta entrada) {
+            return base.Channel.OrdenPedidoCompletaActualizarAsync(entrada);
         }
         
         public CapaObjeto.ContenedorOrdenesPedidoCompleta OrdenPedidoCompletaRescatar(string token) {
@@ -817,6 +857,14 @@ namespace CapaWSPresentacion.WSSoap {
             return base.Channel.FacturaCompraCompletaCrearAsync(entrada);
         }
         
+        public CapaObjeto.ContenedorFacturaCompraCompleta FacturaCompraCompletaActualizar(CapaObjeto.ContenedorFacturaCompraCompleta entrada) {
+            return base.Channel.FacturaCompraCompletaActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorFacturaCompraCompleta> FacturaCompraCompletaActualizarAsync(CapaObjeto.ContenedorFacturaCompraCompleta entrada) {
+            return base.Channel.FacturaCompraCompletaActualizarAsync(entrada);
+        }
+        
         public CapaObjeto.ContenedorFacturasCompraCompleta FacturaCompraCompletaRescatar(string token) {
             return base.Channel.FacturaCompraCompletaRescatar(token);
         }
@@ -831,6 +879,14 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<CapaObjeto.ContenedorFacturaPedidoCompleta> FacturaPedidoCompletaCrearAsync(CapaObjeto.ContenedorFacturaPedidoCompleta entrada) {
             return base.Channel.FacturaPedidoCompletaCrearAsync(entrada);
+        }
+        
+        public CapaObjeto.ContenedorFacturaPedidoCompleta FacturaPedidoCompletaActualizar(CapaObjeto.ContenedorFacturaPedidoCompleta entrada) {
+            return base.Channel.FacturaPedidoCompletaActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorFacturaPedidoCompleta> FacturaPedidoCompletaActualizarAsync(CapaObjeto.ContenedorFacturaPedidoCompleta entrada) {
+            return base.Channel.FacturaPedidoCompletaActualizarAsync(entrada);
         }
         
         public CapaObjeto.ContenedorFacturasPedidoCompleta FacturaPedidoCompletaRescatar(string token) {

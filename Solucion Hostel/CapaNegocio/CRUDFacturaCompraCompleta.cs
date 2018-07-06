@@ -63,6 +63,40 @@ namespace CapaNegocio
             return nFCC;
         }
 
+        public ContenedorFacturaCompraCompleta LlamarSPActualizar(ContenedorFacturaCompraCompleta aFCC)
+        {
+            if (ValidarFecExp(aFCC.Retorno.Token))
+            {
+                var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
+                var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
+
+                CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                conex.SP_ANULAR_FACTURA_COMPRA
+                    ( aFCC.Item.Cabecera.Numero
+                    , aFCC.Item.Cabecera.Observaciones
+                    , aFCC.Item.OCRelacionada.Numero
+                    , p_OUT_CODRET
+                    , p_OUT_GLSRET
+                    );
+
+                try
+                {
+                    aFCC.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
+                    aFCC.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                }
+                catch (Exception)
+                {
+                    aFCC.Retorno.Codigo = 1011;
+                    aFCC.Retorno.Glosa = "Err codret ORACLE";
+                }
+            } else {
+                aFCC.Retorno.Codigo = 100;
+                aFCC.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+            return aFCC;
+        }
+
         public ContenedorFacturasCompraCompleta LlamarSPRescatar(string token)
         {
             ContenedorFacturasCompraCompleta LFacturasCompra = new ContenedorFacturasCompraCompleta();
@@ -85,6 +119,7 @@ namespace CapaNegocio
                                           ValorBruto  = fac.VALOR_BRUTO,
                                           ValorIva    = fac.VALOR_IVA,
                                           ValorNeto   = fac.VALOR_NETO,
+                                          EstadoFac   = fac.ESTADO,
                                           FormaPago   = pag.MEDIO_PAGO,
                                           NroOrdComp  = ord_comp.NUMERO
                                       }
@@ -102,6 +137,7 @@ namespace CapaNegocio
                         n.Cabecera.ValorBruto      = item.ValorBruto;
                         n.Cabecera.ValorIva        = item.ValorIva;
                         n.Cabecera.ValorNeto       = item.ValorNeto;
+                        n.Cabecera.Estado          = item.EstadoFac;
                         n.Pago.MedioPago           = item.FormaPago;
                         n.OCRelacionada.Numero     = item.NroOrdComp;
                         
@@ -126,6 +162,7 @@ namespace CapaNegocio
 
             return LFacturasCompra;
         }
+
         private bool ValidarPerfilCUD(string token)
         {
             bool retorno = false;

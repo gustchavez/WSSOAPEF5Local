@@ -203,6 +203,7 @@
     <Content Include="perfilCliente\perfil.aspx" />
     <Content Include="perfilCliente\solicitarServicio.aspx" />
     <Content Include="perfilCliente\solicitudesCliente.aspx" />
+    <Content Include="perfilEmpleado\AnularFactura.aspx" />
     <Content Include="perfilEmpleado\CrearFactura.aspx" />
     <Content Include="perfilEmpleado\agregarProveedor.aspx" />
     <Content Include="perfilEmpleado\facturas.aspx" />
@@ -521,6 +522,13 @@
     </Compile>
     <Compile Include="perfilCliente\solicitudesCliente.aspx.designer.cs">
       <DependentUpon>solicitudesCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilEmpleado\AnularFactura.aspx.cs">
+      <DependentUpon>AnularFactura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilEmpleado\AnularFactura.aspx.designer.cs">
+      <DependentUpon>AnularFactura.aspx</DependentUpon>
     </Compile>
     <Compile Include="perfilEmpleado\CrearFactura.aspx.cs">
       <DependentUpon>CrearFactura.aspx</DependentUpon>

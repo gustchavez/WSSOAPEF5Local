@@ -787,6 +787,30 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
         </Function>
+        <Function Name="SP_ANULAR_FACTURA_COMPRA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+          <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
+          <Parameter Name="P_IN_OBSERVACIONES" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_NUMERO_OC" Type="number" Mode="In" />
+          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
+          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="SP_ANULAR_FACTURA_PEDIDO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+          <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
+          <Parameter Name="P_IN_OBSERVACIONES" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IN_NUMERO_OP" Type="number" Mode="In" />
+          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
+          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="SP_ANULAR_ORDEN_COMPRA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+          <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
+          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
+          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="SP_ANULAR_ORDEN_PEDIDO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+          <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
+          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
+          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+        </Function>
         <Function Name="SP_CREAR_ADMINISTRADOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
           <Parameter Name="P_IN_RUT_PERSONA" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_NOMBRE" Type="varchar2" Mode="In" />
@@ -1766,6 +1790,30 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="SP_ANULAR_FACTURA_COMPRA">
+            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_OBSERVACIONES" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NUMERO_OC" Mode="In" Type="Decimal" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_ANULAR_FACTURA_PEDIDO">
+            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_OBSERVACIONES" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NUMERO_OP" Mode="In" Type="Decimal" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_ANULAR_ORDEN_COMPRA">
+            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_ANULAR_ORDEN_PEDIDO">
+            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="CAMA">
           <Key>
@@ -2647,6 +2695,10 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_CLIENTE" FunctionName="Model.Store.SP_ACTUALIZAR_CLIENTE" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_EMPLEADO" FunctionName="Model.Store.SP_ACTUALIZAR_EMPLEADO" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_PROVEEDOR" FunctionName="Model.Store.SP_ACTUALIZAR_PROVEEDOR" />
+          <FunctionImportMapping FunctionImportName="SP_ANULAR_FACTURA_COMPRA" FunctionName="Model.Store.SP_ANULAR_FACTURA_COMPRA" />
+          <FunctionImportMapping FunctionImportName="SP_ANULAR_FACTURA_PEDIDO" FunctionName="Model.Store.SP_ANULAR_FACTURA_PEDIDO" />
+          <FunctionImportMapping FunctionImportName="SP_ANULAR_ORDEN_COMPRA" FunctionName="Model.Store.SP_ANULAR_ORDEN_COMPRA" />
+          <FunctionImportMapping FunctionImportName="SP_ANULAR_ORDEN_PEDIDO" FunctionName="Model.Store.SP_ANULAR_ORDEN_PEDIDO" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

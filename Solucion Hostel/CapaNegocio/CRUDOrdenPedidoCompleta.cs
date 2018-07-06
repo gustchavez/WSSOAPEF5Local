@@ -103,6 +103,38 @@ namespace CapaNegocio
 
             return nOPC;
         }
+        
+        public ContenedorOrdenPedidoCompleta LlamarSPActualizar(ContenedorOrdenPedidoCompleta aOPC)
+        {
+            if (ValidarFecExp(aOPC.Retorno.Token))
+            {
+                var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
+                var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
+
+                CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                conex.SP_ANULAR_ORDEN_COMPRA
+                    (aOPC.Item.Cabecera.Numero
+                    , p_OUT_CODRET
+                    , p_OUT_GLSRET
+                    );
+
+                try
+                {
+                    aOPC.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
+                    aOPC.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                }
+                catch (Exception)
+                {
+                    aOPC.Retorno.Codigo = 1011;
+                    aOPC.Retorno.Glosa = "Err codret ORACLE";
+                }
+            } else {
+                aOPC.Retorno.Codigo = 100;
+                aOPC.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+            return aOPC;
+        }
 
         public ContenedorOrdenesPedidoCompleta LlamarSPRescatar(string token)
         {

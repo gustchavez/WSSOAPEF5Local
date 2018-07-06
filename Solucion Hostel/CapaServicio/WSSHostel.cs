@@ -39,6 +39,7 @@ namespace CapaServicio
         //}
 
         //Inicio Usuario
+
         public ContenedorUsuarios UsuarioRescatar(string token)
         {
             CRUDUsuario x = new CRUDUsuario();
@@ -53,12 +54,14 @@ namespace CapaServicio
             x.LlamarSPCrear(entrada);
             return entrada;
         }
+
         public ContenedorPerfilUsuarioCliente PerfilUsuarioClienteActualizar(ContenedorPerfilUsuarioCliente entrada)
         {
             CRUDPerfilUsuarioCliente x = new CRUDPerfilUsuarioCliente();
             x.LlamarSPActualizar(entrada);
             return entrada;
         }
+
         public ContenedorPerfilUsuarioClientes PerfilUsuarioClienteRescatar(string token)
         {
             CRUDPerfilUsuarioCliente x = new CRUDPerfilUsuarioCliente();
@@ -300,6 +303,12 @@ namespace CapaServicio
             x.LlamarSPCrear(entrada);
             return entrada;
         }
+        public ContenedorOrdenCompraCompleta OrdenCompraCompletaActualizar(ContenedorOrdenCompraCompleta entrada)
+        {
+            CRUDOrdenCompraCompleta x = new CRUDOrdenCompraCompleta();
+            x.LlamarSPActualizar(entrada);
+            return entrada;
+        }
         public ContenedorOrdenesCompraCompleta OrdenCompraCompletaRescatar(string token)
         {
             CRUDOrdenCompraCompleta x = new CRUDOrdenCompraCompleta();
@@ -320,6 +329,12 @@ namespace CapaServicio
             return entrada;
         }
 
+        public ContenedorOrdenPedidoCompleta OrdenPedidoCompletaActualizar(ContenedorOrdenPedidoCompleta entrada)
+        {
+            CRUDOrdenPedidoCompleta x = new CRUDOrdenPedidoCompleta();
+            x.LlamarSPActualizar(entrada);
+            return entrada;
+        }
         public ContenedorOrdenesPedidoCompleta OrdenPedidoCompletaRescatar(string token)
         {
             CRUDOrdenPedidoCompleta x = new CRUDOrdenPedidoCompleta();
@@ -342,6 +357,13 @@ namespace CapaServicio
             x.LlamarSPCrear(entrada);
             return entrada;
         }
+
+        public ContenedorFacturaCompraCompleta FacturaCompraCompletaActualizar(ContenedorFacturaCompraCompleta entrada)
+        {
+            CRUDFacturaCompraCompleta x = new CRUDFacturaCompraCompleta();
+            x.LlamarSPActualizar(entrada);
+            return entrada;
+        }
         public ContenedorFacturasCompraCompleta FacturaCompraCompletaRescatar(string token)
         {
             CRUDFacturaCompraCompleta x = new CRUDFacturaCompraCompleta();
@@ -354,6 +376,13 @@ namespace CapaServicio
         {
             CRUDFacturaPedidoCompleta x = new CRUDFacturaPedidoCompleta();
             x.LlamarSPCrear(entrada);
+            return entrada;
+        }
+
+        public ContenedorFacturaPedidoCompleta FacturaPedidoCompletaActualizar(ContenedorFacturaPedidoCompleta entrada)
+        {
+            CRUDFacturaPedidoCompleta x = new CRUDFacturaPedidoCompleta();
+            x.LlamarSPActualizar(entrada);
             return entrada;
         }
 

@@ -160,6 +160,9 @@ namespace CapaServicio
         ContenedorOrdenCompraCompleta OrdenCompraCompletaCrear(ContenedorOrdenCompraCompleta entrada);
 
         [OperationContract]
+        ContenedorOrdenCompraCompleta OrdenCompraCompletaActualizar(ContenedorOrdenCompraCompleta entrada);
+
+        [OperationContract]
         ContenedorOrdenesCompraCompleta OrdenCompraCompletaRescatar(string token);
 
         [OperationContract]
@@ -169,6 +172,9 @@ namespace CapaServicio
         //Ini OrdenPedidoCompleta
         [OperationContract]
         ContenedorOrdenPedidoCompleta OrdenPedidoCompletaCrear(ContenedorOrdenPedidoCompleta entrada);
+
+        [OperationContract]
+        ContenedorOrdenPedidoCompleta OrdenPedidoCompletaActualizar(ContenedorOrdenPedidoCompleta entrada);
 
         [OperationContract]
         ContenedorOrdenesPedidoCompleta OrdenPedidoCompletaRescatar(string token);
@@ -182,12 +188,18 @@ namespace CapaServicio
         ContenedorFacturaCompraCompleta FacturaCompraCompletaCrear(ContenedorFacturaCompraCompleta entrada);
 
         [OperationContract]
+        ContenedorFacturaCompraCompleta FacturaCompraCompletaActualizar(ContenedorFacturaCompraCompleta entrada);
+
+        [OperationContract]
         ContenedorFacturasCompraCompleta FacturaCompraCompletaRescatar(string token);
         //Fin FacturaCompraCompleta
 
         //Ini FacturaPedidoCompleta
         [OperationContract]
         ContenedorFacturaPedidoCompleta FacturaPedidoCompletaCrear(ContenedorFacturaPedidoCompleta entrada);
+
+        [OperationContract]
+        ContenedorFacturaPedidoCompleta FacturaPedidoCompletaActualizar(ContenedorFacturaPedidoCompleta entrada);
 
         [OperationContract]
         ContenedorFacturasPedidoCompleta FacturaPedidoCompletaRescatar(string token);

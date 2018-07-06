@@ -242,6 +242,12 @@
   <wsdl:message name="IWSSHostel_OrdenCompraCompletaCrear_OutputMessage">
     <wsdl:part name="parameters" element="tns:OrdenCompraCompletaCrearResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenCompraCompletaActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenCompraCompletaActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenCompraCompletaActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenCompraCompletaActualizarResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_OrdenCompraCompletaRescatar_InputMessage">
     <wsdl:part name="parameters" element="tns:OrdenCompraCompletaRescatar" />
   </wsdl:message>
@@ -259,6 +265,12 @@
   </wsdl:message>
   <wsdl:message name="IWSSHostel_OrdenPedidoCompletaCrear_OutputMessage">
     <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenPedidoCompletaActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_OrdenPedidoCompletaActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaActualizarResponse" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_OrdenPedidoCompletaRescatar_InputMessage">
     <wsdl:part name="parameters" element="tns:OrdenPedidoCompletaRescatar" />
@@ -278,6 +290,12 @@
   <wsdl:message name="IWSSHostel_FacturaCompraCompletaCrear_OutputMessage">
     <wsdl:part name="parameters" element="tns:FacturaCompraCompletaCrearResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_FacturaCompraCompletaActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:FacturaCompraCompletaActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_FacturaCompraCompletaActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FacturaCompraCompletaActualizarResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_FacturaCompraCompletaRescatar_InputMessage">
     <wsdl:part name="parameters" element="tns:FacturaCompraCompletaRescatar" />
   </wsdl:message>
@@ -289,6 +307,12 @@
   </wsdl:message>
   <wsdl:message name="IWSSHostel_FacturaPedidoCompletaCrear_OutputMessage">
     <wsdl:part name="parameters" element="tns:FacturaPedidoCompletaCrearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_FacturaPedidoCompletaActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:FacturaPedidoCompletaActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_FacturaPedidoCompletaActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FacturaPedidoCompletaActualizarResponse" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_FacturaPedidoCompletaRescatar_InputMessage">
     <wsdl:part name="parameters" element="tns:FacturaPedidoCompletaRescatar" />
@@ -579,6 +603,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrear" message="tns:IWSSHostel_OrdenCompraCompletaCrear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaCrearResponse" message="tns:IWSSHostel_OrdenCompraCompletaCrear_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="OrdenCompraCompletaActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaActualizar" message="tns:IWSSHostel_OrdenCompraCompletaActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaActualizarResponse" message="tns:IWSSHostel_OrdenCompraCompletaActualizar_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="OrdenCompraCompletaRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatar" message="tns:IWSSHostel_OrdenCompraCompletaRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatarResponse" message="tns:IWSSHostel_OrdenCompraCompletaRescatar_OutputMessage" />
@@ -590,6 +618,10 @@
     <wsdl:operation name="OrdenPedidoCompletaCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear" message="tns:IWSSHostel_OrdenPedidoCompletaCrear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrearResponse" message="tns:IWSSHostel_OrdenPedidoCompletaCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrdenPedidoCompletaActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaActualizar" message="tns:IWSSHostel_OrdenPedidoCompletaActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaActualizarResponse" message="tns:IWSSHostel_OrdenPedidoCompletaActualizar_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="OrdenPedidoCompletaRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatar" message="tns:IWSSHostel_OrdenPedidoCompletaRescatar_InputMessage" />
@@ -603,6 +635,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaCrear" message="tns:IWSSHostel_FacturaCompraCompletaCrear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaCrearResponse" message="tns:IWSSHostel_FacturaCompraCompletaCrear_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="FacturaCompraCompletaActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaActualizar" message="tns:IWSSHostel_FacturaCompraCompletaActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaActualizarResponse" message="tns:IWSSHostel_FacturaCompraCompletaActualizar_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="FacturaCompraCompletaRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaRescatar" message="tns:IWSSHostel_FacturaCompraCompletaRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaRescatarResponse" message="tns:IWSSHostel_FacturaCompraCompletaRescatar_OutputMessage" />
@@ -610,6 +646,10 @@
     <wsdl:operation name="FacturaPedidoCompletaCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaCrear" message="tns:IWSSHostel_FacturaPedidoCompletaCrear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaCrearResponse" message="tns:IWSSHostel_FacturaPedidoCompletaCrear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FacturaPedidoCompletaActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaActualizar" message="tns:IWSSHostel_FacturaPedidoCompletaActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaActualizarResponse" message="tns:IWSSHostel_FacturaPedidoCompletaActualizar_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="FacturaPedidoCompletaRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaRescatar" message="tns:IWSSHostel_FacturaPedidoCompletaRescatar_InputMessage" />
@@ -1053,6 +1093,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="OrdenCompraCompletaActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="OrdenCompraCompletaRescatar">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenCompraCompletaRescatar" style="document" />
       <wsdl:input>
@@ -1073,6 +1122,15 @@
     </wsdl:operation>
     <wsdl:operation name="OrdenPedidoCompletaCrear">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrdenPedidoCompletaActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaActualizar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1107,6 +1165,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="FacturaCompraCompletaActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/FacturaCompraCompletaActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="FacturaCompraCompletaRescatar">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/FacturaCompraCompletaRescatar" style="document" />
       <wsdl:input>
@@ -1118,6 +1185,15 @@
     </wsdl:operation>
     <wsdl:operation name="FacturaPedidoCompletaCrear">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaCrear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FacturaPedidoCompletaActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/FacturaPedidoCompletaActualizar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

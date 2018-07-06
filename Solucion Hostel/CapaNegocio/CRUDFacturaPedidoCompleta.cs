@@ -63,6 +63,41 @@ namespace CapaNegocio
             return nFPC;
         }
 
+        public ContenedorFacturaPedidoCompleta LlamarSPActualizar(ContenedorFacturaPedidoCompleta aFPC)
+        {
+            if (ValidarFecExp(aFPC.Retorno.Token))
+            {
+                var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
+                var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
+
+                CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                conex.SP_ANULAR_FACTURA_PEDIDO
+                    ( aFPC.Item.Cabecera.Numero
+                    , aFPC.Item.Cabecera.Observaciones
+                    , aFPC.Item.OPRelacionada.Numero
+                    , p_OUT_CODRET
+                    , p_OUT_GLSRET
+                    );
+
+                try
+                {
+                    aFPC.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
+                    aFPC.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                }
+                catch (Exception)
+                {
+                    aFPC.Retorno.Codigo = 1011;
+                    aFPC.Retorno.Glosa = "Err codret ORACLE";
+                }
+            }
+            else {
+                aFPC.Retorno.Codigo = 100;
+                aFPC.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+            return aFPC;
+        }
+
         public ContenedorFacturasPedidoCompleta LlamarSPRescatar(string token)
         {
             ContenedorFacturasPedidoCompleta LFacturasPedido = new ContenedorFacturasPedidoCompleta();
@@ -85,6 +120,7 @@ namespace CapaNegocio
                                           ValorBruto   = fac.VALOR_BRUTO,
                                           ValorIva     = fac.VALOR_IVA,
                                           ValorNeto    = fac.VALOR_NETO,
+                                          EstadoFac    = fac.ESTADO,
                                           FormaPago    = pag.MEDIO_PAGO,
                                           NroOrdPedi   = ord_pedi.NUMERO
                                       }
@@ -102,6 +138,7 @@ namespace CapaNegocio
                         n.Cabecera.ValorBruto        = item.ValorBruto;
                         n.Cabecera.ValorIva          = item.ValorIva;
                         n.Cabecera.ValorNeto         = item.ValorNeto;
+                        n.Cabecera.Estado            = item.EstadoFac;
                         n.Pago.MedioPago             = item.FormaPago;
                         n.OPRelacionada.Numero       = item.NroOrdPedi;
 
