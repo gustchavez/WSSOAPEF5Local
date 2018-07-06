@@ -460,6 +460,11 @@ namespace CapaServicio
             ConsultasJava cj = new ConsultasJava();
             return cj.ListaUsuarios(token);
         }
+        public List<String[]> ventasVsCompras(String token, int anno)
+        {
+            ConsultasJava cj = new ConsultasJava();
+            return cj.ventaVsCompra(token, anno);
+        }
 
         //CRUD Provision - INI
         public ContenedorProvision ProvisionCrear(ContenedorProvision entrada)

@@ -242,6 +242,9 @@ namespace CapaServicio
         [OperationContract]
         List<String[]> ListaUsuario(String token);
 
+        [OperationContract]
+        List<String[]> ventasVsCompras(String token, int anno);
+
         //Inicio Provision
         [OperationContract]
         ContenedorProvision ProvisionCrear(ContenedorProvision entrada);
