@@ -314,6 +314,7 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorHabDispCant.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorRegistroRecepcionPedido.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorUsuarios.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioAdministradores.datasource" />
     <None Include="Service References\WSSoap\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
