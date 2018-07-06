@@ -653,7 +653,7 @@ namespace CapaNegocio
                                  join p in conex.PERSONA on u.RUT_PERSONA equals p.RUT
                                  //join e in conex.EMPRESA on p.EMPRESA equals e.PERSONA
                                  where u.ESTADO == "activo"
-                                 orderby p.APELLIDO descending
+                                 orderby u.PERFIL descending
                                  select new
                                  {
                                      nomUsuario = u.NOMBRE,
@@ -720,6 +720,47 @@ namespace CapaNegocio
             else
             {
                 
+                return null;
+            }
+        }
+
+        public List<String[]> ventaVsCompra(String token, int anno)
+        {
+            CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+            List<String[]> lista = new List<String[]>();
+            if (ValidarPerfil(token))
+            {
+                try
+                {
+                    var query = (from c in conex.FACTURA
+                                 group c by new { c.FECHA, c.TIPO } into g
+                                 orderby g.Select(q => q.FECHA) ascending
+                                 select new
+                                 {
+                                     fecha = g.Select(q => q.FECHA.Year),
+                                     tipo = g.Select(q => q.TIPO),
+                                     valor = g.Select(q => q.VALOR_BRUTO).Sum()
+                                 }
+                                 ).ToList();
+                    foreach (var item in query)
+                    {
+                        // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
+                        // Estas se usan solamente como contenedores de la data proveniente de la "query"
+                        String[] cliente = new String[3];
+                        cliente[0] = item.fecha.SingleOrDefault().ToString();
+                        cliente[1] = item.tipo.SingleOrDefault().ToString();
+                        cliente[2] = item.valor.ToString();
+                        lista.Add(cliente);
+                    }
+                    return lista;
+                }
+                catch (Exception e)
+                {
+                    return null;
+                }
+            }
+            else
+            {
                 return null;
             }
         }

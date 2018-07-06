@@ -21,6 +21,12 @@ namespace CapaPresentacionJAVA.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ValidarLogin", ReplyAction="http://tempuri.org/IWSSHostel/ValidarLoginResponse")]
         System.Threading.Tasks.Task<CapaObjeto.Sesion> ValidarLoginAsync(string usuario, string clave);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/UsuarioRescatar", ReplyAction="http://tempuri.org/IWSSHostel/UsuarioRescatarResponse")]
+        CapaObjeto.ContenedorUsuarios UsuarioRescatar(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/UsuarioRescatar", ReplyAction="http://tempuri.org/IWSSHostel/UsuarioRescatarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorUsuarios> UsuarioRescatarAsync(string token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrear", ReplyAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteCrearResponse")]
         CapaObjeto.ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(CapaObjeto.ContenedorPerfilUsuarioCliente entrada);
         
@@ -255,6 +261,12 @@ namespace CapaPresentacionJAVA.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatar", ReplyAction="http://tempuri.org/IWSSHostel/OrdenPedidoCompletaRescatarResponse")]
         System.Threading.Tasks.Task<CapaObjeto.ContenedorOrdenesPedidoCompleta> OrdenPedidoCompletaRescatarAsync(string token);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProdConfirRecepActualizar", ReplyAction="http://tempuri.org/IWSSHostel/ProdConfirRecepActualizarResponse")]
+        CapaObjeto.ContenedorRegistroRecepcionPedido ProdConfirRecepActualizar(CapaObjeto.ContenedorRegistroRecepcionPedido entrada);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProdConfirRecepActualizar", ReplyAction="http://tempuri.org/IWSSHostel/ProdConfirRecepActualizarResponse")]
+        System.Threading.Tasks.Task<CapaObjeto.ContenedorRegistroRecepcionPedido> ProdConfirRecepActualizarAsync(CapaObjeto.ContenedorRegistroRecepcionPedido entrada);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/FacturaCompraCompletaCrear", ReplyAction="http://tempuri.org/IWSSHostel/FacturaCompraCompletaCrearResponse")]
         CapaObjeto.ContenedorFacturaCompraCompleta FacturaCompraCompletaCrear(CapaObjeto.ContenedorFacturaCompraCompleta entrada);
         
@@ -381,6 +393,12 @@ namespace CapaPresentacionJAVA.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ListaUsuario", ReplyAction="http://tempuri.org/IWSSHostel/ListaUsuarioResponse")]
         System.Threading.Tasks.Task<string[][]> ListaUsuarioAsync(string token);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ventasVsCompras", ReplyAction="http://tempuri.org/IWSSHostel/ventasVsComprasResponse")]
+        string[][] ventasVsCompras(string token, int anno);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ventasVsCompras", ReplyAction="http://tempuri.org/IWSSHostel/ventasVsComprasResponse")]
+        System.Threading.Tasks.Task<string[][]> ventasVsComprasAsync(string token, int anno);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProvisionCrear", ReplyAction="http://tempuri.org/IWSSHostel/ProvisionCrearResponse")]
         CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada);
         
@@ -439,6 +457,14 @@ namespace CapaPresentacionJAVA.ServiceReference {
         
         public System.Threading.Tasks.Task<CapaObjeto.Sesion> ValidarLoginAsync(string usuario, string clave) {
             return base.Channel.ValidarLoginAsync(usuario, clave);
+        }
+        
+        public CapaObjeto.ContenedorUsuarios UsuarioRescatar(string token) {
+            return base.Channel.UsuarioRescatar(token);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorUsuarios> UsuarioRescatarAsync(string token) {
+            return base.Channel.UsuarioRescatarAsync(token);
         }
         
         public CapaObjeto.ContenedorPerfilUsuarioCliente PerfilUsuarioClienteCrear(CapaObjeto.ContenedorPerfilUsuarioCliente entrada) {
@@ -753,6 +779,14 @@ namespace CapaPresentacionJAVA.ServiceReference {
             return base.Channel.OrdenPedidoCompletaRescatarAsync(token);
         }
         
+        public CapaObjeto.ContenedorRegistroRecepcionPedido ProdConfirRecepActualizar(CapaObjeto.ContenedorRegistroRecepcionPedido entrada) {
+            return base.Channel.ProdConfirRecepActualizar(entrada);
+        }
+        
+        public System.Threading.Tasks.Task<CapaObjeto.ContenedorRegistroRecepcionPedido> ProdConfirRecepActualizarAsync(CapaObjeto.ContenedorRegistroRecepcionPedido entrada) {
+            return base.Channel.ProdConfirRecepActualizarAsync(entrada);
+        }
+        
         public CapaObjeto.ContenedorFacturaCompraCompleta FacturaCompraCompletaCrear(CapaObjeto.ContenedorFacturaCompraCompleta entrada) {
             return base.Channel.FacturaCompraCompletaCrear(entrada);
         }
@@ -919,6 +953,14 @@ namespace CapaPresentacionJAVA.ServiceReference {
         
         public System.Threading.Tasks.Task<string[][]> ListaUsuarioAsync(string token) {
             return base.Channel.ListaUsuarioAsync(token);
+        }
+        
+        public string[][] ventasVsCompras(string token, int anno) {
+            return base.Channel.ventasVsCompras(token, anno);
+        }
+        
+        public System.Threading.Tasks.Task<string[][]> ventasVsComprasAsync(string token, int anno) {
+            return base.Channel.ventasVsComprasAsync(token, anno);
         }
         
         public CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada) {
