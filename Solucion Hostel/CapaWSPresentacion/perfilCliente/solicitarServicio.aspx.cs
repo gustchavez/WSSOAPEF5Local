@@ -78,8 +78,8 @@ namespace CapaWSPresentacion.perfilCliente
 
         private void Bloqueados()
         {
-            txtFechaEgreso.Text = DateTime.Now.ToString("yyyy-MM-dd"); 
-            txtFechaIngreso.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            txtFechaEgreso.Text = DateTime.Now.ToString("dd-MM-yyyy"); 
+            txtFechaIngreso.Text = DateTime.Now.ToString("dd-MM-yyyy");
             //
             MostrarCasillas.Enabled = false;
             BtnSiguiente.Enabled = false;
@@ -317,7 +317,7 @@ namespace CapaWSPresentacion.perfilCliente
             try
             {
                 DateTime fechaIngreso = DateTime.Parse(txtFechaIngreso.Text);
-                if (fechaIngreso < DateTime.Now)
+                if (fechaIngreso < DateTime.Now && fechaIngreso != null)
                 {
                     Response.Write(@"<script langauge='text/javascript'>alert('La fecha de ingreso debe der mayor o igual a la fecha actual');</script>");
                 }
@@ -336,16 +336,19 @@ namespace CapaWSPresentacion.perfilCliente
             try
             {
                 DateTime fechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
-                if (fechaEgreso < DateTime.Parse(txtFechaIngreso.Text))
+                if (fechaEgreso < DateTime.Parse(txtFechaIngreso.Text) && fechaEgreso == null)
                 {
                     Response.Write(@"<script langauge='text/javascript'>alert('La fecha de egreso debe der mayor a la fecha de ingreso');</script>");
                     txtRegistroDias.Text = "";
                 }
                 else
                 {
-                    TimeSpan difDias = DateTime.Parse(txtFechaEgreso.Text) - DateTime.Parse(txtFechaIngreso.Text);
-                    txtRegistroDias.Text = difDias.Days.ToString();
-                    TotaldeDias();
+                    if (txtFechaEgreso.Text != null && txtFechaIngreso.Text != null)
+                    {
+                        TimeSpan difDias = DateTime.Parse(txtFechaEgreso.Text) - DateTime.Parse(txtFechaIngreso.Text);
+                        txtRegistroDias.Text = difDias.Days.ToString();
+                        TotaldeDias();
+                    }                    
                 }
             }
             catch (Exception)
