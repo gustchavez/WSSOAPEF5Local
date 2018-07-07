@@ -193,7 +193,8 @@
         <h5></h5>
         <div class="contenido">				
             Fecha Ingreso <br>
-            <asp:TextBox ID="txtFechaIngreso" runat="server" TextMode="Date" CssClass="CasillaFecha" AutoPostBack="True" OnTextChanged="txtFechaIngreso_TextChanged1" value="System.DateTime.Today" ></asp:TextBox>  </div>
+            <asp:TextBox ID="txtFechaIngreso" runat="server" TextMode="DateTime" CssClass="CasillaFecha" value='DateTime.Now.ToString("dd/MM/yyyy")' ></asp:TextBox>  </div>
+            <asp:RangeValidator ID="RangeValidator1" Type="Date" Display="Dynamic" runat="server" ErrorMessage="Fecha invalida" ControlToValidate="txtFechaIngreso" MaximumValue="Date.Now.Date.AddYears(90).ToString(&quot;dd-MM-yyyy&quot;)"></asp:RangeValidator>
         <div class="contenido">				
             Fecha Salida <br>
             <asp:TextBox ID="txtFechaEgreso" runat="server" TextMode="Date" CssClass="CasillaFecha" Enabled="true"  AutoPostBack="True" OnTextChanged="txtFechaEgreso_TextChanged"></asp:TextBox> 

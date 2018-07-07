@@ -733,11 +733,12 @@ namespace CapaNegocio
                 try
                 {
                     var query = (from c in conex.FACTURA
-                                 group c by new { c.FECHA, c.TIPO } into g
-                                 orderby g.Select(q => q.FECHA) ascending
+                                 group c by new { c.FECHA.Month, c.FECHA.Year, c.TIPO } into g
+                                 orderby g.Key.Month ascending
+                                 where g.Key.Year.Equals(anno)
                                  select new
                                  {
-                                     fecha = g.Select(q => q.FECHA.Year),
+                                     fecha = g.Select(q => q.FECHA),
                                      tipo = g.Select(q => q.TIPO),
                                      valor = g.Select(q => q.VALOR_BRUTO).Sum()
                                  }
@@ -747,8 +748,8 @@ namespace CapaNegocio
                         // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
                         // Estas se usan solamente como contenedores de la data proveniente de la "query"
                         String[] cliente = new String[3];
-                        cliente[0] = item.fecha.SingleOrDefault().ToString();
-                        cliente[1] = item.tipo.SingleOrDefault().ToString();
+                        cliente[0] = item.fecha.FirstOrDefault().ToString("MM-yyyy");
+                        cliente[1] = item.tipo.FirstOrDefault().ToString();
                         cliente[2] = item.valor.ToString();
                         lista.Add(cliente);
                     }

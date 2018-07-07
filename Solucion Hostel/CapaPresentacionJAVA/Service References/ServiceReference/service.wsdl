@@ -38,11 +38,11 @@
   <wsdl:message name="IWSSHostel_PerfilUsuarioClienteRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteRescatarResponse" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteBuscarPorRut_InputMessage">
-    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteBuscarPorRut" />
+  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteRescatarXRut_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteRescatarXRut" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteBuscarPorRut_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteBuscarPorRutResponse" />
+  <wsdl:message name="IWSSHostel_PerfilUsuarioClienteRescatarXRut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioClienteRescatarXRutResponse" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorCrear" />
@@ -62,11 +62,11 @@
   <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorRescatarResponse" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorBuscarPorRut_InputMessage">
-    <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorBuscarPorRut" />
+  <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorRescatarXRut_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorRescatarXRut" />
   </wsdl:message>
-  <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorBuscarPorRut_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorBuscarPorRutResponse" />
+  <wsdl:message name="IWSSHostel_PerfilUsuarioProveedorRescatarXRut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioProveedorRescatarXRutResponse" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoCrear" />
@@ -86,6 +86,12 @@
   <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoRescatarResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoRescatarXRut_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoRescatarXRut" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioEmpleadoRescatarXRut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioEmpleadoRescatarXRutResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorCrear" />
   </wsdl:message>
@@ -98,17 +104,23 @@
   <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorActualizar_OutputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorActualizarResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorRescatar_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorRescatar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorRescatar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorRescatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorRescatarXRut_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorRescatarXRut" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorRescatarXRut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorRescatarXRutResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorEliminar_InputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorEliminar" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorEliminar_OutputMessage">
     <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorEliminarResponse" />
-  </wsdl:message>
-  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorBuscarPorRut_InputMessage">
-    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorBuscarPorRut" />
-  </wsdl:message>
-  <wsdl:message name="IWSSHostel_PerfilUsuarioAdministradorBuscarPorRut_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PerfilUsuarioAdministradorBuscarPorRutResponse" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_ProductoCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:ProductoCrear" />
@@ -437,9 +449,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatar" message="tns:IWSSHostel_PerfilUsuarioClienteRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatarResponse" message="tns:IWSSHostel_PerfilUsuarioClienteRescatar_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="PerfilUsuarioClienteBuscarPorRut">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteBuscarPorRut" message="tns:IWSSHostel_PerfilUsuarioClienteBuscarPorRut_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteBuscarPorRutResponse" message="tns:IWSSHostel_PerfilUsuarioClienteBuscarPorRut_OutputMessage" />
+    <wsdl:operation name="PerfilUsuarioClienteRescatarXRut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatarXRut" message="tns:IWSSHostel_PerfilUsuarioClienteRescatarXRut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatarXRutResponse" message="tns:IWSSHostel_PerfilUsuarioClienteRescatarXRut_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="PerfilUsuarioProveedorCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorCrear" message="tns:IWSSHostel_PerfilUsuarioProveedorCrear_InputMessage" />
@@ -453,9 +465,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatar" message="tns:IWSSHostel_PerfilUsuarioProveedorRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatarResponse" message="tns:IWSSHostel_PerfilUsuarioProveedorRescatar_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="PerfilUsuarioProveedorBuscarPorRut">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorBuscarPorRut" message="tns:IWSSHostel_PerfilUsuarioProveedorBuscarPorRut_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorBuscarPorRutResponse" message="tns:IWSSHostel_PerfilUsuarioProveedorBuscarPorRut_OutputMessage" />
+    <wsdl:operation name="PerfilUsuarioProveedorRescatarXRut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatarXRut" message="tns:IWSSHostel_PerfilUsuarioProveedorRescatarXRut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatarXRutResponse" message="tns:IWSSHostel_PerfilUsuarioProveedorRescatarXRut_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="PerfilUsuarioEmpleadoCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoCrear" message="tns:IWSSHostel_PerfilUsuarioEmpleadoCrear_InputMessage" />
@@ -469,6 +481,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatar" message="tns:IWSSHostel_PerfilUsuarioEmpleadoRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatarResponse" message="tns:IWSSHostel_PerfilUsuarioEmpleadoRescatar_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioEmpleadoRescatarXRut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatarXRut" message="tns:IWSSHostel_PerfilUsuarioEmpleadoRescatarXRut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatarXRutResponse" message="tns:IWSSHostel_PerfilUsuarioEmpleadoRescatarXRut_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="PerfilUsuarioAdministradorCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrear" message="tns:IWSSHostel_PerfilUsuarioAdministradorCrear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrearResponse" message="tns:IWSSHostel_PerfilUsuarioAdministradorCrear_OutputMessage" />
@@ -477,13 +493,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorActualizar" message="tns:IWSSHostel_PerfilUsuarioAdministradorActualizar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorActualizarResponse" message="tns:IWSSHostel_PerfilUsuarioAdministradorActualizar_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioAdministradorRescatar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorRescatar" message="tns:IWSSHostel_PerfilUsuarioAdministradorRescatar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorRescatarResponse" message="tns:IWSSHostel_PerfilUsuarioAdministradorRescatar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioAdministradorRescatarXRut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorRescatarXRut" message="tns:IWSSHostel_PerfilUsuarioAdministradorRescatarXRut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorRescatarXRutResponse" message="tns:IWSSHostel_PerfilUsuarioAdministradorRescatarXRut_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="PerfilUsuarioAdministradorEliminar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorEliminar" message="tns:IWSSHostel_PerfilUsuarioAdministradorEliminar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorEliminarResponse" message="tns:IWSSHostel_PerfilUsuarioAdministradorEliminar_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="PerfilUsuarioAdministradorBuscarPorRut">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorBuscarPorRut" message="tns:IWSSHostel_PerfilUsuarioAdministradorBuscarPorRut_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorBuscarPorRutResponse" message="tns:IWSSHostel_PerfilUsuarioAdministradorBuscarPorRut_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ProductoCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProductoCrear" message="tns:IWSSHostel_ProductoCrear_InputMessage" />
@@ -737,8 +757,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PerfilUsuarioClienteBuscarPorRut">
-      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteBuscarPorRut" style="document" />
+    <wsdl:operation name="PerfilUsuarioClienteRescatarXRut">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioClienteRescatarXRut" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -773,8 +793,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PerfilUsuarioProveedorBuscarPorRut">
-      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorBuscarPorRut" style="document" />
+    <wsdl:operation name="PerfilUsuarioProveedorRescatarXRut">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioProveedorRescatarXRut" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -809,6 +829,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioEmpleadoRescatarXRut">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioEmpleadoRescatarXRut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="PerfilUsuarioAdministradorCrear">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorCrear" style="document" />
       <wsdl:input>
@@ -827,8 +856,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PerfilUsuarioAdministradorEliminar">
-      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorEliminar" style="document" />
+    <wsdl:operation name="PerfilUsuarioAdministradorRescatar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorRescatar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -836,8 +865,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PerfilUsuarioAdministradorBuscarPorRut">
-      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorBuscarPorRut" style="document" />
+    <wsdl:operation name="PerfilUsuarioAdministradorRescatarXRut">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorRescatarXRut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilUsuarioAdministradorEliminar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/PerfilUsuarioAdministradorEliminar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

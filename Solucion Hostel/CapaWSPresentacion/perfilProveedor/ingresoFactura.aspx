@@ -13,35 +13,42 @@
 	
             <div class="Casilla2-1">
 			<h4>Ordenes</h4>	
-                <asp:DropDownList ID="ddlOrdenes" CssClass="droplist" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlOrdenes_SelectedIndexChanged">
+                <asp:DropDownList ID="ddlOrdenes" CssClass="droplist" runat="server" ForeColor="Black">
                     <asp:ListItem Value="Seleccione una opcion">Seleccione una opción</asp:ListItem>
                     <asp:ListItem Value="de Compra">Compra</asp:ListItem>
                     <asp:ListItem Value="de Venta">Pedido</asp:ListItem>
                 </asp:DropDownList>
+                <br>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage=" * Seleccione Ordenes" ControlToValidate="ddlOrdenes"></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Valor Bruto</h4>	
-                <asp:TextBox ID="txtValorBruto" runat="server" TextMode="number" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>
-			</div>
+                <asp:TextBox ID="txtValorBruto" runat="server" TextMode="number" CssClass="CasillaPersona"></asp:TextBox>
+			    <br><asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage=" * Ingrese Valor Bruto" ControlToValidate="txtValorBruto"></asp:RequiredFieldValidator>
+            </div>
 			<div class="Casilla2-1">
 			<h4>Valor IVA</h4>
-			<asp:TextBox ID="txtValorIVA" runat="server" TextMode="number" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>
+			    <asp:TextBox ID="txtValorIVA" runat="server" TextMode="number" CssClass="CasillaPersona"></asp:TextBox>
+                <br><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage=" * Ingrese Valor IVA" ControlToValidate="txtValorIVA"></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 				<h4>Valor Neto</h4>		
-                <asp:TextBox ID="txtValorNeto" runat="server" TextMode="number" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>			
+                <asp:TextBox ID="txtValorNeto" runat="server" TextMode="number" CssClass="CasillaPersona"></asp:TextBox>			
+                <br><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage=" * Ingrese Valor Neto" ControlToValidate="txtValorNeto"></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
-			<h4>Fecha</h4>	
-			<asp:TextBox ID="txtFecha" runat="server" TextMode="Date" CssClass="CasillaPersona"></asp:TextBox>
+			    <h4>Fecha</h4>	
+			    <asp:TextBox ID="txtFecha" runat="server" TextMode="Date" CssClass="CasillaPersona"></asp:TextBox>
+                <br><asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage=" * Ingrese Fecha" ControlToValidate="txtFecha"></asp:RequiredFieldValidator>
 			</div>
             <div class="Casilla2-1">
 				<h4>Medio de Pago</h4>		
-                <asp:DropDownList ID="ddlMedioPago" CssClass="droplist" runat="server">
+                <asp:DropDownList ID="ddlMedioPago" CssClass="droplist" runat="server" ForeColor="Black">
                     <asp:ListItem Value="Debito">Débito</asp:ListItem>
                     <asp:ListItem Value="Credito">Crédito</asp:ListItem>
                     <asp:ListItem Value="Transferencia electronica">Transferencia Electrónica</asp:ListItem>
                 </asp:DropDownList>
+                <br><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage=" * Ingrese Medio de Pago" ControlToValidate="ddlMedioPago"></asp:RequiredFieldValidator>
 			</div>
             <div class="Casilla2-1">
 				<h4>Codigo Moneda</h4>		
@@ -51,40 +58,32 @@
                     <asp:ListItem Value="190">BRL</asp:ListItem>
                     <asp:ListItem Value="750">EUR</asp:ListItem>
                 </asp:DropDownList>	
+                <br><asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage=" * Ingrese Codigo Moneda" ControlToValidate="ddlCodigoISO"></asp:RequiredFieldValidator>
 			</div>
             <div class="Casilla2-1">
 				<h4>Monto</h4>		
                 <asp:TextBox ID="txtMonto" runat="server" TextMode="number" CssClass="CasillaPersona"></asp:TextBox>			
+                <br><asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage=" * Ingrese Monto" ControlToValidate="txtMonto"></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 				<h4>Observación</h4>					
 				<asp:TextBox ID="txtObservacion" runat="server" TextMode="MultiLine" CssClass="CasillaPersona"></asp:TextBox>					
+                <br><asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage=" * Ingrese Observacion" ControlToValidate="txtObservacion"></asp:RequiredFieldValidator>
 			</div>
             <div class="Casilla2-1">	
-		        <asp:Button ID="btnAgregarFactura" runat="server" Text="Crear Factura"  CssClass="SubmitTotalfactura" OnClick="btnAgregar_Click" OnClientClick="return valida();"/> 
+		        <asp:Button ID="btnAgregarFactura" runat="server" Text="Crear Factura"  CssClass="SubmitTotalfactura" OnClick="btnAgregar_Click"/> 
 		    </div>
 	</div>
-    <div class="ModificarDatos2">
-        <div class="columna2-1"> 
-		    <h2>Detalle Orden</h2><br>
-            <asp:GridView ID="gwOrdenDetalle" runat="server" CssClass="listaFactura"
-                EmptyDataText="No se encontraron Solicitudes..."
-                ></asp:GridView>
-	    </div>
+        <div class="ModificarDatos2">
+            <div class="columna2-1"> 
+		        <h2>Detalle Orden</h2><br>
+                <asp:GridView ID="gwOrdenDetalle" runat="server" CssClass="listaFactura"
+                    EmptyDataText="No se encontraron Solicitudes..."
+                    ></asp:GridView>
+	        </div>
+        </div>
     </div>
-            <div class="Casilla2-2">
-                <div class="error" id="error1"> Ingrese una razón social </div>
-                <div class="error" id="error2"> Seleccione un Giro </div>
-                <div class="error" id="error3"> Ingrese una dirección </div>
-                <div class="error" id="error4"> Seleccione una ciudad </div>
-                <div class="error" id="error5"> Seleccione una comuna </div>
-                <div class="error" id="error6"> Ingrese un correo electrónico </div>
-                <div class="error" id="error7"> Ingrese un número de telefono </div>
-                <div class="error" id="error8"> Ingrese una contraseña </div>
-                <div class="error" id="error9"> Ingrese un número de telefono </div>
-                <div class="error" id="error10"> Ingrese una contraseña </div>
-            </div>		
-</div>
+        
     </form>
 
 
@@ -92,7 +91,7 @@
 
      <!----VALIDACIONES ------->
 
-<script type="text/javascript">
+<%--<script type="text/javascript">
      function valida() 
      {      
          var razonSocial = document.getElementById('<%= ddlOrdenes.ClientID %>').value;
@@ -166,6 +165,6 @@
          }
          return false;
      }
- </script>
+ </script>--%>
 
 </asp:Content>
