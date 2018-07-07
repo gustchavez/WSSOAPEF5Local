@@ -191,17 +191,18 @@
 		
         <h2>Solicitud de Ingreso</h2>
         <h5></h5>
-        <div class="contenido">				
+        <div class="contenido">
             Fecha Ingreso <br>
-            <asp:TextBox ID="txtFechaIngreso" runat="server" TextMode="DateTime" CssClass="CasillaFecha" value='DateTime.Now.ToString("dd/MM/yyyy")' ></asp:TextBox>  </div>
-            <asp:RangeValidator ID="RangeValidator1" Type="Date" Display="Dynamic" runat="server" ErrorMessage="Fecha invalida" ControlToValidate="txtFechaIngreso" MaximumValue="Date.Now.Date.AddYears(90).ToString(&quot;dd-MM-yyyy&quot;)"></asp:RangeValidator>
+            <asp:TextBox ID="txtFechaIngreso" runat="server" TextMode="Date" CssClass="CasillaFecha" value='DateTime.Now.ToString("dd/MM/yyyy")' AutoPostBack="True" OnTextChanged="txtFechaIngreso_TextChanged" ></asp:TextBox>  </div>
+            <asp:RangeValidator ID="Range1" Type="Date" Format = "MM/DD/YYYY" Display="Dynamic" runat="server" ErrorMessage="Fecha invalida" ControlToValidate="txtFechaIngreso" ></asp:RangeValidator>
         <div class="contenido">				
             Fecha Salida <br>
-            <asp:TextBox ID="txtFechaEgreso" runat="server" TextMode="Date" CssClass="CasillaFecha" Enabled="true"  AutoPostBack="True" OnTextChanged="txtFechaEgreso_TextChanged"></asp:TextBox> 
+            <asp:TextBox ID="txtFechaEgreso" runat="server" TextMode="Date" CssClass="CasillaFecha" value='DateTime.Now.ToString("dd/MM/yyyy")' OnTextChanged="txtFechaEgreso_TextChanged1" AutoPostBack="True"></asp:TextBox> 
+            <asp:RangeValidator ID="Range2" Type="Date" Format = "MM/DD/YYYY" Display="Dynamic" runat="server" ErrorMessage="Fecha invalida" ControlToValidate="txtFechaEgreso" ></asp:RangeValidator>
         </div>
 
         <div class="contenido">				
-            Total de días  <asp:TextBox ID="txtRegistroDias" runat="server" CssClass="Casilladias" Enabled="false" value="1" ></asp:TextBox>
+            Total de días  <asp:TextBox ID="txtRegistroDias" runat="server" CssClass="Casilladias" Enabled="false" ></asp:TextBox>
         </div>
 
         <div class="contenido">				

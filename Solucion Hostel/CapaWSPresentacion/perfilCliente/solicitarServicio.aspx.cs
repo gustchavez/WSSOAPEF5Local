@@ -12,6 +12,10 @@ namespace CapaWSPresentacion.perfilCliente
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Range1.MinimumValue = DateTime.Today.ToShortDateString();
+            Range1.MaximumValue = DateTime.Today.AddMonths(24).ToShortDateString();
+            Range2.MinimumValue = DateTime.Today.ToShortDateString();
+            Range2.MaximumValue = DateTime.Today.AddMonths(24).ToShortDateString();
             try
             {
                 string Perfil = Session["PerfilUsuario"].ToString();
@@ -248,6 +252,7 @@ namespace CapaWSPresentacion.perfilCliente
             {
                 MostrarCasillas.Enabled = false;
                 BtnSiguiente.Enabled = true;
+                
             }
         }
 
@@ -298,12 +303,16 @@ namespace CapaWSPresentacion.perfilCliente
             }
         }
 
-        
-
-        protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
+        protected void txtFechaIngreso_TextChanged(object sender, EventArgs e)
         {
-            RangeValidator1.MinimumValue = DateTime.Now.Date.ToString("dd-MM-yyyy");
-            RangeValidator1.MaximumValue = DateTime.Now.Date.AddYears(90).ToString("dd-MM-yyyy");
+            Range2.MinimumValue = DateTime.Parse(txtFechaIngreso.Text).AddDays(1).ToShortDateString();
+        }
+
+        protected void txtFechaEgreso_TextChanged1(object sender, EventArgs e)
+        {
+            Range2.MinimumValue = DateTime.Parse(txtFechaIngreso.Text).AddDays(1).ToShortDateString();
+            TimeSpan difDias = DateTime.Parse(txtFechaEgreso.Text) - DateTime.Parse(txtFechaIngreso.Text);
+            txtRegistroDias.Text = difDias.Days.ToString();
         }
     }
 }
