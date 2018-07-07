@@ -297,5 +297,13 @@ namespace CapaWSPresentacion.perfilCliente
                 txtCantHabDispCua.Text = "0";
             }
         }
+
+        
+
+        protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
+        {
+            RangeValidator1.MinimumValue = DateTime.Now.Date.ToString("dd-MM-yyyy");
+            RangeValidator1.MaximumValue = DateTime.Now.Date.AddYears(90).ToString("dd-MM-yyyy");
+        }
     }
 }

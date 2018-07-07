@@ -95,27 +95,47 @@ color:white;
 
 .CasillaPersona{
 	position: relative;
-	width: 222px;
+	width: 251px;
 	height: 25px;
     top: 0px;
     left: 0px;
 
      background: none;
 	color: white;
- 	border: none;
-    border-bottom: 2px solid white;
+ 	border-bottom: 2px solid white;
+    border-left-style: none;
+    border-left-color: inherit;
+    border-left-width: medium;
+    border-right-style: none;
+    border-right-color: inherit;
+    border-right-width: medium;
+    border-top-style: none;
+    border-top-color: inherit;
+    border-top-width: medium;
 }
 
 .droplist {
 	position: relative;
-	width: 230px;
-	height: 30px;
+	width: 219px;
+	height: 9px;
 	float: left;
 
         	background: none;
 	color: white;
-	border: none;
-	 border-bottom: 2px solid white;
+	border-bottom: 2px solid white;
+    top: -20px;
+    left: -9px;
+    border-left-style: none;
+    border-left-color: inherit;
+    border-left-width: medium;
+    border-right-style: none;
+    border-right-color: inherit;
+    border-right-width: medium;
+    border-top-style: none;
+    border-top-color: inherit;
+    border-top-width: medium;
+    margin-left: 0px;
+    margin-bottom: 2px;
 }
 
 .SubmitTotalfactura{
