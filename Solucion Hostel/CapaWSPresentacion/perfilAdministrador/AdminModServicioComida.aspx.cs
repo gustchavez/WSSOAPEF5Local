@@ -71,7 +71,7 @@ namespace CapaWSPresentacion.perfilAdministrador
             txtPrecio.Text = string.Empty;
         }
         
-        protected void ddlEmpresas_SelectedIndexChanged(object sender, EventArgs e)
+        protected void ddlTipoServicio_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<ServicioComida> m = (List<ServicioComida>)Session["ServiciosComida"];
             txtPrecio.Text = m.Where(p => p.Tipo == ddlTipoServicio.SelectedValue).SingleOrDefault().Precio.ToString(); 
