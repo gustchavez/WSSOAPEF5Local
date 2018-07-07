@@ -1320,22 +1320,30 @@ namespace CapaDato
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ANULAR_FACTURA_PEDIDO", p_IN_NUMEROParameter, p_IN_OBSERVACIONESParameter, p_IN_NUMERO_OPParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
-        public virtual int SP_ANULAR_ORDEN_COMPRA(Nullable<decimal> p_IN_NUMERO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        public virtual int SP_ANULAR_ORDEN_COMPRA(Nullable<decimal> p_IN_NUMERO, string p_IN_OBSERVACIONES, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
             var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
                 new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
                 new ObjectParameter("P_IN_NUMERO", typeof(decimal));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ANULAR_ORDEN_COMPRA", p_IN_NUMEROParameter, p_OUT_CODRET, p_OUT_GLSRET);
+            var p_IN_OBSERVACIONESParameter = p_IN_OBSERVACIONES != null ?
+                new ObjectParameter("P_IN_OBSERVACIONES", p_IN_OBSERVACIONES) :
+                new ObjectParameter("P_IN_OBSERVACIONES", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ANULAR_ORDEN_COMPRA", p_IN_NUMEROParameter, p_IN_OBSERVACIONESParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     
-        public virtual int SP_ANULAR_ORDEN_PEDIDO(Nullable<decimal> p_IN_NUMERO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        public virtual int SP_ANULAR_ORDEN_PEDIDO(Nullable<decimal> p_IN_NUMERO, string p_IN_OBSERVACIONES, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
         {
             var p_IN_NUMEROParameter = p_IN_NUMERO.HasValue ?
                 new ObjectParameter("P_IN_NUMERO", p_IN_NUMERO) :
                 new ObjectParameter("P_IN_NUMERO", typeof(decimal));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ANULAR_ORDEN_PEDIDO", p_IN_NUMEROParameter, p_OUT_CODRET, p_OUT_GLSRET);
+            var p_IN_OBSERVACIONESParameter = p_IN_OBSERVACIONES != null ?
+                new ObjectParameter("P_IN_OBSERVACIONES", p_IN_OBSERVACIONES) :
+                new ObjectParameter("P_IN_OBSERVACIONES", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ANULAR_ORDEN_PEDIDO", p_IN_NUMEROParameter, p_IN_OBSERVACIONESParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
     }
 }

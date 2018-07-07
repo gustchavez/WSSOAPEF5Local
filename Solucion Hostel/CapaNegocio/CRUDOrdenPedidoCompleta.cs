@@ -114,7 +114,8 @@ namespace CapaNegocio
                 CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
 
                 conex.SP_ANULAR_ORDEN_COMPRA
-                    (aOPC.Item.Cabecera.Numero
+                    ( aOPC.Item.Cabecera.Numero
+                    , aOPC.Item.Cabecera.Observaciones
                     , p_OUT_CODRET
                     , p_OUT_GLSRET
                     );

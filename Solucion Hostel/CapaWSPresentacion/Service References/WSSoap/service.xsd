@@ -975,45 +975,60 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ventasVsCompras">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="anno" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ventasVsComprasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ventasVsComprasResult" nillable="true" type="q100:ArrayOfArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ProvisionCrear">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q100:ContenedorProvision" />
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q101:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionCrearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionCrearResult" nillable="true" type="q101:ContenedorProvision" />
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionCrearResult" nillable="true" type="q102:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionActualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q102:ContenedorProvision" />
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q103:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionActualizarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionActualizarResult" nillable="true" type="q103:ContenedorProvision" />
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionActualizarResult" nillable="true" type="q104:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionEliminar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q104:ContenedorProvision" />
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="entrada" nillable="true" type="q105:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProvisionEliminarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionEliminarResult" nillable="true" type="q105:ContenedorProvision" />
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionEliminarResult" nillable="true" type="q106:ContenedorProvision" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1027,7 +1042,7 @@
   <xs:element name="ProvisionRescatarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionRescatarResult" nillable="true" type="q106:ContenedorProvisiones" />
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/CapaObjeto" minOccurs="0" name="ProvisionRescatarResult" nillable="true" type="q107:ContenedorProvisiones" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

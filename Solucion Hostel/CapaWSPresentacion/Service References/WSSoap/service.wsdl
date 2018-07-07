@@ -422,6 +422,12 @@
   <wsdl:message name="IWSSHostel_ListaUsuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListaUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_ventasVsCompras_InputMessage">
+    <wsdl:part name="parameters" element="tns:ventasVsCompras" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ventasVsCompras_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ventasVsComprasResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_ProvisionCrear_InputMessage">
     <wsdl:part name="parameters" element="tns:ProvisionCrear" />
   </wsdl:message>
@@ -722,6 +728,10 @@
     <wsdl:operation name="ListaUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ListaUsuario" message="tns:IWSSHostel_ListaUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ListaUsuarioResponse" message="tns:IWSSHostel_ListaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ventasVsCompras">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ventasVsCompras" message="tns:IWSSHostel_ventasVsCompras_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ventasVsComprasResponse" message="tns:IWSSHostel_ventasVsCompras_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ProvisionCrear">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProvisionCrear" message="tns:IWSSHostel_ProvisionCrear_InputMessage" />
@@ -1356,6 +1366,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListaUsuario">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/ListaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ventasVsCompras">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ventasVsCompras" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

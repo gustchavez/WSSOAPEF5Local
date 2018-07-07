@@ -803,11 +803,13 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
         </Function>
         <Function Name="SP_ANULAR_ORDEN_COMPRA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
           <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
+          <Parameter Name="P_IN_OBSERVACIONES" Type="varchar2" Mode="In" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
         </Function>
         <Function Name="SP_ANULAR_ORDEN_PEDIDO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
           <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
+          <Parameter Name="P_IN_OBSERVACIONES" Type="varchar2" Mode="In" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
         </Function>
@@ -1806,11 +1808,13 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           </FunctionImport>
           <FunctionImport Name="SP_ANULAR_ORDEN_COMPRA">
             <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_OBSERVACIONES" Mode="In" Type="String" />
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_ANULAR_ORDEN_PEDIDO">
             <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_OBSERVACIONES" Mode="In" Type="String" />
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>

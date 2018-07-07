@@ -429,6 +429,12 @@ namespace CapaWSPresentacion.WSSoap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ListaUsuario", ReplyAction="http://tempuri.org/IWSSHostel/ListaUsuarioResponse")]
         System.Threading.Tasks.Task<string[][]> ListaUsuarioAsync(string token);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ventasVsCompras", ReplyAction="http://tempuri.org/IWSSHostel/ventasVsComprasResponse")]
+        string[][] ventasVsCompras(string token, int anno);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ventasVsCompras", ReplyAction="http://tempuri.org/IWSSHostel/ventasVsComprasResponse")]
+        System.Threading.Tasks.Task<string[][]> ventasVsComprasAsync(string token, int anno);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSSHostel/ProvisionCrear", ReplyAction="http://tempuri.org/IWSSHostel/ProvisionCrearResponse")]
         CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada);
         
@@ -1031,6 +1037,14 @@ namespace CapaWSPresentacion.WSSoap {
         
         public System.Threading.Tasks.Task<string[][]> ListaUsuarioAsync(string token) {
             return base.Channel.ListaUsuarioAsync(token);
+        }
+        
+        public string[][] ventasVsCompras(string token, int anno) {
+            return base.Channel.ventasVsCompras(token, anno);
+        }
+        
+        public System.Threading.Tasks.Task<string[][]> ventasVsComprasAsync(string token, int anno) {
+            return base.Channel.ventasVsComprasAsync(token, anno);
         }
         
         public CapaObjeto.ContenedorProvision ProvisionCrear(CapaObjeto.ContenedorProvision entrada) {

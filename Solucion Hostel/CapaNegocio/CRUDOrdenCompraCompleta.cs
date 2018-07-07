@@ -128,6 +128,7 @@ namespace CapaNegocio
 
                 conex.SP_ANULAR_ORDEN_COMPRA
                     ( aOCC.Item.Cabecera.Numero
+                    , aOCC.Item.Cabecera.Observaciones
                     , p_OUT_CODRET
                     , p_OUT_GLSRET
                     );
