@@ -202,11 +202,11 @@
         </div>
 
         <div class="contenido">				
-            Total de días  <asp:TextBox ID="txtRegistroDias" runat="server" min="0" CssClass="Casilladias" Enabled="false" ></asp:TextBox>
+            Total de días  <asp:TextBox ID="txtRegistroDias" runat="server" min="0" CssClass="Casilladias" Enabled="false" OnTextChanged="txtRegistroDias_TextChanged" ></asp:TextBox>
         </div>
 
         <div class="contenido">				
-            Nº Personas <asp:TextBox ID="txtNpersonas" TextMode="Number" runat="server" CssClass="Casilladias" OnTextChanged="txtNpersonas_TextChanged" AutoPostBack="True" value=0></asp:TextBox>
+            Nº Personas <asp:TextBox ID="txtNpersonas" TextMode="Number" runat="server" CssClass="Casilladias" OnTextChanged="txtNpersonas_TextChanged" AutoPostBack="True" value=0 min ="0"></asp:TextBox>
         </div>
 
         <div class="contenido">

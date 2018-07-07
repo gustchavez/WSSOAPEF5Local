@@ -202,12 +202,12 @@ namespace CapaWSPresentacion.perfilCliente
 
         protected void txtFechaIngreso_TextChanged1(object sender, EventArgs e)
         {
-            TotaldeDias();
+            //TotaldeDias();
         }
 
         protected void txtFechaEgreso_TextChanged(object sender, EventArgs e)
         {
-            TotaldeDias();
+            //TotaldeDias();
         }
 
         protected void individual_TextChanged(object sender, EventArgs e)
@@ -275,7 +275,7 @@ namespace CapaWSPresentacion.perfilCliente
                 {
                     TimeSpan total = fechaEgreso - fechaIngreso;
 
-                    int dias = total.Days + 1;
+                    int dias = total.Days;
 
                     txtRegistroDias.Text = dias.ToString();
 
@@ -335,6 +335,7 @@ namespace CapaWSPresentacion.perfilCliente
             //Range2.MinimumValue = DateTime.Parse(txtFechaIngreso.Text).AddDays(1).ToShortDateString();
             try
             {
+                
                 DateTime fechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
                 if (fechaEgreso < DateTime.Parse(txtFechaIngreso.Text) && fechaEgreso == null)
                 {
@@ -346,14 +347,19 @@ namespace CapaWSPresentacion.perfilCliente
                     if (txtFechaEgreso.Text != null && txtFechaIngreso.Text != null)
                     {
                         TimeSpan difDias = DateTime.Parse(txtFechaEgreso.Text) - DateTime.Parse(txtFechaIngreso.Text);
-                        txtRegistroDias.Text = difDias.Days.ToString();
+                        if (difDias.Days>=0)
+                        {
+                            Response.Write(difDias.Days.ToString());
+                            txtRegistroDias.Text = difDias.Days.ToString();
+                        }
+                        
                         TotaldeDias();
                     }                    
                 }
             }
             catch (Exception)
             {
-                txtRegistroDias.Text = DateTime.Now.ToString("dd-MM-yyyy");
+                txtRegistroDias.Text = "0";
             }
             
             
@@ -379,6 +385,11 @@ namespace CapaWSPresentacion.perfilCliente
                 txtNpersonas.Text = "";
             }
             
+
+        }
+
+        protected void txtRegistroDias_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
