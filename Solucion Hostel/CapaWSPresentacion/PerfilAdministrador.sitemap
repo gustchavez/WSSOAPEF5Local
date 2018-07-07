@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-    <siteMapNode url="" title="Administrador"  description="">
-      <siteMapNode url="np_cliente_crear.aspx" title="Crear Cliente"  description="" />
-      <siteMapNode url="np_proveedor_crear.aspx" title="Crear Proveedor"  description="" />
-      <siteMapNode url="np_empleado_crear.aspx" title="Crear Empleado"  description="" />
-      <siteMapNode url="np_plato_crud.aspx" title="CRUD Plato"  description="" />
-    </siteMapNode>
-</siteMap>

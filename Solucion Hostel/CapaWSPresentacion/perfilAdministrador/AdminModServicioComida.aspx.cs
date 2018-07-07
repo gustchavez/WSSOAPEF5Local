@@ -21,6 +21,7 @@ namespace CapaWSPresentacion.perfilAdministrador
                     if (!IsPostBack)
                     {
                         RescatarDatos();
+                        RescatarDatos2();
                     }
                 }
                 else
@@ -59,6 +60,31 @@ namespace CapaWSPresentacion.perfilAdministrador
             Session["ServiciosComida"] = m.Lista;
         }
 
+
+        private void RescatarDatos2()
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            ContenedorHabitaciones m = new ContenedorHabitaciones();
+            m = x.HabitacionResPrecioXCapacidad(Session["TokenUsuario"].ToString());
+
+            if (m.Lista != null)
+            {
+                ddlTipoHabitacion.DataSource = m.Lista.OrderBy(p => p.Capacidad);
+                ddlTipoHabitacion.DataValueField = "Capacidad";
+                ddlTipoHabitacion.DataTextField = "Capacidad";
+                ddlTipoHabitacion.DataBind();
+                ddlTipoHabitacion.Enabled = true;
+                ////
+                txtPrecio2.Text = m.Lista.Where(p => p.Capacidad == int.Parse(ddlTipoHabitacion.SelectedValue)).SingleOrDefault().Precio.ToString();
+                ////
+            }
+            else {
+                LimpiarControles2();
+            }
+            Session["Habitaciones"] = m.Lista;
+        }
+
         private void LimpiarControles()
         {
             ddlTipoServicio.Items.Clear();
@@ -70,12 +96,30 @@ namespace CapaWSPresentacion.perfilAdministrador
 
             txtPrecio.Text = string.Empty;
         }
-        
+
+        private void LimpiarControles2()
+        {
+            ddlTipoHabitacion.Items.Clear();
+            ddlTipoHabitacion.Items.Add(new ListItem("No Existe", ""));
+            ddlTipoHabitacion.DataBind();
+            ddlTipoHabitacion.SelectedIndex = 0;
+            //////////////
+            ddlTipoHabitacion.Enabled = false;
+
+            txtPrecio2.Text = string.Empty;
+        }
+
         protected void ddlTipoServicio_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<ServicioComida> m = (List<ServicioComida>)Session["ServiciosComida"];
             txtPrecio.Text = m.Where(p => p.Tipo == ddlTipoServicio.SelectedValue).SingleOrDefault().Precio.ToString(); 
-        }        
+        }
+
+        protected void ddlTipoHabitacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Habitacion> m = (List<Habitacion>)Session["Habitaciones"];
+            txtPrecio2.Text = m.Where(p => p.Capacidad == int.Parse(ddlTipoHabitacion.SelectedValue)).SingleOrDefault().Precio.ToString();
+        }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
@@ -94,5 +138,26 @@ namespace CapaWSPresentacion.perfilAdministrador
                 RescatarDatos();
             }
         }
+
+        protected void btnModificar2_Click(object sender, EventArgs e)
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            ContenedorHabitacion xH = new ContenedorHabitacion();
+            xH.Item.Capacidad = int.Parse(ddlTipoHabitacion.SelectedValue);
+            xH.Item.Precio = int.Parse(txtPrecio2.Text);
+            //
+            xH.Retorno.Token = Session["TokenUsuario"].ToString();
+
+            xH = x.HabitacionActPrecioXCapacidad(xH);
+
+            if (xH.Retorno.Codigo == 0)
+            {
+                RescatarDatos();
+            }
+
+        }
+
+  
     }
 }

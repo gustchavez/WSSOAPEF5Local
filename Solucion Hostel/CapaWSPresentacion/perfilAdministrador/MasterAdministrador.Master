@@ -18,12 +18,17 @@
 	<div class="menu">
 
 	<div class="BotonMenu" onclick="efecto()">MENU</div>		
-		<div class="desplegable">		
+		<div class="desplegable">
+            <div class="subMenu"> 
+                <div class="imagen-logo">
+                    <asp:Image ID="imgLogoPress" runat="server" class="imagen-logo" ImageUrl="../images/administrador.png"/>
+			    </div>
+			</div>
 			<div class="subMenu"> <div class="imagen-logo"></div> </div>
 			<div class="subMenu" style="font-weight: bold; "> ADMINISTRADOR </div>
 			<div class="subMenu"> <a href="AdminCrearAdmin.aspx" style="color: #26362A; font-weight: bold;"> Crear Perfiles </a></div>
 			<div class="subMenu"> <a href="AdminGestionAdmin.aspx" style="color: #26362A; font-weight: bold;"> Modificar o Elimiar Perfil </a></div>
-            <div class="subMenu"> <a href="AdminModServicioComida.aspx" style="color: #26362A; font-weight: bold;"> Modificar Precio Tipo Servicio </a></div>
+            <div class="subMenu"> <a href="AdminModServicioComida.aspx" style="color: #26362A; font-weight: bold;"> Misceláneos </a></div>
             <div class="subMenu"> <a href="AdminModHabitacion.aspx" style="color: #26362A; font-weight: bold;"> Modificar Precio Habitación </a></div>
 			<br>
 			<div class="subMenu" style="font-weight: bold;" > EMPLEADO </div>
@@ -44,7 +49,12 @@
 	</div>
 	<!--Fin Menu-->
     <div class="columna1">
-		<div class="perfilCliente">		
+		<div class="perfilCliente">
+			<div class="datosEmpresa"> 
+                <div class="imagen-logo">
+                    <asp:Image ID="imgLogoNormal" runat="server" class="imagen-logo-empresa" ImageUrl="../images/administrador.png"/>
+                </div> 
+            </div>	
 			<div class="datosEmpresa" > <div class="imagen-logo-empresa"></div> </div>
 			<div class="datosEmpresa"> <h3> Datos Usuario </h3> </div>
         	<div class="datosEmpresa"> <b>Cargo</b>  <br> <asp:Label ID="lblPerfilUsuario" runat="server"></asp:Label> </div>

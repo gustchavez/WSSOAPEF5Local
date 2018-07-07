@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-    <siteMapNode url="" title="Cliente"  description="">
-        <siteMapNode url="np_orden_reserva_crear.aspx" title="Crear Orden Reserva"  description="" />
-        <siteMapNode url="" title="Historial Reservas"  description="" />
-    </siteMapNode>
-</siteMap>

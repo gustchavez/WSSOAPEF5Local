@@ -251,9 +251,9 @@
     </form>
 
 
+    <script src="/CondicionesJavascript/proveedorPerfil.js"></script>
 
-
-    <!----VALIDACIONES ------->
+    <!----VALIDACIONES 
 
 <script type="text/javascript">
      function valida() 
@@ -317,5 +317,5 @@
          return false;
      }
  </script>
-    
+    ------->
 </asp:Content>

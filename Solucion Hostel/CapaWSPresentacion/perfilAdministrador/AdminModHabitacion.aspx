@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilAdministrador/MasterAdministrador.Master" AutoEventWireup="true" CodeBehind="AdminModHabitacion.aspx.cs" Inherits="CapaWSPresentacion.perfilAdministrador.AdminModHabitacion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" type="text/css" href="/scripts/crearFactura.css">
+    <link rel="stylesheet" type="text/css" href="/scripts/comidaHabitacion.css">
     <form id="form1" runat="server">
 	    <div class="columna2">
 		    <div class="ModificarDatos">			

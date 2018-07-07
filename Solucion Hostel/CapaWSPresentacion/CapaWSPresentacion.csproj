@@ -165,14 +165,6 @@
     <Content Include="images\top-banner-background-3-u1049-fr.jpg" />
     <Content Include="images\top-banner-background-3.jpg" />
     <Content Include="images\top-banner-background-4.jpg" />
-    <Content Include="Index.aspx" />
-    <Content Include="np_proveedor_producto_crud.aspx" />
-    <Content Include="np_cliente_crear.aspx" />
-    <Content Include="np_ingreso.aspx" />
-    <Content Include="np_orden_compra_crear.aspx" />
-    <Content Include="np_orden_reserva_crear.aspx" />
-    <Content Include="np_plato_crud.aspx" />
-    <Content Include="np_proveedor_crear.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -246,6 +238,7 @@
     <Content Include="scripts\AdminMostrarFacturas.css" />
     <Content Include="scripts\AdminSolicitarPP.css" />
     <Content Include="CondicionesJavascript\perfilIngreso.js" />
+    <Content Include="scripts\comidaHabitacion.css" />
     <Content Include="scripts\detalleCliente.css" />
     <Content Include="scripts\empresaEmpleado.css" />
     <Content Include="scripts\facturaCliente.css" />
@@ -273,13 +266,6 @@
     <Content Include="scripts\recepcion.css" />
     <Content Include="scripts\solicitarEmpleado.css" />
     <Content Include="scripts\solicitudesCliente.css" />
-    <Content Include="PerfilCliente.sitemap">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="PerfilEmpleado.sitemap" />
-    <Content Include="PerfilAdministrador.sitemap" />
-    <Content Include="PerfilProveedor.sitemap" />
-    <Content Include="PerfilDefault.sitemap" />
     <Content Include="bin\ApplicationInsights.config" />
     <Content Include="bin\CapaWSPresentacion.dll.config" />
     <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
@@ -330,7 +316,6 @@
     <None Include="Service References\WSSoap\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="SitioPrincipal.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -346,7 +331,6 @@
     <Content Include="scripts\jquery-3.3.1.min.js" />
     <Content Include="scripts\perfilEmpleado.css" />
     <Content Include="scripts\productosEmpleado.css" />
-    <Content Include="np_producto_crud.aspx" />
     <Content Include="Properties\DataSources\CapaObjeto.NegCliente.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.NegLogin.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.PerfilCliente.datasource" />
@@ -366,62 +350,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="np_proveedor_producto_crud.aspx.cs">
-      <DependentUpon>np_proveedor_producto_crud.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="np_proveedor_producto_crud.aspx.designer.cs">
-      <DependentUpon>np_proveedor_producto_crud.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="np_cliente_crear.aspx.cs">
-      <DependentUpon>np_cliente_crear.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="np_cliente_crear.aspx.designer.cs">
-      <DependentUpon>np_cliente_crear.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="np_ingreso.aspx.cs">
-      <DependentUpon>np_ingreso.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="np_ingreso.aspx.designer.cs">
-      <DependentUpon>np_ingreso.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="np_orden_compra_crear.aspx.cs">
-      <DependentUpon>np_orden_compra_crear.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="np_orden_compra_crear.aspx.designer.cs">
-      <DependentUpon>np_orden_compra_crear.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="np_orden_reserva_crear.aspx.cs">
-      <DependentUpon>np_orden_reserva_crear.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="np_orden_reserva_crear.aspx.designer.cs">
-      <DependentUpon>np_orden_reserva_crear.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="np_plato_crud.aspx.cs">
-      <DependentUpon>np_plato_crud.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="np_plato_crud.aspx.designer.cs">
-      <DependentUpon>np_plato_crud.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="np_proveedor_crear.aspx.cs">
-      <DependentUpon>np_proveedor_crear.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="np_proveedor_crear.aspx.designer.cs">
-      <DependentUpon>np_proveedor_crear.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PaginaComercial\perfilIngreso.aspx.cs">
       <DependentUpon>perfilIngreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -661,24 +589,10 @@
       <DependentUpon>perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="np_producto_crud.aspx.cs">
-      <DependentUpon>np_producto_crud.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="np_producto_crud.aspx.designer.cs">
-      <DependentUpon>np_producto_crud.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Service References\WSSoap\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="SitioPrincipal.Master.cs">
-      <DependentUpon>SitioPrincipal.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SitioPrincipal.Master.designer.cs">
-      <DependentUpon>SitioPrincipal.Master</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
