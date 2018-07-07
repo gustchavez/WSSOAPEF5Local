@@ -246,6 +246,7 @@
     <Content Include="scripts\AdminMostrarFacturas.css" />
     <Content Include="scripts\AdminSolicitarPP.css" />
     <Content Include="CondicionesJavascript\perfilIngreso.js" />
+    <Content Include="scripts\comidaHabitacion.css" />
     <Content Include="scripts\detalleCliente.css" />
     <Content Include="scripts\empresaEmpleado.css" />
     <Content Include="scripts\facturaCliente.css" />

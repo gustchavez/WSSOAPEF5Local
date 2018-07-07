@@ -1,14 +1,12 @@
-﻿var formularioRegistro = document.getElementById('form2'),
-rutEmpresa = formularioRegistro.txtRutEmpresa,
-razonSocial = formularioRegistro.txtRazonSocial,
-rubro = formularioRegistro.ddlRubro,
-direccion = formularioRegistro.txtDireccion,
-ciudad = formularioRegistro.txtNombreCiudad,
-comuna = formularioRegistro.ddlComunas,
-correo = formularioRegistro.txtCorreoElectronico,
-telefono = formularioRegistro.txtTelefono,
-contrasena = formularioRegistro.txtContraseña,
-error = document.getElementById('error');
+﻿alert("rea");
+var razonSocial = document.getElementById('<%= txtRazonSocial.ClientID %>').value;
+var rubro = document.getElementById('<%= ddlRubro.ClientID %>').value;
+var direccion = document.getElementById('<%= txtDireccion.ClientID %>').value;
+var ciudad = document.getElementById('<%= txtNombreCiudad.ClientID %>').value;
+var comuna = document.getElementById('<%= ddlComunas.ClientID %>').value;
+var correo = document.getElementById('<%= txtCorreoElectronico.ClientID %>').value;
+var telefono = document.getElementById('<%= txtTelefono.ClientID %>').value;
+var contrasena = document.getElementById('<%= txtContraseña.ClientID %>').value;
 
 
 function validarRut(e) {
@@ -106,6 +104,7 @@ function validarContrasena(e) {
 
 
 function validarFormulario(e) {
+    alert("lala");
     error.innerHTML = '';
     validarRut(e);
     validarRazon(e);
@@ -121,4 +120,4 @@ function validarFormulario(e) {
     }
 }
 
-document.getElementById("btnRegistrar").addEventListener("click", validarFormulario);
+document.getElementById(Button1.ClientID ).addEventListener("click", validarFormulario);
