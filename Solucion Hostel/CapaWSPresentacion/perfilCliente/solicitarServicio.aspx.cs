@@ -12,10 +12,10 @@ namespace CapaWSPresentacion.perfilCliente
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Range1.MinimumValue = DateTime.Today.ToShortDateString();
-            Range1.MaximumValue = DateTime.Today.AddMonths(24).ToShortDateString();
-            Range2.MinimumValue = DateTime.Today.ToShortDateString();
-            Range2.MaximumValue = DateTime.Today.AddMonths(24).ToShortDateString();
+            //Range1.MinimumValue = DateTime.Today.ToShortDateString();
+            //Range1.MaximumValue = DateTime.Today.AddMonths(24).ToShortDateString();
+            //Range2.MinimumValue = DateTime.Today.ToShortDateString();
+            //Range2.MaximumValue = DateTime.Today.AddMonths(24).ToShortDateString();
             try
             {
                 string Perfil = Session["PerfilUsuario"].ToString();
@@ -43,8 +43,9 @@ namespace CapaWSPresentacion.perfilCliente
         private void RescatarDatos()
         {
             LlenarDDLTipoComida();
-
             Bloqueados();
+            txtFechaIngreso.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            txtFechaEgreso.Text = DateTime.Now.ToString("dd-MM-yyyy");
         }
 
         private void LlenarDDLTipoComida()
@@ -86,64 +87,71 @@ namespace CapaWSPresentacion.perfilCliente
 
         protected void BtnSiguiente_Click(object sender, EventArgs e)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-            Sesion SesionUsuario = (Sesion)Session["SesionUsuario"];
-
-            OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
-            //Armar Encabezado de Orden de Reserva
-            nOCC.Cabecera.RutCliente    = SesionUsuario.RutEmpresa;
-            nOCC.Cabecera.Monto         = int.Parse(txtPersonasHabitacion.Text);//realizar calculo de las habitaciones seleccionadas.
-            nOCC.Cabecera.Observaciones = "Reserva habitación";
-            nOCC.Cabecera.Ubicacion     = "logo";
-            nOCC.Cabecera.Estado        = "activa";
-
-            //int CantidadHuespedes = int.Parse(Session[txtPersonasHabitacion.Text].ToString());
             try
-            {                
-                int CantHuspedes = int.Parse(individual.Text);
-                AgregarHuesped(nOCC, CantHuspedes, "Individual", 1);
+            {
+                WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+                Sesion SesionUsuario = (Sesion)Session["SesionUsuario"];
+
+                OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
+                //Armar Encabezado de Orden de Reserva
+                nOCC.Cabecera.RutCliente = SesionUsuario.RutEmpresa;
+                nOCC.Cabecera.Monto = int.Parse(txtPersonasHabitacion.Text);//realizar calculo de las habitaciones seleccionadas.
+                nOCC.Cabecera.Observaciones = "Reserva habitación";
+                nOCC.Cabecera.Ubicacion = "logo";
+                nOCC.Cabecera.Estado = "activa";
+
+                //int CantidadHuespedes = int.Parse(Session[txtPersonasHabitacion.Text].ToString());
+                try
+                {
+                    int CantHuspedes = int.Parse(individual.Text);
+                    AgregarHuesped(nOCC, CantHuspedes, "Individual", 1);
+                }
+                catch (Exception)
+                {
+                    //No existe se continua siguiente validacion
+                }
+
+                try
+                {
+                    int CantHuspedes = int.Parse(doble.Text) * 2;
+                    AgregarHuesped(nOCC, CantHuspedes, "Doble", 2);
+                }
+                catch (Exception)
+                {
+                    //No existe se continua siguiente validacion
+                }
+
+                try
+                {
+                    int CantHuspedes = int.Parse(triple.Text) * 3;
+                    AgregarHuesped(nOCC, CantHuspedes, "Tiple", 3);
+                }
+                catch (Exception)
+                {
+                    //No existe se continua siguiente validacion
+                }
+
+                try
+                {
+                    int CantHuspedes = int.Parse(triple.Text) * 4;
+                    AgregarHuesped(nOCC, CantHuspedes, "Cuadruple", 4);
+                }
+                catch (Exception)
+                {
+                    //No existe se continua siguiente validacion
+                }
+
+                ContenedorOrdenCompraCompleta xOCC = new ContenedorOrdenCompraCompleta();
+                xOCC.Item.Cabecera = nOCC.Cabecera;
+                xOCC.Item.ListaDetalle = nOCC.ListaDetalle;
+                xOCC.Retorno.Token = Session["TokenUsuario"].ToString();
+
+                xOCC = x.OrdenCompraCompletaCrear(xOCC);
             }
             catch (Exception)
             {
-                //No existe se continua siguiente validacion
+                Response.Write(@"<script langauge='text/javascript'>alert('Fallo la realizacion de la Reserva');</script>");
             }
-
-            try
-            {
-                int CantHuspedes = int.Parse(doble.Text) * 2;
-                AgregarHuesped(nOCC, CantHuspedes, "Doble", 2);
-            }
-            catch (Exception)
-            {
-                //No existe se continua siguiente validacion
-            }
-
-            try
-            {
-                int CantHuspedes = int.Parse(triple.Text) * 3;
-                AgregarHuesped(nOCC, CantHuspedes, "Tiple", 3);
-            }
-            catch (Exception)
-            {
-                //No existe se continua siguiente validacion
-            }
-
-            try
-            {
-                int CantHuspedes = int.Parse(triple.Text) * 4;
-                AgregarHuesped(nOCC, CantHuspedes, "Cuadruple", 4);
-            }
-            catch (Exception)
-            {
-                //No existe se continua siguiente validacion
-            }
-
-            ContenedorOrdenCompraCompleta xOCC = new ContenedorOrdenCompraCompleta();
-            xOCC.Item.Cabecera = nOCC.Cabecera;
-            xOCC.Item.ListaDetalle = nOCC.ListaDetalle;
-            xOCC.Retorno.Token = Session["TokenUsuario"].ToString();
-
-            xOCC = x.OrdenCompraCompletaCrear(xOCC);
 
         }
 
@@ -305,14 +313,70 @@ namespace CapaWSPresentacion.perfilCliente
 
         protected void txtFechaIngreso_TextChanged(object sender, EventArgs e)
         {
-            Range2.MinimumValue = DateTime.Parse(txtFechaIngreso.Text).AddDays(1).ToShortDateString();
+            //Range2.MinimumValue = DateTime.Parse(txtFechaIngreso.Text).AddDays(1).ToShortDateString();
+            try
+            {
+                DateTime fechaIngreso = DateTime.Parse(txtFechaIngreso.Text);
+                if (fechaIngreso < DateTime.Now)
+                {
+                    Response.Write(@"<script langauge='text/javascript'>alert('La fecha de ingreso debe der mayor o igual a la fecha actual');</script>");
+                }
+            }
+            catch(Exception ex)
+            {
+                txtFechaIngreso.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            }
+            
+            
         }
 
         protected void txtFechaEgreso_TextChanged1(object sender, EventArgs e)
         {
-            Range2.MinimumValue = DateTime.Parse(txtFechaIngreso.Text).AddDays(1).ToShortDateString();
-            TimeSpan difDias = DateTime.Parse(txtFechaEgreso.Text) - DateTime.Parse(txtFechaIngreso.Text);
-            txtRegistroDias.Text = difDias.Days.ToString();
+            //Range2.MinimumValue = DateTime.Parse(txtFechaIngreso.Text).AddDays(1).ToShortDateString();
+            try
+            {
+                DateTime fechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
+                if (fechaEgreso < DateTime.Parse(txtFechaIngreso.Text))
+                {
+                    Response.Write(@"<script langauge='text/javascript'>alert('La fecha de egreso debe der mayor a la fecha de ingreso');</script>");
+                    txtRegistroDias.Text = "";
+                }
+                else
+                {
+                    TimeSpan difDias = DateTime.Parse(txtFechaEgreso.Text) - DateTime.Parse(txtFechaIngreso.Text);
+                    txtRegistroDias.Text = difDias.Days.ToString();
+                    TotaldeDias();
+                }
+            }
+            catch (Exception)
+            {
+                txtRegistroDias.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            }
+            
+            
+        }
+
+        protected void MostrarCasillas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void txtNpersonas_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int num = int.Parse(txtNpersonas.Text);
+                if (num < 0 || num == null)
+                {
+                    Response.Write(@"<script langauge='text/javascript'>alert('La cantidad de personas debe ser mayor a 0');</script>");
+                }
+            }
+            catch (Exception)
+            {
+                txtNpersonas.Text = "";
+            }
+            
+
         }
     }
 }

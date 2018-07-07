@@ -193,20 +193,20 @@
         <h5></h5>
         <div class="contenido">
             Fecha Ingreso <br>
-            <asp:TextBox ID="txtFechaIngreso" runat="server" TextMode="Date" CssClass="CasillaFecha" value='DateTime.Now.ToString("dd/MM/yyyy")' AutoPostBack="True" OnTextChanged="txtFechaIngreso_TextChanged" ></asp:TextBox>  </div>
-            <asp:RangeValidator ID="Range1" Type="Date" Format = "MM/DD/YYYY" Display="Dynamic" runat="server" ErrorMessage="Fecha invalida" ControlToValidate="txtFechaIngreso" ></asp:RangeValidator>
+            <asp:TextBox ID="txtFechaIngreso" runat="server" TextMode="Date" CssClass="CasillaFecha" AutoPostBack="True" OnTextChanged="txtFechaIngreso_TextChanged" ></asp:TextBox>  </div>
+            <%--<asp:RangeValidator ID="Range1" Type="Date" Format = "MM/DD/YYYY" Display="Dynamic" runat="server" ErrorMessage="Fecha invalida" ControlToValidate="txtFechaIngreso" ></asp:RangeValidator>--%>
         <div class="contenido">				
             Fecha Salida <br>
-            <asp:TextBox ID="txtFechaEgreso" runat="server" TextMode="Date" CssClass="CasillaFecha" value='DateTime.Now.ToString("dd/MM/yyyy")' OnTextChanged="txtFechaEgreso_TextChanged1" AutoPostBack="True"></asp:TextBox> 
-            <asp:RangeValidator ID="Range2" Type="Date" Format = "MM/DD/YYYY" Display="Dynamic" runat="server" ErrorMessage="Fecha invalida" ControlToValidate="txtFechaEgreso" ></asp:RangeValidator>
+            <asp:TextBox ID="txtFechaEgreso" runat="server" TextMode="Date" CssClass="CasillaFecha"  OnTextChanged="txtFechaEgreso_TextChanged1" AutoPostBack="True"></asp:TextBox> 
+            <%--<asp:RangeValidator ID="Range2" Type="Date" Format = "MM/DD/YYYY" Display="Dynamic" runat="server" ErrorMessage="Fecha invalida" ControlToValidate="txtFechaEgreso" ></asp:RangeValidator>--%>
         </div>
 
         <div class="contenido">				
-            Total de días  <asp:TextBox ID="txtRegistroDias" runat="server" CssClass="Casilladias" Enabled="false" ></asp:TextBox>
+            Total de días  <asp:TextBox ID="txtRegistroDias" runat="server" min="0" CssClass="Casilladias" Enabled="false" ></asp:TextBox>
         </div>
 
         <div class="contenido">				
-            Nº Personas <asp:TextBox ID="txtNpersonas" runat="server" CssClass="Casilladias" value="0"></asp:TextBox>
+            Nº Personas <asp:TextBox ID="txtNpersonas" TextMode="Number" runat="server" CssClass="Casilladias" OnTextChanged="txtNpersonas_TextChanged" AutoPostBack="True" value=0></asp:TextBox>
         </div>
 
         <div class="contenido">
@@ -247,7 +247,7 @@
             <b> Personas con habitación: </b> <asp:TextBox ID="txtPersonasHabitacion" runat="server" value="0" Enabled="false" CssClass="CasillaPersonas"></asp:TextBox>
         </div>
         <div class="casillaTotal">
-            <asp:Button ID="MostrarCasillas" runat="server" Text="Ingresar Personas"  CssClass="SubmitTotal" OnClientClick="return autenticarme();" />
+            <asp:Button ID="MostrarCasillas" runat="server" Text="Ingresar Personas"  CssClass="SubmitTotal" OnClientClick="return autenticarme();" OnClick="MostrarCasillas_Click" />
         </div>
 
 	</div>

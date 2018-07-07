@@ -31,15 +31,6 @@ namespace CapaWSPresentacion.perfilCliente {
         protected global::System.Web.UI.WebControls.TextBox txtFechaIngreso;
         
         /// <summary>
-        /// Control Range1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator Range1;
-        
-        /// <summary>
         /// Control txtFechaEgreso.
         /// </summary>
         /// <remarks>
@@ -47,15 +38,6 @@ namespace CapaWSPresentacion.perfilCliente {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFechaEgreso;
-        
-        /// <summary>
-        /// Control Range2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator Range2;
         
         /// <summary>
         /// Control txtRegistroDias.
