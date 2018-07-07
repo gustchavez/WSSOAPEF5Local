@@ -1345,5 +1345,31 @@ namespace CapaDato
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ANULAR_ORDEN_PEDIDO", p_IN_NUMEROParameter, p_IN_OBSERVACIONESParameter, p_OUT_CODRET, p_OUT_GLSRET);
         }
+    
+        public virtual int SP_ACTUALIZAR_SERVICIO_COMIDA(string p_IN_TIPO, Nullable<decimal> p_IN_PRECIO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_TIPOParameter = p_IN_TIPO != null ?
+                new ObjectParameter("P_IN_TIPO", p_IN_TIPO) :
+                new ObjectParameter("P_IN_TIPO", typeof(string));
+    
+            var p_IN_PRECIOParameter = p_IN_PRECIO.HasValue ?
+                new ObjectParameter("P_IN_PRECIO", p_IN_PRECIO) :
+                new ObjectParameter("P_IN_PRECIO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_SERVICIO_COMIDA", p_IN_TIPOParameter, p_IN_PRECIOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
+    
+        public virtual int SP_ACT_HAB_PRECIOXCAPACIDAD(Nullable<decimal> p_IN_CAPACIDAD, Nullable<decimal> p_IN_PRECIO, ObjectParameter p_OUT_CODRET, ObjectParameter p_OUT_GLSRET)
+        {
+            var p_IN_CAPACIDADParameter = p_IN_CAPACIDAD.HasValue ?
+                new ObjectParameter("P_IN_CAPACIDAD", p_IN_CAPACIDAD) :
+                new ObjectParameter("P_IN_CAPACIDAD", typeof(decimal));
+    
+            var p_IN_PRECIOParameter = p_IN_PRECIO.HasValue ?
+                new ObjectParameter("P_IN_PRECIO", p_IN_PRECIO) :
+                new ObjectParameter("P_IN_PRECIO", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACT_HAB_PRECIOXCAPACIDAD", p_IN_CAPACIDADParameter, p_IN_PRECIOParameter, p_OUT_CODRET, p_OUT_GLSRET);
+        }
     }
 }

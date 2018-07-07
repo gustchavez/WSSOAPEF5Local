@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaObjeto;
+using System.Data.Objects;
 
 namespace CapaNegocio
 {
@@ -14,7 +15,40 @@ namespace CapaNegocio
         {
 
         }
-        
+        public ContenedorServicioComida LlamarSPActualizar(ContenedorServicioComida aServicioComida)
+        {
+            if (ValidarFecExp(aServicioComida.Retorno.Token))
+            {
+                var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
+                var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
+
+                CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                conex.SP_ACTUALIZAR_SERVICIO_COMIDA
+                    ( aServicioComida.Item.Tipo
+                    , aServicioComida.Item.Precio
+                    , p_OUT_CODRET
+                    , p_OUT_GLSRET
+                    );
+
+                try
+                {
+                    aServicioComida.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
+                    aServicioComida.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                }
+                catch (Exception)
+                {
+                    aServicioComida.Retorno.Codigo = 1011;
+                    aServicioComida.Retorno.Glosa = "Err codret ORACLE";
+                }
+            }
+            else {
+                aServicioComida.Retorno.Codigo = 100;
+                aServicioComida.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+
+            return aServicioComida;
+        }
         public ContenedorServiciosComida LlamarSPRescatar(string token)
         {
             ContenedorServiciosComida LServiciosComida = new ContenedorServiciosComida();
@@ -23,7 +57,9 @@ namespace CapaNegocio
             {
                 try
                 {
-                    var collection = CommonBD.Conexion.SERVICIO_COMIDA.OrderBy(p => p.TIPO).ToList();
+                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                    var collection = conex.SERVICIO_COMIDA.OrderBy(p => p.TIPO).ToList();
 
                     foreach (var item in collection)
                     {

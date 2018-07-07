@@ -146,6 +146,12 @@
   <wsdl:message name="IWSSHostel_ProductoRescatar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ProductoRescatarResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSSHostel_ServicioComidaActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServicioComidaActualizar" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_ServicioComidaActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServicioComidaActualizarResponse" />
+  </wsdl:message>
   <wsdl:message name="IWSSHostel_ServicioComidaRescatar_InputMessage">
     <wsdl:part name="parameters" element="tns:ServicioComidaRescatar" />
   </wsdl:message>
@@ -205,6 +211,18 @@
   </wsdl:message>
   <wsdl:message name="IWSSHostel_HabitacionHabXCapacidad_OutputMessage">
     <wsdl:part name="parameters" element="tns:HabitacionHabXCapacidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionActPrecioXCapacidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionActPrecioXCapacidad" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionActPrecioXCapacidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionActPrecioXCapacidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionResPrecioXCapacidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionResPrecioXCapacidad" />
+  </wsdl:message>
+  <wsdl:message name="IWSSHostel_HabitacionResPrecioXCapacidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HabitacionResPrecioXCapacidadResponse" />
   </wsdl:message>
   <wsdl:message name="IWSSHostel_CiudadRescatar_InputMessage">
     <wsdl:part name="parameters" element="tns:CiudadRescatar" />
@@ -545,6 +563,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ProductoRescatar" message="tns:IWSSHostel_ProductoRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ProductoRescatarResponse" message="tns:IWSSHostel_ProductoRescatar_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ServicioComidaActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ServicioComidaActualizar" message="tns:IWSSHostel_ServicioComidaActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ServicioComidaActualizarResponse" message="tns:IWSSHostel_ServicioComidaActualizar_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ServicioComidaRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/ServicioComidaRescatar" message="tns:IWSSHostel_ServicioComidaRescatar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/ServicioComidaRescatarResponse" message="tns:IWSSHostel_ServicioComidaRescatar_OutputMessage" />
@@ -584,6 +606,14 @@
     <wsdl:operation name="HabitacionHabXCapacidad">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionHabXCapacidad" message="tns:IWSSHostel_HabitacionHabXCapacidad_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionHabXCapacidadResponse" message="tns:IWSSHostel_HabitacionHabXCapacidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionActPrecioXCapacidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionActPrecioXCapacidad" message="tns:IWSSHostel_HabitacionActPrecioXCapacidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionActPrecioXCapacidadResponse" message="tns:IWSSHostel_HabitacionActPrecioXCapacidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionResPrecioXCapacidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionResPrecioXCapacidad" message="tns:IWSSHostel_HabitacionResPrecioXCapacidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSSHostel/HabitacionResPrecioXCapacidadResponse" message="tns:IWSSHostel_HabitacionResPrecioXCapacidad_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CiudadRescatar">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSSHostel/CiudadRescatar" message="tns:IWSSHostel_CiudadRescatar_InputMessage" />
@@ -959,6 +989,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ServicioComidaActualizar">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/ServicioComidaActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ServicioComidaRescatar">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/ServicioComidaRescatar" style="document" />
       <wsdl:input>
@@ -1042,6 +1081,24 @@
     </wsdl:operation>
     <wsdl:operation name="HabitacionHabXCapacidad">
       <soap:operation soapAction="http://tempuri.org/IWSSHostel/HabitacionHabXCapacidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionActPrecioXCapacidad">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/HabitacionActPrecioXCapacidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HabitacionResPrecioXCapacidad">
+      <soap:operation soapAction="http://tempuri.org/IWSSHostel/HabitacionResPrecioXCapacidad" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

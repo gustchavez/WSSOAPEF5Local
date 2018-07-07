@@ -23,6 +23,8 @@
 			<div class="subMenu" style="font-weight: bold; "> ADMINISTRADOR </div>
 			<div class="subMenu"> <a href="AdminCrearAdmin.aspx" style="color: #26362A; font-weight: bold;"> Crear Perfiles </a></div>
 			<div class="subMenu"> <a href="AdminGestionAdmin.aspx" style="color: #26362A; font-weight: bold;"> Modificar o Elimiar Perfil </a></div>
+            <div class="subMenu"> <a href="AdminModServicioComida.aspx" style="color: #26362A; font-weight: bold;"> Modificar Precio Tipo Servicio </a></div>
+            <div class="subMenu"> <a href="AdminModHabitacion.aspx" style="color: #26362A; font-weight: bold;"> Modificar Precio Habitación </a></div>
 			<br>
 			<div class="subMenu" style="font-weight: bold;" > EMPLEADO </div>
 			<div class="subMenu"> <a href="AdminSolicitarPP.aspx" style="color: #26362A; font-weight: bold;"> Solicitar Producto Proveedor </a></div>

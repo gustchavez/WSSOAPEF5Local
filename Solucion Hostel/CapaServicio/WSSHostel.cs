@@ -191,6 +191,13 @@ namespace CapaServicio
         }
         //CRUD Producto - FIN
 
+        public ContenedorServicioComida ServicioComidaActualizar(ContenedorServicioComida entrada)
+        {
+            CRUDServicioComida x = new CRUDServicioComida();
+            x.LlamarSPActualizar(entrada);
+            return entrada;
+        }
+
         public ContenedorServiciosComida ServicioComidaRescatar(string token)
         {
             CRUDServicioComida x = new CRUDServicioComida();
@@ -256,6 +263,20 @@ namespace CapaServicio
         {
             CRUDHabitacion x = new CRUDHabitacion();
             return x.LlamarSPHabitaHabXCapacidad(token, fecIng, fecEgr);
+        }
+
+        public ContenedorHabitacion HabitacionActPrecioXCapacidad(ContenedorHabitacion entrada)
+        {
+            CRUDHabitacion x = new CRUDHabitacion();
+            x.LlamarSPActPrecioXCapacidad(entrada);
+            return entrada;
+        }
+
+        public ContenedorHabitaciones HabitacionResPrecioXCapacidad(string token)
+        {
+            CRUDHabitacion x = new CRUDHabitacion();
+            return x.LlamarSPResPrecioXCapacidad(token);
+
         }
         //Fin Habitacion
 
