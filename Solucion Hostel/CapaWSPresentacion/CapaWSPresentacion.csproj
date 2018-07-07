@@ -195,6 +195,8 @@
     <Content Include="perfilAdministrador\AdminFacturaProveedorP.aspx" />
     <Content Include="perfilAdministrador\AdminGestionAdmin.aspx" />
     <Content Include="perfilAdministrador\AdminIngresoFacturaP.aspx" />
+    <Content Include="perfilAdministrador\AdminModHabitacion.aspx" />
+    <Content Include="perfilAdministrador\AdminModServicioComida.aspx" />
     <Content Include="perfilAdministrador\AdminMostrarFacturas.aspx" />
     <Content Include="perfilAdministrador\AdminSolicitarPP.aspx" />
     <Content Include="perfilCliente\detalleSolicitud.aspx" />
@@ -317,6 +319,7 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorRegistroRecepcionPedido.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorUsuarios.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioAdministradores.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorServicioComida.datasource" />
     <None Include="Service References\WSSoap\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -453,6 +456,20 @@
     </Compile>
     <Compile Include="perfilAdministrador\AdminIngresoFacturaP.aspx.designer.cs">
       <DependentUpon>AdminIngresoFacturaP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminModHabitacion.aspx.cs">
+      <DependentUpon>AdminModHabitacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminModHabitacion.aspx.designer.cs">
+      <DependentUpon>AdminModHabitacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminModServicioComida.aspx.cs">
+      <DependentUpon>AdminModServicioComida.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminModServicioComida.aspx.designer.cs">
+      <DependentUpon>AdminModServicioComida.aspx</DependentUpon>
     </Compile>
     <Compile Include="perfilAdministrador\AdminMostrarFacturas.aspx.cs">
       <DependentUpon>AdminMostrarFacturas.aspx</DependentUpon>

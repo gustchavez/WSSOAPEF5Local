@@ -44,6 +44,7 @@
     <Compile Include="Cama.cs" />
     <Compile Include="ContenedorPerfilUsuarioAdministradores.cs" />
     <Compile Include="ContenedorRegistroRecepcionPedido.cs" />
+    <Compile Include="ContenedorServicioComida.cs" />
     <Compile Include="ContenedorUsuario.cs" />
     <Compile Include="ContenedorUsuarios.cs" />
     <Compile Include="HabDispCant.cs" />

@@ -105,6 +105,9 @@ namespace CapaServicio
         //Fin Producto
 
         [OperationContract]
+        ContenedorServicioComida ServicioComidaActualizar(ContenedorServicioComida entrada);
+
+        [OperationContract]
         ContenedorServiciosComida ServicioComidaRescatar(string token);
         
         //Inicio Plato
@@ -136,6 +139,12 @@ namespace CapaServicio
 
         [OperationContract]
         ContenedorHabDispCant HabitacionHabXCapacidad(string token, DateTime fecIng, DateTime fecEgr);
+
+        [OperationContract]
+        ContenedorHabitacion HabitacionActPrecioXCapacidad(ContenedorHabitacion entrada);
+
+        [OperationContract]
+        ContenedorHabitaciones HabitacionResPrecioXCapacidad(string token);
         //Fin Habitacion
 
         [OperationContract]

@@ -239,6 +239,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfProducto" nillable="true" type="tns:ArrayOfProducto" />
+  <xs:complexType name="ContenedorServicioComida">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:ServicioComida" />
+      <xs:element minOccurs="0" name="Retorno" nillable="true" type="tns:Comunicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContenedorServicioComida" nillable="true" type="tns:ContenedorServicioComida" />
+  <xs:complexType name="ServicioComida">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Precio" type="xs:int" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServicioComida" nillable="true" type="tns:ServicioComida" />
   <xs:complexType name="ContenedorServiciosComida">
     <xs:sequence>
       <xs:element minOccurs="0" name="Lista" nillable="true" type="tns:ArrayOfServicioComida" />
@@ -252,13 +266,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfServicioComida" nillable="true" type="tns:ArrayOfServicioComida" />
-  <xs:complexType name="ServicioComida">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Precio" type="xs:int" />
-      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ServicioComida" nillable="true" type="tns:ServicioComida" />
   <xs:complexType name="ContenedorPlato">
     <xs:sequence>
       <xs:element minOccurs="0" name="Item" nillable="true" type="tns:Plato" />

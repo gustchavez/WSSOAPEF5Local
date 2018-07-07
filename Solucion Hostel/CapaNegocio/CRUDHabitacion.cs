@@ -91,6 +91,40 @@ namespace CapaNegocio
 
             return aHabitacion;
         }
+        public ContenedorHabitacion LlamarSPActPrecioXCapacidad(ContenedorHabitacion aHabitacion)
+        {
+            if (ValidarFecExp(aHabitacion.Retorno.Token))
+            {
+                var p_OUT_CODRET = new ObjectParameter("P_OUT_CODRET", typeof(decimal));
+                var p_OUT_GLSRET = new ObjectParameter("P_OUT_GLSRET", typeof(string));
+
+                CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                conex.SP_ACT_HAB_PRECIOXCAPACIDAD
+                    ( aHabitacion.Item.Capacidad
+                    , aHabitacion.Item.Precio
+                    , p_OUT_CODRET
+                    , p_OUT_GLSRET
+                    );
+
+                try
+                {
+                    aHabitacion.Retorno.Codigo = decimal.Parse(p_OUT_CODRET.Value.ToString());
+                    aHabitacion.Retorno.Glosa = p_OUT_GLSRET.Value.ToString();
+                }
+                catch (Exception)
+                {
+                    aHabitacion.Retorno.Codigo = 1011;
+                    aHabitacion.Retorno.Glosa = "Err codret ORACLE";
+                }
+            }
+            else {
+                aHabitacion.Retorno.Codigo = 100;
+                aHabitacion.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+
+            return aHabitacion;
+        }
 
         public ContenedorHabitacion LlamarSPEliminar(ContenedorHabitacion eHabitacion)
         {
@@ -156,6 +190,48 @@ namespace CapaNegocio
                     LHabitaciones.Retorno.Glosa = "Err codret ORACLE";
                 }
             } else {
+                LHabitaciones.Retorno.Codigo = 100;
+                LHabitaciones.Retorno.Glosa = "Err expiro sesion o perfil invalido";
+            }
+
+            return LHabitaciones;
+        }
+
+        public ContenedorHabitaciones LlamarSPResPrecioXCapacidad(string token)
+        {
+            ContenedorHabitaciones LHabitaciones = new ContenedorHabitaciones();
+
+            if (ValidarFecExp(token))
+            {
+                try
+                {
+                    CapaDato.EntitiesBBDDHostel conex = new CapaDato.EntitiesBBDDHostel();
+
+                    var collection = (from p in conex.HABITACION
+                                      select new
+                                      {
+                                          capacidad = p.CAPACIDAD,
+                                          precio    = p.PRECIO
+                                      }
+                                     ).Distinct().ToList();                    
+
+                    foreach (var item in collection)
+                    {
+                        Habitacion n = new Habitacion();
+                        n.Capacidad = item.capacidad;
+                        n.Precio    = item.precio;
+                        LHabitaciones.Lista.Add(n);
+                    }
+                    LHabitaciones.Retorno.Codigo = 0;
+                    LHabitaciones.Retorno.Glosa = "OK";
+                }
+                catch (Exception)
+                {
+                    LHabitaciones.Retorno.Codigo = 1011;
+                    LHabitaciones.Retorno.Glosa = "Err codret ORACLE";
+                }
+            }
+            else {
                 LHabitaciones.Retorno.Codigo = 100;
                 LHabitaciones.Retorno.Glosa = "Err expiro sesion o perfil invalido";
             }

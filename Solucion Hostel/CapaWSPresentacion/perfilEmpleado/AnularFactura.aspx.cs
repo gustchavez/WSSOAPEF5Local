@@ -5,7 +5,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CapaWSPresentacion.WSSoap;
 
 namespace CapaWSPresentacion.perfilEmpleado
 {
@@ -125,7 +124,7 @@ namespace CapaWSPresentacion.perfilEmpleado
             txtObservacion.Text = string.Empty;
         }
 
-        private void RescatarFacturasXEmpresa(WSSHostelClient x)
+        private void RescatarFacturasXEmpresa(WSSoap.WSSHostelClient x)
         {
             if (ddlTipoEmpresa.SelectedValue == "Proveedor")
             {
@@ -280,7 +279,7 @@ namespace CapaWSPresentacion.perfilEmpleado
 
                 xFPC = x.FacturaPedidoCompletaActualizar(xFPC);
 
-                if (xFPC.Item.Cabecera.Numero > 0)
+                if (xFPC.Retorno.Codigo == 0)
                 {
                     RescatarDatos();
                 }
@@ -297,7 +296,7 @@ namespace CapaWSPresentacion.perfilEmpleado
 
                 xFCC = x.FacturaCompraCompletaActualizar(xFCC);
 
-                if (xFCC.Item.Cabecera.Numero > 0)
+                if (xFCC.Retorno.Codigo == 0)
                 {
                     RescatarDatos();
                 }

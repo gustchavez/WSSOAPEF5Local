@@ -590,6 +590,12 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="SP_ACT_HAB_PRECIOXCAPACIDAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+          <Parameter Name="P_IN_CAPACIDAD" Type="number" Mode="In" />
+          <Parameter Name="P_IN_PRECIO" Type="number" Mode="In" />
+          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
+          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+        </Function>
         <Function Name="SP_ACT_INGRESO_HUESPED" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
           <Parameter Name="P_IN_NUMERO_OC" Type="number" Mode="In" />
           <Parameter Name="P_IN_RUT_PERSONA" Type="varchar2" Mode="In" />
@@ -783,6 +789,12 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
         <Function Name="SP_ACTUALIZAR_PROVISION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
           <Parameter Name="P_IN_RUT_PROVEEDOR" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_CODIGO_PRODUCTO" Type="number" Mode="In" />
+          <Parameter Name="P_IN_PRECIO" Type="number" Mode="In" />
+          <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
+          <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="SP_ACTUALIZAR_SERVICIO_COMIDA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PFT5447">
+          <Parameter Name="P_IN_TIPO" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_PRECIO" Type="number" Mode="In" />
           <Parameter Name="P_OUT_CODRET" Type="number" Mode="Out" />
           <Parameter Name="P_OUT_GLSRET" Type="varchar2" Mode="Out" />
@@ -1818,6 +1830,18 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="SP_ACTUALIZAR_SERVICIO_COMIDA">
+            <Parameter Name="P_IN_TIPO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_PRECIO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_ACT_HAB_PRECIOXCAPACIDAD">
+            <Parameter Name="P_IN_CAPACIDAD" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_PRECIO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="CAMA">
           <Key>
@@ -2703,6 +2727,8 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_ANULAR_FACTURA_PEDIDO" FunctionName="Model.Store.SP_ANULAR_FACTURA_PEDIDO" />
           <FunctionImportMapping FunctionImportName="SP_ANULAR_ORDEN_COMPRA" FunctionName="Model.Store.SP_ANULAR_ORDEN_COMPRA" />
           <FunctionImportMapping FunctionImportName="SP_ANULAR_ORDEN_PEDIDO" FunctionName="Model.Store.SP_ANULAR_ORDEN_PEDIDO" />
+          <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_SERVICIO_COMIDA" FunctionName="Model.Store.SP_ACTUALIZAR_SERVICIO_COMIDA" />
+          <FunctionImportMapping FunctionImportName="SP_ACT_HAB_PRECIOXCAPACIDAD" FunctionName="Model.Store.SP_ACT_HAB_PRECIOXCAPACIDAD" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
