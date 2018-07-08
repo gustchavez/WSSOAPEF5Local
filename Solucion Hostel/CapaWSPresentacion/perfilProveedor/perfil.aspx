@@ -14,11 +14,13 @@
 			    <div class="Casilla2-1">
 			    <h4>Rut Empresa</h4>	
                     <asp:TextBox ID="txtRutEmpresa" runat="server" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="* Ingresar Rut Empresa" ControlToValidate="txtRutEmpresa"></asp:RequiredFieldValidator>
                 </div>
 
 			    <div class="Casilla2-1">
 			    <h4>Razón Social</h4>	
                     <asp:TextBox ID="txtRazonSocial" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="* Ingresar Razón Social" ControlToValidate="txtRazonSocial"></asp:RequiredFieldValidator>
 			    </div>
 			    <div class="Casilla2-1">
 			    <h4>Giro</h4>	
@@ -157,16 +159,19 @@
 				        <asp:ListItem value="131">OTRAS ACTIVIDADES DE SERVICIOS </asp:ListItem>
 				        <asp:ListItem value="132">CONSEJO DE ADMINISTRACIÓN DE EDIFICIOS Y CONDOMINIOS </asp:ListItem>
 				        <asp:ListItem value="133">ORGANIZACIONES Y ÓRGANOS EXTRATERRITORIALES </asp:ListItem>  
-			        </asp:DropDownList>			
+			        </asp:DropDownList>	
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="* Ingresar Giro" ControlToValidate="ddlRubro"></asp:RequiredFieldValidator>		
 			    </div>
 			    <div class="Casilla2-1">
 			    <h4>Dirección</h4>
                     <asp:TextBox ID="txtDireccion" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="* Ingresar Dirección" ControlToValidate="txtDireccion"></asp:RequiredFieldValidator>
 			    </div>
 			    <div class="Casilla2-1">
 			    <h4>Ciudad</h4>	
                     <asp:DropDownList ID="txtNombreCiudad" runat="server" CssClass="droplist">
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="* Ingresar Ciudad" ControlToValidate="txtNombreCiudad"></asp:RequiredFieldValidator>
 			    </div>
 			    <div class="Casilla2-1">
 				    <h4>Comuna</h4>					
@@ -209,14 +214,17 @@
 					    <asp:ListItem value="35">Vitacura</asp:ListItem>
 					    <asp:ListItem value="36">--Otra--</asp:ListItem>
                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="* Ingresar Comuna" ControlToValidate="ddlComunas"></asp:RequiredFieldValidator>
 			    </div>
 			    <div class="Casilla2-1">
 			    <h4>Correo Electrónico</h4>
                     <asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Ingresar Correo Electrónico" ControlToValidate="txtCorreoElectronico"></asp:RequiredFieldValidator>
 			    </div>
 			    <div class="Casilla2-1">
 			    <h4>Teléfono</h4>	
                     <asp:TextBox ID="txtTelefono" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Ingresar Teléfono" ControlToValidate="txtTelefono"></asp:RequiredFieldValidator>
 			    </div>
 	    </div>
 
@@ -225,10 +233,12 @@
 		    <div class="Casilla2-2">
 		    <h4 style="color: white;">Nombre Usuario</h4>	
                 <asp:TextBox ID="txtNombreUsuario" runat="server" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="* Ingresar Nombre Usuario" ControlToValidate="txtNombreUsuario"></asp:RequiredFieldValidator>
 		    </div>
 		    <div class="Casilla2-2">
 		    <h4 style="color: white;">Nueva Contraseña</h4>	
                 <asp:TextBox ID="txtContraseña" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Ingresar contraseña" ControlToValidate="txtContraseña"></asp:RequiredFieldValidator>
 		    </div>
 		    <div class="Casilla2-2">
                 <asp:Button ID="Button1" runat="server" Text="Modificar Datos"  CssClass="SubmitTotal" OnClick="btnModificar_Click" /> 	
