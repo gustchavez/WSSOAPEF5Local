@@ -35,8 +35,8 @@
             <div class="subMenu"> <a href="facturas.aspx" style="color: #e2e2e2;"> Ver Facturas Proveedores </a></div><br />
             <div class="subMenu" style="font-weight:bold;">  Cliente </div>
             <div class="subMenu"> <a href="recepcion.aspx" style="color: #e2e2e2;"> Recepcion Huéspedes </a></div>
-            <div class="subMenu"> <a href="CrearFactura.aspx" style="color: #e2e2e2;"> Crear factura a cliente </a></div> <br />
-            <div class="subMenu"> <a href="AnularFactura.aspx" style="color: #e2e2e2;"> Anular factura a cliente </a></div> <br />
+            <div class="subMenu"> <a href="CrearFactura.aspx" style="color: #e2e2e2;"> Crear factura a cliente </a></div> 
+            <div class="subMenu"> <a href="AnularFactura.aspx" style="color: #e2e2e2;"> Anular factura a cliente </a></div> 
             <div class="subMenu"> <a href="AnularOrden.aspx" style="color: #e2e2e2;"> Anular orden a cliente </a></div> <br />
             <div class="subMenu"> <a href="/PaginaComercial/perfilIngreso.aspx" style="color: #e2e2e2; font-weight:bold;"> Cerrar Sesión</a></div>
 		</div>

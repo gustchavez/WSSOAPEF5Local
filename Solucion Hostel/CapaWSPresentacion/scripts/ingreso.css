@@ -8,51 +8,80 @@
 
 
 
-body{
-
-	font-family: arial;
-	font-size: 13px;
-    background: white;
-
+body {
+    font-family: arial;
+    font-size: 13px;
+    background-image: url('../PaginaComercial/images/fondoInicio3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%; 
 }
+
+
 
 
 .ContenedorPaginaIngreso{
 	display: block;
 	margin: auto;
-	background: white;
+	
 	width: 800px;
-	height: 500px;
-	margin-top: 100px;
+	height: 550px;
+	margin-top: 70px;
 
 }
 
 .Contenido{
-	margin: 15px;
+   
+    padding:10px;
+    width:280px;
+	margin: auto;
+    color:white;
+
 }
 
-.casilla{
 
-	width: 300px;
+
+
+.casilla{
+   
+	width: 280px;
+    height:20px;
+  
+   
+
 
 }
 
 .casillaEnvio{
-	margin-left: 50px;
-	margin-top: 10px;
-	width: 200px;
+	margin-left: 20px;
+	margin-top: 20px;
+	width: 250px;
 	height: 30px;
+
+    background: none;
+    color: white;
+    border: 2px solid orange;
+    transition-duration: 0.4s;
+    border-radius: 8px;
+    font-size: 14px;
 
 }
 
 
+
 .casillaEnvio:Hover{
-	margin-left: 50px;
-	margin-top: 10px;
-	width: 200px;
+	margin-left: 20px;
+	margin-top: 20px;
+	width: 250px;
 	height: 30px;
-	background: #6c464e;
-	color: white;
+	
+    background: none;
+    color: white;
+    border: 3px solid #035E7B;
+    transition-duration: 0.4s;
+    border-radius: 8px;
+    font-size: 14px;
 }
 
 .linea{
@@ -66,13 +95,39 @@ body{
 }
 
 .Contenedor-Registro{
-
+    padding-top:30px;
+    background: #283044;
 	float: left;
+    height:480px;
+    width:360px;
+    border-radius: 10px;
+
 }
 
 .Contenedor-Ingreso{
-
+    padding-top:30px;
+    background:#283044;
 	float: right;
+    height:480px;
+    width:360px;
+    border-radius: 10px;
+}
+
+.imagen-logo {
+    display:block;
+	height: 150px;
+	width: 150px;
+	margin: auto;
+	border-radius: 50%;
+
+
+	
+}
+
+h3 {
+   
+    color:white;
+    text-align:center;
 }
 
 .error{

@@ -15,10 +15,13 @@
         <div class="ContenedorPaginaIngreso">
 	        <div class="Contenedor-Registro">
 
-                	    <h3 class="Contenido">INGRESO</h3>
+            <h3 class="Contenido">INGRESO</h3>
+            <div class="Contenido">			
+			     <img src="images/user.png" class="imagen-logo" />  	
+			</div>
 			<div class="Contenido">
 				Nombre Usuario<br/>
-			    <asp:TextBox ID="txtNombreUsuario" runat="server" CssClass="casilla"></asp:TextBox> <br/>		
+			    <asp:TextBox ID="txtNombreUsuario" runat="server" CssClass="casilla" required="true"></asp:TextBox> <br/>		
 			</div>
 			<div class="Contenido">
 				Contraseña <br/>
@@ -37,14 +40,14 @@
 
     	    </div>
     
-	    <div class="Contenedor-Registro">
+	 <!--   <div class="Contenedor-Registro">
 		    <div class="linea"></div>
-	    </div>
+	    </div> -->
 
         <!-- Ingreso usuario contraseña -->
 
 	    <div class="Contenedor-Ingreso">	
-	             <h3 class="Contenido">REGISTRO</h3>
+	             <h3>REGISTRO CLIENTE</h3>
 			    <div class="Contenido">
 				    Rut Empresa <br/>
 				     <asp:TextBox ID="rutEmpresa" runat="server"  CssClass="casilla" ></asp:TextBox><br/>	
@@ -201,7 +204,7 @@
 			    </div>
 			    <div class="Contenido">
 				    Correo Electrónico <br/>
-				     <asp:TextBox ID="correoElectronico" runat="server"  CssClass="casilla" ></asp:TextBox><br/>			
+				     <asp:TextBox ID="correoElectronico" runat="server" TextMode="Email"  CssClass="casilla" ></asp:TextBox><br/>			
 			    </div>
 			    <div class="Contenido">
 				    Contraseña <br/>

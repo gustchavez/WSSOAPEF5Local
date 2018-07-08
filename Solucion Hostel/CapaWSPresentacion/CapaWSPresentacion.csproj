@@ -169,6 +169,25 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="PaginaComercial\images\blank.gif" />
+    <Content Include="PaginaComercial\images\fondoInicio3.jpg" />
+    <Content Include="PaginaComercial\images\linker-pc-1-crop-u617.jpg" />
+    <Content Include="PaginaComercial\images\linker-pc-3.jpg" />
+    <Content Include="PaginaComercial\images\loading.gif" />
+    <Content Include="PaginaComercial\images\svg pegado 191_poster_.png" />
+    <Content Include="PaginaComercial\images\svg pegado 297x422_poster_.png" />
+    <Content Include="PaginaComercial\images\svg pegado 297x422_poster_2.png" />
+    <Content Include="PaginaComercial\images\svg pegado 297x526_poster_.png" />
+    <Content Include="PaginaComercial\images\svg-pegado-191.svg" />
+    <Content Include="PaginaComercial\images\svg-pegado-297x422.svg" />
+    <Content Include="PaginaComercial\images\svg-pegado-297x4222.svg" />
+    <Content Include="PaginaComercial\images\svg-pegado-297x526.svg" />
+    <Content Include="PaginaComercial\images\top-banner-background-1.jpg" />
+    <Content Include="PaginaComercial\images\top-banner-background-2.jpg" />
+    <Content Include="PaginaComercial\images\top-banner-background-3-u1049-fr.jpg" />
+    <Content Include="PaginaComercial\images\top-banner-background-3.jpg" />
+    <Content Include="PaginaComercial\images\top-banner-background-4.jpg" />
+    <Content Include="PaginaComercial\images\user.png" />
     <Content Include="PaginaComercial\index.html" />
     <Content Include="PaginaComercial\muse_manifest.xml" />
     <Content Include="PaginaComercial\perfilIngreso.aspx" />
@@ -611,7 +630,6 @@
     <Folder Include="obj\Debug\" />
     <Folder Include="PaginaComercial\assets\" />
     <Folder Include="PaginaComercial\css\" />
-    <Folder Include="PaginaComercial\images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

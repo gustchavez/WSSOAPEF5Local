@@ -9,6 +9,15 @@ body{
 	font-size: 13px;
 }
 
+
+.casillaListado {
+    overflow:auto;
+    height:200px;
+    width:850px;
+    position:relative;
+    margin:auto;
+}
+
 .padre {
 	width: 1250px;
 	height:  auto;

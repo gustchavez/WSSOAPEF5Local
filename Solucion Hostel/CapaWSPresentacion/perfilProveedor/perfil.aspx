@@ -231,27 +231,13 @@
                 <asp:TextBox ID="txtContraseña" runat="server" CssClass="CasillaPersona"></asp:TextBox>
 		    </div>
 		    <div class="Casilla2-2">
-                <asp:Button ID="Button1" runat="server" Text="Modificar Datos"  CssClass="SubmitTotal" OnClick="btnModificar_Click" OnClientClick="return valida();"/> 	
+                <asp:Button ID="Button1" runat="server" Text="Modificar Datos"  CssClass="SubmitTotal" OnClick="btnModificar_Click" /> 	
 		    </div>
-            <div class="Casilla2-2">
-                <div class="error" id="error1"> Ingrese una razón social </div>
-                <div class="error" id="error2"> Seleccione un Giro </div>
-                <div class="error" id="error3"> Ingrese una dirección </div>
-                <div class="error" id="error4"> Seleccione una ciudad </div>
-                <div class="error" id="error5"> Seleccione una comuna </div>
-                <div class="error" id="error6"> Ingrese un correo electrónico </div>
-                <div class="error" id="error7"> Ingrese un número de telefono </div>
-                <div class="error" id="error8"> Ingrese una contraseña </div>
-            </div>
-           
 	    </div>
 		
     </div>
 
     </form>
-
-
-    <script src="/CondicionesJavascript/proveedorPerfil.js"></script>
 
     <!----VALIDACIONES 
 

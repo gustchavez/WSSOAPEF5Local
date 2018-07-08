@@ -12,7 +12,7 @@ body{
 
 .padre {
 	width: 1250px;
-	height: 700px;
+	height: 650px;
 	margin: auto;
 	position: relative;
 }
@@ -37,7 +37,8 @@ body{
 	margin-left: 280px;
 	margin-top: 30px;
 	width: 970px;
-	height: 670px;
+   
+	height: 600px;
     overflow: auto;
 }
 
@@ -117,8 +118,10 @@ position: absolute;
 .listaFactura {
 
 	width: 800px;
+    height:500px;
 	margin: auto;
 	text-align: center;
+
 }
 
 .columna2 h2{
@@ -139,7 +142,7 @@ position: absolute;
 }
 
 .listaFactura th{
-	background: #035E7B;
+	background: #AF1B3F;
 	color: white;
 	height: 30px;
 
@@ -147,10 +150,8 @@ position: absolute;
 
 .listaFactura td{
 	background: white;
-
 	color: #035E7B;
 	height: 30px;
-
 }
 
 

@@ -7,17 +7,18 @@
  <form id="form1" runat="server">
 
 	<div class="columna2">
-		
-	    <h2>Facturas Pedidos</h2><br>
+		<h2>Facturas Pedidos Proveedor</h2><br>
+        <div class="casillaListado">    
         <asp:GridView ID="gwFacturasPedido" runat="server" CssClass="listaFactura"
             EmptyDataText="No se encontraron Facturas..."
             ></asp:GridView>
-		
-        <h2>Facturas Compras</h2><br>
+		</div>
+         <h2>Facturas Compras Clientes</h2><br>
+        <div class="casillaListado">
         <asp:GridView ID="gwFacturasCompra" runat="server" CssClass="listaFactura"
             EmptyDataText="No se encontraron Facturas..."
             ></asp:GridView>
-		
+		</div>
 	</div>
 
 </form>
