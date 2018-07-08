@@ -86,8 +86,18 @@ position: absolute;
     
     background: none;
 	color: black;
- 	border: none;
-    border-bottom: 2px solid #1B998B;
+ 	border-bottom: 2px solid #1B998B;
+    top: 0px;
+    left: 0px;
+    border-left-style: none;
+    border-left-color: inherit;
+    border-left-width: medium;
+    border-right-style: none;
+    border-right-color: inherit;
+    border-right-width: medium;
+    border-top-style: none;
+    border-top-color: inherit;
+    border-top-width: medium;
 }
 
 .droplist {
