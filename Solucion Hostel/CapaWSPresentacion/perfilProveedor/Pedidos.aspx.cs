@@ -10,7 +10,6 @@ namespace CapaWSPresentacion.perfilProveedor
 {
     public partial class Pedidos : System.Web.UI.Page
     {
-        private object Color;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -116,8 +115,6 @@ namespace CapaWSPresentacion.perfilProveedor
                 gwOrdenDetalle.DataSource = null;
                 gwOrdenDetalle.DataBind();
             }
-            //Cambiar color
-            gwSolicitudes.SelectedRow.BackColor = System.Drawing.Color.Azure;
         }
     }
 }
