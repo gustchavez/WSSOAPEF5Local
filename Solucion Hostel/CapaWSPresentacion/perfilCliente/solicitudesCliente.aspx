@@ -12,8 +12,7 @@
                 <asp:GridView ID="gwOrdenesCompra" runat="server" CssClass="listaFactura"
                         AutoGenerateColumns="False"
                         OnSelectedIndexChanged="gwOrdenesCompra_SelectedIndexChanged"
-                        EmptyDataText="No se encontraron solicitudes..."
-                        SelectedRowStyle-CssClass="listaFacturaSelec">
+                        EmptyDataText="No se encontraron solicitudes...">
                         <Columns>
                             <asp:CommandField ShowSelectButton="True" />
                             <asp:BoundField DataField="NroOrden" HeaderText="Nro. Orden" SortExpression="NroOrden" />
@@ -21,7 +20,7 @@
                             <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto"/>
                             <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado"/>
                         </Columns>
-                        <SelectedRowStyle CssClass="mGridsel"></SelectedRowStyle>
+                        <SelectedRowStyle Font-Bold="True" ForeColor="Red"></SelectedRowStyle>
                 </asp:GridView>
 	        </div>
 	    </div>

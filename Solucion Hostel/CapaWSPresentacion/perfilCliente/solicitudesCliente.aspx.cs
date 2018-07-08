@@ -118,7 +118,6 @@ namespace CapaWSPresentacion.perfilCliente
                 gwOrdenDetalle.DataSource = null;
                 gwOrdenDetalle.DataBind();
             }
-
         }
     }
 }
