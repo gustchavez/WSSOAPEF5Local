@@ -881,6 +881,7 @@ advertencia 6002: La tabla o vista 'PFT5447.DIRECCION' no tiene definida ninguna
           <Parameter Name="P_IN_NUMERO" Type="number" Mode="In" />
           <Parameter Name="P_IN_INGRESO" Type="date" Mode="In" />
           <Parameter Name="P_IN_EGRESO" Type="date" Mode="In" />
+          <Parameter Name="P_IN_REGISTRO_DIAS" Type="number" Mode="In" />
           <Parameter Name="P_IN_OBS_ALOJAMIENTO" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_RUT_PERSONA" Type="varchar2" Mode="In" />
           <Parameter Name="P_IN_NOMBRE_PERSONA" Type="varchar2" Mode="In" />
@@ -1618,23 +1619,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
             <Parameter Name="P_OUT_NUMERO" Mode="Out" Type="Decimal" />
           </FunctionImport>
-          <FunctionImport Name="SP_CREAR_DET_RESERVA">
-            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_INGRESO" Mode="In" Type="DateTime" />
-            <Parameter Name="P_IN_EGRESO" Mode="In" Type="DateTime" />
-            <Parameter Name="P_IN_OBS_ALOJAMIENTO" Mode="In" Type="String" />
-            <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
-            <Parameter Name="P_IN_NOMBRE_PERSONA" Mode="In" Type="String" />
-            <Parameter Name="P_IN_APELLIDO_PERSONA" Mode="In" Type="String" />
-            <Parameter Name="P_IN_HAB_CAPACIDAD" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_HAB_CODIGO" Mode="In" Type="Decimal" />
-            <Parameter Name="P_IN_RECEPCION" Mode="In" Type="DateTime" />
-            <Parameter Name="P_IN_OBS_COMIDA" Mode="In" Type="String" />
-            <Parameter Name="P_IN_TIPO_SERVICIO" Mode="In" Type="String" />
-            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
-            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
-            <Parameter Name="P_OUT_HAB_CODIGO" Mode="Out" Type="Decimal" />
-          </FunctionImport>
           <FunctionImport Name="SP_ACT_RECEPCION_PRODUCTO">
             <Parameter Name="P_IN_CODIGO_PRODUCTO" Mode="In" Type="Decimal" />
             <Parameter Name="P_IN_NUMERO_OP" Mode="In" Type="Decimal" />
@@ -1841,6 +1825,24 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
             <Parameter Name="P_IN_PRECIO" Mode="In" Type="Decimal" />
             <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
             <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREAR_DET_RESERVA">
+            <Parameter Name="P_IN_NUMERO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_INGRESO" Mode="In" Type="DateTime" />
+            <Parameter Name="P_IN_EGRESO" Mode="In" Type="DateTime" />
+            <Parameter Name="P_IN_REGISTRO_DIAS" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_OBS_ALOJAMIENTO" Mode="In" Type="String" />
+            <Parameter Name="P_IN_RUT_PERSONA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_NOMBRE_PERSONA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_APELLIDO_PERSONA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_HAB_CAPACIDAD" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_HAB_CODIGO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_IN_RECEPCION" Mode="In" Type="DateTime" />
+            <Parameter Name="P_IN_OBS_COMIDA" Mode="In" Type="String" />
+            <Parameter Name="P_IN_TIPO_SERVICIO" Mode="In" Type="String" />
+            <Parameter Name="P_OUT_CODRET" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_OUT_GLSRET" Mode="Out" Type="String" />
+            <Parameter Name="P_OUT_HAB_CODIGO" Mode="Out" Type="Decimal" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="CAMA">
@@ -2712,7 +2714,6 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_VALIDAR_LOGIN" FunctionName="Model.Store.SP_VALIDAR_LOGIN" />
           <FunctionImportMapping FunctionImportName="SP_ACT_INGRESO_HUESPED" FunctionName="Model.Store.SP_ACT_INGRESO_HUESPED" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_ENC_RESERVA" FunctionName="Model.Store.SP_CREAR_ENC_RESERVA" />
-          <FunctionImportMapping FunctionImportName="SP_CREAR_DET_RESERVA" FunctionName="Model.Store.SP_CREAR_DET_RESERVA" />
           <FunctionImportMapping FunctionImportName="SP_ACT_RECEPCION_PRODUCTO" FunctionName="Model.Store.SP_ACT_RECEPCION_PRODUCTO" />
           <FunctionImportMapping FunctionImportName="SP_OBTENER_DISPONIBILIDAD" FunctionName="Model.Store.SP_OBTENER_DISPONIBILIDAD" />
           <FunctionImportMapping FunctionImportName="SP_CREAR_ADMINISTRADOR" FunctionName="Model.Store.SP_CREAR_ADMINISTRADOR" />
@@ -2729,6 +2730,7 @@ FROM "PFT5447"."DIRECCION" "DIRECCION"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_ANULAR_ORDEN_PEDIDO" FunctionName="Model.Store.SP_ANULAR_ORDEN_PEDIDO" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_SERVICIO_COMIDA" FunctionName="Model.Store.SP_ACTUALIZAR_SERVICIO_COMIDA" />
           <FunctionImportMapping FunctionImportName="SP_ACT_HAB_PRECIOXCAPACIDAD" FunctionName="Model.Store.SP_ACT_HAB_PRECIOXCAPACIDAD" />
+          <FunctionImportMapping FunctionImportName="SP_CREAR_DET_RESERVA" FunctionName="Model.Store.SP_CREAR_DET_RESERVA" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
