@@ -65,46 +65,156 @@ namespace CapaWSPresentacion.perfilEmpleado
             //Recuperar datos de productos
             RescatarRelacionProvProd();
         }
-
+        private Boolean validarTexbox1()
+        {
+            Boolean valido = true;
+            if (txtProveedorAgregar.Text == "Seleccione una opción")
+            {
+                TextBox4.Visible = true;
+                valido = false;
+            }
+            else
+            {
+                TextBox4.Visible = false;
+            }
+            if (txtDetProdAgregar.Text == null || txtDetProdAgregar.Text == "")
+            {
+                TextBox3.Visible = true;
+                valido = false;
+            }
+            else
+            {
+                TextBox3.Visible = false;
+            }
+            if (txtPrecioProdAgregar.Text == null || txtPrecioProdAgregar.Text == "" || txtPrecioProdAgregar.Text == "0")
+            {
+                TextBox2.Visible = true;
+                valido = false;
+            }
+            else
+            {
+                TextBox2.Visible = false;
+            }
+            if (txtStock.Text == null || txtStock.Text == "0" || txtStock.Text == "")
+            {
+                TextBox1.Visible = true;
+                valido = false;
+            }
+            else
+            {
+                TextBox1.Visible = false;
+            }
+            if (txtStockCritico.Text == null || txtStockCritico.Text == "0" || txtStockCritico.Text == "")
+            {
+                TextBox0.Visible = true;
+                valido = false;
+            }
+            else
+            {
+                TextBox0.Visible = false;
+            }
+            return valido;
+        }
+        private Boolean validarTexbox2()
+        {
+            Boolean valido = true;
+            if (txtProveedorModificar.Text == "Seleccione una opción")
+            {
+                TextBox5.Visible = true;
+                valido = false;
+            }
+            else
+            {
+                TextBox5.Visible = false;
+            }
+            //if (txtProductoModificar.Text == null || txtDetProdAgregar.Text == "")
+            //{
+            //    TextBox6.Visible = true;
+            //    valido = false;
+            //}
+            //else
+            //{
+            //    TextBox6.Visible = false;
+            //}
+            if (txtPrecioModificar.Text == null || txtPrecioModificar.Text == "" || txtPrecioModificar.Text == "0" 
+                || int.Parse(txtPrecioModificar.Text)<0)
+            {
+                TextBox7.Visible = true;
+                txtPrecioModificar.Text = "0";
+                valido = false;
+            }
+            else
+            {
+                TextBox7.Visible = false;
+            }
+            if (txtStockModificar.Text == null || txtStockModificar.Text == "0" || txtStockModificar.Text == ""
+                || int.Parse(txtStockModificar.Text) < 0)
+            {
+                TextBox8.Visible = true;
+                txtStockModificar.Text = "0";
+                valido = false;
+            }
+            else
+            {
+                TextBox8.Visible = false;
+            }
+            if (txtStockCriticoModificar.Text == null || txtStockCriticoModificar.Text == "0" || txtStockCriticoModificar.Text == ""
+                 || int.Parse(txtStockCriticoModificar.Text) < 0)
+            {
+                TextBox9.Visible = true;
+                txtStockCriticoModificar.Text = "0";
+                valido = false;
+            }
+            else
+            {
+                TextBox9.Visible = false;
+            }
+            return valido;
+        }
         protected void btnAgregar_click(object sender, EventArgs e)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-
-            ContenedorProducto nProducto = new ContenedorProducto();
-
-            nProducto.Item.Descripcion = txtDetProdAgregar.Text;
-            nProducto.Item.Stock = decimal.Parse(txtStock.Text);
-            nProducto.Item.StockCritico = decimal.Parse(txtStockCritico.Text);
-            nProducto.Retorno.Token = Session["TokenUsuario"].ToString();
-
-            nProducto = x.ProductoCrear(nProducto);
-
-            if (nProducto.Retorno.Codigo.ToString() == "0")
+            if (validarTexbox1())
             {
-                ContenedorProvision nProvision = new ContenedorProvision();
+                WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-                nProvision.Item.RutProveedor = txtProveedorAgregar.SelectedValue;
-                nProvision.Item.CodigoProducto = (int)nProducto.Item.Codigo;
-                nProvision.Item.Precio = decimal.Parse(txtPrecioProdAgregar.Text);
-                nProvision.Retorno.Token = Session["TokenUsuario"].ToString();
+                ContenedorProducto nProducto = new ContenedorProducto();
 
-                nProvision = x.ProvisionCrear(nProvision);
-                if (nProvision.Retorno.Codigo.ToString() == "0")
+                nProducto.Item.Descripcion = txtDetProdAgregar.Text;
+                nProducto.Item.Stock = decimal.Parse(txtStock.Text);
+                nProducto.Item.StockCritico = decimal.Parse(txtStockCritico.Text);
+                nProducto.Retorno.Token = Session["TokenUsuario"].ToString();
+
+                nProducto = x.ProductoCrear(nProducto);
+
+                if (nProducto.Retorno.Codigo.ToString() == "0")
                 {
-                    //txtCodProdAgregar.Text = nProducto.Item.Codigo.ToString();
-                    RescatarRelacionProvProd();
+                    ContenedorProvision nProvision = new ContenedorProvision();
+
+                    nProvision.Item.RutProveedor = txtProveedorAgregar.SelectedValue;
+                    nProvision.Item.CodigoProducto = (int)nProducto.Item.Codigo;
+                    nProvision.Item.Precio = decimal.Parse(txtPrecioProdAgregar.Text);
+                    nProvision.Retorno.Token = Session["TokenUsuario"].ToString();
+
+                    nProvision = x.ProvisionCrear(nProvision);
+                    if (nProvision.Retorno.Codigo.ToString() == "0")
+                    {
+                        //txtCodProdAgregar.Text = nProducto.Item.Codigo.ToString();
+                        RescatarRelacionProvProd();
+                    }
+                    else
+                    {
+                        //txtCodProdAgregar.Text = "-2";
+                        //nProvision.Retorno.Codigo.ToString();
+                        //nProvision.Retorno.Glosa;
+                    }
                 }
-                else
-                {
-                    //txtCodProdAgregar.Text = "-2";
-                    //nProvision.Retorno.Codigo.ToString();
-                    //nProvision.Retorno.Glosa;
+                else {
+                    //txtCodProdAgregar.Text = "-1";
+                    //nProducto.Retorno.Codigo.ToString();
+                    //nProducto.Retorno.Glosa;
                 }
-            } else  {
-                //txtCodProdAgregar.Text = "-1";
-                //nProducto.Retorno.Codigo.ToString();
-                //nProducto.Retorno.Glosa;
             }
+            
         }
 
         protected void txtProveedorModificar_SelectedIndexChanged(object sender, EventArgs e)
@@ -152,47 +262,50 @@ namespace CapaWSPresentacion.perfilEmpleado
 
         protected void btnModificar_click(object sender, EventArgs e)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-
-            ContenedorProducto nProducto = new ContenedorProducto();
-
-            nProducto.Item.Codigo = decimal.Parse(txtProductoModificar.SelectedValue);
-            nProducto.Item.Descripcion = txtProductoModificar.SelectedItem.Text;
-            nProducto.Item.Stock = decimal.Parse(txtStockModificar.Text.Trim());
-            nProducto.Item.StockCritico = decimal.Parse(txtStockCriticoModificar.Text.Trim());
-            nProducto.Retorno.Token = Session["TokenUsuario"].ToString();
-
-            nProducto = x.ProductoActualizar(nProducto);
-
-            if (nProducto.Retorno.Codigo.ToString() == "0")
+            if (validarTexbox2())
             {
-                ContenedorProvision nProvision = new ContenedorProvision();
+                WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-                nProvision.Item.RutProveedor = txtProveedorModificar.SelectedValue;
-                nProvision.Item.CodigoProducto = int.Parse(txtProductoModificar.SelectedValue.ToString());
-                nProvision.Item.Precio = decimal.Parse(txtPrecioModificar.Text);
+                ContenedorProducto nProducto = new ContenedorProducto();
 
-                nProvision.Retorno.Token = Session["TokenUsuario"].ToString();
+                nProducto.Item.Codigo = decimal.Parse(txtProductoModificar.SelectedValue);
+                nProducto.Item.Descripcion = txtProductoModificar.SelectedItem.Text;
+                nProducto.Item.Stock = decimal.Parse(txtStockModificar.Text.Trim());
+                nProducto.Item.StockCritico = decimal.Parse(txtStockCriticoModificar.Text.Trim());
+                nProducto.Retorno.Token = Session["TokenUsuario"].ToString();
 
-                nProvision = x.ProvisionActualizar(nProvision);
-                if (nProvision.Retorno.Codigo.ToString() == "0")
+                nProducto = x.ProductoActualizar(nProducto);
+
+                if (nProducto.Retorno.Codigo.ToString() == "0")
                 {
-                    txtPrecioModificar.Text = "0";
-                    txtStockModificar.Text = "0";
-                    txtStockCriticoModificar.Text = "0";
+                    ContenedorProvision nProvision = new ContenedorProvision();
+
+                    nProvision.Item.RutProveedor = txtProveedorModificar.SelectedValue;
+                    nProvision.Item.CodigoProducto = int.Parse(txtProductoModificar.SelectedValue.ToString());
+                    nProvision.Item.Precio = decimal.Parse(txtPrecioModificar.Text);
+
+                    nProvision.Retorno.Token = Session["TokenUsuario"].ToString();
+
+                    nProvision = x.ProvisionActualizar(nProvision);
+                    if (nProvision.Retorno.Codigo.ToString() == "0")
+                    {
+                        txtPrecioModificar.Text = "0";
+                        txtStockModificar.Text = "0";
+                        txtStockCriticoModificar.Text = "0";
+                    }
+                    else
+                    {
+                        txtPrecioModificar.Text = "-1";
+                        //nProvision.Retorno.Codigo.ToString();
+                        //nProvision.Retorno.Glosa;
+                    }
                 }
                 else
                 {
                     txtPrecioModificar.Text = "-1";
-                    //nProvision.Retorno.Codigo.ToString();
-                    //nProvision.Retorno.Glosa;
+                    //nProducto.Retorno.Codigo.ToString();
+                    //nProducto.Retorno.Glosa;
                 }
-            }
-            else
-            {
-                txtPrecioModificar.Text = "-1";
-                //nProducto.Retorno.Codigo.ToString();
-                //nProducto.Retorno.Glosa;
             }
         }
     }

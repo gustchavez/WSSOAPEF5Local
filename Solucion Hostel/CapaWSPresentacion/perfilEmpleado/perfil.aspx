@@ -12,7 +12,7 @@
 			<div class="Casilla2-1">
 			<h4>Rut </h4>	
 			<asp:TextBox ID="txtRut" runat="server" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>  
-                <br><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage=" * Ingrese Rut" ControlToValidate="txtRut"></asp:RequiredFieldValidator>
+                <br> <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage=" * Ingrese Rut" ControlToValidate="txtRut"></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Nombre</h4>	

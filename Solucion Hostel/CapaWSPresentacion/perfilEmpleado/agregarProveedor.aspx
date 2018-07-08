@@ -16,11 +16,13 @@
 		
 			<div class="Casilla2-1">
 			<h4>Rut Empresa</h4>	
-			<asp:TextBox ID="txtRutEmpresa" runat="server" CssClass="CasillaPersona" required></asp:TextBox>
+			<asp:TextBox ID="txtRutEmpresa" runat="server" CssClass="CasillaPersona" ></asp:TextBox>
+                <br><asp:RequiredFieldValidator ErrorMessage="* Ingrese Rut Empresa" ControlToValidate="txtRutEmpresa" ID="RequiredFieldValidator1" runat="server" ></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Razón Social</h4>	
 			<asp:TextBox ID="txtRazonSocial" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <br><asp:RequiredFieldValidator ErrorMessage="* Ingrese Razón Social" ControlToValidate="txtRazonSocial" ID="RequiredFieldValidator2" runat="server" ></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Giro</h4>	
@@ -160,15 +162,18 @@
                     <asp:ListItem Value="133">CONSEJO DE ADMINISTRACIÓN DE EDIFICIOS Y CONDOMINIOS </asp:ListItem>
                     <asp:ListItem Value="134">ORGANIZACIONES Y ÓRGANOS EXTRATERRITORIALES </asp:ListItem>
             </asp:DropDownList>			
+                <br><asp:RequiredFieldValidator ErrorMessage="* Seleccione Giro" ControlToValidate="txtGiro" ID="RequiredFieldValidator3" runat="server" ></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Dirección</h4>
 			<asp:TextBox ID="txtCalle" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <br><asp:RequiredFieldValidator ErrorMessage="* Ingrese Dirección" ControlToValidate="txtCalle" ID="RequiredFieldValidator4" runat="server" ></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 				<h4>Ciudad</h4>					
 				<asp:DropDownList ID="txtNombreCiudad" runat="server" CssClass="droplist">
                  </asp:DropDownList>
+                <br><asp:RequiredFieldValidator ErrorMessage="* Seleccione Ciudad" ControlToValidate="txtNombreCiudad" ID="RequiredFieldValidator5" runat="server" ></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 				<h4>Comuna</h4>					
@@ -211,14 +216,17 @@
                     <asp:ListItem Value="36">Vitacura</asp:ListItem>
                     <asp:ListItem Value="37">--Otra--</asp:ListItem>
 			</asp:DropDownList>	
+                <br><asp:RequiredFieldValidator ErrorMessage="* Seleccione Comuna" ControlToValidate="txtComuna" ID="RequiredFieldValidator6" runat="server" ></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Correo Electrónico</h4>	
 			<asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <br><asp:RequiredFieldValidator ErrorMessage="* Ingrese Correo Electrónico" ControlToValidate="txtCorreoElectronico" ID="RequiredFieldValidator7" runat="server" ></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Teléfono</h4>	
 			<asp:TextBox ID="txtTelefonoEmpresa" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <br><asp:RequiredFieldValidator ErrorMessage="* Ingrese Teléfono" ControlToValidate="txtTelefonoEmpresa" ID="RequiredFieldValidator8" runat="server" ></asp:RequiredFieldValidator>
 			</div>
 	</div>
 
@@ -227,10 +235,12 @@
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nombre Usuario</h4>	
 		<asp:TextBox ID="txtNombreUsuario" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+            <br><asp:RequiredFieldValidator ErrorMessage="* Ingrese Nombre Usuario" ControlToValidate="txtNombreUsuario" ID="RequiredFieldValidator10" runat="server" ></asp:RequiredFieldValidator>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nueva Contraseña</h4>	
 		<asp:TextBox ID="txtConstrasena" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+            <br><asp:RequiredFieldValidator ErrorMessage="* Ingrese Nueva Contraseña" ControlToValidate="txtConstrasena" ID="RequiredFieldValidator9" runat="server" ></asp:RequiredFieldValidator>
 		</div>  
 		<div class="Casilla2-2">	
 		    <asp:Button ID="btnAgregar" runat="server" Text="Agregar"  CssClass="SubmitTotal" OnClick="btnAgregar_Click"/> 
