@@ -44,22 +44,81 @@ namespace CapaWSPresentacion.perfilCliente
             n = x.OrdenCompraCompletaRescatar(Session["TokenUsuario"].ToString());
 
             Sesion datSes = (Sesion)Session["SesionUsuario"];
+            var listaPedidoCliente = n.Lista.Where(p => p.Cabecera.RutCliente == datSes.RutEmpresa
+                                                       && (p.Cabecera.Estado == "activo"
+                                                        || p.Cabecera.Estado == "facturada")
+                                                    )
+                                              .OrderBy(p => p.Cabecera.Numero).ToList();
 
-            var ordenes = (from l in n.Lista
-                           where l.Cabecera.RutCliente == datSes.RutEmpresa
-                           select new
-                            { 
-                                RutCliente  = l.Cabecera.RutCliente ,
-                                NumeroOC    = l.Cabecera.Numero   ,
-                                FecRecepOC  = l.Cabecera.FechaRecepcion ,
-                                MontoOC     = l.Cabecera.Monto    ,
-                                EstadoOC    = l.Cabecera.Estado   
+            if (listaPedidoCliente != null)
+            {
+
+                var ordenes = (from cli in listaPedidoCliente
+                               select new
+                            {
+                                NroOrden = cli.Cabecera.Numero,
+                                FechaSolicitud = cli.Cabecera.FechaRecepcion,
+                                Monto = cli.Cabecera.Monto,
+                                Estado = cli.Cabecera.Estado
                             }
                             ).ToList();
 
-            gwOrdenesCompra.DataSource = null;
-            gwOrdenesCompra.DataSource = ordenes;
-            gwOrdenesCompra.DataBind();
+                gwOrdenesCompra.DataSource = null;
+                gwOrdenesCompra.DataSource = ordenes;
+                gwOrdenesCompra.DataBind();
+
+            } else {
+                gwOrdenesCompra.DataSource = null;
+                gwOrdenesCompra.DataBind();
+            }
+
+            gwOrdenDetalle.DataSource = null;
+            gwOrdenDetalle.DataBind();
+
+            Session["OrdenesCompra"] = listaPedidoCliente;
+        }
+
+        protected void gwOrdenesCompra_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            List<OrdenCompraCompleta> lista = (List<OrdenCompraCompleta>)Session["OrdenesCompra"];
+
+            GridViewRow row = gwOrdenesCompra.SelectedRow;
+
+            var orden = (from l in lista
+                         where l.Cabecera.Numero == int.Parse(row.Cells[1].Text)
+                         select new
+                         {
+                             DetalleOC = l.ListaDetalle.ToList()
+                         }
+                         ).FirstOrDefault();
+            ////////
+            if (orden.DetalleOC != null)
+            {
+                var detalleOrden = (from l in orden.DetalleOC
+                                    select new
+                                    {
+                                        RutPersona = l.Persona.Rut,
+                                        FecIng = l.Alojamiento.FechaIngreso,
+                                        FecEgr = l.Alojamiento.FechaEgreso,
+                                        CantDias = l.Alojamiento.RegistroDias,
+                                        CapacHab = l.Alojamiento.Habitacion.Capacidad,
+                                        PrecioHab = l.Alojamiento.Habitacion.Precio,
+                                        TipoComida = l.Comida.ServicioComida.Tipo,
+                                        PrecioCom = l.Comida.ServicioComida.Precio,
+                                        PrecioSubTotal = l.Alojamiento.RegistroDias * (l.Alojamiento.Habitacion.Precio + l.Comida.ServicioComida.Precio)
+                                    }
+                            ).ToList();
+
+                gwOrdenDetalle.DataSource = null;
+                gwOrdenDetalle.DataSource = detalleOrden;
+                gwOrdenDetalle.DataBind();
+            }
+            else {
+                gwOrdenDetalle.DataSource = null;
+                gwOrdenDetalle.DataBind();
+            }
+
         }
     }
 }
