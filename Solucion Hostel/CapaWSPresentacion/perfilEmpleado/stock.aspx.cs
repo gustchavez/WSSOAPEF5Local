@@ -42,8 +42,19 @@ namespace CapaWSPresentacion.perfilEmpleado
 
             n = x.ProductoRescatar(Session["TokenUsuario"].ToString());
 
+            var coleccion = (from l in n.Lista
+                             select new
+                             {
+                                 Codigo = l.Codigo,
+                                 Decripcion = l.Descripcion,
+                                 Stock = l.Stock,
+                                 StockCritico = l.StockCritico,
+                                 Critico = (l.Stock - l.StockCritico)  >= 0 ? "No" : "Si"
+                             }
+                            ).ToList();
+
             gwListaProductos.DataSource = null;
-            gwListaProductos.DataSource = n.Lista;
+            gwListaProductos.DataSource = coleccion;
             gwListaProductos.DataBind();
         }
     }
