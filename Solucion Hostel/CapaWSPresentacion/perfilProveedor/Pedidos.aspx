@@ -4,24 +4,38 @@
     <link rel="stylesheet" type="text/css" href="css/solicitudesCliente.css">
 
     <form id="form1" runat="server">
-
 	    <div class="columna2">
 		   <div class="ModificarDatos">
-				<h2>Solicitudes de Doña Clarita</h2><br>
-		
-	            <br />
-                <asp:GridView ID="gwSolicitudes" runat="server" CssClass="listaFactura"
-                     EmptyDataText="No se encontraron solicitudes...">
-               
-                </asp:GridView>
+				<h2>Solicitudes de Doña Clarita</h2>
+                <br>
+	            <br/>
+                <div class="Casilla2-1">
+			        <h2>Ordenes</h2><br>
+                    <asp:GridView ID="gwSolicitudes" runat="server" CssClass="listaFactura"
+                        AutoGenerateColumns="False"
+                        OnSelectedIndexChanged="gwSolicitudes_SelectedIndexChanged"
+                        EmptyDataText="No se encontraron solicitudes..."
+                        SelectedRowStyle-CssClass="listaFacturaSelec">
+                        <Columns>
+                            <asp:CommandField ShowSelectButton="True" />
+                            <asp:BoundField DataField="NroOrden" HeaderText="Nro. Orden" SortExpression="NroOrden" />
+                            <asp:BoundField DataField="FechaSolicitud" HeaderText="Fec. Solicitud" SortExpression="FechaSolicitud"/>
+                            <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto"/>
+                            <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado"/>
+                        </Columns>
+                        <SelectedRowStyle CssClass="mGridsel"></SelectedRowStyle>
+                    </asp:GridView>
+			    </div>
 		    </div>
-	</div>
+            <div class="ModificarDatos2">
+                <div class="columna2-1"> 
+		            <h2>Detalle Orden</h2><br>
+                    <asp:GridView ID="gwOrdenDetalle" runat="server" CssClass="listaFactura"
+                         EmptyDataText="Seleccione Orden...">
+                    </asp:GridView>
+	            </div>
+		    </div>
+	    </div>
 	<!--Fin COLUMNA2-->
-
-
-
-        </form>
-
-
-
+    </form>
 </asp:Content>
