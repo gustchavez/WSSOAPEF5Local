@@ -73,6 +73,19 @@ namespace CapaWSPresentacion.perfilCliente
                 item6.DataValueField = "Tipo";
                 item6.DataTextField  = "Tipo";
                 item6.DataBind();
+                ////////////////
+                TextBox item0 = (TextBox)form1.FindControl("txtRut" + TipoHab + i);
+                item0.Text = string.Empty;
+
+                TextBox item1 = (TextBox)form1.FindControl("txtNombre" + TipoHab + i);
+                item1.Text = string.Empty;
+
+                TextBox item2 = (TextBox)form1.FindControl("txtApellido" + TipoHab + i);
+                item2.Text = string.Empty;
+                
+                TextBox item5 = (TextBox)form1.FindControl("txtAlojaObs" + TipoHab + i);
+                item5.Text = string.Empty;
+                ////////////////
             }
         }
 
@@ -95,7 +108,7 @@ namespace CapaWSPresentacion.perfilCliente
                 OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
                 //Armar Encabezado de Orden de Reserva
                 nOCC.Cabecera.RutCliente = SesionUsuario.RutEmpresa;
-                nOCC.Cabecera.Monto = int.Parse(txtPersonasHabitacion.Text);//realizar calculo de las habitaciones seleccionadas.
+                nOCC.Cabecera.Monto = 0;//realizar calculo de las habitaciones seleccionadas.
                 nOCC.Cabecera.Observaciones = "Reserva habitación";
                 nOCC.Cabecera.Ubicacion = "logo";
                 nOCC.Cabecera.Estado = "activa";
@@ -124,7 +137,7 @@ namespace CapaWSPresentacion.perfilCliente
                 try
                 {
                     int CantHuspedes = int.Parse(triple.Text) * 3;
-                    AgregarHuesped(nOCC, CantHuspedes, "Tiple", 3);
+                    AgregarHuesped(nOCC, CantHuspedes, "Triple", 3);
                 }
                 catch (Exception)
                 {
@@ -133,7 +146,7 @@ namespace CapaWSPresentacion.perfilCliente
 
                 try
                 {
-                    int CantHuspedes = int.Parse(triple.Text) * 4;
+                    int CantHuspedes = int.Parse(cuadruple.Text) * 4;
                     AgregarHuesped(nOCC, CantHuspedes, "Cuadruple", 4);
                 }
                 catch (Exception)
@@ -167,10 +180,10 @@ namespace CapaWSPresentacion.perfilCliente
                     nOCD.Persona.Rut = item0.Text;
 
                     TextBox item1 = (TextBox)form1.FindControl("txtNombre" + TipoHab + i);
-                    nOCD.Persona.Nombre = item0.Text;
+                    nOCD.Persona.Nombre = item1.Text;
 
                     TextBox item2 = (TextBox)form1.FindControl("txtApellido" + TipoHab + i);
-                    nOCD.Persona.Apellido = item0.Text;
+                    nOCD.Persona.Apellido = item2.Text;
 
                     //TextBox item3 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
                     nOCD.Alojamiento.FechaIngreso = DateTime.Parse(txtFechaIngreso.Text);
