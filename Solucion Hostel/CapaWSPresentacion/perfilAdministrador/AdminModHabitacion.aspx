@@ -11,7 +11,8 @@
 			    </div>
 			    <div class="Casilla2-1">
 				    <h4>Precio</h4>					
-				    <asp:TextBox ID="txtPrecio" runat="server" TextMode="Number" CssClass="CasillaPersona"></asp:TextBox>					
+				    <asp:TextBox ID="txtPrecio" runat="server" TextMode="Number" CssClass="CasillaPersona" min="0" ></asp:TextBox>		
+                    <br><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Ingrese Precio" ControlToValidate="txtPrecio"></asp:RequiredFieldValidator>
 			    </div>
                 <div class="Casilla2-2">	
 		            <asp:Button ID="btnModificar" runat="server" Text="Modificar"  CssClass="SubmitTotal" OnClick="btnModificar_Click"/> 

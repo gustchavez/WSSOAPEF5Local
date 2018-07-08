@@ -31,6 +31,15 @@ namespace CapaWSPresentacion.perfilAdministrador {
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoPerfil;
         
         /// <summary>
+        /// Control RangeValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
+        
+        /// <summary>
         /// Control ddlRutPerfil.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace CapaWSPresentacion.perfilAdministrador {
         protected global::System.Web.UI.WebControls.DropDownList ddlRutPerfil;
         
         /// <summary>
+        /// Control RangeValidator2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator2;
+        
+        /// <summary>
         /// Control txtRutPersona.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,15 @@ namespace CapaWSPresentacion.perfilAdministrador {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRutPersona;
+        
+        /// <summary>
+        /// Control RangeValidator3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator3;
         
         /// <summary>
         /// Control txtNombrePersona.

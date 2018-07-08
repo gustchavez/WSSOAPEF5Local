@@ -17,18 +17,22 @@
 		<div class="Casilla2-2" >
 		<h4 style="color: white;">Cod.Producto</h4>	
 		<asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaPersona2"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Ingresar Codigo" ControlToValidate="TextBox1"></asp:RequiredFieldValidator>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: white;">Detalle</h4>	
-		<asp:TextBox ID="TextBox2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+		<asp:TextBox ID="TextBox2" runat="server" CssClass="CasillaPersona"></asp:TextBox><br>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Ingrese Detalle" ControlToValidate="TextBox2"></asp:RequiredFieldValidator>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: white;">Precio</h4>	
-		<asp:TextBox ID="TextBox3" runat="server" CssClass="CasillaPersona2"></asp:TextBox>
+		<asp:TextBox ID="TextBox3" runat="server" CssClass="CasillaPersona2" TextMode="Number" min="0"></asp:TextBox>
+            <br><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Ingrese Precio" ControlToValidate="TextBox2"></asp:RequiredFieldValidator>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: white;">Cantidad</h4>	
-		<asp:TextBox ID="TextBox4" runat="server" CssClass="CasillaPersona2"></asp:TextBox>
+		<asp:TextBox ID="TextBox4" runat="server" CssClass="CasillaPersona2" TextMode="Number" min="0"></asp:TextBox>
+            <br><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="* Ingrese Cantidad" ControlToValidate="TextBox4"></asp:RequiredFieldValidator>
 		</div>
 		<div class="Casilla2-2">	
 		<asp:Button ID="Button1" runat="server" Text="Agregar Producto" CssClass="SubmitTotal" />

@@ -18,7 +18,9 @@
                 <asp:ListItem Value="3">Empleado</asp:ListItem>
                 <asp:ListItem Value="4">Cliente</asp:ListItem>
                 <asp:ListItem Value="5">Proveedor</asp:ListItem>
-            </asp:DropDownList>   
+            </asp:DropDownList> 
+                <br>
+                <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="* Seleccione Perfil" ControlToValidate="ddlTipoPerfil" MaximumValue="5" MinimumValue="2"></asp:RangeValidator>                  
 			</div>
 			<div class="Casilla2-1Principal">
 			<h4>Seleccione un Rut</h4>
@@ -29,10 +31,14 @@
                 <asp:ListItem Value="4">33333333</asp:ListItem>
                 <asp:ListItem Value="5">44444444</asp:ListItem>
             </asp:DropDownList>   	
+                <br>
+                <asp:RangeValidator ID="RangeValidator2" runat="server" ErrorMessage="* Seleccione Rut" ControlToValidate="ddlRutPerfil" MaximumValue="5" MinimumValue="2"></asp:RangeValidator>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Rut</h4>	
 			<asp:TextBox ID="txtRutPersona" runat="server" CssClass="CasillaPersona" Enabled="False" style="left: 0px; top: 0px"></asp:TextBox>
+                <br>
+                <asp:RangeValidator ID="RangeValidator3" runat="server" ErrorMessage="* Seleccione Rut" ControlToValidate="ddlRutPerfil" MaximumValue="txtRutPersona." MinimumValue="2"></asp:RangeValidator>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Nombre</h4>	

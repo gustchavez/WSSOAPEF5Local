@@ -123,37 +123,93 @@ namespace CapaWSPresentacion.perfilAdministrador
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-
-            ContenedorServicioComida xSC = new ContenedorServicioComida();
-            xSC.Item.Tipo = ddlTipoServicio.SelectedValue;
-            xSC.Item.Precio = int.Parse(txtPrecio.Text);
-            //
-            xSC.Retorno.Token = Session["TokenUsuario"].ToString();
-
-            xSC = x.ServicioComidaActualizar(xSC);
-
-            if (xSC.Retorno.Codigo == 0)
+            if (validarText1())
             {
-                RescatarDatos();
-            }
-        }
+                WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
+                ContenedorServicioComida xSC = new ContenedorServicioComida();
+                xSC.Item.Tipo = ddlTipoServicio.SelectedValue;
+                xSC.Item.Precio = int.Parse(txtPrecio.Text);
+                //
+                xSC.Retorno.Token = Session["TokenUsuario"].ToString();
+
+                xSC = x.ServicioComidaActualizar(xSC);
+
+                if (xSC.Retorno.Codigo == 0)
+                {
+                    RescatarDatos();
+                }
+            }
+
+        }
+        private bool validarText1()
+        {
+            bool var = true;
+            if (ddlTipoServicio.Text == null || ddlTipoServicio.Text == "")
+            {
+                TextBox1.Visible = true;
+                var = false;
+            }
+            else
+            {
+                TextBox1.Visible = false;
+            }
+            if (txtPrecio.Text =="0" || txtPrecio.Text == "" || int.Parse(txtPrecio.Text)<0 )
+            {
+                TextBox2.Visible = true;
+                txtPrecio.Text = "0";
+                var = false;
+            }
+            else
+            {
+                TextBox2.Visible = false;
+            }
+            return var;
+
+        }
+        private bool validarText2()
+        {
+            bool var = true;
+            if (ddlTipoHabitacion.Text == null || ddlTipoHabitacion.Text == "")
+            {
+                TextBox3.Visible = true;
+                var = false;
+            }
+            else
+            {
+                TextBox3.Visible = false;
+            }
+            if (txtPrecio2.Text == "0" || txtPrecio2.Text == "" || int.Parse(txtPrecio2.Text) < 0)
+            {
+                TextBox4.Visible = true;
+                txtPrecio2.Text = "0";
+                var = false;
+            }
+            else
+            {
+                TextBox4.Visible = false;
+            }
+            return var;
+
+        }
         protected void btnModificar2_Click(object sender, EventArgs e)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-
-            ContenedorHabitacion xH = new ContenedorHabitacion();
-            xH.Item.Capacidad = int.Parse(ddlTipoHabitacion.SelectedValue);
-            xH.Item.Precio = int.Parse(txtPrecio2.Text);
-            //
-            xH.Retorno.Token = Session["TokenUsuario"].ToString();
-
-            xH = x.HabitacionActPrecioXCapacidad(xH);
-
-            if (xH.Retorno.Codigo == 0)
+            if (validarText2())
             {
-                RescatarDatos();
+                WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+                ContenedorHabitacion xH = new ContenedorHabitacion();
+                xH.Item.Capacidad = int.Parse(ddlTipoHabitacion.SelectedValue);
+                xH.Item.Precio = int.Parse(txtPrecio2.Text);
+                //
+                xH.Retorno.Token = Session["TokenUsuario"].ToString();
+
+                xH = x.HabitacionActPrecioXCapacidad(xH);
+
+                if (xH.Retorno.Codigo == 0)
+                {
+                    RescatarDatos();
+                }
             }
 
         }
