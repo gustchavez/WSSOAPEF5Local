@@ -47,15 +47,17 @@ namespace CapaWSPresentacion.perfilCliente
 
             var facturas = (from l in n.Lista
                             where l.OCRelacionada.RutCliente == datSes.RutEmpresa
+                               && l.Cabecera.Estado          == "activo"
+                            orderby l.Cabecera.Fecha
                             select new
                             {
-                                Rut        = l.OCRelacionada.RutCliente,
-                                NroFactura = l.Cabecera.Numero,
-                                FecFactura = l.Cabecera.Fecha,
-                                ValorBruto = l.Cabecera.ValorBruto,
-                                ValorIva   = l.Cabecera.ValorIva,
-                                ValorNeto  = l.Cabecera.ValorNeto,
-                                MedioPago  = l.Pago.MedioPago,
+                                Rut           = l.OCRelacionada.RutCliente,
+                                NroFactura    = l.Cabecera.Numero,
+                                FecFactura    = l.Cabecera.Fecha,
+                                ValorBruto    = l.Cabecera.ValorBruto,
+                                ValorIva      = l.Cabecera.ValorIva,
+                                ValorNeto     = l.Cabecera.ValorNeto,
+                                MedioPago     = l.Pago.MedioPago,
                                 NroOrdReserva = l.OCRelacionada.Numero
                             }
                             ).ToList();
