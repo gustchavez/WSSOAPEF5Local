@@ -141,6 +141,7 @@
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorRegistroRecepcionPedido.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorUsuarios.datasource" />
     <Content Include="Properties\DataSources\CapaObjeto.ContenedorPerfilUsuarioAdministradores.datasource" />
+    <Content Include="Properties\DataSources\CapaObjeto.ContenedorServicioComida.datasource" />
     <None Include="Service References\ServiceReference\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
