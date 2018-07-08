@@ -30,5 +30,26 @@ namespace CapaWSPresentacion.perfilAdministrador
                 Response.Redirect("perfilIngreso.aspx");
             }
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            validarText();
+        }
+
+        private bool validarText()
+        {
+            bool vari = true;
+            if (int.Parse(TextBox1.Text)<0 || TextBox1.Text == "" || TextBox1.Text ==null)
+            {
+                RequiredFieldValidator3.Visible = true;
+                vari = false;
+                TextBox1.Text = "0";
+            }
+            else
+            {
+                RequiredFieldValidator3.Visible = false;
+            }
+            return vari;
+        }
     }
 }

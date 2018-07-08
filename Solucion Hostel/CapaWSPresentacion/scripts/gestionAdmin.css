@@ -139,9 +139,18 @@ color: orange;
 	height: 25px;
 	background: #274046;
 	color: white;
- 	border: none;
-    border-bottom: 2px solid white;
-
+ 	border-bottom: 2px solid white;
+    top: 0px;
+    left: 0px;
+    border-left-style: none;
+    border-left-color: inherit;
+    border-left-width: medium;
+    border-right-style: none;
+    border-right-color: inherit;
+    border-right-width: medium;
+    border-top-style: none;
+    border-top-color: inherit;
+    border-top-width: medium;
 }
 
 .droplist {

@@ -35,7 +35,7 @@
             <br><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="* Ingrese Cantidad" ControlToValidate="TextBox4"></asp:RequiredFieldValidator>
 		</div>
 		<div class="Casilla2-2">	
-		<asp:Button ID="Button1" runat="server" Text="Agregar Producto" CssClass="SubmitTotal" />
+		<asp:Button ID="Button1" runat="server" Text="Agregar Producto" CssClass="SubmitTotal" OnClick="Button1_Click" />
 		</div>
 	</div>
 	

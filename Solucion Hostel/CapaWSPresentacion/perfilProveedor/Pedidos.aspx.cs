@@ -69,7 +69,6 @@ namespace CapaWSPresentacion.perfilProveedor
                 gwSolicitudes.DataSource = null;
                 gwSolicitudes.DataSource = pedidos;
                 gwSolicitudes.DataBind();
-
             } else  {
                 gwSolicitudes.DataSource = null;
                 gwSolicitudes.DataBind();
