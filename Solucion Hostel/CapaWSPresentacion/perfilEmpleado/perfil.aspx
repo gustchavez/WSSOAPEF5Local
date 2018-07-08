@@ -31,7 +31,7 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Fecha Nacimiento</h4>					
-			<%--<asp:TextBox ID="txtFechaNacimiento" runat="server" CssClass="CasillaPersona" TextMode="Date" requiered=" ingresar fecha"></asp:TextBox>--%>
+			<asp:TextBox ID="txtFechaNacimiento" runat="server" CssClass="CasillaPersona" TextMode="Date" requiered=" ingresar fecha"></asp:TextBox>
                 <br><asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage=" * Ingrese Fecha Nacimiento" ControlToValidate="txtFechaNacimiento" OnDataBinding="validaFecha" Text="Ingrese Fecha Nacimiento">Ingrese Fecha Nacimiento</asp:RequiredFieldValidator>
 			</div>			
 			<div class="Casilla2-1">
