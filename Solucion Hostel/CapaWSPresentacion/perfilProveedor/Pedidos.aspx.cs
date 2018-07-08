@@ -48,7 +48,11 @@ namespace CapaWSPresentacion.perfilProveedor
 
             //Filtrar solo por el proveedor
             Sesion datSes = (Sesion)Session["SesionUsuario"];
-            var listaPedidoProveedor = n.Lista.Where(p => p.Cabecera.RutProveedor == datSes.RutEmpresa).OrderBy(p => p.Cabecera.Numero).ToList();            
+            var listaPedidoProveedor = n.Lista.Where(p => p.Cabecera.RutProveedor == datSes.RutEmpresa
+                                                       && (p.Cabecera.Estado == "activo" 
+                                                        || p.Cabecera.Estado == "facturada")
+                                                    )
+                                              .OrderBy(p => p.Cabecera.Numero).ToList();            
 
             if (listaPedidoProveedor != null)
             {
