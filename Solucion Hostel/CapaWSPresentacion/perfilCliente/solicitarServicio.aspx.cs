@@ -337,7 +337,7 @@ namespace CapaWSPresentacion.perfilCliente
             {
                 
                 DateTime fechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
-                if (fechaEgreso < DateTime.Parse(txtFechaIngreso.Text) && fechaEgreso == null)
+                if (fechaEgreso < DateTime.Parse(txtFechaIngreso.Text) || fechaEgreso == null)
                 {
                     Response.Write(@"<script langauge='text/javascript'>alert('La fecha de egreso debe der mayor a la fecha de ingreso');</script>");
                     txtRegistroDias.Text = "";
@@ -351,9 +351,14 @@ namespace CapaWSPresentacion.perfilCliente
                         {
                             Response.Write(difDias.Days.ToString());
                             txtRegistroDias.Text = difDias.Days.ToString();
+                            TotaldeDias();
+                        }
+                        else
+                        {
+                            txtRegistroDias.Text = "0";
                         }
                         
-                        TotaldeDias();
+                        
                     }                    
                 }
             }
@@ -374,18 +379,25 @@ namespace CapaWSPresentacion.perfilCliente
         {
             try
             {
-                int num = int.Parse(txtNpersonas.Text);
-                if (num < 0 || num == null)
+                if (txtFechaEgreso.Text != null && txtFechaIngreso.Text != null)
                 {
-                    Response.Write(@"<script langauge='text/javascript'>alert('La cantidad de personas debe ser mayor a 0');</script>");
+                    int num = int.Parse(txtNpersonas.Text);
+                    if (num < 0 || num == null)
+                    {
+                        Response.Write(@"<script langauge='text/javascript'>alert('La cantidad de personas debe ser mayor a 0');</script>");
+                        txtNpersonas.Text = "0";
+                    }
                 }
+                else
+                {
+                    Response.Write(@"<script langauge='text/javascript'>alert('Debe ingresar las fechas primero');</script>");
+                }
+
             }
             catch (Exception)
             {
-                txtNpersonas.Text = "";
+                txtNpersonas.Text = "0";
             }
-            
-
         }
 
         protected void txtRegistroDias_TextChanged(object sender, EventArgs e)
