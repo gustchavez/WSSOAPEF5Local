@@ -12,10 +12,6 @@ namespace CapaWSPresentacion.perfilCliente
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Range1.MinimumValue = DateTime.Today.ToShortDateString();
-            //Range1.MaximumValue = DateTime.Today.AddMonths(24).ToShortDateString();
-            //Range2.MinimumValue = DateTime.Today.ToShortDateString();
-            //Range2.MaximumValue = DateTime.Today.AddMonths(24).ToShortDateString();
             try
             {
                 string Perfil = Session["PerfilUsuario"].ToString();
@@ -160,10 +156,22 @@ namespace CapaWSPresentacion.perfilCliente
                 xOCC.Retorno.Token = Session["TokenUsuario"].ToString();
 
                 xOCC = x.OrdenCompraCompletaCrear(xOCC);
+
+                if(xOCC.Retorno.Codigo == 0)
+                {
+                    //OK
+                    RescatarDatos();
+                    Response.Write(@"<script language='text/javascript'>alert('Reserva relizada Correctamente');</script>");
+                }
+                else
+                {
+                    //Error
+                    Response.Write(@"<script language='text/javascript'>alert('Fallo la realizacion de la Reserva');</script>");
+                }
             }
             catch (Exception)
             {
-                Response.Write(@"<script langauge='text/javascript'>alert('Fallo la realizacion de la Reserva');</script>");
+                Response.Write(@"<script language='text/javascript'>alert('Fallo la realizacion de la Reserva');</script>");
             }
 
         }
@@ -190,6 +198,8 @@ namespace CapaWSPresentacion.perfilCliente
 
                     //TextBox item4 = (TextBox)form1.FindControl("txtFecha" + TipoHab + i);
                     nOCD.Alojamiento.FechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
+
+                    nOCD.Alojamiento.RegistroDias = int.Parse(txtRegistroDias.Text);
 
                     nOCD.Alojamiento.Habitacion.Capacidad = CapHab;
 
@@ -254,7 +264,7 @@ namespace CapaWSPresentacion.perfilCliente
             int tres   = int.Parse(triple.Text);
             int cuatro = int.Parse(cuadruple.Text);
 
-            int total  = uno + (dos * 2) + (tres * 3) + (cuatro * 4);
+            int total  = uno + dos + tres + cuatro;
 
             txtPersonasHabitacion.Text = total.ToString();
         }
@@ -272,8 +282,7 @@ namespace CapaWSPresentacion.perfilCliente
             else
             {
                 MostrarCasillas.Enabled = false;
-                BtnSiguiente.Enabled = true;
-                
+                BtnSiguiente.Enabled = true;                
             }
         }
 
@@ -297,12 +306,7 @@ namespace CapaWSPresentacion.perfilCliente
 
                     ContenedorHabDispCant n = new ContenedorHabDispCant();
                     n = x.HabitacionHabXCapacidad(Session["TokenUsuario"].ToString(), fechaIngreso, fechaEgreso);
-                    
-                    //ContenedorHabDispCant
-                    //OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
-                    ////Armar Encabezado de Orden de Reserva
-                    //nOCC.Cabecera.RutCliente = SesionUsuario.RutEmpresa;
-
+             
                     txtCantHabDispSim.Text = n.Item.CantHabSimple.ToString();
                     txtCantHabDispDob.Text = n.Item.CantHabDoble.ToString();
                     txtCantHabDispTri.Text = n.Item.CantHabTriple.ToString();
@@ -332,7 +336,7 @@ namespace CapaWSPresentacion.perfilCliente
                 DateTime fechaIngreso = DateTime.Parse(txtFechaIngreso.Text);
                 if (fechaIngreso < DateTime.Now && fechaIngreso != null)
                 {
-                    Response.Write(@"<script langauge='text/javascript'>alert('La fecha de ingreso debe der mayor o igual a la fecha actual');</script>");
+                    Response.Write(@"<script language='text/javascript'>alert('La fecha de ingreso debe der mayor o igual a la fecha actual');</script>");
                 }
             }
             catch(Exception ex)
@@ -352,7 +356,7 @@ namespace CapaWSPresentacion.perfilCliente
                 DateTime fechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
                 if (fechaEgreso < DateTime.Parse(txtFechaIngreso.Text) || fechaEgreso == null)
                 {
-                    Response.Write(@"<script langauge='text/javascript'>alert('La fecha de egreso debe der mayor a la fecha de ingreso');</script>");
+                    Response.Write(@"<script language='text/javascript'>alert('La fecha de egreso debe der mayor a la fecha de ingreso');</script>");
                     txtRegistroDias.Text = "";
                 }
                 else
@@ -379,13 +383,6 @@ namespace CapaWSPresentacion.perfilCliente
             {
                 txtRegistroDias.Text = "0";
             }
-            
-            
-        }
-
-        protected void MostrarCasillas_Click(object sender, EventArgs e)
-        {
-
         }
 
         protected void txtNpersonas_TextChanged(object sender, EventArgs e)
@@ -397,13 +394,13 @@ namespace CapaWSPresentacion.perfilCliente
                     int num = int.Parse(txtNpersonas.Text);
                     if (num < 0 || num == null)
                     {
-                        Response.Write(@"<script langauge='text/javascript'>alert('La cantidad de personas debe ser mayor a 0');</script>");
+                        Response.Write(@"<script language='text/javascript'>alert('La cantidad de personas debe ser mayor a 0');</script>");
                         txtNpersonas.Text = "0";
                     }
                 }
                 else
                 {
-                    Response.Write(@"<script langauge='text/javascript'>alert('Debe ingresar las fechas primero');</script>");
+                    Response.Write(@"<script language='text/javascript'>alert('Debe ingresar las fechas primero');</script>");
                 }
 
             }
@@ -411,11 +408,6 @@ namespace CapaWSPresentacion.perfilCliente
             {
                 txtNpersonas.Text = "0";
             }
-        }
-
-        protected void txtRegistroDias_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

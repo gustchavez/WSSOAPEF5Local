@@ -206,7 +206,7 @@
         </div>
 
         <div class="contenido">				
-            Nº Personas <asp:TextBox ID="txtNpersonas" TextMode="Number" runat="server" CssClass="Casilladias" OnTextChanged="txtNpersonas_TextChanged" AutoPostBack="True" value=0 min ="0"></asp:TextBox>
+            Nº Habitaciones <asp:TextBox ID="txtNpersonas" TextMode="Number" runat="server" CssClass="Casilladias" AutoPostBack="True" value=0 min ="0"></asp:TextBox>
         </div>
 
         <div class="contenido">
@@ -244,7 +244,7 @@
         <br>
 
         <div class="contenido">				
-            <b> Personas con habitación: </b> <asp:TextBox ID="txtPersonasHabitacion" runat="server" value="0" Enabled="false" CssClass="CasillaPersonas"></asp:TextBox>
+            <b> Habitaciones Seleccionadas: </b> <asp:TextBox ID="txtPersonasHabitacion" runat="server" value="0" Enabled="false" CssClass="CasillaPersonas"></asp:TextBox>
         </div>
         <div class="casillaTotal">
             <asp:Button ID="MostrarCasillas" runat="server" Text="Ingresar Personas"  CssClass="SubmitTotal" OnClientClick="return autenticarme();" OnClick="MostrarCasillas_Click" />
