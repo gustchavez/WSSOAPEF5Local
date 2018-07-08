@@ -6,9 +6,9 @@
 <form id="form1" runat="server">
     
 	<div class="columna2">
-	    <div class="ModificarDatos">
-            <div class="Casilla2-1">
-		        <h2>Historico Solicitudes</h2><br>
+
+        <h2>Historico Solicitudes</h2><br>
+	    <div class="ModificarDatos"> 
                 <asp:GridView ID="gwOrdenesCompra" runat="server" CssClass="listaFactura"
                         AutoGenerateColumns="False"
                         OnSelectedIndexChanged="gwOrdenesCompra_SelectedIndexChanged"
@@ -22,16 +22,13 @@
                         </Columns>
                         <SelectedRowStyle Font-Bold="True" ForeColor="Red"></SelectedRowStyle>
                 </asp:GridView>
-	        </div>
 	    </div>
         
-        <div class="ModificarDatos2">
-            <div class="columna2-1"> 
-		        <h2>Detalle Solicitud</h2><br>
+        <h2>Detalle Solicitud</h2><br>
+        <div class="ModificarDatos2">           
                 <asp:GridView ID="gwOrdenDetalle" runat="server" CssClass="listaFactura"
                         EmptyDataText="Seleccione Solicitud...">
                 </asp:GridView>
-	        </div>
 		</div>
 	</div>
 </form>
