@@ -90,5 +90,18 @@ namespace CapaWSPresentacion.perfilEmpleado
             }
 
         }
+        protected void validaFecha(object sender, EventArgs e)
+        {
+            if (txtFechaNacimiento.Text == null)
+            {
+                RequiredFieldValidator5.IsValid = true;
+            }
+            else
+            {
+                RequiredFieldValidator5.IsValid = false;
+            }
+        }
+
+
     }
 }
