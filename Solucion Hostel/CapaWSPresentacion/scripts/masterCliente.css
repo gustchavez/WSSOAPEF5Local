@@ -45,7 +45,7 @@ body{
 
 .columna1{
 	position: absolute;
-    background:#1B998B;
+    background:#4A4E69;
 	width: 270px;
 	height: 650px;
 	margin-top: 30px;
@@ -101,7 +101,7 @@ display: none;
 }
 
 .imagen-logo {
-	background: white;
+	
 	height: 170px;
 	width: 170px;
 	margin: auto;

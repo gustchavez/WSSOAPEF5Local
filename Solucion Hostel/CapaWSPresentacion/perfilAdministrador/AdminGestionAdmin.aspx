@@ -31,34 +31,36 @@
                 <asp:ListItem Value="4">33333333</asp:ListItem>
                 <asp:ListItem Value="5">44444444</asp:ListItem>
             </asp:DropDownList>   	
-                <br>
-                <asp:RangeValidator ID="RangeValidator2" runat="server" ErrorMessage="* Seleccione Rut" ControlToValidate="ddlRutPerfil" MaximumValue="5" MinimumValue="2"></asp:RangeValidator>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Rut</h4>	
 			<asp:TextBox ID="txtRutPersona" runat="server" CssClass="CasillaPersona" Enabled="False" style="left: 0px; top: 0px"></asp:TextBox>
-                <br>
-                <asp:RangeValidator ID="RangeValidator3" runat="server" ErrorMessage="* Seleccione Rut" ControlToValidate="ddlRutPerfil" MaximumValue="txtRutPersona." MinimumValue="2"></asp:RangeValidator>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Nombre</h4>	
 			<asp:TextBox ID="txtNombrePersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <br>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Ingrese Nombre" ControlToValidate="txtNombrePersona"></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Apellido</h4>	
-			<asp:TextBox ID="txtApellidoPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtApellidoPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox><br>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Ingrese Apellido" ControlToValidate="txtApellidoPersona"></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Fecha Nacimiento</h4>	
-			<asp:TextBox ID="txtFecNacPersona" runat="server" CssClass="CasillaPersona" TextMode="Date"></asp:TextBox>
+			<asp:TextBox ID="txtFecNacPersona" runat="server" CssClass="CasillaPersona" TextMode="Date"></asp:TextBox><br>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Ingrese Fecha Nacimiento" ControlToValidate="txtFecNacPersona"></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Correo Electrónico</h4>	
-			<asp:TextBox ID="txtMailPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtMailPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox><br>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="* Ingrese Correo Electrónico" ControlToValidate="txtMailPersona"></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Telefono</h4>	
-			<asp:TextBox ID="txtTelPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtTelPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox><br>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="* Ingrese Telefono" ControlToValidate="txtTelPersona"></asp:RequiredFieldValidator>
 			</div>	
 	</div>
 
@@ -68,10 +70,12 @@
 			<div class="Casilla2-1">
 			<h4>Rut Empresa</h4>	
 			<asp:TextBox ID="txtRutEmpresa" runat="server" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>
+                <br><asp:TextBox ID="TextBox7" runat="server" CssClass="CasillaPersona" Visible="false" Text="* Ingresar Rut Empresa" Enabled="False"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Razón Social</h4>	
 			<asp:TextBox ID="txtRazonSocial" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <br><asp:TextBox ID="TextBox6" runat="server" CssClass="CasillaPersona" Visible="false" Text="* Ingresar Razón Social" Enabled="False"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Giro</h4>	
@@ -211,14 +215,17 @@
                     <asp:ListItem Value="133">CONSEJO DE ADMINISTRACIÓN DE EDIFICIOS Y CONDOMINIOS </asp:ListItem>
                     <asp:ListItem Value="134">ORGANIZACIONES Y ÓRGANOS EXTRATERRITORIALES </asp:ListItem>
             </asp:DropDownList>			
+                <br><asp:TextBox ID="TextBox5" runat="server" CssClass="CasillaPersona" Visible="false" Text="* Seleccione Giro" Enabled="False"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Correo Electrónico</h4>	
 			<asp:TextBox ID="txtMailEmpresa" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <br><asp:TextBox ID="TextBox4" runat="server" CssClass="CasillaPersona" Visible="false" Text="* Ingresar Correo Electrónico" Enabled="False"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Teléfono</h4>	
 			<asp:TextBox ID="txtTelEmpresa" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <br><asp:TextBox ID="TextBox3" runat="server" CssClass="CasillaPersona" Visible="false" Text="* Ingresar Teléfono" Enabled="False"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 				<h4>Ciudad</h4>					
@@ -252,6 +259,7 @@
                     <asp:ListItem Value="27">Valparaíso</asp:ListItem>
                     <asp:ListItem Value="Santiago">Santiago</asp:ListItem>
                  </asp:DropDownList>
+                <br><asp:TextBox ID="TextBox2" runat="server" CssClass="CasillaPersona" Visible="false" Text="* Seleccione Ciudad" Enabled="False"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 				<h4>Comuna</h4>					
@@ -294,10 +302,12 @@
                     <asp:ListItem Value="36">Vitacura</asp:ListItem>
                     <asp:ListItem Value="37">--Otra--</asp:ListItem>
 			</asp:DropDownList>
+                <br><asp:TextBox ID="TextBox8" runat="server" CssClass="CasillaPersona" Visible="false" Text="* Seleccione Comuna" Enabled="False"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Dirección</h4>
 			<asp:TextBox ID="txtDirEmp" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <br><asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaPersona" Visible="false" Text="* Ingresar Direccion" Enabled="False"></asp:TextBox>
 			</div>
 	</div>
 
@@ -311,6 +321,7 @@
 			<div class="Casilla2-1">
 			    <h4 style="color: #EAE0CC;">Nueva Contraseña</h4>	
 			    <asp:TextBox ID="txtClave" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <br><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="* Ingrese Comtraseña" ControlToValidate="txtClave"></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 				<h4 style="color: #EAE0CC;">Estado</h4>					
