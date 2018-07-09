@@ -88,7 +88,7 @@ namespace CapaWSPresentacion.perfilEmpleado
             {
                 ListaTemporal = new OrdenPedidoCompleta();
             }
-            
+
             //Verificar Existe el Producto en la Lista Temporal
             if (VerificarExisteProdEnListaTemp(ListaTemporal.ListaDetalle) == false)
             {
@@ -119,7 +119,8 @@ namespace CapaWSPresentacion.perfilEmpleado
 
                 ListaTemporal.ListaDetalle.Add(opd);
                 DesplegarGridView(ListaTemporal);
-            }            
+            }
+
         }
 
         private bool VerificarExisteProdEnListaTemp(List<OrdenPedidoDetalle> listaDetalle)
@@ -307,6 +308,8 @@ namespace CapaWSPresentacion.perfilEmpleado
                 //
             }
         }
+
+
 
         //protected void gwListaCompra_RowDeleted(object sender, GridViewDeletedEventArgs e)
         //{

@@ -18,6 +18,7 @@
 			<h4>Rut Empresa</h4>	
 			<asp:TextBox ID="txtRutEmpresa" runat="server" CssClass="CasillaPersona" ></asp:TextBox>
                 <br><asp:RequiredFieldValidator ErrorMessage="* Ingrese Rut Empresa" ControlToValidate="txtRutEmpresa" ID="RequiredFieldValidator1" runat="server" ></asp:RequiredFieldValidator>
+                <asp:TextBox ID="TextBox1" runat="server" CssClass="CasillaPersona" Text="* Ingrese Rut Empresa" Visible="false" Enabled="false"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Razón Social</h4>	
@@ -27,7 +28,7 @@
 			<div class="Casilla2-1">
 			<h4>Giro</h4>	
 			<asp:DropDownList ID="txtGiro" runat="server" CssClass="droplist">
-                    <asp:ListItem Value="1">Selecciona un Giro</asp:ListItem>
+                    <asp:ListItem Value="">Selecciona un Giro</asp:ListItem>
                     <asp:ListItem Value="2">CULTIVOS EN GENERAL; CULTIVO DE PRODUCTOS DE MERCADO; HORTICULTURA</asp:ListItem>
                     <asp:ListItem Value="3">CRÍA DE ANIMALES</asp:ListItem>
                     <asp:ListItem Value="4">CULTIVO PROD. AGRÍCOLAS EN COMBINACIÓN CON CRÍA DE ANIMALES</asp:ListItem>
@@ -178,7 +179,7 @@
 			<div class="Casilla2-1">
 				<h4>Comuna</h4>					
 				<asp:DropDownList ID="txtComuna" runat="server" CssClass="droplist">
-				    <asp:ListItem Value="1">Seleccione una comuna</asp:ListItem>
+				    <asp:ListItem Value="">Seleccione una comuna</asp:ListItem>
                     <asp:ListItem Value="2">Cerrillos</asp:ListItem>
                     <asp:ListItem Value="3">Cerro Navia</asp:ListItem>
                     <asp:ListItem Value="4">Conchalí</asp:ListItem>
@@ -220,7 +221,7 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Correo Electrónico</h4>	
-			<asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="CasillaPersona" TextMode="Email"></asp:TextBox>
                 <br><asp:RequiredFieldValidator ErrorMessage="* Ingrese Correo Electrónico" ControlToValidate="txtCorreoElectronico" ID="RequiredFieldValidator7" runat="server" ></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
