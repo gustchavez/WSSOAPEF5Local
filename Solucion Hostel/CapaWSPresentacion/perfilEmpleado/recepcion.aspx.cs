@@ -123,7 +123,8 @@ namespace CapaWSPresentacion.perfilEmpleado
             foreach (GridViewRow item in gwListaRecepcion.Rows)
             {
                 CheckBox EstadoReserva = (item.Cells[0].Controls[1] as CheckBox);
-                bool EstadoReservaBBDD = item.Cells[3].Text == "Si" ? true : false; 
+                //Si se agregan columnas se debe validar posicion
+                bool EstadoReservaBBDD = item.Cells[7].Text == "Si" ? true : false; 
                 if (EstadoReserva.Checked != EstadoReservaBBDD)
                 {
                     WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
@@ -132,7 +133,6 @@ namespace CapaWSPresentacion.perfilEmpleado
 
                     m.Item.NumerOrdenCompra = decimal.Parse(item.Cells[1].Text);
                     m.Item.RutPersona = item.Cells[2].Text;
-                    //m.Item.Confirmado = item.Cells[0].Text == "1" ? "Si" : "No";
                     m.Item.Confirmado = EstadoReserva.Checked == true ? "Si" : "No";
 
                     m.Retorno.Token = Session["TokenUsuario"].ToString();

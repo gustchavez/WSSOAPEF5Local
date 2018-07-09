@@ -7,7 +7,7 @@ margin: 0px;
 body{
 	font-family: arial;
 	font-size: 13px;
-    color: black;
+    color: white;
     background:#A32E18;
 }
 
@@ -178,7 +178,7 @@ position: absolute;
 }
 
 .listaFactura th{
-	background: #035E7B;
+	background: #E65633;
 	color: white;
 	height: 30px;
 }

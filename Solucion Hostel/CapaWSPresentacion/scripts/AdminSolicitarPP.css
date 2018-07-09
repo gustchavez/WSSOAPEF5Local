@@ -82,7 +82,6 @@ position: absolute;
 
 .Casilla2-1 {
 	
-	float: right;
 	margin: 5px;
 	position: relative;
 	right: 80px;
@@ -195,15 +194,13 @@ color: orange;
 
 .SubmitTotal{
 
-	margin: auto;
-	position: relative;
+    position: relative;
 	top: 15px;
 	width: 235px;
 	height: 35px;
-	left: 35px;
+    right:10px;
 
-
-	background: #087F8C;
+	background: none;
     color: white;
     border: 2px solid orange;
     transition-duration: 0.4s;
@@ -217,15 +214,16 @@ color: orange;
 
 
 	position: relative;
-	width: 235px;
+	width: 800px;
 	height: 30px;
+    left:160px;
 
 	background: none;
     color: white;
     border: 2px solid orange;
     transition-duration: 0.4s;
     border-radius: 8px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 h2{
@@ -237,7 +235,7 @@ h2{
 	height: 70px;
 	width: 800px;
 	position: relative;
-	top: 50px;
+	top: 80px;
 	text-align: center;
 }
 
@@ -248,7 +246,8 @@ h2{
 }
 
 .selectO {
-	width: 200px;
+    position:relative;
+	width: 170px;
 	height: 35px;
 	background-color: #087F8C;
 	font-size: 14px;
@@ -259,32 +258,29 @@ h2{
 
 
 .SubmitTotal2:Hover{
-
-	position: relative;
-	width: 235px;
+    position: relative;
+	width: 800px;
 	height: 30px;
+    left:160px;
 
-	background: orange;
+	background: none;
     color: white;
-    border: 2px solid orange;
+    border: 2px solid #ff0000;
     transition-duration: 0.4s;
     border-radius: 8px;
-    font-size: 12px;
+    font-size: 14px;
 
 }
 
 .SubmitTotal:Hover{
-	margin: auto;
 	position: relative;
 	top: 15px;
 	width: 235px;
 	height: 35px;
-	left: 35px;
 
-
-	background: orange;
+	background: none;
     color: white;
-    border: 2px solid orange;
+    border: 2px solid #ff0000;
     transition-duration: 0.4s;
     border-radius: 8px;
     font-size: 12px;

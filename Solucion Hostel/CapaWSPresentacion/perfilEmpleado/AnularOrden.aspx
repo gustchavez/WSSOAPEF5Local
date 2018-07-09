@@ -33,7 +33,7 @@
                     <br><asp:RequiredFieldValidator ErrorMessage="* Ingrese Observación" ControlToValidate="txtObservacion" ID="RequiredFieldValidator4" runat="server" ></asp:RequiredFieldValidator>
 			    </div>
                 <div class="Casilla2-2">	
-		            <asp:Button ID="btnAnularOrden" runat="server" Text="Anular"  CssClass="SubmitTotal" OnClick="btnAnularOrden_Click"/> 
+		            <asp:Button ID="btnAnularOrden" runat="server" Text="Anular"  CssClass="SubmitTotalfactura4" OnClick="btnAnularOrden_Click"/> 
 		        </div>
 	        </div>
             <div class="ModificarDatos2">

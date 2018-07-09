@@ -50,7 +50,7 @@
         </asp:GridView>
 
 		<div class="Casilla2-1">	
-		 <asp:Button ID="btnRealizar" runat="server" Text="Realizar" CssClass="SubmitTotal" OnClick="btnRealizar_Click" />
+		 <asp:Button ID="btnRealizar" runat="server" Text="Realizar Solicitud" CssClass="SubmitTotal2" OnClick="btnRealizar_Click" />
 		</div>
 	    
 	</div>		

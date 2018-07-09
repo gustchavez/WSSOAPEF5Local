@@ -45,16 +45,18 @@ namespace CapaWSPresentacion.perfilEmpleado
             m = x.FacturaPedidoCompletaRescatar(datSes.Retorno.Token);
             var facPed = (  from  l in m.Lista
                             //where l.OPRelacionada.RutProveedor == datSes.RutEmpresa
+                            orderby l.Cabecera.Fecha
                             select new
                             {
-                                Rut = l.OPRelacionada.RutProveedor,
-                                NroFactura = l.Cabecera.Numero,
-                                FecFactura = l.Cabecera.Fecha,
-                                ValorBruto = l.Cabecera.ValorBruto,
-                                ValorIva = l.Cabecera.ValorIva,
-                                ValorNeto = l.Cabecera.ValorNeto,
-                                MedioPago = l.Pago.MedioPago,
-                                NroOrdReserva = l.OPRelacionada.Numero
+                                Rut           = l.OPRelacionada.RutProveedor,
+                                NroFactura    = l.Cabecera.Numero,
+                                FecFactura    = l.Cabecera.Fecha,
+                                ValorBruto    = l.Cabecera.ValorBruto,
+                                ValorIva      = l.Cabecera.ValorIva,
+                                ValorNeto     = l.Cabecera.ValorNeto,
+                                MedioPago     = l.Pago.MedioPago,
+                                NroOrdPedido  = l.OPRelacionada.Numero,
+                                Estado        = l.Cabecera.Estado
                             }
                             ).ToList();
 
@@ -68,16 +70,18 @@ namespace CapaWSPresentacion.perfilEmpleado
             //
             var facComp = (  from l in n.Lista
                             //where l.OCRelacionada.RutCliente == datSes.RutEmpresa
+                            orderby l.Cabecera.Fecha
                             select new
                             {
-                                Rut = l.OCRelacionada.RutCliente,
-                                NroFactura = l.Cabecera.Numero,
-                                FecFactura = l.Cabecera.Fecha,
-                                ValorBruto = l.Cabecera.ValorBruto,
-                                ValorIva = l.Cabecera.ValorIva,
-                                ValorNeto = l.Cabecera.ValorNeto,
-                                MedioPago = l.Pago.MedioPago,
-                                NroOrdReserva = l.OCRelacionada.Numero
+                                Rut           = l.OCRelacionada.RutCliente,
+                                NroFactura    = l.Cabecera.Numero,
+                                FecFactura    = l.Cabecera.Fecha,
+                                ValorBruto    = l.Cabecera.ValorBruto,
+                                ValorIva      = l.Cabecera.ValorIva,
+                                ValorNeto     = l.Cabecera.ValorNeto,
+                                MedioPago     = l.Pago.MedioPago,
+                                NroOrdReserva = l.OCRelacionada.Numero,
+                                Estado        = l.Cabecera.Estado
                             }
                             ).ToList();
 

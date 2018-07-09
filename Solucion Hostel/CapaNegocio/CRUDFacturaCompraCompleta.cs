@@ -113,15 +113,17 @@ namespace CapaNegocio
                                       orderby ord_comp.RUT_CLIENTE, fac.NUMERO
                                       select new
                                       {
-                                          RutCliente  = ord_comp.RUT_CLIENTE,
-                                          NroFactura  = fac.NUMERO,
-                                          FecFactura  = fac.FECHA,
-                                          ValorBruto  = fac.VALOR_BRUTO,
-                                          ValorIva    = fac.VALOR_IVA,
-                                          ValorNeto   = fac.VALOR_NETO,
-                                          EstadoFac   = fac.ESTADO,
-                                          FormaPago   = pag.MEDIO_PAGO,
-                                          NroOrdComp  = ord_comp.NUMERO
+                                          RutCliente   = ord_comp.RUT_CLIENTE,
+                                          NroFactura   = fac.NUMERO,
+                                          FecFactura   = fac.FECHA,
+                                          ValorBruto   = fac.VALOR_BRUTO,
+                                          ValorIva     = fac.VALOR_IVA,
+                                          ValorNeto    = fac.VALOR_NETO,
+                                          EstadoFac    = fac.ESTADO,
+                                          FormaPago    = pag.MEDIO_PAGO,
+                                          Moneda       = pag.CODIGO_ISO,
+                                          Monto        = pag.MONTO,
+                                          NroOrdComp   = ord_comp.NUMERO
                                       }
                             ).ToList();
 
@@ -131,15 +133,17 @@ namespace CapaNegocio
                     {
                         FacturaCompraCompleta n = new FacturaCompraCompleta();
                         //Se carga valores de la cabecera
-                        n.OCRelacionada.RutCliente = item.RutCliente;
-                        n.Cabecera.Numero          = item.NroFactura;
-                        n.Cabecera.Fecha           = item.FecFactura;
-                        n.Cabecera.ValorBruto      = item.ValorBruto;
-                        n.Cabecera.ValorIva        = item.ValorIva;
-                        n.Cabecera.ValorNeto       = item.ValorNeto;
-                        n.Cabecera.Estado          = item.EstadoFac;
-                        n.Pago.MedioPago           = item.FormaPago;
-                        n.OCRelacionada.Numero     = item.NroOrdComp;
+                        n.OCRelacionada.RutCliente   = item.RutCliente;
+                        n.Cabecera.Numero            = item.NroFactura;
+                        n.Cabecera.Fecha             = item.FecFactura;
+                        n.Cabecera.ValorBruto        = item.ValorBruto;
+                        n.Cabecera.ValorIva          = item.ValorIva;
+                        n.Cabecera.ValorNeto         = item.ValorNeto;
+                        n.Cabecera.Estado            = item.EstadoFac;
+                        n.Pago.MedioPago             = item.FormaPago;
+                        n.Pago.CodigoISO             = item.Moneda;
+                        n.Pago.Monto                 = item.Monto;
+                        n.OCRelacionada.Numero       = item.NroOrdComp;
                         
                         //Se agrega la orden completa a la orden
                         LFacturasCompra.Lista.Add(n);

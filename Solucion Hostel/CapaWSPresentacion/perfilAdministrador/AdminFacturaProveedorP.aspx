@@ -18,9 +18,11 @@
                 <asp:ListItem Value="4">Cliente</asp:ListItem>
                 <asp:ListItem Value="5">Proveedor</asp:ListItem>
             </asp:DropDownList> 
-		</div>		
-		<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-		<table border="0" class="listaFactura">				
+		</div>	
+        	<div class="Casilla2-1Principal">	
+		<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Consultar" CssClass="SubmitTotal" />
+		</div>
+           <table border="0" class="listaFactura">				
 			<tr>
 				<th>Fecha  </th>
 				<th>Forma de Pago  </th>

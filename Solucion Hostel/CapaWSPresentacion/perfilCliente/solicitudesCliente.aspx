@@ -9,7 +9,7 @@
 
         <h2>Historico Solicitudes</h2><br>
 	    <div class="ModificarDatos"> 
-                <asp:GridView ID="gwOrdenesCompra" runat="server" CssClass="listaFactura"
+                <asp:GridView ID="gwOrdenesCompra" runat="server" CssClass="listaFactura2"
                         AutoGenerateColumns="False"
                         OnSelectedIndexChanged="gwOrdenesCompra_SelectedIndexChanged"
                         EmptyDataText="No se encontraron solicitudes...">
@@ -26,7 +26,7 @@
         
         <h2>Detalle Solicitud</h2><br>
         <div class="ModificarDatos2">           
-                <asp:GridView ID="gwOrdenDetalle" runat="server" CssClass="listaFactura"
+                <asp:GridView ID="gwOrdenDetalle" runat="server" CssClass="listaFactura2"
                         EmptyDataText="Seleccione Solicitud...">
                 </asp:GridView>
 		</div>

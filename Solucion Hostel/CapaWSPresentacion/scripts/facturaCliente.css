@@ -54,7 +54,7 @@ position: absolute;
 }
 
 .listaFactura th{
-	background: #035E7B;
+	background: #4A4E69;
 	color: white;
 	height: 30px;
 }
@@ -62,7 +62,7 @@ position: absolute;
 .listaFactura td{
 	background: white;
 
-	color: #035E7B;
+	color: #4A4E69;
 	height: 30px;
 
 }
