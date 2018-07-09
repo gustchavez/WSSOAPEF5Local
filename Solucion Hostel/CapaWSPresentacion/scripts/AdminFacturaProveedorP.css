@@ -176,19 +176,18 @@ color: orange;
 
 .droplistPrincipal {
 	position: relative;
-	width: 420px;
-	height: 40px;
+	width: 300px;
+	height: 30px;
 	background-color: white;
 	font-size: 14px;
     color: #095256;
 	border: none;
-	
 }
 
 .Casilla2-1Principal {
 	float: left;
 	margin: 20px;
-	width: 400px;
+	width: 300px;
 	height: 20px;
 	padding-bottom: 20px;
 
@@ -196,13 +195,10 @@ color: orange;
 
 
 .SubmitTotal{
-
-	margin: auto;
 	position: relative;
-	top: 15px;
-	width: 235px;
+	width: 340px;
 	height: 35px;
-	left: 35px;
+    left:180px;
 
 
 	background: #087F8C;
@@ -275,12 +271,10 @@ h2{
 }
 
 .SubmitTotal:Hover{
-	margin: auto;
 	position: relative;
-	top: 15px;
-	width: 235px;
+	width: 340px;
 	height: 35px;
-	left: 35px;
+    left:180px;
 
 
 	background: orange;
@@ -314,7 +308,8 @@ h2{
 
 .listaFactura {
 
-	width: 800px;
+    
+	width: 850px;
 	margin: auto;
 	text-align: center;
 }
@@ -329,7 +324,7 @@ h2{
     border-color: inherit;
     border-width: medium;
     position: relative;
-	width: 790px;
+	width: 500px;
 	height: 40px;
 	background-color: white;
 	font-size: 14px;
@@ -339,12 +334,10 @@ h2{
 }
 
 .Casilla2-1Principal {
-	left: 1px;
-	bottom: 0px;
-	position: relative;
-	width: 790px;
-	height: 20px;
-	padding-bottom: 20px;
+    position:relative;
+    left:30px;
+	float:left;
+
 
 }
 
