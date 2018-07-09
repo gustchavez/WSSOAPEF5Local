@@ -70,7 +70,6 @@
 			<div class="Casilla2-1">
 			<h4>Rut Empresa</h4>	
 			<asp:TextBox ID="txtRutEmpresa" runat="server" CssClass="CasillaPersona" Enabled="False"></asp:TextBox>
-                <br><asp:TextBox ID="TextBox7" runat="server" CssClass="CasillaPersona" Visible="false" Text="* Ingresar Rut Empresa" Enabled="False"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
 			<h4>Razón Social</h4>	

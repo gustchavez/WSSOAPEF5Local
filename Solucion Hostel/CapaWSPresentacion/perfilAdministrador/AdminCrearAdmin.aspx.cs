@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -49,7 +50,8 @@ namespace CapaWSPresentacion.perfilAdministrador
         private bool validarTexto()
         {
             bool var = true;
-            if (txtRutEmpresa.Text==null || txtRutEmpresa.Text == "")
+            Regex regex = new Regex("[0-9]{7,8}-[0-9kK]{1}");
+            if (txtRutEmpresa.Text == null || txtRutEmpresa.Text == "" || !(regex.IsMatch(txtRutEmpresa.Text)) || txtRutEmpresa.Text.Length > 10 || txtRutEmpresa.Text.Length < 9)
             {
                 TextBox1.Visible = true;
                 var = false;
@@ -133,43 +135,63 @@ namespace CapaWSPresentacion.perfilAdministrador
             {
                 case 1:
                     //Admin
-                    ContenedorPerfilUsuarioAdministrador a = new ContenedorPerfilUsuarioAdministrador();
-                    a.Item.Persona.Rut              = txtRutPersona.Text;
-                    a.Item.Persona.Nombre           = txtNombrePersona.Text;
-                    a.Item.Persona.Apellido         = txtApellidoPersona.Text;
-                    a.Item.Persona.FechaNacimiento  = DateTime.Parse(txtFecNacPersona.Text);
-                    a.Item.Persona.Email            = txtMailPersona.Text;
-                    a.Item.Persona.Telefono         = txtTelPersona.Text;
-                    a.Item.Usuario.Nombre           = txtUsuario.Text;
-                    a.Item.Usuario.Clave            = txtClave.Text;
-                    a.Retorno.Token                 = Session["TokenUsuario"].ToString();
-                    a                               = x.PerfilUsuarioAdministradorCrear(a);
-                    //
-                    if (a.Retorno.Codigo == 0)
+                    Regex regex = new Regex("[0-9]{7,8}-[0-9kK]{1}");
+                    if (txtRutPersona.Text == null || txtRutPersona.Text == "" || !(regex.IsMatch(txtRutPersona.Text)) || txtRutPersona.Text.Length > 10 || txtRutPersona.Text.Length < 9)
                     {
-                        //realizado correctamente
-                        LimpiarControles();
+                        TextBox9.Visible = true;
                     }
+                    else
+                    {
+                        TextBox9.Visible = false;
+                        ContenedorPerfilUsuarioAdministrador a = new ContenedorPerfilUsuarioAdministrador();
+                        a.Item.Persona.Rut = txtRutPersona.Text;
+                        a.Item.Persona.Nombre = txtNombrePersona.Text;
+                        a.Item.Persona.Apellido = txtApellidoPersona.Text;
+                        a.Item.Persona.FechaNacimiento = DateTime.Parse(txtFecNacPersona.Text);
+                        a.Item.Persona.Email = txtMailPersona.Text;
+                        a.Item.Persona.Telefono = txtTelPersona.Text;
+                        a.Item.Usuario.Nombre = txtUsuario.Text;
+                        a.Item.Usuario.Clave = txtClave.Text;
+                        a.Retorno.Token = Session["TokenUsuario"].ToString();
+                        a = x.PerfilUsuarioAdministradorCrear(a);
+                        //
+                        if (a.Retorno.Codigo == 0)
+                        {
+                            //realizado correctamente
+                            LimpiarControles();
+                        }
+                    }
+                        
                     break;
                 case 2:
                     //Empleado
-                    ContenedorPerfilUsuarioEmpleado em = new ContenedorPerfilUsuarioEmpleado();
-                    em.Item.Persona.Rut             = txtRutPersona.Text;
-                    em.Item.Persona.Nombre          = txtNombrePersona.Text;
-                    em.Item.Persona.Apellido        = txtApellidoPersona.Text;
-                    em.Item.Persona.FechaNacimiento = DateTime.Parse(txtFecNacPersona.Text);
-                    em.Item.Persona.Email           = txtMailPersona.Text;
-                    em.Item.Persona.Telefono        = txtTelPersona.Text;
-                    em.Item.Usuario.Nombre          = txtUsuario.Text;
-                    em.Item.Usuario.Clave           = txtClave.Text;
-                    em.Retorno.Token                = Session["TokenUsuario"].ToString();
-                    em                              = x.PerfilUsuarioEmpleadoCrear(em);
-                    //
-                    if (em.Retorno.Codigo == 0)
+                    Regex regex2 = new Regex("[0-9]{7,8}-[0-9kK]{1}");
+                    if (txtRutPersona.Text == null || txtRutPersona.Text == "" || !(regex2.IsMatch(txtRutPersona.Text)) || txtRutPersona.Text.Length > 10 || txtRutPersona.Text.Length < 9)
                     {
-                        //realizado correctamente
-                        LimpiarControles();
+                        TextBox9.Visible = true;
                     }
+                    else
+                    {
+                        TextBox9.Visible = false;
+                        ContenedorPerfilUsuarioEmpleado em = new ContenedorPerfilUsuarioEmpleado();
+                        em.Item.Persona.Rut = txtRutPersona.Text;
+                        em.Item.Persona.Nombre = txtNombrePersona.Text;
+                        em.Item.Persona.Apellido = txtApellidoPersona.Text;
+                        em.Item.Persona.FechaNacimiento = DateTime.Parse(txtFecNacPersona.Text);
+                        em.Item.Persona.Email = txtMailPersona.Text;
+                        em.Item.Persona.Telefono = txtTelPersona.Text;
+                        em.Item.Usuario.Nombre = txtUsuario.Text;
+                        em.Item.Usuario.Clave = txtClave.Text;
+                        em.Retorno.Token = Session["TokenUsuario"].ToString();
+                        em = x.PerfilUsuarioEmpleadoCrear(em);
+                        //
+                        if (em.Retorno.Codigo == 0)
+                        {
+                            //realizado correctamente
+                            LimpiarControles();
+                        }
+                    }
+                    
                     break;
                 case 3:
                     //Cliente  

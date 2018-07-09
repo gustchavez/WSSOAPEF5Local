@@ -450,15 +450,6 @@ namespace CapaWSPresentacion.perfilAdministrador
         private bool validarIText()
         {
             bool variable = true;
-            if (txtRutEmpresa.Text == null || txtRutEmpresa.Text =="")
-            {
-                TextBox7.Visible = true;
-                variable = false;
-            }
-            else
-            {
-                TextBox7.Visible = false;
-            }
             if (txtRazonSocial.Text == null || txtRazonSocial.Text == "")
             {
                 TextBox6.Visible = true;

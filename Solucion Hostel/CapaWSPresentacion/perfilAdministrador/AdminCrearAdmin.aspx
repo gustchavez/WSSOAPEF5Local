@@ -22,8 +22,8 @@
 			<div class="Casilla2-1">
 			    <h4>Rut</h4>	
 			    <asp:TextBox ID="txtRutPersona" runat="server" CssClass="CasillaPersona"></asp:TextBox>
-                <br>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Ingrese Rut Valido" ControlToValidate="txtRutPersona"></asp:RequiredFieldValidator>
+                <br><asp:TextBox ID="TextBox9" runat="server" CssClass="CasillaPersona" Text="* Ingrese Rut Valido" Visible="false" Enabled="False"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Ingrese Rut Valido" ControlToValidate="txtRutPersona" Display="Dynamic"></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">
 			    <h4>Nombre</h4>	
