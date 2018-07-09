@@ -62,7 +62,7 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Cod. Producto</h4>	
-                <asp:DropDownList ID="txtProductoModificar" runat="server" CssClass="droplist">
+                <asp:DropDownList ID="txtProductoModificar" runat="server" CssClass="droplist" AutoPostBack="True" OnSelectedIndexChanged="txtProductoModificar_SelectedIndexChanged">
                     <asp:ListItem Value="1">Seleccione una comuna</asp:ListItem>
                     <asp:ListItem Value="2">Cod 1</asp:ListItem>
                     <asp:ListItem Value="3">Cod 2</asp:ListItem>
