@@ -21,7 +21,7 @@
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: white;">Detalle</h4>	
-		<asp:TextBox ID="TextBox2" runat="server" CssClass="CasillaPersona"></asp:TextBox><br>
+		<asp:TextBox ID="TextBox2" runat="server" CssClass="CasillaPersona2"></asp:TextBox><br>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Ingrese Detalle" ControlToValidate="TextBox2"></asp:RequiredFieldValidator>
 		</div>
 		<div class="Casilla2-2">

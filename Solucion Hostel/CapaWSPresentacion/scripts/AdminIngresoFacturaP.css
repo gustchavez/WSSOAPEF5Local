@@ -91,10 +91,9 @@ position: absolute;
 
 .ModificarDatos2{
 	margin: auto;
-	top: 30px;
-	width: 800px;
+	top: 10px;
+	width: 900px;
 	position: relative;
-	
 }
 
 
@@ -122,8 +121,9 @@ position: absolute;
 .Casilla2-2 {
 	float: left;
 	margin: 5px;
-	position: relative;
+    width:200px;
 	top: 10px;
+    bottom:10px;
 }
 
 .ModificarDatos2 h3{
@@ -145,8 +145,8 @@ color: orange;
 }
 
 .CasillaPersona2{
-	position: relative;
-	width: 80px;
+	
+	width: 200px;
 	height: 35px;
 	background-color: #087F8C;
 	font-size: 14px;
@@ -195,15 +195,15 @@ color: orange;
 
 .SubmitTotal{
 
-	margin: auto;
+
 	position: relative;
-	top: 15px;
-	width: 235px;
+	top: 30px;
+	width: 830px;
 	height: 35px;
-	left: 35px;
 
 
-	background: #087F8C;
+
+	background: none;
     color: white;
     border: 2px solid orange;
     transition-duration: 0.4s;
@@ -219,6 +219,7 @@ color: orange;
 	position: relative;
 	width: 235px;
 	height: 30px;
+    right:70px;
 
 	background: none;
     color: white;
@@ -233,11 +234,12 @@ h2{
 }
 
 .tabla{
-	margin: auto;
+
 	height: 70px;
-	width: 800px;
+	width: 830px;
 	position: relative;
-	top: 50px;
+    left:40px;
+	top: 70px;
 	text-align: center;
 }
 
@@ -259,10 +261,11 @@ h2{
 
 
 .SubmitTotal2:Hover{
-
-	position: relative;
+    position: relative;
 	width: 235px;
 	height: 30px;
+    right:70px;
+
 	background: orange;
     color: white;
     border: 2px solid orange;
@@ -273,12 +276,10 @@ h2{
 }
 
 .SubmitTotal:Hover{
-	margin: auto;
 	position: relative;
-	top: 15px;
-	width: 235px;
+	top: 30px;
+	width: 830px;
 	height: 35px;
-	left: 35px;
 
 
 	background: orange;
