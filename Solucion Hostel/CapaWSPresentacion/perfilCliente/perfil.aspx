@@ -26,7 +26,7 @@
 			    <div class="Casilla2-1">
 			    <h4>Giro</h4>	
 			        <asp:DropDownList ID="ddlRubro" CssClass="droplist" runat="server">
-				        <asp:ListItem >Selecciona un Giro</asp:ListItem>
+				        <asp:ListItem value="">Selecciona un Giro</asp:ListItem>
 				        <asp:ListItem value="1">CULTIVOS EN GENERAL; CULTIVO DE PRODUCTOS DE MERCADO; HORTICULTURA</asp:ListItem>
 				        <asp:ListItem value="2">CRÍA DE ANIMALES</asp:ListItem>
 				        <asp:ListItem value="3">CULTIVO PROD. AGRÍCOLAS EN COMBINACIÓN CON CRÍA DE ANIMALES</asp:ListItem>

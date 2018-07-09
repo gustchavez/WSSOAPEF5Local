@@ -235,26 +235,56 @@ namespace CapaWSPresentacion.perfilCliente
 
         protected void individual_TextChanged(object sender, EventArgs e)
         {
-            personasConHabitacion();
-            desbloquearBoton();
+            if (int.Parse(individual.Text)<0)
+            {
+                individual.Text = "0";
+            }
+            else
+            {
+                personasConHabitacion();
+                desbloquearBoton();
+            }
+            
         }
             
         protected void doble_TextChanged(object sender, EventArgs e)
         {
-            personasConHabitacion();
-            desbloquearBoton();
+            if (int.Parse(doble.Text) < 0)
+            {
+                doble.Text = "0";
+            }
+            else
+            {
+                personasConHabitacion();
+                desbloquearBoton();
+            }
         }
 
         protected void triple_TextChanged(object sender, EventArgs e)
         {
-            personasConHabitacion();
-            desbloquearBoton();
+            if (int.Parse(triple.Text) < 0)
+            {
+                triple.Text = "0";
+            }
+            else
+            {
+                personasConHabitacion();
+                desbloquearBoton();
+            }
         }
 
         protected void cuadruple_TextChanged(object sender, EventArgs e)
         {
-            personasConHabitacion();
-            desbloquearBoton();
+            if (int.Parse(cuadruple.Text) < 0)
+            {
+                cuadruple.Text = "0";
+            }
+            else
+            {
+                personasConHabitacion();
+                desbloquearBoton();
+            }
+            
         }
 
         private void personasConHabitacion()
