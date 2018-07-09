@@ -23,14 +23,14 @@
 		</div>        
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nombre producto</h4>	
-		<asp:DropDownList ID="txtProducto" runat="server" CssClass="selectO" Enabled="False">
+		<asp:DropDownList ID="txtProducto" runat="server" CssClass="selectO">
             <asp:ListItem>Seleccione una opción</asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Seleccione Producto" ControlToValidate="txtProducto"></asp:RequiredFieldValidator>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Cantidad</h4>	
-	        <asp:TextBox ID="txtCantidad" runat="server" CssClass="CasillaPersona2" Enabled="False" TextMode="Number"></asp:TextBox>
+	        <asp:TextBox ID="txtCantidad" runat="server" CssClass="CasillaPersona2" TextMode="Number"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtCantidad" ErrorMessage="* Ingrese Cantidad"></asp:RequiredFieldValidator>
             <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="* Ingrese Cantidad" ControlToValidate="txtCantidad" MinimumValue="0" MaximumValue="9999999999"></asp:RangeValidator>
 		</div>
@@ -50,7 +50,7 @@
         </asp:GridView>
 
 		<div class="Casilla2-1">	
-		 <asp:Button ID="btnRealizar" runat="server" Text="Realizar Solicitud" CssClass="SubmitTotal2" OnClick="btnRealizar_Click" />
+		 <asp:Button ID="btnRealizar" runat="server" Text="Realizar Solicitud" CssClass="SubmitTotal2" OnClick="btnRealizar_Click" Enabled="False" />
 		</div>
 	    
 	</div>		
