@@ -207,7 +207,7 @@ namespace CapaWSPresentacion.perfilEmpleado
                                     Moneda   = l.Pago.CodigoISO,
                                     Monto    = l.Pago.Monto
                                 }
-                        ).ToList();
+                          ).ToList();
             ////////
             gwFacturaDetalle.DataSource = detalle;
             gwFacturaDetalle.DataBind();
@@ -227,7 +227,7 @@ namespace CapaWSPresentacion.perfilEmpleado
                                     Moneda   = l.Pago.CodigoISO,
                                     Monto    = l.Pago.Monto
                                 }
-                        ).ToList();
+                          ).ToList();
             ////////
             gwFacturaDetalle.DataSource = detalle;
             gwFacturaDetalle.DataBind();
