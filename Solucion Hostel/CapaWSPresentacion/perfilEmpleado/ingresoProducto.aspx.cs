@@ -86,8 +86,10 @@ namespace CapaWSPresentacion.perfilEmpleado
             {
                 TextBox3.Visible = false;
             }
-            if (txtPrecioProdAgregar.Text == null || txtPrecioProdAgregar.Text == "" || txtPrecioProdAgregar.Text == "0")
+            if (txtPrecioProdAgregar.Text == null || txtPrecioProdAgregar.Text == "" || txtPrecioProdAgregar.Text == "0"
+                || int.Parse(txtPrecioProdAgregar.Text)<0)
             {
+                txtPrecioProdAgregar.Text = "0";
                 TextBox2.Visible = true;
                 valido = false;
             }

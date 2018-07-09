@@ -153,6 +153,7 @@ namespace CapaWSPresentacion.perfilAdministrador
             switch (perfil)
             {
                 case 1:
+                    limpiarText();
                     //Admin
                     ContenedorPerfilUsuarioAdministradores m = new ContenedorPerfilUsuarioAdministradores();
                     m = x.PerfilUsuarioAdministradorRescatar(Session["TokenUsuario"].ToString());
@@ -182,6 +183,7 @@ namespace CapaWSPresentacion.perfilAdministrador
                     }
                     break;
                 case 2:
+                    limpiarText();
                     //Empleado
                     ContenedorPerfilUsuarioEmpleados n = new ContenedorPerfilUsuarioEmpleados();
                     n = x.PerfilUsuarioEmpleadoRescatar(Session["TokenUsuario"].ToString());
@@ -356,6 +358,7 @@ namespace CapaWSPresentacion.perfilAdministrador
                 {
                     case 1:
                         //Admin
+                        
                         ContenedorPerfilUsuarioAdministrador m = new ContenedorPerfilUsuarioAdministrador();
                         m = x.PerfilUsuarioAdministradorRescatarXRut(txtRutPersona.Text, Session["TokenUsuario"].ToString());
                         //
@@ -514,6 +517,16 @@ namespace CapaWSPresentacion.perfilAdministrador
                 TextBox1.Visible = false;
             }
             return variable;
+        }
+        private void limpiarText()
+        {
+            TextBox1.Visible = false;
+            TextBox2.Visible = false;
+            TextBox3.Visible = false;
+            TextBox4.Visible = false;
+            TextBox5.Visible = false;
+            TextBox6.Visible = false;
+            TextBox8.Visible = false;
         }
     }
 }

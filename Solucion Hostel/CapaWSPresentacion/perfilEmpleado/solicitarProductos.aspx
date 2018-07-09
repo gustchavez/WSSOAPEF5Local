@@ -30,8 +30,9 @@
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Cantidad</h4>	
-	        <asp:TextBox ID="txtCantidad" runat="server" CssClass="CasillaPersona2" Enabled="False"></asp:TextBox>
+	        <asp:TextBox ID="txtCantidad" runat="server" CssClass="CasillaPersona2" Enabled="False" TextMode="Number"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtCantidad" ErrorMessage="* Ingrese Cantidad"></asp:RequiredFieldValidator>
+            <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="* Ingrese Cantidad" ControlToValidate="txtCantidad" MinimumValue="0" MaximumValue="9999999999"></asp:RangeValidator>
 		</div>
 		<div class="Casilla2-2">	
 	    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="SubmitTotal" OnClick="btnAgregar_Click" Enabled="False" />

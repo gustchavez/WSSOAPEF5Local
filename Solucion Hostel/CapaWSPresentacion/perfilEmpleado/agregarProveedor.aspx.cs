@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -53,51 +54,62 @@ namespace CapaWSPresentacion.perfilEmpleado
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-
-            ContenedorPerfilUsuarioProveedor n = new ContenedorPerfilUsuarioProveedor();
-
-            
-            n.Item.Proveedor.Rut = txtRutEmpresa.Text;
-            n.Item.PerfilUsuario.Empresa.RazonSocial = txtRazonSocial.Text;
-            n.Item.PerfilUsuario.Empresa.Rubro = txtNombreCiudad.SelectedValue;
-            n.Item.PerfilUsuario.Empresa.Email = txtCorreoElectronico.Text;
-            n.Item.PerfilUsuario.Empresa.Telefono = txtTelefonoEmpresa.Text;
-            n.Item.PerfilUsuario.Direccion.CodPais = 56;
-            n.Item.PerfilUsuario.Direccion.CodPostal = "1234";
-            n.Item.PerfilUsuario.Direccion.NombreCiudad = txtNombreCiudad.SelectedValue;
-            n.Item.PerfilUsuario.Direccion.Comuna = txtComuna.Text;
-            n.Item.PerfilUsuario.Direccion.Calle = txtCalle.Text;
-            n.Item.PerfilUsuario.Direccion.Numero = 123;
-            n.Item.PerfilUsuario.Empresa.Logo = "LogoDefecto.png";
-            n.Item.PerfilUsuario.Persona.Rut = txtRutEmpresa.Text + "Z";
-            n.Item.PerfilUsuario.Persona.Nombre = "Perfil";
-            n.Item.PerfilUsuario.Persona.Apellido = "Proveedor";
-            n.Item.PerfilUsuario.Persona.FechaNacimiento = DateTime.Now;
-            n.Item.PerfilUsuario.Persona.Email = "ingrese mail";
-            n.Item.PerfilUsuario.Persona.Telefono = "123";
-            n.Item.PerfilUsuario.Usuario.Nombre = txtNombreUsuario.Text;
-            n.Item.PerfilUsuario.Usuario.Clave = txtConstrasena.Text;
-            n.Retorno.Token = Session["TokenUsuario"].ToString();
-            //n.Item.PerfilUsuario.Empresa.Rut = txtRutEmpresa.Text;
-
-            n = x.PerfilUsuarioProveedorCrear(n);
-
-            if (n.Retorno.Codigo.ToString() == "0")
+            Regex regex = new Regex("[0-9]{7,8}-[0-9kK]{1}");
+            if (txtRutEmpresa.Text == null || txtRutEmpresa.Text == "" || !(regex.IsMatch(txtRutEmpresa.Text)) || txtRutEmpresa.Text.Length > 10 || txtRutEmpresa.Text.Length < 9)
             {
-                txtRutEmpresa.Text = string.Empty;
-                txtRazonSocial.Text = string.Empty;
-                //n.Item.PerfilUsuario.Empresa.Rubro = txtNombreCiudad.Text;
-                txtCorreoElectronico.Text = string.Empty;
-                txtTelefonoEmpresa.Text = string.Empty;
-                txtCalle.Text = string.Empty;
-                txtNombreUsuario.Text = string.Empty;
-                txtConstrasena.Text = string.Empty;
+                txtRutEmpresa.Text = "";
+                TextBox1.Visible = true;
             }
             else
             {
-                //definir donde se mostrara mensaje de error
+                TextBox1.Visible = false;
+                WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+                ContenedorPerfilUsuarioProveedor n = new ContenedorPerfilUsuarioProveedor();
+
+
+                n.Item.Proveedor.Rut = txtRutEmpresa.Text;
+                n.Item.PerfilUsuario.Empresa.RazonSocial = txtRazonSocial.Text;
+                n.Item.PerfilUsuario.Empresa.Rubro = txtNombreCiudad.SelectedValue;
+                n.Item.PerfilUsuario.Empresa.Email = txtCorreoElectronico.Text;
+                n.Item.PerfilUsuario.Empresa.Telefono = txtTelefonoEmpresa.Text;
+                n.Item.PerfilUsuario.Direccion.CodPais = 56;
+                n.Item.PerfilUsuario.Direccion.CodPostal = "1234";
+                n.Item.PerfilUsuario.Direccion.NombreCiudad = txtNombreCiudad.SelectedValue;
+                n.Item.PerfilUsuario.Direccion.Comuna = txtComuna.Text;
+                n.Item.PerfilUsuario.Direccion.Calle = txtCalle.Text;
+                n.Item.PerfilUsuario.Direccion.Numero = 123;
+                n.Item.PerfilUsuario.Empresa.Logo = "LogoDefecto.png";
+                n.Item.PerfilUsuario.Persona.Rut = txtRutEmpresa.Text + "Z";
+                n.Item.PerfilUsuario.Persona.Nombre = "Perfil";
+                n.Item.PerfilUsuario.Persona.Apellido = "Proveedor";
+                n.Item.PerfilUsuario.Persona.FechaNacimiento = DateTime.Now;
+                n.Item.PerfilUsuario.Persona.Email = "ingrese mail";
+                n.Item.PerfilUsuario.Persona.Telefono = "123";
+                n.Item.PerfilUsuario.Usuario.Nombre = txtNombreUsuario.Text;
+                n.Item.PerfilUsuario.Usuario.Clave = txtConstrasena.Text;
+                n.Retorno.Token = Session["TokenUsuario"].ToString();
+                //n.Item.PerfilUsuario.Empresa.Rut = txtRutEmpresa.Text;
+
+                n = x.PerfilUsuarioProveedorCrear(n);
+
+                if (n.Retorno.Codigo.ToString() == "0")
+                {
+                    txtRutEmpresa.Text = string.Empty;
+                    txtRazonSocial.Text = string.Empty;
+                    //n.Item.PerfilUsuario.Empresa.Rubro = txtNombreCiudad.Text;
+                    txtCorreoElectronico.Text = string.Empty;
+                    txtTelefonoEmpresa.Text = string.Empty;
+                    txtCalle.Text = string.Empty;
+                    txtNombreUsuario.Text = string.Empty;
+                    txtConstrasena.Text = string.Empty;
+                }
+                else
+                {
+                    //definir donde se mostrara mensaje de error
+                }
             }
+            
         }
     }
 }
