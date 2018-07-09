@@ -5,10 +5,10 @@
 
     <form id="form1" runat="server">
 	    <div class="columna2">
+            <h2>Solicitudes de Doña Clarita</h2>
 		   <div class="ModificarDatos">
-				<h2>Solicitudes de Doña Clarita</h2>
-                <br>
-	            <br/>
+				
+              
                 <div class="Casilla2-1">
 			        <h2>Ordenes</h2><br>
                     <asp:GridView ID="gwSolicitudes" runat="server" CssClass="listaFactura"

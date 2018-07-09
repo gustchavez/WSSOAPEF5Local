@@ -92,6 +92,10 @@ position: absolute;
     left:10px;
 }
 
+h4 {
+text-align:center;
+}
+
 .droplist {
 	position: relative;
 	width: 230px;
@@ -101,14 +105,17 @@ position: absolute;
 
 .SubmitTotal{
 
-	margin: auto;
+    margin: auto;
 	position: relative;
-	top: 15px;
-	width: 245px;
-	height: 35px;
-	background: #a5668b;
-	color: white;
-	left: 20px;
+	width: 305px;
+	height: 30px;
+    top:18px;
+    left:50px;
+    background: none;
+    color: white;
+    border: 2px solid #ffa500;
+    border-radius: 8px;
+    transition-duration: 0.4s;
 
 }
 
@@ -141,12 +148,17 @@ position: absolute;
 }
 
 .SubmitTotal:Hover{
+	margin: auto;
 	position: relative;
-	top: 15px;
-	width: 235px;
+	width: 305px;
 	height: 30px;
-	background: #035E7B;
-	color: white;
+    top:18px;
+    left:50px;
+    background: none;
+    color: white;
+    border: 2px solid #ff0000;
+    border-radius: 8px;
+    transition-duration: 0.4s;
 }
 
 

@@ -54,6 +54,7 @@ position: absolute;
 .columna2 h2{
     margin-left:40px;
 	text-align: left;
+    color: white;
 }
 
 .columna2 img{
@@ -61,7 +62,7 @@ position: absolute;
 }
 
 .listaFactura th{
-	background: #4A4E69;
+	background: #E65633;
 	color: white;
 	height: 30px;
 
@@ -69,7 +70,7 @@ position: absolute;
 
 .listaFactura td{
 	background: white;
-	color: #035E7B;
+	color: #E65633;
 	height: 30px;
 }
 
