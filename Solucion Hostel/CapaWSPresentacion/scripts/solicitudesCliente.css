@@ -32,6 +32,12 @@ position: absolute;
 	text-align: center;
 }
 
+.listaFactura2 {
+	width: 850px;
+	margin: auto;
+	text-align: center;
+}
+
 .ModificarDatos{
 	margin: auto;
 	height: 250px;
@@ -71,6 +77,19 @@ position: absolute;
 .listaFactura td{
 	background: white;
 	color: #E65633;
+	height: 30px;
+}
+
+.listaFactura2 th{
+	background: #4A4E69;
+	color: white;
+	height: 30px;
+
+}
+
+.listaFactura2 td{
+	background: white;
+	color: #4A4E69;
 	height: 30px;
 }
 
