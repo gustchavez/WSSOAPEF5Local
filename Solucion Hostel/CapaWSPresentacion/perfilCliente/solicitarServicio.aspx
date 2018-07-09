@@ -202,7 +202,7 @@
         </div>
 
         <div class="contenido">				
-            Total de días  <asp:TextBox ID="txtRegistroDias" runat="server" min="0" CssClass="Casilladias" Enabled="false" OnTextChanged="txtRegistroDias_TextChanged" ></asp:TextBox>
+            Total de días  <asp:TextBox ID="txtRegistroDias" runat="server" min="0" CssClass="Casilladias" Enabled="false" ></asp:TextBox>
         </div>
 
         <div class="contenido">				
@@ -247,7 +247,7 @@
             <b> Habitaciones Seleccionadas: </b> <asp:TextBox ID="txtPersonasHabitacion" runat="server" value="0" Enabled="false" CssClass="CasillaPersonas"></asp:TextBox>
         </div>
         <div class="casillaTotal">
-            <asp:Button ID="MostrarCasillas" runat="server" Text="Ingresar Personas"  CssClass="SubmitTotal" OnClientClick="return autenticarme();" OnClick="MostrarCasillas_Click" />
+            <asp:Button ID="MostrarCasillas" runat="server" Text="Ingresar Personas"  CssClass="SubmitTotal" OnClientClick="return autenticarme();"  />
         </div>
 
 	</div>
