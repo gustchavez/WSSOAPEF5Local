@@ -49,6 +49,7 @@ namespace CapaNegocio
                             ( nOCC.Item.Cabecera.Numero
                             , item.Alojamiento.FechaIngreso
                             , item.Alojamiento.FechaEgreso
+                            , item.Alojamiento.RegistroDias
                             , item.Alojamiento.Observaciones
                             , item.Persona.Rut //Puede ponerse cualquier de los 2 ruts Comida o Alojamiento
                             , item.Persona.Nombre

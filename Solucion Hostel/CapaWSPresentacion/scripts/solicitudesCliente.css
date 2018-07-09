@@ -1,35 +1,4 @@
 
-/* Bases pagina */
-*{
-padding: 0px;
-margin: 0px;
-}
-
-body{
-	font-family: arial;
-	font-size: 13px;
-     
-}
-
-.padre {
-	width: 1250px;
-	height: 700px;
-	margin: auto;
-	position: relative;
-}
-
-
-
-
-
-/* Menu */
-
-
-
-
-
-
-
 .subMenu {
 	position: relative;
 	top: 50px;
@@ -47,12 +16,7 @@ width: 250px;
 margin: auto;
 height: 100%;
 position: absolute;
-
 }
-
-
-
-
 
 /* ----------------------- */
 /* Fin Contenido columna 1 */
@@ -63,27 +27,33 @@ position: absolute;
 /* -------------------------- */
 
 .listaFactura {
-
-	width: 750px;
+	width: 850px;
 	margin: auto;
 	text-align: center;
 }
 
 .ModificarDatos{
 	margin: auto;
-	height: 700px;
+	height: 250px;
 	width: 900px;
 	position: relative;
-	top: 10px;
+    left:10px;
+    overflow:auto;
+
+}
+
+.ModificarDatos2{
+ 
+	margin: auto;
+	height: 200px;
+	width: 900px;
+	position: relative;
     left:10px;
     overflow:auto;
 }
-
 .columna2 h2{
     margin-left:40px;
 	text-align: left;
-	margin-top: 40px;
-	margin-bottom: 10px;
 }
 
 .columna2 img{
@@ -91,7 +61,7 @@ position: absolute;
 }
 
 .listaFactura th{
-	background: #035E7B;
+	background: #4A4E69;
 	color: white;
 	height: 30px;
 
@@ -99,10 +69,8 @@ position: absolute;
 
 .listaFactura td{
 	background: white;
-
 	color: #035E7B;
 	height: 30px;
-
 }
 
 
