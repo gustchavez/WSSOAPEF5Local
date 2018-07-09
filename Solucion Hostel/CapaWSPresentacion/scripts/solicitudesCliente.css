@@ -93,6 +93,11 @@ position: absolute;
 	height: 30px;
 }
 
+.listaFacturaSeleccion2 td{
+	background: blue;
+	color: white;
+	height: 30px;
+}
 
 /* ----------------------- */
 /* Fin Contenido columna 2 */

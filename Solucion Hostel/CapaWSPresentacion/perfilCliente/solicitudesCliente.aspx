@@ -20,7 +20,7 @@
                             <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto"/>
                             <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado"/>
                         </Columns>
-                        <SelectedRowStyle Font-Bold="True" ForeColor="Red"></SelectedRowStyle>
+                        <SelectedRowStyle CssClass="listaFacturaSeleccion2" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
                 </asp:GridView>
 	    </div>
         

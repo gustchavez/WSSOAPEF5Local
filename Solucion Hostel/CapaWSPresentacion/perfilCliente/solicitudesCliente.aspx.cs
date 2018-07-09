@@ -84,6 +84,8 @@ namespace CapaWSPresentacion.perfilCliente
             List<OrdenCompraCompleta> lista = (List<OrdenCompraCompleta>)Session["OrdenesCompra"];
 
             GridViewRow row = gwOrdenesCompra.SelectedRow;
+            
+            //row.CssClass = "listaFacturaSeleccion2";
 
             var orden = (from l in lista
                          where l.Cabecera.Numero == int.Parse(row.Cells[1].Text)
