@@ -154,6 +154,11 @@ position: absolute;
 	height: 30px;
 }
 
+.EstiloCritico td{
+	background: red;
+	color: #035E7B;
+	height: 30px;
+}
 
 /* ----------------------- */
 /* Fin Contenido columna 2 */

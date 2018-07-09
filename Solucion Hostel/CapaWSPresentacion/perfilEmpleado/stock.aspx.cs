@@ -27,7 +27,7 @@ namespace CapaWSPresentacion.perfilEmpleado
                     Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 Session["TokenUsuario"] = null;
                 Response.Redirect("/PaginaComercial/perfilIngreso.aspx");
@@ -56,6 +56,21 @@ namespace CapaWSPresentacion.perfilEmpleado
             gwListaProductos.DataSource = null;
             gwListaProductos.DataSource = coleccion;
             gwListaProductos.DataBind();
+        }
+
+        protected void gwListaProductos_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                string critico = e.Row.Cells[4].Text;
+                
+                if (critico == "Si")
+                {
+                    e.Row.Font.Bold = true;
+                    e.Row.CssClass = "EstiloCritico";
+                }
+
+            }
         }
     }
 }
