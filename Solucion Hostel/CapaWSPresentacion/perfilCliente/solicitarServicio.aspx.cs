@@ -164,6 +164,7 @@ namespace CapaWSPresentacion.perfilCliente
                         //OK
                         RescatarDatos();
                         Response.Write(@"<script language='text/javascript'>alert('Reserva relizada Correctamente');</script>");
+                        Response.Redirect("/perfilCliente/finSolicitud.aspx");
                     } else {
                         //Error
                         Response.Write(@"<script language='text/javascript'>alert('Fallo la realizacion de la Reserva');</script>");
