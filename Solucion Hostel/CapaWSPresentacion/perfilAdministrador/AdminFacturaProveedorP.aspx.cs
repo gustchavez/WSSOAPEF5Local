@@ -105,7 +105,7 @@ namespace CapaWSPresentacion.perfilAdministrador
 
             //indicar Ruta en dode se generaran las facturas <-------------------------------------------
             //cambiar "prueba" por numero de factura o algo asi <-------------------------------------------
-            String strPdfPath = @"C:\Users\Cochy\Desktop\prueba.pdf";
+            String strPdfPath = @"C:\Hostal_Web\perfilProveedor\Facturas\prueba.pdf";
 
             //Aqui va el titulo de la factura <-------------------------------------------
             string strHeader = " FACTURA ELECTRONICA ";
@@ -117,7 +117,7 @@ namespace CapaWSPresentacion.perfilAdministrador
             document.Open();
 
             // Insertar Imagen
-            iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance("C:/Users/Cochy/Source/Repos/WSSOAPEF5Local/Solucion Hostel/CapaWSPresentacion/images/svg pegado 191_poster_.png");
+            iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance("C:/Users/portafolio/Documents/WSSOAPEF5Local/WSSOAPEF5Local/Solucion Hostel/CapaWSPresentacion/images/svg pegado 191_poster_.png");
             imagen.BorderWidth = 0;
             imagen.Alignment = Element.ALIGN_RIGHT;
             float percentage = 0.0f;
