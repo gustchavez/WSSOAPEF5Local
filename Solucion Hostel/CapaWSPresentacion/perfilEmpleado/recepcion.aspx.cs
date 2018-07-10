@@ -87,7 +87,8 @@ namespace CapaWSPresentacion.perfilEmpleado
             ContenedorOrdenesCompraCompleta n = new ContenedorOrdenesCompraCompleta();
 
             n = x.OrdenCompraCompletaRescatar(Session["TokenUsuario"].ToString());
-            List<OrdenCompraCompleta> OrdenesCompra = n.Lista.Where(p => p.Cabecera.Estado == "activo").ToList();
+            List<OrdenCompraCompleta> OrdenesCompra = n.Lista.Where(p => p.Cabecera.Estado == "activo"
+                                                                      || p.Cabecera.Estado == "facturada").ToList();
 
             var occ = (from l in OrdenesCompra
                        where l.Cabecera.RutCliente == ddlEmpresas.SelectedValue
@@ -140,15 +141,15 @@ namespace CapaWSPresentacion.perfilEmpleado
                     try
                     {
                         m = x.AlojConfirHueActualizar(m);
-                        Response.Write(@"<script lenguage='text/javascript'>alert('Recepcion Confirmada');</script>");
                     }
                     catch (Exception)
                     {
-                        Response.Write(@"<script lenguage='text/javascript'>alert('Error al confirmar recepcion');</script>");
+                        //Error
                     }
                     
                 }
             }
+
             RescatarDatos();
         }
 
