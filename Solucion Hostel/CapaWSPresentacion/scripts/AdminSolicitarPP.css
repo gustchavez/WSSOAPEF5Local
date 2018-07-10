@@ -235,7 +235,7 @@ h2{
 	height: 70px;
 	width: 800px;
 	position: relative;
-	top: 80px;
+	top: 100px;
 	text-align: center;
 }
 
@@ -286,6 +286,12 @@ h2{
     font-size: 12px;
 }
 
+.contenedorTabla {
+
+position:relative;
+top:40px;
+
+}
 
 /* ----------------------- */
 /* Fin Contenido columna 2 */
