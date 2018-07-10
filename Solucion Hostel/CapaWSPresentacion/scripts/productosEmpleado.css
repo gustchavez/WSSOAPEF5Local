@@ -89,10 +89,13 @@ position: absolute;
 }
 
 .ModificarDatos2{
-	margin: auto;
 	width: 900px;
 	position: relative;
     left: 0px;
+    top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
 }
 
 .Casilla2-2 {

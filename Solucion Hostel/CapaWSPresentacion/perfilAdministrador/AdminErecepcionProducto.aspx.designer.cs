@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CapaWSPresentacion.perfilEmpleado {
+namespace CapaWSPresentacion.perfilAdministrador {
     
     
-    public partial class recepcionProducto {
+    public partial class AdminErecepcionProducto {
         
         /// <summary>
         /// Control form1.

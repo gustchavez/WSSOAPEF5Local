@@ -93,24 +93,29 @@ namespace CapaWSPresentacion.perfilProveedor
                 ContenedorPerfilUsuarioProveedor n = new ContenedorPerfilUsuarioProveedor();
                 n.Item = m;
                 //
-                n.Retorno.Token                             = Session["TokenUsuario"].ToString();                
-                n.Item.PerfilUsuario.Empresa.RazonSocial    = txtRazonSocial.Text;
-                n.Item.PerfilUsuario.Empresa.Rubro          = ddlRubro.SelectedValue;
-                n.Item.PerfilUsuario.Empresa.Email          = txtCorreoElectronico.Text;
-                n.Item.PerfilUsuario.Empresa.Telefono       = txtTelefono.Text;
+                n.Retorno.Token = Session["TokenUsuario"].ToString();
+                n.Item.PerfilUsuario.Empresa.RazonSocial = txtRazonSocial.Text;
+                n.Item.PerfilUsuario.Empresa.Rubro = ddlRubro.SelectedValue;
+                n.Item.PerfilUsuario.Empresa.Email = txtCorreoElectronico.Text;
+                n.Item.PerfilUsuario.Empresa.Telefono = txtTelefono.Text;
                 n.Item.PerfilUsuario.Direccion.NombreCiudad = txtNombreCiudad.SelectedValue;
-                n.Item.PerfilUsuario.Direccion.Comuna       = ddlComunas.SelectedValue;
-                n.Item.PerfilUsuario.Direccion.Calle        = txtDireccion.Text;
-                n.Item.PerfilUsuario.Usuario.Clave          = txtContraseña.Text;
+                n.Item.PerfilUsuario.Direccion.Comuna = ddlComunas.SelectedValue;
+                n.Item.PerfilUsuario.Direccion.Calle = txtDireccion.Text;
+                n.Item.PerfilUsuario.Usuario.Clave = txtContraseña.Text;
                 //
                 n = x.PerfilUsuarioProveedorActualizar(n);
 
                 if (n.Retorno.Codigo == 0)
                 {
                     //correcto
-                    Response.Write(@"<script langauge='text/javascript'>alert('Modificación Exitosa');</script>");
+                    Response.Write(@"<script lenguage='text/javascript'>alert('Modificación Exitosa');</script>");
 
                 }
+                else
+                {
+                    Response.Write(@"<script lenguage='text/javascript'>alert('Error al Modificar');</script>");
+                }
+                
             }
         }
     }

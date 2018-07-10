@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilCliente/MasteCliente.Master" AutoEventWireup="true" CodeBehind="solicitarServicio.aspx.cs" Inherits="CapaWSPresentacion.perfilCliente.solicitarServicio" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilAdministrador/MasterAdministrador.Master" AutoEventWireup="true" CodeBehind="AdminCsolicitarServicio.aspx.cs" Inherits="CapaWSPresentacion.perfilAdministrador.AdminCsolicitarServicio" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
         <link rel="stylesheet" type="text/css" href="/scripts/servicioCliente.css">
@@ -192,6 +192,11 @@
         <h2>Solicitud de Ingreso</h2>
         <h5></h5>
         <div class="contenido">
+            Empresa <br>
+            <asp:DropDownList ID="ddlEmpresas" CssClass="droplist" runat="server" AutoPostBack="True"></asp:DropDownList>
+            <br>
+        </div>
+        <div class="contenido">
             Fecha Ingreso <br>
             <asp:TextBox ID="txtFechaIngreso" runat="server" TextMode="Date" CssClass="CasillaFecha" AutoPostBack="True" OnTextChanged="txtFechaIngreso_TextChanged" ></asp:TextBox>  </div>
             <%--<asp:RangeValidator ID="Range1" Type="Date" Format = "MM/DD/YYYY" Display="Dynamic" runat="server" ErrorMessage="Fecha invalida" ControlToValidate="txtFechaIngreso" ></asp:RangeValidator>--%>
@@ -200,7 +205,7 @@
             <asp:TextBox ID="txtFechaEgreso" runat="server" TextMode="Date" CssClass="CasillaFecha"  OnTextChanged="txtFechaEgreso_TextChanged1" AutoPostBack="True"></asp:TextBox> 
             <%--<asp:RangeValidator ID="Range2" Type="Date" Format = "MM/DD/YYYY" Display="Dynamic" runat="server" ErrorMessage="Fecha invalida" ControlToValidate="txtFechaEgreso" ></asp:RangeValidator>--%>
         </div>
-
+        
         <div class="contenido">				
             Total de días  <asp:TextBox ID="txtRegistroDias" runat="server" min="0" CssClass="Casilladias" Enabled="false" ></asp:TextBox>
         </div>

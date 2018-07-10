@@ -210,7 +210,7 @@ namespace CapaWSPresentacion.perfilProveedor
 
             xFPC = x.FacturaPedidoCompletaCrear(xFPC);
 
-            Response.Write(@"<script langauge='text/javascript'>alert('Factura ingresada exitosamente');</script>");
+            Response.Write(@"<script lenguage='text/javascript'>alert('Factura ingresada exitosamente');</script>");
 
 
             if (xFPC.Item.Cabecera.Numero > 0)

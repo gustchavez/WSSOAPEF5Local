@@ -7,9 +7,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaWSPresentacion.WSSoap;
 
-namespace CapaWSPresentacion.perfilEmpleado
+namespace CapaWSPresentacion.perfilAdministrador
 {
-    public partial class crearFactura : System.Web.UI.Page
+    public partial class AdminEcrearFactura : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

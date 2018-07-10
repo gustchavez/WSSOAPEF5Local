@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilEmpleado/MasterEmpleado.Master" AutoEventWireup="true" CodeBehind="recepcionProducto.aspx.cs" Inherits="CapaWSPresentacion.perfilEmpleado.recepcionProducto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilAdministrador/MasterAdministrador.Master" AutoEventWireup="true" CodeBehind="AdminErecepcionProducto.aspx.cs" Inherits="CapaWSPresentacion.perfilAdministrador.AdminErecepcionProducto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
        <link rel="stylesheet" type="text/css" href="/scripts/recepcion.css">

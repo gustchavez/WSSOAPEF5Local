@@ -6,9 +6,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CapaWSPresentacion.perfilCliente
+namespace CapaWSPresentacion.perfilAdministrador
 {
-    public partial class solicitarServicio : System.Web.UI.Page
+    public partial class AdminCsolicitarServicio : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,12 +38,45 @@ namespace CapaWSPresentacion.perfilCliente
 
         private void RescatarDatos()
         {
+            LlenarDDLEmpresa();
             LlenarDDLTipoComida();
             Bloqueados();
             txtFechaIngreso.Text = DateTime.Now.ToString("dd-MM-yyyy");
             txtFechaEgreso.Text = DateTime.Now.ToString("dd-MM-yyyy");
         }
+        private void LlenarDDLEmpresa()
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
+            ContenedorPerfilUsuarioClientes m = new ContenedorPerfilUsuarioClientes();
+            m = x.PerfilUsuarioClienteRescatar(Session["TokenUsuario"].ToString());
+
+            var clie = (from l in m.Lista
+                        select new
+                        {
+                            Rut = l.Cliente.Rut,
+                            RazonSocial = l.PerfilUsuario.Empresa.RazonSocial
+                        }
+                        ).ToList();
+
+            if (clie != null)
+            {
+                ddlEmpresas.DataSource = clie;
+                ddlEmpresas.DataValueField = "Rut";
+                ddlEmpresas.DataTextField = "RazonSocial";
+                ddlEmpresas.DataBind();
+                ddlEmpresas.Enabled = true;
+                ////
+            } else {
+                ddlEmpresas.Items.Clear();
+                ddlEmpresas.Items.Add(new ListItem("No Existe", ""));
+                ddlEmpresas.DataBind();
+                ddlEmpresas.SelectedIndex = 0;
+                //////////////
+                ddlEmpresas.Enabled = false;
+
+            }
+        }
         private void LlenarDDLTipoComida()
         {
             WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
@@ -103,7 +136,7 @@ namespace CapaWSPresentacion.perfilCliente
 
                 OrdenCompraCompleta nOCC = new OrdenCompraCompleta();
                 //Armar Encabezado de Orden de Reserva
-                nOCC.Cabecera.RutCliente = SesionUsuario.RutEmpresa;
+                nOCC.Cabecera.RutCliente = ddlEmpresas.SelectedValue;
                 nOCC.Cabecera.Monto = 0;//realizar calculo de las habitaciones seleccionadas.
                 nOCC.Cabecera.Observaciones = "Reserva habitación";
                 nOCC.Cabecera.Ubicacion = "logo";

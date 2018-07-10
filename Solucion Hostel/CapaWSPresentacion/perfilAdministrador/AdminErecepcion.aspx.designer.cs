@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CapaWSPresentacion.perfilEmpleado {
+namespace CapaWSPresentacion.perfilAdministrador {
     
     
-    public partial class recepcionProducto {
+    public partial class AdminErecepcion {
         
         /// <summary>
         /// Control form1.
@@ -40,13 +40,13 @@ namespace CapaWSPresentacion.perfilEmpleado {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// Control ddlOrdenes.
+        /// Control ddlOrdenesCompra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlOrdenes;
+        protected global::System.Web.UI.WebControls.DropDownList ddlOrdenesCompra;
         
         /// <summary>
         /// Control RequiredFieldValidator2.
