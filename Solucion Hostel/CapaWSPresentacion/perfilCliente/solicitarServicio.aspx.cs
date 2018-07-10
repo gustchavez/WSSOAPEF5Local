@@ -307,7 +307,7 @@ namespace CapaWSPresentacion.perfilCliente
             int valor1 = int.Parse(txtNpersonas.Text);
             int valor2 = int.Parse(txtPersonasHabitacion.Text);
 
-            if (valor2 >= valor1)
+            if (valor2 == valor1)
             {
                 MostrarCasillas.Enabled = true;
                 BtnSiguiente.Enabled = true;
