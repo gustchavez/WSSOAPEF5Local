@@ -92,7 +92,7 @@
 			<h4>Stock Critico</h4>
 			<asp:TextBox ID="txtStockCriticoModificar" TextMode="Number" runat="server" CssClass="CasillaPersona" min ="0"></asp:TextBox>
                 <br>
-                <asp:RangeValidator ID="RangeValidator5" runat="server" ErrorMessage="* Ingrese Stock Critico" ControlToValidate="txtStockCriticoModificar" ValidationGroup="vgModificar"></asp:RangeValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Ingrese Stock Critico" ControlToValidate="txtStockCriticoModificar" ValidationGroup="vgModificar"></asp:RequiredFieldValidator>
 			</div>
 			<div class="Casilla2-1">	
 			<asp:Button ID="btnModificar" runat="server" Text="Modificar Producto" CssClass="SubmitTotal" OnClick="btnModificar_click" Enabled="False" ValidationGroup="vgModificar" />
