@@ -653,6 +653,8 @@ namespace CapaNegocio
                                  join p in conex.PERSONA on u.RUT_PERSONA equals p.RUT
                                  //join e in conex.EMPRESA on p.EMPRESA equals e.PERSONA
                                  where u.ESTADO == "activo"
+                                    && ( u.PERFIL == "Administrador"
+                                      || u.PERFIL == "Empleado")
                                  orderby u.PERFIL descending
                                  select new
                                  {
