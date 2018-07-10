@@ -206,7 +206,6 @@
     <Content Include="PaginaComercial\scripts\whatinput.js" />
     <Content Include="perfilAdministrador\AdminCrearAdmin.aspx" />
     <Content Include="perfilAdministrador\AdminGestionAdmin.aspx" />
-    <Content Include="perfilAdministrador\AdminIngresoFacturaP.aspx" />
     <Content Include="perfilAdministrador\AdminModServicioComida.aspx" />
     <Content Include="perfilAdministrador\AdminSolicitarPP.aspx" />
     <Content Include="perfilCliente\detalleSolicitud.aspx" />
@@ -389,13 +388,6 @@
     </Compile>
     <Compile Include="perfilAdministrador\AdminGestionAdmin.aspx.designer.cs">
       <DependentUpon>AdminGestionAdmin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="perfilAdministrador\AdminIngresoFacturaP.aspx.cs">
-      <DependentUpon>AdminIngresoFacturaP.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="perfilAdministrador\AdminIngresoFacturaP.aspx.designer.cs">
-      <DependentUpon>AdminIngresoFacturaP.aspx</DependentUpon>
     </Compile>
     <Compile Include="perfilAdministrador\AdminModServicioComida.aspx.cs">
       <DependentUpon>AdminModServicioComida.aspx</DependentUpon>
