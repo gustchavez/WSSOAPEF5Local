@@ -205,12 +205,9 @@
     <Content Include="PaginaComercial\scripts\webpro.js" />
     <Content Include="PaginaComercial\scripts\whatinput.js" />
     <Content Include="perfilAdministrador\AdminCrearAdmin.aspx" />
-    <Content Include="perfilAdministrador\AdminFacturaProveedorP.aspx" />
     <Content Include="perfilAdministrador\AdminGestionAdmin.aspx" />
     <Content Include="perfilAdministrador\AdminIngresoFacturaP.aspx" />
-    <Content Include="perfilAdministrador\AdminModHabitacion.aspx" />
     <Content Include="perfilAdministrador\AdminModServicioComida.aspx" />
-    <Content Include="perfilAdministrador\AdminMostrarFacturas.aspx" />
     <Content Include="perfilAdministrador\AdminSolicitarPP.aspx" />
     <Content Include="perfilCliente\detalleSolicitud.aspx" />
     <Content Include="perfilCliente\facturaCliente.aspx" />
@@ -386,13 +383,6 @@
     <Compile Include="perfilAdministrador\AdminCrearAdmin.aspx.designer.cs">
       <DependentUpon>AdminCrearAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="perfilAdministrador\AdminFacturaProveedorP.aspx.cs">
-      <DependentUpon>AdminFacturaProveedorP.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="perfilAdministrador\AdminFacturaProveedorP.aspx.designer.cs">
-      <DependentUpon>AdminFacturaProveedorP.aspx</DependentUpon>
-    </Compile>
     <Compile Include="perfilAdministrador\AdminGestionAdmin.aspx.cs">
       <DependentUpon>AdminGestionAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -407,26 +397,12 @@
     <Compile Include="perfilAdministrador\AdminIngresoFacturaP.aspx.designer.cs">
       <DependentUpon>AdminIngresoFacturaP.aspx</DependentUpon>
     </Compile>
-    <Compile Include="perfilAdministrador\AdminModHabitacion.aspx.cs">
-      <DependentUpon>AdminModHabitacion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="perfilAdministrador\AdminModHabitacion.aspx.designer.cs">
-      <DependentUpon>AdminModHabitacion.aspx</DependentUpon>
-    </Compile>
     <Compile Include="perfilAdministrador\AdminModServicioComida.aspx.cs">
       <DependentUpon>AdminModServicioComida.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="perfilAdministrador\AdminModServicioComida.aspx.designer.cs">
       <DependentUpon>AdminModServicioComida.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="perfilAdministrador\AdminMostrarFacturas.aspx.cs">
-      <DependentUpon>AdminMostrarFacturas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="perfilAdministrador\AdminMostrarFacturas.aspx.designer.cs">
-      <DependentUpon>AdminMostrarFacturas.aspx</DependentUpon>
     </Compile>
     <Compile Include="perfilAdministrador\AdminSolicitarPP.aspx.cs">
       <DependentUpon>AdminSolicitarPP.aspx</DependentUpon>
