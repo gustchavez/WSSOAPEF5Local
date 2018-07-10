@@ -222,7 +222,7 @@
     </div>  
 </form>
 
-<script src="/CondicionesJavascript/perfilIngreso.js"></script>
+<%--<script src="/CondicionesJavascript/perfilIngreso.js"></script>--%>
    
 </body>
 </html>
