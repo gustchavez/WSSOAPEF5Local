@@ -144,17 +144,17 @@ namespace CapaWSPresentacion.PaginaComercial
                     txtClaveUsuario.Text = contrasena.Text;
                     contrasena.Text = string.Empty;
 
-                    Response.Write(@"<script language='text/javascript'>alert('Ingresado Correctamente');</script>");
+                    Response.Write(@"<script lenguage='text/javascript'>alert('Ingresado Correctamente');</script>");
 
                 }
                 else {
-                    Response.Write(@"<script language='text/javascript'>alert('No se pudo dar de alta el Usuario');</script>");
+                    Response.Write(@"<script lenguage='text/javascript'>alert('No se pudo dar de alta el Usuario');</script>");
                 }
             }
             else
             {
 
-                Response.Write(@"<script language='text/javascript'>alert('Debe completar todos los campos');</script>");
+                Response.Write(@"<script lenguage='text/javascript'>alert('Debe completar todos los campos');</script>");
             }
             
         }

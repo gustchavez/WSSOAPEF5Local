@@ -193,20 +193,23 @@
         <h5></h5>
         <div class="contenido">
             Fecha Ingreso <br>
-            <asp:TextBox ID="txtFechaIngreso" runat="server" TextMode="Date" CssClass="CasillaFecha" AutoPostBack="True" OnTextChanged="txtFechaIngreso_TextChanged" ></asp:TextBox>  </div>
+            <asp:TextBox  ValidationGroup="valid1" ID="txtFechaIngreso" runat="server" TextMode="Date" CssClass="CasillaFecha" AutoPostBack="True" OnTextChanged="txtFechaIngreso_TextChanged" ></asp:TextBox>  </div>
             <%--<asp:RangeValidator ID="Range1" Type="Date" Format = "MM/DD/YYYY" Display="Dynamic" runat="server" ErrorMessage="Fecha invalida" ControlToValidate="txtFechaIngreso" ></asp:RangeValidator>--%>
         <div class="contenido">				
             Fecha Salida <br>
-            <asp:TextBox ID="txtFechaEgreso" runat="server" TextMode="Date" CssClass="CasillaFecha"  OnTextChanged="txtFechaEgreso_TextChanged1" AutoPostBack="True"></asp:TextBox> 
+            <asp:TextBox ID="txtFechaEgreso" runat="server" TextMode="Date" CssClass="CasillaFecha"  OnTextChanged="txtFechaEgreso_TextChanged1" AutoPostBack="True"  ValidationGroup="valid1"></asp:TextBox> 
             <%--<asp:RangeValidator ID="Range2" Type="Date" Format = "MM/DD/YYYY" Display="Dynamic" runat="server" ErrorMessage="Fecha invalida" ControlToValidate="txtFechaEgreso" ></asp:RangeValidator>--%>
         </div>
 
         <div class="contenido">				
             Total de días  <asp:TextBox ID="txtRegistroDias" runat="server" min="0" CssClass="Casilladias" Enabled="false" ></asp:TextBox>
+            <br>
         </div>
 
         <div class="contenido">				
-            Nº Habitaciones <asp:TextBox ID="txtNpersonas" TextMode="Number" runat="server" CssClass="Casilladias2" AutoPostBack="True" value=0 min ="0"></asp:TextBox>
+            Nº Habitaciones <asp:TextBox ID="txtNpersonas" TextMode="Number" runat="server" CssClass="Casilladias2" AutoPostBack="True" value=0 min ="0" OnTextChanged="txtNpersonas_TextChanged"></asp:TextBox>
+            <br />
+            <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="* Numero Invalido" ControlToValidate="txtNpersonas" MinimumValue="1" MaximumValue="49"  ValidationGroup="valid1"></asp:RangeValidator>
         </div>
 
         <div class="contenido">
@@ -219,22 +222,22 @@
                 <tr>
                     <td>Habitación individual</td>
                     <td><asp:TextBox ID="txtCantHabDispSim" runat="server" CssClass="CasillaEnvio" BorderColor="#AB4E68" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
-                    <td><asp:TextBox ID="individual" TextMode="Number" runat="server" Max="6" min="0" CssClass="BotonIndividual" value="0" AutoPostBack="True" OnTextChanged="individual_TextChanged"></asp:TextBox></td>
+                    <td><asp:TextBox ID="individual" TextMode="Number" runat="server" Max="6" min="0" CssClass="BotonIndividual" value="0" AutoPostBack="True" OnTextChanged="individual_TextChanged"  ValidationGroup="valid1" ></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>Habitación 2 personas</td>
                     <td><asp:TextBox ID="txtCantHabDispDob" runat="server"  CssClass="CasillaEnvio" BorderColor="#55828b" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
-                    <td><asp:TextBox ID="doble" runat="server" TextMode="Number" Max="6" min="0" CssClass="Boton2personas" value="0" AutoPostBack="True" OnTextChanged="doble_TextChanged" ></asp:TextBox></td>
+                    <td><asp:TextBox ID="doble" runat="server" TextMode="Number" Max="6" min="0" CssClass="Boton2personas" value="0" AutoPostBack="True" OnTextChanged="doble_TextChanged"  ValidationGroup="valid1"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>Habitación 3 personas</td>
                     <td><asp:TextBox ID="txtCantHabDispTri" runat="server"  CssClass="CasillaEnvio" BorderColor="#e94f37" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
-                    <td><asp:TextBox ID="triple" runat="server" TextMode="Number" Max="5" min="0" CssClass="Boton3personas" value="0" AutoPostBack="True" OnTextChanged="triple_TextChanged"></asp:TextBox></td>
+                    <td><asp:TextBox ID="triple" runat="server" TextMode="Number" Max="5" min="0" CssClass="Boton3personas" value="0" AutoPostBack="True" OnTextChanged="triple_TextChanged"  ValidationGroup="valid1"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>Habitación 4 personas</td>
                     <td><asp:TextBox ID="txtCantHabDispCua" runat="server"  CssClass="CasillaEnvio" BorderColor="#3f88c5" BorderStyle="Solid" Enabled="false"></asp:TextBox></td>
-                    <td><asp:TextBox ID="cuadruple" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton6personas" value="0" AutoPostBack="True" OnTextChanged="cuadruple_TextChanged"></asp:TextBox></td>
+                    <td><asp:TextBox ID="cuadruple" runat="server" TextMode="Number" Max="4" min="0" CssClass="Boton6personas" value="0" AutoPostBack="True" OnTextChanged="cuadruple_TextChanged"  ValidationGroup="valid1"></asp:TextBox></td>
                 </tr>	
             </table>
         </div>
@@ -247,7 +250,7 @@
             <b> Habitaciones Seleccionadas: </b> <asp:TextBox ID="txtPersonasHabitacion" runat="server" value="0" Enabled="false" CssClass="CasillaPersonas"></asp:TextBox>
         </div>
         <div class="casillaTotal">
-            <asp:Button ID="MostrarCasillas" runat="server" Text="Ingresar Personas"  CssClass="SubmitTotal" OnClientClick="return autenticarme();"  />
+            <asp:Button ID="MostrarCasillas" runat="server" Text="Ingresar Personas"  ValidationGroup="valid1" CssClass="SubmitTotal" OnClientClick="return autenticarme();"  />
         </div>
 
 	</div>
