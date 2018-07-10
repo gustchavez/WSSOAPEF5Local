@@ -78,9 +78,9 @@ function validarFormulario(e) {
     validarCorreo(e);
     validarUsuario(e);
     validarContrasena(e);
-    if (error.innerHTML == '') {
-        alert("Usuario ingresado exitosamente");
-    }
+    //if (error.innerHTML == '') {
+    //    alert("Usuario ingresado exitosamente");
+    //}
 }
 
 document.getElementById("btnRegistrar").addEventListener("click", validarFormulario);
