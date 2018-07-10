@@ -204,10 +204,22 @@
     <Content Include="PaginaComercial\scripts\touchswipe.js" />
     <Content Include="PaginaComercial\scripts\webpro.js" />
     <Content Include="PaginaComercial\scripts\whatinput.js" />
-    <Content Include="perfilAdministrador\AdminCrearAdmin.aspx" />
-    <Content Include="perfilAdministrador\AdminGestionAdmin.aspx" />
-    <Content Include="perfilAdministrador\AdminModServicioComida.aspx" />
-    <Content Include="perfilAdministrador\AdminSolicitarPP.aspx" />
+    <Content Include="perfilAdministrador\AdminACrearAdmin.aspx" />
+    <Content Include="perfilAdministrador\AdminAGestionAdmin.aspx" />
+    <Content Include="perfilAdministrador\AdminAMiselanio.aspx" />
+    <Content Include="perfilAdministrador\AdminESolicitarPP.aspx" />
+    <Content Include="perfilAdministrador\AdminEAnularFactura.aspx" />
+    <Content Include="perfilAdministrador\AdminEAnularOrden.aspx" />
+    <Content Include="perfilAdministrador\AdminEfacturas.aspx" />
+    <Content Include="perfilAdministrador\AdminEingresoProducto.aspx" />
+    <Content Include="perfilAdministrador\AdminErecepcion.aspx" />
+    <Content Include="perfilAdministrador\AdminErecepcionProducto.aspx" />
+    <Content Include="perfilAdministrador\AdminEsolicitarProductos.aspx" />
+    <Content Include="perfilAdministrador\AdminEstock.aspx" />
+    <Content Include="perfilAdministrador\AdminCsolicitudesCliente.aspx" />
+    <Content Include="perfilAdministrador\AdminCsolicitarServicio.aspx" />
+    <Content Include="perfilAdministrador\AdminPPedidos.aspx" />
+    <Content Include="perfilAdministrador\AdminEcrearFactura.aspx" />
     <Content Include="perfilCliente\detalleSolicitud.aspx" />
     <Content Include="perfilCliente\facturaCliente.aspx" />
     <Content Include="perfilCliente\finSolicitud.aspx" />
@@ -375,33 +387,68 @@
     <Compile Include="PaginaComercial\perfilIngreso.aspx.designer.cs">
       <DependentUpon>perfilIngreso.aspx</DependentUpon>
     </Compile>
-    <Compile Include="perfilAdministrador\AdminCrearAdmin.aspx.cs">
-      <DependentUpon>AdminCrearAdmin.aspx</DependentUpon>
+    <Compile Include="perfilAdministrador\AdminACrearAdmin.aspx.cs">
+      <DependentUpon>AdminACrearAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="perfilAdministrador\AdminCrearAdmin.aspx.designer.cs">
-      <DependentUpon>AdminCrearAdmin.aspx</DependentUpon>
+    <Compile Include="perfilAdministrador\AdminACrearAdmin.aspx.designer.cs">
+      <DependentUpon>AdminACrearAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="perfilAdministrador\AdminGestionAdmin.aspx.cs">
-      <DependentUpon>AdminGestionAdmin.aspx</DependentUpon>
+    <Compile Include="perfilAdministrador\AdminAGestionAdmin.aspx.cs">
+      <DependentUpon>AdminAGestionAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="perfilAdministrador\AdminGestionAdmin.aspx.designer.cs">
-      <DependentUpon>AdminGestionAdmin.aspx</DependentUpon>
+    <Compile Include="perfilAdministrador\AdminAGestionAdmin.aspx.designer.cs">
+      <DependentUpon>AdminAGestionAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="perfilAdministrador\AdminModServicioComida.aspx.cs">
-      <DependentUpon>AdminModServicioComida.aspx</DependentUpon>
+    <Compile Include="perfilAdministrador\AdminAMiselanio.aspx.cs">
+      <DependentUpon>AdminAMiselanio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="perfilAdministrador\AdminModServicioComida.aspx.designer.cs">
-      <DependentUpon>AdminModServicioComida.aspx</DependentUpon>
+    <Compile Include="perfilAdministrador\AdminAMiselanio.aspx.designer.cs">
+      <DependentUpon>AdminAMiselanio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="perfilAdministrador\AdminSolicitarPP.aspx.cs">
-      <DependentUpon>AdminSolicitarPP.aspx</DependentUpon>
+    <Compile Include="perfilAdministrador\AdminESolicitarPP.aspx.cs">
+      <DependentUpon>AdminESolicitarPP.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="perfilAdministrador\AdminSolicitarPP.aspx.designer.cs">
-      <DependentUpon>AdminSolicitarPP.aspx</DependentUpon>
+    <Compile Include="perfilAdministrador\AdminESolicitarPP.aspx.designer.cs">
+      <DependentUpon>AdminESolicitarPP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminEAnularFactura.aspx.cs">
+      <DependentUpon>AdminEAnularFactura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminEAnularFactura.aspx.designer.cs">
+      <DependentUpon>AdminEAnularFactura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminEAnularOrden.aspx.cs">
+      <DependentUpon>AdminEAnularOrden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminEAnularOrden.aspx.designer.cs">
+      <DependentUpon>AdminEAnularOrden.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminEfacturas.aspx.cs">
+      <DependentUpon>AdminEfacturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminEfacturas.aspx.designer.cs">
+      <DependentUpon>AdminEfacturas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminEingresoProducto.aspx.cs">
+      <DependentUpon>AdminEingresoProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminEingresoProducto.aspx.designer.cs">
+      <DependentUpon>AdminEingresoProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminEcrearFactura.aspx.cs">
+      <DependentUpon>AdminEcrearFactura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminEcrearFactura.aspx.designer.cs">
+      <DependentUpon>AdminEcrearFactura.aspx</DependentUpon>
     </Compile>
     <Compile Include="perfilAdministrador\MasterAdministrador.Master.cs">
       <DependentUpon>MasterAdministrador.Master</DependentUpon>
@@ -409,6 +456,55 @@
     </Compile>
     <Compile Include="perfilAdministrador\MasterAdministrador.Master.designer.cs">
       <DependentUpon>MasterAdministrador.Master</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminErecepcion.aspx.cs">
+      <DependentUpon>AdminErecepcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminErecepcion.aspx.designer.cs">
+      <DependentUpon>AdminErecepcion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminErecepcionProducto.aspx.cs">
+      <DependentUpon>AdminErecepcionProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminErecepcionProducto.aspx.designer.cs">
+      <DependentUpon>AdminErecepcionProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminEsolicitarProductos.aspx.cs">
+      <DependentUpon>AdminEsolicitarProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminEsolicitarProductos.aspx.designer.cs">
+      <DependentUpon>AdminEsolicitarProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminEstock.aspx.cs">
+      <DependentUpon>AdminEstock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminEstock.aspx.designer.cs">
+      <DependentUpon>AdminEstock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminCsolicitudesCliente.aspx.cs">
+      <DependentUpon>AdminCsolicitudesCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminCsolicitudesCliente.aspx.designer.cs">
+      <DependentUpon>AdminCsolicitudesCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminCsolicitarServicio.aspx.cs">
+      <DependentUpon>AdminCsolicitarServicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminCsolicitarServicio.aspx.designer.cs">
+      <DependentUpon>AdminCsolicitarServicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminPPedidos.aspx.cs">
+      <DependentUpon>AdminPPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfilAdministrador\AdminPPedidos.aspx.designer.cs">
+      <DependentUpon>AdminPPedidos.aspx</DependentUpon>
     </Compile>
     <Compile Include="perfilCliente\detalleSolicitud.aspx.cs">
       <DependentUpon>detalleSolicitud.aspx</DependentUpon>

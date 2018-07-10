@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilAdministrador/MasterAdministrador.Master" AutoEventWireup="true" CodeBehind="AdminModServicioComida.aspx.cs" Inherits="CapaWSPresentacion.perfilAdministrador.AdminModServicioComida" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilAdministrador/MasterAdministrador.Master" AutoEventWireup="true" CodeBehind="AdminAMiselanio.aspx.cs" Inherits="CapaWSPresentacion.perfilAdministrador.AdminModServicioComida" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" type="text/css" href="/scripts/comidaHabitacion.css">
     <form id="form1" runat="server">

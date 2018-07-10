@@ -25,28 +25,27 @@
 			    </div>
 			</div>
 			<div class="subMenu" style="font-weight: bold; "> ADMINISTRADOR </div>
-			<div class="subMenu"> <a href="AdminCrearAdmin.aspx" style="color: #26362A; font-weight: bold;"> Crear Perfiles </a></div>
-			<div class="subMenu"> <a href="AdminGestionAdmin.aspx" style="color: #26362A; font-weight: bold;"> Modificar o Elimiar Perfil </a></div>
-            <div class="subMenu"> <a href="AdminModServicioComida.aspx" style="color: #26362A; font-weight: bold;"> Misceláneos </a></div>
+			<div class="subMenu"> <a href="AdminACrearAdmin.aspx" style="color: #26362A; font-weight: bold;"> Crear Perfiles </a></div>
+			<div class="subMenu"> <a href="AdminAGestionAdmin.aspx" style="color: #26362A; font-weight: bold;"> Modificar o Elimiar Perfil </a></div>
+            <div class="subMenu"> <a href="AdminAMiselanio.aspx" style="color: #26362A; font-weight: bold;"> Misceláneos </a></div>
 			<br>
 			<div class="subMenu" style="font-weight: bold;" > EMPLEADO </div>
-            <div class="subMenu"> <a href="Admin.aspx" style="color: #26362A; font-weight: bold;"> Ver Stock Producto</a></div>
-            <div class="subMenu"> <a href="Admin.aspx" style="color: #26362A; font-weight: bold;"> Ingresar Producto Proveedor</a></div>
-			<div class="subMenu"> <a href="AdminSolicitarPP.aspx" style="color: #26362A; font-weight: bold;"> Solicitar Producto Proveedor </a></div>
-            <div class="subMenu"> <a href="Admin.aspx" style="color: #26362A; font-weight: bold;"> Recepcion Producto</a></div>
-            <div class="subMenu"> <a href="Admin.aspx" style="color: #26362A; font-weight: bold;"> Recepcion Huesped</a></div>
-			<div class="subMenu"> <a href="Admin.aspx" style="color: #26362A; font-weight: bold;"> Ver Facturas </a></div>
-            <div class="subMenu"> <a href="Admin.aspx" style="color: #26362A; font-weight: bold;"> Anular Solicitudes</a></div>
-            <div class="subMenu"> <a href="Admin.aspx" style="color: #26362A; font-weight: bold;"> Anular Facturas</a></div>
-			
+            <div class="subMenu"> <a href="AdminEstock.aspx" style="color: #26362A; font-weight: bold;"> Ver Stock Producto</a></div>
+            <div class="subMenu"> <a href="AdminEingresoProducto.aspx" style="color: #26362A; font-weight: bold;"> Ingresar Producto Proveedor</a></div>
+			<div class="subMenu"> <a href="AdminESolicitarPP.aspx" style="color: #26362A; font-weight: bold;"> Solicitar Producto Proveedor </a></div>
+            <div class="subMenu"> <a href="AdminErecepcionProducto.aspx" style="color: #26362A; font-weight: bold;"> Recepcion Producto</a></div>
+            <div class="subMenu"> <a href="AdminErecepcion.aspx" style="color: #26362A; font-weight: bold;"> Recepcion Huesped</a></div>
+			<div class="subMenu"> <a href="AdminEcrearFactura.aspx" style="color: #26362A; font-weight: bold;"> Alta Facturas</a></div>	
+			<div class="subMenu"> <a href="AdminEfacturas.aspx" style="color: #26362A; font-weight: bold;"> Ver Facturas </a></div>
+            <div class="subMenu"> <a href="AdminEAnularOrden.aspx" style="color: #26362A; font-weight: bold;"> Anular Solicitudes</a></div>
+            <div class="subMenu"> <a href="AdminEAnularFactura.aspx" style="color: #26362A; font-weight: bold;"> Anular Facturas</a></div>		
 			<br>
 			<div class="subMenu" style="font-weight: bold;"> PROVEEDOR </div>
-			<div class="subMenu"> <a href="Admin.aspx" style="color: #26362A; font-weight: bold;"> Ver Pedido Proveedor </a></div>
-			<div class="subMenu"> <a href="Admin.aspx" style="color: #26362A; font-weight: bold;"> Alta Facturas Compra</a></div>
+			<div class="subMenu"> <a href="AdminPPedidos.aspx" style="color: #26362A; font-weight: bold;"> Ver Pedido Proveedor </a></div>
 			<br>
 			<div class="subMenu" style="font-weight: bold;"> CLIENTE </div>
-            <div class="subMenu"> <a href="Admin.aspx" style="color: #26362A; font-weight: bold;"> Ver Solicitudes Reserva </a></div>
-			<div class="subMenu"> <a href="Admin.aspx" style="color: #26362A; font-weight: bold;"> Solicitud Servicio </a></div>
+            <div class="subMenu"> <a href="AdminCsolicitarServicio.aspx" style="color: #26362A; font-weight: bold;"> Solicitud Servicio </a></div>
+            <div class="subMenu"> <a href="AdminCsolicitudesCliente.aspx" style="color: #26362A; font-weight: bold;"> Ver Solicitudes Reserva </a></div>
 			<br>
 			<div class="subMenu"> <a href="/PaginaComercial/perfilIngreso.aspx" style="color: #26362A; font-weight: bold;" > Cerrar Sesión</a></div>
 		</div>

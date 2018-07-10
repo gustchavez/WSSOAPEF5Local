@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilAdministrador/MasterAdministrador.Master" AutoEventWireup="true" CodeBehind="AdminCrearAdmin.aspx.cs" Inherits="CapaWSPresentacion.perfilAdministrador.AdminCrearAdmin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilAdministrador/MasterAdministrador.Master" AutoEventWireup="true" CodeBehind="AdminACrearAdmin.aspx.cs" Inherits="CapaWSPresentacion.perfilAdministrador.AdminCrearAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <link rel="stylesheet" type="text/css" href="/scripts/admin.css">

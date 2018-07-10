@@ -50,7 +50,7 @@ namespace CapaWSPresentacion.PaginaComercial
                         Response.Redirect("/perfilProveedor/Pedidos.aspx");
                         break;
                     case "Administrador":
-                        Response.Redirect("/perfilAdministrador/AdminCrearAdmin.aspx");
+                        Response.Redirect("/perfilAdministrador/AdminACrearAdmin.aspx");
                         break;
                     default:
                         Session["TokenUsuario"] = null;

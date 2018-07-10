@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilAdministrador/MasterAdministrador.Master" AutoEventWireup="true" CodeBehind="AdminSolicitarPP.aspx.cs" Inherits="CapaWSPresentacion.perfilAdministrador.AdminSolicitarPP" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilAdministrador/MasterAdministrador.Master" AutoEventWireup="true" CodeBehind="AdminESolicitarPP.aspx.cs" Inherits="CapaWSPresentacion.perfilAdministrador.AdminSolicitarPP" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <link rel="stylesheet" type="text/css" href="/scripts/AdminSolicitarPP.css">
