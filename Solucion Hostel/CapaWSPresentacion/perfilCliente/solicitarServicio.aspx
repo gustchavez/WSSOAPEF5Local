@@ -206,7 +206,7 @@
         </div>
 
         <div class="contenido">				
-            Nº Habitaciones <asp:TextBox ID="txtNpersonas" TextMode="Number" runat="server" CssClass="Casilladias" AutoPostBack="True" value=0 min ="0"></asp:TextBox>
+            Nº Habitaciones <asp:TextBox ID="txtNpersonas" TextMode="Number" runat="server" CssClass="Casilladias2" AutoPostBack="True" value=0 min ="0"></asp:TextBox>
         </div>
 
         <div class="contenido">
