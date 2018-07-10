@@ -21,15 +21,17 @@
 			</div>
 			<div class="Contenido">
 				Nombre Usuario<br/>
-			    <asp:TextBox ID="txtNombreUsuario" runat="server" CssClass="casilla" required="true"></asp:TextBox> <br/>		
+			    <asp:TextBox ID="txtNombreUsuario" runat="server" CssClass="casilla" ValidationGroup="loginValid" ></asp:TextBox> <br/>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="* Ingrese Nombre Usuario" ControlToValidate="txtNombreUsuario" ValidationGroup="loginValid"></asp:RequiredFieldValidator>
 			</div>
 			<div class="Contenido">
 				Contraseña <br/>
-			    <asp:TextBox ID="txtClaveUsuario" runat="server"  TextMode="Password" CssClass="casilla"></asp:TextBox><br/>
+			    <asp:TextBox ID="txtClaveUsuario" runat="server"  TextMode="Password" CssClass="casilla" ValidationGroup="loginValid"></asp:TextBox><br/>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="* Ingrese Contraseña" ControlToValidate="txtClaveUsuario" ValidationGroup="loginValid"></asp:RequiredFieldValidator>
 			</div>
             
 			<div class="Contenido">
-				<asp:Button ID="btnAceptar" runat="server" Text="Ingresar"  OnClick="btnAceptar_Click" CssClass="casillaEnvio" /><br/>		
+				<asp:Button ID="btnAceptar" runat="server" Text="Ingresar"  OnClick="btnAceptar_Click" CssClass="casillaEnvio" ValidationGroup="loginValid" /><br/>		
 			</div>
 
 			<div class="Contenido">
@@ -50,15 +52,17 @@
 	             <h3>REGISTRO CLIENTE</h3>
 			    <div class="Contenido">
 				    Rut Empresa <br/>
-				     <asp:TextBox ID="rutEmpresa" runat="server"  CssClass="casilla" ></asp:TextBox><br/>	
+				     <asp:TextBox ID="rutEmpresa" runat="server"  CssClass="casilla" ValidationGroup="registrarVal" ></asp:TextBox>
+                    <br/>	<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Ingresar Rut" ControlToValidate="rutEmpresa" ValidationGroup="registrarVal"></asp:RequiredFieldValidator>
 			    </div>
 			    <div class="Contenido">
 				    Razón Social <br/>
-				     <asp:TextBox ID="razonSocial" runat="server"  CssClass="casilla" ></asp:TextBox><br/>	
+				     <asp:TextBox ID="razonSocial" runat="server"  CssClass="casilla" ValidationGroup="registrarVal" ></asp:TextBox><br/>	
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Ingresar Razón Social " ControlToValidate="razonSocial" ValidationGroup="registrarVal"></asp:RequiredFieldValidator>
 			    </div>
 			    <div class="Contenido" >
 				    Giro <br/>
-                    <asp:DropDownList ID="giro" runat="server" CssClass="casilla">
+                    <asp:DropDownList ID="giro" runat="server" CssClass="casilla" ValidationGroup="registrarVal">
                         <asp:ListItem value="">Selecciona un Giro</asp:ListItem>
                         <asp:ListItem Value="2">CULTIVOS EN GENERAL; CULTIVO DE PRODUCTOS DE MERCADO; HORTICULTURA</asp:ListItem>
                         <asp:ListItem Value="3">CRÍA DE ANIMALES</asp:ListItem>
@@ -194,25 +198,29 @@
                         <asp:ListItem Value="133">CONSEJO DE ADMINISTRACIÓN DE EDIFICIOS Y CONDOMINIOS </asp:ListItem>
                         <asp:ListItem Value="134">ORGANIZACIONES Y ÓRGANOS EXTRATERRITORIALES </asp:ListItem>
 
-                    </asp:DropDownList>
+                    </asp:DropDownList><br>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* seleccione Giro" ControlToValidate="giro" ValidationGroup="registrarVal"></asp:RequiredFieldValidator>
 
 				
 			    </div>
 			    <div class="Contenido">
 				    Nombre Usuario<br/>
-				     <asp:TextBox ID="nombreUsuario" runat="server"  CssClass="casilla" ></asp:TextBox><br/>		
+				     <asp:TextBox ID="nombreUsuario" runat="server"  CssClass="casilla" ValidationGroup="registrarVal" ></asp:TextBox><br/>		
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="* Ingrese Nombre Usuario" ControlToValidate="nombreUsuario" ValidationGroup="registrarVal"></asp:RequiredFieldValidator>
 			    </div>
 			    <div class="Contenido">
 				    Correo Electrónico <br/>
-				     <asp:TextBox ID="correoElectronico" runat="server" TextMode="Email"  CssClass="casilla" ></asp:TextBox><br/>			
+				     <asp:TextBox ID="correoElectronico" runat="server" TextMode="Email"  CssClass="casilla" ValidationGroup="registrarVal" ></asp:TextBox><br/>			
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="* Ingresar Correo Electrónico" ControlToValidate="correoElectronico" ValidationGroup="registrarVal"></asp:RequiredFieldValidator>
 			    </div>
 			    <div class="Contenido">
 				    Contraseña <br/>
-				    <asp:TextBox ID="contrasena" runat="server" TextMode="Password" CssClass="casilla" ></asp:TextBox><br/>		
+				    <asp:TextBox ID="contrasena" runat="server" TextMode="Password" CssClass="casilla" ValidationGroup="registrarVal" ></asp:TextBox><br/>		
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="* Ingrese Contraseña" ControlToValidate="contrasena" ValidationGroup="registrarVal"></asp:RequiredFieldValidator>
 			    </div>
 
 			    <div class="Contenido">
-                    <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="casillaEnvio" OnClick="btnRegistrar_Click"/>	
+                    <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="casillaEnvio" OnClick="btnRegistrar_Click" ValidationGroup="registrarVal"/>	
 			    </div>
 
 			    <div class="Contenido">

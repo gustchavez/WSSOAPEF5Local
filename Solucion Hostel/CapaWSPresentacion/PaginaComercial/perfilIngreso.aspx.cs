@@ -72,7 +72,7 @@ namespace CapaWSPresentacion.PaginaComercial
             Regex regex = new Regex("[0-9]{7,8}-[0-9kK]{1}");
             if (rutEmpresa.Text == null || rutEmpresa.Text == "" || !(regex.IsMatch(rutEmpresa.Text)) || rutEmpresa.Text.Length > 10 || rutEmpresa.Text.Length < 9)
             {
-                rutEmpresa.Text = "";
+                rutEmpresa.Text = "* Rut Invalido";
                 varia = false;
             }
             if (razonSocial.Text==null || razonSocial.Text=="")
@@ -148,11 +148,6 @@ namespace CapaWSPresentacion.PaginaComercial
                 {
                     //Error
                 }
-            }
-            else
-            {
-
-                Response.Write(@"<script lenguage='text/javascript'>alert('Debe completar todos los campos');</script>");
             }
             
         }
