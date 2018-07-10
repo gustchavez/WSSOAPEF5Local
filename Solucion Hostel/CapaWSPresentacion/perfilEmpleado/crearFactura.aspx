@@ -79,7 +79,7 @@
                 <br><asp:RequiredFieldValidator ErrorMessage="* Ingrese Observación" ControlToValidate="txtObservacion" ID="RequiredFieldValidator11" runat="server" ></asp:RequiredFieldValidator>
 			</div>
             <div class="Casilla2-1">	
-		        <asp:Button ID="btnAgregarFactura" runat="server" Text="Agregar"  CssClass="SubmitTotal" OnClick="btnAgregar_Click"/> 
+		        <asp:Button ID="btnAgregarFactura" runat="server" Text="Agregar"  CssClass="SubmitTotalfactura2" OnClick="btnAgregar_Click"/> 
 		    </div>
 	</div>
     <div class="ModificarDatos2">

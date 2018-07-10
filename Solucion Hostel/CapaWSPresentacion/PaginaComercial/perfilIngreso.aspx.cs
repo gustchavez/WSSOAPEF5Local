@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -65,55 +66,95 @@ namespace CapaWSPresentacion.PaginaComercial
             }
 
         }
+        private bool validarText()
+        {
+            bool varia = true;
+            Regex regex = new Regex("[0-9]{7,8}-[0-9kK]{1}");
+            if (rutEmpresa.Text == null || rutEmpresa.Text == "" || !(regex.IsMatch(rutEmpresa.Text)) || rutEmpresa.Text.Length > 10 || rutEmpresa.Text.Length < 9)
+            {
+                rutEmpresa.Text = "";
+                varia = false;
+            }
+            if (razonSocial.Text==null || razonSocial.Text=="")
+            {
+                varia = false;
+            }
+            if (giro.Text == null || giro.Text == "")
+            {
+                varia = false;
+            }
+            if (nombreUsuario.Text == null || nombreUsuario.Text == "")
+            {
+                varia = false;
+            }
+            if (correoElectronico.Text == null || correoElectronico.Text == "")
+            {
+                varia = false;
+            }
+            if (contrasena.Text == null || contrasena.Text == "")
+            {
+                varia = false;
+            }
+            return varia;
+        }
         
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-
-            ContenedorPerfilUsuarioCliente n = new ContenedorPerfilUsuarioCliente();
-
-            n.Item.Cliente.Rut = rutEmpresa.Text;
-            n.Item.PerfilUsuario.Empresa.RazonSocial = razonSocial.Text;
-            n.Item.PerfilUsuario.Empresa.Rubro = giro.Text;
-            n.Item.PerfilUsuario.Empresa.Email = correoElectronico.Text;
-            n.Item.PerfilUsuario.Empresa.Telefono = "Ingrese tel";
-            n.Item.PerfilUsuario.Direccion.CodPais = 56;
-            n.Item.PerfilUsuario.Direccion.CodPostal = "Codigo postal";
-            n.Item.PerfilUsuario.Direccion.NombreCiudad = "Santiago";
-            n.Item.PerfilUsuario.Direccion.Comuna = "Ingrese comuna";
-            n.Item.PerfilUsuario.Direccion.Calle = "Ingrese Calle";
-            n.Item.PerfilUsuario.Direccion.Numero = 123;
-            n.Item.PerfilUsuario.Empresa.Logo = "LogoDefecto.png";
-            n.Item.PerfilUsuario.Persona.Rut = rutEmpresa.Text + "Z"; // "Rut empleado";
-            n.Item.PerfilUsuario.Persona.Nombre = "Nombre";
-            n.Item.PerfilUsuario.Persona.Apellido = "Apellido";
-            n.Item.PerfilUsuario.Persona.FechaNacimiento = DateTime.Now;
-            n.Item.PerfilUsuario.Persona.Email = "Ingrese mail";
-            n.Item.PerfilUsuario.Persona.Telefono = "Ingrese tel";
-            n.Item.PerfilUsuario.Usuario.Nombre = nombreUsuario.Text;
-            n.Item.PerfilUsuario.Usuario.Clave = contrasena.Text;
-            n.Retorno.Token = null; //Session["TokenUsuario"].ToString();
-
-            n = x.PerfilUsuarioClienteCrear(n);
-
-            if (n.Retorno.Codigo == 0)
+            if(validarText())
             {
-                //termino ok
-                rutEmpresa.Text = string.Empty;
-                razonSocial.Text = string.Empty;
-                giro.SelectedIndex = 0;
-                correoElectronico.Text = string.Empty;
+                WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
-                txtNombreUsuario.Text = nombreUsuario.Text;
-                nombreUsuario.Text = string.Empty;
+                ContenedorPerfilUsuarioCliente n = new ContenedorPerfilUsuarioCliente();
 
-                txtClaveUsuario.Text = contrasena.Text;
-                contrasena.Text = string.Empty;
+                n.Item.Cliente.Rut = rutEmpresa.Text;
+                n.Item.PerfilUsuario.Empresa.RazonSocial = razonSocial.Text;
+                n.Item.PerfilUsuario.Empresa.Rubro = giro.Text;
+                n.Item.PerfilUsuario.Empresa.Email = correoElectronico.Text;
+                n.Item.PerfilUsuario.Empresa.Telefono = "Ingrese tel";
+                n.Item.PerfilUsuario.Direccion.CodPais = 56;
+                n.Item.PerfilUsuario.Direccion.CodPostal = "Codigo postal";
+                n.Item.PerfilUsuario.Direccion.NombreCiudad = "Santiago";
+                n.Item.PerfilUsuario.Direccion.Comuna = "Ingrese comuna";
+                n.Item.PerfilUsuario.Direccion.Calle = "Ingrese Calle";
+                n.Item.PerfilUsuario.Direccion.Numero = 123;
+                n.Item.PerfilUsuario.Empresa.Logo = "LogoDefecto.png";
+                n.Item.PerfilUsuario.Persona.Rut = rutEmpresa.Text + "Z"; // "Rut empleado";
+                n.Item.PerfilUsuario.Persona.Nombre = "Nombre";
+                n.Item.PerfilUsuario.Persona.Apellido = "Apellido";
+                n.Item.PerfilUsuario.Persona.FechaNacimiento = DateTime.Now;
+                n.Item.PerfilUsuario.Persona.Email = "Ingrese mail";
+                n.Item.PerfilUsuario.Persona.Telefono = "Ingrese tel";
+                n.Item.PerfilUsuario.Usuario.Nombre = nombreUsuario.Text;
+                n.Item.PerfilUsuario.Usuario.Clave = contrasena.Text;
+                n.Retorno.Token = null; //Session["TokenUsuario"].ToString();
+
+                n = x.PerfilUsuarioClienteCrear(n);
+
+                if (n.Retorno.Codigo == 0)
+                {
+                    //termino ok
+                    rutEmpresa.Text = string.Empty;
+                    razonSocial.Text = string.Empty;
+                    giro.SelectedIndex = 0;
+                    correoElectronico.Text = string.Empty;
+
+                    txtNombreUsuario.Text = nombreUsuario.Text;
+                    nombreUsuario.Text = string.Empty;
+
+                    txtClaveUsuario.Text = contrasena.Text;
+                    contrasena.Text = string.Empty;
+                }
+                else
+                {
+                    //Error
+                }
             }
             else
             {
-                //Error
+
+                Response.Write(@"<script language='text/javascript'>alert('Debe completar todos los campos');</script>");
             }
+            
         }
     }
 }

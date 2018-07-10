@@ -48,28 +48,101 @@ namespace CapaWSPresentacion.perfilEmpleado
             ContenedorPerfilUsuarioProveedores n = new ContenedorPerfilUsuarioProveedores();
             n = x.PerfilUsuarioProveedorRescatar(Session["TokenUsuario"].ToString());
 
-            var proveedores = (from prvi in m.Lista
-                               join prov in n.Lista on prvi.RutProveedor equals prov.Proveedor.Rut
-                               orderby prov.PerfilUsuario.Empresa.RazonSocial
-                               select new
-                               {
-                                   Rut = prov.Proveedor.Rut,
-                                   RazonSocial = prov.PerfilUsuario.Empresa.RazonSocial
-                               }
-                              ).Distinct().ToList();
+            var elementos = (from prvi in m.Lista
+                             join prov in n.Lista on prvi.RutProveedor equals prov.Proveedor.Rut
+                             orderby prov.PerfilUsuario.Empresa.RazonSocial
+                             select new
+                             {
+                                 Rut         = prov.Proveedor.Rut,
+                                 RazonSocial = prov.PerfilUsuario.Empresa.RazonSocial
+                             }
+                            ).Distinct().ToList();
 
-            txtProveedor.DataSource = null;
-            txtProveedor.DataSource = proveedores;
-            txtProveedor.DataValueField = "Rut";
-            txtProveedor.DataTextField = "RazonSocial";
-            txtProveedor.DataBind();
-            
+            if(elementos.Count > 0)
+            {
+                txtProveedor.DataSource = null;
+                txtProveedor.DataSource = elementos;
+                txtProveedor.DataValueField = "Rut";
+                txtProveedor.DataTextField = "RazonSocial";
+                txtProveedor.DataBind();
+
+                CargarDDLProducto();
+
+            } else {
+                InicializarDDLProveedor();
+                InicializarDDLProducto();
+            }
+
+            InicializarLista();
+
             //guardar los valores
             Session["TemporalProvision"] = m.Lista;
             Session["TemporalProveedor"] = n.Lista;
 
-            //
-            gwListaCompra.DataBind();
+        }
+
+        private void InicializarDDLProducto()
+        {
+            txtProducto.Items.Clear();
+            txtProducto.Items.Add(new ListItem("No Existe", ""));
+            txtProducto.DataBind();
+            txtProducto.SelectedIndex = 0;
+
+            txtProducto.Enabled = false;
+            btnAgregar.Enabled = false;
+            btnRealizar.Enabled = false;
+        }
+
+        private void InicializarDDLProveedor()
+        {
+            txtProveedor.Items.Clear();
+            txtProveedor.Items.Add(new ListItem("No Existe", ""));
+            txtProveedor.DataBind();
+            txtProveedor.SelectedIndex = 0;
+
+            txtProveedor.Enabled = false;
+        }
+
+        private void CargarDDLProducto()
+        {
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+
+            //Recuperar datos de provisiones
+            ContenedorProvisiones m = new ContenedorProvisiones();
+            m = x.ProvisionRescatar(Session["TokenUsuario"].ToString());
+
+            //Recuperar datos de productos
+            ContenedorProductos o = new ContenedorProductos();
+            o = x.ProductoRescatar(Session["TokenUsuario"].ToString());
+
+            var productos = (from prvi in m.Lista
+                             join prod in o.Lista on prvi.CodigoProducto equals prod.Codigo
+                             where prvi.RutProveedor == txtProveedor.SelectedValue
+                             orderby prod.Descripcion
+                             select new
+                             {
+                                 Codigo = prod.Codigo,
+                                 Descripcion = prod.Descripcion
+                             }
+                            ).ToList();
+
+            if (productos.Count > 0)
+            {
+                txtProducto.DataSource = null;
+                txtProducto.DataSource = productos;
+                txtProducto.DataValueField = "Codigo";
+                txtProducto.DataTextField = "Descripcion";
+                txtProducto.DataBind();
+
+                Session["TemporalProducto"] = o.Lista;
+                
+                txtProducto.Enabled = true;
+                txtCantidad.Enabled = true;
+                btnAgregar.Enabled = true;
+
+            } else {
+                InicializarDDLProducto();
+            }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -81,45 +154,51 @@ namespace CapaWSPresentacion.perfilEmpleado
                 ListaTemporal = (OrdenPedidoCompleta)Session["ListaTemporal"];
                 if (ListaTemporal == null)
                 {
-                    ListaTemporal = new OrdenPedidoCompleta();
+                    ListaTemporal = new OrdenPedidoCompleta();                    
                 }
             }
             catch (Exception)
             {
                 ListaTemporal = new OrdenPedidoCompleta();
             }
-            
+
             //Verificar Existe el Producto en la Lista Temporal
             if (VerificarExisteProdEnListaTemp(ListaTemporal.ListaDetalle) == false)
             {
                 OrdenPedidoDetalle opd = new OrdenPedidoDetalle();
 
                 List<Provision> Lprvi = (List<Provision>)Session["TemporalProvision"];
-                List<Producto> Lprod = (List<Producto>)Session["TemporalProducto"];
+                List<Producto> Lprod  = (List<Producto>)Session["TemporalProducto"];
 
                 var producto = (from prvi in Lprvi
                                 join prod in Lprod on prvi.CodigoProducto equals prod.Codigo
-                                where prvi.RutProveedor == txtProveedor.SelectedValue
-                                    && prvi.CodigoProducto == int.Parse(txtProducto.SelectedValue)
+                                where prvi.RutProveedor   == txtProveedor.SelectedValue
+                                   && prvi.CodigoProducto == int.Parse(txtProducto.SelectedValue)
                                 select new
                                 {
-                                    CodProd = prod.Codigo,
+                                    CodProd     = prod.Codigo,
                                     Descripcion = prod.Descripcion,
-                                    PreUni = prvi.Precio,
-                                    Cantidad = int.Parse(txtCantidad.Text),
-                                    PrecioCant = prvi.Precio * int.Parse(txtCantidad.Text)
+                                    PreUni      = prvi.Precio,
+                                    Cantidad    = int.Parse(txtCantidad.Text),
+                                    PrecioCant  = prvi.Precio * int.Parse(txtCantidad.Text)
                                 }
                                 ).SingleOrDefault();
 
-                opd.RegistroRecepcionPedido.Producto.Codigo = producto.CodProd;
+                opd.RegistroRecepcionPedido.Producto.Codigo      = producto.CodProd;
                 opd.RegistroRecepcionPedido.Producto.Descripcion = producto.Descripcion;
-                opd.RegistroRecepcionPedido.PrecioUnitario = producto.PreUni;
-                opd.RegistroRecepcionPedido.Cantidad = producto.Cantidad;
-                opd.RegistroRecepcionPedido.PrecioCantidad = producto.PrecioCant;
+                opd.RegistroRecepcionPedido.PrecioUnitario       = producto.PreUni;
+                opd.RegistroRecepcionPedido.Cantidad             = producto.Cantidad;
+                opd.RegistroRecepcionPedido.PrecioCantidad       = producto.PrecioCant;
 
                 ListaTemporal.ListaDetalle.Add(opd);
                 DesplegarGridView(ListaTemporal);
-            }            
+
+                //verificar si la cantidad existente se puede habilitar el realizar
+                btnRealizar.Enabled = true;
+
+                Session["ListaTemporal"] = ListaTemporal;
+            }
+
         }
 
         private bool VerificarExisteProdEnListaTemp(List<OrdenPedidoDetalle> listaDetalle)
@@ -143,10 +222,17 @@ namespace CapaWSPresentacion.perfilEmpleado
             try
             {
                 ListaTemporal = (OrdenPedidoCompleta)Session["ListaTemporal"];
-                if (ListaTemporal != null)
+                if (ListaTemporal != null && ListaTemporal.ListaDetalle.Count > 0)
                 {
+                    ListaTemporal.Cabecera.Estado       = "activo";
+                    ListaTemporal.Cabecera.FechaEmision = DateTime.Now;
+                    ListaTemporal.Cabecera.Monto        = 0;
+                    ListaTemporal.Cabecera.Numero       = 0;
+                    ListaTemporal.Cabecera.RutProveedor = txtProveedor.SelectedValue;
+                    ListaTemporal.Cabecera.Ubicacion    = "Logo";
+                    //
                     ListaTemporal.Cabecera.Monto = ListaTemporal.ListaDetalle.Sum(p => p.RegistroRecepcionPedido.PrecioCantidad);//realizar calculo de las productos seleccionados
-
+                    
                     WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
 
                     ContenedorOrdenPedidoCompleta xOPC = new ContenedorOrdenPedidoCompleta();
@@ -155,11 +241,15 @@ namespace CapaWSPresentacion.perfilEmpleado
                     xOPC.Retorno.Token = Session["TokenUsuario"].ToString();
 
                     xOPC = x.OrdenPedidoCompletaCrear(xOPC);
-                    
-                    InicializarProveedor();
 
-                    //txtCodigoRetorno.Text = xOPC.Retorno.Codigo.ToString();
-                    //txtGlosaRetorno.Text = xOPC.Retorno.Glosa;
+                    if (xOPC.Retorno.Codigo == 0)
+                    {
+                        RescatarDatos();
+                        //ok mostrar mensaje
+                    } else {
+                        //error mostrar mensaje
+                    }
+                    Session["ListaTemporal"] = null;
                 }
                 Session["ListaTemporal"] = null;
             }
@@ -169,89 +259,17 @@ namespace CapaWSPresentacion.perfilEmpleado
             }
         }
 
-        private void InicializarProveedor()
+        private void InicializarLista()
         {
             Session["ListaTemporal"] = null;
             gwListaCompra.DataSource = null;
             gwListaCompra.DataBind();
-
-            txtProveedor.Enabled = true;
-            /*btnSelectProveedor.Text = "Elegir Proveedor";*/
-            txtProducto.Enabled = false;
-            txtCantidad.Enabled = false;
-            btnAgregar.Enabled = false;
-            btnRealizar.Enabled = false;
-        }
-
-        private void InicializarProveedor2()
-        {
-            Session["ListaTemporal"] = null;
-            gwListaCompra.DataSource = null;
-            gwListaCompra.DataBind();
-
-            /*btnSelectProveedor.Text = "Elegir Proveedor";*/
-            txtProducto.Enabled = false;
-            txtCantidad.Enabled = false;
-            btnAgregar.Enabled = false;
-            btnRealizar.Enabled = false;
         }
 
         protected void txtProveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            InicializarProveedor2();
-
-            if (txtProveedor.Enabled == true)
-            {
-                WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-
-                //Recuperar datos de provisiones
-                ContenedorProvisiones m = new ContenedorProvisiones();
-                m = x.ProvisionRescatar(Session["TokenUsuario"].ToString());
-
-                //Recuperar datos de productos
-                ContenedorProductos o = new ContenedorProductos();
-                o = x.ProductoRescatar(Session["TokenUsuario"].ToString());
-
-                var productos = (from prvi in m.Lista
-                                 join prod in o.Lista on prvi.CodigoProducto equals prod.Codigo
-                                 where prvi.RutProveedor == txtProveedor.SelectedValue
-                                 orderby prod.Descripcion
-                                 select new
-                                 {
-                                     Codigo = prod.Codigo,
-                                     Descripcion = prod.Descripcion
-                                 }
-                                ).ToList();
-
-                txtProducto.DataSource = null;
-                txtProducto.DataSource = productos;
-                txtProducto.DataValueField = "Codigo";
-                txtProducto.DataTextField = "Descripcion";
-                txtProducto.DataBind();
-
-                Session["TemporalProducto"] = o.Lista;
-
-                OrdenPedidoCompleta ListaTemporal = new OrdenPedidoCompleta();
-
-                ListaTemporal.Cabecera.Estado = "activo";
-                ListaTemporal.Cabecera.FechaEmision = DateTime.Now;
-                ListaTemporal.Cabecera.Monto = 0;
-                ListaTemporal.Cabecera.Numero = 0;
-                ListaTemporal.Cabecera.RutProveedor = txtProveedor.SelectedValue;
-                ListaTemporal.Cabecera.Ubicacion = "Logo";
-
-                Session["ListaTemporal"] = ListaTemporal;
-
-
-                /*btnSelectProveedor.Text = "Modificar Proveedor";*/
-                txtProducto.Enabled = true;
-                txtCantidad.Enabled = true;
-                btnAgregar.Enabled = true;
-                btnRealizar.Enabled = true;
-
-            }
-           
-        
+            InicializarLista();
+            CargarDDLProducto();
         }
 
 
@@ -300,6 +318,14 @@ namespace CapaWSPresentacion.perfilEmpleado
                         ListaTemporal.ListaDetalle.Remove(eliminar);
                         DesplegarGridView(ListaTemporal);
                     }
+                    //verificar si la cantidad existente se puede habilitar el realizar
+                    if (ListaTemporal.ListaDetalle.Count > 0)
+                    {
+                        btnRealizar.Enabled = true;
+                    }
+                    else {
+                        btnRealizar.Enabled = false;
+                    }
                 }
             }
             catch (Exception)
@@ -307,40 +333,5 @@ namespace CapaWSPresentacion.perfilEmpleado
                 //
             }
         }
-
-        //protected void gwListaCompra_RowDeleted(object sender, GridViewDeletedEventArgs e)
-        //{
-        //    //OrdenPedidoCompleta ListaTemporal;
-
-        //    //try
-        //    //{
-        //    //    ListaTemporal = (OrdenPedidoCompleta)Session["ListaTemporal"];
-        //    //    if (ListaTemporal == null)
-        //    //    {
-        //    //        ListaTemporal = new OrdenPedidoCompleta();
-                    
-        //    //        OrdenPedidoDetalle eliminar = new OrdenPedidoDetalle();
-        //    //        //Buscar a eliminar
-        //    //        foreach (var item in ListaTemporal.ListaDetalle)
-        //    //        {
-        //    //            if (item.RegistroRecepcionPedido.Producto.Codigo == int.Parse(gwListaCompra.Rows[e.RowIndex].Cells[1].Text))
-        //    //            {
-        //    //                eliminar = item;
-        //    //                break;
-        //    //            }
-        //    //        }
-        //    //        //eliminar
-        //    //        if (eliminar != null)
-        //    //        {
-        //    //            ListaTemporal.ListaDetalle.Remove(eliminar);
-        //    //            DesplegarGridView(ListaTemporal);
-        //    //        }                    
-        //    //    }
-        //    //}
-        //    //catch (Exception)
-        //    //{
-        //    //    //
-        //    //}
-        //}
     }
 }

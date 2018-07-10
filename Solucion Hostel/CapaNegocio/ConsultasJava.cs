@@ -312,7 +312,7 @@ namespace CapaNegocio
                         // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
                         // Estas se usan solamente como contenedores de la data proveniente de la "query"
                         ComodinJava obj = new ComodinJava();
-                        obj.Nombre = item.fecha.FirstOrDefault().ToString();
+                        obj.Nombre = item.fecha.FirstOrDefault().ToString("dd-MM-yyyy");
                         obj.numero1 = item.cantidad;
                         obj.numero2 = item.total;
                         lista.Add(obj);
@@ -748,7 +748,7 @@ namespace CapaNegocio
                         // Se selecciona la clase ComodinJava ya que cuenta con una variable String "NOMBRE" y una INT "NUMERO1 y NUMERO2"
                         // Estas se usan solamente como contenedores de la data proveniente de la "query"
                         String[] cliente = new String[3];
-                        cliente[0] = item.fecha.FirstOrDefault().ToString("MM-yyyy");
+                        cliente[0] = item.fecha.FirstOrDefault().ToString("MM");
                         cliente[1] = item.tipo.FirstOrDefault().ToString();
                         cliente[2] = item.valor.ToString();
                         lista.Add(cliente);

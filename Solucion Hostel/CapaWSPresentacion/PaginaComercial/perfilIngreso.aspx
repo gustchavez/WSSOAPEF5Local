@@ -59,7 +59,7 @@
 			    <div class="Contenido" >
 				    Giro <br/>
                     <asp:DropDownList ID="giro" runat="server" CssClass="casilla">
-                        <asp:ListItem >Selecciona un Giro</asp:ListItem>
+                        <asp:ListItem value="">Selecciona un Giro</asp:ListItem>
                         <asp:ListItem Value="2">CULTIVOS EN GENERAL; CULTIVO DE PRODUCTOS DE MERCADO; HORTICULTURA</asp:ListItem>
                         <asp:ListItem Value="3">CRÍA DE ANIMALES</asp:ListItem>
                         <asp:ListItem Value="4">CULTIVO PROD. AGRÍCOLAS EN COMBINACIÓN CON CRÍA DE ANIMALES</asp:ListItem>

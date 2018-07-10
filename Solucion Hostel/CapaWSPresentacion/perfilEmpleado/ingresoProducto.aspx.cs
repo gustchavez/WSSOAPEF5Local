@@ -86,8 +86,10 @@ namespace CapaWSPresentacion.perfilEmpleado
             {
                 TextBox3.Visible = false;
             }
-            if (txtPrecioProdAgregar.Text == null || txtPrecioProdAgregar.Text == "" || txtPrecioProdAgregar.Text == "0")
+            if (txtPrecioProdAgregar.Text == null || txtPrecioProdAgregar.Text == "" || txtPrecioProdAgregar.Text == "0"
+                || int.Parse(txtPrecioProdAgregar.Text)<0)
             {
+                txtPrecioProdAgregar.Text = "0";
                 TextBox2.Visible = true;
                 valido = false;
             }
@@ -230,34 +232,52 @@ namespace CapaWSPresentacion.perfilEmpleado
             ContenedorProvisiones m = new ContenedorProvisiones();
             m = x.ProvisionRescatar(Session["TokenUsuario"].ToString());
 
+            var provisiones = m.Lista.Where(p => p.RutProveedor == txtProveedorModificar.SelectedValue).ToList();
+
             //Recuperar datos de productos
             ContenedorProductos o = new ContenedorProductos();
             o = x.ProductoRescatar(Session["TokenUsuario"].ToString());
 
-            var productos = (from prvi in m.Lista
-                             join prod in o.Lista on prvi.CodigoProducto equals prod.Codigo
-                             where prvi.RutProveedor == txtProveedorModificar.SelectedValue
-                             orderby prod.Descripcion
-                             select new
-                             {
-                                 Codigo = prod.Codigo,
-                                 Descripcion = prod.Descripcion
-                             }
-                            ).ToList();
+            var productos = o.Lista.OrderBy(q => q.Descripcion).ToList();
 
-            if (productos != null)
+            var lista = (from prvi in provisiones
+                         join prod in productos on prvi.CodigoProducto equals prod.Codigo
+                         select new
+                         {
+                             Codigo       = prod.Codigo,
+                             Descripcion  = prod.Descripcion,
+                             Precio       = prvi.Precio,
+                             Stock        = prod.Stock,
+                             StockCritico = prod.StockCritico
+                         }
+                        ).ToList();
+
+            if (lista.Count > 0)
             {
                 txtProductoModificar.DataSource = null;
-                txtProductoModificar.DataSource = productos;
+                txtProductoModificar.DataSource = lista;
                 txtProductoModificar.DataValueField = "Codigo";
                 txtProductoModificar.DataTextField = "Descripcion";
                 txtProductoModificar.DataBind();
-
+                //////////////
+                txtProductoModificar.Enabled = true;
+                //////////////
                 btnModificar.Enabled = true;
-            }
-            else {
+            } else {
+                txtProductoModificar.Items.Clear();
+                txtProductoModificar.Items.Add(new ListItem("No Existe", ""));
+                txtProductoModificar.DataBind();
+                txtProductoModificar.SelectedIndex = 0;
+                //////////////
+                txtProductoModificar.Enabled = false;
+                //////////////
                 btnModificar.Enabled = false;
             }
+
+            LlenarCamposAModificar(provisiones, productos);
+
+            Session["Provisiones"] = provisiones;
+            Session["Productos"]   = productos;
         }
 
         protected void btnModificar_click(object sender, EventArgs e)
@@ -306,6 +326,40 @@ namespace CapaWSPresentacion.perfilEmpleado
                     //nProducto.Retorno.Codigo.ToString();
                     //nProducto.Retorno.Glosa;
                 }
+            }
+        }
+
+        protected void txtProductoModificar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Provision> provisiones = (List<Provision>)Session["Provisiones"];
+            List<Producto> productos = (List<Producto>)Session["Productos"];
+
+            LlenarCamposAModificar(provisiones, productos);
+        }
+
+        private void LlenarCamposAModificar(List<Provision> provisiones, List<Producto> productos)
+        {
+            var item = (from prvi in provisiones
+                        join prod in productos on prvi.CodigoProducto equals prod.Codigo
+                        where prod.Codigo == int.Parse(txtProductoModificar.SelectedValue)
+                        select new
+                        {
+                            Precio = prvi.Precio,
+                            Stock = prod.Stock,
+                            StockCritico = prod.StockCritico
+                        }
+                        ).SingleOrDefault();
+
+            if (item != null)
+            {
+                txtPrecioModificar.Text = item.Precio.ToString();
+                txtStockModificar.Text = item.Stock.ToString();
+                txtStockCriticoModificar.Text = item.StockCritico.ToString();
+            }
+            else {
+                txtPrecioModificar.Text = "0";
+                txtStockModificar.Text = "0";
+                txtStockCriticoModificar.Text = "0";
             }
         }
     }

@@ -9,7 +9,7 @@
 
         <h2>Historico Solicitudes</h2><br>
 	    <div class="ModificarDatos"> 
-                <asp:GridView ID="gwOrdenesCompra" runat="server" CssClass="listaFactura"
+                <asp:GridView ID="gwOrdenesCompra" runat="server" CssClass="listaFactura2"
                         AutoGenerateColumns="False"
                         OnSelectedIndexChanged="gwOrdenesCompra_SelectedIndexChanged"
                         EmptyDataText="No se encontraron solicitudes...">
@@ -20,13 +20,13 @@
                             <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto"/>
                             <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado"/>
                         </Columns>
-                        <SelectedRowStyle Font-Bold="True" ForeColor="Red"></SelectedRowStyle>
+                        <SelectedRowStyle CssClass="listaFacturaSeleccion2" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
                 </asp:GridView>
 	    </div>
         
         <h2>Detalle Solicitud</h2><br>
         <div class="ModificarDatos2">           
-                <asp:GridView ID="gwOrdenDetalle" runat="server" CssClass="listaFactura"
+                <asp:GridView ID="gwOrdenDetalle" runat="server" CssClass="listaFactura2"
                         EmptyDataText="Seleccione Solicitud...">
                 </asp:GridView>
 		</div>

@@ -122,6 +122,8 @@ namespace CapaNegocio
                                           ValorNeto    = fac.VALOR_NETO,
                                           EstadoFac    = fac.ESTADO,
                                           FormaPago    = pag.MEDIO_PAGO,
+                                          Moneda       = pag.CODIGO_ISO,
+                                          Monto        = pag.MONTO,
                                           NroOrdPedi   = ord_pedi.NUMERO
                                       }
                             ).ToList();
@@ -140,6 +142,8 @@ namespace CapaNegocio
                         n.Cabecera.ValorNeto         = item.ValorNeto;
                         n.Cabecera.Estado            = item.EstadoFac;
                         n.Pago.MedioPago             = item.FormaPago;
+                        n.Pago.CodigoISO             = item.Moneda;
+                        n.Pago.Monto                 = item.Monto;
                         n.OPRelacionada.Numero       = item.NroOrdPedi;
 
                         //Se agrega la orden completa a la orden

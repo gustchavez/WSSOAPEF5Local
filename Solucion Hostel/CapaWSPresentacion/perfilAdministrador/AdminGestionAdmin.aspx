@@ -218,7 +218,7 @@
 			</div>
 			<div class="Casilla2-1">
 			<h4>Correo Electrónico</h4>	
-			<asp:TextBox ID="txtMailEmpresa" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+			<asp:TextBox ID="txtMailEmpresa" runat="server" CssClass="CasillaPersona" TextMode="Email"></asp:TextBox>
                 <br><asp:TextBox ID="TextBox4" runat="server" CssClass="CasillaPersona" Visible="false" Text="* Ingresar Correo Electrónico" Enabled="False"></asp:TextBox>
 			</div>
 			<div class="Casilla2-1">
