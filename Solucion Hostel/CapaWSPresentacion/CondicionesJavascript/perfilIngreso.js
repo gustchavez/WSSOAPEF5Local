@@ -7,8 +7,8 @@
  contrasena = formularioRegistro.contrasena,
  error = document.getElementById('error');
 
-function validarRut(e) {
-    if (rutEmpresa.value == null || rutEmpresa.value == '' ) {
+ function validarRut(e) {
+     if (rutEmpresa.value == null || rutEmpresa.value == '') {
 		error.style.display= 'block';
 		error.innerHTML = error.innerHTML + '<li> Ingrese solo los numeros de rut </li>';
 		e.preventDefault();
