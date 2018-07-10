@@ -88,7 +88,8 @@ namespace CapaWSPresentacion.perfilEmpleado
             ContenedorOrdenesPedidoCompleta n = new ContenedorOrdenesPedidoCompleta();
 
             n = x.OrdenPedidoCompletaRescatar(Session["TokenUsuario"].ToString());
-            List<OrdenPedidoCompleta> OrdenesPedido = n.Lista.Where(p => p.Cabecera.Estado == "activo").ToList();
+            List<OrdenPedidoCompleta> OrdenesPedido = n.Lista.Where(p => p.Cabecera.Estado == "activo"
+                                                                      || p.Cabecera.Estado == "facturada").ToList();
 
             var opc = (from l in OrdenesPedido
                        where l.Cabecera.RutProveedor == ddlEmpresas.SelectedValue
@@ -138,8 +139,15 @@ namespace CapaWSPresentacion.perfilEmpleado
                     m.Item.Confirmado        = EstadoReserva.Checked == true ? "Si" : "No";
 
                     m.Retorno.Token = Session["TokenUsuario"].ToString();
-
-                    m = x.ProdConfirRecepActualizar(m);
+                    try
+                    {
+                        m = x.ProdConfirRecepActualizar(m);
+                    }
+                    catch (Exception)
+                    {
+                        //
+                    }
+                    
                 }
             }
             RescatarDatos();

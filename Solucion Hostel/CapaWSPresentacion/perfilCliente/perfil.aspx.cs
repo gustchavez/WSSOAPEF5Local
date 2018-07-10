@@ -107,6 +107,11 @@ namespace CapaWSPresentacion.perfilCliente
                 if (n.Retorno.Codigo == 0)
                 {
                     //correcto
+                    Response.Write(@"<script lenguage='text/javascript'>alert('Modificado con exito');</script>");
+                }
+                else
+                {
+                    Response.Write(@"<script lenguage='text/javascript'>alert('Error al modificar');</script>");
                 }
             }
         }

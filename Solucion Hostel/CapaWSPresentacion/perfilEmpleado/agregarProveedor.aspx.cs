@@ -70,7 +70,7 @@ namespace CapaWSPresentacion.perfilEmpleado
 
                 n.Item.Proveedor.Rut = txtRutEmpresa.Text;
                 n.Item.PerfilUsuario.Empresa.RazonSocial = txtRazonSocial.Text;
-                n.Item.PerfilUsuario.Empresa.Rubro = txtNombreCiudad.SelectedValue;
+                n.Item.PerfilUsuario.Empresa.Rubro = txtGiro.SelectedValue;
                 n.Item.PerfilUsuario.Empresa.Email = txtCorreoElectronico.Text;
                 n.Item.PerfilUsuario.Empresa.Telefono = txtTelefonoEmpresa.Text;
                 n.Item.PerfilUsuario.Direccion.CodPais = 56;
@@ -95,6 +95,7 @@ namespace CapaWSPresentacion.perfilEmpleado
 
                 if (n.Retorno.Codigo.ToString() == "0")
                 {
+                    Response.Write(@"<script lenguage='text/javascript'>alert('Proveedor creado exitosamente');</script>");
                     txtRutEmpresa.Text = string.Empty;
                     txtRazonSocial.Text = string.Empty;
                     //n.Item.PerfilUsuario.Empresa.Rubro = txtNombreCiudad.Text;
@@ -106,6 +107,7 @@ namespace CapaWSPresentacion.perfilEmpleado
                 }
                 else
                 {
+                    Response.Write(@"<script lenguage='text/javascript'>alert('Error al crear Proveedor.');</script>");
                     //definir donde se mostrara mensaje de error
                 }
             }

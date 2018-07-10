@@ -209,13 +209,13 @@ namespace CapaWSPresentacion.perfilProveedor
             xFPC.Retorno.Token = Session["TokenUsuario"].ToString();
 
             xFPC = x.FacturaPedidoCompletaCrear(xFPC);
-
-            Response.Write(@"<script lenguage='text/javascript'>alert('Factura ingresada exitosamente');</script>");
-
-
+            
             if (xFPC.Item.Cabecera.Numero > 0)
             {
+                Response.Write(@"<script language='text/javascript'>alert('Factura ingresada exitosamente');</script>");
                 RescatarDatos();
+            } else {
+                Response.Write(@"<script language='text/javascript'>alert('Error al ingresar Factura');</script>");
             }
         }
     }
