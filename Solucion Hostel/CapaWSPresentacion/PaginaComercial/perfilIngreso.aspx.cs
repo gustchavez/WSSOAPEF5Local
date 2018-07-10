@@ -62,7 +62,7 @@ namespace CapaWSPresentacion.PaginaComercial
                 Session["TokenUsuario"] = null;
                 Session["PerfilUsuario"] = null;
                 Session["SesionUsuario"] = null;
-                Response.Write(@"<script langauge='text/javascript'>alert('Error al ingresar usuario y/o contraseña');</script>");
+                Response.Write(@"<script lenguage='text/javascript'>alert('Error al ingresar usuario y/o contraseña');</script>");
             }
 
         }
@@ -152,7 +152,7 @@ namespace CapaWSPresentacion.PaginaComercial
             else
             {
 
-                Response.Write(@"<script language='text/javascript'>alert('Debe completar todos los campos');</script>");
+                Response.Write(@"<script lenguage='text/javascript'>alert('Debe completar todos los campos');</script>");
             }
             
         }

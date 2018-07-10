@@ -364,9 +364,9 @@ namespace CapaWSPresentacion.perfilCliente
             try
             {
                 DateTime fechaIngreso = DateTime.Parse(txtFechaIngreso.Text);
-                if (fechaIngreso < DateTime.Now && fechaIngreso != null)
+                if (fechaIngreso < DateTime.Now || fechaIngreso != null)
                 {
-                    Response.Write(@"<script language='text/javascript'>alert('La fecha de ingreso debe der mayor o igual a la fecha actual');</script>");
+                    Response.Write(@"<script lenguage='text/javascript'>alert('La fecha de ingreso debe der mayor o igual a la fecha actual');</script>");
                 }
             }
             catch(Exception ex)
@@ -386,7 +386,7 @@ namespace CapaWSPresentacion.perfilCliente
                 DateTime fechaEgreso = DateTime.Parse(txtFechaEgreso.Text);
                 if (fechaEgreso < DateTime.Parse(txtFechaIngreso.Text) || fechaEgreso == null)
                 {
-                    Response.Write(@"<script language='text/javascript'>alert('La fecha de egreso debe der mayor a la fecha de ingreso');</script>");
+                    Response.Write(@"<script lenguage='text/javascript'>alert('La fecha de egreso debe der mayor a la fecha de ingreso');</script>");
                     txtRegistroDias.Text = "";
                 }
                 else
@@ -396,7 +396,7 @@ namespace CapaWSPresentacion.perfilCliente
                         TimeSpan difDias = DateTime.Parse(txtFechaEgreso.Text) - DateTime.Parse(txtFechaIngreso.Text);
                         if (difDias.Days>=0)
                         {
-                            Response.Write(difDias.Days.ToString());
+                            //Response.Write(difDias.Days.ToString());
                             txtRegistroDias.Text = difDias.Days.ToString();
                             TotaldeDias();
                         }
@@ -424,13 +424,13 @@ namespace CapaWSPresentacion.perfilCliente
                     int num = int.Parse(txtNpersonas.Text);
                     if (num < 0 || num == null)
                     {
-                        Response.Write(@"<script language='text/javascript'>alert('La cantidad de personas debe ser mayor a 0');</script>");
+                        Response.Write(@"<script lenguage='text/javascript'>alert('La cantidad de personas debe ser mayor a 0');</script>");
                         txtNpersonas.Text = "0";
                     }
                 }
                 else
                 {
-                    Response.Write(@"<script language='text/javascript'>alert('Debe ingresar las fechas primero');</script>");
+                    Response.Write(@"<script lenguage='text/javascript'>alert('Debe ingresar las fechas primero');</script>");
                 }
 
             }

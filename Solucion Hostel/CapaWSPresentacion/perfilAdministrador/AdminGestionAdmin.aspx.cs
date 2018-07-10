@@ -349,52 +349,53 @@ namespace CapaWSPresentacion.perfilAdministrador
         }
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            if (validarIText())
-            {
-                WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
-                int perfil = ddlTipoPerfil.SelectedIndex;
+            WSSoap.WSSHostelClient x = new WSSoap.WSSHostelClient();
+            int perfil = ddlTipoPerfil.SelectedIndex;
 
-                switch (perfil)
-                {
-                    case 1:
-                        //Admin
-                        
-                        ContenedorPerfilUsuarioAdministrador m = new ContenedorPerfilUsuarioAdministrador();
-                        m = x.PerfilUsuarioAdministradorRescatarXRut(txtRutPersona.Text, Session["TokenUsuario"].ToString());
-                        //
-                        ContenedorPerfilUsuarioAdministrador ad = new ContenedorPerfilUsuarioAdministrador();
-                        ad.Item = m.Item;
-                        ad.Item.Persona.Nombre = txtNombrePersona.Text;
-                        ad.Item.Persona.Apellido = txtApellidoPersona.Text;
-                        ad.Item.Persona.FechaNacimiento = DateTime.Parse(txtFecNacPersona.Text);
-                        ad.Item.Persona.Email = txtMailPersona.Text;
-                        ad.Item.Persona.Telefono = txtTelPersona.Text;
-                        ad.Item.Usuario.Clave = txtClave.Text;
-                        ad.Item.Usuario.Estado = ddlEstado.SelectedValue;
-                        ad.Retorno.Token = Session["TokenUsuario"].ToString();
-                        ad = x.PerfilUsuarioAdministradorActualizar(ad);
-                        //
-                        break;
-                    case 2:
-                        //Empleado
-                        ContenedorPerfilUsuarioEmpleado n = new ContenedorPerfilUsuarioEmpleado();
-                        n = x.PerfilUsuarioEmpleadoRescatarXRut(txtRutPersona.Text, Session["TokenUsuario"].ToString());
-                        //
-                        ContenedorPerfilUsuarioEmpleado em = new ContenedorPerfilUsuarioEmpleado();
-                        em.Item = n.Item;
-                        em.Item.Persona.Nombre = txtNombrePersona.Text;
-                        em.Item.Persona.Apellido = txtApellidoPersona.Text;
-                        em.Item.Persona.FechaNacimiento = DateTime.Parse(txtFecNacPersona.Text);
-                        em.Item.Persona.Email = txtMailPersona.Text;
-                        em.Item.Persona.Telefono = txtTelPersona.Text;
-                        em.Item.Usuario.Clave = txtClave.Text;
-                        em.Item.Usuario.Estado = ddlEstado.SelectedValue;
-                        em.Retorno.Token = Session["TokenUsuario"].ToString();
-                        em = x.PerfilUsuarioEmpleadoActualizar(em);
-                        //
-                        break;
-                    case 3:
-                        //Cliente
+            switch (perfil)
+            {
+                case 1:
+                    //Admin
+                    limpiarText();
+                    ContenedorPerfilUsuarioAdministrador m = new ContenedorPerfilUsuarioAdministrador();
+                    m = x.PerfilUsuarioAdministradorRescatarXRut(txtRutPersona.Text, Session["TokenUsuario"].ToString());
+                    //
+                    ContenedorPerfilUsuarioAdministrador ad = new ContenedorPerfilUsuarioAdministrador();
+                    ad.Item = m.Item;
+                    ad.Item.Persona.Nombre = txtNombrePersona.Text;
+                    ad.Item.Persona.Apellido = txtApellidoPersona.Text;
+                    ad.Item.Persona.FechaNacimiento = DateTime.Parse(txtFecNacPersona.Text);
+                    ad.Item.Persona.Email = txtMailPersona.Text;
+                    ad.Item.Persona.Telefono = txtTelPersona.Text;
+                    ad.Item.Usuario.Clave = txtClave.Text;
+                    ad.Item.Usuario.Estado = ddlEstado.SelectedValue;
+                    ad.Retorno.Token = Session["TokenUsuario"].ToString();
+                    ad = x.PerfilUsuarioAdministradorActualizar(ad);
+                    //
+                    break;
+                case 2:
+                    //Empleado
+                    limpiarText();
+                    ContenedorPerfilUsuarioEmpleado n = new ContenedorPerfilUsuarioEmpleado();
+                    n = x.PerfilUsuarioEmpleadoRescatarXRut(txtRutPersona.Text, Session["TokenUsuario"].ToString());
+                    //
+                    ContenedorPerfilUsuarioEmpleado em = new ContenedorPerfilUsuarioEmpleado();
+                    em.Item = n.Item;
+                    em.Item.Persona.Nombre = txtNombrePersona.Text;
+                    em.Item.Persona.Apellido = txtApellidoPersona.Text;
+                    em.Item.Persona.FechaNacimiento = DateTime.Parse(txtFecNacPersona.Text);
+                    em.Item.Persona.Email = txtMailPersona.Text;
+                    em.Item.Persona.Telefono = txtTelPersona.Text;
+                    em.Item.Usuario.Clave = txtClave.Text;
+                    em.Item.Usuario.Estado = ddlEstado.SelectedValue;
+                    em.Retorno.Token = Session["TokenUsuario"].ToString();
+                    em = x.PerfilUsuarioEmpleadoActualizar(em);
+                    //
+                    break;
+                case 3:
+                    //Cliente
+                    if (validarIText())
+                    {
                         ContenedorPerfilUsuarioCliente o = new ContenedorPerfilUsuarioCliente();
                         o = x.PerfilUsuarioClienteRescatarXRut(txtRutEmpresa.Text, Session["TokenUsuario"].ToString());
                         //
@@ -417,10 +418,14 @@ namespace CapaWSPresentacion.perfilAdministrador
                         cl.Item.PerfilUsuario.Usuario.Estado = ddlEstado.SelectedValue;
                         cl.Retorno.Token = Session["TokenUsuario"].ToString();
                         cl = x.PerfilUsuarioClienteActualizar(cl);
-                        //
-                        break;
-                    case 4:
-                        //Proveedor
+                    }
+
+                    //
+                    break;
+                case 4:
+                    //Proveedor
+                    if (validarIText())
+                    {
                         ContenedorPerfilUsuarioProveedor p = new ContenedorPerfilUsuarioProveedor();
                         p = x.PerfilUsuarioProveedorRescatarXRut(txtRutEmpresa.Text, Session["TokenUsuario"].ToString());
                         //     
@@ -442,13 +447,14 @@ namespace CapaWSPresentacion.perfilAdministrador
                         pr.Item.PerfilUsuario.Usuario.Estado = ddlEstado.SelectedValue;
                         pr.Retorno.Token = Session["TokenUsuario"].ToString();
                         pr = x.PerfilUsuarioProveedorActualizar(p);
-                        //
-                        break;
-                    default:
-                        break;
-                }
+                    }
+
+                    //
+                    break;
+                default:
+                    break;
             }
-           
+
         }
         private bool validarIText()
         {
