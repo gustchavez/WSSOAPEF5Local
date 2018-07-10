@@ -246,8 +246,10 @@ namespace CapaWSPresentacion.perfilEmpleado
                     {
                         RescatarDatos();
                         //ok mostrar mensaje
+                        Response.Write(@"<script lenguage='text/javascript'>alert('Solicitud realizada exitosamente');</script>");
                     } else {
                         //error mostrar mensaje
+                        Response.Write(@"<script lenguage='text/javascript'>alert('Error al realizada la solicitud');</script>");
                     }
                     Session["ListaTemporal"] = null;
                 }

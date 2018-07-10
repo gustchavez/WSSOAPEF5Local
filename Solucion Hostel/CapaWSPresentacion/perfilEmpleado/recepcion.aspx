@@ -16,16 +16,22 @@
 		<h4>Seleccione cod. de orden y rut de empleado para confirmar su asistencia </h4>
         <div class="Casilla2-2" >
 		    <h4 style="color: red;">Empresas</h4>
-            <asp:DropDownList ID="ddlEmpresas" CssClass="selectO" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEmpresas_SelectedIndexChanged"></asp:dropdownlist>
+            <asp:DropDownList ID="ddlEmpresas" CssClass="selectO" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEmpresas_SelectedIndexChanged">
+                <asp:ListItem Value="">Seleccione una opción</asp:ListItem>
+            </asp:dropdownlist>
+            <br><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Seleccione Empresas" ControlToValidate="ddlEmpresas" ValidationGroup="validarGrupo"></asp:RequiredFieldValidator>
 		</div>   
 		<div class="Casilla2-2" >
 		    <h4 style="color: red;">Orden Compra</h4>
-            <asp:DropDownList ID="ddlOrdenesCompra" CssClass="selectO" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlOrdenesCompra_SelectedIndexChanged"></asp:dropdownlist>
+            <asp:DropDownList ID="ddlOrdenesCompra" CssClass="selectO" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlOrdenesCompra_SelectedIndexChanged">
+                <asp:ListItem Value="">Seleccione una opción</asp:ListItem>
+            </asp:dropdownlist>
+            <br><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Seleccione Orden Compra" ControlToValidate="ddlOrdenesCompra" ValidationGroup="validarGrupo"></asp:RequiredFieldValidator>
 		</div>     
         
 	    <div class="contenedorTabla">
 		    <div class="Casilla2-2">	
-	            <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar Ingresos" CssClass="SubmitTotal" OnClick="btnConfirmar_Click" />
+	            <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar Ingresos" CssClass="SubmitTotal" OnClick="btnConfirmar_Click" ValidationGroup="validarGrupo" />
 		    </div>
 
             <asp:GridView ID="gwListaRecepcion" runat="server" CssClass="tabla" style="left: 0px; top: 50px"

@@ -17,25 +17,25 @@
 		<div class="Casilla2-2" >
 		<h4 style="color: red;">Proveedor</h4>
         <asp:DropDownList ID="txtProveedor" runat="server" CssClass="selectO" AutoPostBack="True" OnSelectedIndexChanged="txtProveedor_SelectedIndexChanged">
-            <asp:ListItem>Seleccione una opción</asp:ListItem>
+            <asp:ListItem Value="">Seleccione una opción</asp:ListItem>
             </asp:DropDownList>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Seleccione proveedor" ControlToValidate="txtProveedor"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Seleccione proveedor" ControlToValidate="txtProveedor" ValidationGroup="controlAgregar"></asp:RequiredFieldValidator>
 		</div>        
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Nombre producto</h4>	
 		<asp:DropDownList ID="txtProducto" runat="server" CssClass="selectO">
-            <asp:ListItem>Seleccione una opción</asp:ListItem>
+            <asp:ListItem Value="">Seleccione una opción</asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Seleccione Producto" ControlToValidate="txtProducto"></asp:RequiredFieldValidator>
 		</div>
 		<div class="Casilla2-2">
 		<h4 style="color: red;">Cantidad</h4>	
-	        <asp:TextBox ID="txtCantidad" runat="server" CssClass="CasillaPersona2" TextMode="Number"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtCantidad" ErrorMessage="* Ingrese Cantidad"></asp:RequiredFieldValidator>
-            <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="* Ingrese Cantidad" ControlToValidate="txtCantidad" MinimumValue="0" MaximumValue="9999999999"></asp:RangeValidator>
+	        <asp:TextBox ID="txtCantidad" runat="server" CssClass="CasillaPersona2" TextMode="Number" min="0"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtCantidad" ErrorMessage="* Ingrese Cantidad" ValidationGroup="controlAgregar"></asp:RequiredFieldValidator>
+            <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="* Ingrese Cantidad" ControlToValidate="txtCantidad" MinimumValue="1" MaximumValue="9999999999" ValidationGroup="controlAgregar"></asp:RangeValidator>
 		</div>
 		<div class="Casilla2-2">	
-	    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="SubmitTotal" OnClick="btnAgregar_Click" Enabled="False" />
+	    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="SubmitTotal" OnClick="btnAgregar_Click" Enabled="False" ValidationGroup="controlAgregar" />
 		</div>
 	</div>
 	

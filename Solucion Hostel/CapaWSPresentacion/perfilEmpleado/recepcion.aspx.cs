@@ -137,7 +137,16 @@ namespace CapaWSPresentacion.perfilEmpleado
 
                     m.Retorno.Token = Session["TokenUsuario"].ToString();
 
-                    m = x.AlojConfirHueActualizar(m);
+                    try
+                    {
+                        m = x.AlojConfirHueActualizar(m);
+                        Response.Write(@"<script lenguage='text/javascript'>alert('Recepcion Confirmada');</script>");
+                    }
+                    catch (Exception)
+                    {
+                        Response.Write(@"<script lenguage='text/javascript'>alert('Error al confirmar recepcion');</script>");
+                    }
+                    
                 }
             }
             RescatarDatos();
