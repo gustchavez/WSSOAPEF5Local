@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilProveedor/MasterProveedor.Master" AutoEventWireup="true" CodeBehind="Pedidos.aspx.cs" Inherits="CapaWSPresentacion.perfilProveedor.Pedidos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <link rel="stylesheet" type="text/css" href="css/solicitudesCliente.css">
+    <link rel="stylesheet" type="text/css" href="/scripts/solicitudesCliente.css">
 
     <form id="form1" runat="server">
 	    <div class="columna2">
@@ -22,7 +22,7 @@
                             <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto"/>
                             <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado"/>
                         </Columns>
-                        <SelectedRowStyle CssClass="listaFacturaSeleccion2" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
+                        <SelectedRowStyle CssClass="listaFacturaSeleccion" Font-Bold="True"></SelectedRowStyle>
                     </asp:GridView>
 			    </div>
 		    </div>

@@ -629,6 +629,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\" />
+    <Folder Include="obj\Release\Package\PackageTmp\scripts\" />
     <Folder Include="PaginaComercial\assets\" />
     <Folder Include="PaginaComercial\css\" />
   </ItemGroup>

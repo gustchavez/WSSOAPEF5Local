@@ -80,6 +80,12 @@ position: absolute;
 	height: 30px;
 }
 
+.listaFacturaSeleccion td{
+	background: #D6916F;
+	color: white;
+	height: 30px;
+}
+
 .listaFactura2 th{
 	background: #4A4E69;
 	color: white;
@@ -94,7 +100,7 @@ position: absolute;
 }
 
 .listaFacturaSeleccion2 td{
-	background: blue;
+	background: #048BA8;
 	color: white;
 	height: 30px;
 }
