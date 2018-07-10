@@ -102,11 +102,11 @@ namespace CapaWSPresentacion.perfilAdministrador
                                         FecIng = l.Alojamiento.FechaIngreso,
                                         FecEgr = l.Alojamiento.FechaEgreso,
                                         CantDias = l.Alojamiento.RegistroDias,
-                                        CapacHab = l.Alojamiento.Habitacion.Capacidad,
+                                        CapacHab = (l.Alojamiento.Habitacion.Precio / l.Alojamiento.Habitacion.Capacidad),
                                         PrecioHab = l.Alojamiento.Habitacion.Precio,
                                         TipoComida = l.Comida.ServicioComida.Tipo,
                                         PrecioCom = l.Comida.ServicioComida.Precio,
-                                        PrecioSubTotal = l.Alojamiento.RegistroDias * (l.Alojamiento.Habitacion.Precio + l.Comida.ServicioComida.Precio)
+                                        PrecioSubTotal = l.Alojamiento.RegistroDias * ((l.Alojamiento.Habitacion.Precio / l.Alojamiento.Habitacion.Capacidad) + l.Comida.ServicioComida.Precio)
                                     }
                             ).ToList();
 
