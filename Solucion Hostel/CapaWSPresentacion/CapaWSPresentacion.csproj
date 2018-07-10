@@ -169,6 +169,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="PaginaComercial\css\index.css" />
+    <Content Include="PaginaComercial\css\site_global.css" />
     <Content Include="PaginaComercial\images\blank.gif" />
     <Content Include="PaginaComercial\images\fondoInicio3.jpg" />
     <Content Include="PaginaComercial\images\linker-pc-1-crop-u617.jpg" />
@@ -630,7 +632,6 @@
   <ItemGroup>
     <Folder Include="obj\Debug\" />
     <Folder Include="PaginaComercial\assets\" />
-    <Folder Include="PaginaComercial\css\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
