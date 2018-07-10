@@ -88,6 +88,29 @@ position: absolute;
 
 }
 
+
+
+
+.listaFactura77 {
+
+	width: 800px;
+	margin: auto;
+	text-align: center;
+}
+
+.listaFactura77 th{
+	background: #808A9F;
+	color: white;
+	height: 30px;
+}
+
+.listaFactura77 td{
+	background: white;
+
+	color: #035E7B;
+	height: 30px;
+
+}
 /* ----------------------- */
 /* Fin Contenido columna 2 */
 /* ----------------------- */

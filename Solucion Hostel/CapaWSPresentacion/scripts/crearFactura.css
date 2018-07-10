@@ -77,6 +77,14 @@ position: absolute;
     overflow:auto;
 }
 
+.ModificarDatos22{
+	margin: auto;
+	width: 900px;
+    height: 200px;
+	position: relative;
+    top:50px;
+    overflow:auto;
+}
 h2 {
 color:white;
 }
@@ -189,6 +197,28 @@ padding-top: 3px;
 padding-bottom: 3px;
 }
 
+
+.listaFactura85 {
+
+    margin: auto;
+	position: relative;
+	width: 850px;
+	height: 30px;
+}
+
+.listaFactura85 th{
+	background: #808A9F;
+	color: white;
+	height: 30px;
+}
+
+.listaFactura85 td{
+	background: white;
+
+	color: #035E7B;
+	height: 30px;
+
+}
 
 .SubmitTotalfactura2{
 

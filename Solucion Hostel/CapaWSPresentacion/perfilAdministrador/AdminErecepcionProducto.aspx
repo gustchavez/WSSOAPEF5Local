@@ -14,16 +14,16 @@
 		
 		<h2>Confirmación recepción de productos</h2>
         <div class="Casilla2-2" >
-		    <h4 style="color: red;">Empresas</h4>
-            <asp:DropDownList ID="ddlEmpresas" CssClass="selectO" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEmpresas_SelectedIndexChanged">
+		    <h4 style="color: white; text-align:left;">Empresas</h4>
+            <asp:DropDownList ID="ddlEmpresas" CssClass="select2O" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEmpresas_SelectedIndexChanged">
                 <asp:ListItem Value="">Seleccione una opción</asp:ListItem>
             </asp:dropdownlist>
             <br><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Seleccione Empresa" ControlToValidate="ddlEmpresas" ValidationGroup="validarGrupo"></asp:RequiredFieldValidator>
 
 		</div>   
 		<div class="Casilla2-2" >
-		    <h4 style="color: red;">Nº de Orden</h4>
-            <asp:DropDownList ID="ddlOrdenes" CssClass="selectO" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlOrdenesCompra_SelectedIndexChanged">
+		    <h4 style="color: white; text-align:left;">Nº de Orden</h4>
+            <asp:DropDownList ID="ddlOrdenes" CssClass="select2O" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlOrdenesCompra_SelectedIndexChanged">
                 <asp:ListItem Value="">Seleccione una opción</asp:ListItem>
             </asp:dropdownlist>
             <br><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Seleccione Nº de Orden" ControlToValidate="ddlOrdenes" ValidationGroup="validarGrupo"></asp:RequiredFieldValidator>

@@ -291,6 +291,7 @@
     <Content Include="scripts\crearFactura.css" />
     <Content Include="scripts\perfilCliente2.css" />
     <Content Include="scripts\perfilCliente.css" />
+    <Content Include="scripts\servicioCliente2.css" />
     <Content Include="scripts\servicioCliente.css" />
     <Content Include="scripts\site_global.css" />
     <Content Include="scripts\recepcion.css" />

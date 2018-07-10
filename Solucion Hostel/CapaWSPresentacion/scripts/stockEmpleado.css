@@ -42,6 +42,16 @@ body{
     overflow: auto;
 }
 
+.columnaF5{
+	position: absolute;
+	margin-left: 280px;
+	margin-top: 30px;
+	width: 970px;
+   background: #274046;
+	height: 700px;
+}
+
+
 
 /* Menu */
 
@@ -124,6 +134,15 @@ position: absolute;
 
 }
 
+.listaFactura2 {
+
+	width: 800px;
+    height:500px;
+	margin: auto;
+	text-align: center;
+
+}
+
 .columna2 h2{
 
 	text-align: center;
@@ -131,7 +150,20 @@ position: absolute;
 	margin-bottom: 5px;
 }
 
+.columnaF5 h2{
+
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 5px;
+}
+
 .columna2 h4{
+
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.columnaF5 h4{
 
 	text-align: center;
 	margin-bottom: 20px;
@@ -148,7 +180,20 @@ position: absolute;
 
 }
 
+.listaFactura2 th{
+	background: #808A9F;
+	color: white;
+	height: 30px;
+
+}
+
 .listaFactura td{
+	background: white;
+	color: #035E7B;
+	height: 30px;
+}
+
+.listaFactura2 td{
 	background: white;
 	color: #035E7B;
 	height: 30px;
@@ -158,6 +203,19 @@ position: absolute;
 	background: #FF3C38;
 	color: white;
 	height: 30px;
+}
+
+
+
+.contenedorLista {
+    top:10px;
+position:relative;
+margin:auto;
+height:500px;
+width:900px;
+overflow:auto;
+
+
 }
 
 /* ----------------------- */

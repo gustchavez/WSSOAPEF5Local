@@ -82,13 +82,13 @@
 		        <asp:Button ID="btnAgregarFactura" runat="server" Text="Agregar"  CssClass="SubmitTotalfactura2" OnClick="btnAgregar_Click"/> 
 		    </div>
 	</div>
-    <div class="ModificarDatos2">
-        <div class="columna2-1"> 
+    <div class="ModificarDatos22">
+       
 		    <h2>Detalle Orden</h2><br>
-            <asp:GridView ID="gwOrdenDetalle" runat="server" CssClass="listaFactura"
+            <asp:GridView ID="gwOrdenDetalle" runat="server" CssClass="listaFactura85"
                 EmptyDataText="No se encontraron Solicitudes..."
                 ></asp:GridView>
-	    </div>
+	  
     </div>
 		
 </div>

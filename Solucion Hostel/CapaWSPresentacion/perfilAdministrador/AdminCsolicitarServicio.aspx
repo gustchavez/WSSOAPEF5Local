@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/perfilAdministrador/MasterAdministrador.Master" AutoEventWireup="true" CodeBehind="AdminCsolicitarServicio.aspx.cs" Inherits="CapaWSPresentacion.perfilAdministrador.AdminCsolicitarServicio" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-        <link rel="stylesheet" type="text/css" href="/scripts/servicioCliente.css">
+        <link rel="stylesheet" type="text/css" href="/scripts/servicioCliente2.css">
         <script src="/scripts/mostrar.js"></script>
         <script src="/scripts/jquery.min.js"></script>
 

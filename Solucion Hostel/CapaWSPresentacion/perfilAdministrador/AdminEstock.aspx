@@ -6,11 +6,11 @@
 
     <form id="form1" runat="server">
 
-	<div class="columna2">
+	<div class="columnaF5">
 		<h2>Solicitudes de Doña Clarita</h2>
 		<h4>Color rojo es stock critico, favor solicitar cuanto antes ese producto.</h4>
-			
-	    <asp:GridView ID="gwListaProductos" runat="server" CssClass="listaFactura"
+	<div class="contenedorLista">	
+	    <asp:GridView ID="gwListaProductos" runat="server" CssClass="listaFactura2"
             AutoGenerateColumns="False"
             OnRowDataBound="gwListaProductos_RowDataBound"
             EmptyDataText="No se encontraron productos..." >
@@ -22,7 +22,7 @@
                 <asp:BoundField DataField="Critico" HeaderText="¿Solicitar?"/>
             </Columns>
         </asp:GridView>
-		
+	</div>		
 	</div>
 
     </form>

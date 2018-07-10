@@ -6,7 +6,7 @@
 <form id="form1" runat="server">
     
 	<div class="columna2">
-
+        <br />
         <h2 style="color:#048ba8;">Historico Solicitudes</h2><br>
 	    <div class="ModificarDatos"> 
                 <asp:GridView ID="gwOrdenesCompra" runat="server" CssClass="listaFactura2"
@@ -24,9 +24,12 @@
                         <SelectedRowStyle CssClass="listaFacturaSeleccion2" Font-Bold="True"></SelectedRowStyle>
                 </asp:GridView>
 	    </div>
-        
+        <br />
+        <br />
+<br />
+
         <h2 style="color:#048ba8;">Detalle Solicitud</h2><br>
-        <div class="ModificarDatos2">           
+        <div class="ModificarDatos13">           
                 <asp:GridView ID="gwOrdenDetalle" runat="server" CssClass="listaFactura2"
                         EmptyDataText="Seleccione Solicitud...">
                 </asp:GridView>
