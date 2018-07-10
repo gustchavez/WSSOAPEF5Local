@@ -46,22 +46,19 @@ namespace CapaWSPresentacion.perfilAdministrador
             n = x.OrdenPedidoCompletaRescatar(Session["TokenUsuario"].ToString());
 
             //Filtrar solo por el proveedor
-            Sesion datSes = (Sesion)Session["SesionUsuario"];
-            var listaPedidoProveedor = n.Lista.Where(p => p.Cabecera.RutProveedor == datSes.RutEmpresa
-                                                       && (p.Cabecera.Estado == "activo" 
-                                                        || p.Cabecera.Estado == "facturada")
-                                                    )
-                                              .OrderBy(p => p.Cabecera.Numero).ToList();            
+            var listaPedidoProveedor = n.Lista.ToList();
 
-            if (listaPedidoProveedor != null)
+            if (listaPedidoProveedor.Count > 0)
             {
                 var pedidos = (from prov in listaPedidoProveedor
+                               orderby prov.Cabecera.RutProveedor, prov.Cabecera.Numero
                                select new
                                {
-                                   NroOrden = prov.Cabecera.Numero,
+                                   RutEmpresa     = prov.Cabecera.RutProveedor,
+                                   NroOrden       = prov.Cabecera.Numero,
                                    FechaSolicitud = prov.Cabecera.FechaEmision,
-                                   Monto = prov.Cabecera.Monto,
-                                   Estado = prov.Cabecera.Estado
+                                   Monto          = prov.Cabecera.Monto,
+                                   Estado         = prov.Cabecera.Estado
                                }
 
                             ).ToList();
@@ -73,6 +70,7 @@ namespace CapaWSPresentacion.perfilAdministrador
                 gwSolicitudes.DataSource = null;
                 gwSolicitudes.DataBind();
             }
+
             gwOrdenDetalle.DataSource = null;
             gwOrdenDetalle.DataBind();
             
@@ -86,7 +84,7 @@ namespace CapaWSPresentacion.perfilAdministrador
             GridViewRow row = gwSolicitudes.SelectedRow;
 
             var orden = (from l in lista
-                           where l.Cabecera.Numero == int.Parse(row.Cells[1].Text)
+                           where l.Cabecera.Numero == int.Parse(row.Cells[2].Text)
                          select new
                          {
                              DetalleOP = l.ListaDetalle.ToList()

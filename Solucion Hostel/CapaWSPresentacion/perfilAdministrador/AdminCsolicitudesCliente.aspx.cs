@@ -44,22 +44,20 @@ namespace CapaWSPresentacion.perfilAdministrador
             n = x.OrdenCompraCompletaRescatar(Session["TokenUsuario"].ToString());
 
             Sesion datSes = (Sesion)Session["SesionUsuario"];
-            var listaPedidoCliente = n.Lista.Where(p => p.Cabecera.RutCliente == datSes.RutEmpresa
-                                                       && (p.Cabecera.Estado == "activo"
-                                                        || p.Cabecera.Estado == "facturada")
-                                                    )
-                                              .OrderBy(p => p.Cabecera.Numero).ToList();
+            var listaPedidoCliente = n.Lista.ToList();
 
-            if (listaPedidoCliente != null)
+            if (listaPedidoCliente.Count > 0)
             {
 
                 var ordenes = (from cli in listaPedidoCliente
+                               orderby cli.Cabecera.RutCliente, cli.Cabecera.Numero
                                select new
                             {
-                                NroOrden = cli.Cabecera.Numero,
+                                RutEmpresa     = cli.Cabecera.RutCliente,
+                                NroOrden       = cli.Cabecera.Numero,
                                 FechaSolicitud = cli.Cabecera.FechaRecepcion,
-                                Monto = cli.Cabecera.Monto,
-                                Estado = cli.Cabecera.Estado
+                                Monto          = cli.Cabecera.Monto,
+                                Estado         = cli.Cabecera.Estado
                             }
                             ).ToList();
 
@@ -88,7 +86,7 @@ namespace CapaWSPresentacion.perfilAdministrador
             //row.CssClass = "listaFacturaSeleccion2";
 
             var orden = (from l in lista
-                         where l.Cabecera.Numero == int.Parse(row.Cells[1].Text)
+                         where l.Cabecera.Numero == int.Parse(row.Cells[2].Text)
                          select new
                          {
                              DetalleOC = l.ListaDetalle.ToList()

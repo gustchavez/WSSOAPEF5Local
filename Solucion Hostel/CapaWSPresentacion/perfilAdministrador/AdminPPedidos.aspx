@@ -17,6 +17,7 @@
                         EmptyDataText="No se encontraron solicitudes...">
                         <Columns>
                             <asp:CommandField ShowSelectButton="True" />
+                            <asp:BoundField DataField="RutEmpresa" HeaderText="Rut Proveedor" SortExpression="RutEmpresa" />
                             <asp:BoundField DataField="NroOrden" HeaderText="Nro. Orden" SortExpression="NroOrden" />
                             <asp:BoundField DataField="FechaSolicitud" HeaderText="Fec. Solicitud" SortExpression="FechaSolicitud"/>
                             <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto"/>

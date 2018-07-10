@@ -192,6 +192,11 @@
         <h2>Solicitud de Ingreso</h2>
         <h5></h5>
         <div class="contenido">
+            Empresa <br>
+            <asp:DropDownList ID="ddlEmpresas" CssClass="droplist" runat="server" AutoPostBack="True"></asp:DropDownList>
+            <br>
+        </div>
+        <div class="contenido">
             Fecha Ingreso <br>
             <asp:TextBox ID="txtFechaIngreso" runat="server" TextMode="Date" CssClass="CasillaFecha" AutoPostBack="True" OnTextChanged="txtFechaIngreso_TextChanged" ></asp:TextBox>  </div>
             <%--<asp:RangeValidator ID="Range1" Type="Date" Format = "MM/DD/YYYY" Display="Dynamic" runat="server" ErrorMessage="Fecha invalida" ControlToValidate="txtFechaIngreso" ></asp:RangeValidator>--%>
