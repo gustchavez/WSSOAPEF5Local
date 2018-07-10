@@ -257,16 +257,16 @@
 		<h2>Ingreso de Personas</h2>
 		<div class="IngresoPersonas1" ID="IngresoPersonas1">
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutIndividual1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutIndividual1" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreIndividual1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreIndividual1" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoIndividual1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoIndividual1" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsIndividual1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsIndividual1" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComIndividual1" runat="server" CssClass="comidas">
@@ -276,16 +276,16 @@
 		</div>
 		<div class="IngresoPersonas1" id="IngresoPersonas2">
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutIndividual2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutIndividual2" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreIndividual2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreIndividual2" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoIndividual2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoIndividual2" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsIndividual2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsIndividual2" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComIndividual2" runat="server" CssClass="comidas">
@@ -295,16 +295,16 @@
 		</div>
         <div class="IngresoPersonas1" id="IngresoPersonas3">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutIndividual3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutIndividual3" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreIndividual3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreIndividual3" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoIndividual3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoIndividual3" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsIndividual3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsIndividual3" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComIndividual3" runat="server" CssClass="comidas">
@@ -314,16 +314,16 @@
 		</div>
         <div class="IngresoPersonas1" id="IngresoPersonas4">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutIndividual4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutIndividual4" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreIndividual4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreIndividual4" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoIndividual4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoIndividual4" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsIndividual4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsIndividual4" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComIndividual4" runat="server" CssClass="comidas">
@@ -333,16 +333,16 @@
 		</div>
         <div class="IngresoPersonas1" id="IngresoPersonas5">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutIndividual5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutIndividual5" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreIndividual5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreIndividual5" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoIndividual5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoIndividual5" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsIndividual5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsIndividual5" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComIndividual5" runat="server" CssClass="comidas">
@@ -352,16 +352,16 @@
 		</div>
         <div class="IngresoPersonas1" id="IngresoPersonas6">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutIndividual6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutIndividual6" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreIndividual6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreIndividual6" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoIndividual6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoIndividual6" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsIndividual6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsIndividual6" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComIndividual6" runat="server" CssClass="comidas">
@@ -373,16 +373,16 @@
 
 		<div class="IngresoPersonas2" id="IngresoPersonas7">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutDoble1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutDoble1" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreDoble1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreDoble1" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoDoble1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoDoble1" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsDoble1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsDoble1" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComDoble1" runat="server" CssClass="comidas">
@@ -390,16 +390,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutDoble2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutDoble2" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreDoble2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreDoble2" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoDoble2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoDoble2" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsDoble2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsDoble2" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComDoble2" runat="server" CssClass="comidas">
@@ -409,16 +409,16 @@
 		</div>
         <div class="IngresoPersonas2" id="IngresoPersonas8">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutDoble3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutDoble3" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreDoble3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreDoble3" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoDoble3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoDoble3" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsDoble3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsDoble3" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComDoble3" runat="server" CssClass="comidas">
@@ -426,16 +426,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutDoble4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutDoble4" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreDoble4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreDoble4" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoDoble4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoDoble4" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsDoble4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsDoble4" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComDoble4" runat="server" CssClass="comidas">
@@ -445,16 +445,16 @@
 		</div>
         <div class="IngresoPersonas2" id="IngresoPersonas9">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutDoble5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutDoble5" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreDoble5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreDoble5" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoDoble5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoDoble5" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsDoble5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsDoble5" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComDoble5" runat="server" CssClass="comidas">
@@ -462,16 +462,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutDoble6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutDoble6" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreDoble6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreDoble6" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoDoble6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoDoble6" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsDoble6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsDoble6" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComDoble6" runat="server" CssClass="comidas">
@@ -481,16 +481,16 @@
 		</div>
         <div class="IngresoPersonas2" id="IngresoPersonas10">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutDoble7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutDoble7" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreDoble7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreDoble7" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoDoble7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoDoble7" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsDoble7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsDoble7" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComDoble7" runat="server" CssClass="comidas">
@@ -498,16 +498,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutDoble8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutDoble8" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreDoble8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreDoble8" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoDoble8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoDoble8" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsDoble8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsDoble8" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComDoble8" runat="server" CssClass="comidas">
@@ -517,16 +517,16 @@
 		</div>
          <div class="IngresoPersonas2" id="IngresoPersonas11">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutDoble9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutDoble9" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreDoble9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreDoble9" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoDoble9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoDoble9" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsDoble9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsDoble9" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComDoble9" runat="server" CssClass="comidas">
@@ -534,16 +534,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutDoble10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutDoble10" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreDoble10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreDoble10" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoDoble10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoDoble10" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsDoble10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsDoble10" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComDoble10" runat="server" CssClass="comidas">
@@ -553,16 +553,16 @@
 		</div>
          <div class="IngresoPersonas2" id="IngresoPersonas12">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutDoble11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutDoble11" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreDoble11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreDoble11" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoDoble11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoDoble11" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsDoble11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsDoble11" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComDoble11" runat="server" CssClass="comidas">
@@ -570,16 +570,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutDoble12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutDoble12" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreDoble12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreDoble12" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoDoble12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoDoble12" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsDoble12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsDoble12" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComDoble12" runat="server" CssClass="comidas">
@@ -590,16 +590,16 @@
         <!--Fin COLUMNA1-->
         <div class="IngresoPersonas3" id="IngresoPersonas13">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutTriple1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutTriple1" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreTriple1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreTriple1" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoTriple1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoTriple1" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsTriple1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsTriple1" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComTriple1" runat="server" CssClass="comidas">
@@ -607,16 +607,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutTriple2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutTriple2" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreTriple2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreTriple2" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoTriple2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoTriple2" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsTriple2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsTriple2" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComTriple2" runat="server" CssClass="comidas">
@@ -624,16 +624,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutTriple3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutTriple3" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreTriple3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreTriple3" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoTriple3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoTriple3" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsTriple3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsTriple3" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComTriple3" runat="server" CssClass="comidas">
@@ -643,16 +643,16 @@
 		</div>
         <div class="IngresoPersonas3" id="IngresoPersonas14">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutTriple4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutTriple4" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreTriple4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreTriple4" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoTriple4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoTriple4" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsTriple4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsTriple4" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComTriple4" runat="server" CssClass="comidas">
@@ -660,16 +660,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutTriple5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutTriple5" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreTriple5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreTriple5" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoTriple5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoTriple5" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsTriple5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsTriple5" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComTriple5" runat="server" CssClass="comidas">
@@ -677,16 +677,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutTriple6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutTriple6" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreTriple6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreTriple6" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoTriple6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoTriple6" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsTriple6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsTriple6" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComTriple6" runat="server" CssClass="comidas">
@@ -696,16 +696,16 @@
 		</div>
         <div class="IngresoPersonas3" id="IngresoPersonas15">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutTriple7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutTriple7" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreTriple7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreTriple7" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoTriple7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoTriple7" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsTriple7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsTriple7" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComTriple7" runat="server" CssClass="comidas">
@@ -713,16 +713,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutTriple8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutTriple8" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreTriple8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreTriple8" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoTriple8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoTriple8" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsTriple8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsTriple8" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComTriple8" runat="server" CssClass="comidas">
@@ -730,16 +730,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutTriple9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutTriple9" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreTriple9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreTriple9" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoTriple9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoTriple9" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsTriple9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsTriple9" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComTriple9" runat="server" CssClass="comidas">
@@ -749,16 +749,16 @@
 		</div>
         <div class="IngresoPersonas3" id="IngresoPersonas16">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutTriple10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutTriple10" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreTriple10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreTriple10" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoTriple10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoTriple10" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsTriple10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsTriple10" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComTriple10" runat="server" CssClass="comidas">
@@ -766,16 +766,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutTriple11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutTriple11" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreTriple11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreTriple11" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoTriple11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoTriple11" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsTriple11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsTriple11" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComTriple11" runat="server" CssClass="comidas">
@@ -783,16 +783,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutTriple12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutTriple12" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreTriple12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreTriple12" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoTriple12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoTriple12" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsTriple12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsTriple12" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComTriple12" runat="server" CssClass="comidas">
@@ -802,16 +802,16 @@
 		</div>
         <div class="IngresoPersonas3" id="IngresoPersonas17">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutTriple13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutTriple13" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreTriple13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreTriple13" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoTriple13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoTriple13" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsTriple13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsTriple13" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComTriple13" runat="server" CssClass="comidas">
@@ -819,16 +819,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutTriple14" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutTriple14" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreTriple14" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreTriple14" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoTriple14" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoTriple14" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsTriple14" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsTriple14" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComTriple14" runat="server" CssClass="comidas">
@@ -836,16 +836,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutTriple15" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutTriple15" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreTriple15" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreTriple15" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoTriple15" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoTriple15" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsTriple15" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsTriple15" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComTriple15" runat="server" CssClass="comidas">
@@ -856,16 +856,16 @@
 		<!--Fin COLUMNA1-->
 		<div class="IngresoPersonas4" id="IngresoPersonas18">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutCuadruple1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutCuadruple1" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple1" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple1" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple1" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple1" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple1" runat="server" CssClass="comidas">
@@ -873,16 +873,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutCuadruple2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutCuadruple2" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple2" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple2" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple2" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple2" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple2" runat="server" CssClass="comidas">
@@ -890,16 +890,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutCuadruple3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutCuadruple3" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple3" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple3" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple3" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple3" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple3" runat="server" CssClass="comidas">
@@ -907,16 +907,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutCuadruple4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutCuadruple4" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple4" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple4" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple4" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple4" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple4" runat="server" CssClass="comidas">
@@ -926,16 +926,16 @@
 		</div>
         <div class="IngresoPersonas4" id="IngresoPersonas19">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutCuadruple5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutCuadruple5" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple5" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple5" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple5" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple5" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple5" runat="server" CssClass="comidas">
@@ -943,16 +943,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutCuadruple6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutCuadruple6" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple6" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple6" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple6" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple6" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple6" runat="server" CssClass="comidas">
@@ -960,16 +960,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutCuadruple7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutCuadruple7" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple7" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple7" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple7" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple7" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple7" runat="server" CssClass="comidas">
@@ -977,16 +977,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutCuadruple8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutCuadruple8" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple8" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple8" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple8" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple8" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple8" runat="server" CssClass="comidas">
@@ -996,16 +996,16 @@
 		</div>
         <div class="IngresoPersonas4" id="IngresoPersonas20">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutCuadruple9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutCuadruple9" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple9" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple9" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple9" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple9" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple9" runat="server" CssClass="comidas">
@@ -1013,16 +1013,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutCuadruple10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutCuadruple10" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple10" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple10" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple10" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple10" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple10" runat="server" CssClass="comidas">
@@ -1030,16 +1030,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutCuadruple11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutCuadruple11" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple11" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple11" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple11" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple11" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple11" runat="server" CssClass="comidas">
@@ -1047,16 +1047,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutCuadruple12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutCuadruple12" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple12" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple12" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple12" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple12" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple12" runat="server" CssClass="comidas">
@@ -1066,16 +1066,16 @@
 		</div>
         <div class="IngresoPersonas4" id="IngresoPersonas21">
             <div class="Casilla2-1">					
-                <asp:TextBox ID="txtRutCuadruple13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtRutCuadruple13" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple13" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple13" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple13" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple13" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple13" runat="server" CssClass="comidas">
@@ -1083,16 +1083,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutCuadruple14" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutCuadruple14" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple14" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple14" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple14" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple14" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple14" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple14" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple14" runat="server" CssClass="comidas">
@@ -1100,16 +1100,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutCuadruple15" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutCuadruple15" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple15" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple15" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple15" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple15" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple15" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple15" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple15" runat="server" CssClass="comidas">
@@ -1117,16 +1117,16 @@
                 </asp:DropDownList>                  				
             </div>
             <div class="Casilla2-1">					
-                 <asp:TextBox ID="txtRutCuadruple16" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                 <asp:TextBox ID="txtRutCuadruple16" runat="server" CssClass="CasillaPersona" placeholder="12345678-9"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtNombreCuadruple16" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtNombreCuadruple16" runat="server" CssClass="CasillaPersona" placeholder="Juan"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtApellidoCuadruple16" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoCuadruple16" runat="server" CssClass="CasillaPersona" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="Casilla2-1">
-                <asp:TextBox ID="txtAlojaObsCuadruple16" runat="server" CssClass="CasillaPersona"></asp:TextBox>
+                <asp:TextBox ID="txtAlojaObsCuadruple16" runat="server" CssClass="CasillaPersona" placeholder="Observaciones"></asp:TextBox>
             </div>
             <div class="OpcionComida">
                 <asp:DropDownList ID="ddlTipoServComCuadruple16" runat="server" CssClass="comidas">

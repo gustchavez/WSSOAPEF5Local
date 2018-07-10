@@ -5,13 +5,15 @@
 
     <form id="form1" runat="server">
 	    <div class="columna2">
-            <h2>Solicitudes de Doña Clarita</h2>
-		   <div class="ModificarDatos">
+            <br />
+            <h2 style="text-align:center;">Solicitudes de Doña Clarita</h2>
+		   
 				
-              
-                <div class="Casilla2-1">
-			        <h2>Ordenes</h2><br>
-                    <asp:GridView ID="gwSolicitudes" runat="server" CssClass="listaFactura"
+               
+            <div class="ModificarDatos">
+                <h2>Ordenes</h2><br>
+             
+                    <asp:GridView ID="gwSolicitudes" runat="server" CssClass="listaFactura97"
                         AutoGenerateColumns="False"
                         OnSelectedIndexChanged="gwSolicitudes_SelectedIndexChanged"
                         EmptyDataText="No se encontraron solicitudes...">
@@ -25,12 +27,12 @@
                         </Columns>
                         <SelectedRowStyle CssClass="listaFacturaSeleccion" Font-Bold="True"></SelectedRowStyle>
                     </asp:GridView>
-			    </div>
+			
 		    </div>
-            <div class="ModificarDatos2">
+            <div class="ModificarDatos32">
                 <div class="columna2-1"> 
 		            <h2>Detalle Orden</h2><br>
-                    <asp:GridView ID="gwOrdenDetalle" runat="server" CssClass="listaFactura"
+                    <asp:GridView ID="gwOrdenDetalle" runat="server" CssClass="listaFactura97"
                          EmptyDataText="Seleccione Orden...">
                     </asp:GridView>
 	            </div>

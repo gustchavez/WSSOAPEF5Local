@@ -44,11 +44,11 @@
 			<div class="subMenu"> <a href="AdminPPedidos.aspx" style="color: #26362A; font-weight: bold;"> Ver Pedido Proveedor </a></div>
 			<br>
 			<div class="subMenu" style="font-weight: bold;"> CLIENTE </div>
-            <div class="subMenu"> <a href="AdminCsolicitarServicio.aspx" style="color: #26362A; font-weight: bold;"> Solicitud Servicio </a></div>
             <div class="subMenu"> <a href="AdminCsolicitudesCliente.aspx" style="color: #26362A; font-weight: bold;"> Ver Solicitudes Reserva </a></div>
-			<br>
+			
 			<div class="subMenu"> <a href="/PaginaComercial/perfilIngreso.aspx" style="color: #26362A; font-weight: bold;" > Cerrar Sesión</a></div>
-		</div>
+		   <br>
+        </div>
 
 	</div>
 	<!--Fin Menu-->

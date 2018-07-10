@@ -57,11 +57,33 @@ position: absolute;
     left:10px;
     overflow:auto;
 }
+
+.ModificarDatos13{
+ 
+	margin: auto;
+	height: 200px;
+	width: 900px;
+	position: relative;
+    left:10px;
+    overflow:auto;
+}
+
+.ModificarDatos32{
+   top:30px;
+	margin: auto;
+	height: 200px;
+	width: 900px;
+	position: relative;
+    left:10px;
+    overflow:auto;
+}
 .columna2 h2{
     margin-left:40px;
 	text-align: left;
     color: white;
 }
+
+
 
 .columna2 img{
 	height: 30px;
@@ -108,3 +130,23 @@ position: absolute;
 /* ----------------------- */
 /* Fin Contenido columna 2 */
 /* ----------------------- */
+
+
+.listaFactura97 {
+	width: 850px;
+	margin: auto;
+	text-align: center;
+}
+
+.listaFactura97 th{
+	background: #808A9F;
+	color: white;
+	height: 30px;
+
+}
+
+.listaFactura97 td{
+	background: white;
+	color: #808A9F;
+	height: 30px;
+}

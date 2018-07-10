@@ -127,6 +127,18 @@ text-align:center;
 
 }
 
+.select2O {
+    
+	width: 180px;
+	height: 35px;
+    
+  	background: #274046;
+	color: white;
+ 	border: none;
+    border-bottom: 2px solid orange;
+
+}
+
 .SubmitTotal2{
 
     background: #861657;

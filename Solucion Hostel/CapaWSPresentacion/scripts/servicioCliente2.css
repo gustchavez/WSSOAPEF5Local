@@ -1,0 +1,380 @@
+/* Bases pagina */
+
+
+
+.columna1v1 {
+	position: absolute;
+	width: 250px;
+	height: 650px;
+    left:280px;
+	margin-top: 30px;
+	padding-left: 10px;	
+    padding-right: 10px;	
+    border-left: 1px solid orange;
+    border-right: 1px solid orange;
+   
+}
+
+.columna2{
+	position: absolute;
+	margin-left: 552px;
+	margin-top: 30px;
+	width: 698px;
+	height: 570px;
+	overflow: auto;
+    margin-bottom:10px;
+    padding-bottom:10px;
+    color:white;
+     
+}
+
+.columna3{
+	position: absolute;
+   
+	margin-left: 980px;
+	margin-top: 600px;
+	width: 220px;
+	height: 40px;
+}
+
+/* Menu */
+
+
+
+
+/* Contenido Desplegable */
+.desplegable{	
+background: #1C3144;
+width: 280px;
+z-index: 10;
+height: 650px;
+position: absolute;
+margin-top: 30px;
+display: none;
+}
+
+
+
+.subMenu {
+	position: relative;
+	top: 50px;
+	margin: 10px;
+	color: white;
+	text-align: center;
+}
+
+
+/* -------------------------- */
+/* Inicio Contenido columna 1 */
+/* -------------------------- */
+
+
+h2{
+margin-left: 10px;	
+color: white;
+font-size: 16px;
+margin-top: 15px;
+margin-bottom: 15px;
+}
+
+.contenido th {
+   
+	font-size: 12px;
+}
+
+.contenido td {
+	padding-top:  15px;
+    font-size:12px;
+
+}
+
+.contenido{
+	width: 250px;
+	padding: 10px;
+   color:white;
+}
+
+.CasillaFecha {
+	width: 210px;
+}
+
+.Casilladias{
+	width: 30px;
+	position: relative;
+	left: 100px;
+    top: 0px;
+}
+
+.Casilladias2{
+	width: 30px;
+	position: relative;
+	left: 80px;
+    top: 0px;
+}
+
+.CasillaEnvio {
+	position: relative;
+	left: 10px;
+	width: 30px;
+}
+
+/*-------Botones Habitacion ---------*/
+
+.Boton2personas {
+	text-align: center;
+	color: white;
+	position: relative;
+	left: 20px;
+	width: 40px;
+	background:  #55828b;
+}
+
+.Boton3personas {
+	text-align: center;
+	color: white;
+	position: relative;
+	left: 20px;
+	width: 40px;
+	background:  #e94f37;
+}
+
+.Boton6personas {
+	text-align: center;
+	color: white;
+	position: relative;
+	left: 20px;
+	width: 40px;
+	background:  #3f88c5;
+}
+
+.BotonIndividual {
+	text-align: center;
+	color: white;
+	position: relative;
+	left: 20px;
+	width: 40px;
+	background:  #AB4E68;
+}
+
+.CasillaPersonas{
+	position: relative;
+	left: 15px;
+	width: 30px;
+}
+
+/* ------------- */
+/* Fin Columna 1 */
+/* ------------- */
+
+/* -------------------------- */
+/* Inicio Contenido columna 2 */
+/* -------------------------- */
+.columna2 h2{
+margin-left: 10px;	
+text-align: center;
+color: #1C3144;
+font-size: 16px;
+margin-top: 15px;
+margin-bottom: 15px;
+}
+
+.IngresoPersonas1{
+	background: white;
+	border-color: #AB4E68;
+	border-style: solid;
+	height: 45px;
+	width: 600px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-left: 30px;
+	display: none;
+   
+}
+
+.IngresoPersonas2{
+	background: white;
+	border-color: #55828b;
+	border-style: solid;
+	height: 100px;
+	width: 600px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-left: 30px;
+	display: none;	
+     
+}
+
+.IngresoPersonas3{
+	background: white;
+	border-color: #e94f37;
+	border-style: solid;
+	height: 155px;
+	width: 600px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-left:30px;
+	display: none;
+    
+}
+
+.IngresoPersonas4{
+	background: white;
+	border-color: #3f88c5;
+	border-style: solid;
+	height: 205px;
+	width: 600px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-left: 30px;
+	display: none;
+ 	
+}
+
+.Casilla2-1 {
+float: left;
+margin-right: 5px;
+margin-left: 5px;
+}
+
+.CasillaPersona{
+width: 130px;
+}
+
+
+.OpcionComida {
+	top: 5px;
+	position: relative;
+	left:  5px;
+	margin-bottom: 15px;
+
+	
+}
+
+.comidas {
+	margin:auto;
+	width: 575px;
+
+}
+
+/* ------------- */
+/* Fin Columna 2 */
+/* ------------- */
+
+/* -------------------------- */
+/* Inicio Contenido columna 3 */
+/* -------------------------- */
+
+.linea2{
+
+	position: relative;
+	color: black;
+	margin-right: 20px;
+	margin-left: 20px;
+
+}
+
+
+.CasillaPrecio{
+
+	width: 50px;
+	float: right;
+
+}
+
+.SubmitTotal{
+
+	position: relative;
+	top: 10px;
+	width: 200px;
+	height: 30px;
+    left: 15px;
+
+    
+       background: none;
+    color: black;
+    border: 2px solid #1B998B;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+
+}
+
+.SubmitTotal2{
+
+	position: relative;
+	top: 10px;
+	width: 200px;
+	height: 30px;
+   margin:auto;
+
+   
+       background: none;
+    color: white;
+    border: 2px solid #ffa500;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+
+}
+
+.SubmitTotal:Hover{
+	position: relative;
+	top: 10px;
+	width: 200px;
+	height: 30px;
+    left: 15px;
+
+    
+       background: none;
+    color: black;
+    border: 2px solid #ffa500;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+
+
+}
+
+.casillaTotal {
+
+padding: 10px;
+
+}
+
+.Forma3 h2 {
+
+text-align: center;
+margin-top:  10px;
+
+}
+
+
+
+/* ------------- */
+/* Fin Columna 3 */
+/* ------------- */
+
+
+
+
+
+
+
+/* Diseño Botones */
+
+.SubmitEnviar {
+	width: 200px;
+	height: 30px;
+	position: relative;
+	top: 20px;
+	left: 20px;
+}
+
+.SubmitEnviar:Hover{
+	width: 200px;
+	height: 30px;
+	position: relative;
+	top: 20px;
+	left: 20px;
+	background: #035E7B;
+	color: white;
+}
+
+

@@ -252,10 +252,10 @@ namespace CapaWSPresentacion.perfilEmpleado
                                     FecEgr         = l.Alojamiento.FechaEgreso,
                                     CantDias       = l.Alojamiento.RegistroDias,
                                     CapacHab       = l.Alojamiento.Habitacion.Capacidad,
-                                    PrecioHab      = l.Alojamiento.Habitacion.Precio,
+                                    PrecioHab      = (l.Alojamiento.Habitacion.Precio / l.Alojamiento.Habitacion.Capacidad),
                                     TipoComida     = l.Comida.ServicioComida.Tipo,
                                     PrecioCom      = l.Comida.ServicioComida.Precio,
-                                    PrecioSubTotal = l.Alojamiento.RegistroDias * (l.Alojamiento.Habitacion.Precio + l.Comida.ServicioComida.Precio)
+                                    PrecioSubTotal = l.Alojamiento.RegistroDias * ((l.Alojamiento.Habitacion.Precio / l.Alojamiento.Habitacion.Capacidad) + l.Comida.ServicioComida.Precio)
                                 }
                         ).ToList();
             ////////

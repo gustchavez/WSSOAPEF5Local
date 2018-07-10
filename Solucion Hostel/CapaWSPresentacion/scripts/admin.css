@@ -83,10 +83,11 @@ padding-top: 7px;
 background: #087F8C;
 width: 280px;
 z-index: 10;
-height: 670px;
+height: 650px;
 position: absolute;
 margin-top: 30px;
 display: none;
+  overflow:auto;
 }
 
 .subMenu {

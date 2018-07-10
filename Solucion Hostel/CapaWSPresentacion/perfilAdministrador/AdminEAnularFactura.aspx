@@ -41,13 +41,13 @@
 		            <asp:Button ID="btnAnularFactura" runat="server" Text="Anular"  CssClass="SubmitTotalfactura3" OnClick="btnAnularFactura_Click"/> 
 		        </div>
 	        </div>
-            <div class="ModificarDatos2">
-                <div class="columna2-1"> 
+            <div class="ModificarDatos22">
+              
 		            <h2>Detalle Factura</h2><br>
-                    <asp:GridView ID="gwFacturaDetalle" runat="server" CssClass="listaFactura"
+                    <asp:GridView ID="gwFacturaDetalle" runat="server" CssClass="listaFactura85"
                         EmptyDataText="No se encontraron Facturas..."
                         ></asp:GridView>
-	            </div>
+	           
             </div>
         </div>
     </form>

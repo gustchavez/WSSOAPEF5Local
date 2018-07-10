@@ -153,20 +153,23 @@ namespace CapaWSPresentacion.perfilCliente
                 ContenedorOrdenCompraCompleta xOCC = new ContenedorOrdenCompraCompleta();
                 xOCC.Item.Cabecera = nOCC.Cabecera;
                 xOCC.Item.ListaDetalle = nOCC.ListaDetalle;
-                xOCC.Retorno.Token = Session["TokenUsuario"].ToString();
 
-                xOCC = x.OrdenCompraCompletaCrear(xOCC);
+                if (xOCC.Item.ListaDetalle.Count > 0)
+                {
+                    xOCC.Retorno.Token = Session["TokenUsuario"].ToString();
+                    xOCC = x.OrdenCompraCompletaCrear(xOCC);
 
-                if(xOCC.Retorno.Codigo == 0)
-                {
-                    //OK
-                    RescatarDatos();
-                    Response.Write(@"<script language='text/javascript'>alert('Reserva relizada Correctamente');</script>");
-                }
-                else
-                {
-                    //Error
-                    Response.Write(@"<script language='text/javascript'>alert('Fallo la realizacion de la Reserva');</script>");
+                    if (xOCC.Retorno.Codigo == 0)
+                    {
+                        //OK
+                        RescatarDatos();
+                        Response.Write(@"<script language='text/javascript'>alert('Reserva relizada Correctamente');</script>");
+                    } else {
+                        //Error
+                        Response.Write(@"<script language='text/javascript'>alert('Fallo la realizacion de la Reserva');</script>");
+                    }
+                } else {
+                    Response.Write(@"<script language='text/javascript'>alert('Ingrese Datos de Huespedes');</script>");
                 }
             }
             catch (Exception)
